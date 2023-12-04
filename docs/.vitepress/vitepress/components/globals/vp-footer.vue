@@ -62,7 +62,7 @@ const homeLang = computed(() => homeLocale[lang.value])
         {{ homeLang['16'] }}
       </a>
       <a
-        href="https://github.com/element-plus/element-plus/blob/dev/.github/CONTRIBUTING.en-US.md"
+        href="https://github.com/element-plus/element-plus/blob/dev/.github/CONTRIBUTING.zh-CN.md"
         class="footer-main-link"
         target="_blank"
       >
@@ -83,6 +83,7 @@ const homeLang = computed(() => homeLocale[lang.value])
 .dark .footer {
   background-color: var(--el-fill-color-lighter);
 }
+
 .footer {
   background-color: #f5f7fa;
   box-sizing: border-box;
@@ -151,6 +152,7 @@ const homeLang = computed(() => homeLocale[lang.value])
       font-size: 32px;
       vertical-align: middle;
       margin-right: 20px;
+
       &:hover {
         transform: scale(1.2);
         color: #8d99ab;

@@ -4,7 +4,7 @@
   const defaultLang = 'zh-CN'
   // docs supported languages
   const langAlias = {
-    en: 'en-US',
+    en: 'zh-CN',
     cn: 'zh-CN',
     fr: 'fr-FR',
     es: 'es-ES',

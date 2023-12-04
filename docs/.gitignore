@@ -1,6 +1,6 @@
 .vitepress/i18n/*
 .vitepress/crowdin/*
-!.vitepress/crowdin/en-US
+!.vitepress/crowdin/zh-CN
 
 temp
 zh-CN
