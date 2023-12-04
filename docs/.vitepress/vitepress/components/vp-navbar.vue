@@ -45,8 +45,8 @@ const currentLink = computed(() => {
         <VPNavbarSearch class="search" :options="theme.agolia" multilang />
         <VPNavbarMenu class="menu" />
         <VPNavbarThemeToggler class="theme-toggler" />
-        <VPNavbarTranslation class="translation" />
-        <VPNavbarSocialLinks class="social-links" />
+        <!-- <VPNavbarTranslation class="translation" />
+        <VPNavbarSocialLinks class="social-links" /> -->
         <VPNavbarHamburger
           :active="fullScreen"
           class="hamburger"
@@ -62,15 +62,18 @@ const currentLink = computed(() => {
   display: flex;
   align-items: center;
   height: var(--header-height);
+
   > a {
     height: 28px;
     width: 128px;
   }
+
   .logo {
     position: relative;
     height: 100%;
   }
 }
+
 .dark {
   .logo {
     filter: drop-shadow(2px 2px 6px #409eff);
