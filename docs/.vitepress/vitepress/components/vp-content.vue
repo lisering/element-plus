@@ -43,9 +43,13 @@ onUpdated(() => {
     <VPNotFound v-if="isNotFound" />
     <VPHeroContent v-else-if="isHeroPost" />
     <VPDocContent v-else>
-      <template #content-top><slot name="content-top" /></template>
-      <template #content-bottom><slot name="content-bottom" /></template>
+      <template #content-top>
+        <slot name="content-top" />
+      </template>
+      <template #content-bottom>
+        <slot name="content-bottom" />
+      </template>
     </VPDocContent>
-    <VPFooter v-if="!isHeroPost" />
+    <!-- <VPFooter v-if="!isHeroPost" /> -->
   </main>
 </template>

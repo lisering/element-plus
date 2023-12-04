@@ -11,7 +11,7 @@ const { page } = useData()
   <div class="doc-content-wrapper">
     <div class="doc-content-container">
       <Content class="doc-content" />
-      <VPPageFooter />
+      <!-- <VPPageFooter /> -->
       <VPPageNav />
     </div>
     <VPTableOfContent v-if="page.headers" />

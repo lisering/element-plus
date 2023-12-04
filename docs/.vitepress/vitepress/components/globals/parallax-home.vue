@@ -141,10 +141,7 @@ useEventListener(window, 'scroll', handleScroll)
       alt="banner"
       class="mobile-banner"
     />
-    <HomeSponsors />
-    <HomeCards />
   </div>
-  <HomeFooter :is-home="true" />
 </template>
 
 <style lang="scss">
@@ -157,6 +154,7 @@ useEventListener(window, 'scroll', handleScroll)
 
   .banner-dot h1 span {
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
@@ -168,6 +166,7 @@ useEventListener(window, 'scroll', handleScroll)
       border-radius: 100%;
     }
   }
+
   .banner-desc {
     h1 {
       font-size: 48px;
@@ -196,24 +195,29 @@ useEventListener(window, 'scroll', handleScroll)
       text-align: center;
       font-weight: 600;
     }
+
     .cd-date {
       font-size: 28px;
     }
+
     .cd-time {
       display: flex;
       justify-content: space-between;
       width: 80%;
       margin: 10px auto 0;
     }
+
     .cd-num {
       color: var(--el-color-primary);
       font-size: 78px;
       font-weight: bold;
     }
+
     .cd-num span {
       width: 50%;
       display: inline-block;
     }
+
     .cd-str {
       font-size: 22px;
       margin-top: -5px;
@@ -266,23 +270,28 @@ useEventListener(window, 'scroll', handleScroll)
         margin: 0 auto 20px;
         float: none;
       }
+
       .card {
         height: auto;
         padding-bottom: 54px;
       }
     }
+
     .banner-stars {
       display: none;
     }
+
     .banner-desc {
       h1 {
         font-size: 36px;
       }
+
       p {
         margin-top: 10px;
         font-size: 14px;
       }
     }
+
     .banner-dot h1 span {
       &::after {
         right: -8px;
@@ -291,32 +300,39 @@ useEventListener(window, 'scroll', handleScroll)
         width: 6px;
       }
     }
+
     .count-down {
       .cd-main {
         width: 90%;
         margin: 40px auto 40px;
         padding: 20px 0;
       }
+
       .cd-date {
         font-size: 22px;
       }
+
       .cd-num {
         font-size: 38px;
       }
+
       .cd-str {
         font-size: 12px;
         margin-top: 0;
       }
     }
+
     .sponsors-list {
       display: flex;
       flex-direction: column;
       align-content: center;
+
       .sponsor {
         justify-content: left;
       }
     }
   }
+
   .theme-intro-b {
     position: fixed;
     left: 0;
@@ -324,12 +340,15 @@ useEventListener(window, 'scroll', handleScroll)
     top: 0;
     bottom: 0;
     z-index: 200;
+
     .intro-banner {
       position: absolute;
     }
+
     img {
       width: 300px;
     }
+
     .title {
       position: absolute;
       top: 0;
@@ -343,12 +362,14 @@ useEventListener(window, 'scroll', handleScroll)
       display: flex;
       justify-content: center;
       align-items: center;
+
       p {
         padding: 0;
         margin: 10px 0;
       }
     }
   }
+
   .theme-intro-a {
     position: fixed;
     left: 0;
@@ -356,6 +377,7 @@ useEventListener(window, 'scroll', handleScroll)
     top: 0;
     bottom: 0;
     z-index: 200;
+
     .mask {
       position: fixed;
       left: 0;
@@ -365,6 +387,7 @@ useEventListener(window, 'scroll', handleScroll)
       background: #000;
       opacity: 0.5;
     }
+
     .intro-banner {
       top: 50%;
       left: 50%;
@@ -373,14 +396,17 @@ useEventListener(window, 'scroll', handleScroll)
       box-sizing: border-box;
       text-align: center;
       z-index: 100;
+
       img {
         width: 100%;
       }
+
       .intro-text {
         position: absolute;
         top: 50%;
         left: 0;
         right: 0;
+
         p {
           padding: 0;
           margin: 0;
