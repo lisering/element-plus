@@ -36,7 +36,7 @@ const currentLink = computed(() => {
         <a :href="currentLink">
           <img
             class="logo"
-            src="/images/hicor-ui-logo.svg"
+            src="/images/hicor-ui-logo.png"
             alt="Hicor Ui Logo"
           />
         </a>

@@ -15,6 +15,9 @@
     "unplugin-vue-components": "0.21.2",
     "vite": "^2.9.15",
     "vite-plugin-inspect": "^0.5.0",
+    "compare-versions": "^6.1.0",
+    "@antfu/utils": "^0.7.6",
+    "local-pkg": "^0.4.3",
     "vite-plugin-mkcert": "^1.7.2"
   }
 }

@@ -43,7 +43,7 @@ languages.forEach((lang) => {
 
 export const config: UserConfig = {
   title: 'Hicor Ui',
-  description: 'A Vue 3 based component library for designers and developers',
+  description: '基于vue3 + typescript + vite的hicor ui 组件',
   lastUpdated: true,
   head,
   themeConfig: {
@@ -55,7 +55,7 @@ export const config: UserConfig = {
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
 
-    logo: '/images/hicor-ui-logo.svg',
+    logo: '/images/hicor-ui-logo.png',
     logoSmall: '/images/hicor-ui-logo-small.svg',
     sidebars,
     nav,

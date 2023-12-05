@@ -8,9 +8,9 @@ import {
   main,
 } from 'components-helper'
 import {
-  epOutput,
-  epPackage,
   getPackageManifest,
+  hcOutput,
+  hcPackage,
   projRoot,
 } from '@hicor-ui/build-utils'
 
@@ -190,7 +190,7 @@ const transformFunction = (str: string) => {
 }
 
 export const buildHelper: TaskFunction = (done) => {
-  const { name, version } = getPackageManifest(epPackage)
+  const { name, version } = getPackageManifest(hcPackage)
 
   const tagVer = process.env.TAG_VERSION
   const _version = tagVer
@@ -206,7 +206,7 @@ export const buildHelper: TaskFunction = (done) => {
       projRoot,
       'docs/en-US/component'
     )}/!(datetime-picker|message-box|message).md`,
-    outDir: epOutput,
+    outDir: hcOutput,
     reComponentName,
     reDocUrl,
     reWebTypesSource,

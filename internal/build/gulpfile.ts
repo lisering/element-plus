@@ -4,8 +4,8 @@ import { copy } from 'fs-extra'
 import { parallel, series } from 'gulp'
 import {
   buildOutput,
-  epOutput,
-  epPackage,
+  hcOutput,
+  hcPackage,
   projRoot,
 } from '@hicor-ui/build-utils'
 import { buildConfig, run, runTask, withTaskName } from './src'
@@ -14,14 +14,14 @@ import type { Module } from './src'
 
 export const copyFiles = () =>
   Promise.all([
-    copyFile(epPackage, path.join(epOutput, 'package.json')),
+    copyFile(hcPackage, path.join(hcOutput, 'package.json')),
     copyFile(
       path.resolve(projRoot, 'README.md'),
-      path.resolve(epOutput, 'README.md')
+      path.resolve(hcOutput, 'README.md')
     ),
     copyFile(
       path.resolve(projRoot, 'global.d.ts'),
-      path.resolve(epOutput, 'global.d.ts')
+      path.resolve(hcOutput, 'global.d.ts')
     ),
   ])
 
@@ -36,16 +36,16 @@ export const copyTypesDefinitions: TaskFunction = (done) => {
 }
 
 export const copyFullStyle = async () => {
-  await mkdir(path.resolve(epOutput, 'dist'), { recursive: true })
+  await mkdir(path.resolve(hcOutput, 'dist'), { recursive: true })
   await copyFile(
-    path.resolve(epOutput, 'theme-chalk/index.css'),
-    path.resolve(epOutput, 'dist/index.css')
+    path.resolve(hcOutput, 'theme-chalk/index.css'),
+    path.resolve(hcOutput, 'dist/index.css')
   )
 }
 
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
-  withTaskName('createOutput', () => mkdir(epOutput, { recursive: true })),
+  withTaskName('createOutput', () => mkdir(hcOutput, { recursive: true })),
 
   parallel(
     runTask('buildModules'),

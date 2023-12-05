@@ -1,9 +1,9 @@
-import { epPackage, getPackageDependencies } from '@hicor-ui/build-utils'
+import { getPackageDependencies, hcPackage } from '@hicor-ui/build-utils'
 
 import type { OutputOptions, RollupBuild } from 'rollup'
 
 export const generateExternal = async (options: { full: boolean }) => {
-  const { dependencies, peerDependencies } = getPackageDependencies(epPackage)
+  const { dependencies, peerDependencies } = getPackageDependencies(hcPackage)
 
   return (id: string) => {
     const packages: string[] = [...peerDependencies]

@@ -14,7 +14,7 @@ import {
   PKG_CAMELCASE_LOCAL_NAME,
   PKG_CAMELCASE_NAME,
 } from '@hicor-ui/build-constants'
-import { epOutput, epRoot, localeRoot } from '@hicor-ui/build-utils'
+import { hcOutput, hcRoot, localeRoot } from '@hicor-ui/build-utils'
 import { version } from '../../../../packages/hicor-ui/version'
 import { HicorUiAlias } from '../plugins/hicor-ui-alias'
 import {
@@ -69,7 +69,7 @@ async function buildFullEntry(minify: boolean) {
   }
 
   const bundle = await rollup({
-    input: path.resolve(epRoot, 'index.ts'),
+    input: path.resolve(hcRoot, 'index.ts'),
     plugins,
     external: await generateExternal({ full: true }),
     treeshake: true,
@@ -78,7 +78,7 @@ async function buildFullEntry(minify: boolean) {
     {
       format: 'umd',
       file: path.resolve(
-        epOutput,
+        hcOutput,
         'dist',
         formatBundleFilename('index.full', minify, 'js')
       ),
@@ -93,7 +93,7 @@ async function buildFullEntry(minify: boolean) {
     {
       format: 'esm',
       file: path.resolve(
-        epOutput,
+        hcOutput,
         'dist',
         formatBundleFilename('index.full', minify, 'mjs')
       ),
@@ -127,7 +127,7 @@ async function buildFullLocale(minify: boolean) {
         {
           format: 'umd',
           file: path.resolve(
-            epOutput,
+            hcOutput,
             'dist/locale',
             formatBundleFilename(filename, minify, 'js')
           ),
@@ -139,7 +139,7 @@ async function buildFullLocale(minify: boolean) {
         {
           format: 'esm',
           file: path.resolve(
-            epOutput,
+            hcOutput,
             'dist/locale',
             formatBundleFilename(filename, minify, 'mjs')
           ),

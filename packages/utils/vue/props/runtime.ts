@@ -5,22 +5,22 @@ import { hasOwn } from '../../objects'
 
 import type { PropType } from 'vue'
 import type {
-  EpProp,
-  EpPropConvert,
-  EpPropFinalized,
-  EpPropInput,
-  EpPropMergeType,
+  HcProp,
+  HcPropConvert,
+  HcPropFinalized,
+  HcPropInput,
+  HcPropMergeType,
   IfEpProp,
   IfNativePropType,
   NativePropType,
 } from './types'
 
-export const epPropKey = '__epPropKey'
+export const hcPropKey = '__hcPropKey'
 
 export const definePropType = <T>(val: any): PropType<T> => val
 
-export const isEpProp = (val: unknown): val is EpProp<any, any, any> =>
-  isObject(val) && !!(val as any)[epPropKey]
+export const isEpProp = (val: unknown): val is HcProp<any, any, any> =>
+  isObject(val) && !!(val as any)[hcPropKey]
 
 /**
  * @description Build prop. It can better optimize prop types
@@ -46,12 +46,12 @@ export const buildProp = <
   Type = never,
   Value = never,
   Validator = never,
-  Default extends EpPropMergeType<Type, Value, Validator> = never,
+  Default extends HcPropMergeType<Type, Value, Validator> = never,
   Required extends boolean = false
 >(
-  prop: EpPropInput<Type, Value, Validator, Default, Required>,
+  prop: HcPropInput<Type, Value, Validator, Default, Required>,
   key?: string
-): EpPropFinalized<Type, Value, Validator, Default, Required> => {
+): HcPropFinalized<Type, Value, Validator, Default, Required> => {
   // filter native prop type and nested prop, e.g `null`, `undefined` (from `buildProps`)
   if (!isObject(prop) || isEpProp(prop)) return prop as any
 
@@ -92,7 +92,7 @@ export const buildProp = <
     type,
     required: !!required,
     validator: _validator,
-    [epPropKey]: true,
+    [hcPropKey]: true,
   }
   if (hasOwn(prop, 'default')) epProp.default = defaultValue
   return epProp
@@ -101,9 +101,9 @@ export const buildProp = <
 export const buildProps = <
   Props extends Record<
     string,
-    | { [epPropKey]: true }
+    | { [hcPropKey]: true }
     | NativePropType
-    | EpPropInput<any, any, any, any, any>
+    | HcPropInput<any, any, any, any, any>
   >
 >(
   props: Props
@@ -111,7 +111,7 @@ export const buildProps = <
   [K in keyof Props]: IfEpProp<
     Props[K],
     Props[K],
-    IfNativePropType<Props[K], Props[K], EpPropConvert<Props[K]>>
+    IfNativePropType<Props[K], Props[K], HcPropConvert<Props[K]>>
   >
 } =>
   fromPairs(

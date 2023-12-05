@@ -1,6 +1,6 @@
 import path from 'path'
 import { PKG_NAME } from '@hicor-ui/build-constants'
-import { epOutput } from '@hicor-ui/build-utils'
+import { hcOutput } from '@hicor-ui/build-utils'
 
 import type { ModuleFormat } from 'rollup'
 
@@ -30,7 +30,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
     ext: 'mjs',
     output: {
       name: 'es',
-      path: path.resolve(epOutput, 'es'),
+      path: path.resolve(hcOutput, 'es'),
     },
     bundle: {
       path: `${PKG_NAME}/es`,
@@ -42,7 +42,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
     ext: 'js',
     output: {
       name: 'lib',
-      path: path.resolve(epOutput, 'lib'),
+      path: path.resolve(hcOutput, 'lib'),
     },
     bundle: {
       path: `${PKG_NAME}/lib`,

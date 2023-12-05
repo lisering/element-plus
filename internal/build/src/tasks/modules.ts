@@ -6,7 +6,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
-import { epRoot, excludeFiles, pkgRoot } from '@hicor-ui/build-utils'
+import { excludeFiles, hcRoot, pkgRoot } from '@hicor-ui/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { HicorUiAlias } from '../plugins/hicor-ui-alias'
 import { buildConfigEntries, target } from '../build-info'
@@ -58,7 +58,7 @@ export const buildModules = async () => {
         dir: config.output.path,
         exports: module === 'cjs' ? 'named' : undefined,
         preserveModules: true,
-        preserveModulesRoot: epRoot,
+        preserveModulesRoot: hcRoot,
         sourcemap: true,
         entryFileNames: `[name].${config.ext}`,
       }

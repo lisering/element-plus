@@ -1,4 +1,4 @@
-import type { epPropKey } from './runtime'
+import type { hcPropKey } from './runtime'
 import type { ExtractPropTypes, PropType } from 'vue'
 import type { IfNever, UnknownToNever, WritableArray } from './util'
 
@@ -46,7 +46,7 @@ export type ResolvePropType<T> = IfNever<
  * EpPropMergeType<StringConstructor, '1', 1> =>  1 | "1" // ignores StringConstructor
  * EpPropMergeType<StringConstructor, never, number> =>  string | number
  */
-export type EpPropMergeType<Type, Value, Validator> =
+export type HcPropMergeType<Type, Value, Validator> =
   | IfNever<UnknownToNever<Value>, ResolvePropType<Type>, never>
   | UnknownToNever<Value>
   | UnknownToNever<Validator>
@@ -93,11 +93,11 @@ export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
     default?: undefined;
   }
  */
-export type EpPropInput<
+export type HcPropInput<
   Type,
   Value,
   Validator,
-  Default extends EpPropMergeType<Type, Value, Validator>,
+  Default extends HcPropMergeType<Type, Value, Validator>,
   Required extends boolean
 > = {
   type?: Type
@@ -123,31 +123,31 @@ export type EpPropInput<
     __epPropKey: true;
   }
  */
-export type EpProp<Type, Default, Required> = {
+export type HcProp<Type, Default, Required> = {
   readonly type: PropType<Type>
   readonly required: [Required] extends [true] ? true : false
   readonly validator: ((val: unknown) => boolean) | undefined
-  [epPropKey]: true
+  [hcPropKey]: true
 } & IfNever<Default, unknown, { readonly default: Default }>
 
 /**
  * Determine if it is `EpProp`
  */
-export type IfEpProp<T, Y, N> = T extends { [epPropKey]: true } ? Y : N
+export type IfEpProp<T, Y, N> = T extends { [hcPropKey]: true } ? Y : N
 
 /**
  * Converting input to output.
  *
  * 将输入转换为输出
  */
-export type EpPropConvert<Input> = Input extends EpPropInput<
+export type HcPropConvert<Input> = Input extends HcPropInput<
   infer Type,
   infer Value,
   infer Validator,
   any,
   infer Required
 >
-  ? EpPropFinalized<Type, Value, Validator, Input['default'], Required>
+  ? HcPropFinalized<Type, Value, Validator, Input['default'], Required>
   : never
 
 /**
@@ -155,8 +155,8 @@ export type EpPropConvert<Input> = Input extends EpPropInput<
  *
  * 最终转换 EpProp
  */
-export type EpPropFinalized<Type, Value, Validator, Default, Required> = EpProp<
-  EpPropMergeType<Type, Value, Validator>,
+export type HcPropFinalized<Type, Value, Validator, Default, Required> = HcProp<
+  HcPropMergeType<Type, Value, Validator>,
   UnknownToNever<Default>,
   Required
 >

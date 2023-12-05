@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises'
 import path from 'path'
 import consola from 'consola'
-import { epRoot } from '@hicor-ui/build-utils'
+import { hcRoot } from '@hicor-ui/build-utils'
 import pkg from '../packages/hicor-ui/package.json' // need to be checked
 
 function getVersion() {
@@ -18,7 +18,7 @@ const version = getVersion()
 async function main() {
   consola.info(`Version: ${version}`)
   await writeFile(
-    path.resolve(epRoot, 'version.ts'),
+    path.resolve(hcRoot, 'version.ts'),
     `export const version = '${version}'\n`
   )
 }

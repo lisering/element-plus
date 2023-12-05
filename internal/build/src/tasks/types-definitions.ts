@@ -8,8 +8,8 @@ import chalk from 'chalk'
 import { Project } from 'ts-morph'
 import {
   buildOutput,
-  epRoot,
   excludeFiles,
+  hcRoot,
   pkgRoot,
   projRoot,
 } from '@hicor-ui/build-utils'
@@ -41,7 +41,7 @@ export const generateTypesDefinitions = async () => {
   consola.success('Added source files')
 
   typeCheck(project)
-  consola.success('Type check passed!')
+  consola.success('类型检查通过!')
 
   await project.emit({
     emitOnlyDtsFiles: true,
@@ -49,11 +49,7 @@ export const generateTypesDefinitions = async () => {
 
   const tasks = sourceFiles.map(async (sourceFile) => {
     const relativePath = path.relative(pkgRoot, sourceFile.getFilePath())
-    consola.trace(
-      chalk.yellow(
-        `Generating definition for file: ${chalk.bold(relativePath)}`
-      )
-    )
+    consola.trace(chalk.yellow(`生成类型定义文件: ${chalk.bold(relativePath)}`))
 
     const emitOutput = sourceFile.getEmitOutput()
     const emitFiles = emitOutput.getOutputFiles()
@@ -97,9 +93,9 @@ async function addSourceFiles(project: Project) {
       onlyFiles: true,
     })
   )
-  const epPaths = excludeFiles(
+  const hcPaths = excludeFiles(
     await glob(globSourceFile, {
-      cwd: epRoot,
+      cwd: hcRoot,
       onlyFiles: true,
     })
   )
@@ -136,8 +132,8 @@ async function addSourceFiles(project: Project) {
         sourceFiles.push(sourceFile)
       }
     }),
-    ...epPaths.map(async (file) => {
-      const content = await readFile(path.resolve(epRoot, file), 'utf-8')
+    ...hcPaths.map(async (file) => {
+      const content = await readFile(path.resolve(hcRoot, file), 'utf-8')
       sourceFiles.push(
         project.createSourceFile(path.resolve(pkgRoot, file), content)
       )
@@ -151,7 +147,7 @@ function typeCheck(project: Project) {
   const diagnostics = project.getPreEmitDiagnostics()
   if (diagnostics.length > 0) {
     consola.error(project.formatDiagnosticsWithColorAndContext(diagnostics))
-    const err = new Error('Failed to generate dts.')
+    const err = new Error('生成dts文件失败.')
     consola.error(err)
     throw err
   }

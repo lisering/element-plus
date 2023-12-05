@@ -1,6 +1,6 @@
-# element-theme-chalk
+# hicor-theme-chalk
 
-> element component chalk theme.
+> hicor component chalk theme.
 
 ## Installation
 

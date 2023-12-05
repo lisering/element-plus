@@ -11,8 +11,8 @@ import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import {
   docPackage,
-  epPackage,
   getPackageDependencies,
+  hcPackage,
   projRoot,
 } from '@hicor-ui/build-utils'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
@@ -41,7 +41,7 @@ if (process.env.DOC_ENV !== 'production') {
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
-  const { dependencies: epDeps } = getPackageDependencies(epPackage)
+  const { dependencies: epDeps } = getPackageDependencies(hcPackage)
   const { dependencies: docsDeps } = getPackageDependencies(docPackage)
 
   const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
@@ -60,6 +60,7 @@ export default defineConfig(async ({ mode }) => {
   return {
     server: {
       host: true,
+      port: 8001,
       https: !!env.HTTPS,
       fs: {
         allow: [projRoot],

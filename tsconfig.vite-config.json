@@ -4,6 +4,11 @@
     "composite": true,
     "types": ["node"]
   },
-  "include": ["**/vite.config.*", "**/vitest.config.*", "**/vite.init.*"],
+  "include": [
+    "play/hicorResolver/index.ts",
+    "**/vite.config.*",
+    "**/vitest.config.*",
+    "**/vite.init.*"
+  ],
   "exclude": ["docs"]
 }
