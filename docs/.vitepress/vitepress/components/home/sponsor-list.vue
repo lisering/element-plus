@@ -3,10 +3,6 @@ import { computed } from 'vue'
 import { isDark } from '../../composables/dark'
 import { useLang } from '../../composables/lang'
 import sponsorLocale from '../../../i18n/component/sponsor.json'
-import { sendEvent } from '../../../config/analytics'
-const onItemClick = (item: any) => {
-  sendEvent('sp_click', item.name, 'index')
-}
 defineProps({
   sponsors: Array,
   sponsorType: String,
@@ -43,7 +39,6 @@ const getSponsorSlogan = (sponsor) => {
       :class="['sponsor flex px-4 rounded-md', sponsor.className]"
       :href="sponsor.url"
       target="_blank"
-      @click="onItemClick(sponsor)"
     >
       <img
         :class="sponsor.isDark && isDark ? 'filter invert' : ''"

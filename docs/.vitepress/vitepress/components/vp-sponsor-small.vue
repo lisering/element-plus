@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { isDark } from '../composables/dark'
 import { leftLogoSponsors } from '../../config/sponsors'
-import { sendEvent } from '../../config/analytics'
-const onItemClick = (item: any) => {
-  sendEvent('sp_click', item.name, 'left_small_img')
-}
 </script>
 
 <template>
@@ -19,7 +15,6 @@ const onItemClick = (item: any) => {
       :href="item.url"
       :title="`${item.name_cn || item.name} - ${item.slogan_cn || item.slogan}`"
       target="_blank"
-      @click="onItemClick(item)"
     >
       <img :src="item.img" :alt="item.name" />
     </a>
@@ -28,9 +23,11 @@ const onItemClick = (item: any) => {
 
 <style scoped lang="scss">
 @use '../styles/mixins' as *;
+
 div {
   display: flex;
   align-items: center;
+
   .sponsor-item {
     margin-right: 4px;
     height: 36px;
