@@ -1,5 +1,5 @@
 import { computed, nextTick, ref, shallowRef, watch } from 'vue'
-import { isObject } from '@element-plus/utils'
+import { isObject } from '@hicor-ui/utils'
 import {
   CURRENT_CHANGE,
   NODE_CLICK,
@@ -11,7 +11,7 @@ import { useCheck } from './useCheck'
 import { useFilter } from './useFilter'
 import type { SetupContext } from 'vue'
 import type { treeEmits } from '../virtual-tree'
-import type { CheckboxValueType } from '@element-plus/components/checkbox'
+import type { CheckboxValueType } from '@hicor-ui/components/checkbox'
 import type {
   Tree,
   TreeData,

@@ -46,9 +46,9 @@ import {
   reactive,
   toRef,
 } from 'vue'
-import ElTooltip from '@element-plus/components/tooltip'
-import { throwError } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import { throwError } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import useMenu from './use-menu'
 import { menuItemEmits, menuItemProps } from './menu-item'
 

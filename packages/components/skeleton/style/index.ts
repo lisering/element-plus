@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/skeleton.scss'
-import '@element-plus/components/skeleton-item/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/skeleton.scss'
+import '@hicor-ui/components/skeleton-item/style'

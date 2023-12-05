@@ -9,8 +9,8 @@ import {
   expect,
   it,
 } from 'vitest'
-import { usePopperContainer } from '@element-plus/hooks'
-import { TOOLTIP_INJECTION_KEY } from '@element-plus/components/tooltip'
+import { usePopperContainer } from '@hicor-ui/hooks'
+import { TOOLTIP_INJECTION_KEY } from '@hicor-ui/components/tooltip'
 import { genTooltipProvides } from '../test-helper/provides'
 import ElTooltipContent from '../src/content.vue'
 

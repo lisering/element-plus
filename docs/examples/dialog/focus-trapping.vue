@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElInput } from 'element-plus'
+import { ElInput } from 'hicor-ui'
 
 const dialogVisible = ref(false)
 const inputRef = ref<InstanceType<typeof ElInput>>()

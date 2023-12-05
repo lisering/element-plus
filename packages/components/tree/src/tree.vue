@@ -45,9 +45,9 @@ import {
   ref,
   watch,
 } from 'vue'
-import { iconPropType } from '@element-plus/utils'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { formItemContextKey } from '@element-plus/components/form'
+import { iconPropType } from '@hicor-ui/utils'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { formItemContextKey } from '@hicor-ui/components/form'
 import TreeStore from './model/tree-store'
 import { getNodeKey as getNodeKeyUtil, handleCurrentChange } from './model/util'
 import ElTreeNode from './tree-node.vue'
@@ -57,7 +57,7 @@ import { useKeydown } from './model/useKeydown'
 import type Node from './model/node'
 
 import type { ComponentInternalInstance, PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils'
+import type { Nullable } from '@hicor-ui/utils'
 import type {
   TreeComponentProps,
   TreeData,

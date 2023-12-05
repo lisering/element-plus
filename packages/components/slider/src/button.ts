@@ -1,6 +1,6 @@
 import { placements } from '@popperjs/core'
-import { buildProps, isNumber } from '@element-plus/utils'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { buildProps, isNumber } from '@hicor-ui/utils'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import type { ExtractPropTypes, Ref } from 'vue'
 import type Button from './button.vue'
 

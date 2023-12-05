@@ -1,4 +1,4 @@
-import { EVENT_CODE } from '@element-plus/constants'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import type { HTMLAttributes } from 'vue'
 
 type Orientation = HTMLAttributes['aria-orientation']

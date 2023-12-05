@@ -10,9 +10,8 @@
         <template v-for="(__, j) in 4" :key="i + '_' + j">
           <td
             v-if="i * 4 + j < 10"
-            :ref="
-              (el) =>
-                isSelectedCell(startYear + i * 4 + j) && (currentCellRef = el as HTMLElement)
+            :ref="(el) =>
+              isSelectedCell(startYear + i * 4 + j) && (currentCellRef = el as HTMLElement)
             "
             class="available"
             :class="getCellKls(startYear + i * 4 + j)"
@@ -33,9 +32,9 @@
 <script lang="ts" setup>
 import { computed, nextTick, ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { rangeArr } from '@element-plus/components/time-picker'
-import { castArray, hasClass } from '@element-plus/utils'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { rangeArr } from '@hicor-ui/components/time-picker'
+import { castArray, hasClass } from '@hicor-ui/utils'
 import { basicYearTableProps } from '../props/basic-year-table'
 
 const datesInYear = (year: number, lang: string) => {

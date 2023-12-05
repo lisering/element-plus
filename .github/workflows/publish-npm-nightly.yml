@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'element-plus' }}
+    if: ${{ github.repository_owner == 'hicor-ui' }}
 
     steps:
       - uses: actions/checkout@v3
@@ -52,7 +52,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    if: ${{ github.repository_owner == 'element-plus' }}
+    if: ${{ github.repository_owner == 'hicor-ui' }}
     steps:
       - uses: actions/checkout@v3
 

@@ -11,8 +11,8 @@ import {
   resolveDynamicComponent,
   unref,
 } from 'vue'
-import { hasOwn, isClient, isNumber, isString } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { hasOwn, isClient, isNumber, isString } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { useCache } from '../hooks/use-cache'
 import useWheel from '../hooks/use-wheel'
 import Scrollbar from '../components/scrollbar'

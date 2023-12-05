@@ -47,9 +47,9 @@
 <script lang="ts" setup>
 import { computed, inject, onBeforeUnmount, ref, unref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
-import { useNamespace, usePopperContainerId } from '@element-plus/hooks'
-import { composeEventHandlers } from '@element-plus/utils'
-import { ElPopperContent } from '@element-plus/components/popper'
+import { useNamespace, usePopperContainerId } from '@hicor-ui/hooks'
+import { composeEventHandlers } from '@hicor-ui/utils'
+import { ElPopperContent } from '@hicor-ui/components/popper'
 import { TOOLTIP_INJECTION_KEY } from './constants'
 import { useTooltipContentProps } from './content'
 

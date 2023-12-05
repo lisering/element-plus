@@ -5,7 +5,7 @@
 
 <script lang="ts" setup>
 import { h } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'hicor-ui'
 
 const open = () => {
   ElMessage('this is a message.')

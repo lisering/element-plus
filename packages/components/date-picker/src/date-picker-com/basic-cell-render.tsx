@@ -1,5 +1,5 @@
 import { defineComponent, inject } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { ROOT_PICKER_INJECTION_KEY } from '../constants'
 import { basicCellProps } from '../props/basic-cell'
 

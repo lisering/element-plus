@@ -12,8 +12,8 @@ import {
   FORWARD_REF_INJECTION_KEY,
   useForwardRefDirective,
   useNamespace,
-} from '@element-plus/hooks'
-import { debugWarn } from '@element-plus/utils'
+} from '@hicor-ui/hooks'
+import { debugWarn } from '@hicor-ui/utils'
 
 import type { Ref, VNode } from 'vue'
 

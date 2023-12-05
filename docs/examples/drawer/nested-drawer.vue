@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessageBox } from 'element-plus'
+import { ElMessageBox } from 'hicor-ui'
 
 const drawer = ref(false)
 const innerDrawer = ref(false)

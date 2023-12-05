@@ -51,14 +51,14 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import ElButton from '@element-plus/components/button'
-import ElIcon from '@element-plus/components/icon'
-import ElTooltip from '@element-plus/components/tooltip'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { addUnit } from '@element-plus/utils'
+import ElButton from '@hicor-ui/components/button'
+import ElIcon from '@hicor-ui/components/icon'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { addUnit } from '@hicor-ui/utils'
 import { popconfirmEmits, popconfirmProps } from './popconfirm'
 
-import type { TooltipInstance } from '@element-plus/components/tooltip'
+import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 
 defineOptions({
   name: 'ElPopconfirm',

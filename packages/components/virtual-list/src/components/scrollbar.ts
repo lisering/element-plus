@@ -10,10 +10,10 @@ import {
   watch,
   withModifiers,
 } from 'vue'
-import { BAR_MAP } from '@element-plus/components/scrollbar'
-import { cAF, rAF } from '@element-plus/utils'
+import { BAR_MAP } from '@hicor-ui/components/scrollbar'
+import { cAF, rAF } from '@hicor-ui/utils'
 
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { HORIZONTAL, SCROLLBAR_MIN_SIZE, ScrollbarDirKey } from '../defaults'
 import { virtualizedScrollbarProps } from '../props'
 import { renderThumbStyle } from '../utils'

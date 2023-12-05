@@ -62,7 +62,7 @@ function initialize(userOptions: any) {
   docsearch(
     Object.assign({}, userOptions, {
       container: '#docsearch',
-      indexName: 'element-plus',
+      indexName: 'hicor-ui',
       // searchParameters: Object.assign({}, userOptions.searchParameters, {
       //   // pass a custom lang facetFilter to allow multiple language search
       //   // https://github.com/algolia/docsearch-configs/pull/3942
@@ -151,6 +151,7 @@ function initialize(userOptions: any) {
 
 <style lang="scss">
 @use '../../styles/mixins' as *;
+
 .algolia-search-box {
   // display: flex;
   // align-items: center;
@@ -210,6 +211,7 @@ function initialize(userOptions: any) {
     --docsearch-hit-background: var(--bg-color-mute);
     --docsearch-hit-color: var(--text-color-lighter);
     --docsearch-hit-shadow: none;
+
     // --docsearch-searchbox-focus-background: var(--bg-color-mute);
     .DocSearch-Button {
       .DocSearch-Button-Key {

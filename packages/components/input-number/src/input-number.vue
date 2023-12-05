@@ -63,31 +63,31 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUpdated, reactive, ref, watch } from 'vue'
 import { isNil } from 'lodash-unified'
-import { ElInput } from '@element-plus/components/input'
-import { ElIcon } from '@element-plus/components/icon'
+import { ArrowDown, ArrowUp, Minus, Plus } from '@element-plus/icons-vue'
+import { ElInput } from '@hicor-ui/components/input'
+import { ElIcon } from '@hicor-ui/components/icon'
 import {
   useFormDisabled,
   useFormItem,
   useFormSize,
-} from '@element-plus/components/form'
-import { vRepeatClick } from '@element-plus/directives'
-import { useLocale, useNamespace } from '@element-plus/hooks'
+} from '@hicor-ui/components/form'
+import { vRepeatClick } from '@hicor-ui/directives'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import {
   debugWarn,
   isNumber,
   isString,
   isUndefined,
   throwError,
-} from '@element-plus/utils'
-import { ArrowDown, ArrowUp, Minus, Plus } from '@element-plus/icons-vue'
+} from '@hicor-ui/utils'
 import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
+} from '@hicor-ui/constants'
 import { inputNumberEmits, inputNumberProps } from './input-number'
 
-import type { InputInstance } from '@element-plus/components/input'
+import type { InputInstance } from '@hicor-ui/components/input'
 
 defineOptions({
   name: 'ElInputNumber',

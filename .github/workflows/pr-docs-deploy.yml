@@ -33,7 +33,7 @@ jobs:
 
       - name: Deploy Site
         run: |
-          export DEPLOY_DOMAIN=https://preview-${PULL_REQUEST_NUMBER}-element-plus.surge.sh
+          export DEPLOY_DOMAIN=https://preview-${PULL_REQUEST_NUMBER}-hicor-ui.surge.sh
           echo "Deploy to $DEPLOY_DOMAIN"
           npx surge --project ./ --domain $DEPLOY_DOMAIN --token $SURGE_TOKEN
         env:
@@ -46,7 +46,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995277-368b9a00-51d3-11eb-9f8f-67542f560613.png">](https://preview-${{ steps.pr.outputs.id }}-element-plus.surge.sh)
+            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995277-368b9a00-51d3-11eb-9f8f-67542f560613.png">](https://preview-${{ steps.pr.outputs.id }}-hicor-ui.surge.sh)
             <!-- ELEMENT_PLUS_PREVIEW -->
           body-include: '<!-- ELEMENT_PLUS_PREVIEW -->'
           number: ${{ steps.pr.outputs.id }}
@@ -57,7 +57,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            🧪 Playground Preview: https://element-plus.run/?pr=${{ steps.pr.outputs.id }}
+            🧪 Playground Preview: https://hicor-ui.run/?pr=${{ steps.pr.outputs.id }}
             Please comment the example via this playground if needed.
             <!-- ELEMENT_PLUS_PLAYGROUND -->
           body-include: '<!-- ELEMENT_PLUS_PLAYGROUND -->'
@@ -69,7 +69,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995139-004e1a80-51d3-11eb-99ba-57e4b04826b4.png">](https://preview-${{ steps.pr.outputs.id }}-element-plus.surge.sh)
+            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995139-004e1a80-51d3-11eb-99ba-57e4b04826b4.png">](https://preview-${{ steps.pr.outputs.id }}-hicor-ui.surge.sh)
             <!-- ELEMENT_PLUS_PREVIEW -->
           body-include: '<!-- ELEMENT_PLUS_PREVIEW -->'
           number: ${{ steps.pr.outputs.id }}
@@ -96,7 +96,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995139-004e1a80-51d3-11eb-99ba-57e4b04826b4.png">](https://preview-${{ steps.pr.outputs.id }}-element-plus.surge.sh)
+            [<img width="400" src="https://user-images.githubusercontent.com/10731096/103995139-004e1a80-51d3-11eb-99ba-57e4b04826b4.png">](https://preview-${{ steps.pr.outputs.id }}-hicor-ui.surge.sh)
             <!-- ELEMENT_PLUS_PREVIEW -->
           body-include: '<!-- ELEMENT_PLUS_PREVIEW -->'
           number: ${{ steps.pr.outputs.id }}

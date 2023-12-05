@@ -53,10 +53,10 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import ElIcon from '@element-plus/components/icon'
 import { CaretRight } from '@element-plus/icons-vue'
-import ElCheckbox from '@element-plus/components/checkbox'
-import { useNamespace } from '@element-plus/hooks'
+import ElIcon from '@hicor-ui/components/icon'
+import ElCheckbox from '@hicor-ui/components/checkbox'
+import { useNamespace } from '@hicor-ui/hooks'
 import ElNodeContent from './tree-node-content'
 import {
   NODE_CONTEXTMENU,
@@ -64,7 +64,7 @@ import {
   treeNodeEmits,
   treeNodeProps,
 } from './virtual-tree'
-import type { CheckboxValueType } from '@element-plus/components/checkbox'
+import type { CheckboxValueType } from '@hicor-ui/components/checkbox'
 
 defineOptions({
   name: 'ElTreeNode',

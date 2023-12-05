@@ -5,7 +5,7 @@ import {
   isElement,
   isString,
   isVNode,
-} from '@element-plus/utils'
+} from '@hicor-ui/utils'
 import NotificationConstructor from './notification.vue'
 import { notificationTypes } from './notification'
 

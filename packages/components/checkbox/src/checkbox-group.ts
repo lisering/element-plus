@@ -1,6 +1,6 @@
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { useSizeProp } from '@element-plus/hooks'
-import { buildProps, definePropType, isArray } from '@element-plus/utils'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { useSizeProp } from '@hicor-ui/hooks'
+import { buildProps, definePropType, isArray } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type checkboxGroup from './checkbox-group.vue'

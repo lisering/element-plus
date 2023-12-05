@@ -1,14 +1,14 @@
 import { markRaw, nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, test, vi } from 'vitest'
-import { debugWarn } from '@element-plus/utils'
 import { Checked, CircleClose, Hide, View } from '@element-plus/icons-vue'
-import { ElFormItem } from '@element-plus/components/form'
+import { debugWarn } from '@hicor-ui/utils'
+import { ElFormItem } from '@hicor-ui/components/form'
 import Switch from '../src/switch.vue'
 import type { VueWrapper } from '@vue/test-utils'
 import type { SwitchInstance } from '../src/switch'
 
-vi.mock('@element-plus/utils/error', () => ({
+vi.mock('@hicor-ui/utils/error', () => ({
   debugWarn: vi.fn(),
 }))
 

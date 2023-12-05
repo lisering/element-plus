@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessageBox } from 'element-plus'
+import { ElMessageBox } from 'hicor-ui'
 
 const open = () => {
   ElMessageBox.alert(

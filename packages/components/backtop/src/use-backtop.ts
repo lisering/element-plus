@@ -1,6 +1,6 @@
 import { onMounted, ref, shallowRef } from 'vue'
 import { useEventListener, useThrottleFn } from '@vueuse/core'
-import { throwError } from '@element-plus/utils'
+import { throwError } from '@hicor-ui/utils'
 import type { SetupContext } from 'vue'
 import type { BacktopEmits, BacktopProps } from './backtop'
 

@@ -1,9 +1,9 @@
 import { computed, inject, unref } from 'vue'
-import { buildProp } from '@element-plus/utils'
-import { componentSizes } from '@element-plus/constants'
+import { buildProp } from '@hicor-ui/utils'
+import { componentSizes } from '@hicor-ui/constants'
 
 import type { InjectionKey, Ref } from 'vue'
-import type { ComponentSize } from '@element-plus/constants'
+import type { ComponentSize } from '@hicor-ui/constants'
 
 export const useSizeProp = buildProp({
   type: String,

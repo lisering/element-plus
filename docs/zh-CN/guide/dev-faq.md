@@ -19,15 +19,15 @@ pnpm i
 ```shell
 # 获取构建结果
 pnpm build
-cd dist/element-plus
-# set cur element-plus to global `node_modules`
+cd dist/hicor-ui
+# set cur hicor-ui to global `node_modules`
 pnpm link --global
-# for esm we also need link element-plus for dist
-pnpm link --global element-plus
+# for esm we also need link hicor-ui for dist
+pnpm link --global hicor-ui
 
-# 进入你的项目, 链接到 `element-plus`
+# 进入你的项目, 链接到 `hicor-ui`
 cd your-project
-pnpm link --global element-plus
+pnpm link --global hicor-ui
 ```
 
 > 更多信息查看 [pnpm link](https://pnpm.io/cli/link)
@@ -38,4 +38,4 @@ pnpm link --global element-plus
 
 那将会在 vite 构建下的 css 文件开头生成警告信息 `@charset "UTF-8";`
 
-> 更多信息见 [#3219](https://github.com/element-plus/element-plus/issues/3219)
+> 更多信息见 [#3219](https://github.com/hicor-ui/hicor-ui/issues/3219)

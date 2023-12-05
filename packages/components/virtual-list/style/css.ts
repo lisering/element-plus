@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-virtual-list.css'
-import '@element-plus/components/scrollbar/style/css'
+import '@hicor-ui/components/base/style/css'
+import '@hicor-ui/theme-chalk/el-virtual-list.css'
+import '@hicor-ui/components/scrollbar/style/css'

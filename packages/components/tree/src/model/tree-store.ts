@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { hasOwn, isObject } from '@element-plus/utils'
+import { hasOwn, isObject } from '@hicor-ui/utils'
 import Node from './node'
 import { getNodeKey } from './util'
 

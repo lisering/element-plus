@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 import CheckTag from './src/check-tag.vue'
 
 export const ElCheckTag = withInstall(CheckTag)

@@ -1,6 +1,6 @@
 import { computed, getCurrentInstance, inject, ref } from 'vue'
-import { isArray, isUndefined } from '@element-plus/utils'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { isArray, isUndefined } from '@hicor-ui/utils'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import { checkboxGroupContextKey } from '../constants'
 
 import type { CheckboxProps } from '../checkbox'

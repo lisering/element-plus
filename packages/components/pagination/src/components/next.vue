@@ -16,8 +16,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useLocale } from '@element-plus/hooks'
-import { ElIcon } from '@element-plus/components/icon'
+import { useLocale } from '@hicor-ui/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
 import { paginationNextProps } from './next'
 
 defineOptions({

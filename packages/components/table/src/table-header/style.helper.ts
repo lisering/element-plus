@@ -1,5 +1,5 @@
 import { inject } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import {
   ensurePosition,
   getFixedColumnOffset,

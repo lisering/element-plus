@@ -26,7 +26,7 @@ const onVersionChange = (val) => {
 onMounted(async () => {
   try {
     const { data } = await axios.get<Release[]>(
-      'https://api.github.com/repos/element-plus/element-plus/releases'
+      'https://api.github.com/repos/hicor-ui/hicor-ui/releases'
     )
     releases.value = data
     currentRelease.value = data[0]
@@ -102,6 +102,7 @@ onMounted(async () => {
     margin-right: 2rem;
   }
 }
+
 .changelog-header {
   display: flex;
   align-items: flex-start;
@@ -111,6 +112,7 @@ onMounted(async () => {
     display: flex;
     flex: 1;
     flex-direction: column;
+
     p {
       margin: 0;
     }

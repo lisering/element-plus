@@ -109,9 +109,9 @@
 
 <script lang="ts" setup>
 import { computed, provide, reactive, toRefs } from 'vue'
-import ElInputNumber from '@element-plus/components/input-number'
-import { useFormItemInputId, useFormSize } from '@element-plus/components/form'
-import { useLocale, useNamespace } from '@element-plus/hooks'
+import ElInputNumber from '@hicor-ui/components/input-number'
+import { useFormItemInputId, useFormSize } from '@hicor-ui/components/form'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { sliderContextKey } from './constants'
 import { sliderEmits, sliderProps } from './slider'
 import SliderButton from './button.vue'

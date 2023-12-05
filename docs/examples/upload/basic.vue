@@ -20,18 +20,18 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'hicor-ui'
 
-import type { UploadProps, UploadUserFile } from 'element-plus'
+import type { UploadProps, UploadUserFile } from 'hicor-ui'
 
 const fileList = ref<UploadUserFile[]>([
   {
-    name: 'element-plus-logo.svg',
-    url: 'https://element-plus.org/images/element-plus-logo.svg',
+    name: 'hicor-ui-logo.svg',
+    url: 'https://hicor-ui.org/images/hicor-ui-logo.svg',
   },
   {
-    name: 'element-plus-logo2.svg',
-    url: 'https://element-plus.org/images/element-plus-logo.svg',
+    name: 'hicor-ui-logo2.svg',
+    url: 'https://hicor-ui.org/images/hicor-ui-logo.svg',
   },
 ])
 

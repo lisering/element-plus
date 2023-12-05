@@ -5,22 +5,22 @@ lang: zh-CN
 
 # 服务端渲染 (SSR)
 
-当使用 Element Plus 在 SSR 场景下开发时，您需要在 SSR 期间进行特殊处理，以避免水合错误。
+当使用 Hicor Ui 在 SSR 场景下开发时，您需要在 SSR 期间进行特殊处理，以避免水合错误。
 
 :::tip
 
-对于Nuxt 用户，我们提供的 [Nuxt 模块](https://github.com/element-plus/element-plus-nuxt) 已经包含了对这些问题的处理方案。 您只需要安装它就可以了。
+对于Nuxt 用户，我们提供的 [Nuxt 模块](https://github.com/hicor-ui/hicor-ui-nuxt) 已经包含了对这些问题的处理方案。 您只需要安装它就可以了。
 
 :::
 
 ## 提供一个ID
 
-提供的值用于生成 ElementPlus 中的唯一ID。 因为不同的 IDs 容易发生SSR中的水合率错误， 为了确保服务器端和客户端生成相同的ID， 我们需要将 `ID_injection_key` 注入到 Vue。
+提供的值用于生成 HicorUi 中的唯一ID。 因为不同的 IDs 容易发生SSR中的水合率错误， 为了确保服务器端和客户端生成相同的ID， 我们需要将 `ID_injection_key` 注入到 Vue。
 
 ```ts
 // src/main.js (irrelevant code omitted)
 import { createApp } from 'vue'
-import { ID_INJECTION_KEY } from 'element-plus'
+import { ID_INJECTION_KEY } from 'hicor-ui'
 import App from './App.vue'
 
 const app = createApp(App)
@@ -88,7 +88,7 @@ Teleport 可能会有一些 [SSR问题](https://github.com/vuejs/core/issues?q=i
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Element Plus</title>
+    <title>Hicor Ui</title>
     <!--preload-links-->
   </head>
   <body>

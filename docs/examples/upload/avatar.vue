@@ -7,16 +7,18 @@
     :before-upload="beforeAvatarUpload"
   >
     <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-    <el-icon v-else class="avatar-uploader-icon"><Plus /></el-icon>
+    <el-icon v-else class="avatar-uploader-icon">
+      <Plus />
+    </el-icon>
   </el-upload>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'hicor-ui'
 import { Plus } from '@element-plus/icons-vue'
 
-import type { UploadProps } from 'element-plus'
+import type { UploadProps } from 'hicor-ui'
 
 const imageUrl = ref('')
 

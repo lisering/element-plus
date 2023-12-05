@@ -1,5 +1,5 @@
-import { buildProps } from '@element-plus/utils'
-import { componentSizes } from '@element-plus/constants'
+import { buildProps } from '@hicor-ui/utils'
+import { componentSizes } from '@hicor-ui/constants'
 import type { ExtractPropTypes } from 'vue'
 import type Jumper from './jumper.vue'
 

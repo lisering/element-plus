@@ -15,7 +15,7 @@ import {
   getPackageDependencies,
   pkgRoot,
   projRoot,
-} from '@element-plus/build-utils'
+} from '@hicor-ui/build-utils'
 import type { Plugin } from 'vite'
 import './vite.init'
 
@@ -43,11 +43,11 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
-          find: /^element-plus(\/(es|lib))?$/,
+          find: /^hicor-ui(\/(es|lib))?$/,
           replacement: path.resolve(epRoot, 'index.ts'),
         },
         {
-          find: /^element-plus\/(es|lib)\/(.*)$/,
+          find: /^hicor-ui\/(es|lib)\/(.*)$/,
           replacement: `${pkgRoot}/$2`,
         },
       ],

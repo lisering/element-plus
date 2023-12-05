@@ -1,5 +1,5 @@
 import { defineComponent, h, inject } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { ROOT_TREE_INJECTION_KEY, treeNodeContentProps } from './virtual-tree'
 
 export default defineComponent({

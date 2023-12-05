@@ -378,7 +378,7 @@ table/table-layout
 
 #### 当使用 DOM 模板时，为什么列没有渲染？
 
-典型问题： [#5046](https://github.com/element-plus/element-plus/issues/5046) [#5862](https://github.com/element-plus/element-plus/issues/5862) [#6919](https://github.com/element-plus/element-plus/issues/6919)
+典型问题： [#5046](https://github.com/hicor-ui/hicor-ui/issues/5046) [#5862](https://github.com/hicor-ui/hicor-ui/issues/5862) [#6919](https://github.com/hicor-ui/hicor-ui/issues/6919)
 
 这是因为 HTML 定义只允许一些特定元素省略关闭标签，最常见的是 `<input>` 和 `<img>`。 对于任意其他元素，如果你省略了关闭标签，原生的 HTML 解析器会认为你从未关闭打开的标签。
 

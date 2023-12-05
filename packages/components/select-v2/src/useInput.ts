@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { ref } from 'vue'
 import { isFunction } from '@vue/shared'
-import { isKorean } from '@element-plus/utils'
+import { isKorean } from '@hicor-ui/utils'
 
 export function useInput(handleInput: (event: InputEvent) => void) {
   const isComposing = ref(false)

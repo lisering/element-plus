@@ -1,5 +1,5 @@
 import type { CSSProperties, ComputedRef, InjectionKey, Ref } from 'vue'
-import type { UseNamespaceReturn } from '@element-plus/hooks'
+import type { UseNamespaceReturn } from '@hicor-ui/hooks'
 
 export type DialogContext = {
   dialogRef: Ref<HTMLElement | undefined>

@@ -55,12 +55,12 @@
 
 <script lang="ts" setup>
 import { computed, h, reactive, ref, useSlots, watch } from 'vue'
-import { debugWarn, isEmpty, isUndefined } from '@element-plus/utils'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { ElButton } from '@element-plus/components/button'
-import { ElIcon } from '@element-plus/components/icon'
-import { useFormItem } from '@element-plus/components/form'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
+import { debugWarn, isEmpty, isUndefined } from '@hicor-ui/utils'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { ElButton } from '@hicor-ui/components/button'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useFormItem } from '@hicor-ui/components/form'
 import { transferEmits, transferProps } from './transfer'
 import {
   useCheckedChange,

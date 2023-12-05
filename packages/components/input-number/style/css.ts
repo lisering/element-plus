@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-input-number.css'
-import '@element-plus/components/input/style/css'
+import '@hicor-ui/components/base/style/css'
+import '@hicor-ui/theme-chalk/el-input-number.css'
+import '@hicor-ui/components/input/style/css'

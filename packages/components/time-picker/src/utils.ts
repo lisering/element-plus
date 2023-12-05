@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { isArray, isDate, isEmpty } from '@element-plus/utils'
+import { isArray, isDate, isEmpty } from '@hicor-ui/utils'
 
 import type { Dayjs } from 'dayjs'
 export type TimeList = [number | undefined, number, undefined | number]

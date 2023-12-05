@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'hicor-ui'
 
 const open = () => {
   ElMessageBox.confirm(

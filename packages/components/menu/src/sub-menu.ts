@@ -15,21 +15,16 @@ import {
   withDirectives,
 } from 'vue'
 import { useTimeoutFn } from '@vueuse/core'
-import ElCollapseTransition from '@element-plus/components/collapse-transition'
-import ElTooltip from '@element-plus/components/tooltip'
-import {
-  buildProps,
-  iconPropType,
-  isString,
-  throwError,
-} from '@element-plus/utils'
-import { useDeprecated, useNamespace } from '@element-plus/hooks'
 import { ArrowDown, ArrowRight } from '@element-plus/icons-vue'
-import { ElIcon } from '@element-plus/components/icon'
+import ElCollapseTransition from '@hicor-ui/components/collapse-transition'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import { buildProps, iconPropType, isString, throwError } from '@hicor-ui/utils'
+import { useDeprecated, useNamespace } from '@hicor-ui/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
 import useMenu from './use-menu'
 import { useMenuCssVar } from './use-menu-css-var'
 
-import type { Placement } from '@element-plus/components/popper'
+import type { Placement } from '@hicor-ui/components/popper'
 import type { ExtractPropTypes, VNodeArrayChildren } from 'vue'
 import type { MenuProvider, SubMenuProvider } from './types'
 
@@ -87,7 +82,7 @@ export default defineComponent({
         replacement: 'teleported',
         scope: COMPONENT_NAME,
         version: '2.3.0',
-        ref: 'https://element-plus.org/en-US/component/menu.html#submenu-attributes',
+        ref: 'https://hicor-ui.org/en-US/component/menu.html#submenu-attributes',
       },
       computed(() => props.popperAppendToBody !== undefined)
     )

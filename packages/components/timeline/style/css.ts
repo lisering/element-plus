@@ -1,2 +1,2 @@
-import '@element-plus/components/base/style/css'
-import '@element-plus/theme-chalk/el-timeline.css'
+import '@hicor-ui/components/base/style/css'
+import '@hicor-ui/theme-chalk/el-timeline.css'

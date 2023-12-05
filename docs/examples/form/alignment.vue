@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import type { FormProps } from 'element-plus'
+import type { FormProps } from 'hicor-ui'
 
 const labelPosition = ref<FormProps['labelPosition']>('right')
 

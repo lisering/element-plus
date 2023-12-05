@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { isRef, nextTick, ref } from 'vue'
-import { hasOwn, isClient } from '@element-plus/utils'
+import { hasOwn, isClient } from '@hicor-ui/utils'
 import { parseHeight } from './util'
 import type { Ref } from 'vue'
 

@@ -6,13 +6,13 @@ import {
   isNumber,
   isString,
   isValidComponentSize,
-} from '@element-plus/utils'
+} from '@hicor-ui/utils'
 import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
-import type { ComponentSize } from '@element-plus/constants'
+} from '@hicor-ui/constants'
+import type { ComponentSize } from '@hicor-ui/constants'
 import type Switch from './switch.vue'
 import type { ExtractPropTypes, PropType } from 'vue'
 

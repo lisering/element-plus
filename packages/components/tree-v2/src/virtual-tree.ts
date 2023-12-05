@@ -3,10 +3,10 @@ import {
   definePropType,
   iconPropType,
   mutable,
-} from '@element-plus/utils'
-import type { CheckboxValueType } from '@element-plus/components/checkbox'
+} from '@hicor-ui/utils'
+import type { CheckboxValueType } from '@hicor-ui/components/checkbox'
 import type { InjectionKey } from 'vue'
-import type { TreeNodeData } from '@element-plus/components/tree/src/tree.type'
+import type { TreeNodeData } from '@hicor-ui/components/tree/src/tree.type'
 import type {
   CheckedInfo,
   FilterMethod,

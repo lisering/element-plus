@@ -1,4 +1,4 @@
-import { buildProps } from '@element-plus/utils'
+import { buildProps } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type Popper from './popper.vue'

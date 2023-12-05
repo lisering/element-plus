@@ -14,17 +14,17 @@ import {
   useResizeObserver,
   useWindowFocus,
 } from '@vueuse/core'
+import { ArrowLeft, ArrowRight, Close } from '@element-plus/icons-vue'
 import {
   buildProps,
   capitalize,
   definePropType,
   mutable,
   throwError,
-} from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
-import { ElIcon } from '@element-plus/components/icon'
-import { ArrowLeft, ArrowRight, Close } from '@element-plus/icons-vue'
-import { useNamespace } from '@element-plus/hooks'
+} from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import TabBar from './tab-bar.vue'
 import { tabsRootContextKey } from './constants'
 

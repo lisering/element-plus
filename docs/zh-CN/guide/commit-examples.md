@@ -83,7 +83,7 @@ feat(components): [button] 我用按钮实现了某些功能
 [type](scope 域): [messages]
 ```
 
-关于**type** 和 **scope**属性允许的值可以在 [commitlint.config.js](https://github.com/element-plus/element-plus/blob/c2ee36a7fc72b17742d43ecdff4e2912c416141d/commitlint.config.js#L57) 文件内查看
+关于**type** 和 **scope**属性允许的值可以在 [commitlint.config.js](https://github.com/hicor-ui/hicor-ui/blob/c2ee36a7fc72b17742d43ecdff4e2912c416141d/commitlint.config.js#L57) 文件内查看
 
 ### 相关链接
 

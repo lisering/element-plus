@@ -1,4 +1,4 @@
-import { hasOwn } from '@element-plus/utils'
+import { hasOwn } from '@hicor-ui/utils'
 
 const hsv2hsl = function (hue: number, sat: number, val: number) {
   return [

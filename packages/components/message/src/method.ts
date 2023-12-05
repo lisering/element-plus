@@ -7,8 +7,8 @@ import {
   isNumber,
   isString,
   isVNode,
-} from '@element-plus/utils'
-import { messageConfig } from '@element-plus/components/config-provider'
+} from '@hicor-ui/utils'
+import { messageConfig } from '@hicor-ui/components/config-provider'
 import MessageConstructor from './message.vue'
 import { messageDefaults, messageTypes } from './message'
 import { instances } from './instance'

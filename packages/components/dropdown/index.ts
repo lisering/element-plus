@@ -1,4 +1,4 @@
-import { withInstall, withNoopInstall } from '@element-plus/utils'
+import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 
 import Dropdown from './src/dropdown.vue'
 import DropdownItem from './src/dropdown-item.vue'

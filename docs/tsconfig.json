@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "lib": ["WebWorker"],
     "paths": {
-      "element-plus": ["../packages/element-plus"],
+      "hicor-ui": ["../packages/hicor-ui"],
       "~/*": ["./.vitepress/vitepress/*"]
     },
     "types": ["../typings/components"],

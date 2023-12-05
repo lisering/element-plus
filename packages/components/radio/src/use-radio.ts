@@ -1,6 +1,6 @@
 import { computed, inject, ref } from 'vue'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { useFormDisabled, useFormSize } from '@element-plus/components/form'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { useFormDisabled, useFormSize } from '@hicor-ui/components/form'
 import { radioGroupKey } from './constants'
 
 import type { SetupContext } from 'vue'

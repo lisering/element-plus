@@ -12,7 +12,7 @@ import {
   excludeFiles,
   pkgRoot,
   projRoot,
-} from '@element-plus/build-utils'
+} from '@hicor-ui/build-utils'
 import { pathRewriter } from '../utils'
 import type { CompilerOptions, SourceFile } from 'ts-morph'
 
@@ -91,7 +91,7 @@ async function addSourceFiles(project: Project) {
 
   const globSourceFile = '**/*.{js?(x),ts?(x),vue}'
   const filePaths = excludeFiles(
-    await glob([globSourceFile, '!element-plus/**/*'], {
+    await glob([globSourceFile, '!hicor-ui/**/*'], {
       cwd: pkgRoot,
       absolute: true,
       onlyFiles: true,

@@ -2,16 +2,16 @@
 import { markRaw } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, test, vi } from 'vitest'
-import { rAF } from '@element-plus/test-utils/tick'
-import { triggerNativeCompositeClick } from '@element-plus/test-utils/composite-click'
 import { QuestionFilled as QuestionFilledIcon } from '@element-plus/icons-vue'
+import { rAF } from '@hicor-ui/test-utils/tick'
+import { triggerNativeCompositeClick } from '@hicor-ui/test-utils/composite-click'
 import MessageBox from '../src/messageBox'
 import { ElMessageBox } from '..'
 
 const selector = '.el-overlay'
 const QuestionFilled = markRaw(QuestionFilledIcon)
 
-vi.mock('@element-plus/utils/error', () => ({
+vi.mock('@hicor-ui/utils/error', () => ({
   debugWarn: vi.fn(),
 }))
 

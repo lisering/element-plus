@@ -19,8 +19,8 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance, inject, ref } from 'vue'
-import ElIcon from '@element-plus/components/icon'
-import { useNamespace } from '@element-plus/hooks'
+import ElIcon from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import { breadcrumbKey } from './constants'
 import { breadcrumbItemProps } from './breadcrumb-item'
 

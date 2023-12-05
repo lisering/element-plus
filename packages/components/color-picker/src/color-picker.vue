@@ -114,25 +114,21 @@ import {
   watch,
 } from 'vue'
 import { debounce } from 'lodash-unified'
-import { ElButton } from '@element-plus/components/button'
-import { ElIcon } from '@element-plus/components/icon'
-import { ClickOutside as vClickOutside } from '@element-plus/directives'
-import { ElTooltip } from '@element-plus/components/tooltip'
-import { ElInput } from '@element-plus/components/input'
+import { ArrowDown, Close } from '@element-plus/icons-vue'
+import { ElButton } from '@hicor-ui/components/button'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { ClickOutside as vClickOutside } from '@hicor-ui/directives'
+import { ElTooltip } from '@hicor-ui/components/tooltip'
+import { ElInput } from '@hicor-ui/components/input'
 import {
   useFormDisabled,
   useFormItem,
   useFormItemInputId,
   useFormSize,
-} from '@element-plus/components/form'
-import {
-  useFocusController,
-  useLocale,
-  useNamespace,
-} from '@element-plus/hooks'
-import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { debugWarn } from '@element-plus/utils'
-import { ArrowDown, Close } from '@element-plus/icons-vue'
+} from '@hicor-ui/components/form'
+import { useFocusController, useLocale, useNamespace } from '@hicor-ui/hooks'
+import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { debugWarn } from '@hicor-ui/utils'
 import AlphaSlider from './components/alpha-slider.vue'
 import HueSlider from './components/hue-slider.vue'
 import Predefine from './components/predefine.vue'
@@ -143,7 +139,7 @@ import {
   colorPickerEmits,
   colorPickerProps,
 } from './color-picker'
-import type { TooltipInstance } from '@element-plus/components/tooltip'
+import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 
 defineOptions({
   name: 'ElColorPicker',

@@ -1,4 +1,4 @@
-import { buildProps, iconPropType } from '@element-plus/utils'
+import { buildProps, iconPropType } from '@hicor-ui/utils'
 import type { ExtractPropTypes } from 'vue'
 
 export const breadcrumbProps = buildProps({

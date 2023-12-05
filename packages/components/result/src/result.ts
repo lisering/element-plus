@@ -1,10 +1,10 @@
-import { buildProps } from '@element-plus/utils'
 import {
   CircleCheckFilled,
   CircleCloseFilled,
   InfoFilled,
   WarningFilled,
 } from '@element-plus/icons-vue'
+import { buildProps } from '@hicor-ui/utils'
 import type { Component, ExtractPropTypes } from 'vue'
 import type Result from './result.vue'
 

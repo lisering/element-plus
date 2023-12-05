@@ -11,16 +11,10 @@
 <script lang="tsx" setup>
 import { ref } from 'vue'
 import dayjs from 'dayjs'
-import {
-  ElButton,
-  ElIcon,
-  ElTag,
-  ElTooltip,
-  TableV2FixedDir,
-} from 'element-plus'
+import { ElButton, ElIcon, ElTag, ElTooltip, TableV2FixedDir } from 'hicor-ui'
 import { Timer } from '@element-plus/icons-vue'
 
-import type { Column } from 'element-plus'
+import type { Column } from 'hicor-ui'
 
 let id = 0
 

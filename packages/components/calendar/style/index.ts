@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/calendar.scss'
-import '@element-plus/components/button/style'
-import '@element-plus/components/button-group/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/calendar.scss'
+import '@hicor-ui/components/button/style'
+import '@hicor-ui/components/button-group/style'

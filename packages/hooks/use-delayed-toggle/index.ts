@@ -1,5 +1,5 @@
 import { unref } from 'vue'
-import { buildProps, isNumber } from '@element-plus/utils'
+import { buildProps, isNumber } from '@hicor-ui/utils'
 import { useTimeout } from '../use-timeout'
 
 import type { ExtractPropTypes, ToRefs } from 'vue'

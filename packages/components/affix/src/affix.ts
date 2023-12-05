@@ -3,8 +3,8 @@ import {
   definePropType,
   isBoolean,
   isNumber,
-} from '@element-plus/utils'
-import { CHANGE_EVENT } from '@element-plus/constants'
+} from '@hicor-ui/utils'
+import { CHANGE_EVENT } from '@hicor-ui/constants'
 import type { ExtractPropTypes } from 'vue'
 import type { ZIndexProperty } from 'csstype'
 import type Affix from './affix.vue'

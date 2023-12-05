@@ -61,7 +61,7 @@ checkbox/limitation
 
 按钮样式的多选组合。
 
-:::demo 只需要把 `el-checkbox` 元素替换为 `el-checkbox-button` 元素即可。 此外，Element Plus 还提供了`size`属性。
+:::demo 只需要把 `el-checkbox` 元素替换为 `el-checkbox-button` 元素即可。 此外，Hicor Ui 还提供了`size`属性。
 
 checkbox/button-style
 

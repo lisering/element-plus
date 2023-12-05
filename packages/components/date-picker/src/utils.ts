@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { isArray } from '@element-plus/utils'
+import { isArray } from '@hicor-ui/utils'
 
 import type { Dayjs } from 'dayjs'
 import type { DateCell } from './date-picker.type'

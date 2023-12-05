@@ -5,8 +5,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
-import { addClass, hasClass, removeClass } from '@element-plus/utils'
+import { useNamespace } from '@hicor-ui/hooks'
+import { addClass, hasClass, removeClass } from '@hicor-ui/utils'
 
 import type { BaseTransitionProps, TransitionProps } from 'vue'
 

@@ -1,4 +1,4 @@
-import { buildProps, definePropType } from '@element-plus/utils'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 import { timePanelSharedProps } from './shared'
 
 import type { ExtractPropTypes } from 'vue'

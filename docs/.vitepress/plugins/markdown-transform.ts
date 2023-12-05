@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import glob from 'fast-glob'
-import { docRoot, docsDirName, projRoot } from '@element-plus/build-utils'
-import { REPO_BRANCH, REPO_PATH } from '@element-plus/build-constants'
+import { docRoot, docsDirName, projRoot } from '@hicor-ui/build-utils'
+import { REPO_BRANCH, REPO_PATH } from '@hicor-ui/build-constants'
 import { getLang, languages } from '../utils/lang'
 import footerLocale from '../i18n/component/footer.json'
 
@@ -14,7 +14,7 @@ let compPaths: string[]
 
 export function MarkdownTransform(): Plugin {
   return {
-    name: 'element-plus-md-transform',
+    name: 'hicor-ui-md-transform',
 
     enforce: 'pre',
 

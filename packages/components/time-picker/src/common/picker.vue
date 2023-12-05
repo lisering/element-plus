@@ -167,14 +167,14 @@ import {
 } from 'vue'
 import { isEqual } from 'lodash-unified'
 import { onClickOutside } from '@vueuse/core'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { useFormItem, useFormSize } from '@element-plus/components/form'
-import ElInput from '@element-plus/components/input'
-import ElIcon from '@element-plus/components/icon'
-import ElTooltip from '@element-plus/components/tooltip'
-import { debugWarn, isArray } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
 import { Calendar, Clock } from '@element-plus/icons-vue'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { useFormItem, useFormSize } from '@hicor-ui/components/form'
+import ElInput from '@hicor-ui/components/input'
+import ElIcon from '@hicor-ui/components/icon'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import { debugWarn, isArray } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import { formatter, parseDate, valueEquals } from '../utils'
 import { timePickerDefaultProps } from './props'
 
@@ -190,7 +190,7 @@ import type {
   TimePickerDefaultProps,
   UserInput,
 } from './props'
-import type { TooltipInstance } from '@element-plus/components/tooltip'
+import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 
 // Date object and string
 

@@ -1,4 +1,4 @@
-import { buildProps, definePropType } from '@element-plus/utils'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 import type { StyleValue } from 'vue'
 
 export const visualHiddenProps = buildProps({

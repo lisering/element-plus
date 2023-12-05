@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { DropdownInstance } from 'element-plus'
+import type { DropdownInstance } from 'hicor-ui'
 
 const dropdown1 = ref<DropdownInstance>()
 function handleVisible2(visible: any) {

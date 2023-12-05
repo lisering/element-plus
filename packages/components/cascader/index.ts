@@ -1,6 +1,6 @@
 import Cascader from './src/cascader.vue'
 import type { App } from 'vue'
-import type { SFCWithInstall } from '@element-plus/utils'
+import type { SFCWithInstall } from '@hicor-ui/utils'
 
 Cascader.install = (app: App): void => {
   app.component(Cascader.name, Cascader)

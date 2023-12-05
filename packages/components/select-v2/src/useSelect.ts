@@ -3,22 +3,22 @@ import { computed, nextTick, onMounted, reactive, ref, watch } from 'vue'
 import { isArray, isFunction, isObject } from '@vue/shared'
 import { get, isEqual, isNil, debounce as lodashDebounce } from 'lodash-unified'
 import { useResizeObserver } from '@vueuse/core'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { ArrowUp } from '@element-plus/icons-vue'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import {
   ValidateComponentsMap,
   debugWarn,
   escapeStringRegexp,
-} from '@element-plus/utils'
-import { useFormItem, useFormSize } from '@element-plus/components/form'
+} from '@hicor-ui/utils'
+import { useFormItem, useFormSize } from '@hicor-ui/components/form'
 
-import { ArrowUp } from '@element-plus/icons-vue'
 import { useAllowCreate } from './useAllowCreate'
 import { useInput } from './useInput'
 import { useProps } from './useProps'
 
 import type { CSSProperties } from 'vue'
-import type ElTooltip from '@element-plus/components/tooltip'
+import type ElTooltip from '@hicor-ui/components/tooltip'
 import type { Option, OptionType } from './select.types'
 import type { ISelectProps } from './token'
 

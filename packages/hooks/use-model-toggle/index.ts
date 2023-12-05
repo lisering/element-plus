@@ -1,12 +1,7 @@
 import { computed, getCurrentInstance, onMounted, watch } from 'vue'
 import { isFunction } from '@vue/shared'
-import {
-  buildProp,
-  definePropType,
-  isBoolean,
-  isClient,
-} from '@element-plus/utils'
-import type { ExtractPropType } from '@element-plus/utils'
+import { buildProp, definePropType, isBoolean, isClient } from '@hicor-ui/utils'
+import type { ExtractPropType } from '@hicor-ui/utils'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 
 import type { ComponentPublicInstance, ExtractPropTypes, Ref } from 'vue'

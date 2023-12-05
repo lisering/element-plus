@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ElNotification } from 'element-plus'
+import { ElNotification } from 'hicor-ui'
 
 const open1 = () => {
   ElNotification({

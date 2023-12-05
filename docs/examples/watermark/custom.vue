@@ -2,7 +2,7 @@
 import { reactive } from 'vue'
 
 const config = reactive({
-  content: 'Element Plus',
+  content: 'Hicor Ui',
   font: {
     fontSize: 16,
     color: 'rgba(0, 0, 0, 0.15)',
@@ -26,7 +26,7 @@ const config = reactive({
       :offset="config.offset"
     >
       <div class="demo">
-        <h1>Element Plus</h1>
+        <h1>Hicor Ui</h1>
         <h2>A Vue 3 based component library for designers and developers</h2>
         <img src="/images/hamburger.png" alt="示例图片" />
       </div>
@@ -80,13 +80,16 @@ const config = reactive({
 .wrapper {
   display: flex;
 }
+
 .watermark {
   display: flex;
   flex: auto;
 }
+
 .demo {
   flex: auto;
 }
+
 .form {
   width: 330px;
   margin-left: 20px;

@@ -1,9 +1,9 @@
 import { computed, getCurrentInstance, inject, nextTick, watch } from 'vue'
-import { useFormItem } from '@element-plus/components/form'
-import { debugWarn } from '@element-plus/utils'
+import { useFormItem } from '@hicor-ui/components/form'
+import { debugWarn } from '@hicor-ui/utils'
 import { checkboxGroupContextKey } from '../constants'
 
-import type { useFormItemInputId } from '@element-plus/components/form'
+import type { useFormItemInputId } from '@hicor-ui/components/form'
 import type { CheckboxProps } from '../checkbox'
 import type {
   CheckboxDisabled,
@@ -52,7 +52,7 @@ export const useCheckboxEvent = (
     if (isLimitExceeded.value) return
 
     if (!hasOwnLabel.value && !isDisabled.value && isLabeledByFormItem.value) {
-      // fix: https://github.com/element-plus/element-plus/issues/9981
+      // fix: https://github.com/hicor-ui/hicor-ui/issues/9981
       const eventTargets: EventTarget[] = e.composedPath()
       const hasLabel = eventTargets.some(
         (item) => (item as HTMLElement).tagName === 'LABEL'

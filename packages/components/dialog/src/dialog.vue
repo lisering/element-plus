@@ -76,9 +76,9 @@
 
 <script lang="ts" setup>
 import { computed, provide, ref, useSlots } from 'vue'
-import { ElOverlay } from '@element-plus/components/overlay'
-import { useDeprecated, useNamespace, useSameTarget } from '@element-plus/hooks'
-import ElFocusTrap from '@element-plus/components/focus-trap'
+import { ElOverlay } from '@hicor-ui/components/overlay'
+import { useDeprecated, useNamespace, useSameTarget } from '@hicor-ui/hooks'
+import ElFocusTrap from '@hicor-ui/components/focus-trap'
 import ElDialogContent from './dialog-content.vue'
 import { dialogInjectionKey } from './constants'
 import { dialogEmits, dialogProps } from './dialog'
@@ -99,7 +99,7 @@ useDeprecated(
     from: 'the title slot',
     replacement: 'the header slot',
     version: '3.0.0',
-    ref: 'https://element-plus.org/en-US/component/dialog.html#slots',
+    ref: 'https://hicor-ui.org/en-US/component/dialog.html#slots',
   },
   computed(() => !!slots.title)
 )
@@ -110,7 +110,7 @@ useDeprecated(
     from: 'custom-class',
     replacement: 'class',
     version: '2.3.0',
-    ref: 'https://element-plus.org/en-US/component/dialog.html#attributes',
+    ref: 'https://hicor-ui.org/en-US/component/dialog.html#attributes',
     type: 'Attribute',
   },
   computed(() => !!props.customClass)

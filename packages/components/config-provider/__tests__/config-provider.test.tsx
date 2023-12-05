@@ -1,11 +1,11 @@
 import { defineComponent, nextTick, reactive, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { useLocale } from '@element-plus/hooks'
-import Chinese from '@element-plus/locale/lang/zh-cn'
-import English from '@element-plus/locale/lang/en'
-import { ElButton, ElMessage } from '@element-plus/components'
-import { rAF } from '@element-plus/test-utils/tick'
+import { useLocale } from '@hicor-ui/hooks'
+import Chinese from '@hicor-ui/locale/lang/zh-cn'
+import English from '@hicor-ui/locale/lang/en'
+import { ElButton, ElMessage } from '@hicor-ui/components'
+import { rAF } from '@hicor-ui/test-utils/tick'
 import {
   useGlobalComponentSettings,
   useGlobalConfig,
@@ -14,8 +14,8 @@ import ConfigProvider from '../src/config-provider'
 
 import type { PropType } from 'vue'
 import type { VueWrapper } from '@vue/test-utils'
-import type { Language } from '@element-plus/locale'
-import type { ComponentSize } from '@element-plus/constants'
+import type { Language } from '@hicor-ui/locale'
+import type { ComponentSize } from '@hicor-ui/constants'
 import type { ConfigProviderProps } from '../src/config-provider-props'
 
 const TestComp = defineComponent({

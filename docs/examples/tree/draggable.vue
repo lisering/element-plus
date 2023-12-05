@@ -16,12 +16,12 @@
 </template>
 
 <script lang="ts" setup>
-import type Node from 'element-plus/es/components/tree/src/model/node'
-import type { DragEvents } from 'element-plus/es/components/tree/src/model/useDragNode'
+import type Node from 'hicor-ui/es/components/tree/src/model/node'
+import type { DragEvents } from 'hicor-ui/es/components/tree/src/model/useDragNode'
 import type {
   AllowDropType,
   NodeDropType,
-} from 'element-plus/es/components/tree/src/tree.type'
+} from 'hicor-ui/es/components/tree/src/tree.type'
 
 const handleDragStart = (node: Node, ev: DragEvents) => {
   console.log('drag start', node)

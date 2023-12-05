@@ -2,7 +2,7 @@ import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, test, vi } from 'vitest'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
-import { ElFormItem } from '@element-plus/components/form'
+import { ElFormItem } from '@hicor-ui/components/form'
 import InputNumber from '../src/input-number.vue'
 
 const mouseup = new Event('mouseup')

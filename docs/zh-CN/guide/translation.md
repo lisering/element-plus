@@ -7,7 +7,7 @@ lang: zh-CN
 
 ## 文档
 
-在本章中，我们将讨论如何帮助翻译 Element Plus 开发文档。
+在本章中，我们将讨论如何帮助翻译 Hicor Ui 开发文档。
 
 ### 背景
 
@@ -23,7 +23,7 @@ lang: zh-CN
 ### 我怎么才能帮忙贡献翻译的内容？
 
 1. 在 [Crowdin](https://crowdin.com) 上创建一个账号，推荐使用你的 GitHub 账号第三方登录。
-2. 进入 [Element Plus](https://crowdin.com/project/element-plus) 项目
+2. 进入 [Hicor Ui](https://crowdin.com/project/hicor-ui) 项目
 3. 选择你想要贡献翻译的语言；
 4. 选择你想要贡献翻译的具体文件；
 5. 开始翻译。
@@ -32,4 +32,4 @@ lang: zh-CN
 
 ### 我怎么样能帮助翻译审核？
 
-你可以通过在 Crowdin [发起 issue](https://crowdin.com/project/element-plus/discussions) 的方式通知我们，issue 内请告知你希望成为哪个语言的校对官。
+你可以通过在 Crowdin [发起 issue](https://crowdin.com/project/hicor-ui/discussions) 的方式通知我们，issue 内请告知你希望成为哪个语言的校对官。

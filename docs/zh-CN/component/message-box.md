@@ -134,7 +134,7 @@ message-box/draggable
 
 ```ts
 import { getCurrentInstance } from 'vue'
-import { ElMessageBox } from 'element-plus'
+import { ElMessageBox } from 'hicor-ui'
 
 // 在你的 setup 方法中
 const { appContext } = getCurrentInstance()!
@@ -149,7 +149,7 @@ ElMessageBox.alert('Hello world!', 'Title', {}, appContext)
 如果您需要按需引入 `MessageBox`：
 
 ```ts
-import { ElMessageBox } from 'element-plus'
+import { ElMessageBox } from 'hicor-ui'
 ```
 
 那么对应于上述四个全局方法的调用方法依次为：`ElMessageBox`、`ElMessageBox.alert`、`ElMessageBox.confirm` 和 `ElMessageBox.prompt`。 参数同上所述。

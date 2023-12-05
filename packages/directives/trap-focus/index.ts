@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
-import { obtainAllFocusableElements } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
+import { obtainAllFocusableElements } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import type { ObjectDirective } from 'vue'
 
 export const FOCUSABLE_CHILDREN = '_trap-focus-children'

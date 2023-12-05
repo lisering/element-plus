@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 
 import Alert from './src/alert.vue'
 

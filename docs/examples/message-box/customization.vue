@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { h } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'hicor-ui'
 const open = () => {
   ElMessageBox({
     title: 'Message',

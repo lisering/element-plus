@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { TableColumnCtx } from 'element-plus'
+import type { TableColumnCtx } from 'hicor-ui'
 
 interface User {
   id: string

@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { vpRoot } from '@element-plus/build-utils'
+import { vpRoot } from '@hicor-ui/build-utils'
 import { languages } from '../utils/lang'
 
 import type { HeadConfig } from 'vitepress'
@@ -10,7 +10,7 @@ export const head: HeadConfig[] = [
     'link',
     {
       rel: 'icon',
-      href: '/images/element-plus-logo-small.svg',
+      href: '/images/hicor-ui-logo-small.svg',
       type: 'image/svg+xm',
     },
   ],

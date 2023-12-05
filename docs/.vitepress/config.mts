@@ -1,6 +1,6 @@
 import consola from 'consola'
-import { REPO_BRANCH, REPO_PATH } from '@element-plus/build-constants'
-import { docsDirName } from '@element-plus/build-utils'
+import { REPO_BRANCH, REPO_PATH } from '@hicor-ui/build-constants'
+import { docsDirName } from '@hicor-ui/build-utils'
 import { languages } from './utils/lang'
 import { features, head, mdPlugin, nav, sidebars } from './config'
 import type { UserConfig } from 'vitepress'
@@ -42,7 +42,7 @@ languages.forEach((lang) => {
 })
 
 export const config: UserConfig = {
-  title: 'Element Plus',
+  title: 'Hicor Ui',
   description: 'A Vue 3 based component library for designers and developers',
   lastUpdated: true,
   head,
@@ -55,8 +55,8 @@ export const config: UserConfig = {
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
 
-    logo: '/images/element-plus-logo.svg',
-    logoSmall: '/images/element-plus-logo-small.svg',
+    logo: '/images/hicor-ui-logo.svg',
+    logoSmall: '/images/hicor-ui-logo-small.svg',
     sidebars,
     nav,
     agolia: {

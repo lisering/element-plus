@@ -2,8 +2,8 @@ import { defineComponent, nextTick, reactive } from 'vue'
 import { mount } from '@vue/test-utils'
 import { NOOP } from '@vue/shared'
 import { beforeEach, describe, expect, it, test, vi } from 'vitest'
-import { usePopperContainerId } from '@element-plus/hooks'
-import { ElFormItem as FormItem } from '@element-plus/components/form'
+import { usePopperContainerId } from '@hicor-ui/hooks'
+import { ElFormItem as FormItem } from '@hicor-ui/components/form'
 import Autocomplete from '../src/autocomplete.vue'
 
 vi.unmock('lodash')

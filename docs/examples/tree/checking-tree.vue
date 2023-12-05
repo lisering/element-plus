@@ -20,8 +20,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTree } from 'element-plus'
-import type Node from 'element-plus/es/components/tree/src/model/node'
+import { ElTree } from 'hicor-ui'
+import type Node from 'hicor-ui/es/components/tree/src/model/node'
 
 interface Tree {
   id: number

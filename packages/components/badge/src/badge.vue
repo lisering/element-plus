@@ -18,8 +18,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
-import { isNumber } from '@element-plus/utils'
+import { useNamespace } from '@hicor-ui/hooks'
+import { isNumber } from '@hicor-ui/utils'
 import { badgeProps } from './badge'
 
 defineOptions({

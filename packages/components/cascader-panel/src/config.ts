@@ -1,6 +1,6 @@
 import { computed } from 'vue'
 import { NOOP } from '@vue/shared'
-import { buildProps, definePropType } from '@element-plus/utils'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 import type {
   CascaderConfig,
   CascaderOption,

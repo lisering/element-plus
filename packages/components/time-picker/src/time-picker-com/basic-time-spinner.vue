@@ -57,10 +57,10 @@
             v-for="(time, key) in arrowControlTimeList[item]"
             :key="key"
             :class="[
-              ns.be('spinner', 'item'),
-              ns.is('active', time === timePartials[item]),
-              ns.is('disabled', timeList[item][time!]),
-            ]"
+            ns.be('spinner', 'item'),
+            ns.is('active', time === timePartials[item]),
+            ns.is('disabled', timeList[item][time!]),
+          ]"
           >
             <template v-if="typeof time === 'number'">
               <template v-if="item === 'hours'">
@@ -80,19 +80,19 @@
 <script lang="ts" setup>
 import { computed, nextTick, onMounted, ref, unref, watch } from 'vue'
 import { debounce } from 'lodash-unified'
-import { vRepeatClick } from '@element-plus/directives'
-import ElScrollbar from '@element-plus/components/scrollbar'
-import ElIcon from '@element-plus/components/icon'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
-import { useNamespace } from '@element-plus/hooks'
-import { getStyle } from '@element-plus/utils'
+import { vRepeatClick } from '@hicor-ui/directives'
+import ElScrollbar from '@hicor-ui/components/scrollbar'
+import ElIcon from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
+import { getStyle } from '@hicor-ui/utils'
 import { timeUnits } from '../constants'
 import { buildTimeList } from '../utils'
 import { basicTimeSpinnerProps } from '../props/basic-time-spinner'
 import { getTimeLists } from '../composables/use-time-picker'
 
 import type { Ref } from 'vue'
-import type { ScrollbarInstance } from '@element-plus/components/scrollbar'
+import type { ScrollbarInstance } from '@hicor-ui/components/scrollbar'
 import type { TimeUnit } from '../constants'
 import type { TimeList } from '../utils'
 

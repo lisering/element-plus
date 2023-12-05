@@ -45,8 +45,8 @@ jobs:
       - name: Generate common locale
         run: pnpm docs:gen-locale
 
-      - name: Install latest Element Plus
-        run: cd docs && pnpm i element-plus@latest
+      - name: Install latest Hicor Ui
+        run: cd docs && pnpm i hicor-ui@latest
 
       - name: Build Metadata
         run: cd internal/metadata && pnpm build
@@ -66,7 +66,7 @@ jobs:
           branch: gh-pages
           folder: docs/.vitepress/dist
           git-config-name: ElementPlusBot
-          git-config-email: hello@element-plus.org
+          git-config-email: hello@hicor-ui.org
           commit-message: website deploy
 
       - name: Deploy to vercel
@@ -75,9 +75,9 @@ jobs:
           token: ${{ secrets.EP_BOT_TOKEN }}
           branch: main
           folder: docs/.vitepress/dist
-          repository-name: element-plus/vercel-publish
+          repository-name: hicor-ui/vercel-publish
           git-config-name: ElementPlusBot
-          git-config-email: hello@element-plus.org
+          git-config-email: hello@hicor-ui.org
 
       - name: Sync
         env:

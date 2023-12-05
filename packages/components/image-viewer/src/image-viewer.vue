@@ -11,16 +11,22 @@
 
         <!-- CLOSE -->
         <span :class="[ns.e('btn'), ns.e('close')]" @click="hide">
-          <el-icon><Close /></el-icon>
+          <el-icon>
+            <Close />
+          </el-icon>
         </span>
 
         <!-- ARROW -->
         <template v-if="!isSingle">
           <span :class="arrowPrevKls" @click="prev">
-            <el-icon><ArrowLeft /></el-icon>
+            <el-icon>
+              <ArrowLeft />
+            </el-icon>
           </span>
           <span :class="arrowNextKls" @click="next">
-            <el-icon><ArrowRight /></el-icon>
+            <el-icon>
+              <ArrowRight />
+            </el-icon>
           </span>
         </template>
         <!-- ACTIONS -->
@@ -79,10 +85,6 @@ import {
 } from 'vue'
 import { useEventListener } from '@vueuse/core'
 import { throttle } from 'lodash-unified'
-import { useLocale, useNamespace, useZIndex } from '@element-plus/hooks'
-import { EVENT_CODE } from '@element-plus/constants'
-import { isNumber, keysOf } from '@element-plus/utils'
-import ElIcon from '@element-plus/components/icon'
 import {
   ArrowLeft,
   ArrowRight,
@@ -94,6 +96,10 @@ import {
   ZoomIn,
   ZoomOut,
 } from '@element-plus/icons-vue'
+import { useLocale, useNamespace, useZIndex } from '@hicor-ui/hooks'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { isNumber, keysOf } from '@hicor-ui/utils'
+import ElIcon from '@hicor-ui/components/icon'
 import { imageViewerEmits, imageViewerProps } from './image-viewer'
 
 import type { CSSProperties } from 'vue'

@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 
 import Rate from './src/rate.vue'
 

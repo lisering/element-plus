@@ -1,13 +1,6 @@
 <template>
-  <el-upload
-    class="upload-demo"
-    action="https://jsonplaceholder.typicode.com/posts/"
-    :on-preview="handlePreview"
-    :on-remove="handleRemove"
-    multiple
-    :limit="3"
-    :file-list="fileList"
-  >
+  <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
+    :on-remove="handleRemove" multiple :limit="3" :file-list="fileList">
     <el-button type="primary">Click to upload</el-button>
     <template #tip>
       <div class="el-upload__tip">
@@ -19,7 +12,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import type { UploadUserFile, UploadFile } from 'element-plus'
+import type { UploadUserFile, UploadFile } from 'hicor-ui'
 
 const fileList = ref<UploadUserFile[]>([
   {

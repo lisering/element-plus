@@ -1,17 +1,17 @@
 // @ts-nocheck
-import { buildProps, definePropType, iconPropType } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
-import { createCollectionWithScope } from '@element-plus/components/collection'
+import { buildProps, definePropType, iconPropType } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { createCollectionWithScope } from '@hicor-ui/components/collection'
 import {
   useTooltipContentProps,
   useTooltipTriggerProps,
-} from '@element-plus/components/tooltip'
+} from '@hicor-ui/components/tooltip'
 
 import type { Options } from '@popperjs/core'
-import type { ButtonProps, ButtonType } from '@element-plus/components/button'
-import type { Placement } from '@element-plus/components/popper'
+import type { ButtonProps, ButtonType } from '@hicor-ui/components/button'
+import type { Placement } from '@hicor-ui/components/popper'
 import type { ComponentInternalInstance, ComputedRef } from 'vue'
-import type { Nullable } from '@element-plus/utils'
+import type { Nullable } from '@hicor-ui/utils'
 
 export interface IElDropdownInstance {
   instance?: ComponentInternalInstance

@@ -53,7 +53,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { ElDrawer, ElMessageBox } from 'element-plus'
+import { ElDrawer, ElMessageBox } from 'hicor-ui'
 
 const formLabelWidth = '80px'
 let timer

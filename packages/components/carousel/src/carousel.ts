@@ -1,4 +1,4 @@
-import { buildProps, isNumber } from '@element-plus/utils'
+import { buildProps, isNumber } from '@hicor-ui/utils'
 import type { ExtractPropTypes } from 'vue'
 
 export const carouselProps = buildProps({

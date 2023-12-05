@@ -43,8 +43,8 @@ import {
   watch,
 } from 'vue'
 import { useEventListener, useResizeObserver } from '@vueuse/core'
-import { addUnit, debugWarn, isNumber, isObject } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { addUnit, debugWarn, isNumber, isObject } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { GAP } from './util'
 import Bar from './bar.vue'
 import { scrollbarContextKey } from './constants'

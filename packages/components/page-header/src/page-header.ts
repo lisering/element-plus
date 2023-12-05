@@ -1,5 +1,5 @@
-import { buildProps, iconPropType } from '@element-plus/utils'
 import { Back } from '@element-plus/icons-vue'
+import { buildProps, iconPropType } from '@hicor-ui/utils'
 import type { ExtractPropTypes } from 'vue'
 import type PageHeader from './page-header.vue'
 

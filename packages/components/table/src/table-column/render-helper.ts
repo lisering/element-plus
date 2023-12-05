@@ -8,8 +8,8 @@ import {
   unref,
   watchEffect,
 } from 'vue'
-import { debugWarn } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { debugWarn } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import {
   cellForced,
   defaultRenderCell,

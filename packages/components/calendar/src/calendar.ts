@@ -1,10 +1,5 @@
-import {
-  buildProps,
-  definePropType,
-  isArray,
-  isDate,
-} from '@element-plus/utils'
-import { INPUT_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { buildProps, definePropType, isArray, isDate } from '@hicor-ui/utils'
+import { INPUT_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import type { ExtractPropTypes } from 'vue'
 
 export type CalendarDateType =

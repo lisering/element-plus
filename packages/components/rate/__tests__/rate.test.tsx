@@ -1,7 +1,7 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ElFormItem as FormItem } from '@element-plus/components/form'
+import { ElFormItem as FormItem } from '@hicor-ui/components/form'
 import Rate from '../src/rate.vue'
 
 import type { RateInstance } from '../src/rate'

@@ -9,7 +9,7 @@ import {
   isString,
   isUndefined,
   isVNode,
-} from '@element-plus/utils'
+} from '@hicor-ui/utils'
 import MessageBoxConstructor from './index.vue'
 
 import type { AppContext, ComponentPublicInstance, VNode } from 'vue'

@@ -1,8 +1,8 @@
 {
-  "name": "@element-plus/build",
+  "name": "@hicor-ui/build",
   "version": "0.0.1",
   "private": true,
-  "description": "Build Toolchain for Element Plus",
+  "description": "Build Toolchain for Hicor Ui",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,7 @@
     "vue": "^3.2.25"
   },
   "dependencies": {
-    "@element-plus/build-constants": "^0.0.1",
+    "@hicor-ui/build-constants": "^0.0.1",
     "@pnpm/find-workspace-packages": "^4.0.16",
     "@pnpm/logger": "^4.0.0",
     "@rollup/plugin-commonjs": "^22.0.1",

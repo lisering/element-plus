@@ -40,8 +40,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ElIcon } from '@element-plus/components/icon'
-import { useNamespace } from '@element-plus/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import { timelineItemProps } from './timeline-item'
 
 defineOptions({

@@ -3,10 +3,10 @@ import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
-import { useFormItem } from '@element-plus/components/form'
+} from '@hicor-ui/constants'
+import { useFormItem } from '@hicor-ui/components/form'
 import type { CSSProperties, Ref, SetupContext } from 'vue'
-import type { Arrayable } from '@element-plus/utils'
+import type { Arrayable } from '@hicor-ui/utils'
 import type { SliderEmits, SliderInitData, SliderProps } from '../slider'
 import type { ButtonRefs, SliderButtonInstance } from '../button'
 

@@ -2,8 +2,8 @@ import { computed, defineComponent, inject, ref, unref } from 'vue'
 import {
   DynamicSizeGrid,
   FixedSizeGrid,
-} from '@element-plus/components/virtual-list'
-import { isNumber, isObject } from '@element-plus/utils'
+} from '@hicor-ui/components/virtual-list'
+import { isNumber, isObject } from '@hicor-ui/utils'
 import { Header } from './components'
 import { TableV2InjectionKey } from './tokens'
 import { tableV2GridProps } from './grid'
@@ -18,7 +18,7 @@ import type {
   GridScrollOptions,
   ResetAfterIndex,
   Alignment as ScrollStrategy,
-} from '@element-plus/components/virtual-list'
+} from '@hicor-ui/components/virtual-list'
 import type { TableV2HeaderInstance } from './components'
 import type { TableV2GridProps } from './grid'
 

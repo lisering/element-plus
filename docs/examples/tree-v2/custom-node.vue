@@ -1,9 +1,7 @@
 <template>
   <el-tree-v2 :data="data" :props="props" :height="208">
     <template #default="{ node }">
-      <span class="prefix" :class="{ 'is-leaf': node.isLeaf }"
-        >[ElementPlus]</span
-      >
+      <span class="prefix" :class="{ 'is-leaf': node.isLeaf }">[HicorUi]</span>
       <span>{{ node.label }}</span>
     </template>
   </el-tree-v2>
@@ -56,6 +54,7 @@ const data = createData(4, 30, 40)
   color: var(--el-color-primary);
   margin-right: 10px;
 }
+
 .prefix.is-leaf {
   color: var(--el-color-success);
 }

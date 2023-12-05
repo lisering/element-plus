@@ -31,7 +31,7 @@ dialog/basic-usage
 
 ## 自定义内容
 
-对话框的内容可以是任何东西，甚至是一个表格或表单。 此示例显示如何在 Dialog 中使用 Element Plus 的表格和表单。
+对话框的内容可以是任何东西，甚至是一个表格或表单。 此示例显示如何在 Dialog 中使用 Hicor Ui 的表格和表单。
 
 :::demo
 
@@ -178,12 +178,12 @@ dialog/draggable-dialog
 
 #### 在 SFC 文件中使用对话框，scope 样式不会生效。
 
-典型议题：[#10515](https://github.com/element-plus/element-plus/issues/10515)
+典型议题：[#10515](https://github.com/hicor-ui/hicor-ui/issues/10515)
 
 PS：既然对话框是使用 `Teleport` 渲染的，建议在全局范围写入根节点的样式。
 
 #### 当对话框被显示及隐藏时，页面元素会来回移动（抖动）。
 
-典型议题：[#10481](https://github.com/element-plus/element-plus/issues/10481)
+典型议题：[#10481](https://github.com/hicor-ui/hicor-ui/issues/10481)
 
 PS：建议将滚动区域放置在一个挂载的 vue 节点，如 `<div id="app" />` 下，并对 body 使用 `overflow: hidden` 样式。

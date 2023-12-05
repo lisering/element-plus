@@ -1,6 +1,6 @@
 import { computed, ref } from 'vue'
-import { debugWarn, ensureArray } from '@element-plus/utils'
-import type { Arrayable } from '@element-plus/utils'
+import { debugWarn, ensureArray } from '@hicor-ui/utils'
+import type { Arrayable } from '@hicor-ui/utils'
 import type { FormItemContext } from './types'
 import type { FormItemProp } from './form-item'
 

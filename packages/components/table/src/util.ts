@@ -8,12 +8,12 @@ import {
   isBoolean,
   isObject,
   throwError,
-} from '@element-plus/utils'
-import { useDelayedToggle } from '@element-plus/hooks'
-import type { PopperInstance } from '@element-plus/components/popper'
-import type { Nullable } from '@element-plus/utils'
+} from '@hicor-ui/utils'
+import { useDelayedToggle } from '@hicor-ui/hooks'
+import type { PopperInstance } from '@hicor-ui/components/popper'
+import type { Nullable } from '@hicor-ui/utils'
 import type { TableColumnCtx } from './table-column/defaults'
-import type { ElTooltipProps } from '@element-plus/components/tooltip'
+import type { ElTooltipProps } from '@hicor-ui/components/tooltip'
 
 export type TableOverflowTooltipOptions = Partial<
   Pick<

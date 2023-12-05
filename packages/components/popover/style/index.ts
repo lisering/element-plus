@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/components/popper/style'
-import '@element-plus/theme-chalk/src/popover.scss'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/components/popper/style'
+import '@hicor-ui/theme-chalk/src/popover.scss'

@@ -21,8 +21,8 @@ import {
   useFloating,
   useNamespace,
   useZIndex,
-} from '@element-plus/hooks'
-import ElVisuallyHidden from '@element-plus/components/visual-hidden'
+} from '@hicor-ui/hooks'
+import ElVisuallyHidden from '@hicor-ui/components/visual-hidden'
 import { tooltipV2ContentKey, tooltipV2RootKey } from './constants'
 import { tooltipV2ContentProps } from './content'
 import { tooltipV2CommonProps } from './common'

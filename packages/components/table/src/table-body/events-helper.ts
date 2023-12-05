@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { h, inject, ref } from 'vue'
 import { debounce } from 'lodash-unified'
-import { hasClass } from '@element-plus/utils'
-import { useZIndex } from '@element-plus/hooks'
+import { hasClass } from '@hicor-ui/utils'
+import { useZIndex } from '@hicor-ui/hooks'
 import { createTablePopper, getCell, getColumnByCell } from '../util'
 import { TABLE_INJECTION_KEY } from '../tokens'
 import type { TableColumnCtx } from '../table-column/defaults'
@@ -109,7 +109,7 @@ function useEvents<T>(props: Partial<TableBodyProps<T>>) {
     const range = document.createRange()
     range.setStart(cellChild, 0)
     range.setEnd(cellChild, cellChild.childNodes.length)
-    /** detail: https://github.com/element-plus/element-plus/issues/10790
+    /** detail: https://github.com/hicor-ui/hicor-ui/issues/10790
      *  What went wrong?
      *  UI > Browser > Zoom, In Blink/WebKit, getBoundingClientRect() sometimes returns inexact values, probably due to lost precision during internal calculations. In the example above:
      *    - Expected: 188

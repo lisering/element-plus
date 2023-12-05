@@ -1,5 +1,5 @@
 {
-  "name": "@element-plus/docs",
+  "name": "@hicor-ui/docs",
   "private": true,
   "scripts": {
     "dev": "pnpm gen-locale && vitepress dev .",
@@ -11,12 +11,12 @@
   "dependencies": {
     "@docsearch/js": "^3.1.0",
     "@element-plus/icons-vue": "^2.3.1",
-    "@element-plus/metadata": "workspace:*",
+    "@hicor-ui/metadata": "workspace:*",
     "@vue/shared": "^3.2.37",
     "@vueuse/core": "^9.1.0",
     "axios": "^0.27.2",
     "clipboard-copy": "^4.0.1",
-    "element-plus": "npm:element-plus@latest",
+    "hicor-ui": "npm:hicor-ui@latest",
     "markdown-it": "^13.0.1",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
@@ -26,9 +26,9 @@
   "devDependencies": {
     "@crowdin/cli": "^3.7.10",
     "@docsearch/react": "^3.1.0",
-    "@element-plus/build": "workspace:*",
-    "@element-plus/build-constants": "workspace:*",
-    "@element-plus/build-utils": "workspace:*",
+    "@hicor-ui/build": "workspace:*",
+    "@hicor-ui/build-constants": "workspace:*",
+    "@hicor-ui/build-utils": "workspace:*",
     "@iconify-json/ri": "^1.1.3",
     "@types/markdown-it": "^12.2.3",
     "@vitejs/plugin-vue-jsx": "^1.3.10",

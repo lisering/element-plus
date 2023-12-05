@@ -1,6 +1,6 @@
 import { defineComponent, inject, watch } from 'vue'
-import { selectKey } from '@element-plus/components/select'
-import type { SelectContext } from '@element-plus/components/select'
+import { selectKey } from '@hicor-ui/components/select'
+import type { SelectContext } from '@hicor-ui/components/select'
 import type { PropType } from 'vue'
 
 // same as el-option instance,

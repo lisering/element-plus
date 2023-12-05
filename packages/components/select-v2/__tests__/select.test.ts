@@ -2,12 +2,12 @@
 import { nextTick } from 'vue'
 import { NOOP } from '@vue/shared'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { hasClass } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
-import { makeMountFunc } from '@element-plus/test-utils/make-mount'
-import { rAF } from '@element-plus/test-utils/tick'
 import { CircleClose } from '@element-plus/icons-vue'
-import { usePopperContainerId } from '@element-plus/hooks'
+import { hasClass } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { makeMountFunc } from '@hicor-ui/test-utils/make-mount'
+import { rAF } from '@hicor-ui/test-utils/tick'
+import { usePopperContainerId } from '@hicor-ui/hooks'
 import Select from '../src/select.vue'
 
 vi.mock('lodash-unified', async () => {

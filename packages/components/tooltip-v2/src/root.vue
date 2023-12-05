@@ -13,8 +13,8 @@ import {
   watch,
 } from 'vue'
 import { useTimeoutFn } from '@vueuse/core'
-import { useId, useNamespace } from '@element-plus/hooks'
-import { isNumber, isPropAbsent } from '@element-plus/utils'
+import { useId, useNamespace } from '@hicor-ui/hooks'
+import { isNumber, isPropAbsent } from '@hicor-ui/utils'
 import { TOOLTIP_V2_OPEN, tooltipV2RootKey } from './constants'
 import { tooltipV2RootProps } from './root'
 

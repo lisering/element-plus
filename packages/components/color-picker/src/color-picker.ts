@@ -1,7 +1,7 @@
 import { isNil } from 'lodash-unified'
-import { buildProps, definePropType, isString } from '@element-plus/utils'
-import { useSizeProp } from '@element-plus/hooks'
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { buildProps, definePropType, isString } from '@hicor-ui/utils'
+import { useSizeProp } from '@hicor-ui/hooks'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 
 import type { ComputedRef, ExtractPropTypes, InjectionKey } from 'vue'
 import type ColorPicker from './color-picker.vue'

@@ -1,5 +1,5 @@
-import { componentSizes, datePickTypes } from '@element-plus/constants'
-import type { ComponentSize, DatePickType } from '@element-plus/constants'
+import { componentSizes, datePickTypes } from '@hicor-ui/constants'
+import type { ComponentSize, DatePickType } from '@hicor-ui/constants'
 
 export const isValidComponentSize = (val: string): val is ComponentSize | '' =>
   ['', ...componentSizes].includes(val)

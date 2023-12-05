@@ -65,9 +65,9 @@
 
 <script lang="ts" setup>
 import { computed, unref } from 'vue'
-import { ElIcon } from '@element-plus/components/icon'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
-import { useNamespace } from '@element-plus/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import { carouselEmits, carouselProps } from './carousel'
 import { useCarousel } from './use-carousel'
 

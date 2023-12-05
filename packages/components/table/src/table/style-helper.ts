@@ -9,7 +9,7 @@ import {
   watchEffect,
 } from 'vue'
 import { useEventListener, useResizeObserver } from '@vueuse/core'
-import { useFormSize } from '@element-plus/components/form'
+import { useFormSize } from '@hicor-ui/components/form'
 
 import type { Table, TableProps } from './defaults'
 import type { Store } from '../store'

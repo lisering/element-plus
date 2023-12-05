@@ -5,13 +5,13 @@ lang: zh-CN
 
 # Icon 图标
 
-Element Plus 提供了一套常用的图标集合。
+Hicor Ui 提供了一套常用的图标集合。
 
 ## 使用图标
 
 - 如果你想像用例一样**直接使用**，你需要[全局注册组件](https://v3.vuejs.org/guide/component-registration.html#global-registration)，才能够直接在项目里使用。
 
-- 如若需要查看所有可用的 SVG 图标请查阅 [@element-plus/icons-vue@1.x](https://unpkg.com/browse/@element-plus/icons-vue@1/dist/es/)[@element-plus/icons-vue@latest](https://unpkg.com/browse/@element-plus/icons-vue@latest/dist/types/components/) 和有关 [Icon Collection](#icon-collection) 的源码 [element-plus-icons](https://github.com/element-plus/element-plus-icons)
+- 如若需要查看所有可用的 SVG 图标请查阅 [@element-plus/icons-vue@1.x](https://unpkg.com/browse/@element-plus/icons-vue@1/dist/es/)[@element-plus/icons-vue@latest](https://unpkg.com/browse/@element-plus/icons-vue@latest/dist/types/components/) 和有关 [Icon Collection](#icon-collection) 的源码 [hicor-ui-icons](https://github.com/hicor-ui/hicor-ui-icons)
 
 ## 安装
 
@@ -48,7 +48,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 ### 浏览器直接引入
 
-直接通过浏览器的 HTML 标签导入 Element Plus，然后就可以使用全局变量 `ElementPlusIconsVue`了。
+直接通过浏览器的 HTML 标签导入 Hicor Ui，然后就可以使用全局变量 `ElementPlusIconsVue`了。
 
 根据不同的 CDN 提供商有不同的引入方式， 根据不同的 CDN 提供商有不同的引入方式， 我们在这里以 [unpkg](https://unpkg.com) 和 [jsDelivr](https://jsdelivr.com) 举例。 你也可以使用其它的 CDN 供应商。
 
@@ -66,13 +66,13 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 :::tip
 
-我们建议使用 CDN 引入 Element Plus 的用户在链接地址上锁定版本，以免将来 Element Plus 升级时受到非兼容性更新的影响。 锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
+我们建议使用 CDN 引入 Hicor Ui 的用户在链接地址上锁定版本，以免将来 Hicor Ui 升级时受到非兼容性更新的影响。 锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
 
 :::
 
 ### 自动导入
 
-使用 [unplugin-icons](https://github.com/antfu/unplugin-icons) 和 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) 从 iconify 中自动导入任何图标集。 您可以参考[此模板](https://github.com/sxzz/element-plus-best-practices/blob/db2dfc983ccda5570033a0ac608a1bd9d9a7f658/vite.config.ts#L21-L58)。
+使用 [unplugin-icons](https://github.com/antfu/unplugin-icons) 和 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) 从 iconify 中自动导入任何图标集。 您可以参考[此模板](https://github.com/sxzz/hicor-ui-best-practices/blob/db2dfc983ccda5570033a0ac608a1bd9d9a7f658/vite.config.ts#L21-L58)。
 
 ## 基础用法
 

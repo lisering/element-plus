@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ElButton, ElLoading } from '@element-plus/components'
+import { ElButton, ElLoading } from '@hicor-ui/components'
 import ConfigProvider from '../src/config-provider'
-import type { LoadingInstance } from '@element-plus/components/loading/src/loading'
+import type { LoadingInstance } from '@hicor-ui/components/loading/src/loading'
 
 describe('loading config', () => {
   it('should render loading component', async () => {

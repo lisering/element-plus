@@ -1,5 +1,5 @@
-import { buildProps, definePropType, isBoolean } from '@element-plus/utils'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { buildProps, definePropType, isBoolean } from '@hicor-ui/utils'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import { dialogContentProps } from './dialog-content'
 
 import type { ExtractPropTypes } from 'vue'

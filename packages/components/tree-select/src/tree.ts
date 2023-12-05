@@ -1,9 +1,9 @@
 // @ts-nocheck
 import { computed, nextTick, toRefs, watch } from 'vue'
 import { isEqual, pick } from 'lodash-unified'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { isFunction } from '@element-plus/utils'
-import ElTree from '@element-plus/components/tree'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { isFunction } from '@hicor-ui/utils'
+import ElTree from '@hicor-ui/components/tree'
 import TreeSelectOption from './tree-select-option'
 import {
   isValidArray,
@@ -14,9 +14,9 @@ import {
 } from './utils'
 import type { CacheOption } from './cache-options'
 import type { Ref } from 'vue'
-import type ElSelect from '@element-plus/components/select'
-import type Node from '@element-plus/components/tree/src/model/node'
-import type { TreeNodeData } from '@element-plus/components/tree/src/tree.type'
+import type ElSelect from '@hicor-ui/components/select'
+import type Node from '@hicor-ui/components/tree/src/model/node'
+import type { TreeNodeData } from '@hicor-ui/components/tree/src/tree.type'
 
 export const useTree = (
   props,

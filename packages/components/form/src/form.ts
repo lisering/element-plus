@@ -1,11 +1,11 @@
-import { componentSizes } from '@element-plus/constants'
+import { componentSizes } from '@hicor-ui/constants'
 import {
   buildProps,
   definePropType,
   isArray,
   isBoolean,
   isString,
-} from '@element-plus/utils'
+} from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type { FormItemProp } from './form-item'

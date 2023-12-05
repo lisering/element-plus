@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElLoading } from 'element-plus'
+import { ElLoading } from 'hicor-ui'
 
 const fullscreenLoading = ref(false)
 const openFullScreen1 = () => {

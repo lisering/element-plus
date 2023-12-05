@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { EVENT_CODE } from '@element-plus/constants'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import * as Util from '../src/utils'
 
 describe('util', () => {

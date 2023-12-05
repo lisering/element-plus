@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import type { TableV2Instance } from 'element-plus'
+import type { TableV2Instance } from 'hicor-ui'
 
 const generateColumns = (length = 10, prefix = 'column-', props?: any) =>
   Array.from({ length }).map((_, columnIndex) => ({

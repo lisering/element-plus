@@ -21,8 +21,8 @@ import {
   ref,
   watch,
 } from 'vue'
-import { getClientXY } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { getClientXY } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { draggable } from '../utils/draggable'
 
 import type { PropType } from 'vue'

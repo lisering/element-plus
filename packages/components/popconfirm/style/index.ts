@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/popconfirm.scss'
-import '@element-plus/components/popover/style'
-import '@element-plus/components/button/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/popconfirm.scss'
+import '@hicor-ui/components/popover/style'
+import '@hicor-ui/components/button/style'

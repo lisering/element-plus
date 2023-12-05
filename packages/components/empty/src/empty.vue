@@ -18,8 +18,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { addUnit } from '@element-plus/utils'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { addUnit } from '@hicor-ui/utils'
 import ImgEmpty from './img-empty.vue'
 import { emptyProps } from './empty'
 

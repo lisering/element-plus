@@ -80,7 +80,7 @@ _2023-10-13_
 - Docs [form] `label-position` type error (#14312 by @btea)
 - Components row-class-name bgColor can not cover fixed column (#14225 by @StephenKe)
 - Components [tabs] Fix some events accidentally firing (#14224 by @Mario34)
-- Cannot find type definition file for `element-plus/global` (#13698 by @mioxs)
+- Cannot find type definition file for `hicor-ui/global` (#13698 by @mioxs)
 - Components [description] use `withDirectives` add custom directive (#14299 by @btea)
 - Components fix: update timepicker options when changing locale (#14287 by @cuongle-hdwebsoft)
 - Components [popper] invalid when props z-index is zero (#14375 by @betavs)
@@ -1627,13 +1627,13 @@ _2022-05-20_
 
 _2022-05-09_
 
-[v2.2.0 release note](https://github.com/element-plus/element-plus/discussions/7578)
+[v2.2.0 release note](https://github.com/hicor-ui/hicor-ui/discussions/7578)
 
 #### Breaking changes
 
 ##### Button
 
-- `type="text"` has been removed from `button`, now you can do this, for more detail see [Documentation](https://element-plus.org/en-US/component/button.html#text-button)
+- `type="text"` has been removed from `button`, now you can do this, for more detail see [Documentation](https://hicor-ui.org/en-US/component/button.html#text-button)
 
 ```diff
 --- <el-button type="text"/>
@@ -2603,7 +2603,7 @@ _2021-12-31_
 
 #### Breaking changes:
 
-- Please refer to: [1.3.0-beta.1 Breaking change](https://github.com/element-plus/element-plus/discussions/5037)
+- Please refer to: [1.3.0-beta.1 Breaking change](https://github.com/hicor-ui/hicor-ui/discussions/5037)
 
 #### Features
 
@@ -2691,7 +2691,7 @@ _2021-12-10_
 - Hooks [lockscreen] body lock remove unexpected (#4693 by @KawaiiZapic) (#4694)
 - Docs fix code not working in Codepen (#4678 by @imguolao) (#4679)
 - Components [el-input-number]set value equal to min will update (#4650 by @Alanscut)
-- Docs replace @element-plus/icons with @element-plus/icons-vue (#4704 by @pdsuwwz)
+- Docs replace @hicor-ui/icons with @element-plus/icons-vue (#4704 by @pdsuwwz)
 - Docs fix webpack config import syntax (#4718 by @owenvip)
 - Style override el-icon display in el-input__icon (#4684 by @YunYouJun)
 - Components [el-menu] third-party icons are hidden (#4754 by @Alanscut)
@@ -2861,7 +2861,7 @@ _2021-10-30_
 
 #### Breaking changes:
 
-- Please refer to: [1.2.0-beta.1 Breaking change](https://github.com/element-plus/element-plus/discussions/4060)
+- Please refer to: [1.2.0-beta.1 Breaking change](https://github.com/hicor-ui/hicor-ui/discussions/4060)
 
 #### Features
 
@@ -2876,7 +2876,7 @@ _2021-10-30_
 - Components [el-message] & [el-notification] appendTo option added (#4012 by @codespikex)
 - Add translation for Bengali language (#3972 by @IbrahimAlKhalil)
 - Dev play add unplugin-vue-components (#3931 by @sxzz)
-- Dev play add @element-plus/icons (#4034 by @xiaoxian521)
+- Dev play add @hicor-ui/icons (#4034 by @xiaoxian521)
 
 #### Bug fixes
 
@@ -3416,7 +3416,7 @@ _2021-08-24_
 
 #### Breaking changes:
 
-- Please refer to: [Breaking changes made in 1.1.0-beta.1](https://github.com/element-plus/element-plus/discussions/3020)
+- Please refer to: [Breaking changes made in 1.1.0-beta.1](https://github.com/hicor-ui/hicor-ui/discussions/3020)
 
 #### Features
 

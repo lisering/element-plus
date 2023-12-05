@@ -7,7 +7,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import cleanCSS from 'gulp-clean-css'
 import rename from 'gulp-rename'
 import consola from 'consola'
-import { epOutput } from '@element-plus/build-utils'
+import { epOutput } from '@hicor-ui/build-utils'
 
 const distFolder = path.resolve(__dirname, 'dist')
 const distBundle = path.resolve(epOutput, 'theme-chalk')
@@ -64,7 +64,7 @@ function buildDarkCssVars() {
 }
 
 /**
- * copy from packages/theme-chalk/dist to dist/element-plus/theme-chalk
+ * copy from packages/theme-chalk/dist to dist/hicor-ui/theme-chalk
  */
 export function copyThemeChalkBundle() {
   return src(`${distFolder}/**`).pipe(dest(distBundle))

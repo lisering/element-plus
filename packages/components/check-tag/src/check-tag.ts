@@ -1,5 +1,5 @@
-import { buildProps, isBoolean } from '@element-plus/utils'
-import { CHANGE_EVENT } from '@element-plus/constants'
+import { buildProps, isBoolean } from '@hicor-ui/utils'
+import { CHANGE_EVENT } from '@hicor-ui/constants'
 
 import type CheckTag from './check-tag.vue'
 import type { ExtractPropTypes } from 'vue'

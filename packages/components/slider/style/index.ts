@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/slider.scss'
-import '@element-plus/components/input-number/style'
-import '@element-plus/components/tooltip/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/slider.scss'
+import '@hicor-ui/components/input-number/style'
+import '@hicor-ui/components/tooltip/style'

@@ -1,4 +1,4 @@
-import { withInstall, withNoopInstall } from '@element-plus/utils'
+import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 
 import Container from './src/container.vue'
 import Aside from './src/aside.vue'

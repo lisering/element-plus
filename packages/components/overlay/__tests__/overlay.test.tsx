@@ -1,8 +1,8 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import { ElMessageBox } from '@element-plus/components/message-box'
-import ConfigProvider from '@element-plus/components/config-provider'
+import { ElMessageBox } from '@hicor-ui/components/message-box'
+import ConfigProvider from '@hicor-ui/components/config-provider'
 import Overlay from '../src/overlay'
 
 const AXIOM = 'Rem is the best girl'

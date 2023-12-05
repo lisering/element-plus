@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { defineComponent, provide, unref } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { useTable } from './use-table'
 import { TableV2InjectionKey } from './tokens'
 import { tableV2Props } from './table'

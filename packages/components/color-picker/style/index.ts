@@ -1,4 +1,4 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/color-picker.scss'
-import '@element-plus/components/input/style'
-import '@element-plus/components/button/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/color-picker.scss'
+import '@hicor-ui/components/input/style'
+import '@hicor-ui/components/button/style'

@@ -13,14 +13,9 @@
 
 <script lang="tsx" setup>
 import { ref } from 'vue'
-import {
-  ElButton,
-  ElTag,
-  TableV2FixedDir,
-  TableV2SortOrder,
-} from 'element-plus'
+import { ElButton, ElTag, TableV2FixedDir, TableV2SortOrder } from 'hicor-ui'
 
-import type { Column, SortBy } from '@element-plus/components/table-v2'
+import type { Column, SortBy } from '@hicor-ui/components/table-v2'
 
 const longText =
   'Quaerat ipsam necessitatibus eum quibusdam est id voluptatem cumque mollitia.'

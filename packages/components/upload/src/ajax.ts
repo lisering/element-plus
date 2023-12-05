@@ -1,5 +1,5 @@
 import { isNil } from 'lodash-unified'
-import { isArray, throwError } from '@element-plus/utils'
+import { isArray, throwError } from '@hicor-ui/utils'
 import type {
   UploadProgressEvent,
   UploadRequestHandler,

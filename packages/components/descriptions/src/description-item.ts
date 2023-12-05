@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { buildProps } from '@element-plus/utils'
+import { buildProps } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes, Slot, VNode } from 'vue'
 

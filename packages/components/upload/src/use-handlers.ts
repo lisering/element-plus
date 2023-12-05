@@ -1,7 +1,7 @@
 import { watch } from 'vue'
 import { isNil } from 'lodash-unified'
 import { useVModel } from '@vueuse/core'
-import { debugWarn, throwError } from '@element-plus/utils'
+import { debugWarn, throwError } from '@hicor-ui/utils'
 import { genFileId } from './upload'
 import type { ShallowRef } from 'vue'
 import type {

@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 import Watermark from './src/watermark.vue'
 
 export const ElWatermark = withInstall(Watermark)

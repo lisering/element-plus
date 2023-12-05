@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 import InputNumber from './src/input-number.vue'
 
 export const ElInputNumber = withInstall(InputNumber)

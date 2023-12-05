@@ -1,9 +1,9 @@
 import { computed } from 'vue'
 import dayjs from 'dayjs'
 import localeData from 'dayjs/plugin/localeData.js'
-import { useLocale } from '@element-plus/hooks'
-import { rangeArr } from '@element-plus/components/time-picker'
-import { WEEK_DAYS } from '@element-plus/constants'
+import { useLocale } from '@hicor-ui/hooks'
+import { rangeArr } from '@hicor-ui/components/time-picker'
+import { WEEK_DAYS } from '@hicor-ui/constants'
 import { getMonthDays, getPrevMonthLastDays, toNestedArr } from './date-table'
 
 import type { SetupContext } from 'vue'

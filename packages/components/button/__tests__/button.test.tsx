@@ -3,10 +3,10 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it, test } from 'vitest'
 import { Loading, Search } from '@element-plus/icons-vue'
 
-import Form from '@element-plus/components/form'
+import Form from '@hicor-ui/components/form'
 import Button from '../src/button.vue'
 import ButtonGroup from '../src/button-group.vue'
-import type { ComponentSize } from '@element-plus/constants'
+import type { ComponentSize } from '@hicor-ui/constants'
 
 const AXIOM = 'Rem is the best girl'
 
@@ -164,7 +164,7 @@ describe('Button.vue', () => {
   })
 
   it('tag', () => {
-    const link = 'https://github.com/element-plus/element-plus'
+    const link = 'https://github.com/hicor-ui/hicor-ui'
     const wrapper = mount(() => (
       // @ts-ignore
       <Button tag="a" href={link}>

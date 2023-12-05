@@ -13,8 +13,8 @@ import {
 } from 'vue'
 import { throttle } from 'lodash-unified'
 import { useResizeObserver } from '@vueuse/core'
-import { debugWarn, flattedChildren, isString } from '@element-plus/utils'
-import { useOrderedChildren } from '@element-plus/hooks'
+import { debugWarn, flattedChildren, isString } from '@hicor-ui/utils'
+import { useOrderedChildren } from '@hicor-ui/hooks'
 import { carouselContextKey } from './constants'
 
 import type { SetupContext } from 'vue'
@@ -221,7 +221,7 @@ export const useCarousel = (
   }
 
   function PlaceholderItem() {
-    // fix: https://github.com/element-plus/element-plus/issues/12139
+    // fix: https://github.com/hicor-ui/hicor-ui/issues/12139
     const defaultSlots = slots.default?.()
     if (!defaultSlots) return null
 

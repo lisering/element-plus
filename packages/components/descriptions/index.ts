@@ -1,4 +1,4 @@
-import { withInstall, withNoopInstall } from '@element-plus/utils'
+import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 
 import Descriptions from './src/description.vue'
 import DescriptionsItem from './src/description-item'

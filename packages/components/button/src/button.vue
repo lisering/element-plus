@@ -39,8 +39,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ElIcon } from '@element-plus/components/icon'
-import { useNamespace } from '@element-plus/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import { useButton } from './use-button'
 import { buttonEmits, buttonProps } from './button'
 import { useButtonCustomStyle } from './button-custom'

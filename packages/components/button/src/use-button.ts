@@ -3,9 +3,9 @@ import {
   useFormDisabled,
   useFormItem,
   useFormSize,
-} from '@element-plus/components/form'
-import { useGlobalConfig } from '@element-plus/components/config-provider'
-import { useDeprecated } from '@element-plus/hooks'
+} from '@hicor-ui/components/form'
+import { useGlobalConfig } from '@hicor-ui/components/config-provider'
+import { useDeprecated } from '@hicor-ui/hooks'
 import { buttonGroupContextKey } from './constants'
 
 import type { SetupContext } from 'vue'
@@ -21,7 +21,7 @@ export const useButton = (
       replacement: 'link',
       version: '3.0.0',
       scope: 'props',
-      ref: 'https://element-plus.org/en-US/component/button.html#button-attributes',
+      ref: 'https://hicor-ui.org/en-US/component/button.html#button-attributes',
     },
     computed(() => props.type === 'text')
   )

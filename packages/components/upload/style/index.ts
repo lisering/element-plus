@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/upload.scss'
-import '@element-plus/components/progress/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/upload.scss'
+import '@hicor-ui/components/progress/style'

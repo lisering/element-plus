@@ -127,7 +127,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useId, useNamespace } from '@element-plus/hooks'
+import { useId, useNamespace } from '@hicor-ui/hooks'
 
 defineOptions({
   name: 'ImgEmpty',

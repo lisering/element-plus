@@ -1,4 +1,4 @@
-import { throwError } from '@element-plus/utils'
+import { throwError } from '@hicor-ui/utils'
 
 import createList from '../builders/build-list'
 

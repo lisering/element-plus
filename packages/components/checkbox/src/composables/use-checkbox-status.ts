@@ -1,7 +1,7 @@
 import { computed, inject, ref, toRaw } from 'vue'
 import { isEqual, isNil } from 'lodash-unified'
-import { useFormSize } from '@element-plus/components/form'
-import { isArray, isBoolean, isObject } from '@element-plus/utils'
+import { useFormSize } from '@hicor-ui/components/form'
+import { isArray, isBoolean, isObject } from '@hicor-ui/utils'
 import { checkboxGroupContextKey } from '../constants'
 
 import type { ComponentInternalInstance } from 'vue'

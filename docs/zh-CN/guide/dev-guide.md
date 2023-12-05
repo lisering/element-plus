@@ -27,7 +27,7 @@ pnpm docs:dev
 
 ## 本地开发
 
-查看 [本地开发指南](https://github.com/element-plus/element-plus/blob/dev/CONTRIBUTING.md)
+查看 [本地开发指南](https://github.com/hicor-ui/hicor-ui/blob/dev/CONTRIBUTING.md)
 
 1. 使用命令
 
@@ -47,8 +47,8 @@ pnpm dev
 </template>
 
 <script setup lang="ts">
-// 要保证当前组件已注册到 @element-plus/components
-import { ComponentYouAreDeveloping } from '@element-plus/components'
+// 要保证当前组件已注册到 @hicor-ui/components
+import { ComponentYouAreDeveloping } from '@hicor-ui/components'
 </script>
 ```
 

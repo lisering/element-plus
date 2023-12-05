@@ -1,4 +1,4 @@
-import { buildProps, definePropType, isString } from '@element-plus/utils'
+import { buildProps, definePropType, isString } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'

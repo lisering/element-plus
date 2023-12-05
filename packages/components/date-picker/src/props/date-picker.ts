@@ -1,5 +1,5 @@
-import { timePickerDefaultProps } from '@element-plus/components/time-picker'
-import { buildProps, definePropType } from '@element-plus/utils'
+import { timePickerDefaultProps } from '@hicor-ui/components/time-picker'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type { IDatePickerType } from '../date-picker.type'

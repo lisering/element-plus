@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { inject, onBeforeUnmount, watch } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { POPPER_CONTENT_INJECTION_KEY } from './constants'
 import { popperArrowProps } from './arrow'
 

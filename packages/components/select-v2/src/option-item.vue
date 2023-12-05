@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { useOption } from './useOption'
 import { useProps } from './useProps'
 import { OptionProps } from './defaults'

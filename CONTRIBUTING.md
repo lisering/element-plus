@@ -4,14 +4,14 @@
 
 - Before opening issue please search for the keyword see whether the issue you encountered has been reported already. :pray:
 
-- Issues should be opened via [Issue Template](https://elementui.github.io/issue-generator/#/en-US?repo=element-plus), fill in the form to provide
+- Issues should be opened via [Issue Template](https://elementui.github.io/issue-generator/#/en-US?repo=hicor-ui), fill in the form to provide
   sufficient information to reproduce the issue, so that our developers can help you verify and fix it
 
 **Insufficient information issue WILL BE CLOSED directly because we cannot reproduce them**
 
-- Issues that with feature request should to go to [RFCs](https://github.com/element-plus/rfcs/issues). This helps us managing the project.
+- Issues that with feature request should to go to [RFCs](https://github.com/hicor-ui/rfcs/issues). This helps us managing the project.
 
-Next section is for those who wants to help develop Element Plus.
+Next section is for those who wants to help develop Hicor Ui.
 
 ## Pre-request
 
@@ -51,7 +51,7 @@ Ah, now you have installed the code correctly, you can choose:
 ### Modify and update the documentation site.
 
 ```shell
-# If you would like to modify the website source code of https://element-plus.org
+# If you would like to modify the website source code of https://hicor-ui.org
 # It was made with [VitePress](https://vitepress.vuejs.org)
 pnpm docs:gen-locale # This generates locale files for your local development
 pnpm docs:dev
@@ -65,7 +65,7 @@ pnpm docs:dev
 pnpm dev
 ```
 
-You can follow the [LOCAL DEVELOPMENT GUIDE](https://element-plus.org/en-US/guide/dev-guide.html) to do development more quickly.
+You can follow the [LOCAL DEVELOPMENT GUIDE](https://hicor-ui.org/en-US/guide/dev-guide.html) to do development more quickly.
 
 ### Compile the source code
 
@@ -109,7 +109,7 @@ pnpm cz
 2. You can also write the commit message by hand, but make sure your
    commit message follows the rules.
 
-We have a [commit template](https://element-plus.org/en-US/guide/commit-examples.html)
+We have a [commit template](https://hicor-ui.org/en-US/guide/commit-examples.html)
 
 NOTE:
 **PRs with unformatted commit message WILL NOT BE ACCEPTED**

@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { CascaderProps } from 'element-plus'
+import type { CascaderProps } from 'hicor-ui'
 
 let id = 0
 const props: CascaderProps = {

@@ -1,3 +1,3 @@
-import '@element-plus/components/select/style/css'
-import '@element-plus/components/tree/style/css'
-import '@element-plus/theme-chalk/el-tree-select.css'
+import '@hicor-ui/components/select/style/css'
+import '@hicor-ui/components/tree/style/css'
+import '@hicor-ui/theme-chalk/el-tree-select.css'

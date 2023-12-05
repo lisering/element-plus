@@ -71,9 +71,9 @@
 import { computed, inject, ref, unref } from 'vue'
 import dayjs from 'dayjs'
 import { union } from 'lodash-unified'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import { isArray } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import { isArray } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import { panelTimeRangeProps } from '../props/panel-time-range'
 import { useTimePanel } from '../composables/use-time-panel'
 import {

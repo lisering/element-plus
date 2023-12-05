@@ -1,5 +1,5 @@
-import { useFormItem, useFormItemInputId } from '@element-plus/components/form'
-import { isArray } from '@element-plus/utils'
+import { useFormItem, useFormItemInputId } from '@hicor-ui/components/form'
+import { isArray } from '@hicor-ui/utils'
 import { useCheckboxDisabled } from './use-checkbox-disabled'
 import { useCheckboxEvent } from './use-checkbox-event'
 import { useCheckboxModel } from './use-checkbox-model'

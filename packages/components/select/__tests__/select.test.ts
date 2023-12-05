@@ -2,11 +2,11 @@
 import { markRaw, nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, test, vi } from 'vitest'
-import { EVENT_CODE } from '@element-plus/constants'
 import { ArrowDown, CaretTop, CircleClose } from '@element-plus/icons-vue'
-import { usePopperContainerId } from '@element-plus/hooks'
-import { hasClass } from '@element-plus/utils'
-import { ElFormItem } from '@element-plus/components/form'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { usePopperContainerId } from '@hicor-ui/hooks'
+import { hasClass } from '@hicor-ui/utils'
+import { ElFormItem } from '@hicor-ui/components/form'
 import Select from '../src/select.vue'
 import Group from '../src/option-group.vue'
 import Option from '../src/option.vue'
@@ -2375,7 +2375,7 @@ describe('Select', () => {
       expect(wrapper.findAll('.el-tag')[0].text()).toBe('option 1')
     })
 
-    // fix: https://github.com/element-plus/element-plus/issues/11991
+    // fix: https://github.com/hicor-ui/hicor-ui/issues/11991
     it('backspace key should not delete disabled options', async () => {
       const options = [
         {

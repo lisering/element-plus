@@ -58,7 +58,7 @@ jobs:
       - name: Generate common locale
         run: pnpm docs:gen-locale
 
-      - name: Build Element Plus
+      - name: Build Hicor Ui
         run: pnpm build
         env:
           FORCE_COLOR: 2
@@ -72,7 +72,7 @@ jobs:
 
       - name: Move bundle to docs dist
         if: matrix.os == 'ubuntu-latest'
-        run: mkdir docs/.vitepress/dist/bundle && mv dist/element-plus/dist/*.* docs/.vitepress/dist/bundle
+        run: mkdir docs/.vitepress/dist/bundle && mv dist/hicor-ui/dist/*.* docs/.vitepress/dist/bundle
 
       # share website dist
       - name: Upload artifact

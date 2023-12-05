@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'hicor-ui'
 
 const open1 = () => {
   ElMessage({

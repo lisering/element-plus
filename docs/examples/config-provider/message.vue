@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage } from 'hicor-ui'
 const config = reactive({
   max: 3,
 })

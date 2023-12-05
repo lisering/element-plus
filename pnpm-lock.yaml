@@ -8,36 +8,36 @@ importers:
 
   .:
     dependencies:
-      '@element-plus/components':
-        specifier: workspace:*
-        version: link:packages/components
-      '@element-plus/constants':
-        specifier: workspace:*
-        version: link:packages/constants
-      '@element-plus/directives':
-        specifier: workspace:*
-        version: link:packages/directives
-      '@element-plus/hooks':
-        specifier: workspace:*
-        version: link:packages/hooks
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.2.37)
-      '@element-plus/locale':
-        specifier: workspace:*
-        version: link:packages/locale
-      '@element-plus/test-utils':
-        specifier: workspace:*
-        version: link:packages/test-utils
-      '@element-plus/theme-chalk':
-        specifier: workspace:*
-        version: link:packages/theme-chalk
-      '@element-plus/utils':
-        specifier: workspace:*
-        version: link:packages/utils
       '@floating-ui/dom':
         specifier: ^1.0.1
         version: 1.0.1
+      '@hicor-ui/components':
+        specifier: workspace:*
+        version: link:packages/components
+      '@hicor-ui/constants':
+        specifier: workspace:*
+        version: link:packages/constants
+      '@hicor-ui/directives':
+        specifier: workspace:*
+        version: link:packages/directives
+      '@hicor-ui/hooks':
+        specifier: workspace:*
+        version: link:packages/hooks
+      '@hicor-ui/locale':
+        specifier: workspace:*
+        version: link:packages/locale
+      '@hicor-ui/test-utils':
+        specifier: workspace:*
+        version: link:packages/test-utils
+      '@hicor-ui/theme-chalk':
+        specifier: workspace:*
+        version: link:packages/theme-chalk
+      '@hicor-ui/utils':
+        specifier: workspace:*
+        version: link:packages/utils
       '@popperjs/core':
         specifier: npm:@sxzz/popperjs-es@^2.11.7
         version: /@sxzz/popperjs-es@2.11.7
@@ -81,18 +81,18 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^17.0.3
         version: 17.0.3
-      '@element-plus/build':
-        specifier: workspace:^0.0.1
-        version: link:internal/build
-      '@element-plus/build-utils':
-        specifier: workspace:^0.0.1
-        version: link:internal/build-utils
-      '@element-plus/eslint-config':
-        specifier: workspace:*
-        version: link:internal/eslint-config
       '@esbuild-kit/cjs-loader':
         specifier: ^2.2.1
         version: 2.2.1
+      '@hicor-ui/build':
+        specifier: workspace:^0.0.1
+        version: link:internal/build
+      '@hicor-ui/build-utils':
+        specifier: workspace:^0.0.1
+        version: link:internal/build-utils
+      '@hicor-ui/eslint-config':
+        specifier: workspace:*
+        version: link:internal/eslint-config
       '@pnpm/find-workspace-packages':
         specifier: ^4.0.16
         version: 4.0.16(@pnpm/logger@4.0.0)
@@ -231,7 +231,7 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.2.37)
-      '@element-plus/metadata':
+      '@hicor-ui/metadata':
         specifier: workspace:*
         version: link:../internal/metadata
       '@vue/shared':
@@ -246,9 +246,9 @@ importers:
       clipboard-copy:
         specifier: ^4.0.1
         version: 4.0.1
-      element-plus:
-        specifier: npm:element-plus@latest
-        version: 2.4.2(vue@3.2.37)
+      hicor-ui:
+        specifier: npm:hicor-ui@latest
+        version: link:../packages/hicor-ui
       markdown-it:
         specifier: ^13.0.1
         version: 13.0.1
@@ -271,13 +271,13 @@ importers:
       '@docsearch/react':
         specifier: ^3.1.0
         version: 3.1.0(@types/react@18.2.41)
-      '@element-plus/build':
+      '@hicor-ui/build':
         specifier: workspace:*
         version: link:../internal/build
-      '@element-plus/build-constants':
+      '@hicor-ui/build-constants':
         specifier: workspace:*
         version: link:../internal/build-constants
-      '@element-plus/build-utils':
+      '@hicor-ui/build-utils':
         specifier: workspace:*
         version: link:../internal/build-utils
       '@iconify-json/ri':
@@ -340,7 +340,7 @@ importers:
 
   internal/build:
     dependencies:
-      '@element-plus/build-constants':
+      '@hicor-ui/build-constants':
         specifier: ^0.0.1
         version: link:../build-constants
       '@pnpm/find-workspace-packages':
@@ -487,13 +487,13 @@ importers:
 
   internal/metadata:
     devDependencies:
-      '@element-plus/build':
+      '@hicor-ui/build':
         specifier: ^0.0.1
         version: link:../build
-      '@element-plus/build-constants':
+      '@hicor-ui/build-constants':
         specifier: ^0.0.1
         version: link:../build-constants
-      '@element-plus/build-utils':
+      '@hicor-ui/build-utils':
         specifier: ^0.0.1
         version: link:../build-utils
       '@types/lodash-es':
@@ -535,7 +535,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.37
 
-  packages/element-plus:
+  packages/hicor-ui:
     dependencies:
       '@ctrl/tinycolor':
         specifier: ^3.4.1
@@ -551,7 +551,7 @@ importers:
         version: /@sxzz/popperjs-es@2.11.7
       '@types/lodash':
         specifier: ^4.14.182
-        version: 4.14.182
+        version: 4.14.184
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.6
@@ -608,12 +608,12 @@ importers:
 
   packages/theme-chalk:
     devDependencies:
-      '@element-plus/build':
-        specifier: workspace:*
-        version: link:../../internal/build
       '@esbuild-kit/cjs-loader':
         specifier: ^2.2.1
         version: 2.2.1
+      '@hicor-ui/build':
+        specifier: workspace:*
+        version: link:../../internal/build
       '@types/gulp-autoprefixer':
         specifier: ^0.0.33
         version: 0.0.33
@@ -5514,10 +5514,6 @@ packages:
     resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
     dev: false
 
-  /dayjs@1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==}
-    dev: false
-
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -5749,31 +5745,6 @@ packages:
 
   /electron-to-chromium@1.4.147:
     resolution: {integrity: sha512-czclPqxLMPqPMkahKcske4TaS5lcznsc26ByBlEFDU8grTBVK9C5W6K9I6oEEhm4Ai4jTihGnys90xY1yjXcRg==}
-
-  /element-plus@2.4.2(vue@3.2.37):
-    resolution: {integrity: sha512-E/HwXX7JF1LPvQSjs0fZ8WblIoc0quoXsRXQZiL7QDq7xJdNGSUaXtdk7xiEv7axPmLfEFtxE5du9fFspDrmJw==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@ctrl/tinycolor': 3.4.1
-      '@element-plus/icons-vue': 2.3.1(vue@3.2.37)
-      '@floating-ui/dom': 1.0.1
-      '@popperjs/core': /@sxzz/popperjs-es@2.11.7
-      '@types/lodash': 4.14.184
-      '@types/lodash-es': 4.17.6
-      '@vueuse/core': 9.1.0(vue@3.2.37)
-      async-validator: 4.2.5
-      dayjs: 1.11.5
-      escape-html: 1.0.3
-      lodash: 4.17.21
-      lodash-es: 4.17.21
-      lodash-unified: 1.0.2(@types/lodash-es@4.17.6)(lodash-es@4.17.21)(lodash@4.17.21)
-      memoize-one: 6.0.0
-      normalize-wheel-es: 1.2.0
-      vue: 3.2.37
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-    dev: false
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}

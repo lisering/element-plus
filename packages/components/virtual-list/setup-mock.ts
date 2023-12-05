@@ -1,5 +1,5 @@
 // @ts-nocheck
-import defineGetter from '@element-plus/test-utils/define-getter'
+import defineGetter from '@hicor-ui/test-utils/define-getter'
 
 export default () => {
   const clientWidth = defineGetter(

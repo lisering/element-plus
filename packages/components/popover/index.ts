@@ -1,4 +1,4 @@
-import { withInstall, withInstallDirective } from '@element-plus/utils'
+import { withInstall, withInstallDirective } from '@hicor-ui/utils'
 
 import Popover from './src/popover.vue'
 import PopoverDirective, { VPopover } from './src/directive'

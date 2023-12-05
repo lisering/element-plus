@@ -6,9 +6,9 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
-import { epRoot, excludeFiles, pkgRoot } from '@element-plus/build-utils'
+import { epRoot, excludeFiles, pkgRoot } from '@hicor-ui/build-utils'
 import { generateExternal, writeBundles } from '../utils'
-import { ElementPlusAlias } from '../plugins/element-plus-alias'
+import { HicorUiAlias } from '../plugins/hicor-ui-alias'
 import { buildConfigEntries, target } from '../build-info'
 
 import type { OutputOptions } from 'rollup'
@@ -24,7 +24,7 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
-      ElementPlusAlias(),
+      HicorUiAlias(),
       VueMacros({
         setupComponent: false,
         setupSFC: false,

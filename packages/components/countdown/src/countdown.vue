@@ -14,8 +14,8 @@
 </template>
 <script lang="ts" setup>
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
-import { ElStatistic } from '@element-plus/components/statistic'
-import { cAF, rAF } from '@element-plus/utils'
+import { ElStatistic } from '@hicor-ui/components/statistic'
+import { cAF, rAF } from '@hicor-ui/utils'
 import { countdownEmits, countdownProps } from './countdown'
 import { formatTime, getTime } from './utils'
 

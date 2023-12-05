@@ -168,9 +168,9 @@
 // @ts-nocheck
 import { computed, defineComponent, getCurrentInstance, provide } from 'vue'
 import { debounce } from 'lodash-unified'
-import { Mousewheel } from '@element-plus/directives'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import ElScrollbar from '@element-plus/components/scrollbar'
+import { Mousewheel } from '@hicor-ui/directives'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import ElScrollbar from '@hicor-ui/components/scrollbar'
 import { createStore } from './store/helper'
 import TableLayout from './table-layout'
 import TableHeader from './table-header'

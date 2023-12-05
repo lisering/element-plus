@@ -71,7 +71,7 @@
 <script lang="ts" setup>
 import { computed, ref, watchEffect } from 'vue'
 import { DArrowLeft, DArrowRight, MoreFilled } from '@element-plus/icons-vue'
-import { useLocale, useNamespace } from '@element-plus/hooks'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { paginationPagerProps } from './pager'
 defineOptions({
   name: 'ElPaginationPager',

@@ -1,9 +1,4 @@
-import {
-  buildProps,
-  definePropType,
-  isNumber,
-  mutable,
-} from '@element-plus/utils'
+import { buildProps, definePropType, isNumber, mutable } from '@hicor-ui/utils'
 
 import type { Component, ExtractPropTypes } from 'vue'
 import type ImageViewer from './image-viewer.vue'

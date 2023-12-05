@@ -1,5 +1,5 @@
-import ElIcon from '@element-plus/components/icon'
 import { ArrowRight } from '@element-plus/icons-vue'
+import ElIcon from '@hicor-ui/components/icon'
 
 import type { StyleValue } from 'vue'
 import type { TableV2RowCellRenderParam } from './row'

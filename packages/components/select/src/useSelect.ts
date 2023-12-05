@@ -21,7 +21,7 @@ import {
   CHANGE_EVENT,
   EVENT_CODE,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
+} from '@hicor-ui/constants'
 import {
   ValidateComponentsMap,
   debugWarn,
@@ -33,12 +33,12 @@ import {
   isString,
   isUndefined,
   scrollIntoView,
-} from '@element-plus/utils'
-import { useDeprecated, useLocale, useNamespace } from '@element-plus/hooks'
-import { useFormItem, useFormSize } from '@element-plus/components/form'
+} from '@hicor-ui/utils'
+import { useDeprecated, useLocale, useNamespace } from '@hicor-ui/hooks'
+import { useFormItem, useFormSize } from '@hicor-ui/components/form'
 
 import type { ComponentPublicInstance } from 'vue'
-import type ElTooltip from '@element-plus/components/tooltip'
+import type ElTooltip from '@hicor-ui/components/tooltip'
 import type { QueryChangeCtx, SelectOptionProxy } from './token'
 
 export function useSelectStates(props) {
@@ -82,7 +82,7 @@ export const useSelect = (props, states: States, ctx) => {
       replacement: 'override style scheme',
       version: '2.3.0',
       scope: 'props',
-      ref: 'https://element-plus.org/en-US/component/select.html#select-attributes',
+      ref: 'https://hicor-ui.org/en-US/component/select.html#select-attributes',
     },
     computed(() => props.suffixTransition === false)
   )
@@ -459,7 +459,7 @@ export const useSelect = (props, states: States, ctx) => {
     states.hoverIndex = -1
     if (props.multiple && props.filterable) {
       nextTick(() => {
-        // fix: https://github.com/element-plus/element-plus/issues/13872
+        // fix: https://github.com/hicor-ui/hicor-ui/issues/13872
         if (!selectDisabled.value) {
           const length = input.value!.value.length * 15 + 20
           states.inputLength = props.collapseTags

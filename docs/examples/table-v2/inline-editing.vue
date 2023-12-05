@@ -16,10 +16,10 @@
 
 <script lang="tsx" setup>
 import { ref } from 'vue'
-import { ElInput } from 'element-plus'
+import { ElInput } from 'hicor-ui'
 
 import type { FunctionalComponent } from 'vue'
-import type { Column, InputInstance } from 'element-plus'
+import type { Column, InputInstance } from 'hicor-ui'
 
 type SelectionCellProps = {
   value: string

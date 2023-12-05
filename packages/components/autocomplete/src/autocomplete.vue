@@ -105,24 +105,24 @@ import { computed, onMounted, ref, useAttrs as useRawAttrs } from 'vue'
 import { debounce } from 'lodash-unified'
 import { onClickOutside } from '@vueuse/core'
 import { Loading } from '@element-plus/icons-vue'
-import { useAttrs, useNamespace } from '@element-plus/hooks'
-import { generateId, isArray, throwError } from '@element-plus/utils'
+import { useAttrs, useNamespace } from '@hicor-ui/hooks'
+import { generateId, isArray, throwError } from '@hicor-ui/utils'
 import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
-import ElInput from '@element-plus/components/input'
-import ElScrollbar from '@element-plus/components/scrollbar'
-import ElTooltip from '@element-plus/components/tooltip'
-import ElIcon from '@element-plus/components/icon'
-import { useFormDisabled } from '@element-plus/components/form'
+} from '@hicor-ui/constants'
+import ElInput from '@hicor-ui/components/input'
+import ElScrollbar from '@hicor-ui/components/scrollbar'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import ElIcon from '@hicor-ui/components/icon'
+import { useFormDisabled } from '@hicor-ui/components/form'
 import { autocompleteEmits, autocompleteProps } from './autocomplete'
 import type { AutocompleteData } from './autocomplete'
 
 import type { StyleValue } from 'vue'
-import type { TooltipInstance } from '@element-plus/components/tooltip'
-import type { InputInstance } from '@element-plus/components/input'
+import type { TooltipInstance } from '@hicor-ui/components/tooltip'
+import type { InputInstance } from '@hicor-ui/components/input'
 
 const COMPONENT_NAME = 'ElAutocomplete'
 defineOptions({

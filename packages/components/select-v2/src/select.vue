@@ -324,12 +324,12 @@ import {
   toRefs,
   vModelText,
 } from 'vue'
-import { isArray } from '@element-plus/utils'
-import { ClickOutside } from '@element-plus/directives'
-import ElTooltip from '@element-plus/components/tooltip'
-import ElTag from '@element-plus/components/tag'
-import ElIcon from '@element-plus/components/icon'
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { isArray } from '@hicor-ui/utils'
+import { ClickOutside } from '@hicor-ui/directives'
+import ElTooltip from '@hicor-ui/components/tooltip'
+import ElTag from '@hicor-ui/components/tag'
+import ElIcon from '@hicor-ui/components/icon'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import ElSelectMenu from './select-dropdown'
 import useSelect from './useSelect'
 import { selectV2InjectionKey } from './token'

@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, renderSlot } from 'vue'
-import { buildProps } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { buildProps } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 
 import type { ExtractPropTypes } from 'vue'
 

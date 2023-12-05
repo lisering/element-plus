@@ -1,5 +1,5 @@
-import { buildProps, definePropType, isNumber } from '@element-plus/utils'
-import { CHANGE_EVENT } from '@element-plus/constants'
+import { buildProps, definePropType, isNumber } from '@hicor-ui/utils'
+import { CHANGE_EVENT } from '@hicor-ui/constants'
 
 import type { ExtractPropTypes, StyleValue } from 'vue'
 import type { Dayjs } from 'dayjs'

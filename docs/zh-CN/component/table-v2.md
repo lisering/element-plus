@@ -11,7 +11,7 @@ lang: zh-CN
 
 :::tip
 
-该组件**仍在测试中**，生产环境使用可能有风险。 若您发现了 bug 或问题，请于 [GitHub](https://github.com/element-plus/element-plus/issues) 报告给我们以便修复。 同时，有一些 API 并未在此文档中提及，因为部分还没有开发完全，因此我们不在此提及。
+该组件**仍在测试中**，生产环境使用可能有风险。 若您发现了 bug 或问题，请于 [GitHub](https://github.com/hicor-ui/hicor-ui/issues) 报告给我们以便修复。 同时，有一些 API 并未在此文档中提及，因为部分还没有开发完全，因此我们不在此提及。
 
 **即使**虚拟化的表格是高效的，但是当数据负载过大时，**网络**和**内存容量**也会成为您应用程序的瓶颈。 因此请牢记，虚拟化表格永远不是最完美的解决方案，请考虑数据分页、过滤器等优化方案。
 
@@ -366,9 +366,9 @@ table-v2/manual-scroll
 
 | 属性名                | 描述                              | 类型                                                                                                                                                               | 默认值   |
 | ------------------ | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| align              | 表格单元格内容对齐方式                     | [Alignment](https://github.com/element-plus/element-plus/blob/b92b22932758f0ddea98810ae248f6ca62f77e25/packages/components/table-v2/src/constants.ts#L6)         | left  |
+| align              | 表格单元格内容对齐方式                     | [Alignment](https://github.com/hicor-ui/hicor-ui/blob/b92b22932758f0ddea98810ae248f6ca62f77e25/packages/components/table-v2/src/constants.ts#L6)         | left  |
 | class              | 列的类名                            | String                                                                                                                                                           | -     |
-| fixed              | 固定列位置                           | Boolean/[FixedDir](https://github.com/element-plus/element-plus/blob/b92b22932758f0ddea98810ae248f6ca62f77e25/packages/components/table-v2/src/constants.ts#L11) | false |
+| fixed              | 固定列位置                           | Boolean/[FixedDir](https://github.com/hicor-ui/hicor-ui/blob/b92b22932758f0ddea98810ae248f6ca62f77e25/packages/components/table-v2/src/constants.ts#L11) | false |
 | flexGrow           | CSS 属性 flex grow, 仅当不是固定表时才生效   | Number                                                                                                                                                           | 0     |
 | flexShrink         | CSS 属性 flex shrink, 仅当不是固定表时才生效 | Number                                                                                                                                                           | 1     |
 | headerClass        | 自定义 header 头部类名                 | String                                                                                                                                                           | -     |

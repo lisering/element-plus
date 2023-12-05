@@ -11,7 +11,7 @@ import FigmaTemplateSvg from './resources/figma-template-svg.vue'
 import FigmaVariablesSvg from './resources/figma-variables-svg.vue'
 import FigmaUiKitSvg from './resources/figma-ui-kit-svg.vue'
 
-const mirrorUrl = 'element-plus.gitee.io'
+const mirrorUrl = 'hicor-ui.gitee.io'
 const isMirrorUrl = () => {
   if (!isClient) return
   return window.location.hostname === mirrorUrl
@@ -25,9 +25,9 @@ const resourceUrl = {
   },
   gitee: {
     sketch:
-      'https://gitee.com/element-plus/resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
+      'https://gitee.com/hicor-ui/resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
     axure:
-      'https://gitee.com/element-plus/resources/raw/master/Element_Components_v2.1.0.rplib',
+      'https://gitee.com/hicor-ui/resources/raw/master/Element_Components_v2.1.0.rplib',
   },
 }[isMirrorUrl() ? 'gitee' : 'github']
 
@@ -74,7 +74,7 @@ const resourceCards = computed(() => [
     description: '2023 Figma UI Kit',
     icon: FigmaUiKitSvg,
     intro: resourceLang.value.figma2023Intro,
-    url: 'https://www.figma.com/community/file/1305760370797950824/element-plus-design-system-ui-kit',
+    url: 'https://www.figma.com/community/file/1305760370797950824/hicor-ui-design-system-ui-kit',
   },
 ])
 </script>
@@ -117,10 +117,12 @@ const resourceCards = computed(() => [
     color: var(--text-color);
     margin-bottom: 24px;
   }
+
   p {
     color: var(--text-color-light);
     line-height: 24px;
     margin: 0;
+
     &:last-of-type {
       margin-top: 8px;
     }

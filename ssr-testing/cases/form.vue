@@ -1,43 +1,27 @@
 <template>
-  <el-form
-    ref="formRef"
-    :model="dynamicValidateForm"
-    label-width="120px"
-    class="demo-dynamic"
-  >
-    <el-form-item
-      prop="email"
-      label="Email"
-      :rules="[
-        {
-          required: true,
-          message: 'Please input email address',
-          trigger: 'blur',
-        },
-        {
-          type: 'email',
-          message: 'Please input correct email address',
-          trigger: ['blur', 'change'],
-        },
-      ]"
-    >
+  <el-form ref="formRef" :model="dynamicValidateForm" label-width="120px" class="demo-dynamic">
+    <el-form-item prop="email" label="Email" :rules="[
+      {
+        required: true,
+        message: 'Please input email address',
+        trigger: 'blur',
+      },
+      {
+        type: 'email',
+        message: 'Please input correct email address',
+        trigger: ['blur', 'change'],
+      },
+    ]">
       <el-input v-model="dynamicValidateForm.email" />
     </el-form-item>
-    <el-form-item
-      v-for="(domain, index) in dynamicValidateForm.domains"
-      :key="domain.key"
-      :label="'Domain' + index"
-      :prop="'domains.' + index + '.value'"
-      :rules="{
+    <el-form-item v-for="(domain, index) in dynamicValidateForm.domains" :key="domain.key" :label="'Domain' + index"
+      :prop="'domains.' + index + '.value'" :rules="{
         required: true,
         message: 'domain can not be null',
         trigger: 'blur',
-      }"
-    >
+      }">
       <el-input v-model="domain.value" />
-      <el-button style="margin-top: 8px" @click.prevent="removeDomain(domain)"
-        >Delete</el-button
-      >
+      <el-button style="margin-top: 8px" @click.prevent="removeDomain(domain)">Delete</el-button>
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="submitForm(formRef)">Submit</el-button>
@@ -49,7 +33,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import type { FormInstance } from 'element-plus'
+import type { FormInstance } from 'hicor-ui'
 
 const formRef = ref<FormInstance>()
 const dynamicValidateForm = reactive<{

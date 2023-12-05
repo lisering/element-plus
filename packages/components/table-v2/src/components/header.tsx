@@ -1,6 +1,6 @@
 import { computed, defineComponent, nextTick, ref, unref } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
-import { ensureArray } from '@element-plus/utils'
+import { useNamespace } from '@hicor-ui/hooks'
+import { ensureArray } from '@hicor-ui/utils'
 import { tableV2HeaderProps } from '../header'
 import { enforceUnit } from '../utils'
 

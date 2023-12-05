@@ -55,15 +55,15 @@ import {
   watch,
 } from 'vue'
 import { useEventListener, useThrottleFn } from '@vueuse/core'
-import { useAttrs, useLocale, useNamespace } from '@element-plus/hooks'
-import ImageViewer from '@element-plus/components/image-viewer'
+import { useAttrs, useLocale, useNamespace } from '@hicor-ui/hooks'
+import ImageViewer from '@hicor-ui/components/image-viewer'
 import {
   getScrollContainer,
   isClient,
   isElement,
   isInContainer,
   isString,
-} from '@element-plus/utils'
+} from '@hicor-ui/utils'
 import { imageEmits, imageProps } from './image'
 
 import type { CSSProperties, StyleValue } from 'vue'

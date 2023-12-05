@@ -1,10 +1,10 @@
-import { buildProps, definePropType } from '@element-plus/utils'
-import { useSizeProp } from '@element-plus/hooks'
+import { buildProps, definePropType } from '@hicor-ui/utils'
+import { useSizeProp } from '@hicor-ui/hooks'
 
 import type { ExtractPropTypes } from 'vue'
-import type { Language } from '@element-plus/locale'
-import type { ButtonConfigContext } from '@element-plus/components/button'
-import type { MessageConfigContext } from '@element-plus/components/message'
+import type { Language } from '@hicor-ui/locale'
+import type { ButtonConfigContext } from '@hicor-ui/components/button'
+import type { MessageConfigContext } from '@hicor-ui/components/message'
 
 export type ExperimentalFeatures = {
   // TO BE Defined
@@ -58,7 +58,7 @@ export const configProviderProps = buildProps({
    */
   zIndex: Number,
   /**
-   * @description global component className prefix (cooperated with [$namespace](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1)) | ^[string]
+   * @description global component className prefix (cooperated with [$namespace](https://github.com/hicor-ui/hicor-ui/blob/dev/packages/theme-chalk/src/mixins/config.scss#L1)) | ^[string]
    */
   namespace: {
     type: String,

@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { computed, h, inject } from 'vue'
 import { merge } from 'lodash-unified'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { getRowIdentity } from '../util'
 import { TABLE_INJECTION_KEY } from '../tokens'
 import useEvents from './events-helper'

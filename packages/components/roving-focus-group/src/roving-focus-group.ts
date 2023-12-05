@@ -1,5 +1,5 @@
-import { buildProps, definePropType } from '@element-plus/utils'
-import { createCollectionWithScope } from '@element-plus/components/collection'
+import { buildProps, definePropType } from '@hicor-ui/utils'
+import { createCollectionWithScope } from '@hicor-ui/components/collection'
 import type { ExtractPropTypes, HTMLAttributes, StyleValue } from 'vue'
 
 export const rovingFocusGroupProps = buildProps({

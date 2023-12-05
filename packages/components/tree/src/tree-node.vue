@@ -93,12 +93,12 @@ import {
   watch,
 } from 'vue'
 import { isFunction, isString } from '@vue/shared'
-import ElCollapseTransition from '@element-plus/components/collapse-transition'
-import ElCheckbox from '@element-plus/components/checkbox'
-import { ElIcon } from '@element-plus/components/icon'
 import { CaretRight, Loading } from '@element-plus/icons-vue'
-import { debugWarn } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import ElCollapseTransition from '@hicor-ui/components/collapse-transition'
+import ElCheckbox from '@hicor-ui/components/checkbox'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { debugWarn } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import NodeContent from './tree-node-content.vue'
 import { getNodeKey as getNodeKeyUtil, handleCurrentChange } from './model/util'
 import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
@@ -106,7 +106,7 @@ import { dragEventsKey } from './model/useDragNode'
 import Node from './model/node'
 
 import type { ComponentInternalInstance, PropType } from 'vue'
-import type { Nullable } from '@element-plus/utils'
+import type { Nullable } from '@hicor-ui/utils'
 import type { RootTreeType, TreeNodeData, TreeOptionProps } from './tree.type'
 
 export default defineComponent({

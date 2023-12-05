@@ -1,4 +1,4 @@
-import { buildProps, definePropType, generateId } from '@element-plus/utils'
+import { buildProps, definePropType, generateId } from '@hicor-ui/utils'
 import type { ExtractPropTypes } from 'vue'
 import type { CollapseActiveName } from './collapse'
 

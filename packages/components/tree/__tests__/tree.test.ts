@@ -2,7 +2,7 @@
 import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, test, vi } from 'vitest'
-import defineGetter from '@element-plus/test-utils/define-getter'
+import defineGetter from '@hicor-ui/test-utils/define-getter'
 import Tree from '../src/tree.vue'
 import Button from '../../button/src/button.vue'
 import type Node from '../src/model/node'

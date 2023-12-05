@@ -1,6 +1,6 @@
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { useSizeProp } from '@element-plus/hooks'
-import { isBoolean, isNumber, isString } from '@element-plus/utils'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { useSizeProp } from '@hicor-ui/hooks'
+import { isBoolean, isNumber, isString } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type Checkbox from './checkbox.vue'

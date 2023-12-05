@@ -15,8 +15,8 @@ import {
   iconPropType,
   isNumber,
   mutable,
-} from '@element-plus/utils'
-import { useLocale, useNamespace } from '@element-plus/hooks'
+} from '@hicor-ui/utils'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { elPaginationKey } from './constants'
 
 import Prev from './components/prev.vue'

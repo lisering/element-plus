@@ -1,3 +1,3 @@
-import '@element-plus/components/base/style'
-import '@element-plus/theme-chalk/src/descriptions.scss'
-import '@element-plus/components/descriptions-item/style'
+import '@hicor-ui/components/base/style'
+import '@hicor-ui/theme-chalk/src/descriptions.scss'
+import '@hicor-ui/components/descriptions-item/style'

@@ -73,7 +73,9 @@
     >
       <slot :percentage="percentage">
         <span v-if="!status">{{ content }}</span>
-        <el-icon v-else><component :is="statusIcon" /></el-icon>
+        <el-icon v-else>
+          <component :is="statusIcon" />
+        </el-icon>
       </slot>
     </div>
   </div>
@@ -81,7 +83,6 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ElIcon } from '@element-plus/components/icon'
 import {
   Check,
   CircleCheck,
@@ -89,8 +90,9 @@ import {
   Close,
   WarningFilled,
 } from '@element-plus/icons-vue'
-import { useNamespace } from '@element-plus/hooks'
-import { isFunction, isString } from '@element-plus/utils'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
+import { isFunction, isString } from '@hicor-ui/utils'
 import { progressProps } from './progress'
 import type { CSSProperties } from 'vue'
 import type { ProgressColor } from './progress'

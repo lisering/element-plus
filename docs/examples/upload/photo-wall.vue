@@ -6,7 +6,9 @@
     :on-preview="handlePictureCardPreview"
     :on-remove="handleRemove"
   >
-    <el-icon><Plus /></el-icon>
+    <el-icon>
+      <Plus />
+    </el-icon>
   </el-upload>
 
   <el-dialog v-model="dialogVisible">
@@ -18,7 +20,7 @@
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 
-import type { UploadProps, UploadUserFile } from 'element-plus'
+import type { UploadProps, UploadUserFile } from 'hicor-ui'
 
 const fileList = ref<UploadUserFile[]>([
   {

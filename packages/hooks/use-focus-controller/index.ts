@@ -1,6 +1,6 @@
 import { getCurrentInstance, ref, shallowRef, watch } from 'vue'
 import { useEventListener } from '@vueuse/core'
-import { isFunction } from '@element-plus/utils'
+import { isFunction } from '@hicor-ui/utils'
 import type { ShallowRef } from 'vue'
 
 interface UseFocusControllerOptions {

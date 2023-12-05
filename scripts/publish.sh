@@ -7,7 +7,7 @@ pnpm update:version
 
 pnpm build
 
-cd dist/element-plus
+cd dist/hicor-ui
 npm publish --provenance
 cd -
 

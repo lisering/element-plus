@@ -22,10 +22,10 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import { useFormItem, useFormItemInputId } from '@element-plus/components/form'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { useId, useNamespace } from '@element-plus/hooks'
-import { debugWarn } from '@element-plus/utils'
+import { useFormItem, useFormItemInputId } from '@hicor-ui/components/form'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { useId, useNamespace } from '@hicor-ui/hooks'
+import { debugWarn } from '@hicor-ui/utils'
 import { radioGroupEmits, radioGroupProps } from './radio-group'
 import { radioGroupKey } from './constants'
 

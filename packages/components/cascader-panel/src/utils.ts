@@ -1,4 +1,4 @@
-import { isLeaf } from '@element-plus/utils'
+import { isLeaf } from '@hicor-ui/utils'
 import type { default as CascaderNode } from './node'
 
 export const getMenuIndex = (el: HTMLElement) => {

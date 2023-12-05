@@ -23,7 +23,7 @@ addIcon
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Select } from '@element-plus/icons-vue'
-import type { TabPaneName } from 'element-plus'
+import type { TabPaneName } from 'hicor-ui'
 
 let tabIndex = 2
 const editableTabsValue = ref('2')

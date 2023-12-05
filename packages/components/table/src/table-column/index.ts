@@ -10,8 +10,8 @@ import {
   onMounted,
   ref,
 } from 'vue'
-import ElCheckbox from '@element-plus/components/checkbox'
-import { isString, isUndefined } from '@element-plus/utils'
+import ElCheckbox from '@hicor-ui/components/checkbox'
+import { isString, isUndefined } from '@hicor-ui/utils'
 import { cellStarts } from '../config'
 import { compose, mergeOptions } from '../util'
 import useWatcher from './watcher-helper'

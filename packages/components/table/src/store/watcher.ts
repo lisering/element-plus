@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { getCurrentInstance, ref, toRefs, unref, watch } from 'vue'
-import { hasOwn } from '@element-plus/utils'
+import { hasOwn } from '@hicor-ui/utils'
 import {
   getColumnById,
   getColumnByKey,

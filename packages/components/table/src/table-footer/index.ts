@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { defineComponent, h } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import useStyle from './style-helper'
 import type { Store } from '../store'
 

@@ -1,8 +1,8 @@
 import { computed, ref, useSlots } from 'vue'
 import dayjs from 'dayjs'
-import { useDeprecated, useLocale } from '@element-plus/hooks'
-import { debugWarn } from '@element-plus/utils'
-import { INPUT_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { useDeprecated, useLocale } from '@hicor-ui/hooks'
+import { debugWarn } from '@hicor-ui/utils'
+import { INPUT_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 
 import type { ComputedRef, SetupContext } from 'vue'
 import type { Dayjs } from 'dayjs'
@@ -117,7 +117,7 @@ export const useCalendar = (
   const prevYearDayjs = computed(() => date.value.subtract(1, 'year').date(1))
   const nextYearDayjs = computed(() => date.value.add(1, 'year').date(1))
 
-  // https://github.com/element-plus/element-plus/issues/3155
+  // https://github.com/hicor-ui/hicor-ui/issues/3155
   // Calculate the validate date range according to the start and end dates
   const calculateValidatedDateRange = (
     startDayjs: Dayjs,
@@ -179,7 +179,7 @@ export const useCalendar = (
       replacement: '"date-cell"',
       scope: 'ElCalendar',
       version: '2.3.0',
-      ref: 'https://element-plus.org/en-US/component/calendar.html#slots',
+      ref: 'https://hicor-ui.org/en-US/component/calendar.html#slots',
       type: 'Slot',
     },
     computed(() => !!slots.dateCell)

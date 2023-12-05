@@ -18,13 +18,13 @@
 </template>
 <script lang="ts" setup>
 import { inject, ref, toRef, unref } from 'vue'
-import { ElPopperTrigger } from '@element-plus/components/popper'
-import { composeEventHandlers } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { ElPopperTrigger } from '@hicor-ui/components/popper'
+import { composeEventHandlers } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { TOOLTIP_INJECTION_KEY } from './constants'
 import { useTooltipTriggerProps } from './trigger'
 import { whenTrigger } from './utils'
-import type { OnlyChildExpose } from '@element-plus/components/slot'
+import type { OnlyChildExpose } from '@hicor-ui/components/slot'
 
 defineOptions({
   name: 'ElTooltipTrigger',

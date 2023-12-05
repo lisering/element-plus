@@ -14,13 +14,13 @@
   </el-table-v2>
 </template>
 <script lang="tsx" setup>
-import { TableV2FixedDir, TableV2Placeholder } from 'element-plus'
+import { TableV2FixedDir, TableV2Placeholder } from 'hicor-ui'
 
 import type { FunctionalComponent } from 'vue'
 import type {
   HeaderClassNameGetter,
   TableV2CustomizedHeaderSlotParam,
-} from 'element-plus'
+} from 'hicor-ui'
 
 const generateColumns = (length = 10, prefix = 'column-', props?: any) =>
   Array.from({ length }).map((_, columnIndex) => ({

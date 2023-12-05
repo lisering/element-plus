@@ -1,4 +1,4 @@
-import { TypeComponentsMap, buildProps, keysOf } from '@element-plus/utils'
+import { TypeComponentsMap, buildProps, keysOf } from '@hicor-ui/utils'
 import type { ExtractPropTypes } from 'vue'
 
 export const alertEffects = ['light', 'dark'] as const

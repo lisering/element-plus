@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 import TableV2 from './src/table-v2'
 import AutoResizer from './src/components/auto-resizer'
 

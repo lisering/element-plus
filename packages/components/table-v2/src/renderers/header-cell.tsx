@@ -5,7 +5,7 @@ import { placeholderSign } from '../private'
 import { componentToSlot, enforceUnit, tryCall } from '../utils'
 
 import type { FunctionalComponent, UnwrapNestedRefs } from 'vue'
-import type { UseNamespaceReturn } from '@element-plus/hooks'
+import type { UseNamespaceReturn } from '@hicor-ui/hooks'
 import type { TableV2HeaderRowCellRendererParams } from '../components'
 import type { UseTableReturn } from '../use-table'
 import type { TableV2Props } from '../table'

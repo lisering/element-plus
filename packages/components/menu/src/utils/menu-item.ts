@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { triggerEvent } from '@element-plus/utils'
-import { EVENT_CODE } from '@element-plus/constants'
+import { triggerEvent } from '@hicor-ui/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
 import SubMenu from './submenu'
 
 class MenuItem {

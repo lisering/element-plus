@@ -1,21 +1,16 @@
 import { NOOP } from '@vue/shared'
-import {
-  buildProps,
-  definePropType,
-  isObject,
-  isString,
-} from '@element-plus/utils'
-import { useTooltipContentProps } from '@element-plus/components/tooltip'
+import { buildProps, definePropType, isObject, isString } from '@hicor-ui/utils'
+import { useTooltipContentProps } from '@hicor-ui/components/tooltip'
 import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
+} from '@hicor-ui/constants'
 
 import type { ExtractPropTypes } from 'vue'
 import type Autocomplete from './autocomplete.vue'
-import type { Placement } from '@element-plus/components/popper'
-import type { Awaitable } from '@element-plus/utils'
+import type { Placement } from '@hicor-ui/components/popper'
+import type { Awaitable } from '@hicor-ui/utils'
 
 export type AutocompleteData = Record<string, any>[]
 export type AutocompleteFetchSuggestionsCallback = (

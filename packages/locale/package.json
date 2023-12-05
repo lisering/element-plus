@@ -1,7 +1,7 @@
 {
-  "name": "@element-plus/locale",
+  "name": "@hicor-ui/locale",
   "version": "0.0.5",
-  "description": "Element Plus locale",
+  "description": "Hicor Ui locale",
   "license": "MIT",
   "main": "index.ts",
   "module": "index.ts",

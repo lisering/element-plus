@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { ElScrollbar } from 'element-plus'
+import { ElScrollbar } from 'hicor-ui'
 
 const max = ref(0)
 const value = ref(0)
@@ -51,6 +51,7 @@ const formatTooltip = (value: number) => {
   background: var(--el-color-primary-light-9);
   color: var(--el-color-primary);
 }
+
 .el-slider {
   margin-top: 20px;
 }

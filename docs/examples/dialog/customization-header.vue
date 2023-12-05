@@ -7,7 +7,9 @@
       <div class="my-header">
         <h4 :id="titleId" :class="titleClass">This is a custom header!</h4>
         <el-button type="danger" @click="close">
-          <el-icon class="el-icon--left"><CircleCloseFilled /></el-icon>
+          <el-icon class="el-icon--left">
+            <CircleCloseFilled />
+          </el-icon>
           Close
         </el-button>
       </div>
@@ -18,7 +20,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElButton, ElDialog } from 'element-plus'
+import { ElButton, ElDialog } from 'hicor-ui'
 import { CircleCloseFilled } from '@element-plus/icons-vue'
 
 const visible = ref(false)

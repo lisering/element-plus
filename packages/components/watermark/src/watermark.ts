@@ -1,4 +1,4 @@
-import { buildProps, definePropType } from '@element-plus/utils'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 
 import type { ExtractPropTypes } from 'vue'
 import type Watermark from './watermark.vue'
@@ -51,7 +51,7 @@ export const watermarkProps = buildProps({
    */
   content: {
     type: definePropType<string | string[]>([String, Array]),
-    default: 'Element Plus',
+    default: 'Hicor Ui',
   },
   /**
    * @description Text style

@@ -1,9 +1,9 @@
-import { buildProps, definePropType, isArray } from '@element-plus/utils'
-import { datePickTypes } from '@element-plus/constants'
+import { buildProps, definePropType, isArray } from '@hicor-ui/utils'
+import { datePickTypes } from '@hicor-ui/constants'
 
 import type { ExtractPropTypes } from 'vue'
 import type { Dayjs } from 'dayjs'
-import type { DatePickType } from '@element-plus/constants'
+import type { DatePickType } from '@hicor-ui/constants'
 
 const selectionModes = ['date', 'dates', 'year', 'month', 'week', 'range']
 

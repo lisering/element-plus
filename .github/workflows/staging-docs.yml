@@ -13,7 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'element-plus' }}
+    if: ${{ github.repository_owner == 'hicor-ui' }}
 
     steps:
       - name: Checkout
@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: Compile Element Plus
+      - name: Compile Hicor Ui
         run: pnpm build
         env:
           NODE_OPTIONS: --max-old-space-size=4096
@@ -79,6 +79,6 @@ jobs:
           token: ${{ secrets.EP_BOT_TOKEN }}
           branch: main
           folder: docs/.vitepress/dist
-          repository-name: element-plus/staging
+          repository-name: hicor-ui/staging
           git-config-name: ElementPlusBot
-          git-config-email: hello@element-plus.org
+          git-config-email: hello@hicor-ui.org

@@ -1,7 +1,7 @@
 {
-  "name": "@element-plus/directives",
+  "name": "@hicor-ui/directives",
   "version": "0.0.5",
-  "description": "Element Plus directives",
+  "description": "Hicor Ui directives",
   "license": "MIT",
   "main": "index.ts",
   "module": "index.ts",

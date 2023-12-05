@@ -7,7 +7,7 @@ import {
   ref,
   unref,
 } from 'vue'
-import { debugWarn, isUndefined } from '@element-plus/utils'
+import { debugWarn, isUndefined } from '@hicor-ui/utils'
 import { carouselContextKey } from './constants'
 
 import type { CarouselItemProps } from './carousel-item'

@@ -1,8 +1,8 @@
 import installer from './defaults'
-export * from '@element-plus/components'
-export * from '@element-plus/constants'
-export * from '@element-plus/directives'
-export * from '@element-plus/hooks'
+export * from '@hicor-ui/components'
+export * from '@hicor-ui/constants'
+export * from '@hicor-ui/directives'
+export * from '@hicor-ui/hooks'
 export * from './make-installer'
 
 export const install = installer.install

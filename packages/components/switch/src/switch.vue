@@ -77,21 +77,21 @@ import {
   watch,
 } from 'vue'
 import { isPromise } from '@vue/shared'
-import { addUnit, debugWarn, isBoolean, throwError } from '@element-plus/utils'
-import ElIcon from '@element-plus/components/icon'
+import { Loading } from '@element-plus/icons-vue'
+import { addUnit, debugWarn, isBoolean, throwError } from '@hicor-ui/utils'
+import ElIcon from '@hicor-ui/components/icon'
 import {
   useFormDisabled,
   useFormItem,
   useFormItemInputId,
   useFormSize,
-} from '@element-plus/components/form'
-import { Loading } from '@element-plus/icons-vue'
+} from '@hicor-ui/components/form'
 import {
   CHANGE_EVENT,
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
-} from '@element-plus/constants'
-import { useDeprecated, useNamespace } from '@element-plus/hooks'
+} from '@hicor-ui/constants'
+import { useDeprecated, useNamespace } from '@hicor-ui/hooks'
 import { switchEmits, switchProps } from './switch'
 import type { CSSProperties } from 'vue'
 
@@ -116,7 +116,7 @@ const useBatchDeprecated = (list: string[][]) => {
         replacement: param[1],
         scope: COMPONENT_NAME,
         version: '2.3.0',
-        ref: 'https://element-plus.org/en-US/component/switch.html#attributes',
+        ref: 'https://hicor-ui.org/en-US/component/switch.html#attributes',
         type: 'Attribute',
       },
       computed(() => !!vm.vnode.props?.[param[2]])

@@ -1,13 +1,13 @@
 import { placements } from '@popperjs/core'
-import { useSizeProp } from '@element-plus/hooks'
-import { buildProps, definePropType, iconPropType } from '@element-plus/utils'
-import { useTooltipContentProps } from '@element-plus/components/tooltip'
 import { CircleClose } from '@element-plus/icons-vue'
+import { useSizeProp } from '@hicor-ui/hooks'
+import { buildProps, definePropType, iconPropType } from '@hicor-ui/utils'
+import { useTooltipContentProps } from '@hicor-ui/components/tooltip'
 import { defaultProps } from './useProps'
 
 import type { Option, OptionType } from './select.types'
 import type { Props } from './useProps'
-import type { Options, Placement } from '@element-plus/components/popper'
+import type { Options, Placement } from '@hicor-ui/components/popper'
 
 export const SelectProps = buildProps({
   allowCreate: Boolean,

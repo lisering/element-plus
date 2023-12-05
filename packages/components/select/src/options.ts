@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { isFunction, isString } from '@element-plus/utils'
+import { isFunction, isString } from '@hicor-ui/utils'
 import type { Component, VNode, VNodeNormalizedChildren } from 'vue'
 
 export default defineComponent({

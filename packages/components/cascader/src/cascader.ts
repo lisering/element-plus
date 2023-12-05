@@ -1,13 +1,13 @@
-import { CommonProps } from '@element-plus/components/cascader-panel'
-import { buildProps, definePropType, isBoolean } from '@element-plus/utils'
-import { useSizeProp } from '@element-plus/hooks'
-import { useTooltipContentProps } from '@element-plus/components/tooltip'
-import { tagProps } from '@element-plus/components/tag'
-import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@element-plus/constants'
+import { CommonProps } from '@hicor-ui/components/cascader-panel'
+import { buildProps, definePropType, isBoolean } from '@hicor-ui/utils'
+import { useSizeProp } from '@hicor-ui/hooks'
+import { useTooltipContentProps } from '@hicor-ui/components/tooltip'
+import { tagProps } from '@hicor-ui/components/tag'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import type {
   CascaderNode,
   CascaderValue,
-} from '@element-plus/components/cascader-panel'
+} from '@hicor-ui/components/cascader-panel'
 
 export const cascaderProps = buildProps({
   ...CommonProps,

@@ -56,16 +56,16 @@
 </template>
 <script lang="ts" setup>
 import { computed, inject, markRaw, ref, watch } from 'vue'
-import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { hasClass, isArray, isObject, isString } from '@element-plus/utils'
+import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { hasClass, isArray, isObject, isString } from '@hicor-ui/utils'
 import {
   formContextKey,
   formItemContextKey,
   useFormItemInputId,
   useFormSize,
-} from '@element-plus/components/form'
-import { ElIcon } from '@element-plus/components/icon'
-import { useNamespace } from '@element-plus/hooks'
+} from '@hicor-ui/components/form'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useNamespace } from '@hicor-ui/hooks'
 import { rateEmits, rateProps } from './rate'
 import type { CSSProperties, Component } from 'vue'
 
@@ -263,7 +263,7 @@ function setCurrentValue(value: number, event?: MouseEvent) {
     return
   }
   if (props.allowHalf && event) {
-    // TODO: use cache via computed https://github.com/element-plus/element-plus/pull/5456#discussion_r786472092
+    // TODO: use cache via computed https://github.com/hicor-ui/hicor-ui/pull/5456#discussion_r786472092
     let target = event.target as HTMLElement
     if (hasClass(target, ns.e('item'))) {
       target = target.querySelector(`.${ns.e('icon')}`)!

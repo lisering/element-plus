@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue'
-import { ElInput } from 'element-plus'
+import { ElInput } from 'hicor-ui'
 
 const inputValue = ref('')
 const dynamicTags = ref(['Tag 1', 'Tag 2', 'Tag 3'])

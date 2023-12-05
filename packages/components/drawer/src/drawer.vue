@@ -63,7 +63,9 @@
                 type="button"
                 @click="handleClose"
               >
-                <el-icon :class="ns.e('close')"><close /></el-icon>
+                <el-icon :class="ns.e('close')">
+                  <close />
+                </el-icon>
               </button>
             </header>
             <template v-if="rendered">
@@ -85,12 +87,12 @@
 import { computed, defineComponent, ref } from 'vue'
 import { Close } from '@element-plus/icons-vue'
 
-import { ElOverlay } from '@element-plus/components/overlay'
-import ElFocusTrap from '@element-plus/components/focus-trap'
-import { useDialog } from '@element-plus/components/dialog'
-import { addUnit } from '@element-plus/utils'
-import ElIcon from '@element-plus/components/icon'
-import { useDeprecated, useLocale, useNamespace } from '@element-plus/hooks'
+import { ElOverlay } from '@hicor-ui/components/overlay'
+import ElFocusTrap from '@hicor-ui/components/focus-trap'
+import { useDialog } from '@hicor-ui/components/dialog'
+import { addUnit } from '@hicor-ui/utils'
+import ElIcon from '@hicor-ui/components/icon'
+import { useDeprecated, useLocale, useNamespace } from '@hicor-ui/hooks'
 import { drawerEmits, drawerProps } from './drawer'
 
 export default defineComponent({
@@ -112,7 +114,7 @@ export default defineComponent({
         from: 'the title slot',
         replacement: 'the header slot',
         version: '3.0.0',
-        ref: 'https://element-plus.org/en-US/component/drawer.html#slots',
+        ref: 'https://hicor-ui.org/en-US/component/drawer.html#slots',
       },
       computed(() => !!slots.title)
     )
@@ -122,7 +124,7 @@ export default defineComponent({
         from: 'custom-class',
         replacement: 'class',
         version: '2.3.0',
-        ref: 'https://element-plus.org/en-US/component/drawer.html#attributes',
+        ref: 'https://hicor-ui.org/en-US/component/drawer.html#attributes',
         type: 'Attribute',
       },
       computed(() => !!props.customClass)

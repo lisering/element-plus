@@ -249,7 +249,7 @@ module.exports = defineConfig({
             position: 'before',
           },
           {
-            pattern: '@element-plus/**',
+            pattern: '@hicor-ui/**',
             group: 'internal',
           },
         ],

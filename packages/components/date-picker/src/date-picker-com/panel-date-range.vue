@@ -252,23 +252,23 @@
 <script lang="ts" setup>
 import { computed, inject, ref, toRef, unref } from 'vue'
 import dayjs from 'dayjs'
-import { ClickOutside as vClickoutside } from '@element-plus/directives'
-import { isArray } from '@element-plus/utils'
-import { useLocale } from '@element-plus/hooks'
-import ElButton from '@element-plus/components/button'
-import ElInput from '@element-plus/components/input'
-import {
-  TimePickPanel,
-  extractDateFormat,
-  extractTimeFormat,
-} from '@element-plus/components/time-picker'
-import ElIcon from '@element-plus/components/icon'
 import {
   ArrowLeft,
   ArrowRight,
   DArrowLeft,
   DArrowRight,
 } from '@element-plus/icons-vue'
+import { ClickOutside as vClickoutside } from '@hicor-ui/directives'
+import { isArray } from '@hicor-ui/utils'
+import { useLocale } from '@hicor-ui/hooks'
+import ElButton from '@hicor-ui/components/button'
+import ElInput from '@hicor-ui/components/input'
+import {
+  TimePickPanel,
+  extractDateFormat,
+  extractTimeFormat,
+} from '@hicor-ui/components/time-picker'
+import ElIcon from '@hicor-ui/components/icon'
 import { panelDateRangeProps } from '../props/panel-date-range'
 import { useRangePicker } from '../composables/use-range-picker'
 import { getDefaultValue, isValidRange } from '../utils'

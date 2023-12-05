@@ -1,4 +1,4 @@
-import { buildProps, definePropType } from '@element-plus/utils'
+import { buildProps, definePropType } from '@hicor-ui/utils'
 import { column } from './common'
 
 import type { ExtractPropTypes, StyleValue } from 'vue'

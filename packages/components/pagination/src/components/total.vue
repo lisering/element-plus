@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useLocale, useNamespace } from '@element-plus/hooks'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { usePagination } from '../usePagination'
 import { paginationTotalProps } from './total'
 

@@ -1,5 +1,5 @@
-import { CHANGE_EVENT } from '@element-plus/constants'
-import { buildProps, isNumber } from '@element-plus/utils'
+import { CHANGE_EVENT } from '@hicor-ui/constants'
+import { buildProps, isNumber } from '@hicor-ui/utils'
 import type Steps from './steps.vue'
 import type { ExtractPropTypes } from 'vue'
 

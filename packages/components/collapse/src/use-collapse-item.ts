@@ -1,6 +1,6 @@
 import { computed, inject, ref, unref } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
-import { generateId } from '@element-plus/utils'
+import { useNamespace } from '@hicor-ui/hooks'
+import { generateId } from '@hicor-ui/utils'
 import { collapseContextKey } from './constants'
 
 import type { CollapseItemProps } from './collapse-item'

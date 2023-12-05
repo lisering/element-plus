@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { computed, getCurrentInstance, inject, toRaw, unref, watch } from 'vue'
 import { get } from 'lodash-unified'
-import { isObject as _isObject, escapeStringRegexp } from '@element-plus/utils'
+import { isObject as _isObject, escapeStringRegexp } from '@hicor-ui/utils'
 import { selectGroupKey, selectKey } from './token'
 
 import type { Ref } from 'vue'

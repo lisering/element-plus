@@ -52,7 +52,7 @@ describe('Calendar.vue', () => {
     ).toBeNull()
   })
 
-  // https://github.com/element-plus/element-plus/issues/3155
+  // https://github.com/hicor-ui/hicor-ui/issues/3155
   it('range when the start date will be calculated to last month', () => {
     const wrapper = mount(() => (
       <Calendar range={[new Date(2021, 1, 2), new Date(2021, 1, 28)]} />
@@ -87,7 +87,7 @@ describe('Calendar.vue', () => {
     expect(cell?.classList.contains('is-selected')).toBeTruthy()
   })
 
-  // https://github.com/element-plus/element-plus/issues/3155
+  // https://github.com/hicor-ui/hicor-ui/issues/3155
   it('range tow monthes when the start date will be calculated to last month', async () => {
     const wrapper = mount(() => (
       <Calendar range={[new Date(2021, 1, 2), new Date(2021, 2, 21)]} />

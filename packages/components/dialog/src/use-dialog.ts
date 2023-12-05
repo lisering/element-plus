@@ -14,10 +14,10 @@ import {
   useId,
   useLockscreen,
   useZIndex,
-} from '@element-plus/hooks'
-import { UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import { addUnit, isClient } from '@element-plus/utils'
-import { useGlobalConfig } from '@element-plus/components/config-provider'
+} from '@hicor-ui/hooks'
+import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import { addUnit, isClient } from '@hicor-ui/utils'
+import { useGlobalConfig } from '@hicor-ui/components/config-provider'
 
 import type { CSSProperties, Ref, SetupContext } from 'vue'
 import type { DialogEmits, DialogProps } from './dialog'

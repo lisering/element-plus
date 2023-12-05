@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { onMounted, provide, ref } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { breadcrumbKey } from './constants'
 import { breadcrumbProps } from './breadcrumb'
 

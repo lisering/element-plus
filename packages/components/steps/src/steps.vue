@@ -6,8 +6,8 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance, provide, watch } from 'vue'
-import { CHANGE_EVENT } from '@element-plus/constants'
-import { useNamespace, useOrderedChildren } from '@element-plus/hooks'
+import { CHANGE_EVENT } from '@hicor-ui/constants'
+import { useNamespace, useOrderedChildren } from '@hicor-ui/hooks'
 import { stepsEmits, stepsProps } from './steps'
 
 import type { StepItemState } from './item.vue'

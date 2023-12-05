@@ -1,5 +1,5 @@
 import { computed, getCurrentInstance, inject, ref, unref } from 'vue'
-import { isNumber } from '@element-plus/utils'
+import { isNumber } from '@hicor-ui/utils'
 
 import type { InjectionKey, Ref } from 'vue'
 

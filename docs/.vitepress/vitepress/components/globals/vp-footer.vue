@@ -16,21 +16,21 @@ const homeLang = computed(() => homeLocale[lang.value])
     <div class="footer-main">
       <h4>{{ homeLang['10'] }}</h4>
       <a
-        href="https://github.com/element-plus/element-plus"
+        href="https://github.com/hicor-ui/hicor-ui"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['11'] }}
       </a>
       <a
-        href="https://element-plus.gitee.io/zh-CN/"
+        href="https://hicor-ui.gitee.io/zh-CN/"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['china_mirror'] }}
       </a>
       <a
-        href="https://github.com/element-plus/element-plus/releases"
+        href="https://github.com/hicor-ui/hicor-ui/releases"
         class="footer-main-link"
         target="_blank"
       >
@@ -55,21 +55,21 @@ const homeLang = computed(() => homeLocale[lang.value])
         {{ homeLang['discord'] }}
       </a>
       <a
-        href="https://github.com/element-plus/element-plus/issues"
+        href="https://github.com/hicor-ui/hicor-ui/issues"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['16'] }}
       </a>
       <a
-        href="https://github.com/element-plus/element-plus/blob/dev/.github/CONTRIBUTING.zh-CN.md"
+        href="https://github.com/hicor-ui/hicor-ui/blob/dev/.github/CONTRIBUTING.zh-CN.md"
         class="footer-main-link"
         target="_blank"
       >
         {{ homeLang['17'] }}
       </a>
       <a
-        href="https://segmentfault.com/t/element-plus"
+        href="https://segmentfault.com/t/hicor-ui"
         class="footer-main-link"
         target="_blank"
       >

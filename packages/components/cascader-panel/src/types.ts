@@ -1,6 +1,6 @@
 // @ts-nocheck
 import type { InjectionKey, VNode } from 'vue'
-import type { Nullable } from '@element-plus/utils'
+import type { Nullable } from '@hicor-ui/utils'
 import type {
   default as CascaderNode,
   CascaderOption,

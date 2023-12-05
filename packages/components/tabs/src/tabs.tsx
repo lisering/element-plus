@@ -8,28 +8,28 @@ import {
   renderSlot,
   watch,
 } from 'vue'
+import { Plus } from '@element-plus/icons-vue'
 import {
   buildProps,
   definePropType,
   isNumber,
   isString,
   isUndefined,
-} from '@element-plus/utils'
-import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@element-plus/constants'
-import ElIcon from '@element-plus/components/icon'
-import { Plus } from '@element-plus/icons-vue'
+} from '@hicor-ui/utils'
+import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
+import ElIcon from '@hicor-ui/components/icon'
 import {
   useDeprecated,
   useNamespace,
   useOrderedChildren,
-} from '@element-plus/hooks'
+} from '@hicor-ui/hooks'
 import { tabsRootContextKey } from './constants'
 import TabNav from './tab-nav'
 
 import type { TabNavInstance } from './tab-nav'
 import type { TabsPaneContext } from './constants'
 import type { ExtractPropTypes } from 'vue'
-import type { Awaitable } from '@element-plus/utils'
+import type { Awaitable } from '@hicor-ui/utils'
 
 export type TabPaneName = string | number
 
@@ -145,7 +145,7 @@ const Tabs = defineComponent({
         replacement: '"model-value" or "v-model"',
         scope: 'ElTabs',
         version: '2.3.0',
-        ref: 'https://element-plus.org/en-US/component/tabs.html#attributes',
+        ref: 'https://hicor-ui.org/en-US/component/tabs.html#attributes',
         type: 'Attribute',
       },
       computed(() => !!props.activeName)

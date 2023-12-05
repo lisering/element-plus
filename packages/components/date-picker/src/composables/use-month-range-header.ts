@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useLocale } from '@element-plus/hooks'
+import { useLocale } from '@hicor-ui/hooks'
 import type { Ref, ToRef } from 'vue'
 import type { Dayjs } from 'dayjs'
 

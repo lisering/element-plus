@@ -7,7 +7,7 @@ import {
   ref,
   unref,
 } from 'vue'
-import { isArray, isFunction, isNumber } from '@element-plus/utils'
+import { isArray, isFunction, isNumber } from '@hicor-ui/utils'
 import { tableV2RowProps } from '../row'
 import { TableV2InjectionKey } from '../tokens'
 import { placeholderSign } from '../private'

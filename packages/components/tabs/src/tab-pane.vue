@@ -25,8 +25,8 @@ import {
   watch,
 } from 'vue'
 import { eagerComputed } from '@vueuse/core'
-import { throwError } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { throwError } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { tabsRootContextKey } from './constants'
 import { tabPaneProps } from './tab-pane'
 

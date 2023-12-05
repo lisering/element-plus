@@ -12,7 +12,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useNamespace } from '@element-plus/hooks'
+import { useNamespace } from '@hicor-ui/hooks'
 import { cardProps } from './card'
 
 defineOptions({

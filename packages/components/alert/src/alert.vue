@@ -39,9 +39,9 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref, useSlots } from 'vue'
-import { ElIcon } from '@element-plus/components/icon'
-import { TypeComponents, TypeComponentsMap } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { TypeComponents, TypeComponentsMap } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import { alertEmits, alertProps } from './alert'
 
 const { Close } = TypeComponents

@@ -59,7 +59,7 @@ tooltip/rich-content
 
 如果需要关闭 `tooltip` 功能，`disabled` 属性可以满足这个需求， 你只需要将其设置为 `true`。
 
-事实上，Tooltip 是一个基于 [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) 的扩展，您可以使用 ElPopper 中允许的任何属性。
+事实上，Tooltip 是一个基于 [ElPopper](https://github.com/hicor-ui/hicor-ui/tree/dev/packages/components/popper) 的扩展，您可以使用 ElPopper 中允许的任何属性。
 
 :::demo
 

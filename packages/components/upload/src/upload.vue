@@ -47,7 +47,7 @@
 
 <script lang="ts" setup>
 import { computed, onBeforeUnmount, provide, shallowRef, toRef } from 'vue'
-import { useFormDisabled } from '@element-plus/components/form'
+import { useFormDisabled } from '@hicor-ui/components/form'
 import { uploadContextKey } from './constants'
 import UploadList from './upload-list.vue'
 import UploadContent from './upload-content.vue'

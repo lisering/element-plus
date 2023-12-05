@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { provide, ref } from 'vue'
-import { addClass, removeClass } from '@element-plus/utils'
-import { useNamespace } from '@element-plus/hooks'
+import { addClass, removeClass } from '@hicor-ui/utils'
+import { useNamespace } from '@hicor-ui/hooks'
 import type { InjectionKey } from 'vue'
 import type Node from './node'
 import type { NodeDropType } from '../tree.type'

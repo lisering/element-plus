@@ -1,5 +1,5 @@
 import { computed, ref, shallowRef, toRef, unref, watch } from 'vue'
-import { isArray } from '@element-plus/utils'
+import { isArray } from '@hicor-ui/utils'
 import {
   useColumns,
   useData,

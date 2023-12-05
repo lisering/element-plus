@@ -10,9 +10,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useNamespace } from '@element-plus/hooks'
-import { useFormSize } from '@element-plus/components/form'
-import { isUndefined } from '@element-plus/utils'
+import { useNamespace } from '@hicor-ui/hooks'
+import { useFormSize } from '@hicor-ui/components/form'
+import { isUndefined } from '@hicor-ui/utils'
 import { textProps } from './text'
 
 defineOptions({

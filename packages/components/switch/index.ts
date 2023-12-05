@@ -1,4 +1,4 @@
-import { withInstall } from '@element-plus/utils'
+import { withInstall } from '@hicor-ui/utils'
 import Switch from './src/switch.vue'
 
 export const ElSwitch = withInstall(Switch)

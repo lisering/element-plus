@@ -13,9 +13,9 @@ import {
   watch,
 } from 'vue'
 import { isNil } from 'lodash-unified'
-import { EVENT_CODE } from '@element-plus/constants'
-import { useEscapeKeydown } from '@element-plus/hooks'
-import { isString } from '@element-plus/utils'
+import { EVENT_CODE } from '@hicor-ui/constants'
+import { useEscapeKeydown } from '@hicor-ui/hooks'
+import { isString } from '@hicor-ui/utils'
 import {
   createFocusOutPreventedEvent,
   focusFirstDescendant,

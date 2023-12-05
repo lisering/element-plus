@@ -22,8 +22,8 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import ElInput from '@element-plus/components/input'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import ElInput from '@hicor-ui/components/input'
 import { usePagination } from '../usePagination'
 import { paginationJumperProps } from './jumper'
 

@@ -105,7 +105,6 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { ElIcon } from '@element-plus/components/icon'
 import {
   Check,
   CircleCheck,
@@ -114,9 +113,10 @@ import {
   Document,
   ZoomIn,
 } from '@element-plus/icons-vue'
-import { useLocale, useNamespace } from '@element-plus/hooks'
-import ElProgress from '@element-plus/components/progress'
-import { useFormDisabled } from '@element-plus/components/form'
+import { ElIcon } from '@hicor-ui/components/icon'
+import { useLocale, useNamespace } from '@hicor-ui/hooks'
+import ElProgress from '@hicor-ui/components/progress'
+import { useFormDisabled } from '@hicor-ui/components/form'
 
 import { uploadListEmits, uploadListProps } from './upload-list'
 import type { UploadFile } from './upload'
