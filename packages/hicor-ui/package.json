@@ -4,16 +4,11 @@
   "description": "A Component Library for Vue 3",
   "keywords": [
     "hicor-ui",
-    "element",
     "component library",
     "ui framework",
     "ui",
     "vue"
   ],
-  "homepage": "https://hicor-ui.org/",
-  "bugs": {
-    "url": "https://github.com/hicor-ui/hicor-ui/issues"
-  },
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.mjs",
@@ -58,15 +53,6 @@
       "require": "./lib/*.js"
     },
     "./*": "./*"
-  },
-  "unpkg": "dist/index.full.js",
-  "jsdelivr": "dist/index.full.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hicor-ui/hicor-ui.git"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "style": "dist/index.css",
   "sideEffects": [

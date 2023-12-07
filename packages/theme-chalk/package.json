@@ -1,7 +1,7 @@
 {
   "name": "@hicor-ui/theme-chalk",
   "version": "0.1.0",
-  "description": "Element component chalk theme.",
+  "description": "Hicor Ui component chalk theme.",
   "keywords": [
     "vue-components",
     "hicor-ui",
