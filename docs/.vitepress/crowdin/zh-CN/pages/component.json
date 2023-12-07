@@ -1,11 +1,20 @@
 {
+  "hicor": {
+    "text": "Hicor 组件",
+    "children": [
+      {
+        "link": "/title",
+        "text": "Title 标题"
+      },
+      {
+        "link": "/top-menu",
+        "text": "TopMenu 顶部菜单"
+      }
+    ]
+  },
   "basic": {
     "text": "Basic 基础组件",
     "children": [
-      {
-        "link": "/button",
-        "text": "Button 按钮"
-      },
       {
         "link": "/border",
         "text": "Border 边框"

@@ -1,10 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import glob from 'fast-glob'
-import { docRoot, docsDirName, projRoot } from '@hicor-ui/build-utils'
-import { REPO_BRANCH, REPO_PATH } from '@hicor-ui/build-constants'
-import { getLang, languages } from '../utils/lang'
-import footerLocale from '../i18n/component/footer.json'
+import { docRoot } from '@hicor-ui/build-utils'
+import { languages } from '../utils/lang'
 
 import type { Plugin } from 'vite'
 
@@ -41,10 +39,6 @@ export function MarkdownTransform(): Plugin {
       }
 
       code = transformVpScriptSetup(code, append)
-
-      if (compPaths.some((compPath) => id.startsWith(compPath))) {
-        code = transformComponentMarkdown(id, componentId, code, append)
-      }
 
       return combineMarkdown(
         code,
@@ -90,44 +84,5 @@ const transformVpScriptSetup = (code: string, append: Append) => {
   if (matches) code = code.replace(matches[0], '')
   const scriptSetup = matches?.[3] ?? ''
   if (scriptSetup) append.scriptSetups.push(scriptSetup)
-  return code
-}
-
-const GITHUB_BLOB_URL = `https://github.com/${REPO_PATH}/blob/${REPO_BRANCH}`
-const GITHUB_TREE_URL = `https://github.com/${REPO_PATH}/tree/${REPO_BRANCH}`
-const transformComponentMarkdown = (
-  id: string,
-  componentId: string,
-  code: string,
-  append: Append
-) => {
-  const lang = getLang(id)
-  const docUrl = `${GITHUB_BLOB_URL}/${docsDirName}/zh-CN/component/${componentId}.md`
-  const componentUrl = `${GITHUB_TREE_URL}/packages/components/${componentId}`
-  const componentPath = path.resolve(
-    projRoot,
-    `packages/components/${componentId}`
-  )
-  const isComponent = fs.existsSync(componentPath)
-
-  const links = [[footerLocale[lang].docs, docUrl]]
-  if (isComponent) links.unshift([footerLocale[lang].component, componentUrl])
-  const linksText = links
-    .filter((i) => i)
-    .map(([text, link]) => `[${text}](${link})`)
-    .join(' • ')
-
-  const sourceSection = `
-## ${footerLocale[lang].source}
-
-${linksText}`
-
-  const contributorsSection = `
-## ${footerLocale[lang].contributors}
-
-<Contributors id="${componentId}" />`
-
-  append.footers.push(sourceSection, isComponent ? contributorsSection : '')
-
   return code
 }

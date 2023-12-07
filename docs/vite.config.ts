@@ -41,10 +41,10 @@ if (process.env.DOC_ENV !== 'production') {
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
-  const { dependencies: epDeps } = getPackageDependencies(hcPackage)
+  const { dependencies: hcDeps } = getPackageDependencies(hcPackage)
   const { dependencies: docsDeps } = getPackageDependencies(docPackage)
 
-  const optimizeDeps = [...new Set([...epDeps, ...docsDeps])].filter(
+  const optimizeDeps = [...new Set([...hcDeps, ...docsDeps])].filter(
     (dep) =>
       !dep.startsWith('@types/') &&
       !['@hicor-ui/metadata', 'hicor-ui'].includes(dep)

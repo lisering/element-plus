@@ -1,0 +1,9 @@
+@use 'mixins/mixins' as *;
+
+@include b(top-menu) {
+  // @include m(fixed) {
+  //   position: fixed;
+  // }
+  // background-color: getCssVar('background-color', $color-primary);
+  background-color: #4374ce;
+}

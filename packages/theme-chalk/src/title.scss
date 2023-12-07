@@ -1,0 +1,17 @@
+@use 'mixins/mixins' as *;
+
+@include b(title) {
+	display: flex;
+	align-items: center;
+
+	@include m(txt) {
+		white-space: nowrap;
+		padding-left: 6px;
+		border-left: 4px solid getCssVar('color-primary');
+		display: inline-block;
+	}
+
+	* {
+		line-height: 1;
+	}
+}

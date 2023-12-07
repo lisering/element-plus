@@ -52,7 +52,7 @@ app.mount('#app')
 npm install -D unplugin-vue-components unplugin-auto-import
 ```
 
-然后把下列代码插入到你的 `Vite` 或 `Webpack` 的配置文件中
+然后把下列代码插入到你的 `Vite` 的配置文件中
 
 ##### Vite
 
@@ -76,48 +76,6 @@ export default defineConfig({
   ],
 })
 ```
-
-##### Webpack
-
-```js
-// webpack.config.js
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
-
-module.exports = {
-  // ...
-  plugins: [
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
-}
-```
-
-想了解更多打包 ([Rollup](https://rollupjs.org/), [Vue CLI](https://cli.vuejs.org/)) 和配置工具，请参考 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components#installation) 和 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#install)。
-
-#### Nuxt
-
-对于 Nuxt 用户，只需要安装 `@hicor-ui/nuxt` 即可。
-
-```shell
-npm install -D @hicor-ui/nuxt
-```
-
-然后将下面的代码写入你的配置文件.
-
-```ts
-// nuxt.config.ts
-export default defineNuxtConfig({
-  modules: ['@hicor-ui/nuxt'],
-})
-```
-
-配置文档参考 [docs](https://github.com/hicor-ui/hicor-ui-nuxt#readme).
 
 ### 手动导入
 
@@ -163,14 +121,6 @@ import { ElMessage } from 'hicor-ui'
 
 :::
 
-## 快捷搭建项目模板
-
-我们提供了 [Vite 模板](https://github.com/hicor-ui/hicor-ui-vite-starter)。
-
-对于Nuxt 用户，我们有一个 [Nuxt 模板](https://github.com/hicor-ui/hicor-ui-nuxt-starter)。
-
-对于 Laravel 用户，我们也准备了[ Laravel 模板](https://github.com/hicor-ui/hicor-ui-in-laravel-starter)。
-
 ## 全局配置
 
 在引入 HicorUi 时，可以传入一个包含 `size` 和 `zIndex` 属性的全局配置对象。 `size` 用于设置表单组件的默认尺寸，`zIndex` 用于设置弹出组件的层级，`zIndex` 的默认值为 `2000`。
@@ -212,15 +162,3 @@ export default defineComponent({
 })
 </script>
 ```
-
-## 使用 Nuxt.js
-
-我们也可以使用 [Nuxt.js](https://v3.nuxtjs.org/)：
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe src="https://glitch.com/edit/#!/nuxt-hicor-ui?path=components%2FExamples.vue%3A1%3A0" alt="nuxt-hicor-ui on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
-
-## 开始使用
-
-现在你可以启动项目了。 对于每个组件的用法，请查阅[对应的独立文档](https://hicor-ui.org/zh-CN/component/button.html)。

@@ -3,11 +3,11 @@
     <el-tooltip placement="top" :hide-after="1000" :offset="20">
       <template #content>
         {{ homeLang['21'] }}
-        <a href="mailto:hicor-ui@outlook.com" target="_blank">
-          &nbsp;hicor-ui@outlook.com
+        <a href="mailto:hicor-ui@cenboomh.com" target="_blank">
+          &nbsp;hicor-ui@cenboomh.com
         </a>
       </template>
-      <a href="mailto:hicor-ui@outlook.com" target="_blank">
+      <a href="mailto:hicor-ui@cenboomh.com" target="_blank">
         <el-button style="overflow: hidden" :round="round">{{
           homeLang['20']
         }}</el-button>

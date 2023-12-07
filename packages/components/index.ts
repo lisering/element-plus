@@ -78,3 +78,7 @@ export * from './message'
 export * from './message-box'
 export * from './notification'
 export * from './popover'
+
+// hicor ui
+export * from './top-menu'
+export * from './title'

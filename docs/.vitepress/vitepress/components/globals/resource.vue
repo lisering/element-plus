@@ -17,14 +17,12 @@ const isMirrorUrl = () => {
 }
 const resourceUrl = {
   github: {
-    sketch:
-      'https://github.com/ElementUI/Resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
+    sketch: 'http://192.168.20.29:8008/design/',
     axure:
       'https://github.com/ElementUI/Resources/raw/master/Element_Components_v2.1.0.rplib',
   },
   gitee: {
-    sketch:
-      'https://gitee.com/hicor-ui/resources/raw/master/Element_Plus_Design_System_2022_1.0_Beta.zip',
+    sketch: 'http://192.168.20.29:8008/design/',
     axure:
       'https://gitee.com/hicor-ui/resources/raw/master/Element_Components_v2.1.0.rplib',
   },
@@ -34,14 +32,14 @@ const lang = useLang()
 const resourceLang = computed(() => resourceLocale[lang.value])
 
 const resourceCards = computed(() => [
-  {
-    key: 'axure',
-    title: resourceLang.value.axure,
-    description: 'Axure RP 9.0',
-    icon: AxureComponentsSvg,
-    intro: resourceLang.value.axureIntro,
-    url: resourceUrl.axure,
-  },
+  // {
+  //   key: 'axure',
+  //   title: resourceLang.value.axure,
+  //   description: 'Axure RP 9.0',
+  //   icon: AxureComponentsSvg,
+  //   intro: resourceLang.value.axureIntro,
+  //   url: resourceUrl.axure,
+  // },
   {
     key: 'sketch',
     title: resourceLang.value.sketch,
@@ -50,28 +48,28 @@ const resourceCards = computed(() => [
     intro: resourceLang.value.sketchIntro,
     url: resourceUrl.sketch,
   },
-  {
-    key: 'figma',
-    title: resourceLang.value.figma,
-    icon: FigmaTemplateSvg,
-    intro: resourceLang.value.figmaIntro,
-    url: 'https://www.figma.com/community/file/1021254029764378306',
-  },
-  {
-    key: 'figma-variables',
-    title: resourceLang.value.figmaVariables,
-    icon: FigmaVariablesSvg,
-    intro: resourceLang.value.figmaVariablesIntro,
-    url: 'https://www.figma.com/community/file/1256091634199852065',
-  },
-  {
-    key: '2023-figma-ui-kit',
-    title: resourceLang.value.figma2023,
-    description: '2023 Figma UI Kit',
-    icon: FigmaUiKitSvg,
-    intro: resourceLang.value.figma2023Intro,
-    url: 'https://www.figma.com/community/file/1305760370797950824/hicor-ui-design-system-ui-kit',
-  },
+  // {
+  //   key: 'figma',
+  //   title: resourceLang.value.figma,
+  //   icon: FigmaTemplateSvg,
+  //   intro: resourceLang.value.figmaIntro,
+  //   url: 'https://www.figma.com/community/file/1021254029764378306',
+  // },
+  // {
+  //   key: 'figma-variables',
+  //   title: resourceLang.value.figmaVariables,
+  //   icon: FigmaVariablesSvg,
+  //   intro: resourceLang.value.figmaVariablesIntro,
+  //   url: 'https://www.figma.com/community/file/1256091634199852065',
+  // },
+  // {
+  //   key: '2023-figma-ui-kit',
+  //   title: resourceLang.value.figma2023,
+  //   description: '2023 Figma UI Kit',
+  //   icon: FigmaUiKitSvg,
+  //   intro: resourceLang.value.figma2023Intro,
+  //   url: 'https://www.figma.com/community/file/1305760370797950824/hicor-ui-design-system-ui-kit',
+  // },
 ])
 </script>
 

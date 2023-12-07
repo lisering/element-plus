@@ -1,17 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import MarkdownIt from 'markdown-it'
 import { useToc } from '../../composables/use-toc'
 import { useActiveSidebarLinks } from '../../composables/active-bar'
 
-import sponsorLocale from '../../../i18n/component/sponsor.json'
 import { useLang } from '../../composables/lang'
-import SponsorsButton from '../sponsors/sponsors-button.vue'
-import SponsorRightBigLogoList from '../sponsors/right-big-logo-list.vue'
-import SponsorRightTextList from '../sponsors/right-richtext-list.vue'
-import SponsorRightLogoSmallList from '../sponsors/right-logo-small-list.vue'
 import tag from '../../../plugins/tag'
-// import SponsorLarge from '../vp-sponsor-large.vue'
 
 const localMd = MarkdownIt().use(tag)
 const headers = useToc()
@@ -19,13 +13,12 @@ const marker = ref()
 const container = ref()
 useActiveSidebarLinks(container, marker)
 const lang = useLang()
-const sponsor = computed(() => sponsorLocale[lang.value])
 </script>
 
 <template>
   <aside ref="container" class="toc-wrapper">
     <nav class="toc-content">
-      <h3 class="toc-content__heading">Contents</h3>
+      <h3 class="toc-content__heading">内容</h3>
       <ul class="toc-items">
         <li
           v-for="{ link, text, children } in headers"

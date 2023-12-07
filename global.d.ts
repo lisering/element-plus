@@ -96,6 +96,9 @@ declare module '@vue/runtime-core' {
     ElResult: typeof import('hicor-ui')['ElResult']
     ElSelectV2: typeof import('hicor-ui')['ElSelectV2']
     ElWatermark: typeof import('hicor-ui')['ElWatermark']
+    // hicor ui
+    ElTopMenu: typeof import('hicor-ui')['ElTopMenu']
+    ElTitle: typeof import('hicor-ui')['ElTitle']
   }
 
   interface ComponentCustomProperties {
