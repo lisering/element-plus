@@ -101,6 +101,7 @@ declare module '@vue/runtime-core' {
     // hicor ui
     ElTopMenu: typeof import('../packages/hicor-ui')['ElTopMenu']
     ElTitle: typeof import('../packages/hicor-ui')['ElTitle']
+    ElApplyButton: typeof import('../packages/hicor-ui')['ElApplyButton']
   }
 
   interface ComponentCustomProperties {

@@ -96,7 +96,9 @@ import { ElTreeSelect } from '@hicor-ui/components/tree-select'
 import { ElTreeV2 } from '@hicor-ui/components/tree-v2'
 import { ElUpload } from '@hicor-ui/components/upload'
 import { ElWatermark } from '@hicor-ui/components/watermark'
-import { ElTitle, ElTopMenu } from '@hicor-ui/components'
+import { ElTitle } from '@hicor-ui/components/title'
+import { ElTopMenu } from '@hicor-ui/components/top-menu'
+import { ElApplyButton } from '@hicor-ui/components/apply-button'
 
 import type { Plugin } from 'vue'
 
@@ -202,4 +204,5 @@ export default [
   ElWatermark,
   ElTopMenu,
   ElTitle,
+  ElApplyButton,
 ] as Plugin[]

@@ -77,14 +77,15 @@ import '@hicor-ui/theme-chalk/src/menu-item.scss'
 import { ElMenu, ElMenuItem, ElSubMenu } from '@hicor-ui/components'
 import { useNamespace } from '@hicor-ui/hooks'
 import { topMenuEmits, topMenuProps } from './top-menu'
+import { useTopMenu } from './use-top-menu'
 
 defineOptions({
   name: 'ElTopMenu',
 })
+
 defineProps(topMenuProps)
+
 const emit = defineEmits(topMenuEmits)
 const ns = useNamespace('top-menu')
-const handleSelect = (index: string) => {
-  emit('handleSelect', index)
-}
+const { handleSelect } = useTopMenu(emit)
 </script>

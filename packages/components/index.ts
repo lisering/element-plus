@@ -82,3 +82,4 @@ export * from './popover'
 // hicor ui
 export * from './top-menu'
 export * from './title'
+export * from './apply-button'

@@ -4,7 +4,7 @@ export interface MenuFunctionsInterface {
   parentId: string
   systemId: string
   funcType: string
-  funcCode: string
+  funcCode: string | null
   funcName: string
   funcSort: string
   funcHome: string
@@ -12,7 +12,7 @@ export interface MenuFunctionsInterface {
   enableFlag: string
   pyCode: string | null
   wbCode: string | null
-  funcIcon: string
+  funcIcon: string | null
   funcPath: string | null
   sysCode: string
   isOpen?: boolean

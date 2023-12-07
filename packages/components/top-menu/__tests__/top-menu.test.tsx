@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { afterAll, beforeAll, describe, expect, test, vi } from 'vitest'
 import defineGetter from '@hicor-ui/test-utils/define-getter'
 import makeScroll from '@hicor-ui/test-utils/make-scroll'
-import Affix from '../src/affix.vue'
+import TopMenu from '../src/top-menu.vue'
 import type { VNode } from 'vue'
 
 let clientHeightRestore: () => void
@@ -29,12 +29,12 @@ afterAll(() => {
 
 describe('Affix.vue', () => {
   test('render test', async () => {
-    const wrapper = _mount(() => <Affix>{AXIOM}</Affix>)
+    const wrapper = _mount(() => <TopMenu>{AXIOM}</TopMenu>)
     await nextTick()
 
     expect(wrapper.text()).toEqual(AXIOM)
     const mockAffixRect = vi
-      .spyOn(wrapper.find('.el-affix').element, 'getBoundingClientRect')
+      .spyOn(wrapper.find('.el-top-menu').element, 'getBoundingClientRect')
       .mockReturnValue({
         height: 40,
         width: 1000,
@@ -57,7 +57,7 @@ describe('Affix.vue', () => {
   })
 
   test('should render offset props', async () => {
-    const wrapper = _mount(() => <Affix offset={30}>{AXIOM}</Affix>)
+    const wrapper = _mount(() => <TopMenu>{AXIOM}</TopMenu>)
     await nextTick()
     const mockAffixRect = vi
       .spyOn(wrapper.find('.el-affix').element, 'getBoundingClientRect')
@@ -85,11 +85,7 @@ describe('Affix.vue', () => {
   })
 
   test('should render position props', async () => {
-    const wrapper = _mount(() => (
-      <Affix position="bottom" offset={20}>
-        {AXIOM}
-      </Affix>
-    ))
+    const wrapper = _mount(() => <TopMenu>{AXIOM}</TopMenu>)
     await nextTick()
 
     const mockAffixRect = vi

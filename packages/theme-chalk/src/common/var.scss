@@ -16,6 +16,7 @@ $colors: (
   ) !default;
 $colors: map.deep-merge(('white': #ffffff,
       'black': #4a4a4a,
+      'green': #2c9295,
       'primary': ('base': #4374ce,
       ),
       'success': ('base': #67c23a,
@@ -34,6 +35,8 @@ $colors: map.deep-merge(('white': #ffffff,
 
 $color-white: map.get($colors, 'white') !default;
 $color-black: map.get($colors, 'black') !default;
+// 绿色
+$color-green: map.get($colors, 'green') !default;
 $color-primary: map.get($colors, 'primary', 'base') !default;
 $color-success: map.get($colors, 'success', 'base') !default;
 $color-warning: map.get($colors, 'warning', 'base') !default;

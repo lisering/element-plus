@@ -3,6 +3,10 @@
     "text": "Hicor 组件",
     "children": [
       {
+        "link": "/apply-button",
+        "text": "Apply Button 按钮"
+      },
+      {
         "link": "/title",
         "text": "Title 标题"
       },

@@ -4,7 +4,7 @@ export interface MenuFunctionsInterface {
   parentId: string
   systemId: string
   funcType: string
-  funcCode: string
+  funcCode: string | null
   funcName: string
   funcSort: string
   funcHome: string
