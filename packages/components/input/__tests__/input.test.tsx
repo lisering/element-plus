@@ -2,7 +2,7 @@ import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 import defineGetter from '@hicor-ui/test-utils/define-getter'
-import { ElFormItem as FormItem } from '@hicor-ui/components/form'
+import { HcFormItem as FormItem } from '@hicor-ui/components/form'
 import Input from '../src/input.vue'
 import type { CSSProperties } from 'vue'
 import type { InputAutoSize, InputInstance, InputProps } from '../src/input'
@@ -69,7 +69,7 @@ describe('Input.vue', () => {
       const nativeInput = inputElm.element
       expect(nativeInput.value).toMatchInlineSnapshot(`"12🌚"`)
 
-      const elCount = wrapper.find('.el-input__count-inner')
+      const elCount = wrapper.find('.hc-input__count-inner')
       expect(elCount.exists()).toBe(true)
       expect(elCount.text()).toMatchInlineSnapshot(`"4 / 4"`)
 
@@ -106,7 +106,7 @@ describe('Input.vue', () => {
       const nativeInput = inputElm.element
       expect(nativeInput.value).toMatchInlineSnapshot(`"啊好😄"`)
 
-      const elCount = wrapper.find('.el-input__count')
+      const elCount = wrapper.find('.hc-input__count')
       expect(elCount.exists()).toBe(true)
       expect(elCount.text()).toMatchInlineSnapshot(`"4 / 4"`)
 
@@ -125,13 +125,13 @@ describe('Input.vue', () => {
 
   test('suffixIcon', () => {
     const wrapper = mount(() => <Input suffix-icon="time" />)
-    const icon = wrapper.find('.el-input__icon')
+    const icon = wrapper.find('.hc-input__icon')
     expect(icon.exists()).toBe(true)
   })
 
   test('prefixIcon', () => {
     const wrapper = mount(() => <Input prefix-icon="time" />)
-    const icon = wrapper.find('.el-input__icon')
+    const icon = wrapper.find('.hc-input__icon')
     expect(icon.exists()).toBe(true)
   })
 
@@ -227,9 +227,9 @@ describe('Input.vue', () => {
     const inputElm3 = wrapper.vm.$el.querySelector('.test-password')
     const inputElm4 = wrapper.vm.$el.querySelector('.test-initial-exceed')
 
-    expect(inputElm1.querySelectorAll('.el-input__count').length).toEqual(0)
-    expect(inputElm2.querySelectorAll('.el-input__count').length).toEqual(1)
-    expect(inputElm3.querySelectorAll('.el-input__count').length).toEqual(0)
+    expect(inputElm1.querySelectorAll('.hc-input__count').length).toEqual(0)
+    expect(inputElm2.querySelectorAll('.hc-input__count').length).toEqual(1)
+    expect(inputElm3.querySelectorAll('.hc-input__count').length).toEqual(0)
     expect(Array.from(inputElm4.classList)).toMatchInlineSnapshot(`
       [
         "el-input",
@@ -240,7 +240,7 @@ describe('Input.vue', () => {
 
     show.value = true
     await nextTick()
-    expect(inputElm1.querySelectorAll('.el-input__count').length).toEqual(1)
+    expect(inputElm1.querySelectorAll('.hc-input__count').length).toEqual(1)
 
     input4.value = '1'
     await nextTick()
@@ -402,7 +402,7 @@ describe('Input.vue', () => {
       // focus to show clear button
       await input.trigger('focus')
       await nextTick()
-      vm.$el.querySelector('.el-input__clear').click()
+      vm.$el.querySelector('.hc-input__clear').click()
       await nextTick()
       expect(content.value).toEqual('')
       expect(handleClear).toBeCalled()
@@ -490,7 +490,7 @@ describe('Input.vue', () => {
       <Input type="password" modelValue={password.value} show-password />
     ))
 
-    const icon = wrapper.find('.el-input__icon.el-input__password')
+    const icon = wrapper.find('.hc-input__icon.el-input__password')
     const d = icon.find('path').element.getAttribute('d')
     await icon.trigger('click')
     const d0 = icon.find('path').element.getAttribute('d')
@@ -508,7 +508,7 @@ describe('Input.vue', () => {
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
       const input = wrapper.find('[data-test-ref="input"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(input.attributes().id)
     })
@@ -523,7 +523,7 @@ describe('Input.vue', () => {
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
       const input = wrapper.find('[data-test-ref="input"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes().role).toBeFalsy()
       expect(input.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(input.attributes().id)

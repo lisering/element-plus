@@ -1,11 +1,11 @@
 <template>
-  <el-roving-focus-collection-item
+  <hc-roving-focus-collection-item
     :id="id"
     :focusable="focusable"
     :active="active"
   >
     <slot />
-  </el-roving-focus-collection-item>
+  </hc-roving-focus-collection-item>
 </template>
 
 <script lang="ts">
@@ -22,7 +22,7 @@ import { useId } from '@hicor-ui/hooks'
 import { composeEventHandlers } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import {
-  ElCollectionItem as ElRovingFocusCollectionItem,
+  HcCollectionItem as HcRovingFocusCollectionItem,
   ROVING_FOCUS_COLLECTION_INJECTION_KEY,
 } from './roving-focus-group'
 import {
@@ -33,7 +33,7 @@ import { focusFirst, getFocusIntent, reorderArray } from './utils'
 
 export default defineComponent({
   components: {
-    ElRovingFocusCollectionItem,
+    HcRovingFocusCollectionItem,
   },
   props: {
     focusable: {

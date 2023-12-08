@@ -32,9 +32,9 @@
             :class="nsUpload.be('list', 'item-name')"
             @click.prevent="handlePreview(file)"
           >
-            <el-icon :class="nsIcon.m('document')">
+            <hc-icon :class="nsIcon.m('document')">
               <Document />
-            </el-icon>
+            </hc-icon>
             <span
               :class="nsUpload.be('list', 'item-file-name')"
               :title="file.name"
@@ -42,7 +42,7 @@
               {{ file.name }}
             </span>
           </a>
-          <el-progress
+          <hc-progress
             v-if="file.status === 'uploading'"
             :type="listType === 'picture-card' ? 'circle' : 'line'"
             :stroke-width="listType === 'picture-card' ? 6 : 2"
@@ -52,26 +52,26 @@
         </div>
 
         <label :class="nsUpload.be('list', 'item-status-label')">
-          <el-icon
+          <hc-icon
             v-if="listType === 'text'"
             :class="[nsIcon.m('upload-success'), nsIcon.m('circle-check')]"
           >
             <circle-check />
-          </el-icon>
-          <el-icon
+          </hc-icon>
+          <hc-icon
             v-else-if="['picture-card', 'picture'].includes(listType)"
             :class="[nsIcon.m('upload-success'), nsIcon.m('check')]"
           >
             <Check />
-          </el-icon>
+          </hc-icon>
         </label>
-        <el-icon
+        <hc-icon
           v-if="!disabled"
           :class="nsIcon.m('close')"
           @click="handleRemove(file)"
         >
           <Close />
-        </el-icon>
+        </hc-icon>
         <!-- Due to close btn only appears when li gets focused disappears after li gets blurred, thus keyboard navigation can never reach close btn-->
         <!-- This is a bug which needs to be fixed -->
         <!-- TODO: Fix the incorrect navigation interaction -->
@@ -86,16 +86,16 @@
             :class="nsUpload.be('list', 'item-preview')"
             @click="handlePreview(file)"
           >
-            <el-icon :class="nsIcon.m('zoom-in')"><zoom-in /></el-icon>
+            <hc-icon :class="nsIcon.m('zoom-in')"><zoom-in /></hc-icon>
           </span>
           <span
             v-if="!disabled"
             :class="nsUpload.be('list', 'item-delete')"
             @click="handleRemove(file)"
           >
-            <el-icon :class="nsIcon.m('delete')">
+            <hc-icon :class="nsIcon.m('delete')">
               <Delete />
-            </el-icon>
+            </hc-icon>
           </span>
         </span>
       </slot>
@@ -113,16 +113,16 @@ import {
   Document,
   ZoomIn,
 } from '@element-plus/icons-vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import ElProgress from '@hicor-ui/components/progress'
+import HcProgress from '@hicor-ui/components/progress'
 import { useFormDisabled } from '@hicor-ui/components/form'
 
 import { uploadListEmits, uploadListProps } from './upload-list'
 import type { UploadFile } from './upload'
 
 defineOptions({
-  name: 'ElUploadList',
+  name: 'HcUploadList',
 })
 
 const props = defineProps(uploadListProps)

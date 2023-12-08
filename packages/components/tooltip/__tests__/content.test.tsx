@@ -12,13 +12,13 @@ import {
 import { usePopperContainer } from '@hicor-ui/hooks'
 import { TOOLTIP_INJECTION_KEY } from '@hicor-ui/components/tooltip'
 import { genTooltipProvides } from '../test-helper/provides'
-import ElTooltipContent from '../src/content.vue'
+import HcTooltipContent from '../src/content.vue'
 
 import type { VueWrapper } from '@vue/test-utils'
 
 const AXIOM = 'rem is the best girl'
 
-describe('<ElTooltipContent />', () => {
+describe('<HcTooltipContent />', () => {
   const {
     controlled,
     id,
@@ -56,7 +56,7 @@ describe('<ElTooltipContent />', () => {
         setup() {
           usePopperContainer()
 
-          return () => <ElTooltipContent {...props}>{AXIOM}</ElTooltipContent>
+          return () => <HcTooltipContent {...props}>{AXIOM}</HcTooltipContent>
         },
       },
       {
@@ -65,14 +65,14 @@ describe('<ElTooltipContent />', () => {
             ...defaultProvide,
             ...provides,
           },
-          stubs: ['ElPopperContent'],
+          stubs: ['HcPopperContent'],
         },
         attachTo: document.body,
       }
     )
 
     unmount = () => wrapper.unmount()
-    return wrapper.findComponent(ElTooltipContent)
+    return wrapper.findComponent(HcTooltipContent)
   }
 
   let wrapper: VueWrapper<any>

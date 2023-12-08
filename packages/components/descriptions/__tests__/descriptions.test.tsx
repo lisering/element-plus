@@ -1,44 +1,44 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import ElTag from '@hicor-ui/components/tag'
-import ElDescriptions from '../src/description.vue'
-import ElDescriptionsItem from '../src/description-item'
+import HcTag from '@hicor-ui/components/tag'
+import HcDescriptions from '../src/description.vue'
+import HcDescriptionsItem from '../src/description-item'
 
 describe('Descriptions.vue', () => {
   test('render test', () => {
     const wrapper = mount(() => (
-      <ElDescriptions title="title" extra="extra">
+      <HcDescriptions title="title" extra="extra">
         {Array.from({ length: 4 }).map((_, index) => (
-          <ElDescriptionsItem label={String(index)} />
+          <HcDescriptionsItem label={String(index)} />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
-    expect(wrapper.find('.el-descriptions__title').text()).toEqual('title')
-    expect(wrapper.find('.el-descriptions__extra').text()).toEqual('extra')
-    expect(wrapper.findAll('.el-descriptions__label').length).toEqual(4)
-    expect(wrapper.findAll('.el-descriptions__content').length).toEqual(4)
+    expect(wrapper.find('.hc-descriptions__title').text()).toEqual('title')
+    expect(wrapper.find('.hc-descriptions__extra').text()).toEqual('extra')
+    expect(wrapper.findAll('.hc-descriptions__label').length).toEqual(4)
+    expect(wrapper.findAll('.hc-descriptions__content').length).toEqual(4)
   })
 
   test('render empty label', () => {
     const wrapper = mount(() => (
-      <ElDescriptions>
+      <HcDescriptions>
         {Array.from({ length: 3 }).map(() => (
-          <ElDescriptionsItem />
+          <HcDescriptionsItem />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
-    expect(wrapper.findAll('.el-descriptions__label').length).toEqual(0)
-    expect(wrapper.findAll('.el-descriptions__content').length).toEqual(3)
+    expect(wrapper.findAll('.hc-descriptions__label').length).toEqual(0)
+    expect(wrapper.findAll('.hc-descriptions__content').length).toEqual(3)
   })
 
   test('should render border props', () => {
     const wrapper = mount(() => (
-      <ElDescriptions border>
-        <ElDescriptionsItem />
-      </ElDescriptions>
+      <HcDescriptions border>
+        <HcDescriptionsItem />
+      </HcDescriptions>
     ))
 
     expect(wrapper.find('table').classes()).toContain('is-bordered')
@@ -46,54 +46,54 @@ describe('Descriptions.vue', () => {
 
   test('should render align props', () => {
     const wrapper = mount(() => (
-      <ElDescriptions border>
+      <HcDescriptions border>
         {Array.from({ length: 3 }).map(() => (
-          <ElDescriptionsItem align="right" labelAlign="center" />
+          <HcDescriptionsItem align="right" labelAlign="center" />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
-    expect(wrapper.find('.el-descriptions__label').classes()).toContain(
+    expect(wrapper.find('.hc-descriptions__label').classes()).toContain(
       'is-center'
     )
-    expect(wrapper.find('.el-descriptions__content').classes()).toContain(
+    expect(wrapper.find('.hc-descriptions__content').classes()).toContain(
       'is-right'
     )
   })
 
   test('should render width props', () => {
     const wrapper = mount(() => (
-      <ElDescriptions border>
+      <HcDescriptions border>
         {Array.from({ length: 3 }).map(() => (
-          <ElDescriptionsItem width="50px" min-width="60px" />
+          <HcDescriptionsItem width="50px" min-width="60px" />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
     expect(
-      wrapper.find('.el-descriptions__label').attributes('style')
+      wrapper.find('.hc-descriptions__label').attributes('style')
     ).toContain('width: 50px; min-width: 60px;')
     expect(
-      wrapper.find('.el-descriptions__content').attributes('style')
+      wrapper.find('.hc-descriptions__content').attributes('style')
     ).toContain('width: 50px; min-width: 60px;')
   })
 
   test('should render class props', () => {
     const wrapper = mount(() => (
-      <ElDescriptions border>
+      <HcDescriptions border>
         {Array.from({ length: 3 }).map(() => (
-          <ElDescriptionsItem
+          <HcDescriptionsItem
             class-name="class-name"
             label-class-name="label-class-name"
           />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
-    expect(wrapper.find('.el-descriptions__label').classes()).toContain(
+    expect(wrapper.find('.hc-descriptions__label').classes()).toContain(
       'label-class-name'
     )
-    expect(wrapper.find('.el-descriptions__content').classes()).toContain(
+    expect(wrapper.find('.hc-descriptions__content').classes()).toContain(
       'class-name'
     )
   })
@@ -102,11 +102,11 @@ describe('Descriptions.vue', () => {
     const border = ref(false)
 
     const wrapper = mount(() => (
-      <ElDescriptions column={5} border={border.value}>
+      <HcDescriptions column={5} border={border.value}>
         {Array.from({ length: 10 }).map(() => (
-          <ElDescriptionsItem />
+          <HcDescriptionsItem />
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
     expect(wrapper.find('tr').element.children.length).toEqual(5)
@@ -122,13 +122,13 @@ describe('Descriptions.vue', () => {
     const direction = ref<'horizontal' | 'vertical'>('horizontal')
 
     const wrapper = mount(() => (
-      <ElDescriptions column={5} direction={direction.value} border>
+      <HcDescriptions column={5} direction={direction.value} border>
         {Array.from({ length: 10 }).map((item) => (
-          <ElDescriptionsItem label={String(item)}>
+          <HcDescriptionsItem label={String(item)}>
             {String(item)}
-          </ElDescriptionsItem>
+          </HcDescriptionsItem>
         ))}
-      </ElDescriptions>
+      </HcDescriptions>
     ))
 
     expect(wrapper.find('tr').element.children.length).toEqual(10)
@@ -147,28 +147,28 @@ describe('Descriptions.vue', () => {
 
   test('should render title slots', async () => {
     const wrapper = mount(() => (
-      <ElDescriptions
+      <HcDescriptions
         v-slots={{
           title: () => 'title',
           default: () =>
-            Array.from({ length: 10 }).map(() => <ElDescriptionsItem />),
+            Array.from({ length: 10 }).map(() => <HcDescriptionsItem />),
         }}
-      ></ElDescriptions>
+      ></HcDescriptions>
     ))
 
-    expect(wrapper.find('.el-descriptions__title').text()).toEqual('title')
+    expect(wrapper.find('.hc-descriptions__title').text()).toEqual('title')
   })
 
   test('should render span props', async () => {
     const wrapper = mount(() => (
-      <ElDescriptions>
-        <ElDescriptionsItem label="1">1</ElDescriptionsItem>
-        <ElDescriptionsItem label="2" span={2}>
+      <HcDescriptions>
+        <HcDescriptionsItem label="1">1</HcDescriptionsItem>
+        <HcDescriptionsItem label="2" span={2}>
           2
-        </ElDescriptionsItem>
-        <ElDescriptionsItem label="3">3</ElDescriptionsItem>
-        <ElDescriptionsItem label="4">4</ElDescriptionsItem>
-      </ElDescriptions>
+        </HcDescriptionsItem>
+        <HcDescriptionsItem label="3">3</HcDescriptionsItem>
+        <HcDescriptionsItem label="4">4</HcDescriptionsItem>
+      </HcDescriptions>
     ))
 
     expect(wrapper.findAll('td')[1].element.getAttribute('colSpan')).toEqual(
@@ -190,11 +190,11 @@ describe('Descriptions.vue', () => {
     const wrapper = mount(() => (
       <>
         {remarks.value.map((remark, index) => (
-          <ElDescriptions key={index} title={remark}>
-            <ElDescriptionsItem label={remark}>
-              <ElTag size="small">{remark}</ElTag>
-            </ElDescriptionsItem>
-          </ElDescriptions>
+          <HcDescriptions key={index} title={remark}>
+            <HcDescriptionsItem label={remark}>
+              <HcTag size="small">{remark}</HcTag>
+            </HcDescriptionsItem>
+          </HcDescriptions>
         ))}
         <button onClick={onClick}>click</button>
       </>
@@ -202,6 +202,6 @@ describe('Descriptions.vue', () => {
 
     wrapper.find('button').trigger('click')
     await nextTick()
-    expect(wrapper.findComponent(ElTag).text()).toBe(CHANGE_VALUE)
+    expect(wrapper.findComponent(HcTag).text()).toBe(CHANGE_VALUE)
   })
 })

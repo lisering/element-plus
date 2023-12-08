@@ -10,7 +10,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import type { Component, VNode } from 'vue'
 
 defineOptions({
-  name: 'ElContainer',
+  name: 'HcContainer',
 })
 const props = defineProps({
   /**
@@ -34,7 +34,7 @@ const isVertical = computed(() => {
     const vNodes: VNode[] = slots.default()
     return vNodes.some((vNode) => {
       const tag = (vNode.type as Component).name
-      return tag === 'ElHeader' || tag === 'ElFooter'
+      return tag === 'HcHeader' || tag === 'HcFooter'
     })
   } else {
     return false

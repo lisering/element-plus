@@ -16,24 +16,24 @@
       <slot name="left-footer" />
     </transfer-panel>
     <div :class="ns.e('buttons')">
-      <el-button
+      <hc-button
         type="primary"
         :class="[ns.e('button'), ns.is('with-texts', hasButtonTexts)]"
         :disabled="isEmpty(checkedState.rightChecked)"
         @click="addToLeft"
       >
-        <el-icon><arrow-left /></el-icon>
+        <hc-icon><arrow-left /></hc-icon>
         <span v-if="!isUndefined(buttonTexts[0])">{{ buttonTexts[0] }}</span>
-      </el-button>
-      <el-button
+      </hc-button>
+      <hc-button
         type="primary"
         :class="[ns.e('button'), ns.is('with-texts', hasButtonTexts)]"
         :disabled="isEmpty(checkedState.leftChecked)"
         @click="addToRight"
       >
         <span v-if="!isUndefined(buttonTexts[1])">{{ buttonTexts[1] }}</span>
-        <el-icon><arrow-right /></el-icon>
-      </el-button>
+        <hc-icon><arrow-right /></hc-icon>
+      </hc-button>
     </div>
     <transfer-panel
       ref="rightPanel"
@@ -58,8 +58,8 @@ import { computed, h, reactive, ref, useSlots, watch } from 'vue'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
 import { debugWarn, isEmpty, isUndefined } from '@hicor-ui/utils'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import { ElButton } from '@hicor-ui/components/button'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcButton } from '@hicor-ui/components/button'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useFormItem } from '@hicor-ui/components/form'
 import { transferEmits, transferProps } from './transfer'
 import {
@@ -78,7 +78,7 @@ import type {
 import type { TransferPanelInstance } from './transfer-panel'
 
 defineOptions({
-  name: 'ElTransfer',
+  name: 'HcTransfer',
 })
 
 const props = defineProps(transferProps)

@@ -7,7 +7,7 @@ import type { MessageConfigContext } from '@hicor-ui/components/message'
 export const messageConfig: MessageConfigContext = {}
 
 const ConfigProvider = defineComponent({
-  name: 'ElConfigProvider',
+  name: 'HcConfigProvider',
   props: configProviderProps,
 
   setup(props, { slots }) {

@@ -16,7 +16,7 @@ import { tooltipV2TriggerProps } from './trigger'
 import { tooltipV2CommonProps } from './common'
 
 defineOptions({
-  name: 'ElTooltipV2Trigger',
+  name: 'HcTooltipV2Trigger',
 })
 
 const props = defineProps({

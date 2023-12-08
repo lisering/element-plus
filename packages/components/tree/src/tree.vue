@@ -10,7 +10,7 @@
     ]"
     role="tree"
   >
-    <el-tree-node
+    <hc-tree-node
       v-for="child in root.childNodes"
       :key="getNodeKey(child)"
       :node="child"
@@ -50,7 +50,7 @@ import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { formItemContextKey } from '@hicor-ui/components/form'
 import TreeStore from './model/tree-store'
 import { getNodeKey as getNodeKeyUtil, handleCurrentChange } from './model/util'
-import ElTreeNode from './tree-node.vue'
+import HcTreeNode from './tree-node.vue'
 import { useNodeExpandEventBroadcast } from './model/useNodeExpandEventBroadcast'
 import { useDragNodeHandler } from './model/useDragNode'
 import { useKeydown } from './model/useKeydown'
@@ -66,8 +66,8 @@ import type {
 } from './tree.type'
 
 export default defineComponent({
-  name: 'ElTree',
-  components: { ElTreeNode },
+  name: 'HcTree',
+  components: { HcTreeNode },
   props: {
     data: {
       type: Array,

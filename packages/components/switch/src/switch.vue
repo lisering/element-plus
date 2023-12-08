@@ -21,9 +21,9 @@
       v-if="!inlinePrompt && (inactiveIcon || inactiveText)"
       :class="labelLeftKls"
     >
-      <el-icon v-if="inactiveIcon">
+      <hc-icon v-if="inactiveIcon">
         <component :is="inactiveIcon" />
-      </el-icon>
+      </hc-icon>
       <span v-if="!inactiveIcon && inactiveText" :aria-hidden="checked">{{
         inactiveText
       }}</span>
@@ -31,9 +31,9 @@
     <span ref="core" :class="ns.e('core')" :style="coreStyle">
       <div v-if="inlinePrompt" :class="ns.e('inner')">
         <template v-if="activeIcon || inactiveIcon">
-          <el-icon :class="ns.is('icon')">
+          <hc-icon :class="ns.is('icon')">
             <component :is="checked ? activeIcon : inactiveIcon" />
-          </el-icon>
+          </hc-icon>
         </template>
         <template v-else-if="activeText || inactiveText">
           <span :class="ns.is('text')" :aria-hidden="!checked">
@@ -42,24 +42,24 @@
         </template>
       </div>
       <div :class="ns.e('action')">
-        <el-icon v-if="loading" :class="ns.is('loading')">
+        <hc-icon v-if="loading" :class="ns.is('loading')">
           <loading />
-        </el-icon>
-        <el-icon v-else-if="activeActionIcon && checked">
+        </hc-icon>
+        <hc-icon v-else-if="activeActionIcon && checked">
           <component :is="activeActionIcon" />
-        </el-icon>
-        <el-icon v-else-if="inactiveActionIcon && !checked">
+        </hc-icon>
+        <hc-icon v-else-if="inactiveActionIcon && !checked">
           <component :is="inactiveActionIcon" />
-        </el-icon>
+        </hc-icon>
       </div>
     </span>
     <span
       v-if="!inlinePrompt && (activeIcon || activeText)"
       :class="labelRightKls"
     >
-      <el-icon v-if="activeIcon">
+      <hc-icon v-if="activeIcon">
         <component :is="activeIcon" />
-      </el-icon>
+      </hc-icon>
       <span v-if="!activeIcon && activeText" :aria-hidden="!checked">{{
         activeText
       }}</span>
@@ -79,7 +79,7 @@ import {
 import { isPromise } from '@vue/shared'
 import { Loading } from '@element-plus/icons-vue'
 import { addUnit, debugWarn, isBoolean, throwError } from '@hicor-ui/utils'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import {
   useFormDisabled,
   useFormItem,
@@ -95,7 +95,7 @@ import { useDeprecated, useNamespace } from '@hicor-ui/hooks'
 import { switchEmits, switchProps } from './switch'
 import type { CSSProperties } from 'vue'
 
-const COMPONENT_NAME = 'ElSwitch'
+const COMPONENT_NAME = 'HcSwitch'
 defineOptions({
   name: COMPONENT_NAME,
 })

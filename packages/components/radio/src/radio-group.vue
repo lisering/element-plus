@@ -32,7 +32,7 @@ import { radioGroupKey } from './constants'
 import type { RadioGroupProps } from './radio-group'
 
 defineOptions({
-  name: 'ElRadioGroup',
+  name: 'HcRadioGroup',
 })
 
 const props = defineProps(radioGroupProps)

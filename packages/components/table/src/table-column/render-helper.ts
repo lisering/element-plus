@@ -103,7 +103,7 @@ function useRender<T>(
       check(children)
     }
     function check(item: TableColumn<T>) {
-      if (item?.type?.name === 'ElTableColumn') {
+      if (item?.type?.name === 'HcTableColumn') {
         item.vParent = instance
       }
     }
@@ -188,7 +188,7 @@ function useRender<T>(
       return prev
     }, {})
   }
-  const getColumnElIndex = (children, child) => {
+  const getColumnHcIndex = (children, child) => {
     return Array.prototype.indexOf.call(children, child)
   }
 
@@ -206,7 +206,7 @@ function useRender<T>(
     setColumnForcedProps,
     setColumnRenders,
     getPropsData,
-    getColumnElIndex,
+    getColumnHcIndex,
     updateColumnOrder,
   }
 }

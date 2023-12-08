@@ -177,7 +177,7 @@ export const useCalendar = (
     {
       from: '"dateCell"',
       replacement: '"date-cell"',
-      scope: 'ElCalendar',
+      scope: 'HcCalendar',
       version: '2.3.0',
       ref: 'https://hicor-ui.org/en-US/component/calendar.html#slots',
       type: 'Slot',

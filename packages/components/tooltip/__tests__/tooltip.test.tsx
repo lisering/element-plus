@@ -2,7 +2,7 @@ import { nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { rAF } from '@hicor-ui/test-utils/tick'
-import { ElPopperTrigger } from '@hicor-ui/components/popper'
+import { HcPopperTrigger } from '@hicor-ui/components/popper'
 import Tooltip from '../src/tooltip.vue'
 
 import type { VNode } from 'vue'
@@ -13,7 +13,7 @@ vi.mock('@hicor-ui/utils/error', () => ({
 
 const AXIOM = 'Rem is the best girl'
 
-describe('<ElTooltip />', () => {
+describe('<HcTooltip />', () => {
   const createComponent = (props = {}, content: string | VNode = '') =>
     mount(
       <Tooltip
@@ -28,7 +28,7 @@ describe('<ElTooltip />', () => {
       }
     )
   let wrapper: ReturnType<typeof createComponent>
-  const findTrigger = () => wrapper.findComponent(ElPopperTrigger)
+  const findTrigger = () => wrapper.findComponent(HcPopperTrigger)
 
   afterEach(() => {
     wrapper?.unmount()
@@ -48,7 +48,7 @@ describe('<ElTooltip />', () => {
       wrapper = createComponent({ appendTo: '#test' }, 'test appendTo props')
       await nextTick()
       const trigger$ = findTrigger()
-      const triggerEl = trigger$.find('.el-tooltip__trigger')
+      const triggerEl = trigger$.find('.hc-tooltip__trigger')
       await triggerEl.trigger('mouseenter')
       expect(document.querySelector('#test')?.innerHTML).toContain(
         'test appendTo props'
@@ -73,7 +73,7 @@ describe('<ElTooltip />', () => {
       await nextTick()
 
       const trigger$ = findTrigger()
-      const triggerEl = trigger$.find('.el-tooltip__trigger')
+      const triggerEl = trigger$.find('.hc-tooltip__trigger')
 
       vi.useFakeTimers()
       await triggerEl.trigger('mouseenter')
@@ -102,7 +102,7 @@ describe('<ElTooltip />', () => {
       await nextTick()
 
       const trigger$ = findTrigger()
-      const triggerEl = trigger$.find('.el-tooltip__trigger')
+      const triggerEl = trigger$.find('.hc-tooltip__trigger')
 
       vi.useFakeTimers()
       await triggerEl.trigger('click')

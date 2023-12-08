@@ -1,7 +1,7 @@
-import ElVisuallyHidden from './src/visual-hidden.vue'
+import HcVisuallyHidden from './src/visual-hidden.vue'
 
-export { ElVisuallyHidden }
+export { HcVisuallyHidden }
 
-export default ElVisuallyHidden
+export default HcVisuallyHidden
 
 export * from './src/visual-hidden'

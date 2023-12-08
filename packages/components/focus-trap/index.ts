@@ -1,7 +1,7 @@
-import ElFocusTrap from './src/focus-trap.vue'
+import HcFocusTrap from './src/focus-trap.vue'
 
-export { ElFocusTrap }
+export { HcFocusTrap }
 
-export default ElFocusTrap
+export default HcFocusTrap
 export * from './src/tokens'
 export * from './src/utils'

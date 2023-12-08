@@ -1,5 +1,5 @@
 import { SortDown, SortUp } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { SortOrder } from '../constants'
 
 import type { FunctionalComponent } from 'vue'
@@ -13,9 +13,9 @@ const SortIcon: FunctionalComponent<SortIconProps> = (props) => {
   const { sortOrder } = props
 
   return (
-    <ElIcon size={14} class={props.class}>
+    <HcIcon size={14} class={props.class}>
       {sortOrder === SortOrder.ASC ? <SortUp /> : <SortDown />}
-    </ElIcon>
+    </HcIcon>
   )
 }
 

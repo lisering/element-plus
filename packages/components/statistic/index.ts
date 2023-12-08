@@ -1,7 +1,7 @@
 import { withInstall } from '@hicor-ui/utils'
 import Statistic from './src/statistic.vue'
 
-export const ElStatistic = withInstall(Statistic)
+export const HcStatistic = withInstall(Statistic)
 
-export default ElStatistic
+export default HcStatistic
 export * from './src/statistic'

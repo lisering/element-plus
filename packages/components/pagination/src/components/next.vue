@@ -8,20 +8,20 @@
     @click="$emit('click', $event)"
   >
     <span v-if="nextText">{{ nextText }}</span>
-    <el-icon v-else>
+    <hc-icon v-else>
       <component :is="nextIcon" />
-    </el-icon>
+    </hc-icon>
   </button>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useLocale } from '@hicor-ui/hooks'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { paginationNextProps } from './next'
 
 defineOptions({
-  name: 'ElPaginationNext',
+  name: 'HcPaginationNext',
 })
 
 const props = defineProps(paginationNextProps)

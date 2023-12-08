@@ -4,10 +4,10 @@ import { addClass, generateId } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { useNamespace } from '@hicor-ui/hooks'
 import type { Nullable } from '@hicor-ui/utils'
-import type { IElDropdownInstance } from './dropdown'
+import type { IHcDropdownInstance } from './dropdown'
 
 export const useDropdown = () => {
-  const elDropdown = inject<IElDropdownInstance>('elDropdown', {})
+  const elDropdown = inject<IHcDropdownInstance>('elDropdown', {})
   const _elDropdownSize = computed(() => elDropdown?.dropdownSize)
 
   return {

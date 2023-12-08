@@ -1,5 +1,5 @@
 <template>
-  <el-select
+  <hc-select
     ref="select"
     :model-value="value"
     :disabled="_disabled"
@@ -15,7 +15,7 @@
     @blur="(event) => $emit('blur', event)"
     @focus="(event) => $emit('focus', event)"
   >
-    <el-option
+    <hc-option
       v-for="item in items"
       :key="item.value"
       :label="item.value"
@@ -23,30 +23,30 @@
       :disabled="item.disabled"
     />
     <template #prefix>
-      <el-icon v-if="prefixIcon" :class="nsInput.e('prefix-icon')">
+      <hc-icon v-if="prefixIcon" :class="nsInput.e('prefix-icon')">
         <component :is="prefixIcon" />
-      </el-icon>
+      </hc-icon>
     </template>
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat.js'
-import ElSelect from '@hicor-ui/components/select'
+import HcSelect from '@hicor-ui/components/select'
 import { useFormDisabled } from '@hicor-ui/components/form'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { timeSelectProps } from './time-select'
 import { compareTime, formatTime, nextTime, parseTime } from './utils'
 
 dayjs.extend(customParseFormat)
 
-const { Option: ElOption } = ElSelect
+const { Option: HcOption } = HcSelect
 
 defineOptions({
-  name: 'ElTimeSelect',
+  name: 'HcTimeSelect',
 })
 
 defineEmits(['change', 'blur', 'focus', 'update:modelValue'])
@@ -54,7 +54,7 @@ defineEmits(['change', 'blur', 'focus', 'update:modelValue'])
 const props = defineProps(timeSelectProps)
 
 const nsInput = useNamespace('input')
-const select = ref<typeof ElSelect>()
+const select = ref<typeof HcSelect>()
 
 const _disabled = useFormDisabled()
 const { lang } = useLocale()

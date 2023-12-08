@@ -17,7 +17,7 @@ import { debugWarn } from '@hicor-ui/utils'
 
 import type { Ref, VNode } from 'vue'
 
-const NAME = 'ElOnlyChild'
+const NAME = 'HcOnlyChild'
 
 export const OnlyChild = defineComponent({
   name: NAME,

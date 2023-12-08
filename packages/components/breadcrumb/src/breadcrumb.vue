@@ -16,7 +16,7 @@ import { breadcrumbKey } from './constants'
 import { breadcrumbProps } from './breadcrumb'
 
 defineOptions({
-  name: 'ElBreadcrumb',
+  name: 'HcBreadcrumb',
 })
 
 const props = defineProps(breadcrumbProps)

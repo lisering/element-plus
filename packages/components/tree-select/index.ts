@@ -10,4 +10,4 @@ TreeSelect.install = (app: App): void => {
 const _TreeSelect = TreeSelect as SFCWithInstall<typeof TreeSelect>
 
 export default _TreeSelect
-export const ElTreeSelect = _TreeSelect
+export const HcTreeSelect = _TreeSelect

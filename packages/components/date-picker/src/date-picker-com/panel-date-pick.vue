@@ -25,7 +25,7 @@
       <div :class="ppNs.e('body')">
         <div v-if="showTime" :class="dpNs.e('time-header')">
           <span :class="dpNs.e('editor-wrap')">
-            <el-input
+            <hc-input
               :placeholder="t('el.datepicker.selectDate')"
               :model-value="visibleDate"
               size="small"
@@ -38,7 +38,7 @@
             v-click-outside="handleTimePickClose"
             :class="dpNs.e('editor-wrap')"
           >
-            <el-input
+            <hc-input
               :placeholder="t('el.datepicker.selectTime')"
               :model-value="visibleTime"
               size="small"
@@ -71,7 +71,7 @@
               :class="ppNs.e('icon-btn')"
               @click="moveByYear(false)"
             >
-              <el-icon><d-arrow-left /></el-icon>
+              <hc-icon><d-arrow-left /></hc-icon>
             </button>
             <button
               v-show="currentView === 'date'"
@@ -81,7 +81,7 @@
               class="arrow-left"
               @click="moveByMonth(false)"
             >
-              <el-icon><arrow-left /></el-icon>
+              <hc-icon><arrow-left /></hc-icon>
             </button>
           </span>
           <span
@@ -115,7 +115,7 @@
               class="arrow-right"
               @click="moveByMonth(true)"
             >
-              <el-icon><arrow-right /></el-icon>
+              <hc-icon><arrow-right /></hc-icon>
             </button>
             <button
               type="button"
@@ -124,7 +124,7 @@
               class="d-arrow-right"
               @click="moveByYear(true)"
             >
-              <el-icon><d-arrow-right /></el-icon>
+              <hc-icon><d-arrow-right /></hc-icon>
             </button>
           </span>
         </div>
@@ -162,7 +162,7 @@
       v-show="footerVisible && currentView === 'date'"
       :class="ppNs.e('footer')"
     >
-      <el-button
+      <hc-button
         v-show="selectionMode !== 'dates'"
         text
         size="small"
@@ -171,8 +171,8 @@
         @click="changeToNow"
       >
         {{ t('el.datepicker.now') }}
-      </el-button>
-      <el-button
+      </hc-button>
+      <hc-button
         plain
         size="small"
         :class="ppNs.e('link-btn')"
@@ -180,7 +180,7 @@
         @click="onConfirm"
       >
         {{ t('el.datepicker.confirm') }}
-      </el-button>
+      </hc-button>
     </div>
   </div>
 </template>
@@ -203,16 +203,16 @@ import {
   DArrowLeft,
   DArrowRight,
 } from '@element-plus/icons-vue'
-import ElButton from '@hicor-ui/components/button'
+import HcButton from '@hicor-ui/components/button'
 import { ClickOutside as vClickOutside } from '@hicor-ui/directives'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import ElInput from '@hicor-ui/components/input'
+import HcInput from '@hicor-ui/components/input'
 import {
   TimePickPanel,
   extractDateFormat,
   extractTimeFormat,
 } from '@hicor-ui/components/time-picker'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { isArray, isFunction } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { TOOLTIP_INJECTION_KEY } from '@hicor-ui/components/tooltip'

@@ -1,19 +1,19 @@
 <template>
-  <el-dropdown-collection-item
+  <hc-dropdown-collection-item
     :disabled="disabled"
     :text-value="textValue ?? textContent"
   >
-    <el-roving-focus-item :focusable="!disabled">
-      <el-dropdown-item-impl
+    <hc-roving-focus-item :focusable="!disabled">
+      <hc-dropdown-item-impl
         v-bind="propsAndAttrs"
         @pointerleave="handlePointerLeave"
         @pointermove="handlePointerMove"
         @clickimpl="handleClick"
       >
         <slot />
-      </el-dropdown-item-impl>
-    </el-roving-focus-item>
-  </el-dropdown-collection-item>
+      </hc-dropdown-item-impl>
+    </hc-roving-focus-item>
+  </hc-dropdown-collection-item>
 </template>
 <script lang="ts">
 import {
@@ -24,22 +24,22 @@ import {
   ref,
   unref,
 } from 'vue'
-import { ElRovingFocusItem } from '@hicor-ui/components/roving-focus-group'
+import { HcRovingFocusItem } from '@hicor-ui/components/roving-focus-group'
 import { composeEventHandlers, whenMouse } from '@hicor-ui/utils'
-import ElDropdownItemImpl from './dropdown-item-impl.vue'
+import HcDropdownItemImpl from './dropdown-item-impl.vue'
 import { useDropdown } from './useDropdown'
 import {
-  ElCollectionItem as ElDropdownCollectionItem,
+  HcCollectionItem as HcDropdownCollectionItem,
   dropdownItemProps,
 } from './dropdown'
 import { DROPDOWN_INJECTION_KEY } from './tokens'
 
 export default defineComponent({
-  name: 'ElDropdownItem',
+  name: 'HcDropdownItem',
   components: {
-    ElDropdownCollectionItem,
-    ElRovingFocusItem,
-    ElDropdownItemImpl,
+    HcDropdownCollectionItem,
+    HcRovingFocusItem,
+    HcDropdownItemImpl,
   },
   inheritAttrs: false,
   props: dropdownItemProps,

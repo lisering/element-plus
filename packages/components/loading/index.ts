@@ -4,7 +4,7 @@ import { vLoading } from './src/directive'
 import type { App } from 'vue'
 
 // installer and everything in all
-export const ElLoading = {
+export const HcLoading = {
   install(app: App) {
     app.directive('loading', vLoading)
     app.config.globalProperties.$loading = Loading
@@ -13,7 +13,7 @@ export const ElLoading = {
   service: Loading,
 }
 
-export default ElLoading
-export { vLoading, vLoading as ElLoadingDirective, Loading as ElLoadingService }
+export default HcLoading
+export { vLoading, vLoading as HcLoadingDirective, Loading as HcLoadingService }
 
 export * from './src/types'

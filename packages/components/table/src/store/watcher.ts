@@ -82,7 +82,7 @@ function useWatcher<T>() {
 
   // 检查 rowKey 是否存在
   const assertRowKey = () => {
-    if (!rowKey.value) throw new Error('[ElTable] prop row-key is required')
+    if (!rowKey.value) throw new Error('[HcTable] prop row-key is required')
   }
 
   // 更新 fixed

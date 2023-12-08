@@ -6,7 +6,7 @@ import type { Directive, DirectiveBinding, UnwrapRef } from 'vue'
 import type { LoadingOptions } from './types'
 import type { LoadingInstance } from './loading'
 
-const INSTANCE_KEY = Symbol('ElLoading')
+const INSTANCE_KEY = Symbol('HcLoading')
 
 export type LoadingBinding = boolean | UnwrapRef<LoadingOptions>
 export interface ElementLoading extends HTMLElement {
@@ -70,7 +70,7 @@ const updateOptions = (
   }
 }
 
-export const vLoading: Directive<ElementLoading, LoadingBinding> = {
+export const vLoading: Directive<HcementLoading, LoadingBinding> = {
   mounted(el, binding) {
     if (binding.value) {
       createInstance(el, binding)

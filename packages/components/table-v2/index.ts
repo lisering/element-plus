@@ -11,8 +11,8 @@ export { default as TableV2 } from './src/table-v2'
 export * from './src/auto-resizer'
 export { placeholderSign as TableV2Placeholder } from './src/private'
 
-export const ElTableV2 = withInstall(TableV2)
-export const ElAutoResizer = withInstall(AutoResizer)
+export const HcTableV2 = withInstall(TableV2)
+export const HcAutoResizer = withInstall(AutoResizer)
 
 export type {
   Column,

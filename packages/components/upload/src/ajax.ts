@@ -6,7 +6,7 @@ import type {
   UploadRequestOptions,
 } from './upload'
 
-const SCOPE = 'ElUpload'
+const SCOPE = 'HcUpload'
 
 export class UploadAjaxError extends Error {
   name = 'UploadAjaxError'

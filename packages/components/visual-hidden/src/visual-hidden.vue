@@ -11,7 +11,7 @@ import type { StyleValue } from 'vue'
 const props = defineProps(visualHiddenProps)
 
 defineOptions({
-  name: 'ElVisuallyHidden',
+  name: 'HcVisuallyHidden',
 })
 
 const computedStyle = computed<StyleValue>(() => {

@@ -10,7 +10,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { skeletonItemProps } from './skeleton-item'
 
 defineOptions({
-  name: 'ElSkeletonItem',
+  name: 'HcSkeletonItem',
 })
 defineProps(skeletonItemProps)
 const ns = useNamespace('skeleton')

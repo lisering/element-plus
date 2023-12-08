@@ -7,14 +7,14 @@ import TestCollection, {
 } from '../test-helper'
 
 import type { ComponentPublicInstance } from 'vue'
-import type { ElCollectionInjectionContext } from '../src/tokens'
+import type { HcCollectionInjectionContext } from '../src/tokens'
 
-const { ElCollection, ElCollectionItem } = TestCollection
+const { HcCollection, HcCollectionItem } = TestCollection
 const AXIOM = 'rem is the best girl'
 
-describe('<ElCollectionItem />', () => {
+describe('<HcCollectionItem />', () => {
   const createComponent = (props = {}, count = 3) =>
-    mount(ElCollection as any, {
+    mount(HcCollection as any, {
       props,
       slots: {
         default: () => {
@@ -25,7 +25,7 @@ describe('<ElCollectionItem />', () => {
               default: () =>
                 Array.from({ length: count }).map((idx) => {
                   return h(
-                    ElCollectionItem as any,
+                    HcCollectionItem as any,
                     {},
                     {
                       default: () => [
@@ -54,8 +54,8 @@ describe('<ElCollectionItem />', () => {
     wrapper = createComponent()
     await nextTick()
 
-    expect(wrapper.findAllComponents(ElCollectionItem as any)).toHaveLength(3)
-    expect(wrapper.findComponent(ElCollectionItem as any).text()).toContain(
+    expect(wrapper.findAllComponents(HcCollectionItem as any)).toHaveLength(3)
+    expect(wrapper.findComponent(HcCollectionItem as any).text()).toContain(
       AXIOM
     )
   })
@@ -67,7 +67,7 @@ describe('<ElCollectionItem />', () => {
       CollectionChildComponent as any
     )
     const childVm =
-      childItemComponent.vm as ComponentPublicInstance<ElCollectionInjectionContext>
+      childItemComponent.vm as ComponentPublicInstance<HcCollectionInjectionContext>
 
     const collectionItems = wrapper.findAllComponents(
       CollectionItemChildComponent as any

@@ -1,6 +1,6 @@
 <template>
   <div :class="ns.b()">
-    <el-menu
+    <hc-menu
       ref="refMenu"
       :unique-opened="true"
       mode="horizontal"
@@ -9,13 +9,13 @@
       @select="handleSelect"
     >
       <template v-for="item in normalMenuList" :key="item.funcPath">
-        <el-menu-item v-if="!item.children" :index="JSON.stringify(item)"
+        <hc-menu-item v-if="!item.children" :index="JSON.stringify(item)"
           ><span class="font-size-medium">{{
             item.funcName
-          }}</span></el-menu-item
+          }}</span></hc-menu-item
         >
 
-        <el-sub-menu
+        <hc-sub-menu
           v-else
           :popper-class="'popperClass ' + item.funcPath"
           :index="JSON.stringify(item)"
@@ -27,7 +27,7 @@
           >
           <template v-for="child in item.children">
             <template v-if="child.children">
-              <el-sub-menu :key="child.funcPath" :index="JSON.stringify(child)">
+              <hc-sub-menu :key="child.funcPath" :index="JSON.stringify(child)">
                 <template #title
                   ><span class="font-size-medium font-weight-primary">{{
                     child.funcName
@@ -37,21 +37,21 @@
                   v-for="children in child.children"
                   :key="children.funcPath"
                 >
-                  <el-menu-item :index="JSON.stringify(children)"
+                  <hc-menu-item :index="JSON.stringify(children)"
                     ><span class="font-size-medium">{{
                       children.funcName
-                    }}</span></el-menu-item
+                    }}</span></hc-menu-item
                   >
                 </template>
-              </el-sub-menu>
+              </hc-sub-menu>
             </template>
-            <el-menu-item
+            <hc-menu-item
               v-else
               :key="child.funcPath"
               :index="JSON.stringify(child)"
             >
               <span class="font-size-medium">{{ child.funcName }}</span>
-            </el-menu-item>
+            </hc-menu-item>
           </template>
           <iframe
             style="
@@ -65,22 +65,22 @@
               border: 0;
             "
           />
-        </el-sub-menu>
+        </hc-sub-menu>
       </template>
-    </el-menu>
+    </hc-menu>
   </div>
 </template>
 
 <script lang="ts" setup>
 import '@hicor-ui/theme-chalk/src/menu.scss'
 import '@hicor-ui/theme-chalk/src/menu-item.scss'
-import { ElMenu, ElMenuItem, ElSubMenu } from '@hicor-ui/components'
+import { HcMenu, HcMenuItem, HcSubMenu } from '@hicor-ui/components'
 import { useNamespace } from '@hicor-ui/hooks'
 import { topMenuEmits, topMenuProps } from './top-menu'
 import { useTopMenu } from './use-top-menu'
 
 defineOptions({
-  name: 'ElTopMenu',
+  name: 'HcTopMenu',
 })
 
 defineProps(topMenuProps)

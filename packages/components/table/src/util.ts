@@ -13,11 +13,11 @@ import { useDelayedToggle } from '@hicor-ui/hooks'
 import type { PopperInstance } from '@hicor-ui/components/popper'
 import type { Nullable } from '@hicor-ui/utils'
 import type { TableColumnCtx } from './table-column/defaults'
-import type { ElTooltipProps } from '@hicor-ui/components/tooltip'
+import type { HcTooltipProps } from '@hicor-ui/components/tooltip'
 
 export type TableOverflowTooltipOptions = Partial<
   Pick<
-    ElTooltipProps,
+    HcTooltipProps,
     | 'effect'
     | 'enterable'
     | 'hideAfter'
@@ -137,7 +137,7 @@ export const getColumnByKey = function <T>(
     }
   }
   if (!column)
-    throwError('ElTable', `No column matching with column-key: ${columnKey}`)
+    throwError('HcTable', `No column matching with column-key: ${columnKey}`)
   return column
 }
 

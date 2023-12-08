@@ -23,7 +23,7 @@ import { isNumber } from '@hicor-ui/utils'
 import { badgeProps } from './badge'
 
 defineOptions({
-  name: 'ElBadge',
+  name: 'HcBadge',
 })
 
 const props = defineProps(badgeProps)

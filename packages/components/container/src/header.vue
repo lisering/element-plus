@@ -10,7 +10,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElHeader',
+  name: 'HcHeader',
 })
 
 const props = defineProps({

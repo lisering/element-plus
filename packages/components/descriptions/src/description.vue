@@ -16,7 +16,7 @@
       <table :class="[ns.e('table'), ns.is('bordered', border)]">
         <tbody>
           <template v-for="(row, _index) in getRows()" :key="_index">
-            <el-descriptions-row :row="row" />
+            <hc-descriptions-row :row="row" />
           </template>
         </tbody>
       </table>
@@ -29,7 +29,7 @@ import { computed, provide, useSlots } from 'vue'
 import { flattedChildren } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import { useFormSize } from '@hicor-ui/components/form'
-import ElDescriptionsRow from './descriptions-row.vue'
+import HcDescriptionsRow from './descriptions-row.vue'
 import { descriptionsKey } from './token'
 import { descriptionProps } from './description'
 
@@ -37,7 +37,7 @@ import type { IDescriptionsInject } from './descriptions.type'
 import type { DescriptionItemVNode } from './description-item'
 
 defineOptions({
-  name: 'ElDescriptions',
+  name: 'HcDescriptions',
 })
 
 const props = defineProps(descriptionProps)
@@ -76,7 +76,7 @@ const getRows = () => {
 
   const children = flattedChildren(slots.default()).filter(
     (node): node is DescriptionItemVNode =>
-      (node as any)?.type?.name === 'ElDescriptionsItem'
+      (node as any)?.type?.name === 'HcDescriptionsItem'
   )
   const rows: DescriptionItemVNode[][] = []
   let temp: DescriptionItemVNode[] = []

@@ -29,7 +29,7 @@ import { isFunction, isNumber } from '@hicor-ui/utils'
 import { statisticProps } from './statistic'
 
 defineOptions({
-  name: 'ElStatistic',
+  name: 'HcStatistic',
 })
 
 const props = defineProps(statisticProps)

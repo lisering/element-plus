@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Upload from './src/upload.vue'
 
-export const ElUpload = withInstall(Upload)
-export default ElUpload
+export const HcUpload = withInstall(Upload)
+export default HcUpload
 
 export * from './src/upload'
 export * from './src/upload-content'

@@ -3,7 +3,7 @@ import { computed, nextTick, toRefs, watch } from 'vue'
 import { isEqual, pick } from 'lodash-unified'
 import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import { isFunction } from '@hicor-ui/utils'
-import ElTree from '@hicor-ui/components/tree'
+import HcTree from '@hicor-ui/components/tree'
 import TreeSelectOption from './tree-select-option'
 import {
   isValidArray,
@@ -14,7 +14,7 @@ import {
 } from './utils'
 import type { CacheOption } from './cache-options'
 import type { Ref } from 'vue'
-import type ElSelect from '@hicor-ui/components/select'
+import type HcSelect from '@hicor-ui/components/select'
 import type Node from '@hicor-ui/components/tree/src/model/node'
 import type { TreeNodeData } from '@hicor-ui/components/tree/src/tree.type'
 
@@ -26,8 +26,8 @@ export const useTree = (
     tree,
     key,
   }: {
-    select: Ref<InstanceType<typeof ElSelect> | undefined>
-    tree: Ref<InstanceType<typeof ElTree> | undefined>
+    select: Ref<InstanceType<typeof HcSelect> | undefined>
+    tree: Ref<InstanceType<typeof HcTree> | undefined>
     key: Ref<string>
   }
 ) => {
@@ -120,7 +120,7 @@ export const useTree = (
   })
 
   return {
-    ...pick(toRefs(props), Object.keys(ElTree.props)),
+    ...pick(toRefs(props), Object.keys(HcTree.props)),
     ...attrs,
     nodeKey: key,
 
@@ -210,7 +210,7 @@ export const useTree = (
         if (props.multiple) {
           emit(
             UPDATE_MODEL_EVENT,
-            (tree.value as InstanceType<typeof ElTree>).getCheckedKeys(true)
+            (tree.value as InstanceType<typeof HcTree>).getCheckedKeys(true)
           )
         } else {
           // select first leaf node when check parent

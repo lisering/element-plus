@@ -22,7 +22,7 @@ import type {
 import type { TableV2HeaderInstance } from './components'
 import type { TableV2GridProps } from './grid'
 
-const COMPONENT_NAME = 'ElTableV2Grid'
+const COMPONENT_NAME = 'HcTableV2Grid'
 
 const useTableGrid = (props: TableV2GridProps) => {
   const headerRef = ref<TableV2HeaderInstance>()

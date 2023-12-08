@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 import { Loading } from '../src/service'
 import { vLoading } from '../src/directive'
-import ElInput from '../../input'
+import HcInput from '../../input'
 
 import type { VNode } from 'vue'
 import type { LoadingInstance } from '../src/loading'
@@ -38,7 +38,7 @@ describe('Loading', () => {
 
     await nextTick()
 
-    const maskWrapper = wrapper.find('.el-loading-mask')
+    const maskWrapper = wrapper.find('.hc-loading-mask')
     expect(maskWrapper.exists()).toBeTruthy()
 
     vi.useFakeTimers()
@@ -49,7 +49,7 @@ describe('Loading', () => {
     vi.runAllTimers()
     vi.useRealTimers()
     await nextTick()
-    expect(wrapper.find('.el-loading-mask').exists()).toBeFalsy()
+    expect(wrapper.find('.hc-loading-mask').exists()).toBeFalsy()
   })
 
   test('unmounted directive', async () => {
@@ -69,7 +69,7 @@ describe('Loading', () => {
     show2.value = false
 
     await nextTick()
-    expect(document.querySelector('.el-loading-mask')).toBeFalsy()
+    expect(document.querySelector('.hc-loading-mask')).toBeFalsy()
   })
 
   test('body directive', async () => {
@@ -77,7 +77,7 @@ describe('Loading', () => {
     const wrapper = _mount(() => <div v-loading_body={loading.value} />)
 
     await nextTick()
-    const mask = document.querySelector('.el-loading-mask')!
+    const mask = document.querySelector('.hc-loading-mask')!
     expect(mask.parentNode === document.body).toBeTruthy()
     wrapper.vm.loading = false
     document.body.removeChild(mask)
@@ -88,7 +88,7 @@ describe('Loading', () => {
     _mount(() => <div v-loading_fullscreen={loading.value} />)
 
     await nextTick()
-    const mask = document.querySelector('.el-loading-mask')!
+    const mask = document.querySelector('.hc-loading-mask')!
     expect(mask.parentNode === document.body).toBeTruthy()
     expect(mask.classList.contains('is-fullscreen')).toBeTruthy()
     loading.value = false
@@ -104,7 +104,7 @@ describe('Loading', () => {
       document.body.classList.contains('el-loading-parent--hidden')
     ).toBeTruthy()
     loading.value = false
-    document.body.removeChild(document.querySelector('.el-loading-mask')!)
+    document.body.removeChild(document.querySelector('.hc-loading-mask')!)
   })
 
   test('text directive', async () => {
@@ -114,7 +114,7 @@ describe('Loading', () => {
     ))
 
     await nextTick()
-    expect(wrapper.find('.el-loading-text').text()).toEqual('loading...')
+    expect(wrapper.find('.hc-loading-text').text()).toEqual('loading...')
   })
 
   test('customClass directive', async () => {
@@ -143,7 +143,7 @@ describe('Loading', () => {
 
   test('create service', async () => {
     loadingInstance = Loading()
-    expect(document.querySelector('.el-loading-mask')).toBeTruthy()
+    expect(document.querySelector('.hc-loading-mask')).toBeTruthy()
   })
 
   test('close service', async () => {
@@ -158,7 +158,7 @@ describe('Loading', () => {
     document.body.appendChild(container)
 
     loadingInstance = Loading({ target: '.loading-container' })
-    const mask = container.querySelector('.el-loading-mask')!
+    const mask = container.querySelector('.hc-loading-mask')!
     expect(mask).toBeTruthy()
     expect(mask.parentNode).toEqual(container)
 
@@ -183,14 +183,14 @@ describe('Loading', () => {
     document.body.appendChild(container)
 
     loadingInstance = Loading({ target: '.loading-container', body: true })
-    const mask = document.querySelector('.el-loading-mask')!
+    const mask = document.querySelector('.hc-loading-mask')!
     expect(mask).toBeTruthy()
     expect(mask.parentNode).toEqual(document.body)
   })
 
   test('fullscreen service', async () => {
     loadingInstance = Loading({ fullscreen: true })
-    const mask = document.querySelector('.el-loading-mask')!
+    const mask = document.querySelector('.hc-loading-mask')!
     expect(mask.parentNode).toEqual(document.body)
     expect(mask.classList.contains('is-fullscreen')).toBeTruthy()
   })
@@ -205,7 +205,7 @@ describe('Loading', () => {
     vi.runAllTimers()
     await nextTick()
 
-    let masks = document.querySelectorAll('.el-loading-mask')
+    let masks = document.querySelectorAll('.hc-loading-mask')
     expect(loadingInstance).toEqual(loadingInstance2)
     expect(masks.length).toEqual(1)
     loadingInstance2.close()
@@ -213,7 +213,7 @@ describe('Loading', () => {
     vi.useRealTimers()
     await nextTick()
 
-    masks = document.querySelectorAll('.el-loading-mask')
+    masks = document.querySelectorAll('.hc-loading-mask')
     expect(masks.length).toEqual(0)
   })
 
@@ -226,21 +226,21 @@ describe('Loading', () => {
 
   test('text service', async () => {
     loadingInstance = Loading({ text: 'Loading...' })
-    const text = document.querySelector('.el-loading-text')!
+    const text = document.querySelector('.hc-loading-text')!
     expect(text).toBeTruthy()
     expect(text.textContent).toEqual('Loading...')
   })
 
   test('customClass service', async () => {
     loadingInstance = Loading({ customClass: 'el-loading-custom-class' })
-    const customClass = document.querySelector('.el-loading-custom-class')
+    const customClass = document.querySelector('.hc-loading-custom-class')
     expect(customClass).toBeTruthy()
   })
 
   test("parent's display is not block", async () => {
     const loading = ref(true)
     const wrapper = _mount(() => (
-      <ElInput
+      <HcInput
         v-loading={loading.value}
         v-slots={{
           append: () => 'Loading Text',
@@ -251,7 +251,7 @@ describe('Loading', () => {
     await nextTick()
     await nextTick()
     const maskDisplay = getComputedStyle(
-      wrapper.find('.el-loading-mask').element
+      wrapper.find('.hc-loading-mask').element
     ).display
     expect(maskDisplay).toBe('block')
   })

@@ -2,8 +2,8 @@ import { withInstall } from '@hicor-ui/utils'
 
 import Scrollbar from './src/scrollbar.vue'
 
-export const ElScrollbar = withInstall(Scrollbar)
-export default ElScrollbar
+export const HcScrollbar = withInstall(Scrollbar)
+export default HcScrollbar
 
 export * from './src/util'
 export * from './src/scrollbar'

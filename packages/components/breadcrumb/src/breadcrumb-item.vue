@@ -8,9 +8,9 @@
     >
       <slot />
     </span>
-    <el-icon v-if="breadcrumbContext?.separatorIcon" :class="ns.e('separator')">
+    <hc-icon v-if="breadcrumbContext?.separatorIcon" :class="ns.e('separator')">
       <component :is="breadcrumbContext.separatorIcon" />
-    </el-icon>
+    </hc-icon>
     <span v-else :class="ns.e('separator')" role="presentation">
       {{ breadcrumbContext?.separator }}
     </span>
@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance, inject, ref } from 'vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { breadcrumbKey } from './constants'
 import { breadcrumbItemProps } from './breadcrumb-item'
@@ -27,7 +27,7 @@ import { breadcrumbItemProps } from './breadcrumb-item'
 import type { Router } from 'vue-router'
 
 defineOptions({
-  name: 'ElBreadcrumbItem',
+  name: 'HcBreadcrumbItem',
 })
 
 const props = defineProps(breadcrumbItemProps)

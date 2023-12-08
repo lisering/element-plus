@@ -15,7 +15,7 @@ import { defineComponent } from 'vue'
 import { useNamespace } from '@hicor-ui/hooks'
 import { menuItemGroupProps } from './menu-item-group'
 
-const COMPONENT_NAME = 'ElMenuItemGroup'
+const COMPONENT_NAME = 'HcMenuItemGroup'
 
 export default defineComponent({
   name: COMPONENT_NAME,

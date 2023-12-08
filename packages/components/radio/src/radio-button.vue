@@ -40,7 +40,7 @@ import { radioButtonProps } from './radio-button'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElRadioButton',
+  name: 'HcRadioButton',
 })
 
 const props = defineProps(radioButtonProps)

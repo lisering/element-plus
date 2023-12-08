@@ -4,14 +4,14 @@ import Checkbox from './src/checkbox.vue'
 import CheckboxButton from './src/checkbox-button.vue'
 import CheckboxGroup from './src/checkbox-group.vue'
 
-export const ElCheckbox = withInstall(Checkbox, {
+export const HcCheckbox = withInstall(Checkbox, {
   CheckboxButton,
   CheckboxGroup,
 })
-export default ElCheckbox
+export default HcCheckbox
 
-export const ElCheckboxButton = withNoopInstall(CheckboxButton)
-export const ElCheckboxGroup = withNoopInstall(CheckboxGroup)
+export const HcCheckboxButton = withNoopInstall(CheckboxButton)
+export const HcCheckboxGroup = withNoopInstall(CheckboxGroup)
 
 export * from './src/checkbox-group'
 export * from './src/checkbox'

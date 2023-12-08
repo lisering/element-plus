@@ -12,7 +12,7 @@ import {
   ROVING_FOCUS_GROUP_INJECTION_KEY,
   ROVING_FOCUS_GROUP_ITEM_INJECTION_KEY,
 } from '../src/tokens'
-import ElRovingFocusItem from '../src/roving-focus-item.vue'
+import HcRovingFocusItem from '../src/roving-focus-item.vue'
 const AXIOM = 'rem is the best girl'
 const focusItemKls = 'item-kls'
 
@@ -49,7 +49,7 @@ const FocusItem = defineComponent({
     </div>`,
 })
 
-describe('<ElRovingFocusItem />', () => {
+describe('<HcRovingFocusItem />', () => {
   const currentTabbedId = ref('test_id')
   const loop = ref(false)
   const onItemFocus = vi.fn()
@@ -72,18 +72,18 @@ describe('<ElRovingFocusItem />', () => {
     mount(
       {
         template: `<div>
-        <el-roving-focus-item v-bind="$attrs">
+        <hc-roving-focus-item v-bind="$attrs">
           <focus-item />
-        </el-roving-focus-item>
-        <el-roving-focus-item v-bind="$attrs">
+        </hc-roving-focus-item>
+        <hc-roving-focus-item v-bind="$attrs">
           <focus-item />
-        </el-roving-focus-item>
-        <el-roving-focus-item v-bind="$attrs">
+        </hc-roving-focus-item>
+        <hc-roving-focus-item v-bind="$attrs">
           <focus-item />
-        </el-roving-focus-item>
+        </hc-roving-focus-item>
       </div>`,
         components: {
-          ElRovingFocusItem,
+          HcRovingFocusItem,
           FocusItem,
         },
       },
@@ -96,7 +96,7 @@ describe('<ElRovingFocusItem />', () => {
       }
     )
   let wrapper: ReturnType<typeof createComponent>
-  const findItems = () => wrapper.findAllComponents(ElRovingFocusItem)
+  const findItems = () => wrapper.findAllComponents(HcRovingFocusItem)
   const findDOMItems = () => wrapper.findAll(`.${focusItemKls}`)
   beforeEach(async () => {
     wrapper = createComponent()

@@ -1,7 +1,7 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, test } from 'vitest'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import Radio from '../src/radio.vue'
 import RadioGroup from '../src/radio-group.vue'
 import RadioButton from '../src/radio-button.vue'
@@ -80,7 +80,7 @@ describe('Radio group', () => {
       </RadioGroup>
     ))
     await nextTick()
-    const [radio1, radio2] = wrapper.findAll('.el-radio')
+    const [radio1, radio2] = wrapper.findAll('.hc-radio')
     expect(radio1.classes()).toContain('is-checked')
     await radio2.trigger('click')
     expect(radio2.classes()).toContain('is-checked')
@@ -114,8 +114,8 @@ describe('Radio group', () => {
       </RadioGroup>
     ))
 
-    const id1 = wrapper1.find('.el-radio').find('input').attributes('name')
-    const id2 = wrapper2.find('.el-radio').find('input').attributes('name')
+    const id1 = wrapper1.find('.hc-radio').find('input').attributes('name')
+    const id2 = wrapper2.find('.hc-radio').find('input').attributes('name')
 
     expect(id1).not.toEqual(id2)
   })
@@ -135,7 +135,7 @@ describe('Radio group', () => {
     ))
     expect(wrapper.find('label.is-disabled').exists()).toBe(true)
 
-    const [radio1, radio2] = wrapper.findAll('.el-radio')
+    const [radio1, radio2] = wrapper.findAll('.hc-radio')
     expect(radio1.classes()).toContain('is-checked')
     await radio2.trigger('click')
     expect(radio.value).toEqual(3)
@@ -156,7 +156,7 @@ describe('Radio group', () => {
         <Radio label={9}>9</Radio>
       </RadioGroup>
     ))
-    const radio2 = wrapper.findAll('.el-radio').at(1)
+    const radio2 = wrapper.findAll('.hc-radio').at(1)
     await radio2?.trigger('click')
     await nextTick()
     expect(data.value).toEqual(6)
@@ -195,7 +195,7 @@ describe('Radio group', () => {
       </RadioGroup>
     ))
 
-    const [radio1, radio2] = wrapper.findAll('.el-radio-button')
+    const [radio1, radio2] = wrapper.findAll('.hc-radio-button')
     expect(radio1.classes()).toContain('is-active')
     expect(wrapper.findAll('.is-disabled').length).toBe(3)
     await radio2.trigger('click')
@@ -218,7 +218,7 @@ describe('Radio Button', () => {
         <RadioButton label={9}>9</RadioButton>
       </RadioGroup>
     ))
-    const [radio1, radio2] = wrapper.findAll('.el-radio-button')
+    const [radio1, radio2] = wrapper.findAll('.hc-radio-button')
     expect(radio1.classes()).toContain('is-active')
     await radio2.trigger('click')
     expect(radio2.classes()).toContain('is-active')
@@ -237,7 +237,7 @@ describe('Radio Button', () => {
         <RadioButton label={9}>9</RadioButton>
       </RadioGroup>
     ))
-    const radio1 = wrapper.find('.el-radio-button')
+    const radio1 = wrapper.find('.hc-radio-button')
     expect(radio1.find('span').attributes('style')).toContain(
       'background-color: rgb(0, 0, 0); border-color: #000; box-shadow: -1px 0 0 0 #000; color: rgb(255, 255, 0);'
     )
@@ -259,7 +259,7 @@ describe('Radio Button', () => {
         <RadioButton label={9}>9</RadioButton>
       </RadioGroup>
     ))
-    const radio2 = wrapper.findAll('.el-radio-button').at(1)
+    const radio2 = wrapper.findAll('.hc-radio-button').at(1)
     await radio2?.trigger('click')
     expect(radio.value).toEqual(6)
   })
@@ -299,23 +299,23 @@ describe('Radio Button', () => {
         <RadioButton label={9}>9</RadioButton>
       </RadioGroup>
     ))
-    expect(wrapper.findAll('.el-radio-button--large').length).toBe(3)
+    expect(wrapper.findAll('.hc-radio-button--large').length).toBe(3)
   })
 
   describe('form item accessibility integration', () => {
     test('single radio group in form item', async () => {
       const wrapper = mount(() => (
-        <ElFormItem ref="item" label="Test">
+        <HcFormItem ref="item" label="Test">
           <RadioGroup ref="radioGroup">
             <Radio label="Foo" />
             <Radio label="Bar" />
           </RadioGroup>
-        </ElFormItem>
+        </HcFormItem>
       ))
       await nextTick()
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const radioGroup = await wrapper.findComponent(RadioGroup)
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes().role).toBeFalsy()
       expect(radioGroup.attributes().role).toBe('radiogroup')
       expect(formItemLabel.attributes().for).toBe(radioGroup.attributes().id)
@@ -326,17 +326,17 @@ describe('Radio Button', () => {
 
     test('single radio group in form item, override label', async () => {
       const wrapper = mount(() => (
-        <ElFormItem ref="item" label="Test">
+        <HcFormItem ref="item" label="Test">
           <RadioGroup label="Foo" ref="radioGroup">
             <Radio label="Foo" />
             <Radio label="Bar" />
           </RadioGroup>
-        </ElFormItem>
+        </HcFormItem>
       ))
       await nextTick()
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const radioGroup = await wrapper.findComponent(RadioGroup)
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItemLabel.attributes().for).toBe(radioGroup.attributes().id)
       expect(radioGroup.attributes().role).toBe('radiogroup')
       expect(radioGroup.attributes()['aria-label']).toBe('Foo')
@@ -345,7 +345,7 @@ describe('Radio Button', () => {
 
     test('multiple radio groups in form item', async () => {
       const wrapper = mount(() => (
-        <ElFormItem ref="item" label="Test">
+        <HcFormItem ref="item" label="Test">
           <RadioGroup label="Foo" ref="radioGroup1">
             <Radio label="Foo" />
             <Radio label="Bar" />
@@ -354,14 +354,14 @@ describe('Radio Button', () => {
             <Radio label="Foo" />
             <Radio label="Bar" />
           </RadioGroup>
-        </ElFormItem>
+        </HcFormItem>
       ))
       await nextTick()
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const [radioGroup1, radioGroup2] = await wrapper.findAllComponents(
         RadioGroup
       )
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes().role).toBe('group')
       expect(formItem.attributes()['aria-labelledby']).toBe(
         formItemLabel.attributes().id

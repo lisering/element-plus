@@ -4,12 +4,12 @@ export type CollectionItem<T = Record<string, any>> = {
   ref: HTMLElement | null
 } & T
 
-export type ElCollectionInjectionContext = {
+export type HcCollectionInjectionContext = {
   itemMap: Map<HTMLElement, CollectionItem>
   getItems: <T>() => CollectionItem<T>[]
   collectionRef: Ref<HTMLElement | null>
 }
 
-export type ElCollectionItemInjectionContext = {
+export type HcCollectionItemInjectionContext = {
   collectionItemRef: Ref<HTMLElement | null>
 }

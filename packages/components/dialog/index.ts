@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Dialog from './src/dialog.vue'
 
-export const ElDialog = withInstall(Dialog)
-export default ElDialog
+export const HcDialog = withInstall(Dialog)
+export default HcDialog
 
 export * from './src/use-dialog'
 export * from './src/dialog'

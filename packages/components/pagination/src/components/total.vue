@@ -18,7 +18,7 @@ const ns = useNamespace('pagination')
 const { disabled } = usePagination()
 
 defineOptions({
-  name: 'ElPaginationTotal',
+  name: 'HcPaginationTotal',
 })
 
 defineProps(paginationTotalProps)

@@ -10,7 +10,7 @@ import { buttonGroupProps } from './button-group'
 import { buttonGroupContextKey } from './constants'
 
 defineOptions({
-  name: 'ElButtonGroup',
+  name: 'HcButtonGroup',
 })
 const props = defineProps(buttonGroupProps)
 provide(

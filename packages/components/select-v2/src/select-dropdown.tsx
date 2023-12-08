@@ -25,7 +25,7 @@ import type { ItemProps } from '@hicor-ui/components/virtual-list'
 import type { Option, OptionItemProps } from './select.types'
 
 export default defineComponent({
-  name: 'ElSelectDropdown',
+  name: 'HcSelectDropdown',
 
   props: {
     data: {

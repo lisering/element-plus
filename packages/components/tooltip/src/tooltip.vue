@@ -1,6 +1,6 @@
 <template>
-  <el-popper ref="popperRef" :role="role">
-    <el-tooltip-trigger
+  <hc-popper ref="popperRef" :role="role">
+    <hc-tooltip-trigger
       :disabled="disabled"
       :trigger="trigger"
       :trigger-keys="triggerKeys"
@@ -8,8 +8,8 @@
       :virtual-triggering="virtualTriggering"
     >
       <slot v-if="$slots.default" />
-    </el-tooltip-trigger>
-    <el-tooltip-content
+    </hc-tooltip-trigger>
+    <hc-tooltip-content
       ref="contentRef"
       :aria-label="ariaLabel"
       :boundaries-padding="boundariesPadding"
@@ -42,9 +42,9 @@
         <span v-if="rawContent" v-html="content" />
         <span v-else>{{ content }}</span>
       </slot>
-      <el-popper-arrow v-if="showArrow" :arrow-offset="arrowOffset" />
-    </el-tooltip-content>
-  </el-popper>
+      <hc-popper-arrow v-if="showArrow" :arrow-offset="arrowOffset" />
+    </hc-tooltip-content>
+  </hc-popper>
 </template>
 
 <script lang="ts" setup>
@@ -58,18 +58,18 @@ import {
   unref,
   watch,
 } from 'vue'
-import { ElPopper, ElPopperArrow } from '@hicor-ui/components/popper'
+import { HcPopper, HcPopperArrow } from '@hicor-ui/components/popper'
 
 import { isBoolean } from '@hicor-ui/utils'
 import { useDelayedToggle, useId, usePopperContainer } from '@hicor-ui/hooks'
 import { TOOLTIP_INJECTION_KEY } from './constants'
 import { tooltipEmits, useTooltipModelToggle, useTooltipProps } from './tooltip'
-import ElTooltipTrigger from './trigger.vue'
-import ElTooltipContent from './content.vue'
+import HcTooltipTrigger from './trigger.vue'
+import HcTooltipContent from './content.vue'
 import type { PopperInstance } from '@hicor-ui/components/popper'
 
 defineOptions({
-  name: 'ElTooltip',
+  name: 'HcTooltip',
 })
 
 const props = defineProps(useTooltipProps)

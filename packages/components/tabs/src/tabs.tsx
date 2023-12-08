@@ -17,7 +17,7 @@ import {
   isUndefined,
 } from '@hicor-ui/utils'
 import { EVENT_CODE, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import {
   useDeprecated,
   useNamespace,
@@ -80,7 +80,7 @@ export type TabsEmits = typeof tabsEmits
 export type TabsPanes = Record<number, TabsPaneContext>
 
 const Tabs = defineComponent({
-  name: 'ElTabs',
+  name: 'HcTabs',
 
   props: tabsProps,
   emits: tabsEmits,
@@ -92,7 +92,7 @@ const Tabs = defineComponent({
       children: panes,
       addChild: registerPane,
       removeChild: unregisterPane,
-    } = useOrderedChildren<TabsPaneContext>(getCurrentInstance()!, 'ElTabPane')
+    } = useOrderedChildren<TabsPaneContext>(getCurrentInstance()!, 'HcTabPane')
 
     const nav$ = ref<TabNavInstance>()
     const currentName = ref<TabPaneName>(
@@ -143,7 +143,7 @@ const Tabs = defineComponent({
       {
         from: '"activeName"',
         replacement: '"model-value" or "v-model"',
-        scope: 'ElTabs',
+        scope: 'HcTabs',
         version: '2.3.0',
         ref: 'https://hicor-ui.org/en-US/component/tabs.html#attributes',
         type: 'Attribute',
@@ -192,9 +192,9 @@ const Tabs = defineComponent({
             {addSlot ? (
               renderSlot(slots, 'addIcon')
             ) : (
-              <ElIcon class={ns.is('icon-plus')}>
+              <HcIcon class={ns.is('icon-plus')}>
                 <Plus />
-              </ElIcon>
+              </HcIcon>
             )}
           </span>
         ) : null

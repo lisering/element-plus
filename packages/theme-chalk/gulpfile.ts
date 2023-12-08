@@ -19,7 +19,7 @@ const distBundle = path.resolve(hcOutput, 'theme-chalk')
  */
 function buildThemeChalk() {
   const sass = gulpSass(dartSass)
-  const noElPrefixFile = /(index|base|display)/
+  const noHcPrefixFile = /(index|base|display)/
   return src(path.resolve(__dirname, 'src/*.scss'))
     .pipe(sass.sync())
     .pipe(autoprefixer({ cascade: false }))
@@ -34,8 +34,8 @@ function buildThemeChalk() {
     )
     .pipe(
       rename((path) => {
-        if (!noElPrefixFile.test(path.basename)) {
-          path.basename = `el-${path.basename}`
+        if (!noHcPrefixFile.test(path.basename)) {
+          path.basename = `hc-${path.basename}`
         }
       })
     )

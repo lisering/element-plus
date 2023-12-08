@@ -19,7 +19,7 @@ describe('Transfer', () => {
 
   it('create', () => {
     const wrapper = mount(() => <Transfer data={getTestData()} />)
-    expect(wrapper.findComponent({ name: 'ElTransfer' })).toBeTruthy()
+    expect(wrapper.findComponent({ name: 'HcTransfer' })).toBeTruthy()
   })
 
   it('default target list', () => {
@@ -27,8 +27,8 @@ describe('Transfer', () => {
     const wrapper = mount(() => (
       <Transfer v-model={value.value} data={getTestData()} />
     ))
-    const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-    expect(ElTransfer.vm.sourceData.length).toBe(13)
+    const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
+    expect(HcTransfer.vm.sourceData.length).toBe(13)
   })
 
   it('filterable', async () => {
@@ -45,7 +45,7 @@ describe('Transfer', () => {
         filter-method={method}
       />
     ))
-    const leftList: any = wrapper.findComponent({ name: 'ElTransferPanel' })
+    const leftList: any = wrapper.findComponent({ name: 'HcTransferPanel' })
     leftList.vm.query = '1'
     await leftList.find('input').setValue('1')
     expect(leftList.vm.filteredData.length).toBe(1)
@@ -62,14 +62,14 @@ describe('Transfer', () => {
       />
     ))
 
-    const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
+    const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
 
-    ElTransfer.vm.addToLeft()
+    HcTransfer.vm.addToLeft()
     await nextTick()
-    expect(ElTransfer.vm.sourceData.length).toBe(14)
-    ElTransfer.vm.addToRight()
+    expect(HcTransfer.vm.sourceData.length).toBe(14)
+    HcTransfer.vm.addToRight()
     await nextTick()
-    expect(ElTransfer.vm.sourceData.length).toBe(12)
+    expect(HcTransfer.vm.sourceData.length).toBe(12)
   })
 
   it('customize', () => {
@@ -91,10 +91,10 @@ describe('Transfer', () => {
       />
     ))
 
-    const label = wrapper.find('.el-transfer-panel__header .el-checkbox__label')
+    const label = wrapper.find('.hc-transfer-panel__header .el-checkbox__label')
     expect(label.text().includes('表1')).toBeTruthy()
     expect(
-      wrapper.find('.el-transfer-panel__list .el-checkbox__label span').text()
+      wrapper.find('.hc-transfer-panel__list .el-checkbox__label span').text()
     ).toBe('1 - 备选项 1')
     expect(label.find('span').text()).toBe('no')
   })
@@ -105,7 +105,7 @@ describe('Transfer', () => {
       <Transfer v-model={value.value} data={getTestData()} />
     ))
 
-    const leftList: any = wrapper.findComponent({ name: 'ElTransferPanel' })
+    const leftList: any = wrapper.findComponent({ name: 'HcTransferPanel' })
     leftList.vm.handleAllCheckedChange({ target: { checked: true } })
     expect(leftList.vm.checked.length).toBe(12)
   })
@@ -121,11 +121,11 @@ describe('Transfer', () => {
         />
       ))
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
+      HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 1',
@@ -146,11 +146,11 @@ describe('Transfer', () => {
         />
       ))
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
+      HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 1',
@@ -171,11 +171,11 @@ describe('Transfer', () => {
         />
       ))
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      ElTransfer.vm.addToRight()
+      const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
+      HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.el-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 2',
@@ -197,8 +197,8 @@ describe('Transfer', () => {
         />
       ))
 
-      const ElTransfer: any = wrapper.findComponent({ name: 'ElTransfer' })
-      const app = ElTransfer.vm
+      const HcTransfer: any = wrapper.findComponent({ name: 'HcTransfer' })
+      const app = HcTransfer.vm
       app.leftPanel.query = '11'
       app.rightPanel.query = '22'
       await nextTick()

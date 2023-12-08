@@ -2,13 +2,13 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Carousel from './src/carousel.vue'
 import CarouselItem from './src/carousel-item.vue'
 
-export const ElCarousel = withInstall(Carousel, {
+export const HcCarousel = withInstall(Carousel, {
   CarouselItem,
 })
 
-export default ElCarousel
+export default HcCarousel
 
-export const ElCarouselItem = withNoopInstall(CarouselItem)
+export const HcCarouselItem = withNoopInstall(CarouselItem)
 
 export * from './src/carousel'
 export * from './src/carousel-item'

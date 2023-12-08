@@ -22,7 +22,7 @@ export const useCarouselItem = (
   if (!carouselContext) {
     debugWarn(
       componentName,
-      'usage: <el-carousel></el-carousel-item></el-carousel>'
+      'usage: <hc-carousel></hc-carousel-item></hc-carousel>'
     )
   }
 

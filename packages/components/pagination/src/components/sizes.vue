@@ -1,6 +1,6 @@
 <template>
   <span :class="ns.e('sizes')">
-    <el-select
+    <hc-select
       :model-value="innerPageSize"
       :disabled="disabled"
       :popper-class="popperClass"
@@ -9,26 +9,26 @@
       :validate-event="false"
       @change="handleChange"
     >
-      <el-option
+      <hc-option
         v-for="item in innerPageSizes"
         :key="item"
         :value="item"
         :label="item + t('el.pagination.pagesize')"
       />
-    </el-select>
+    </hc-select>
   </span>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref, watch } from 'vue'
 import { isEqual } from 'lodash-unified'
-import { ElOption, ElSelect } from '@hicor-ui/components/select'
+import { HcOption, HcSelect } from '@hicor-ui/components/select'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { usePagination } from '../usePagination'
 import { paginationSizesProps } from './sizes'
 
 defineOptions({
-  name: 'ElPaginationSizes',
+  name: 'HcPaginationSizes',
 })
 
 const props = defineProps(paginationSizesProps)

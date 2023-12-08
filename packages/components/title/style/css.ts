@@ -1,2 +1,2 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-title.css'
+import '@hicor-ui/theme-chalk/hc-title.css'

@@ -5,27 +5,27 @@ import CollectionItem from './collection-item.vue'
 import type { InjectionKey } from 'vue'
 import type { SetupContext } from '@vue/runtime-core'
 import type {
-  ElCollectionInjectionContext,
-  ElCollectionItemInjectionContext,
+  HcCollectionInjectionContext,
+  HcCollectionItemInjectionContext,
 } from './tokens'
 
 export const COLLECTION_ITEM_SIGN = `data-el-collection-item`
 
 // Make sure the first letter of name is capitalized
 export const createCollectionWithScope = (name: string) => {
-  const COLLECTION_NAME = `El${name}Collection`
+  const COLLECTION_NAME = `Hc${name}Collection`
   const COLLECTION_ITEM_NAME = `${COLLECTION_NAME}Item`
-  const COLLECTION_INJECTION_KEY: InjectionKey<ElCollectionInjectionContext> =
+  const COLLECTION_INJECTION_KEY: InjectionKey<HcCollectionInjectionContext> =
     Symbol(COLLECTION_NAME)
-  const COLLECTION_ITEM_INJECTION_KEY: InjectionKey<ElCollectionItemInjectionContext> =
+  const COLLECTION_ITEM_INJECTION_KEY: InjectionKey<HcCollectionItemInjectionContext> =
     Symbol(COLLECTION_ITEM_NAME)
 
-  const ElCollection = {
+  const HcCollection = {
     ...Collection,
     name: COLLECTION_NAME,
     setup() {
       const collectionRef = ref<HTMLElement | null>(null)
-      const itemMap: ElCollectionInjectionContext['itemMap'] = new Map()
+      const itemMap: HcCollectionInjectionContext['itemMap'] = new Map()
       const getItems = () => {
         const collectionEl = unref(collectionRef)
 
@@ -49,7 +49,7 @@ export const createCollectionWithScope = (name: string) => {
     },
   }
 
-  const ElCollectionItem = {
+  const HcCollectionItem = {
     ...CollectionItem,
     name: COLLECTION_ITEM_NAME,
     setup(_: unknown, { attrs }: SetupContext) {
@@ -80,7 +80,7 @@ export const createCollectionWithScope = (name: string) => {
   return {
     COLLECTION_INJECTION_KEY,
     COLLECTION_ITEM_INJECTION_KEY,
-    ElCollection,
-    ElCollectionItem,
+    HcCollection,
+    HcCollectionItem,
   }
 }

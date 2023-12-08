@@ -60,7 +60,7 @@ import type {
 } from './upload-content'
 
 defineOptions({
-  name: 'ElUpload',
+  name: 'HcUpload',
 })
 
 const props = defineProps(uploadProps)

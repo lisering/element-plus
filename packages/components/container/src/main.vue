@@ -7,7 +7,7 @@
 import { useNamespace } from '@hicor-ui/hooks'
 
 defineOptions({
-  name: 'ElMain',
+  name: 'HcMain',
 })
 
 const ns = useNamespace('main')

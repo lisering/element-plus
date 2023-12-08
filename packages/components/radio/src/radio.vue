@@ -46,7 +46,7 @@ import { radioEmits, radioProps } from './radio'
 import { useRadio } from './use-radio'
 
 defineOptions({
-  name: 'ElRadio',
+  name: 'HcRadio',
 })
 
 const props = defineProps(radioProps)

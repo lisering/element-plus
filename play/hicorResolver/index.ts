@@ -70,7 +70,7 @@ function getSideEffectsLegacy(
   else if (importStyle === true || importStyle === 'css') {
     return [
       'hicor-ui/lib/theme-chalk/base.css',
-      `hicor-ui/lib/theme-chalk/el-${partialName}.css`,
+      `hicor-ui/lib/theme-chalk/hc-${partialName}.css`,
     ]
   }
 }
@@ -87,7 +87,7 @@ function getSideEffects(dirName: string, options: HicorUiResolverOptionsResolved
   }
   else if (importStyle === true || importStyle === 'css') {
     return ssr
-      ? [`${themeFolder}/base.css`, `${themeFolder}/el-${dirName}.css`]
+      ? [`${themeFolder}/base.css`, `${themeFolder}/hc-${dirName}.css`]
       : [`${esComponentsFolder}/base/style/css`, `${esComponentsFolder}/${dirName}/style/css`]
   }
 }
@@ -96,17 +96,17 @@ function resolveComponent(name: string, options: HicorUiResolverOptionsResolved)
   if (options.exclude && name.match(options.exclude))
     return
 
-  if (!name.match(/^El[A-Z]/))
+  if (!name.match(/^Hc[A-Z]/))
     return
 
-  if (name.match(/^ElIcon.+/)) {
+  if (name.match(/^HcIcon.+/)) {
     return {
-      name: name.replace(/^ElIcon/, ''),
+      name: name.replace(/^HcIcon/, ''),
       from: '@element-plus/icons-vue',
     }
   }
 
-  const partialName = kebabCase(name.slice(2))// ElTableColumn -> table-column
+  const partialName = kebabCase(name.slice(2))// HcTableColumn -> table-column
   const { version, ssr, nightly } = options
 
   // >=1.1.0-beta.1
@@ -120,14 +120,14 @@ function resolveComponent(name: string, options: HicorUiResolverOptionsResolved)
   // >=1.0.2-beta.28
   else if (compare(version, '1.0.2-beta.28', '>=')) {
     return {
-      from: `hicor-ui/es/el-${partialName}`,
+      from: `hicor-ui/es/hc-${partialName}`,
       sideEffects: getSideEffectsLegacy(partialName, options),
     }
   }
   // for <=1.0.1
   else {
     return {
-      from: `hicor-ui/lib/el-${partialName}`,
+      from: `hicor-ui/lib/hc-${partialName}`,
       sideEffects: getSideEffectsLegacy(partialName, options),
     }
   }
@@ -138,9 +138,9 @@ function resolveDirective(name: string, options: HicorUiResolverOptionsResolved)
     return
 
   const directives: Record<string, { importName: string; styleName: string }> = {
-    Loading: { importName: 'ElLoadingDirective', styleName: 'loading' },
-    Popover: { importName: 'ElPopoverDirective', styleName: 'popover' },
-    InfiniteScroll: { importName: 'ElInfiniteScroll', styleName: 'infinite-scroll' },
+    Loading: { importName: 'HcLoadingDirective', styleName: 'loading' },
+    Popover: { importName: 'HcPopoverDirective', styleName: 'popover' },
+    InfiniteScroll: { importName: 'HcInfiniteScroll', styleName: 'infinite-scroll' },
   }
 
   const directive = directives[name]
@@ -159,7 +159,7 @@ function resolveDirective(name: string, options: HicorUiResolverOptionsResolved)
   }
 }
 
-const noStylesComponents = ['ElAutoResizer']
+const noStylesComponents = ['HcAutoResizer']
 
 /**
  * Resolver for Hicor Ui

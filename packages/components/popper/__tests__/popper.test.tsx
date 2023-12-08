@@ -2,7 +2,7 @@ import { defineComponent, inject, nextTick } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import { POPPER_INJECTION_KEY } from '@hicor-ui/components/popper'
-import ElPopper from '../src/popper.vue'
+import HcPopper from '../src/popper.vue'
 
 const AXIOM = 'rem is the best girl'
 
@@ -13,12 +13,12 @@ const TestChild = defineComponent({
   },
 })
 
-describe('<ElPopper />', () => {
+describe('<HcPopper />', () => {
   it('should be able to provide instance to its children', async () => {
     const wrapper = mount(
-      <ElPopper>
+      <HcPopper>
         <TestChild />
-      </ElPopper>
+      </HcPopper>
     )
 
     await nextTick()

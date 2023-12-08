@@ -2,7 +2,7 @@ import { defineComponent, h, provide, renderSlot } from 'vue'
 import { useNamespace } from '@hicor-ui/hooks'
 
 const Timeline = defineComponent({
-  name: 'ElTimeline',
+  name: 'HcTimeline',
   setup(_, { slots }) {
     const ns = useNamespace('timeline')
 

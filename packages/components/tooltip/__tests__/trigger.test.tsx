@@ -3,14 +3,14 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it } from 'vitest'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { TOOLTIP_INJECTION_KEY } from '@hicor-ui/components/tooltip'
-import ElTooltipTrigger from '../src/trigger.vue'
+import HcTooltipTrigger from '../src/trigger.vue'
 import { genTooltipProvides } from '../test-helper/provides'
 
 import type { VueWrapper } from '@vue/test-utils'
 
 const AXIOM = 'rem is the best girl'
 
-describe('<ElTooltipTrigger />', () => {
+describe('<HcTooltipTrigger />', () => {
   const {
     controlled,
     id,
@@ -43,13 +43,13 @@ describe('<ElTooltipTrigger />', () => {
     mount(
       {
         setup() {
-          return () => <ElTooltipTrigger {...props}>{AXIOM}</ElTooltipTrigger>
+          return () => <HcTooltipTrigger {...props}>{AXIOM}</HcTooltipTrigger>
         },
       },
       {
         global: {
           provide: defaultProvide,
-          stubs: ['ElPopperTrigger'],
+          stubs: ['HcPopperTrigger'],
         },
         attachTo: document.body,
       }
@@ -78,7 +78,7 @@ describe('<ElTooltipTrigger />', () => {
         await nextTick()
 
         const { vm } = wrapper.findComponent(
-          ElTooltipTrigger
+          HcTooltipTrigger
         ) as VueWrapper<any>
         const blurEvt = new FocusEvent('blur')
         vm.onBlur(blurEvt)
@@ -120,7 +120,7 @@ describe('<ElTooltipTrigger />', () => {
         await nextTick()
 
         const { vm } = wrapper.findComponent(
-          ElTooltipTrigger
+          HcTooltipTrigger
         ) as VueWrapper<any>
         await wrapper.setProps({
           trigger: 'focus',

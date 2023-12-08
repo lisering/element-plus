@@ -4,7 +4,7 @@ import { applyButtonEmits, applyButtonProps } from './apply-button'
 import { useApplyButton } from './use-apply-button'
 
 defineOptions({
-  name: 'ElApplyButton',
+  name: 'HcApplyButton',
 })
 
 const ns = useNamespace('apply-button')

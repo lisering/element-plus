@@ -10,7 +10,7 @@ import Image from '../src/image.vue'
 import type { AnchorHTMLAttributes, ImgHTMLAttributes } from 'vue'
 import type { ImageProps } from '../src/image'
 
-type ElImageProps = ImgHTMLAttributes &
+type HcImageProps = ImgHTMLAttributes &
   AnchorHTMLAttributes &
   Partial<ImageProps>
 
@@ -26,26 +26,26 @@ describe('Image.vue', () => {
 
   test('render test', () => {
     const wrapper = mount(Image)
-    expect(wrapper.find('.el-image').exists()).toBe(true)
+    expect(wrapper.find('.hc-image').exists()).toBe(true)
   })
 
   test('image load success test', async () => {
     const alt = 'this ia alt'
     const wrapper = mount({
       setup() {
-        const props: ElImageProps = {
+        const props: HcImageProps = {
           alt,
           src: IMAGE_SUCCESS,
         }
         return () => <Image {...props} />
       },
     })
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__placeholder').exists()).toBe(true)
     await doubleWait()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__inner').exists()).toBe(true)
     expect(wrapper.find('img').exists()).toBe(true)
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(false)
-    expect(wrapper.find('.el-image__error').exists()).toBe(false)
+    expect(wrapper.find('.hc-image__placeholder').exists()).toBe(false)
+    expect(wrapper.find('.hc-image__error').exists()).toBe(false)
   })
 
   test('image load error test', async () => {
@@ -56,9 +56,9 @@ describe('Image.vue', () => {
     })
     await doubleWait()
     expect(wrapper.emitted('error')).toBeDefined()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(false)
+    expect(wrapper.find('.hc-image__inner').exists()).toBe(false)
     expect(wrapper.find('img').exists()).toBe(false)
-    expect(wrapper.find('.el-image__error').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__error').exists()).toBe(true)
   })
 
   test('image load sequence success test', async () => {
@@ -70,13 +70,13 @@ describe('Image.vue', () => {
     wrapper.setProps({
       src: IMAGE_SUCCESS,
     })
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__placeholder').exists()).toBe(true)
     await doubleWait()
     expect(wrapper.emitted('error')).toBeUndefined()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__inner').exists()).toBe(true)
     expect(wrapper.find('img').exists()).toBe(true)
-    expect(wrapper.find('.el-image__placeholder').exists()).toBe(false)
-    expect(wrapper.find('.el-image__error').exists()).toBe(false)
+    expect(wrapper.find('.hc-image__placeholder').exists()).toBe(false)
+    expect(wrapper.find('.hc-image__error').exists()).toBe(false)
   })
 
   test('imageStyle fit test', async () => {
@@ -91,7 +91,7 @@ describe('Image.vue', () => {
   })
 
   test('preview classname test', async () => {
-    const props: ElImageProps = {
+    const props: HcImageProps = {
       fit: 'cover',
       src: IMAGE_SUCCESS,
       previewSrcList: Array.from<string>({ length: 3 }).fill(IMAGE_SUCCESS),
@@ -102,16 +102,16 @@ describe('Image.vue', () => {
   })
 
   test('preview initial index test', async () => {
-    const props: ElImageProps = {
+    const props: HcImageProps = {
       src: IMAGE_SUCCESS,
       previewSrcList: Array.from<string>({ length: 3 }).fill(IMAGE_FAIL),
       initialIndex: 1,
     }
     const wrapper = mount(() => <Image {...props} />)
     await doubleWait()
-    await wrapper.find('.el-image__inner').trigger('click')
+    await wrapper.find('.hc-image__inner').trigger('click')
     expect(
-      wrapper.findAll('.el-image-viewer__img')[1].attributes('style')
+      wrapper.findAll('.hc-image-viewer__img')[1].attributes('style')
     ).not.toContain('display: none')
   })
 
@@ -120,7 +120,7 @@ describe('Image.vue', () => {
       props: {
         src: IMAGE_SUCCESS,
         loading: 'eager',
-      } as ElImageProps,
+      } as HcImageProps,
     })
 
     await doubleWait()
@@ -133,7 +133,7 @@ describe('Image.vue', () => {
 
   test('$attrs', async () => {
     const alt = 'this ia alt'
-    const props: ElImageProps = {
+    const props: HcImageProps = {
       alt,
       src: IMAGE_SUCCESS,
       referrerpolicy: 'origin',
@@ -146,25 +146,25 @@ describe('Image.vue', () => {
 
   test('pass event listeners', async () => {
     let result = false
-    const props: ElImageProps = {
+    const props: HcImageProps = {
       src: IMAGE_SUCCESS,
       onClick: () => (result = true),
     }
     const wrapper = mount(() => <Image {...props} />)
     await doubleWait()
-    await wrapper.find('.el-image__inner').trigger('click')
+    await wrapper.find('.hc-image__inner').trigger('click')
     expect(result).toBeTruthy()
   })
 
   test('emit load event', async () => {
     const handleLoad = vi.fn()
-    const props: ElImageProps = {
+    const props: HcImageProps = {
       src: IMAGE_SUCCESS,
       onLoad: handleLoad,
     }
     const wrapper = mount(() => <Image {...props} />)
     await doubleWait()
-    expect(wrapper.find('.el-image__inner').exists()).toBe(true)
+    expect(wrapper.find('.hc-image__inner').exists()).toBe(true)
     expect(handleLoad).toBeCalled()
   })
 

@@ -1,6 +1,6 @@
 <template>
   <div :class="[ns.b(), ns.is('disabled', disabled)]">
-    <el-tooltip
+    <hc-tooltip
       ref="popperRef"
       :role="role"
       :effect="effect"
@@ -29,39 +29,39 @@
       @before-hide="handleBeforeHideTooltip"
     >
       <template #content>
-        <el-scrollbar
+        <hc-scrollbar
           ref="scrollbar"
           :wrap-style="wrapStyle"
           tag="div"
           :view-class="ns.e('list')"
         >
-          <el-roving-focus-group
+          <hc-roving-focus-group
             :loop="loop"
             :current-tab-id="currentTabId"
             orientation="horizontal"
             @current-tab-id-change="handleCurrentTabIdChange"
             @entry-focus="handleEntryFocus"
           >
-            <el-dropdown-collection>
+            <hc-dropdown-collection>
               <slot name="dropdown" />
-            </el-dropdown-collection>
-          </el-roving-focus-group>
-        </el-scrollbar>
+            </hc-dropdown-collection>
+          </hc-roving-focus-group>
+        </hc-scrollbar>
       </template>
       <template v-if="!splitButton" #default>
-        <el-only-child
+        <hc-only-child
           :id="triggerId"
           ref="triggeringElementRef"
           role="button"
           :tabindex="tabindex"
         >
           <slot name="default" />
-        </el-only-child>
+        </hc-only-child>
       </template>
-    </el-tooltip>
+    </hc-tooltip>
     <template v-if="splitButton">
-      <el-button-group>
-        <el-button
+      <hc-button-group>
+        <hc-button
           ref="referenceElementRef"
           v-bind="buttonProps"
           :size="dropdownSize"
@@ -71,8 +71,8 @@
           @click="handlerMainButtonClick"
         >
           <slot name="default" />
-        </el-button>
-        <el-button
+        </hc-button>
+        <hc-button
           :id="triggerId"
           ref="triggeringElementRef"
           v-bind="buttonProps"
@@ -84,9 +84,9 @@
           :tabindex="tabindex"
           :aria-label="t('el.dropdown.toggleDropdown')"
         >
-          <el-icon :class="ns.e('icon')"><arrow-down /></el-icon>
-        </el-button>
-      </el-button-group>
+          <hc-icon :class="ns.e('icon')"><arrow-down /></hc-icon>
+        </hc-button>
+      </hc-button-group>
     </template>
   </div>
 </template>
@@ -104,34 +104,34 @@ import {
   watch,
 } from 'vue'
 import { ArrowDown } from '@element-plus/icons-vue'
-import ElButton from '@hicor-ui/components/button'
-import ElTooltip from '@hicor-ui/components/tooltip'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
-import ElIcon from '@hicor-ui/components/icon'
-import ElRovingFocusGroup from '@hicor-ui/components/roving-focus-group'
-import { ElOnlyChild } from '@hicor-ui/components/slot'
+import HcButton from '@hicor-ui/components/button'
+import HcTooltip from '@hicor-ui/components/tooltip'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
+import HcIcon from '@hicor-ui/components/icon'
+import HcRovingFocusGroup from '@hicor-ui/components/roving-focus-group'
+import { HcOnlyChild } from '@hicor-ui/components/slot'
 import { useFormSize } from '@hicor-ui/components/form'
 import { addUnit, ensureArray } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { useId, useLocale, useNamespace } from '@hicor-ui/hooks'
-import { ElCollection as ElDropdownCollection, dropdownProps } from './dropdown'
+import { HcCollection as HcDropdownCollection, dropdownProps } from './dropdown'
 import { DROPDOWN_INJECTION_KEY } from './tokens'
 
 import type { CSSProperties } from 'vue'
 
-const { ButtonGroup: ElButtonGroup } = ElButton
+const { ButtonGroup: HcButtonGroup } = HcButton
 
 export default defineComponent({
-  name: 'ElDropdown',
+  name: 'HcDropdown',
   components: {
-    ElButton,
-    ElButtonGroup,
-    ElScrollbar,
-    ElDropdownCollection,
-    ElTooltip,
-    ElRovingFocusGroup,
-    ElOnlyChild,
-    ElIcon,
+    HcButton,
+    HcButtonGroup,
+    HcScrollbar,
+    HcDropdownCollection,
+    HcTooltip,
+    HcRovingFocusGroup,
+    HcOnlyChild,
+    HcIcon,
     ArrowDown,
   },
   props: dropdownProps,
@@ -143,7 +143,7 @@ export default defineComponent({
 
     const triggeringElementRef = ref()
     const referenceElementRef = ref()
-    const popperRef = ref<InstanceType<typeof ElTooltip> | null>(null)
+    const popperRef = ref<InstanceType<typeof HcTooltip> | null>(null)
     const contentRef = ref<HTMLElement | null>(null)
     const scrollbar = ref(null)
     const currentTabId = ref<string | null>(null)

@@ -62,7 +62,7 @@ const descriptionItemProps = buildProps({
   },
 })
 const DescriptionItem = defineComponent({
-  name: 'ElDescriptionsItem',
+  name: 'HcDescriptionsItem',
   props: descriptionItemProps,
 })
 

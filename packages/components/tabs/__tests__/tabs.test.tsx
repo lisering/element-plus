@@ -39,7 +39,7 @@ describe('Tabs.vue', () => {
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper[0].classes('is-active')).toBe(true)
     expect(panesWrapper[0].classes('el-tab-pane')).toBe(true)
@@ -82,7 +82,7 @@ describe('Tabs.vue', () => {
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
     expect(panesWrapper[1].classes('el-tab-pane')).toBe(true)
     expect(panesWrapper[1].attributes('id')).toBe('pane-b')
@@ -162,7 +162,7 @@ describe('Tabs.vue', () => {
     let panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(4)
     expect(panesWrapper.length).toEqual(4)
@@ -172,7 +172,7 @@ describe('Tabs.vue', () => {
     await nextTick()
     navWrapper = wrapper.findComponent(TabNav)
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(5)
     expect(panesWrapper.length).toEqual(5)
@@ -248,7 +248,7 @@ describe('Tabs.vue', () => {
     let panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
@@ -258,15 +258,15 @@ describe('Tabs.vue', () => {
     await navItemsWrapper[1].find('.is-icon-close').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     expect(navItemsWrapper.length).toEqual(2)
     expect(panesWrapper.length).toEqual(2)
 
     // add one tab, check panes length and current tab
-    await wrapper.find('.el-tabs__new-tab').trigger('click')
+    await wrapper.find('.hc-tabs__new-tab').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
@@ -337,9 +337,9 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
 
-    await wrapper.find('.el-tabs__new-tab').trigger('click')
+    await wrapper.find('.hc-tabs__new-tab').trigger('click')
 
-    let navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    let navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     let panesWrapper = wrapper.findAllComponents(TabPane)
     expect(navItemsWrapper.length).toEqual(3)
     expect(panesWrapper.length).toEqual(3)
@@ -348,7 +348,7 @@ describe('Tabs.vue', () => {
     await navItemsWrapper[2].find('.is-icon-close').trigger('click')
 
     panesWrapper = wrapper.findAllComponents(TabPane)
-    navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper.length).toEqual(2)
     expect(panesWrapper.length).toEqual(2)
@@ -387,7 +387,7 @@ describe('Tabs.vue', () => {
     })
     await nextTick()
 
-    const items = wrapper.findAll('.el-tabs__item')
+    const items = wrapper.findAll('.hc-tabs__item')
     editableTabs.value.forEach((tab, index) => {
       expect(items[index].element.textContent).toEqual(tab.title)
     })
@@ -427,7 +427,7 @@ describe('Tabs.vue', () => {
 
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(false)
 
     await navItemsWrapper[1].trigger('click')
@@ -450,13 +450,13 @@ describe('Tabs.vue', () => {
     await nextTick()
 
     expect(tabsWrapper.classes('el-tabs--left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__header').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__nav-wrap').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-left')).toBe(true)
-    expect(tabsWrapper.find('.el-tabs__active-bar').classes('is-left')).toBe(
+    expect(tabsWrapper.find('.hc-tabs__header').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.hc-tabs__nav-wrap').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.hc-tabs__nav').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.hc-tabs__active-bar').classes('is-left')).toBe(
       true
     )
-    expect(tabsWrapper.find('.el-tabs__item').classes('is-left')).toBe(true)
+    expect(tabsWrapper.find('.hc-tabs__item').classes('is-left')).toBe(true)
   })
 
   test('stretch', async () => {
@@ -473,12 +473,12 @@ describe('Tabs.vue', () => {
     const tabsWrapper = wrapper.findComponent(Tabs)
     await nextTick()
 
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-stretch')).toBe(true)
+    expect(tabsWrapper.find('.hc-tabs__nav').classes('is-stretch')).toBe(true)
 
     tabPosition.value = 'left'
     await nextTick()
 
-    expect(tabsWrapper.find('.el-tabs__nav').classes('is-stretch')).toBe(false)
+    expect(tabsWrapper.find('.hc-tabs__nav').classes('is-stretch')).toBe(false)
   })
 
   test('tab active bar offset', async () => {
@@ -511,7 +511,7 @@ describe('Tabs.vue', () => {
     await wrapper.find('#tab-C').trigger('click')
 
     await nextTick()
-    expect(tabsWrapper.find('.el-tabs__active-bar').attributes().style).toMatch(
+    expect(tabsWrapper.find('.hc-tabs__active-bar').attributes().style).toMatch(
       'translateX(300px)'
     )
 
@@ -524,7 +524,7 @@ describe('Tabs.vue', () => {
     await wrapper.find('#tab-C').trigger('click')
 
     await nextTick()
-    expect(tabsWrapper.find('.el-tabs__active-bar').attributes().style).toMatch(
+    expect(tabsWrapper.find('.hc-tabs__active-bar').attributes().style).toMatch(
       'translateY(200px)'
     )
 
@@ -563,13 +563,13 @@ describe('Tabs.vue', () => {
 
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
-    expect(wrapper.findAll('.el-tab-pane').length).toBe(3)
+    expect(wrapper.findAll('.hc-tab-pane').length).toBe(3)
 
     await navItemsWrapper[3].trigger('click')
 
-    expect(wrapper.findAll('.el-tab-pane').length).toBe(4)
+    expect(wrapper.findAll('.hc-tab-pane').length).toBe(4)
   })
 
   test('before leave', async () => {
@@ -599,7 +599,7 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     const panesWrapper = wrapper.findAllComponents(TabPane)
     await nextTick()
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
     expect(panesWrapper[1].attributes('style')).toBeFalsy()
@@ -684,7 +684,7 @@ describe('Tabs.vue', () => {
     await wrapper.find('#tab-99').trigger('click')
     await nextTick()
 
-    expect(tabsWrapper.find('.el-tabs__active-bar').attributes().style).toMatch(
+    expect(tabsWrapper.find('.hc-tabs__active-bar').attributes().style).toMatch(
       'translateX(100px)'
     )
 
@@ -718,7 +718,7 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     ;[1, 0, 2, 0, 3, 0, 1].forEach((val) => {
       navItemsWrapper[val].trigger('click')
       expect(activeName.value).toEqual(val)
@@ -750,7 +750,7 @@ describe('Tabs.vue', () => {
     const navWrapper = wrapper.findComponent(TabNav)
     await nextTick()
 
-    const navItemsWrapper = navWrapper.findAll('.el-tabs__item')
+    const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     expect(navItemsWrapper[0].classes('is-active')).toBe(true)
     expect(navItemsWrapper[1].classes('is-active')).toBe(false)
 

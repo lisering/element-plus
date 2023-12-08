@@ -8,9 +8,9 @@
     <span :class="ns.e('content')">
       <slot />
     </span>
-    <el-icon v-if="closable" :class="ns.e('close')" @click.stop="handleClose">
+    <hc-icon v-if="closable" :class="ns.e('close')" @click.stop="handleClose">
       <Close />
-    </el-icon>
+    </hc-icon>
   </span>
   <transition v-else :name="`${ns.namespace.value}-zoom-in-center`" appear>
     <span
@@ -21,9 +21,9 @@
       <span :class="ns.e('content')">
         <slot />
       </span>
-      <el-icon v-if="closable" :class="ns.e('close')" @click.stop="handleClose">
+      <hc-icon v-if="closable" :class="ns.e('close')" @click.stop="handleClose">
         <Close />
-      </el-icon>
+      </hc-icon>
     </span>
   </transition>
 </template>
@@ -31,14 +31,14 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { Close } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { useFormSize } from '@hicor-ui/components/form'
 
 import { tagEmits, tagProps } from './tag'
 
 defineOptions({
-  name: 'ElTag',
+  name: 'HcTag',
 })
 const props = defineProps(tagProps)
 const emit = defineEmits(tagEmits)

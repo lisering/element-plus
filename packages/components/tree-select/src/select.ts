@@ -1,11 +1,11 @@
 // @ts-nocheck
 import { computed, nextTick, toRefs } from 'vue'
 import { pick } from 'lodash-unified'
-import ElSelect from '@hicor-ui/components/select'
+import HcSelect from '@hicor-ui/components/select'
 import { useNamespace } from '@hicor-ui/hooks'
 import { UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import type { Ref } from 'vue'
-import type ElTree from '@hicor-ui/components/tree'
+import type HcTree from '@hicor-ui/components/tree'
 
 export const useSelect = (
   props,
@@ -14,15 +14,15 @@ export const useSelect = (
     tree,
     key,
   }: {
-    select: Ref<InstanceType<typeof ElSelect> | undefined>
-    tree: Ref<InstanceType<typeof ElTree> | undefined>
+    select: Ref<InstanceType<typeof HcSelect> | undefined>
+    tree: Ref<InstanceType<typeof HcTree> | undefined>
     key: Ref<string>
   }
 ) => {
   const ns = useNamespace('tree-select')
 
   const result = {
-    ...pick(toRefs(props), Object.keys(ElSelect.props)),
+    ...pick(toRefs(props), Object.keys(HcSelect.props)),
     ...attrs,
     // attrs is not reactive, when v-model binding source changes,
     // this listener is still old, see the bug(or test 'v-model source change'):

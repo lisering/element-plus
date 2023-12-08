@@ -9,10 +9,10 @@ import {
   START_ALIGNMENT,
 } from '../defaults'
 
-const SCOPE = 'ElFixedSizeGrid'
+const SCOPE = 'HcFixedSizeGrid'
 
 const FixedSizeGrid = createGrid({
-  name: 'ElFixedSizeGrid',
+  name: 'HcFixedSizeGrid',
   getColumnPosition: ({ columnWidth }, index) => [
     columnWidth as number,
     index * (columnWidth as number),

@@ -55,7 +55,7 @@ import { checkboxEmits, checkboxProps } from './checkbox'
 import { useCheckbox } from './composables'
 
 defineOptions({
-  name: 'ElCheckbox',
+  name: 'HcCheckbox',
 })
 
 const props = defineProps(checkboxProps)

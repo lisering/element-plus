@@ -19,7 +19,7 @@
     @click="handleClick"
   >
     <!-- prefix -->
-    <el-checkbox
+    <hc-checkbox
       v-if="multiple"
       :model-value="node.checked"
       :indeterminate="node.indeterminate"
@@ -27,7 +27,7 @@
       @click.stop
       @update:model-value="handleSelectCheck"
     />
-    <el-radio
+    <hc-radio
       v-else-if="checkStrictly"
       :model-value="checkedNodeId"
       :label="node.uid"
@@ -40,22 +40,22 @@
         do not use empty fragment here for https://github.com/vuejs/vue-next/pull/2485
       -->
       <span />
-    </el-radio>
-    <el-icon v-else-if="isLeaf && node.checked" :class="ns.e('prefix')">
+    </hc-radio>
+    <hc-icon v-else-if="isLeaf && node.checked" :class="ns.e('prefix')">
       <check />
-    </el-icon>
+    </hc-icon>
 
     <!-- content -->
     <node-content />
 
     <!-- postfix -->
     <template v-if="!isLeaf">
-      <el-icon v-if="node.loading" :class="[ns.is('loading'), ns.e('postfix')]">
+      <hc-icon v-if="node.loading" :class="[ns.is('loading'), ns.e('postfix')]">
         <loading />
-      </el-icon>
-      <el-icon v-else :class="['arrow-right', ns.e('postfix')]">
+      </hc-icon>
+      <hc-icon v-else :class="['arrow-right', ns.e('postfix')]">
         <arrow-right />
-      </el-icon>
+      </hc-icon>
     </template>
   </li>
 </template>
@@ -64,9 +64,9 @@
 // @ts-nocheck
 import { computed, defineComponent, inject } from 'vue'
 import { ArrowRight, Check, Loading } from '@element-plus/icons-vue'
-import ElCheckbox from '@hicor-ui/components/checkbox'
-import ElRadio from '@hicor-ui/components/radio'
-import ElIcon from '@hicor-ui/components/icon'
+import HcCheckbox from '@hicor-ui/components/checkbox'
+import HcRadio from '@hicor-ui/components/radio'
+import HcIcon from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import NodeContent from './node-content'
 import { CASCADER_PANEL_INJECTION_KEY } from './types'
@@ -75,13 +75,13 @@ import type { default as CascaderNode } from './node'
 import type { PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ElCascaderNode',
+  name: 'HcCascaderNode',
 
   components: {
-    ElCheckbox,
-    ElRadio,
+    HcCheckbox,
+    HcRadio,
     NodeContent,
-    ElIcon,
+    HcIcon,
     Check,
     Loading,
     ArrowRight,

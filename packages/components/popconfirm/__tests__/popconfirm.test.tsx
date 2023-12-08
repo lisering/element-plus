@@ -6,7 +6,7 @@ import { usePopperContainerId } from '@hicor-ui/hooks'
 import Popconfirm from '../src/popconfirm.vue'
 
 const AXIOM = 'rem is the best girl'
-const selector = '.el-popper'
+const selector = '.hc-popper'
 
 describe('Popconfirm.vue', () => {
   afterEach(() => {

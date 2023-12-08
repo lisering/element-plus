@@ -13,7 +13,7 @@ import type { Placement } from '@hicor-ui/components/popper'
 import type { ComponentInternalInstance, ComputedRef } from 'vue'
 import type { Nullable } from '@hicor-ui/utils'
 
-export interface IElDropdownInstance {
+export interface IHcDropdownInstance {
   instance?: ComponentInternalInstance
   dropdownSize?: ComputedRef<string>
   handleClick?: () => void
@@ -118,15 +118,15 @@ export const LAST_KEYS = [EVENT_CODE.up, EVENT_CODE.pageUp, EVENT_CODE.end]
 export const FIRST_LAST_KEYS = [...FIRST_KEYS, ...LAST_KEYS]
 
 const {
-  ElCollection,
-  ElCollectionItem,
+  HcCollection,
+  HcCollectionItem,
   COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY,
 } = createCollectionWithScope('Dropdown')
 
 export {
-  ElCollection,
-  ElCollectionItem,
+  HcCollection,
+  HcCollectionItem,
   COLLECTION_INJECTION_KEY as DROPDOWN_COLLECTION_INJECTION_KEY,
   COLLECTION_ITEM_INJECTION_KEY as DROPDOWN_COLLECTION_ITEM_INJECTION_KEY,
 }

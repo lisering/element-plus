@@ -27,8 +27,8 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { selectGroupKey, selectKey } from './token'
 
 export default defineComponent({
-  name: 'ElOptionGroup',
-  componentName: 'ElOptionGroup',
+  name: 'HcOptionGroup',
+  componentName: 'HcOptionGroup',
 
   props: {
     /**
@@ -66,7 +66,7 @@ export default defineComponent({
         node.children.forEach((child) => {
           if (
             child.type &&
-            child.type.name === 'ElOption' &&
+            child.type.name === 'HcOption' &&
             child.component &&
             child.component.proxy
           ) {

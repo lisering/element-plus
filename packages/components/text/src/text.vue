@@ -16,7 +16,7 @@ import { isUndefined } from '@hicor-ui/utils'
 import { textProps } from './text'
 
 defineOptions({
-  name: 'ElText',
+  name: 'HcText',
 })
 
 const props = defineProps(textProps)

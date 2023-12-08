@@ -10,7 +10,7 @@ _DatePicker.install = (app: App) => {
 }
 
 export default _DatePicker
-export const ElDatePicker = _DatePicker
+export const HcDatePicker = _DatePicker
 export * from './src/constants'
 export * from './src/props/date-picker'
 export type { DatePickerInstance } from './src/instance'

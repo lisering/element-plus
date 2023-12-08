@@ -16,7 +16,7 @@ import { throwError } from '@hicor-ui/utils/error'
 import { uploadContextKey } from './constants'
 import { uploadDraggerEmits, uploadDraggerProps } from './upload-dragger'
 
-const COMPONENT_NAME = 'ElUploadDrag'
+const COMPONENT_NAME = 'HcUploadDrag'
 
 defineOptions({
   name: COMPONENT_NAME,
@@ -29,7 +29,7 @@ const uploaderContext = inject(uploadContextKey)
 if (!uploaderContext) {
   throwError(
     COMPONENT_NAME,
-    'usage: <el-upload><el-upload-dragger /></el-upload>'
+    'usage: <hc-upload><hc-upload-dragger /></hc-upload>'
   )
 }
 

@@ -1,2 +1,2 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-footer.css'
+import '@hicor-ui/theme-chalk/hc-footer.css'

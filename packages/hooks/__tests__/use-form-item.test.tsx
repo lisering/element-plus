@@ -2,7 +2,7 @@ import { defineComponent, provide } from 'vue'
 import { NOOP } from '@vue/shared'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ElButton, buttonGroupContextKey } from '@hicor-ui/components'
+import { HcButton, buttonGroupContextKey } from '@hicor-ui/components'
 import { formContextKey, formItemContextKey } from '@hicor-ui/components/form'
 
 import type { FormContext, FormItemContext } from '@hicor-ui/components/form'
@@ -14,7 +14,7 @@ const mountComponent = (setup = NOOP, options = {}) =>
     defineComponent({
       setup,
       render() {
-        return <ElButton {...this.$attrs}>{AXIOM}</ElButton>
+        return <HcButton {...this.$attrs}>{AXIOM}</HcButton>
       },
     }),
     options
@@ -23,7 +23,7 @@ const mountComponent = (setup = NOOP, options = {}) =>
 describe('use-form-item', () => {
   it('should return local value', () => {
     const wrapper = mountComponent()
-    expect(wrapper.find('.el-button').exists()).toBe(true)
+    expect(wrapper.find('.hc-button').exists()).toBe(true)
   })
 
   it('should return props.size instead of injected.size', () => {

@@ -22,11 +22,11 @@
 
   &.blue-box {
     background: #e1e9f7;
-    color: var(--el-color-primary);
-    border-color: var(--el-color-primary);
+    color: var(--hc-color-primary);
+    border-color: var(--hc-color-primary);
 
     .icon-box {
-      border-color: var(--el-color-primary);
+      border-color: var(--hc-color-primary);
     }
   }
 
@@ -36,11 +36,11 @@
 
   &.green-box {
     background: #d8f2f2;
-    color: var(--el-color-green);
-    border-color: var(--el-color-green);
+    color: var(--hc-color-green);
+    border-color: var(--hc-color-green);
 
     .icon-box {
-      border-color: var(--el-color-green);
+      border-color: var(--hc-color-green);
     }
   }
 

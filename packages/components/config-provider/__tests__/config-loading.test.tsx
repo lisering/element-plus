@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { ElButton, ElLoading } from '@hicor-ui/components'
+import { HcButton, HcLoading } from '@hicor-ui/components'
 import ConfigProvider from '../src/config-provider'
 import type { LoadingInstance } from '@hicor-ui/components/loading/src/loading'
 
@@ -8,11 +8,11 @@ describe('loading config', () => {
   it('should render loading component', async () => {
     let instance: LoadingInstance
     const startLoading = () => {
-      instance = ElLoading.service()
+      instance = HcLoading.service()
     }
     const wrapper = mount(() => (
       <ConfigProvider namespace="ep" zIndex={10000}>
-        <ElButton onClick={startLoading}>test</ElButton>
+        <HcButton onClick={startLoading}>test</HcButton>
       </ConfigProvider>
     ))
     const btn = wrapper.find('.ep-button')

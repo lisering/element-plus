@@ -17,9 +17,9 @@
           @mouseleave="handleButtonLeave"
           @click.stop="throttledArrowClick(activeIndex - 1)"
         >
-          <ElIcon>
+          <HcIcon>
             <ArrowLeft />
-          </ElIcon>
+          </HcIcon>
         </button>
       </transition>
       <transition v-if="arrowDisplay" name="carousel-arrow-right">
@@ -34,9 +34,9 @@
           @mouseleave="handleButtonLeave"
           @click.stop="throttledArrowClick(activeIndex + 1)"
         >
-          <ElIcon>
+          <HcIcon>
             <ArrowRight />
-          </ElIcon>
+          </HcIcon>
         </button>
       </transition>
       <PlaceholderItem />
@@ -66,12 +66,12 @@
 <script lang="ts" setup>
 import { computed, unref } from 'vue'
 import { ArrowLeft, ArrowRight } from '@element-plus/icons-vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { carouselEmits, carouselProps } from './carousel'
 import { useCarousel } from './use-carousel'
 
-const COMPONENT_NAME = 'ElCarousel'
+const COMPONENT_NAME = 'HcCarousel'
 defineOptions({
   name: COMPONENT_NAME,
 })

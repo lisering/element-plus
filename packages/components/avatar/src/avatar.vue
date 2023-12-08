@@ -8,16 +8,16 @@
       :style="fitStyle"
       @error="handleError"
     />
-    <el-icon v-else-if="icon">
+    <hc-icon v-else-if="icon">
       <component :is="icon" />
-    </el-icon>
+    </hc-icon>
     <slot v-else />
   </span>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref, watch } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { addUnit, isNumber, isString } from '@hicor-ui/utils'
 import { avatarEmits, avatarProps } from './avatar'
@@ -25,7 +25,7 @@ import { avatarEmits, avatarProps } from './avatar'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElAvatar',
+  name: 'HcAvatar',
 })
 
 const props = defineProps(avatarProps)

@@ -32,8 +32,8 @@ import { useOption } from './useOption'
 import type { SelectOptionProxy } from './token'
 
 export default defineComponent({
-  name: 'ElOption',
-  componentName: 'ElOption',
+  name: 'HcOption',
+  componentName: 'HcOption',
 
   props: {
     /**

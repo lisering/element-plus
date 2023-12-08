@@ -38,6 +38,6 @@ export const tooltipEmits = [
   'close',
 ]
 
-export type ElTooltipProps = ExtractPropTypes<typeof useTooltipProps>
+export type HcTooltipProps = ExtractPropTypes<typeof useTooltipProps>
 
 export type TooltipInstance = InstanceType<typeof Tooltip>

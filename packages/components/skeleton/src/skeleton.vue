@@ -3,8 +3,8 @@
     <div :class="[ns.b(), ns.is('animated', animated)]" v-bind="$attrs">
       <template v-for="i in count" :key="i">
         <slot v-if="loading" :key="i" name="template">
-          <el-skeleton-item :class="ns.is('first')" variant="p" />
-          <el-skeleton-item
+          <hc-skeleton-item :class="ns.is('first')" variant="p" />
+          <hc-skeleton-item
             v-for="item in rows"
             :key="item"
             :class="[
@@ -26,10 +26,10 @@
 import { toRef } from 'vue'
 import { useNamespace, useThrottleRender } from '@hicor-ui/hooks'
 import { skeletonProps } from './skeleton'
-import ElSkeletonItem from './skeleton-item.vue'
+import HcSkeletonItem from './skeleton-item.vue'
 
 defineOptions({
-  name: 'ElSkeleton',
+  name: 'HcSkeleton',
 })
 const props = defineProps(skeletonProps)
 

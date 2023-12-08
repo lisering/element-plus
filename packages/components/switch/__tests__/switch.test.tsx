@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 import { Checked, CircleClose, Hide, View } from '@element-plus/icons-vue'
 import { debugWarn } from '@hicor-ui/utils'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import Switch from '../src/switch.vue'
 import type { VueWrapper } from '@vue/test-utils'
 import type { SwitchInstance } from '../src/switch'
@@ -34,20 +34,20 @@ describe('Switch.vue', () => {
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).false
-    const coreEl = vm.$el.querySelector('.el-switch__core')
+    const coreEl = vm.$el.querySelector('.hc-switch__core')
     expect(coreEl.style.width).toEqual('100px')
-    const leftLabelWrapper = wrapper.find('.el-switch__label--left span')
+    const leftLabelWrapper = wrapper.find('.hc-switch__label--left span')
     expect(leftLabelWrapper.text()).toEqual('off')
   })
 
   test('size', () => {
     const wrapper = mount(() => <Switch size="large" />)
-    expect(wrapper.find('.el-switch--large').exists()).toBe(true)
+    expect(wrapper.find('.hc-switch--large').exists()).toBe(true)
   })
 
   test('tabindex', () => {
     const wrapper = mount(() => <Switch tabindex="0" />)
-    expect(wrapper.find('.el-switch__input').attributes().tabindex).toBe('0')
+    expect(wrapper.find('.hc-switch__input').attributes().tabindex).toBe('0')
   })
 
   test('inline prompt', () => {
@@ -68,9 +68,9 @@ describe('Switch.vue', () => {
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).false
-    const coreEl = vm.$el.querySelector('.el-switch__core')
+    const coreEl = vm.$el.querySelector('.hc-switch__core')
     expect(coreEl.style.width).toEqual('100px')
-    const label = wrapper.find('.el-switch__inner span')
+    const label = wrapper.find('.hc-switch__inner span')
     expect(label.text()).toEqual('off')
   })
 
@@ -98,7 +98,7 @@ describe('Switch.vue', () => {
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).true
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     await coreWrapper.trigger('click')
     expect(vm.$el.classList.contains('is-checked')).false
     expect(value.value).toEqual(false)
@@ -118,7 +118,7 @@ describe('Switch.vue', () => {
     ))
 
     expect(target.value).toEqual(1)
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     await coreWrapper.trigger('click')
     const switchWrapper = wrapper.findComponent(Switch)
     expect(switchWrapper.emitted()['update:modelValue']).toBeTruthy()
@@ -130,7 +130,7 @@ describe('Switch.vue', () => {
     const wrapper = mount(() => <Switch disabled v-model={value.value} />)
 
     expect(value.value).toEqual(true)
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     await coreWrapper.trigger('click')
     expect(value.value).toEqual(true)
   })
@@ -149,7 +149,7 @@ describe('Switch.vue', () => {
       </div>
     ))
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     await coreWrapper.trigger('click')
     expect(value.value).toEqual('0')
     await coreWrapper.trigger('click')
@@ -170,7 +170,7 @@ describe('Switch.vue', () => {
       </div>
     ))
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     await coreWrapper.trigger('click')
     expect(value.value).toEqual(true)
     await coreWrapper.trigger('click')
@@ -181,7 +181,7 @@ describe('Switch.vue', () => {
     const wrapper = mount(() => <Switch value={true} />)
 
     const vm = wrapper.vm
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     const switchWrapper: VueWrapper<SwitchInstance> =
       wrapper.findComponent(Switch)
     const switchVm = switchWrapper.vm
@@ -200,7 +200,7 @@ describe('Switch.vue', () => {
     const wrapper = mount(() => <Switch model-value={true} />)
 
     const vm = wrapper.vm
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     const switchWrapper: VueWrapper<SwitchInstance> =
       wrapper.findComponent(Switch)
     const switchVm = switchWrapper.vm
@@ -258,7 +258,7 @@ describe('Switch.vue', () => {
       </div>
     ))
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
 
     vi.useFakeTimers()
 
@@ -296,7 +296,7 @@ describe('Switch.vue', () => {
       </div>
     ))
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
 
     await coreWrapper.trigger('click')
     expect(value.value).toEqual(true)
@@ -322,7 +322,7 @@ describe('Switch.vue', () => {
       </div>
     ))
 
-    const coreWrapper = wrapper.find('.el-switch__core')
+    const coreWrapper = wrapper.find('.hc-switch__core')
     const switchWrapper = wrapper.findComponent(Switch)
     const switchVm = switchWrapper.vm
     const inputEl = switchVm.$el.querySelector('input')
@@ -339,30 +339,30 @@ describe('Switch.vue', () => {
   describe('form item accessibility integration', () => {
     test('automatic id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <Switch />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const switchInput = wrapper.find('.el-switch__input')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const switchInput = wrapper.find('.hc-switch__input')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(switchInput.attributes().id)
     })
 
     test('specified id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <Switch id="foobar" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const switchInput = wrapper.find('.el-switch__input')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const switchInput = wrapper.find('.hc-switch__input')
       expect(formItem.attributes().role).toBeFalsy()
       expect(switchInput.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(switchInput.attributes().id)
@@ -370,10 +370,10 @@ describe('Switch.vue', () => {
 
     test('form item role is group when multiple inputs', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <Switch />
           <Switch />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()

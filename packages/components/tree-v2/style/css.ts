@@ -1,4 +1,4 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-tree.css'
+import '@hicor-ui/theme-chalk/hc-tree.css'
 import '@hicor-ui/components/checkbox/style/css'
 import '@hicor-ui/components/virtual-list/style/css'

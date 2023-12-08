@@ -9,7 +9,7 @@
       @after-leave="afterLeave"
       @before-leave="beforeLeave"
     >
-      <el-overlay
+      <hc-overlay
         v-show="visible"
         custom-mask-event
         :mask="modal"
@@ -28,7 +28,7 @@
           @mousedown="overlayEvent.onMousedown"
           @mouseup="overlayEvent.onMouseup"
         >
-          <el-focus-trap
+          <hc-focus-trap
             loop
             :trapped="visible"
             focus-start-el="container"
@@ -37,7 +37,7 @@
             @focusout-prevented="onFocusoutPrevented"
             @release-requested="onCloseRequested"
           >
-            <el-dialog-content
+            <hc-dialog-content
               v-if="rendered"
               ref="dialogContentRef"
               v-bind="$attrs"
@@ -66,26 +66,26 @@
               <template v-if="$slots.footer" #footer>
                 <slot name="footer" />
               </template>
-            </el-dialog-content>
-          </el-focus-trap>
+            </hc-dialog-content>
+          </hc-focus-trap>
         </div>
-      </el-overlay>
+      </hc-overlay>
     </transition>
   </teleport>
 </template>
 
 <script lang="ts" setup>
 import { computed, provide, ref, useSlots } from 'vue'
-import { ElOverlay } from '@hicor-ui/components/overlay'
+import { HcOverlay } from '@hicor-ui/components/overlay'
 import { useDeprecated, useNamespace, useSameTarget } from '@hicor-ui/hooks'
-import ElFocusTrap from '@hicor-ui/components/focus-trap'
-import ElDialogContent from './dialog-content.vue'
+import HcFocusTrap from '@hicor-ui/components/focus-trap'
+import HcDialogContent from './dialog-content.vue'
 import { dialogInjectionKey } from './constants'
 import { dialogEmits, dialogProps } from './dialog'
 import { useDialog } from './use-dialog'
 
 defineOptions({
-  name: 'ElDialog',
+  name: 'HcDialog',
   inheritAttrs: false,
 })
 

@@ -6,8 +6,8 @@ import { describe, expect, it, vi } from 'vitest'
 import { expectTypeOf } from 'expect-type'
 import { buildProp, buildProps, definePropType, keysOf, mutable } from '../..'
 import type {
-  EpPropInputDefault,
   HcProp,
+  HcPropInputDefault,
   HcPropMergeType,
   IfNever,
   ResolvePropType,
@@ -75,8 +75,8 @@ describe('Types', () => {
   })
 
   it('EpPropInputDefault', () => {
-    expectTypeOf<EpPropInputDefault<true, 1>>().toBeNever()
-    expectTypeOf<EpPropInputDefault<false, 1>>().toEqualTypeOf<1 | (() => 1)>()
+    expectTypeOf<HcPropInputDefault<true, 1>>().toBeNever()
+    expectTypeOf<HcPropInputDefault<false, 1>>().toEqualTypeOf<1 | (() => 1)>()
   })
 
   it('EpProp', () => {

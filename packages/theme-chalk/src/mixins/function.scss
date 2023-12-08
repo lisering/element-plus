@@ -12,7 +12,9 @@
 
   @if str-index($selector, config.$modifier-separator) {
     @return true;
-  } @else {
+  }
+
+  @else {
     @return false;
   }
 }
@@ -22,7 +24,9 @@
 
   @if str-index($selector, '.' + config.$state-prefix) {
     @return true;
-  } @else {
+  }
+
+  @else {
     @return false;
   }
 }
@@ -32,39 +36,42 @@
 
   @if str-index($selector, ':') {
     @return true;
-  } @else {
+  }
+
+  @else {
     @return false;
   }
 }
 
 @function hitAllSpecialNestRule($selector) {
-  @return containsModifier($selector) or containWhenFlag($selector) or
-    containPseudoClass($selector);
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }
 
 // join var name
-// joinVarName(('button', 'text-color')) => '--el-button-text-color'
+// joinVarName(('button', 'text-color')) => '--hc-button-text-color'
 @function joinVarName($list) {
   $name: '--' + config.$namespace;
+
   @each $item in $list {
-    @if $item != '' {
+    @if $item !='' {
       $name: $name + '-' + $item;
     }
   }
+
   @return $name;
 }
 
-// getCssVarName('button', 'text-color') => '--el-button-text-color'
+// getCssVarName('button', 'text-color') => '--hc-button-text-color'
 @function getCssVarName($args...) {
   @return joinVarName($args);
 }
 
-// getCssVar('button', 'text-color') => var(--el-button-text-color)
+// getCssVar('button', 'text-color') => var(--hc-button-text-color)
 @function getCssVar($args...) {
   @return var(#{joinVarName($args)});
 }
 
-// getCssVarWithDefault(('button', 'text-color'), red) => var(--el-button-text-color, red)
+// getCssVarWithDefault(('button', 'text-color'), red) => var(--hc-button-text-color, red)
 @function getCssVarWithDefault($args, $default) {
   @return var(#{joinVarName($args)}, #{$default});
 }
@@ -73,11 +80,11 @@
 @function bem($block, $element: '', $modifier: '') {
   $name: config.$namespace + config.$common-separator + $block;
 
-  @if $element != '' {
+  @if $element !='' {
     $name: $name + config.$element-separator + $element;
   }
 
-  @if $modifier != '' {
+  @if $modifier !='' {
     $name: $name + config.$modifier-separator + $modifier;
   }
 

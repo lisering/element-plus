@@ -2,11 +2,11 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Table from './src/table.vue'
 import TableColumn from './src/tableColumn'
 
-export const ElTable = withInstall(Table, {
+export const HcTable = withInstall(Table, {
   TableColumn,
 })
-export default ElTable
-export const ElTableColumn = withNoopInstall(TableColumn)
+export default HcTable
+export const HcTableColumn = withNoopInstall(TableColumn)
 
 export type TableInstance = InstanceType<typeof Table>
 

@@ -1,7 +1,7 @@
 <template>
   <div :class="ns.b('panel')">
     <p :class="ns.be('panel', 'header')">
-      <el-checkbox
+      <hc-checkbox
         v-model="allChecked"
         :indeterminate="isIndeterminate"
         :validate-event="false"
@@ -9,11 +9,11 @@
       >
         {{ title }}
         <span>{{ checkedSummary }}</span>
-      </el-checkbox>
+      </hc-checkbox>
     </p>
 
     <div :class="[ns.be('panel', 'body'), ns.is('with-footer', hasFooter)]">
-      <el-input
+      <hc-input
         v-if="filterable"
         v-model="query"
         :class="ns.be('panel', 'filter')"
@@ -23,13 +23,13 @@
         clearable
         :validate-event="false"
       />
-      <el-checkbox-group
+      <hc-checkbox-group
         v-show="!hasNoMatch && !isEmpty(data)"
         v-model="checked"
         :validate-event="false"
         :class="[ns.is('filterable', filterable), ns.be('panel', 'list')]"
       >
-        <el-checkbox
+        <hc-checkbox
           v-for="item in filteredData"
           :key="item[propsAlias.key]"
           :class="ns.be('panel', 'item')"
@@ -38,8 +38,8 @@
           :validate-event="false"
         >
           <option-content :option="optionRender?.(item)" />
-        </el-checkbox>
-      </el-checkbox-group>
+        </hc-checkbox>
+      </hc-checkbox-group>
       <p v-show="hasNoMatch || isEmpty(data)" :class="ns.be('panel', 'empty')">
         {{ hasNoMatch ? t('el.transfer.noMatch') : t('el.transfer.noData') }}
       </p>
@@ -55,8 +55,8 @@ import { computed, reactive, toRefs, useSlots } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { isEmpty } from '@hicor-ui/utils'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import { ElCheckbox, ElCheckboxGroup } from '@hicor-ui/components/checkbox'
-import { ElInput } from '@hicor-ui/components/input'
+import { HcCheckbox, HcCheckboxGroup } from '@hicor-ui/components/checkbox'
+import { HcInput } from '@hicor-ui/components/input'
 import { transferPanelEmits, transferPanelProps } from './transfer-panel'
 import { useCheck, usePropsAlias } from './composables'
 
@@ -64,7 +64,7 @@ import type { VNode } from 'vue'
 import type { TransferPanelState } from './transfer-panel'
 
 defineOptions({
-  name: 'ElTransferPanel',
+  name: 'HcTransferPanel',
 })
 
 const props = defineProps(transferPanelProps)

@@ -58,7 +58,7 @@
         </table>
       </div>
       <div ref="bodyWrapper" :class="ns.e('body-wrapper')">
-        <el-scrollbar
+        <hc-scrollbar
           ref="scrollBarRef"
           :view-style="scrollbarViewStyle"
           :wrap-style="scrollbarStyle"
@@ -125,7 +125,7 @@
           >
             <slot name="append" />
           </div>
-        </el-scrollbar>
+        </hc-scrollbar>
       </div>
       <div
         v-if="showSummary && tableLayout === 'fixed'"
@@ -170,7 +170,7 @@ import { computed, defineComponent, getCurrentInstance, provide } from 'vue'
 import { debounce } from 'lodash-unified'
 import { Mousewheel } from '@hicor-ui/directives'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
 import { createStore } from './store/helper'
 import TableLayout from './table-layout'
 import TableHeader from './table-header'
@@ -188,7 +188,7 @@ import type { Table } from './table/defaults'
 
 let tableIdSeed = 1
 export default defineComponent({
-  name: 'ElTable',
+  name: 'HcTable',
   directives: {
     Mousewheel,
   },
@@ -196,7 +196,7 @@ export default defineComponent({
     TableHeader,
     TableBody,
     TableFooter,
-    ElScrollbar,
+    HcScrollbar,
     hColgroup,
   },
   props: defaultProps,

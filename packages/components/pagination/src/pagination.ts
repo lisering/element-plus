@@ -173,7 +173,7 @@ export const paginationEmits = {
 }
 export type PaginationEmits = typeof paginationEmits
 
-const componentName = 'ElPagination'
+const componentName = 'HcPagination'
 export default defineComponent({
   name: componentName,
 
@@ -196,7 +196,7 @@ export default defineComponent({
     const assertValidUsage = computed(() => {
       // Users have to set either one, otherwise count of pages cannot be determined
       if (isAbsent(props.total) && isAbsent(props.pageCount)) return false
-      // <el-pagination ...otherProps :current-page="xxx" /> without corresponding listener is forbidden now
+      // <hc-pagination ...otherProps :current-page="xxx" /> without corresponding listener is forbidden now
       // Users have to use two way binding of `currentPage`
       // If users just want to provide a default value, `defaultCurrentPage` is here for you
       if (!isAbsent(props.currentPage) && !hasCurrentPageListener) return false

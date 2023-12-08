@@ -17,16 +17,16 @@
             :class="ns.e('icon')"
           >
             <slot name="icon">
-              <el-icon v-if="icon">
+              <hc-icon v-if="icon">
                 <component :is="icon" />
-              </el-icon>
+              </hc-icon>
             </slot>
           </div>
           <div :class="ns.e('title')">
             <slot name="title">{{ title || t('el.pageHeader.title') }}</slot>
           </div>
         </div>
-        <el-divider direction="vertical" />
+        <hc-divider direction="vertical" />
         <div :class="ns.e('content')">
           <slot name="content">{{ content }}</slot>
         </div>
@@ -44,14 +44,14 @@
 </template>
 <script lang="ts" setup>
 import { computed, useSlots } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
-import { ElDivider } from '@hicor-ui/components/divider'
+import { HcIcon } from '@hicor-ui/components/icon'
+import { HcDivider } from '@hicor-ui/components/divider'
 
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { pageHeaderEmits, pageHeaderProps } from './page-header'
 
 defineOptions({
-  name: 'ElPageHeader',
+  name: 'HcPageHeader',
 })
 
 defineProps(pageHeaderProps)

@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 defineOptions({
-  name: 'ElCollectionItem',
+  name: 'HcCollectionItem',
   inheritAttrs: false,
 })
 </script>

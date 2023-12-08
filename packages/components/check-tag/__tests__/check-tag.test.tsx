@@ -32,11 +32,11 @@ describe('CheckTag.vue', () => {
     })
     expect(wrapper.text()).toEqual(AXIOM)
 
-    await wrapper.find('.el-check-tag').trigger('click')
+    await wrapper.find('.hc-check-tag').trigger('click')
 
     expect(wrapper.vm.checked).toBe(true)
 
-    await wrapper.find('.el-check-tag').trigger('click')
+    await wrapper.find('.hc-check-tag').trigger('click')
 
     expect(wrapper.vm.checked).toBe(false)
   })

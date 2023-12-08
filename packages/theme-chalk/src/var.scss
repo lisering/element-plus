@@ -27,10 +27,10 @@
   @include set-css-var-value('font-weight-primary', 500);
   @include set-css-var-value('font-line-height-primary', 24px);
 
-  // z-index --el-index-#{$type}
+  // z-index --hc-index-#{$type}
   @include set-component-css-var('index', $z-index);
 
-  // --el-border-radius-#{$type}
+  // --hc-border-radius-#{$type}
   @include set-component-css-var('border-radius', $border-radius);
 
   // Transition
@@ -52,24 +52,24 @@
   @include set-css-var-value('color-white', $color-white);
   @include set-css-var-value('color-black', $color-black);
 
-  // --el-color-#{$type}
-  // --el-color-#{$type}-light-{$i}
+  // --hc-color-#{$type}
+  // --hc-color-#{$type}-light-{$i}
   @each $type in (primary, success, warning, danger, error, info) {
     @include set-css-color-type($colors, $type);
   }
 
   // color-scheme
-  // Background --el-bg-color-#{$type}
+  // Background --hc-bg-color-#{$type}
   @include set-component-css-var('bg-color', $bg-color);
-  // --el-text-color-#{$type}
+  // --hc-text-color-#{$type}
   @include set-component-css-var('text-color', $text-color);
-  // --el-border-color-#{$type}
+  // --hc-border-color-#{$type}
   @include set-component-css-var('border-color', $border-color);
-  // Fill --el-fill-color-#{$type}
+  // Fill --hc-fill-color-#{$type}
   @include set-component-css-var('fill-color', $fill-color);
 
   // Box-shadow
-  // --el-box-shadow-#{$type}
+  // --hc-box-shadow-#{$type}
   @include set-component-css-var('box-shadow', $box-shadow);
   // Disable base
   @include set-component-css-var('disabled', $disabled);
@@ -82,11 +82,8 @@
   @include set-css-var-value('border-width', $border-width);
   @include set-css-var-value('border-style', $border-style);
   @include set-css-var-value('border-color-hover', $border-color-hover);
-  @include set-css-var-value(
-    'border',
-    getCssVar('border-width') getCssVar('border-style')
-      getCssVar('border-color')
-  );
+  @include set-css-var-value('border',
+    getCssVar('border-width') getCssVar('border-style') getCssVar('border-color'));
 
   // Svg
   @include css-var-from-global('svg-monochrome-grey', 'border-color');

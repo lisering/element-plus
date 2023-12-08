@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { useLocale } from '@hicor-ui/hooks'
 import Chinese from '@hicor-ui/locale/lang/zh-cn'
 import English from '@hicor-ui/locale/lang/en'
-import { ElButton, ElMessage } from '@hicor-ui/components'
+import { HcButton, HcMessage } from '@hicor-ui/components'
 import { rAF } from '@hicor-ui/test-utils/tick'
 import {
   useGlobalComponentSettings,
@@ -101,7 +101,7 @@ describe('config-provider', () => {
       const wrapper = mount(() => (
         <>
           <ConfigProvider button={config}>
-            <ElButton>中文</ElButton>
+            <HcButton>中文</HcButton>
           </ConfigProvider>
           <button
             class="toggle"
@@ -114,11 +114,11 @@ describe('config-provider', () => {
 
       await nextTick()
       expect(
-        wrapper.find('.el-button .el-button__text--expand').exists()
+        wrapper.find('.hc-button .el-button__text--expand').exists()
       ).toBeTruthy()
       await wrapper.find('.toggle').trigger('click')
       expect(
-        wrapper.find('.el-button .el-button__text--expand').exists()
+        wrapper.find('.hc-button .el-button__text--expand').exists()
       ).toBeFalsy()
     })
   })
@@ -129,7 +129,7 @@ describe('config-provider', () => {
 
       const wrapper = mount(() => (
         <ConfigProvider namespace={namespace.value}>
-          <ElButton>test str</ElButton>
+          <HcButton>test str</HcButton>
         </ConfigProvider>
       ))
 
@@ -143,7 +143,7 @@ describe('config-provider', () => {
 
   describe('message-config', () => {
     afterEach(() => {
-      ElMessage.closeAll()
+      HcMessage.closeAll()
     })
 
     it('limit the number of messages displayed at the same time', async () => {
@@ -151,31 +151,31 @@ describe('config-provider', () => {
         max: 3,
       })
       const open = () => {
-        ElMessage('this is a message.')
+        HcMessage('this is a message.')
       }
 
       const wrapper = mount(() => (
         <ConfigProvider message={config}>
-          <ElButton onClick={open}>open</ElButton>
+          <HcButton onClick={open}>open</HcButton>
         </ConfigProvider>
       ))
 
       await nextTick()
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
       await nextTick()
-      expect(document.querySelectorAll('.el-message').length).toBe(3)
+      expect(document.querySelectorAll('.hc-message').length).toBe(3)
 
       config.max = 10
       await nextTick()
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
-      wrapper.find('.el-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
+      wrapper.find('.hc-button').trigger('click')
       await nextTick()
-      expect(document.querySelectorAll('.el-message').length).toBe(7)
+      expect(document.querySelectorAll('.hc-message').length).toBe(7)
     })
 
     it('multiple config-provider config override', async () => {
@@ -186,23 +186,23 @@ describe('config-provider', () => {
         max: 1,
       })
       const open = () => {
-        ElMessage('this is a message.')
+        HcMessage('this is a message.')
       }
 
       const wrapper = mount(() => (
         <ConfigProvider message={config}>
           <ConfigProvider message={overrideConfig}>
-            <ElButton onClick={open}>open</ElButton>
+            <HcButton onClick={open}>open</HcButton>
           </ConfigProvider>
         </ConfigProvider>
       ))
 
       await rAF()
-      await wrapper.find('.el-button').trigger('click')
-      await wrapper.find('.el-button').trigger('click')
-      await wrapper.find('.el-button').trigger('click')
+      await wrapper.find('.hc-button').trigger('click')
+      await wrapper.find('.hc-button').trigger('click')
+      await wrapper.find('.hc-button').trigger('click')
       await nextTick()
-      expect(document.querySelectorAll('.el-message').length).toBe(1)
+      expect(document.querySelectorAll('.hc-message').length).toBe(1)
     })
   })
 

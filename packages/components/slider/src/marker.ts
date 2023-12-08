@@ -18,7 +18,7 @@ export const sliderMarkerProps = buildProps({
 export type SliderMarkerProps = ExtractPropTypes<typeof sliderMarkerProps>
 
 export default defineComponent({
-  name: 'ElSliderMarker',
+  name: 'HcSliderMarker',
   props: sliderMarkerProps,
   setup(props) {
     const ns = useNamespace('slider')

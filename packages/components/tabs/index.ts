@@ -2,11 +2,11 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Tabs from './src/tabs'
 import TabPane from './src/tab-pane.vue'
 
-export const ElTabs = withInstall(Tabs, {
+export const HcTabs = withInstall(Tabs, {
   TabPane,
 })
-export const ElTabPane = withNoopInstall(TabPane)
-export default ElTabs
+export const HcTabPane = withNoopInstall(TabPane)
+export default HcTabs
 
 export * from './src/tabs'
 export * from './src/tab-bar'

@@ -20,15 +20,15 @@
       @mouseenter="clearTimer"
       @mouseleave="startTimer"
     >
-      <el-badge
+      <hc-badge
         v-if="repeatNum > 1"
         :value="repeatNum"
         :type="badgeType"
         :class="ns.e('badge')"
       />
-      <el-icon v-if="iconComponent" :class="[ns.e('icon'), typeClass]">
+      <hc-icon v-if="iconComponent" :class="[ns.e('icon'), typeClass]">
         <component :is="iconComponent" />
-      </el-icon>
+      </hc-icon>
       <slot>
         <p v-if="!dangerouslyUseHTMLString" :class="ns.e('content')">
           {{ message }}
@@ -36,9 +36,9 @@
         <!-- Caution here, message could've been compromised, never use user's input as message -->
         <p v-else :class="ns.e('content')" v-html="message" />
       </slot>
-      <el-icon v-if="showClose" :class="ns.e('closeBtn')" @click.stop="close">
+      <hc-icon v-if="showClose" :class="ns.e('closeBtn')" @click.stop="close">
         <Close />
-      </el-icon>
+      </hc-icon>
     </div>
   </transition>
 </template>
@@ -48,9 +48,9 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useEventListener, useResizeObserver, useTimeoutFn } from '@vueuse/core'
 import { TypeComponents, TypeComponentsMap } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
-import ElBadge from '@hicor-ui/components/badge'
+import HcBadge from '@hicor-ui/components/badge'
 import { useGlobalComponentSettings } from '@hicor-ui/components/config-provider'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { messageEmits, messageProps } from './message'
 import { getLastOffset, getOffsetOrSpace } from './instance'
 import type { BadgeProps } from '@hicor-ui/components/badge'
@@ -59,7 +59,7 @@ import type { CSSProperties } from 'vue'
 const { Close } = TypeComponents
 
 defineOptions({
-  name: 'ElMessage',
+  name: 'HcMessage',
 })
 
 const props = defineProps(messageProps)

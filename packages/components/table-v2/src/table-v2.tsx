@@ -24,7 +24,7 @@ import type {
   TableV2RowCellRenderParam,
 } from './components'
 
-const COMPONENT_NAME = 'ElTableV2'
+const COMPONENT_NAME = 'HcTableV2'
 
 const TableV2 = defineComponent({
   name: COMPONENT_NAME,

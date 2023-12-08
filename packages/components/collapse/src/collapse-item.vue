@@ -14,12 +14,12 @@
       @blur="focusing = false"
     >
       <slot name="title">{{ title }}</slot>
-      <el-icon :class="arrowKls">
+      <hc-icon :class="arrowKls">
         <arrow-right />
-      </el-icon>
+      </hc-icon>
     </button>
 
-    <el-collapse-transition>
+    <hc-collapse-transition>
       <div
         v-show="isActive"
         :id="scopedContentId"
@@ -32,19 +32,19 @@
           <slot />
         </div>
       </div>
-    </el-collapse-transition>
+    </hc-collapse-transition>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ArrowRight } from '@element-plus/icons-vue'
-import ElCollapseTransition from '@hicor-ui/components/collapse-transition'
-import ElIcon from '@hicor-ui/components/icon'
+import HcCollapseTransition from '@hicor-ui/components/collapse-transition'
+import HcIcon from '@hicor-ui/components/icon'
 import { collapseItemProps } from './collapse-item'
 import { useCollapseItem, useCollapseItemDOM } from './use-collapse-item'
 
 defineOptions({
-  name: 'ElCollapseItem',
+  name: 'HcCollapseItem',
 })
 
 const props = defineProps(collapseItemProps)

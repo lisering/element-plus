@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import dayjs from 'dayjs'
 import triggerEvent from '@hicor-ui/test-utils/trigger-event'
 import { rAF } from '@hicor-ui/test-utils/tick'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import sleep from '@hicor-ui/test-utils/sleep'
 import TimePicker from '../src/time-picker'
 import Picker from '../src/common/picker.vue'
@@ -44,7 +44,7 @@ describe('TimePicker', () => {
     const input = wrapper.find('input')
     expect(input.attributes('placeholder')).toBe('test_')
     expect(input.attributes('readonly')).not.toBeUndefined()
-    const outterInput = wrapper.find('.el-input')
+    const outterInput = wrapper.find('.hc-input')
     expect(outterInput.classes()).toContain('customClass')
     expect(outterInput.attributes().style).toBeDefined()
   })
@@ -62,18 +62,18 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
-    const items = hoursEl.querySelectorAll('.el-time-spinner__item')
+    const items = hoursEl.querySelectorAll('.hc-time-spinner__item')
     expect(items[0].textContent).toBe('12 AM') // am pm
     expect(items[1].textContent).toBe('01 AM')
     expect(items[12].textContent).toBe('12 PM')
     expect(items[15].textContent).toBe('03 PM')
-    const times = document.querySelectorAll('.el-time-spinner__list .is-active')
+    const times = document.querySelectorAll('.hc-time-spinner__list .is-active')
     expect(times[0].textContent).toBe('06 PM')
     expect(times[1].textContent).toBe('40') // default value
     expect(times[2].textContent).toBe('00')
-    const panel = document.querySelector('.el-time-panel') as any
+    const panel = document.querySelector('.hc-time-panel') as any
     expect(panel.classList.contains('customClass')).toBeFalsy()
   })
 
@@ -85,16 +85,16 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
+    const hourEl = hoursEl.querySelectorAll('.hc-time-spinner__item')[4] as any
     const minuteEl = minutesEl.querySelectorAll(
-      '.el-time-spinner__item'
+      '.hc-time-spinner__item'
     )[36] as any
     const secondEl = secondsEl.querySelectorAll(
-      '.el-time-spinner__item'
+      '.hc-time-spinner__item'
     )[20] as any
     // click hour, minute, second one at a time.
     hourEl.click()
@@ -121,13 +121,13 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    ;(document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.cancel') as any).click()
 
     expect(value.value).toBe('')
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    ;(document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.confirm') as any).click()
     expect(value.value).toBeInstanceOf(Date)
   })
 
@@ -142,16 +142,16 @@ describe('TimePicker', () => {
     await nextTick()
 
     // select time
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
+    const hourEl = hoursEl.querySelectorAll('.hc-time-spinner__item')[4] as any
     const minuteEl = minutesEl.querySelectorAll(
-      '.el-time-spinner__item'
+      '.hc-time-spinner__item'
     )[36] as any
     const secondEl = secondsEl.querySelectorAll(
-      '.el-time-spinner__item'
+      '.hc-time-spinner__item'
     )[20] as any
     hourEl.click()
     await nextTick()
@@ -161,7 +161,7 @@ describe('TimePicker', () => {
     await nextTick()
 
     // click confirm button
-    ;(document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.confirm') as any).click()
     const date = value.value
     expect(date.getHours()).toBe(4)
     expect(date.getMinutes()).toBe(36)
@@ -171,7 +171,7 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    ;(document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.cancel') as any).click()
     expect(date.getHours()).toBe(4)
     expect(date.getMinutes()).toBe(36)
     expect(date.getSeconds()).toBe(20)
@@ -187,7 +187,7 @@ describe('TimePicker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const spinnerDom = document.querySelectorAll('.el-time-spinner__wrapper')
+    const spinnerDom = document.querySelectorAll('.hc-time-spinner__wrapper')
     const minutesDom = spinnerDom[1]
     const secondsDom = spinnerDom[2]
     expect(minutesDom).not.toBeUndefined()
@@ -229,13 +229,13 @@ describe('TimePicker', () => {
     input.trigger('focus')
     await nextTick()
     await rAF()
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
-    const hourEl = hoursEl.querySelectorAll('.el-time-spinner__item')[4] as any
+    const hourEl = hoursEl.querySelectorAll('.hc-time-spinner__item')[4] as any
     hourEl.click()
     await nextTick()
     expect(changeHandler).toHaveBeenCalledTimes(0)
-    ;(document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.confirm') as any).click()
     await nextTick()
     await nextTick() // onchange is triggered by props.modelValue update
     expect(changeHandler).toHaveBeenCalledTimes(1)
@@ -289,13 +289,13 @@ describe('TimePicker', () => {
     input.trigger('focus')
     await nextTick()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
     const minutesEl = list[1]
     const secondsEl = list[2]
     const disabledHours = getSpinnerTextAsArray(hoursEl, '.is-disabled')
     expect(disabledHours).toEqual(disabledHoursArr)
-    const hourSpinners = hoursEl.querySelectorAll('.el-time-spinner__item')
+    const hourSpinners = hoursEl.querySelectorAll('.hc-time-spinner__item')
     ;(hourSpinners[18] as any).click()
     await nextTick()
     const disabledMinutes = getSpinnerTextAsArray(minutesEl, '.is-disabled')
@@ -326,7 +326,7 @@ describe('TimePicker', () => {
     await nextTick()
     // These following two allows popper to gets rendered.
     await rAF()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.hc-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
@@ -342,7 +342,7 @@ describe('TimePicker', () => {
     timePickerExposed.blur()
 
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.hc-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
@@ -356,7 +356,7 @@ describe('TimePicker', () => {
     timePickerExposed.handleOpen()
 
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.hc-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
@@ -374,7 +374,7 @@ describe('TimePicker', () => {
     timePickerExposed.handleClose()
 
     await nextTick()
-    const popperEl = document.querySelector('.el-picker__popper')
+    const popperEl = document.querySelector('.hc-picker__popper')
     const attr = popperEl.getAttribute('aria-hidden')
     expect(attr).toEqual('true')
 
@@ -452,35 +452,35 @@ describe('TimePicker', () => {
     input.trigger('focus')
     await nextTick()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const hoursEl = list[0]
     let activeHours = getSpinnerTextAsArray(hoursEl, '.is-active')[0]
 
     expect(activeHours).toEqual(20)
-    const hoursElWrapperList = document.querySelectorAll(
-      '.el-time-spinner__wrapper'
+    const hoursHcWrapperList = document.querySelectorAll(
+      '.hc-time-spinner__wrapper'
     )
-    const hoursElWrapper = hoursElWrapperList[0]
-    const hoursElArrowDown: Element | null =
-      hoursElWrapper.querySelector('.arrow-down')
-    expect(hoursElArrowDown).toBeTruthy()
+    const hoursHcWrapper = hoursHcWrapperList[0]
+    const hoursHcArrowDown: Element | null =
+      hoursHcWrapper.querySelector('.arrow-down')
+    expect(hoursHcArrowDown).toBeTruthy()
 
     const mousedownEvt = new MouseEvent('mousedown')
     const mouseupEvt = new MouseEvent('mouseup')
 
     const testTime = 130
-    hoursElArrowDown.dispatchEvent(mousedownEvt)
-    hoursElArrowDown.dispatchEvent(mouseupEvt)
+    hoursHcArrowDown.dispatchEvent(mousedownEvt)
+    hoursHcArrowDown.dispatchEvent(mouseupEvt)
     await sleep(testTime)
     activeHours = getSpinnerTextAsArray(hoursEl, '.is-active')[0]
     expect(activeHours).toEqual(21)
-    hoursElArrowDown.dispatchEvent(mousedownEvt)
-    hoursElArrowDown.dispatchEvent(mouseupEvt)
+    hoursHcArrowDown.dispatchEvent(mousedownEvt)
+    hoursHcArrowDown.dispatchEvent(mouseupEvt)
     await sleep(testTime)
     activeHours = getSpinnerTextAsArray(hoursEl, '.is-active')[0]
     expect(activeHours).toEqual(22)
-    hoursElArrowDown.dispatchEvent(new MouseEvent('mousedown'))
-    hoursElArrowDown.dispatchEvent(new MouseEvent('mouseup'))
+    hoursHcArrowDown.dispatchEvent(new MouseEvent('mousedown'))
+    hoursHcArrowDown.dispatchEvent(new MouseEvent('mouseup'))
     await sleep(testTime)
     activeHours = getSpinnerTextAsArray(hoursEl, '.is-active')[0]
     expect(activeHours).toEqual(20)
@@ -500,7 +500,7 @@ describe('TimePicker(range)', () => {
       }
     )
 
-    expect(wrapper.find('.el-range-editor--small').exists()).toBeTruthy()
+    expect(wrapper.find('.hc-range-editor--small').exists()).toBeTruthy()
     const input = wrapper.find('input')
     input.trigger('blur')
     input.trigger('focus')
@@ -508,7 +508,7 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
     const list = document.querySelectorAll(
-      '.el-time-spinner__list .el-time-spinner__item.is-active'
+      '.hc-time-spinner__list .el-time-spinner__item.is-active'
     )
 
     ;['18', '40', '00', '19', '40', '00'].forEach((_, i) => {
@@ -542,7 +542,7 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
     const list = document.querySelectorAll(
-      '.el-time-spinner__list .el-time-spinner__item.is-active'
+      '.hc-time-spinner__list .el-time-spinner__item.is-active'
     )
 
     ;['10', '20', '00', '11', '10', '00'].forEach((_, i) => {
@@ -567,18 +567,18 @@ describe('TimePicker(range)', () => {
     await nextTick()
     // For skipping Transition animation
     await rAF()
-    ;(document.querySelector('.el-time-panel__btn.cancel') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.cancel') as any).click()
     await rAF()
 
     expect(value.value).toEqual(cancelDates)
     expect((wrapper.findComponent(Picker).vm as any).pickerVisible).toEqual(
       false
     )
-    expect(document.querySelector('.el-picker-panel')).toBeNull()
+    expect(document.querySelector('.hc-picker-panel')).toBeNull()
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    ;(document.querySelector('.el-time-panel__btn.confirm') as any).click()
+    ;(document.querySelector('.hc-time-panel__btn.confirm') as any).click()
     expect(Array.isArray(value.value)).toBeTruthy()
     value.value.forEach((v: unknown) => {
       expect(v).toBeInstanceOf(Date)
@@ -592,8 +592,8 @@ describe('TimePicker(range)', () => {
     ])
     const wrapper = mount(() => <TimePicker v-model={value.value} is-range />)
 
-    const findInputWrapper = () => wrapper.find('.el-date-editor')
-    const findClear = () => wrapper.find('.el-range__close-icon')
+    const findInputWrapper = () => wrapper.find('.hc-date-editor')
+    const findClear = () => wrapper.find('.hc-range__close-icon')
 
     await nextTick()
     const inputWrapper = findInputWrapper()
@@ -631,7 +631,7 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     const leftHoursEl = list[0]
     const leftEndbledHours = getSpinnerTextAsArray(
       leftHoursEl,
@@ -644,7 +644,7 @@ describe('TimePicker(range)', () => {
       ':not(.is-disabled)'
     )
     expect(rightEndbledHours).toEqual([11, 12, 13, 14, 15, 16])
-    ;(leftHoursEl.querySelectorAll('.el-time-spinner__item')[12] as any).click()
+    ;(leftHoursEl.querySelectorAll('.hc-time-spinner__item')[12] as any).click()
     await nextTick()
     const NextRightEndbledHours = getSpinnerTextAsArray(
       rightHoursEl,
@@ -677,11 +677,11 @@ describe('TimePicker(range)', () => {
   })
 
   it('should be able to inherit options from parent injection', async () => {
-    const ElPopperOptions = {
+    const HcPopperOptions = {
       strategy: 'fixed',
     }
     const value = ref(new Date(2016, 9, 10, 18, 40))
-    const options = ref(ElPopperOptions)
+    const options = ref(HcPopperOptions)
     const wrapper = mount(
       () => (
         <TimePicker
@@ -694,7 +694,7 @@ describe('TimePicker(range)', () => {
         global: {
           provide() {
             return {
-              ElPopperOptions,
+              HcPopperOptions,
             }
           },
         },
@@ -704,7 +704,7 @@ describe('TimePicker(range)', () => {
     await nextTick()
 
     expect((wrapper.findComponent(Picker).vm as any).elPopperOptions).toEqual(
-      ElPopperOptions
+      HcPopperOptions
     )
   })
 
@@ -734,20 +734,20 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
 
-    const list = document.querySelectorAll('.el-time-spinner__list')
+    const list = document.querySelectorAll('.hc-time-spinner__list')
     expect(
       list[0]
-        .querySelector('.el-time-spinner__item.is-active')
+        .querySelector('.hc-time-spinner__item.is-active')
         .innerHTML.split(' ').length
     ).toBe(2)
     expect(
       list[1]
-        .querySelector('.el-time-spinner__item.is-active')
+        .querySelector('.hc-time-spinner__item.is-active')
         .innerHTML.split(' ').length
     ).toBe(1)
     expect(
       list[2]
-        .querySelector('.el-time-spinner__item.is-active')
+        .querySelector('.hc-time-spinner__item.is-active')
         .innerHTML.split(' ').length
     ).toBe(1)
   })
@@ -755,15 +755,15 @@ describe('TimePicker(range)', () => {
   describe('form item accessibility integration', () => {
     it('automatic id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimePicker />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const timePickerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const timePickerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(
         timePickerInput.attributes().id
@@ -772,15 +772,15 @@ describe('TimePicker(range)', () => {
 
     it('specified id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimePicker id="foobar" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const timePickerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const timePickerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(timePickerInput.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(
@@ -790,10 +790,10 @@ describe('TimePicker(range)', () => {
 
     it('form item role is group when multiple inputs', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimePicker />
           <TimePicker />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
@@ -807,7 +807,7 @@ describe('TimePicker(range)', () => {
 
     const findInput = () =>
       wrapper.findComponent({
-        name: 'ElInput',
+        name: 'HcInput',
       })
     const findClear = () => wrapper.find('.clear-icon')
     const findPicker = () =>
@@ -835,10 +835,10 @@ describe('TimePicker(range)', () => {
       await clearIcon.trigger('click')
       await rAF()
       expect(document.activeElement).toBe(wrapper.find('input').element)
-      expect(document.querySelector('.el-time-panel')).toBeFalsy()
+      expect(document.querySelector('.hc-time-panel')).toBeFalsy()
       await input.vm.$emit('input', 'a')
       await rAF()
-      expect(document.querySelector('.el-time-panel')).toBeTruthy()
+      expect(document.querySelector('.hc-time-panel')).toBeTruthy()
     })
 
     it('should be able to focus back and callout picker after pick', async () => {
@@ -847,15 +847,15 @@ describe('TimePicker(range)', () => {
       const input = findInput()
       input.vm.$emit('input', 'a')
       await rAF()
-      expect(document.querySelector('.el-time-panel')).toBeTruthy()
+      expect(document.querySelector('.hc-time-panel')).toBeTruthy()
       picker.vm.onPick('', false)
       await rAF() // Picker triggers popup close, event propagation
       await rAF() // Focus trap recognizes focusout event, and propagation
       expect(document.activeElement).toBe(wrapper.find('input').element)
-      expect(document.querySelector('.el-time-panel')).toBeFalsy()
+      expect(document.querySelector('.hc-time-panel')).toBeFalsy()
       input.vm.$emit('input', 'a')
       await rAF()
-      expect(document.querySelector('.el-time-panel')).toBeTruthy()
+      expect(document.querySelector('.hc-time-panel')).toBeTruthy()
     })
   })
 

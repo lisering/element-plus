@@ -3,12 +3,12 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Descriptions from './src/description.vue'
 import DescriptionsItem from './src/description-item'
 
-export const ElDescriptions = withInstall(Descriptions, {
+export const HcDescriptions = withInstall(Descriptions, {
   DescriptionsItem,
 })
 
-export const ElDescriptionsItem = withNoopInstall(DescriptionsItem)
+export const HcDescriptionsItem = withNoopInstall(DescriptionsItem)
 
-export default ElDescriptions
+export default HcDescriptions
 
 export * from './src/description'

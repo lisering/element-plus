@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="refPopper"
     :visible="pickerVisible"
     effect="light"
@@ -21,7 +21,7 @@
     @hide="onHide"
   >
     <template #default>
-      <el-input
+      <hc-input
         v-if="!isRangeInput"
         :id="(id as string | undefined)"
         ref="inputRef"
@@ -52,25 +52,25 @@
         @click.stop
       >
         <template #prefix>
-          <el-icon
+          <hc-icon
             v-if="triggerIcon"
             :class="nsInput.e('icon')"
             @mousedown.prevent="onMouseDownInput"
             @touchstart="onTouchStartInput"
           >
             <component :is="triggerIcon" />
-          </el-icon>
+          </hc-icon>
         </template>
         <template #suffix>
-          <el-icon
+          <hc-icon
             v-if="showClose && clearIcon"
             :class="`${nsInput.e('icon')} clear-icon`"
             @click.stop="onClearIconClick"
           >
             <component :is="clearIcon" />
-          </el-icon>
+          </hc-icon>
         </template>
-      </el-input>
+      </hc-input>
       <div
         v-else
         ref="inputRef"
@@ -82,14 +82,14 @@
         @touchstart="onTouchStartInput"
         @keydown="handleKeydownInput"
       >
-        <el-icon
+        <hc-icon
           v-if="triggerIcon"
           :class="[nsInput.e('icon'), nsRange.e('icon')]"
           @mousedown.prevent="onMouseDownInput"
           @touchstart="onTouchStartInput"
         >
           <component :is="triggerIcon" />
-        </el-icon>
+        </hc-icon>
         <input
           :id="id && id[0]"
           autocomplete="off"
@@ -123,13 +123,13 @@
           @input="handleEndInput"
           @change="handleEndChange"
         />
-        <el-icon
+        <hc-icon
           v-if="clearIcon"
           :class="clearIconKls"
           @click="onClearIconClick"
         >
           <component :is="clearIcon" />
-        </el-icon>
+        </hc-icon>
       </div>
     </template>
     <template #content>
@@ -152,7 +152,7 @@
         @mousedown.stop
       />
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 <script lang="ts" setup>
 import {
@@ -170,9 +170,9 @@ import { onClickOutside } from '@vueuse/core'
 import { Calendar, Clock } from '@element-plus/icons-vue'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { useFormItem, useFormSize } from '@hicor-ui/components/form'
-import ElInput from '@hicor-ui/components/input'
-import ElIcon from '@hicor-ui/components/icon'
-import ElTooltip from '@hicor-ui/components/tooltip'
+import HcInput from '@hicor-ui/components/input'
+import HcIcon from '@hicor-ui/components/icon'
+import HcTooltip from '@hicor-ui/components/tooltip'
 import { debugWarn, isArray } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { formatter, parseDate, valueEquals } from '../utils'
@@ -218,7 +218,7 @@ const nsInput = useNamespace('input')
 const nsRange = useNamespace('range')
 
 const { form, formItem } = useFormItem()
-const elPopperOptions = inject('ElPopperOptions', {} as Options)
+const elPopperOptions = inject('HcPopperOptions', {} as Options)
 
 const refPopper = ref<TooltipInstance>()
 const inputRef = ref<HTMLElement | ComponentPublicInstance>()

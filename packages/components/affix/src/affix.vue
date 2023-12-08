@@ -18,7 +18,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { affixEmits, affixProps } from './affix'
 import type { CSSProperties } from 'vue'
 
-const COMPONENT_NAME = 'ElAffix'
+const COMPONENT_NAME = 'HcAffix'
 defineOptions({
   name: COMPONENT_NAME,
 })

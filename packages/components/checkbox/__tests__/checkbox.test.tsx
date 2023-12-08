@@ -1,7 +1,7 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import Checkbox from '../src/checkbox.vue'
 import CheckboxButton from '../src/checkbox-button.vue'
 import CheckboxGroup from '../src/checkbox-group.vue'
@@ -23,7 +23,7 @@ describe('Checkbox', () => {
 
   test('label set to number 0', async () => {
     const wrapper = mount(() => <Checkbox label={0} />)
-    expect(wrapper.find('.el-checkbox__label').text()).toBe('0')
+    expect(wrapper.find('.hc-checkbox__label').text()).toBe('0')
   })
 
   describe('no v-model', () => {
@@ -48,9 +48,9 @@ describe('Checkbox', () => {
     test('checkbox without label', async () => {
       const checked = ref(false)
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <Checkbox v-model={checked.value} disabled />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       const checkbox = wrapper.findComponent(Checkbox)
@@ -83,9 +83,9 @@ describe('Checkbox', () => {
       const data = ref()
       const onChange = (val: CheckboxValueType) => (data.value = val)
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <Checkbox v-model={checked.value} onChange={onChange} />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await wrapper.findComponent(Checkbox).trigger('click')
@@ -123,11 +123,11 @@ describe('Checkbox', () => {
       const data = ref()
       const onChange = (val: CheckboxValueType) => (data.value = val)
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <label>
             <Checkbox v-model={checked.value} onChange={onChange} />
           </label>
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await wrapper.findComponent(Checkbox).trigger('click')
@@ -227,9 +227,9 @@ describe('Checkbox', () => {
     test('without label', async () => {
       const checked = ref('a')
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <Checkbox true-label="a" false-label={3} v-model={checked.value} />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       const checkbox = wrapper.findComponent(Checkbox)
@@ -303,7 +303,7 @@ describe('Checkbox', () => {
       </CheckboxGroup>
     ))
 
-    const checkbox = wrapper.find('.el-checkbox')
+    const checkbox = wrapper.find('.hc-checkbox')
     await checkbox.trigger('click')
     expect(checklist.value[0]).toEqual('')
   })
@@ -318,7 +318,7 @@ describe('Checkbox', () => {
       </CheckboxGroup>
     ))
 
-    const checkbox = wrapper.find('.el-checkbox')
+    const checkbox = wrapper.find('.hc-checkbox')
     await checkbox.trigger('click')
     expect(checklist.value[0]).toEqual({ a: 1 })
     expect(checkbox.classes()).contains('is-checked')
@@ -439,7 +439,7 @@ describe('check-button', () => {
     expect(checkList.value.length).toBe(2)
     expect(checkbox.classes()).contains('is-checked')
     expect(
-      checkbox.find('.el-checkbox-button__inner').attributes('style')
+      checkbox.find('.hc-checkbox-button__inner').attributes('style')
     ).contains('border-color: #ff0000;')
   })
 
@@ -535,22 +535,22 @@ describe('check-button', () => {
     test('checked', () => {
       const wrapper = mount(() => <Checkbox checked />)
 
-      expect(wrapper.find('.el-checkbox').classes()).contains('is-checked')
+      expect(wrapper.find('.hc-checkbox').classes()).contains('is-checked')
     })
   })
 
   describe('form item accessibility integration', () => {
     test('checkbox, no label, automatic label attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <Checkbox />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const checkbox = await wrapper.findComponent(Checkbox)
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const checkboxInput = checkbox.find('.el-checkbox__original')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const checkboxInput = checkbox.find('.hc-checkbox__original')
       expect(checkboxInput.attributes('id')).toBe(
         formItemLabel.attributes('for')
       )
@@ -558,15 +558,15 @@ describe('check-button', () => {
 
     test('checkbox with label, form item is group', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <Checkbox label="Foo" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const checkbox = await wrapper.findComponent(Checkbox)
-      const checkboxLabel = checkbox.find('.el-checkbox__label')
-      const checkboxInput = checkbox.find('.el-checkbox__original')
+      const checkboxLabel = checkbox.find('.hc-checkbox__label')
+      const checkboxInput = checkbox.find('.hc-checkbox__original')
       expect(checkboxLabel.element.textContent).toBe('Foo')
       expect(checkboxInput.attributes('id')).toBeFalsy()
       expect(formItem.attributes('role')).toBe('group')
@@ -574,17 +574,17 @@ describe('check-button', () => {
 
     test('single checkbox group in form item', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <CheckboxGroup>
             <Checkbox label="Foo" />
             <Checkbox label="Bar" />
           </CheckboxGroup>
-        </ElFormItem>
+        </HcFormItem>
       ))
 
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const checkboxGroup = await wrapper.findComponent(CheckboxGroup)
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes('role')).toBeFalsy()
       expect(checkboxGroup.attributes('role')).toBe('group')
       expect(formItemLabel.attributes('for')).toBe(
@@ -597,17 +597,17 @@ describe('check-button', () => {
 
     test('single checkbox group in form item, override label', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="test">
+        <HcFormItem label="test">
           <CheckboxGroup label="Foo">
             <Checkbox label="Foo" />
             <Checkbox label="Bar" />
           </CheckboxGroup>
-        </ElFormItem>
+        </HcFormItem>
       ))
 
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const checkboxGroup = await wrapper.findComponent(CheckboxGroup)
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItemLabel.attributes('for')).toBe(
         checkboxGroup.attributes('id')
       )
@@ -620,7 +620,7 @@ describe('check-button', () => {
       const wrapper = mount({
         setup() {
           return () => (
-            <ElFormItem label="test">
+            <HcFormItem label="test">
               <CheckboxGroup label="Foo" ref="checkboxGroup1">
                 <Checkbox label="Foo" />
                 <Checkbox label="Bar" />
@@ -629,19 +629,19 @@ describe('check-button', () => {
                 <Checkbox label="Foo" />
                 <Checkbox label="Bar" />
               </CheckboxGroup>
-            </ElFormItem>
+            </HcFormItem>
           )
         },
       })
 
-      const formItem = await wrapper.findComponent(ElFormItem)
+      const formItem = await wrapper.findComponent(HcFormItem)
       const checkboxGroup1 = await wrapper.findComponent({
         ref: 'checkboxGroup1',
       })
       const checkboxGroup2 = await wrapper.findComponent({
         ref: 'checkboxGroup2',
       })
-      const formItemLabel = formItem.find('.el-form-item__label')
+      const formItemLabel = formItem.find('.hc-form-item__label')
       expect(formItem.attributes('role')).toBe('group')
       expect(formItem.attributes()['aria-labelledby']).toBe(
         formItemLabel.attributes('id')

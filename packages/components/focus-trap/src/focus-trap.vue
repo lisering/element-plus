@@ -39,7 +39,7 @@ import type { PropType } from 'vue'
 import type { FocusLayer } from './utils'
 
 export default defineComponent({
-  name: 'ElFocusTrap',
+  name: 'HcFocusTrap',
   inheritAttrs: false,
   props: {
     loop: Boolean,

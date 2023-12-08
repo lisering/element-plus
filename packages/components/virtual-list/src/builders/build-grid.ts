@@ -69,7 +69,7 @@ const createGrid = ({
   validateProps,
 }: GridConstructorProps<VirtualizedGridProps>) => {
   return defineComponent({
-    name: name ?? 'ElVirtualList',
+    name: name ?? 'HcVirtualList',
     props: virtualizedGridProps,
     emits: [ITEM_RENDER_EVT, SCROLL_EVT],
     setup(props, { emit, expose, slots }) {

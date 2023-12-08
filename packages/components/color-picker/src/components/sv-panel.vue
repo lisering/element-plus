@@ -36,7 +36,7 @@ import type { PropType } from 'vue'
 import type Color from '../utils/color'
 
 export default defineComponent({
-  name: 'ElSlPanel',
+  name: 'HcSlPanel',
 
   props: {
     color: {

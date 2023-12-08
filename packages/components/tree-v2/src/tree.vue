@@ -13,7 +13,7 @@
       :perf-mode="perfMode"
     >
       <template #default="{ data, index, style }">
-        <el-tree-node
+        <hc-tree-node
           :key="data[index].key"
           :style="style"
           :node="data[index]"
@@ -45,11 +45,11 @@ import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { formItemContextKey } from '@hicor-ui/components/form'
 import { FixedSizeList } from '@hicor-ui/components/virtual-list'
 import { useTree } from './composables/useTree'
-import ElTreeNode from './tree-node.vue'
+import HcTreeNode from './tree-node.vue'
 import { ROOT_TREE_INJECTION_KEY, treeEmits, treeProps } from './virtual-tree'
 
 defineOptions({
-  name: 'ElTreeV2',
+  name: 'HcTreeV2',
 })
 
 const props = defineProps(treeProps)

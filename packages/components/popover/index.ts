@@ -3,14 +3,14 @@ import { withInstall, withInstallDirective } from '@hicor-ui/utils'
 import Popover from './src/popover.vue'
 import PopoverDirective, { VPopover } from './src/directive'
 
-export const ElPopoverDirective = withInstallDirective(
+export const HcPopoverDirective = withInstallDirective(
   PopoverDirective,
   VPopover
 )
 
-export const ElPopover = withInstall(Popover, {
-  directive: ElPopoverDirective,
+export const HcPopover = withInstall(Popover, {
+  directive: HcPopoverDirective,
 })
-export default ElPopover
+export default HcPopover
 
 export * from './src/popover'

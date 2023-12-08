@@ -14,7 +14,7 @@ const TableV2Cell: FunctionalComponent<TableV2CellProps> = (
   )
 }
 
-TableV2Cell.displayName = 'ElTableV2Cell'
+TableV2Cell.displayName = 'HcTableV2Cell'
 TableV2Cell.inheritAttrs = false
 
 export default TableV2Cell

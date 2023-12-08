@@ -60,7 +60,7 @@ $color-info: map.get($colors, 'info', 'base') !default;
 }
 
 // $colors.primary.light-i
-// --el-color-primary-light-i
+// --hc-color-primary-light-i
 // 10% 53a8ff
 // 20% 66b1ff
 // 30% 79bbff
@@ -77,7 +77,7 @@ $color-info: map.get($colors, 'info', 'base') !default;
 }
 }
 
-// --el-color-primary-dark-2
+// --hc-color-primary-dark-2
 @each $type in $types {
   @include set-color-mix-level($type, 2, 'dark', $color-black);
 }

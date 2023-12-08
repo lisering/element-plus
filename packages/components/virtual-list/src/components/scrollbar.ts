@@ -21,7 +21,7 @@ import { renderThumbStyle } from '../utils'
 import type { CSSProperties } from 'vue'
 
 const ScrollBar = defineComponent({
-  name: 'ElVirtualScrollBar',
+  name: 'HcVirtualScrollBar',
   props: virtualizedScrollbarProps,
   emits: ['scroll', 'start-move', 'stop-move'],
   setup(props, { emit }) {

@@ -1,10 +1,10 @@
 import { defineComponent, getCurrentInstance, nextTick } from 'vue'
-import { ElOption } from '@hicor-ui/components/select'
+import { HcOption } from '@hicor-ui/components/select'
 
 const component = defineComponent({
-  extends: ElOption,
+  extends: HcOption,
   setup(props, ctx) {
-    const result = (ElOption.setup as NonNullable<any>)(props, ctx)
+    const result = (HcOption.setup as NonNullable<any>)(props, ctx)
 
     // use methods.selectOptionClick
     delete result.selectOptionClick
@@ -13,7 +13,7 @@ const component = defineComponent({
 
     // Fix: https://github.com/hicor-ui/hicor-ui/issues/7917
     // `el-option` will delete the cache before unmount,
-    // This is normal for flat arrays `<el-select><el-option v-for="3"></el-select>`,
+    // This is normal for flat arrays `<hc-select><hc-option v-for="3"></hc-select>`,
     // Because the same node key does not create a difference node,
     // But in tree data, the same key at different levels will create diff nodes,
     // So the destruction of `el-option` in `nextTick` will be slower than

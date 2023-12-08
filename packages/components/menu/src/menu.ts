@@ -14,7 +14,7 @@ import {
 import { useResizeObserver } from '@vueuse/core'
 import { isNil } from 'lodash-unified'
 import { More } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import {
   buildProps,
   definePropType,
@@ -25,8 +25,8 @@ import {
 } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import Menubar from './utils/menu-bar'
-import ElMenuCollapseTransition from './menu-collapse-transition.vue'
-import ElSubMenu from './sub-menu'
+import HcMenuCollapseTransition from './menu-collapse-transition.vue'
+import HcSubMenu from './sub-menu'
 import { useMenuCssVar } from './use-menu-css-var'
 
 import type { MenuItemClicked, MenuProvider, SubMenuProvider } from './types'
@@ -99,7 +99,7 @@ export const menuEmits = {
 export type MenuEmits = typeof menuEmits
 
 export default defineComponent({
-  name: 'ElMenu',
+  name: 'HcMenu',
 
   props: menuProps,
   emits: menuEmits,
@@ -389,7 +389,7 @@ export default defineComponent({
           slot = slotDefault
           vShowMore.push(
             h(
-              ElSubMenu,
+              HcSubMenu,
               {
                 index: 'sub-menu-more',
                 class: nsSubMenu.e('hide-arrow'),
@@ -397,7 +397,7 @@ export default defineComponent({
               {
                 title: () =>
                   h(
-                    ElIcon,
+                    HcIcon,
                     {
                       class: nsSubMenu.e('icon-more'),
                     },
@@ -429,7 +429,7 @@ export default defineComponent({
       )
 
       if (props.collapseTransition && props.mode === 'vertical') {
-        return h(ElMenuCollapseTransition, () => vMenu)
+        return h(HcMenuCollapseTransition, () => vMenu)
       }
 
       return vMenu

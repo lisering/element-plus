@@ -19,7 +19,7 @@ import { TOOLTIP_V2_OPEN, tooltipV2RootKey } from './constants'
 import { tooltipV2RootProps } from './root'
 
 defineOptions({
-  name: 'ElTooltipV2Root',
+  name: 'HcTooltipV2Root',
 })
 
 const props = defineProps(tooltipV2RootProps)

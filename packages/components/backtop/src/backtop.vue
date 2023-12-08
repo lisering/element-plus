@@ -7,7 +7,7 @@
       @click.stop="handleClick"
     >
       <slot>
-        <el-icon :class="ns.e('icon')"><caret-top /></el-icon>
+        <hc-icon :class="ns.e('icon')"><caret-top /></hc-icon>
       </slot>
     </div>
   </transition>
@@ -16,12 +16,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { CaretTop } from '@element-plus/icons-vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { backtopEmits, backtopProps } from './backtop'
 import { useBackTop } from './use-backtop'
 
-const COMPONENT_NAME = 'ElBacktop'
+const COMPONENT_NAME = 'HcBacktop'
 
 defineOptions({
   name: COMPONENT_NAME,

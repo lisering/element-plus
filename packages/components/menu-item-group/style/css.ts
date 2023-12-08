@@ -1,2 +1,2 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-menu-item-group.css'
+import '@hicor-ui/theme-chalk/hc-menu-item-group.css'

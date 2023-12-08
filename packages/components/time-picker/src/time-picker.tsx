@@ -9,7 +9,7 @@ import { timePickerDefaultProps } from './common/props'
 dayjs.extend(customParseFormat)
 
 export default defineComponent({
-  name: 'ElTimePicker',
+  name: 'HcTimePicker',
   install: null,
   props: {
     ...timePickerDefaultProps,
@@ -29,7 +29,7 @@ export default defineComponent({
       : ['time', TimePickPanel]
 
     const modelUpdater = (value: any) => ctx.emit('update:modelValue', value)
-    provide('ElPopperOptions', props.popperOptions)
+    provide('HcPopperOptions', props.popperOptions)
     ctx.expose({
       /**
        * @description focus the Input component

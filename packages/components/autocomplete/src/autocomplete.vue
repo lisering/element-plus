@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="popperRef"
     :visible="suggestionVisible"
     :placement="placement"
@@ -26,7 +26,7 @@
       :aria-expanded="suggestionVisible"
       :aria-owns="listboxId"
     >
-      <el-input
+      <hc-input
         ref="inputRef"
         v-bind="attrs"
         :clearable="clearable"
@@ -57,7 +57,7 @@
         <template v-if="$slots.suffix" #suffix>
           <slot name="suffix" />
         </template>
-      </el-input>
+      </hc-input>
     </div>
     <template #content>
       <div
@@ -69,7 +69,7 @@
         }"
         role="region"
       >
-        <el-scrollbar
+        <hc-scrollbar
           :id="listboxId"
           tag="ul"
           :wrap-class="ns.be('suggestion', 'wrap')"
@@ -77,9 +77,9 @@
           role="listbox"
         >
           <li v-if="suggestionLoading">
-            <el-icon :class="ns.is('loading')">
+            <hc-icon :class="ns.is('loading')">
               <Loading />
-            </el-icon>
+            </hc-icon>
           </li>
           <template v-else>
             <li
@@ -94,10 +94,10 @@
               <slot :item="item">{{ item[valueKey] }}</slot>
             </li>
           </template>
-        </el-scrollbar>
+        </hc-scrollbar>
       </div>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 
 <script lang="ts" setup>
@@ -112,10 +112,10 @@ import {
   INPUT_EVENT,
   UPDATE_MODEL_EVENT,
 } from '@hicor-ui/constants'
-import ElInput from '@hicor-ui/components/input'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
-import ElTooltip from '@hicor-ui/components/tooltip'
-import ElIcon from '@hicor-ui/components/icon'
+import HcInput from '@hicor-ui/components/input'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
+import HcTooltip from '@hicor-ui/components/tooltip'
+import HcIcon from '@hicor-ui/components/icon'
 import { useFormDisabled } from '@hicor-ui/components/form'
 import { autocompleteEmits, autocompleteProps } from './autocomplete'
 import type { AutocompleteData } from './autocomplete'
@@ -124,7 +124,7 @@ import type { StyleValue } from 'vue'
 import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 import type { InputInstance } from '@hicor-ui/components/input'
 
-const COMPONENT_NAME = 'ElAutocomplete'
+const COMPONENT_NAME = 'HcAutocomplete'
 defineOptions({
   name: COMPONENT_NAME,
   inheritAttrs: false,

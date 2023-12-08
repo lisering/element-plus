@@ -6,7 +6,7 @@ import { ArrowDown, CaretTop, CircleClose } from '@element-plus/icons-vue'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { usePopperContainerId } from '@hicor-ui/hooks'
 import { hasClass } from '@hicor-ui/utils'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import Select from '../src/select.vue'
 import Group from '../src/option-group.vue'
 import Option from '../src/option.vue'
@@ -46,7 +46,7 @@ const _mount = (template: string, data: any = () => ({}), otherObj?) =>
         'el-select': Select,
         'el-option': Option,
         'el-group-option': Group,
-        'el-form-item': ElFormItem,
+        'el-form-item': HcFormItem,
       },
       template,
       data,
@@ -120,7 +120,7 @@ const getSelectVm = (configs: SelectProps = {}, options?) => {
 
   return _mount(
     `
-    <el-select
+    <hc-select
       ref="select"
       v-model="value"
       :multiple="multiple"
@@ -138,14 +138,14 @@ const getSelectVm = (configs: SelectProps = {}, options?) => {
       :automatic-dropdown="automaticDropdown"
       :size="size"
       :fit-input-width="fitInputWidth">
-      <el-option
+      <hc-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :disabled="item.disabled"
         :value="item.value">
-      </el-option>
-    </el-select>
+      </hc-option>
+    </hc-select>
   `,
     () => ({
       options,
@@ -253,7 +253,7 @@ const getGroupSelectVm = (configs: SelectProps = {}, options?) => {
   }
   return _mount(
     `
-    <el-select
+    <hc-select
       ref="select"
       v-model="value"
       :multiple="multiple"
@@ -269,18 +269,18 @@ const getGroupSelectVm = (configs: SelectProps = {}, options?) => {
       :remoteMethod="remoteMethod"
       :automatic-dropdown="automaticDropdown"
       :fit-input-width="fitInputWidth">
-     <el-group-option
+     <hc-group-option
         v-for="group in options"
         :key="group.label"
         :disabled="group.disabled"
         :label="group.label">
-        <el-option
+        <hc-option
           v-for="item in group.options"
           :key="item.value"
           :label="item.label"
           :value="item.value"/>
-      </el-group-option>
-    </el-select>
+      </hc-group-option>
+    </hc-select>
 `,
     () => ({
       options,
@@ -305,19 +305,19 @@ const getGroupSelectVm = (configs: SelectProps = {}, options?) => {
 describe('Select', () => {
   let wrapper: ReturnType<typeof _mount>
   const findInnerInput = () =>
-    wrapper.find('.el-input__inner').element as HTMLInputElement
+    wrapper.find('.hc-input__inner').element as HTMLInputElement
 
   afterEach(() => {
     document.body.innerHTML = ''
   })
 
   test('create', async () => {
-    wrapper = _mount(`<el-select v-model="value"></el-select>`, () => ({
+    wrapper = _mount(`<hc-select v-model="value"></hc-select>`, () => ({
       value: '',
     }))
     expect(wrapper.classes()).toContain('el-select')
     expect(findInnerInput().placeholder).toBe('Select')
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     await select.trigger('mouseenter')
     await select.trigger('click')
     await nextTick()
@@ -327,7 +327,7 @@ describe('Select', () => {
   test('options rendered correctly', () => {
     wrapper = getSelectVm()
     const options = wrapper.element.querySelectorAll(
-      '.el-select-dropdown__item'
+      '.hc-select-dropdown__item'
     )
     const result = Array.prototype.every.call(options, (option, index) => {
       const text = option.querySelector('span').textContent
@@ -339,21 +339,21 @@ describe('Select', () => {
 
   test('custom dropdown class', () => {
     wrapper = getSelectVm({ popperClass: 'custom-dropdown' })
-    const dropdown = wrapper.findComponent({ name: 'ElSelectDropdown' })
+    const dropdown = wrapper.findComponent({ name: 'HcSelectDropdown' })
     expect(dropdown.classes()).toContain('custom-dropdown')
   })
 
   test('default value', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value">
-        <el-option
+      <hc-select v-model="value">
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -377,14 +377,14 @@ describe('Select', () => {
   test('set default value to object', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value">
-        <el-option
+      <hc-select v-model="value">
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value.value"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -414,14 +414,14 @@ describe('Select', () => {
   test('custom label', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value">
-        <el-option
+      <hc-select v-model="value">
+        <hc-option
           v-for="item in options"
           :label="item.name"
           :key="item.id"
           :value="item.id">
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -445,14 +445,14 @@ describe('Select', () => {
   test('custom label with object', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value" value-key="id">
-        <el-option
+      <hc-select v-model="value" value-key="id">
+        <hc-option
           v-for="item in options"
           :label="item.name"
           :key="item.id"
           :value="item">
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -478,14 +478,14 @@ describe('Select', () => {
   test('sync set value and options', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="value">
-      <el-option
+    <hc-select v-model="value">
+      <hc-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>
+      </hc-option>
+    </hc-select>
   `,
       () => ({
         options: [
@@ -516,15 +516,15 @@ describe('Select', () => {
   test('single select', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value" @change="handleChange">
-        <el-option
+      <hc-select v-model="value" @change="handleChange">
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
           <p>{{item.label}} {{item.value}}</p>
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -592,8 +592,8 @@ describe('Select', () => {
   })
 
   test('disabled select', () => {
-    wrapper = _mount(`<el-select disabled></el-select>`)
-    expect(wrapper.find('.el-input').classes()).toContain('is-disabled')
+    wrapper = _mount(`<hc-select disabled></hc-select>`)
+    expect(wrapper.find('.hc-input').classes()).toContain('is-disabled')
   })
 
   test('group disabled option', () => {
@@ -657,7 +657,7 @@ describe('Select', () => {
       },
     ]
     wrapper = getGroupSelectVm({}, optionGroupData)
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = select.vm as any
     let i = 8
     while (i--) {
@@ -675,14 +675,14 @@ describe('Select', () => {
   test('visible event', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="value" @visible-change="handleVisibleChange">
-      <el-option
+    <hc-select v-model="value" @visible-change="handleVisibleChange">
+      <hc-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </hc-option>
+    </hc-select>`,
       () => ({
         options: [],
         value: '',
@@ -696,7 +696,7 @@ describe('Select', () => {
         },
       }
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     selectVm.visible = true
@@ -707,7 +707,7 @@ describe('Select', () => {
   test('keyboard operations', async () => {
     vi.useFakeTimers()
     wrapper = getSelectVm()
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = select.vm as any
     let i = 8
     while (i--) {
@@ -734,7 +734,7 @@ describe('Select', () => {
 
   test('clearable', async () => {
     wrapper = getSelectVm({ clearable: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     vm.value = '选项1'
@@ -748,7 +748,7 @@ describe('Select', () => {
   })
 
   test('suffix icon', async () => {
-    wrapper = _mount(`<el-select></el-select>`)
+    wrapper = _mount(`<hc-select></hc-select>`)
     let suffixIcon = wrapper.findComponent(ArrowDown)
     expect(suffixIcon.exists()).toBe(true)
     await wrapper.setProps({ suffixIcon: markRaw(CaretTop) })
@@ -757,7 +757,7 @@ describe('Select', () => {
   })
 
   test('test remote show suffix', async () => {
-    wrapper = _mount(`<el-select></el-select>`)
+    wrapper = _mount(`<hc-select></hc-select>`)
     await wrapper.setProps({
       remote: true,
       filters: true,
@@ -770,7 +770,7 @@ describe('Select', () => {
 
   test('fitInputWidth', async () => {
     wrapper = getSelectVm({ fitInputWidth: true })
-    const selectWrapper = wrapper.findComponent({ name: 'ElSelect' })
+    const selectWrapper = wrapper.findComponent({ name: 'HcSelect' })
     const selectDom = selectWrapper.element
     const selectRect = {
       height: 40,
@@ -782,7 +782,7 @@ describe('Select', () => {
     const mockSelectWidth = vi
       .spyOn(selectDom, 'getBoundingClientRect')
       .mockReturnValue(selectRect as DOMRect)
-    const dropdown = wrapper.findComponent({ name: 'ElSelectDropdown' })
+    const dropdown = wrapper.findComponent({ name: 'HcSelectDropdown' })
     dropdown.vm.minWidth = `${
       selectWrapper.element.getBoundingClientRect().width
     }px`
@@ -796,7 +796,7 @@ describe('Select', () => {
       filterable: true,
       defaultFirstOption: true,
     })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -831,7 +831,7 @@ describe('Select', () => {
       },
       demoOptions
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -845,7 +845,7 @@ describe('Select', () => {
 
   test('allow create', async () => {
     wrapper = getSelectVm({ filterable: true, allowCreate: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -880,7 +880,7 @@ describe('Select', () => {
         },
       ]
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const selectVm = select.vm as any
     const input = wrapper.find('input')
     input.element.focus()
@@ -906,18 +906,18 @@ describe('Select', () => {
     ]
     wrapper = _mount(
       `
-      <el-select
+      <hc-select
         v-model="value"
         filterable
         allowCreate
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [],
@@ -945,7 +945,7 @@ describe('Select', () => {
     options[3].click()
     await nextTick()
     expect(vm.value.includes('选项2') && vm.value.includes('选项4')).toBe(true)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const tagCloseIcons = wrapper.findAll('.hc-tag__close')
     await tagCloseIcons[0].trigger('click')
     expect(vm.value.indexOf('选项1')).toBe(-1)
   })
@@ -953,10 +953,10 @@ describe('Select', () => {
   test('multiple select when content overflow', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="selectedList" multiple placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <hc-select v-model="selectedList" multiple placeholder="请选择">
+        <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1001,7 +1001,7 @@ describe('Select', () => {
     await nextTick()
     options[2].click()
     await nextTick()
-    const tagWrappers = wrapper.findAll('.el-select__tags-text')
+    const tagWrappers = wrapper.findAll('.hc-select__tags-text')
     for (const tagWrapper of tagWrappers) {
       const tagWrapperDom = tagWrapper.element
       expect(Number.parseInt(tagWrapperDom.style.maxWidth) === 200 - 75).toBe(
@@ -1014,10 +1014,10 @@ describe('Select', () => {
   test('multiple select with collapseTags when content overflow', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="selectedList" multiple collapseTags placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <hc-select v-model="selectedList" multiple collapseTags placeholder="请选择">
+        <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1058,7 +1058,7 @@ describe('Select', () => {
     selectWrapper.vm.handleResize()
     options[0].click()
     await nextTick()
-    const tagWrappers = wrapper.findAll('.el-select__tags-text')
+    const tagWrappers = wrapper.findAll('.hc-select__tags-text')
     const tagWrapperDom = tagWrappers[0].element
     expect(Number.parseInt(tagWrapperDom.style.maxWidth) === 200 - 75).toBe(
       true
@@ -1076,10 +1076,10 @@ describe('Select', () => {
   test('multiple select with collapseTagsTooltip', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="selectedList" multiple collapseTags collapse-tags-tooltip placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <hc-select v-model="selectedList" multiple collapseTags collapse-tags-tooltip placeholder="请选择">
+        <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1116,9 +1116,9 @@ describe('Select', () => {
     await nextTick()
     options[2].click()
     await nextTick()
-    const triggerWrappers = wrapper.findAll('.el-tooltip__trigger')
+    const triggerWrappers = wrapper.findAll('.hc-tooltip__trigger')
     expect(triggerWrappers[0]).toBeDefined()
-    const tags = document.querySelectorAll('.el-select__tags-text')
+    const tags = document.querySelectorAll('.hc-select__tags-text')
     expect(tags.length).toBe(4)
     expect(tags[3].textContent).toBe('蚵仔煎')
   })
@@ -1126,10 +1126,10 @@ describe('Select', () => {
   test('multiple select with maxCollapseTags', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="selectedList" multiple collapseTags :max-collapse-tags="3" placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
+      <hc-select v-model="selectedList" multiple collapseTags :max-collapse-tags="3" placeholder="请选择">
+        <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1166,24 +1166,24 @@ describe('Select', () => {
     await nextTick()
     options[2].click()
     await nextTick()
-    const triggerWrappers = wrapper.findAll('.el-tooltip__trigger')
+    const triggerWrappers = wrapper.findAll('.hc-tooltip__trigger')
     expect(triggerWrappers[0]).toBeDefined()
-    const tags = document.querySelectorAll('.el-select__tags-text')
+    const tags = document.querySelectorAll('.hc-select__tags-text')
     expect(tags.length).toBe(3)
   })
 
   test('multiple remove-tag', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value" multiple @remove-tag="handleRemoveTag">
-        <el-option
+      <hc-select v-model="value" multiple @remove-tag="handleRemoveTag">
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
           <p>{{item.label}} {{item.value}}</p>
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1222,7 +1222,7 @@ describe('Select', () => {
     const vm = wrapper.vm as any
     await nextTick()
     expect(vm.value.length).toBe(2)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const tagCloseIcons = wrapper.findAll('.hc-tag__close')
     await tagCloseIcons[1].trigger('click')
     expect(vm.value.length).toBe(1)
     await tagCloseIcons[0].trigger('click')
@@ -1246,7 +1246,7 @@ describe('Select', () => {
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
     wrapper = _mount(
-      `<el-select
+      `<hc-select
       @focus="handleFocus"
       @blur="handleBlur" />`,
       () => ({
@@ -1254,7 +1254,7 @@ describe('Select', () => {
         handleBlur,
       })
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const input = select.find('input')
 
     expect(input.exists()).toBe(true)
@@ -1273,20 +1273,20 @@ describe('Select', () => {
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
     wrapper = _mount(
-      `<el-select
+      `<hc-select
         v-model="value"
         clearable
         filterable
         @focus="handleFocus"
         @blur="handleBlur"
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value"
         />
-      </el-select>`,
+      </hc-select>`,
       () => ({
         options: [
           {
@@ -1300,7 +1300,7 @@ describe('Select', () => {
       })
     )
 
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     selectVm.inputHovering = true
@@ -1332,7 +1332,7 @@ describe('Select', () => {
     const handleBlur = vi.fn()
     wrapper = _mount(
       `
-    <el-select
+    <hc-select
       @focus="handleFocus"
       @blur="handleBlur"
       multiple
@@ -1343,7 +1343,7 @@ describe('Select', () => {
         handleBlur,
       })
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const input = select.find('input')
 
     expect(input.exists()).toBe(true)
@@ -1362,20 +1362,20 @@ describe('Select', () => {
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
     wrapper = _mount(
-      `<el-select
+      `<hc-select
         v-model="value"
         multiple
         @focus="handleFocus"
         @blur="handleBlur"
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :label="item.label"
           :key="item.value"
           :value="item.value">
           <p>{{item.label}} {{item.value}}</p>
-        </el-option>
-      </el-select>`,
+        </hc-option>
+      </hc-select>`,
       () => ({
         options: [
           {
@@ -1405,12 +1405,12 @@ describe('Select', () => {
       })
     )
 
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const input = select.find('input')
 
     await input.trigger('focus')
     expect(handleFocus).toHaveBeenCalledTimes(1)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const tagCloseIcons = wrapper.findAll('.hc-tag__close')
     await tagCloseIcons[1].trigger('click')
     await tagCloseIcons[0].trigger('click')
     expect(handleFocus).toHaveBeenCalledTimes(1)
@@ -1421,7 +1421,7 @@ describe('Select', () => {
 
   test('should not open popper when automatic-dropdown not set', async () => {
     wrapper = getSelectVm()
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     await select
       .findComponent({ ref: 'reference' })
       .find('input')
@@ -1431,7 +1431,7 @@ describe('Select', () => {
 
   test('should open popper when automatic-dropdown is set', async () => {
     wrapper = getSelectVm({ automaticDropdown: true })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     await select
       .findComponent({ ref: 'reference' })
       .find('input')
@@ -1443,11 +1443,11 @@ describe('Select', () => {
     let callCount = 0
     wrapper = _mount(
       `
-    <el-select v-model="value" @change="change" ref="select">
-      <el-option label="1" value="1" />
-      <el-option label="2" value="2" />
-      <el-option label="3" value="3" />
-    </el-select>`,
+    <hc-select v-model="value" @change="change" ref="select">
+      <hc-option label="1" value="1" />
+      <hc-option label="2" value="2" />
+      <hc-option label="3" value="3" />
+    </hc-select>`,
       () => ({
         value: '1',
         change: () => ++callCount,
@@ -1464,11 +1464,11 @@ describe('Select', () => {
   test('render slot `empty`', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value">
+      <hc-select v-model="value">
         <template #empty>
           <div class="empty-slot">EmptySlot</div>
         </template>
-      </el-select>`,
+      </hc-select>`,
       () => ({
         value: '1',
       })
@@ -1482,15 +1482,15 @@ describe('Select', () => {
   test('should set placeholder to label of selected option when filterable is true and multiple is false', async () => {
     wrapper = _mount(
       `
-      <el-select ref="select" v-model="value" filterable>
-        <el-option label="test" value="test" />
-      </el-select>`,
+      <hc-select ref="select" v-model="value" filterable>
+        <hc-option label="test" value="test" />
+      </hc-select>`,
       () => ({ value: 'test' })
     )
     const vm = wrapper.vm as any
     await wrapper.trigger('mouseenter')
     await wrapper.trigger('click')
-    const selectVm = wrapper.findComponent({ name: 'ElSelect' }).vm as any
+    const selectVm = wrapper.findComponent({ name: 'HcSelect' }).vm as any
     expect(selectVm.visible).toBe(true)
     expect(findInnerInput().placeholder).toBe('test')
     expect(vm.value).toBe('test')
@@ -1499,14 +1499,14 @@ describe('Select', () => {
   test('default value is null or undefined', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="value">
-      <el-option
+    <hc-select v-model="value">
+      <hc-option
         v-for="item in options"
         :label="item.label"
         :key="item.value"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </hc-option>
+    </hc-select>`,
       () => ({
         options: [
           {
@@ -1533,14 +1533,14 @@ describe('Select', () => {
   test('emptyText error show', async () => {
     wrapper = _mount(
       `
-    <el-select :model-value="value" filterable placeholder="Select">
-      <el-option
+    <hc-select :model-value="value" filterable placeholder="Select">
+      <hc-option
         v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value">
-      </el-option>
-    </el-select>`,
+      </hc-option>
+    </hc-select>`,
       () => ({
         options: [
           {
@@ -1567,22 +1567,22 @@ describe('Select', () => {
         value: 'test',
       })
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     await select.trigger('mouseenter')
     await select.trigger('click')
     await nextTick()
     expect(
-      !!(document.querySelector('.el-select__popper') as HTMLElement).style
+      !!(document.querySelector('.hc-select__popper') as HTMLElement).style
         .display
     ).toBeFalsy()
-    expect(wrapper.findAll('.el-select-dropdown__empty').length).toBe(0)
+    expect(wrapper.findAll('.hc-select-dropdown__empty').length).toBe(0)
   })
 
   test('multiple select with remote load', async () => {
     vi.useFakeTimers()
     wrapper = mount({
       template: `
-      <el-select
+      <hc-select
         v-model="value"
         multiple
         filterable
@@ -1592,14 +1592,14 @@ describe('Select', () => {
         :remote-method="remoteMethod"
         :loading="loading"
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item"
         />
-      </el-select>`,
-      components: { ElSelect: Select, ElOption: Option },
+      </hc-select>`,
+      components: { HcSelect: Select, HcOption: Option },
       data() {
         return {
           options: [],
@@ -1682,7 +1682,7 @@ describe('Select', () => {
       },
     })
 
-    const select = wrapper.findComponent({ name: 'ElSelect' }).vm
+    const select = wrapper.findComponent({ name: 'HcSelect' }).vm
     select.debouncedQueryChange({
       target: {
         value: '',
@@ -1718,20 +1718,20 @@ describe('Select', () => {
   test('disabled group', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="value">
-      <el-group-option
+    <hc-select v-model="value">
+      <hc-group-option
         v-for="group in options"
         :key="group.label"
         :label="group.label"
         :disabled="group.disabled">
-        <el-option
+        <hc-option
           v-for="item in group.options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-group-option>
-    </el-select>`,
+        </hc-option>
+      </hc-group-option>
+    </hc-select>`,
       () => ({
         options: [
           {
@@ -1774,16 +1774,16 @@ describe('Select', () => {
   test('tag of disabled option is not closable', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="vendors" multiple :collapse-tags="isCollapsed" :clearable="isClearable" placeholder="Select Business Unit">
-    <el-option
+    <hc-select v-model="vendors" multiple :collapse-tags="isCollapsed" :clearable="isClearable" placeholder="Select Business Unit">
+    <hc-option
       v-for="(vendor, index) in options"
       :key="index"
       :value="index + 1"
       :label="vendor.name"
       :disabled="vendor.isDisabled"
     >
-    </el-option>
-  </el-select>`,
+    </hc-option>
+  </hc-select>`,
       () => ({
         vendors: [2, 3, 4],
         isCollapsed: false,
@@ -1798,13 +1798,13 @@ describe('Select', () => {
     )
     const vm = wrapper.vm as any
     await nextTick()
-    const selectVm = wrapper.findComponent({ name: 'ElSelect' }).vm as any
-    expect(wrapper.findAll('.el-tag').length).toBe(3)
-    const tagCloseIcons = wrapper.findAll('.el-tag__close')
+    const selectVm = wrapper.findComponent({ name: 'HcSelect' }).vm as any
+    expect(wrapper.findAll('.hc-tag').length).toBe(3)
+    const tagCloseIcons = wrapper.findAll('.hc-tag__close')
     expect(tagCloseIcons.length).toBe(1)
     await tagCloseIcons[0].trigger('click')
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
+    expect(wrapper.findAll('.hc-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.hc-tag').length).toBe(2)
 
     //test if is clearable
     vm.isClearable = true
@@ -1813,9 +1813,9 @@ describe('Select', () => {
     selectVm.inputHovering = true
     await selectVm.$nextTick()
     const iconClear = wrapper.findComponent(CircleClose)
-    expect(wrapper.findAll('.el-tag').length).toBe(3)
+    expect(wrapper.findAll('.hc-tag').length).toBe(3)
     await iconClear.trigger('click')
-    expect(wrapper.findAll('.el-tag').length).toBe(2)
+    expect(wrapper.findAll('.hc-tag').length).toBe(2)
 
     // test for collapse select
     vm.vendors = [1, 2, 4]
@@ -1823,17 +1823,17 @@ describe('Select', () => {
     vm.isClearable = false
     await nextTick()
     expect(
-      wrapper.findAll('.el-tag').filter((item) => {
+      wrapper.findAll('.hc-tag').filter((item) => {
         return !hasClass(item.element, 'in-tooltip')
       }).length
     ).toBe(2)
-    await wrapper.find('.el-tag__close').trigger('click')
+    await wrapper.find('.hc-tag__close').trigger('click')
     expect(
-      wrapper.findAll('.el-tag').filter((item) => {
+      wrapper.findAll('.hc-tag').filter((item) => {
         return !hasClass(item.element, 'in-tooltip')
       }).length
     ).toBe(2)
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.hc-tag__close').length).toBe(0)
 
     // test for collapse select if is clearable
     vm.vendors = [1, 2, 4]
@@ -1841,31 +1841,31 @@ describe('Select', () => {
     vm.isClearable = true
     await nextTick()
     expect(
-      wrapper.findAll('.el-tag__close').filter((item) => {
+      wrapper.findAll('.hc-tag__close').filter((item) => {
         return !hasClass(item.element.parentElement, 'in-tooltip')
       }).length
     ).toBe(1)
-    await wrapper.find('.el-tag__close').trigger('click')
+    await wrapper.find('.hc-tag__close').trigger('click')
     expect(
-      wrapper.findAll('.el-tag').filter((item) => {
+      wrapper.findAll('.hc-tag').filter((item) => {
         return !hasClass(item.element, 'in-tooltip')
       }).length
     ).toBe(2)
-    expect(wrapper.findAll('.el-tag__close').length).toBe(0)
+    expect(wrapper.findAll('.hc-tag__close').length).toBe(0)
   })
 
   test('tag type', async () => {
     wrapper = _mount(
       `
-      <el-select v-model="value" multiple tag-type="success">
-        <el-option
+      <hc-select v-model="value" multiple tag-type="success">
+        <hc-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value"
         >
-        </el-option>
-      </el-select>
+        </hc-option>
+      </hc-select>
     `,
       () => ({
         options: [
@@ -1886,21 +1886,21 @@ describe('Select', () => {
     const options = getOptions()
     options[1].click()
     await nextTick()
-    expect(wrapper.find('.el-tag').classes()).toContain('el-tag--success')
+    expect(wrapper.find('.hc-tag').classes()).toContain('el-tag--success')
   })
 
   test('modelValue should be deep reactive in multiple mode', async () => {
     wrapper = _mount(
       `
-    <el-select v-model="modelValue" multiple>
-      <el-option
+    <hc-select v-model="modelValue" multiple>
+      <hc-option
         v-for="option in options"
         :key="option.value"
         :value="option.value"
         :label="option.label"
       >
-      </el-option>
-    </el-select>`,
+      </hc-option>
+    </hc-select>`,
       () => ({
         modelValue: [1],
         options: [
@@ -1913,36 +1913,36 @@ describe('Select', () => {
     )
     const vm = wrapper.vm as any
     await nextTick()
-    expect(wrapper.findAll('.el-tag').length).toBe(1)
+    expect(wrapper.findAll('.hc-tag').length).toBe(1)
 
     vm.modelValue.splice(0, 1)
 
     await nextTick()
-    expect(wrapper.findAll('.el-tag').length).toBe(0)
+    expect(wrapper.findAll('.hc-tag').length).toBe(0)
   })
 
   test('should reset placeholder after clear when both multiple and filterable are true', async () => {
     const placeholder = 'placeholder'
     wrapper = _mount(
       `
-    <el-select v-model="modelValue" multiple filterable placeholder=${placeholder}>
-      <el-option label="1" value="1" />
-    </el-select>`,
+    <hc-select v-model="modelValue" multiple filterable placeholder=${placeholder}>
+      <hc-option label="1" value="1" />
+    </hc-select>`,
       () => ({
         modelValue: ['1'],
       })
     )
     await nextTick()
 
-    const innerInput = wrapper.find('.el-input__inner')
+    const innerInput = wrapper.find('.hc-input__inner')
     const innerInputEl = innerInput.element as HTMLInputElement
     expect(innerInputEl.placeholder).toBe('')
 
-    const tagCloseIcon = wrapper.find('.el-tag__close')
+    const tagCloseIcon = wrapper.find('.hc-tag__close')
     await tagCloseIcon.trigger('click')
     expect(innerInputEl.placeholder).toBe(placeholder)
 
-    const selectInput = wrapper.find('.el-select__input')
+    const selectInput = wrapper.find('.hc-select__input')
     const selectInputEl = selectInput.element as HTMLInputElement
     selectInputEl.value = 'a'
     vi.useFakeTimers()
@@ -1966,9 +1966,9 @@ describe('Select', () => {
       filterable: true,
       clearable: true,
     })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     await select.trigger('mouseenter')
-    const suffixIcon = select.find('.el-input__suffix')
+    const suffixIcon = select.find('.hc-input__suffix')
     await suffixIcon.trigger('click')
     expect((select.vm as any).visible).toBe(true)
     await suffixIcon.trigger('click')
@@ -1980,7 +1980,7 @@ describe('Select', () => {
       filterable: true,
       clearable: true,
     })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
 
     await select.trigger('click')
     expect((select.vm as any).visible).toBe(false)
@@ -1993,7 +1993,7 @@ describe('Select', () => {
   describe('should show all options when open select dropdown', () => {
     async function testShowOptions({ filterable, multiple }: SelectProps = {}) {
       wrapper = getSelectVm({ filterable, multiple })
-      const options = wrapper.findAllComponents({ name: 'ElOption' })
+      const options = wrapper.findAllComponents({ name: 'HcOption' })
 
       await wrapper.find('.select-trigger').trigger('click')
       expect(options.every((option) => option.vm.visible)).toBe(true)
@@ -2058,7 +2058,7 @@ describe('Select', () => {
       await wrapper.trigger('mouseenter')
 
       const input = wrapper.find(
-        multiple ? '.el-select__input' : '.el-input__inner'
+        multiple ? '.hc-select__input' : '.hc-input__inner'
       )
       const inputEl = input.element as HTMLInputElement
       await input.trigger('click')
@@ -2099,15 +2099,15 @@ describe('Select', () => {
       expect(document.body.innerHTML).toBe('')
       wrapper = _mount(
         `
-      <el-select v-model="modelValue" multiple>
-        <el-option
+      <hc-select v-model="modelValue" multiple>
+        <hc-option
           v-for="option in options"
           :key="option.value"
           :value="option.value"
           :label="option.label"
         >
-        </el-option>
-      </el-select>`,
+        </hc-option>
+      </hc-select>`,
         () => ({
           modelValue: [1],
           options: [
@@ -2128,15 +2128,15 @@ describe('Select', () => {
       expect(document.body.innerHTML).toBe('')
       wrapper = _mount(
         `
-      <el-select v-model="modelValue" multiple :teleported="false">
-        <el-option
+      <hc-select v-model="modelValue" multiple :teleported="false">
+        <hc-option
           v-for="option in options"
           :key="option.value"
           :value="option.value"
           :label="option.label"
         >
-        </el-option>
-      </el-select>`,
+        </hc-option>
+      </hc-select>`,
         () => ({
           modelValue: [1],
           options: [
@@ -2159,30 +2159,30 @@ describe('Select', () => {
     const modelValue = [{ value: `value:Alaska`, label: `label:Alaska` }]
     const wrapper = _mount(
       `
-    <el-select v-model="modelValue"
+    <hc-select v-model="modelValue"
       multiple
       value-key="value"
       filterable>
-      <el-option
+      <hc-option
         v-for="option in options"
         :key="option.value"
         :value="option.value"
         :label="option.label"
       >
-      </el-option>
-    </el-select>`,
+      </hc-option>
+    </hc-select>`,
       () => ({
         modelValue,
         options,
       })
     )
-    const select = wrapper.findComponent({ name: 'ElSelect' }).vm
+    const select = wrapper.findComponent({ name: 'HcSelect' }).vm
     expect(select.selected[0].currentLabel).toBe(options[0].label)
   })
 
   test('should reset selectedLabel when toggle multiple', async () => {
     wrapper = getSelectVm({ multiple: false })
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     const vm = wrapper.vm as any
     const selectVm = select.vm as any
     vm.value = '选项1'
@@ -2233,11 +2233,11 @@ describe('Select', () => {
   describe('form item accessibility integration', () => {
     it('automatic id attachment', async () => {
       const wrapper = _mount(
-        `<el-form-item label="Foobar" data-test-ref="item">
-          <el-select v-model="modelValue">
-            <el-option label="1" value="1" />
-          </el-select>
-        </el-form-item>`,
+        `<hc-form-item label="Foobar" data-test-ref="item">
+          <hc-select v-model="modelValue">
+            <hc-option label="1" value="1" />
+          </hc-select>
+        </hc-form-item>`,
         () => ({
           modelValue: 1,
         })
@@ -2245,19 +2245,19 @@ describe('Select', () => {
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const innerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const innerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(innerInput.attributes().id)
     })
 
     it('specified id attachment', async () => {
       const wrapper = _mount(
-        `<el-form-item label="Foobar" data-test-ref="item">
-          <el-select id="foobar" v-model="modelValue">
-            <el-option label="1" value="1" />
-          </el-select>
-        </el-form-item>`,
+        `<hc-form-item label="Foobar" data-test-ref="item">
+          <hc-select id="foobar" v-model="modelValue">
+            <hc-option label="1" value="1" />
+          </hc-select>
+        </hc-form-item>`,
         () => ({
           modelValue: 1,
         })
@@ -2265,8 +2265,8 @@ describe('Select', () => {
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const innerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const innerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(innerInput.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(innerInput.attributes().id)
@@ -2274,14 +2274,14 @@ describe('Select', () => {
 
     it('form item role is group when multiple inputs', async () => {
       const wrapper = _mount(
-        `<el-form-item label="Foobar" data-test-ref="item">
-          <el-select v-model="modelValue">
-            <el-option label="1" value="1" />
-          </el-select>
-          <el-select v-model="modelValue">
-            <el-option label="1" value="1" />
-          </el-select>
-        </el-form-item>`,
+        `<hc-form-item label="Foobar" data-test-ref="item">
+          <hc-select v-model="modelValue">
+            <hc-option label="1" value="1" />
+          </hc-select>
+          <hc-select v-model="modelValue">
+            <hc-option label="1" value="1" />
+          </hc-select>
+        </hc-form-item>`,
         () => ({
           modelValue: 1,
         })
@@ -2372,7 +2372,7 @@ describe('Select', () => {
       nativeInput.focus()
       vm.options = options
       await nextTick()
-      expect(wrapper.findAll('.el-tag')[0].text()).toBe('option 1')
+      expect(wrapper.findAll('.hc-tag')[0].text()).toBe('option 1')
     })
 
     // fix: https://github.com/hicor-ui/hicor-ui/issues/11991
@@ -2392,19 +2392,19 @@ describe('Select', () => {
       const value = ['Option2', 'Option1']
       const wrapper = _mount(
         `
-          <el-select v-model="value"
+          <hc-select v-model="value"
             multiple
             filterable
           >
-            <el-option
+            <hc-option
               v-for="option in options"
               :key="option.value"
               :value="option.value"
               :label="option.label"
               :disabled="option.disable"
             >
-            </el-option>
-          </el-select>
+            </hc-option>
+          </hc-select>
         `,
         () => ({
           value,
@@ -2412,8 +2412,8 @@ describe('Select', () => {
         })
       )
       await nextTick()
-      const selectInput = wrapper.find('.el-select__input')
-      expect(wrapper.findAll('.el-tag').length).toBe(2)
+      const selectInput = wrapper.find('.hc-select__input')
+      expect(wrapper.findAll('.hc-tag').length).toBe(2)
       // need trigger keydown twice because first keydown just select option, and second keydown is to delete
       await selectInput.trigger('keydown', {
         code: EVENT_CODE.backspace,
@@ -2424,7 +2424,7 @@ describe('Select', () => {
         key: EVENT_CODE.backspace,
       })
       await nextTick()
-      expect(wrapper.findAll('.el-tag').length).toBe(1)
+      expect(wrapper.findAll('.hc-tag').length).toBe(1)
       await selectInput.trigger('keydown', {
         code: EVENT_CODE.backspace,
         key: EVENT_CODE.backspace,
@@ -2435,25 +2435,25 @@ describe('Select', () => {
       })
       await nextTick()
       // after the second deletion, an el-tag still exist
-      expect(wrapper.findAll('.el-tag').length).toBe(1)
+      expect(wrapper.findAll('.hc-tag').length).toBe(1)
     })
   })
 
   it('It should generate accessible attributes', async () => {
     wrapper = _mount(
-      `<el-select v-model="value">
-        <el-option label="label" value="1" />
-        <el-option label="disabled" value="2" disabled />
-      </el-select>`,
+      `<hc-select v-model="value">
+        <hc-option label="label" value="1" />
+        <hc-option label="disabled" value="2" disabled />
+      </hc-select>`,
       () => ({ value: '1' })
     )
 
-    const dropdown = wrapper.findComponent({ name: 'ElSelectDropdown' })
+    const dropdown = wrapper.findComponent({ name: 'HcSelectDropdown' })
     const input = wrapper.find('input')
-    const list = dropdown.find('.el-select-dropdown__list')
-    const option = dropdown.find('.el-select-dropdown__item')
+    const list = dropdown.find('.hc-select-dropdown__list')
+    const option = dropdown.find('.hc-select-dropdown__item')
     const disabledOption = dropdown.find(
-      '.el-select-dropdown__item:nth-child(2)'
+      '.hc-select-dropdown__item:nth-child(2)'
     )
 
     expect(input.attributes('role')).toBe('combobox')

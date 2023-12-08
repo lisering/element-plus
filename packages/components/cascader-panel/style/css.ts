@@ -1,5 +1,5 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-cascader-panel.css'
+import '@hicor-ui/theme-chalk/hc-cascader-panel.css'
 import '@hicor-ui/components/checkbox/style/css'
 import '@hicor-ui/components/radio/style/css'
 import '@hicor-ui/components/scrollbar/style/css'

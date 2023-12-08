@@ -3,7 +3,7 @@
     :class="[ns.b('panel'), ns.is('bordered', border)]"
     @keydown="handleKeyDown"
   >
-    <el-cascader-menu
+    <hc-cascader-menu
       v-for="(menu, index) in menus"
       :key="index"
       :ref="(item) => (menuList[index] = item)"
@@ -43,7 +43,7 @@ import {
 } from '@hicor-ui/constants'
 import { useNamespace } from '@hicor-ui/hooks'
 
-import ElCascaderMenu from './menu.vue'
+import HcCascaderMenu from './menu.vue'
 import Store from './store'
 import Node from './node'
 import { CommonProps, useCascaderConfig } from './config'
@@ -60,13 +60,13 @@ import type {
   RenderLabel,
 } from './node'
 
-import type { ElCascaderPanelContext } from './types'
+import type { HcCascaderPanelContext } from './types'
 
 export default defineComponent({
-  name: 'ElCascaderPanel',
+  name: 'HcCascaderPanel',
 
   components: {
-    ElCascaderMenu,
+    HcCascaderMenu,
   },
 
   props: {
@@ -121,7 +121,7 @@ export default defineComponent({
       }
     }
 
-    const lazyLoad: ElCascaderPanelContext['lazyLoad'] = (node, cb) => {
+    const lazyLoad: HcCascaderPanelContext['lazyLoad'] = (node, cb) => {
       const cfg = config.value
       node! = node || new Node({}, cfg, undefined, true)
       node.loading = true
@@ -139,7 +139,7 @@ export default defineComponent({
       cfg.lazyLoad(node, resolve as any)
     }
 
-    const expandNode: ElCascaderPanelContext['expandNode'] = (node, silent) => {
+    const expandNode: HcCascaderPanelContext['expandNode'] = (node, silent) => {
       const { level } = node
       const newMenus = menus.value.slice(0, level)
       let newExpandingNode: Nullable<CascaderNode>
@@ -158,7 +158,7 @@ export default defineComponent({
       }
     }
 
-    const handleCheckChange: ElCascaderPanelContext['handleCheckChange'] = (
+    const handleCheckChange: HcCascaderPanelContext['handleCheckChange'] = (
       node,
       checked,
       emitClose = true
@@ -278,21 +278,21 @@ export default defineComponent({
       if (!isClient) return
 
       menuList.value.forEach((menu) => {
-        const menuElement = menu?.$el
-        if (menuElement) {
-          const container = menuElement.querySelector(
+        const menuHcement = menu?.$el
+        if (menuHcement) {
+          const container = menuHcement.querySelector(
             `.${ns.namespace.value}-scrollbar__wrap`
           )
           const activeNode =
-            menuElement.querySelector(`.${ns.b('node')}.${ns.is('active')}`) ||
-            menuElement.querySelector(`.${ns.b('node')}.in-active-path`)
+            menuHcement.querySelector(`.${ns.b('node')}.${ns.is('active')}`) ||
+            menuHcement.querySelector(`.${ns.b('node')}.in-active-path`)
           scrollIntoView(container, activeNode)
         }
       })
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      const target = e.target as HTMLElement
+      const target = e.target as HTMLHcement
       const { code } = e
 
       switch (code) {

@@ -9,7 +9,7 @@ import { collapseEmits, collapseProps } from './collapse'
 import { useCollapse, useCollapseDOM } from './use-collapse'
 
 defineOptions({
-  name: 'ElCollapse',
+  name: 'HcCollapse',
 })
 const props = defineProps(collapseProps)
 const emit = defineEmits(collapseEmits)

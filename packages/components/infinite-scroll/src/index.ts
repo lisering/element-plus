@@ -10,7 +10,7 @@ import {
 
 import type { ComponentPublicInstance, ObjectDirective } from 'vue'
 
-export const SCOPE = 'ElInfiniteScroll'
+export const SCOPE = 'HcInfiniteScroll'
 export const CHECK_INTERVAL = 50
 export const DEFAULT_DELAY = 200
 export const DEFAULT_DISTANCE = 0

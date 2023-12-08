@@ -17,7 +17,7 @@ const getTreeVm = (props = '', options = {}) => {
           'el-tree': Tree,
         },
         template: `
-      <el-tree ref="tree" :data="data" ${props}></el-tree>
+      <hc-tree ref="tree" :data="data" ${props}></hc-tree>
     `,
         data() {
           return {
@@ -94,7 +94,7 @@ const getDisableTreeVm = (props = '', options = {}) => {
           'el-tree': Tree,
         },
         template: `
-      <el-tree ref="tree" :data="data" ${props}></el-tree>
+      <hc-tree ref="tree" :data="data" ${props}></hc-tree>
     `,
         data() {
           return {
@@ -169,14 +169,14 @@ describe('Tree.vue', () => {
       `:props="defaultProps" default-expand-all`
     )
 
-    expect(wrapper.find('.el-tree').exists()).toBeTruthy()
-    expect(wrapper.findAll('.el-tree > .el-tree-node').length).toEqual(3)
-    expect(wrapper.findAll('.el-tree .el-tree-node').length).toEqual(
+    expect(wrapper.find('.hc-tree').exists()).toBeTruthy()
+    expect(wrapper.findAll('.hc-tree > .el-tree-node').length).toEqual(3)
+    expect(wrapper.findAll('.hc-tree .el-tree-node').length).toEqual(
       ALL_NODE_COUNT
     )
     vm.data[1].children = [{ label: '二级 2-1' }] as any
     await nextTick()
-    expect(wrapper.findAll('.el-tree .el-tree-node').length).toEqual(
+    expect(wrapper.findAll('.hc-tree .el-tree-node').length).toEqual(
       ALL_NODE_COUNT - 1
     )
   })
@@ -193,8 +193,8 @@ describe('Tree.vue', () => {
       }
     )
 
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
-    const firstNodeWrapper = wrapper.find('.el-tree-node')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
+    const firstNodeWrapper = wrapper.find('.hc-tree-node')
 
     await firstNodeContentWrapper.trigger('click')
     await nextTick() // because node click method to expaned is async
@@ -214,7 +214,7 @@ describe('Tree.vue', () => {
     const { wrapper, vm } = getTreeVm(`:props="defaultProps"`)
     vm.data = []
     await nextTick()
-    expect(wrapper.findAll('.el-tree__empty-block').length).toEqual(1)
+    expect(wrapper.findAll('.hc-tree__empty-block').length).toEqual(1)
   })
 
   test('expandOnNodeClick', async () => {
@@ -222,8 +222,8 @@ describe('Tree.vue', () => {
       `:props="defaultProps" :expand-on-click-node="false"`
     )
 
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
-    const firstNodeWrapper = wrapper.find('.el-tree-node')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
+    const firstNodeWrapper = wrapper.find('.hc-tree-node')
 
     await firstNodeContentWrapper.trigger('click')
     await nextTick() // because node click method to expaned is async
@@ -237,7 +237,7 @@ describe('Tree.vue', () => {
     )
 
     const treeWrapper = wrapper.findComponent(Tree)
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
 
     await firstNodeContentWrapper.trigger('click')
     expect(
@@ -255,12 +255,12 @@ describe('Tree.vue', () => {
     )
 
     expect(currentNodeLabelWrapper.text()).toEqual('二级 1-1')
-    expect(wrapper.find('.el-tree--highlight-current').exists()).toBe(true)
+    expect(wrapper.find('.hc-tree--highlight-current').exists()).toBe(true)
   })
 
   test('defaultExpandAll', async () => {
     const { wrapper } = getTreeVm(`:props="defaultProps" default-expand-all`)
-    const expanedNodeWrappers = wrapper.findAll('.el-tree-node.is-expanded')
+    const expanedNodeWrappers = wrapper.findAll('.hc-tree-node.is-expanded')
     expect(expanedNodeWrappers.length).toEqual(ALL_NODE_COUNT)
   })
 
@@ -273,7 +273,7 @@ describe('Tree.vue', () => {
         },
       }
     )
-    const expanedNodeWrappers = wrapper.findAll('.el-tree-node.is-expanded')
+    const expanedNodeWrappers = wrapper.findAll('.hc-tree-node.is-expanded')
     expect(expanedNodeWrappers.length).toEqual(2)
   })
 
@@ -287,7 +287,7 @@ describe('Tree.vue', () => {
       }
     )
     await nextTick()
-    let expanedNodeWrappers = wrapper.findAll('.el-tree-node.is-expanded')
+    let expanedNodeWrappers = wrapper.findAll('.hc-tree-node.is-expanded')
     expect(expanedNodeWrappers.length).toEqual(2)
     vm.defaultExpandedKeys = [2]
     await nextTick()
@@ -303,7 +303,7 @@ describe('Tree.vue', () => {
     await nextTick()
     await nextTick()
     await nextTick()
-    expanedNodeWrappers = wrapper.findAll('.el-tree-node.is-expanded')
+    expanedNodeWrappers = wrapper.findAll('.hc-tree-node.is-expanded')
     expect(expanedNodeWrappers.length).toEqual(1)
   })
 
@@ -324,7 +324,7 @@ describe('Tree.vue', () => {
     ;(treeWrapper.vm as InstanceType<typeof Tree>).filter('2-1')
 
     await nextTick()
-    expect(treeWrapper.findAll('.el-tree-node.is-hidden').length).toEqual(3)
+    expect(treeWrapper.findAll('.hc-tree-node.is-hidden').length).toEqual(3)
   })
 
   test('autoExpandParent = true', async () => {
@@ -336,7 +336,7 @@ describe('Tree.vue', () => {
         },
       }
     )
-    expect(wrapper.findAll('.el-tree-node.is-expanded').length).toEqual(3)
+    expect(wrapper.findAll('.hc-tree-node.is-expanded').length).toEqual(3)
   })
 
   test('autoExpandParent = false', async () => {
@@ -348,13 +348,13 @@ describe('Tree.vue', () => {
         },
       }
     )
-    expect(wrapper.findAll('.el-tree-node.is-expanded').length).toEqual(0)
+    expect(wrapper.findAll('.hc-tree-node.is-expanded').length).toEqual(0)
 
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
     await firstNodeContentWrapper.trigger('click')
     await nextTick()
 
-    expect(wrapper.findAll('.el-tree-node.is-expanded').length).toEqual(2)
+    expect(wrapper.findAll('.hc-tree-node.is-expanded').length).toEqual(2)
   })
 
   test('defaultCheckedKeys & check-strictly = false', async () => {
@@ -366,7 +366,7 @@ describe('Tree.vue', () => {
         },
       }
     )
-    expect(wrapper.findAll('.el-checkbox .is-checked').length).toEqual(3)
+    expect(wrapper.findAll('.hc-checkbox .is-checked').length).toEqual(3)
   })
 
   test('defaultCheckedKeys & check-strictly', async () => {
@@ -378,7 +378,7 @@ describe('Tree.vue', () => {
         },
       }
     )
-    expect(wrapper.findAll('.el-checkbox .is-checked').length).toEqual(1)
+    expect(wrapper.findAll('.hc-checkbox .is-checked').length).toEqual(1)
   })
 
   test('show checkbox', async () => {
@@ -387,12 +387,12 @@ describe('Tree.vue', () => {
     const treeWrapper = wrapper.findComponent(Tree)
     const treeVm = treeWrapper.vm as InstanceType<typeof Tree>
     const secondNodeContentWrapper = treeWrapper.findAll(
-      '.el-tree-node__content'
+      '.hc-tree-node__content'
     )[1]
     const secondNodeCheckboxWrapper =
-      secondNodeContentWrapper.find('.el-checkbox')
+      secondNodeContentWrapper.find('.hc-checkbox')
     const secondNodeExpandIconWrapper = secondNodeContentWrapper.find(
-      '.el-tree-node__expand-icon'
+      '.hc-tree-node__expand-icon'
     )
 
     expect(secondNodeCheckboxWrapper.exists()).toBe(true)
@@ -404,9 +404,9 @@ describe('Tree.vue', () => {
     await secondNodeExpandIconWrapper.trigger('click')
     await nextTick()
 
-    const secondTreeNodeWrapper = treeWrapper.findAll('.el-tree-node')[1]
+    const secondTreeNodeWrapper = treeWrapper.findAll('.hc-tree-node')[1]
     const secondNodefirstLeafCheckboxWrapper = secondTreeNodeWrapper.find(
-      '.el-tree-node__children .el-tree-node__content .el-checkbox'
+      '.hc-tree-node__children .el-tree-node__content .el-checkbox'
     )
 
     await secondNodefirstLeafCheckboxWrapper.trigger('click')
@@ -425,10 +425,10 @@ describe('Tree.vue', () => {
     )
 
     const secondNodeContentWrapper = wrapper.findAll(
-      '.el-tree-node__content'
+      '.hc-tree-node__content'
     )[1]
     const secondNodeCheckboxWrapper =
-      secondNodeContentWrapper.find('.el-checkbox')
+      secondNodeContentWrapper.find('.hc-checkbox')
     expect(secondNodeCheckboxWrapper.exists()).toBe(true)
 
     await secondNodeCheckboxWrapper.trigger('click')
@@ -447,9 +447,9 @@ describe('Tree.vue', () => {
     const treeWrapper = wrapper.findComponent(Tree)
     const treeVm = treeWrapper.vm as InstanceType<typeof Tree>
     const secondNodeContentWrapper = wrapper.findAll(
-      '.el-tree-node__content'
+      '.hc-tree-node__content'
     )[1]
-    const secondNodeCheckWrapper = secondNodeContentWrapper.find('.el-checkbox')
+    const secondNodeCheckWrapper = secondNodeContentWrapper.find('.hc-checkbox')
     await secondNodeCheckWrapper.trigger('click')
 
     expect(treeVm.getCheckedNodes().length).toEqual(3)
@@ -769,8 +769,8 @@ describe('Tree.vue', () => {
     const { wrapper } = getDisableTreeVm(
       `:props="defaultProps" show-checkbox node-key="id" default-expand-all`
     )
-    const nodeWrapper = wrapper.findAll('.el-tree-node__content')[2]
-    const checkboxWrapper = nodeWrapper.find('.el-checkbox input')
+    const nodeWrapper = wrapper.findAll('.hc-tree-node__content')[2]
+    const checkboxWrapper = nodeWrapper.find('.hc-checkbox input')
 
     expect((checkboxWrapper.element as HTMLInputElement).disabled).toEqual(true)
   })
@@ -781,10 +781,10 @@ describe('Tree.vue', () => {
     )
     const treeWrapper = wrapper.findComponent(Tree)
     const secondNodeContentWrapper = wrapper.findAll(
-      '.el-tree-node__content'
+      '.hc-tree-node__content'
     )[3]
     const secondNodeCheckboxWrapper =
-      secondNodeContentWrapper.find('.el-checkbox')
+      secondNodeContentWrapper.find('.hc-checkbox')
     await secondNodeCheckboxWrapper.trigger('click')
     expect(
       (treeWrapper.vm as InstanceType<typeof Tree>).getCheckedNodes().length
@@ -793,9 +793,9 @@ describe('Tree.vue', () => {
       (treeWrapper.vm as InstanceType<typeof Tree>).getCheckedNodes(true).length
     ).toEqual(0)
 
-    const secondTreeNodeWrapper = treeWrapper.findAll('.el-tree-node')[3]
+    const secondTreeNodeWrapper = treeWrapper.findAll('.hc-tree-node')[3]
     const secondNodefirstLeafCheckboxWrapper = secondTreeNodeWrapper.find(
-      '.el-tree-node__children .el-tree-node__content .el-checkbox'
+      '.hc-tree-node__children .el-tree-node__content .el-checkbox'
     )
     await secondNodefirstLeafCheckboxWrapper.trigger('click')
     expect(
@@ -816,7 +816,7 @@ describe('Tree.vue', () => {
         },
       }
     )
-    const firstNodeWrapper = wrapper.find('.el-tree-node__content')
+    const firstNodeWrapper = wrapper.find('.hc-tree-node__content')
     expect(firstNodeWrapper.find('.custom-content').exists()).toBe(true)
 
     const buttonWrapper = firstNodeWrapper.find('.custom-content button')
@@ -839,14 +839,14 @@ describe('Tree.vue', () => {
   test('scoped slot', async () => {
     const { wrapper } = getTreeVm('', {
       template: `
-        <el-tree ref="tree" :data="data">
+        <hc-tree ref="tree" :data="data">
           <template #default="scope">
             <div class="custom-tree-template">
               <span>{{ scope.node.label }}</span>
               <button></button>
             </div>
           </template>
-        </el-tree>
+        </hc-tree>
       `,
       methods: {
         renderContent(h, node) {
@@ -890,7 +890,7 @@ describe('Tree.vue', () => {
       }
     )
 
-    let nodeWrappers = wrapper.findAll('.el-tree-node__content')
+    let nodeWrappers = wrapper.findAll('.hc-tree-node__content')
 
     expect(nodeWrappers.length).toEqual(2)
     vi.useFakeTimers()
@@ -898,7 +898,7 @@ describe('Tree.vue', () => {
     vi.runAllTimers()
     vi.useRealTimers()
     await nextTick() // wait load finish
-    nodeWrappers = wrapper.findAll('.el-tree-node__content')
+    nodeWrappers = wrapper.findAll('.hc-tree-node__content')
     expect(nodeWrappers.length).toEqual(4)
   })
 
@@ -934,18 +934,18 @@ describe('Tree.vue', () => {
 
     const treeWrapper = wrapper.findComponent(Tree)
     const tree = treeWrapper.vm as InstanceType<typeof Tree>
-    const firstNodeWrapper = treeWrapper.find('.el-tree-node__content')
+    const firstNodeWrapper = treeWrapper.find('.hc-tree-node__content')
     expect(firstNodeWrapper.find('.is-indeterminate').exists()).toEqual(false)
 
     tree.store.setCheckedKeys([3])
     vi.useFakeTimers()
-    await firstNodeWrapper.find('.el-tree-node__expand-icon').trigger('click')
+    await firstNodeWrapper.find('.hc-tree-node__expand-icon').trigger('click')
     vi.runAllTimers()
     vi.useRealTimers()
     await nextTick()
 
     expect(firstNodeWrapper.find('.is-indeterminate').exists()).toEqual(true)
-    const childWrapper = treeWrapper.findAll('.el-tree-node__content')[1]
+    const childWrapper = treeWrapper.findAll('.hc-tree-node__content')[1]
     expect(childWrapper.find('input').element.checked).toEqual(true)
   })
 
@@ -1026,7 +1026,7 @@ describe('Tree.vue', () => {
     tree.store.setCheckedKeys([1])
     await nextTick()
 
-    const nodeWrappers = treeWrapper.findAll('.el-tree-node__content')
+    const nodeWrappers = treeWrapper.findAll('.hc-tree-node__content')
     expect(nodeWrappers[0].find('input').element.checked).toEqual(true)
     expect(nodeWrappers.length).toEqual(2)
   })
@@ -1034,15 +1034,15 @@ describe('Tree.vue', () => {
   test('accordion', async () => {
     const { wrapper } = getTreeVm(`:props="defaultProps" accordion`)
 
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
     const secondNodeContentWrapper = wrapper.find(
-      '.el-tree-node:nth-child(2) .el-tree-node__content'
+      '.hc-tree-node:nth-child(2) .el-tree-node__content'
     )
     await firstNodeContentWrapper.trigger('click')
 
-    expect(wrapper.find('.el-tree-node').classes('is-expanded')).toBe(true)
+    expect(wrapper.find('.hc-tree-node').classes('is-expanded')).toBe(true)
     await secondNodeContentWrapper.trigger('click')
-    expect(wrapper.find('.el-tree-node').classes('is-expanded')).toBe(false)
+    expect(wrapper.find('.hc-tree-node').classes('is-expanded')).toBe(false)
   })
 
   test('handleNodeOpen & handleNodeClose', async () => {
@@ -1078,10 +1078,10 @@ describe('Tree.vue', () => {
       }
     )
 
-    const firstNodeContentWrapper = wrapper.find('.el-tree-node__content')
-    const firstNodeWrapper = wrapper.find('.el-tree-node')
+    const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
+    const firstNodeWrapper = wrapper.find('.hc-tree-node')
 
-    expect(firstNodeWrapper.find('.el-tree-node__children').exists()).toBe(
+    expect(firstNodeWrapper.find('.hc-tree-node__children').exists()).toBe(
       false
     )
 
@@ -1119,8 +1119,8 @@ describe('Tree.vue', () => {
 
     await nextTick()
 
-    const nodeContentWrapper = wrapper.findAll('.el-tree-node__content')[1]
-    const nodeLabelWrapper = nodeContentWrapper.find('.el-tree-node__label')
+    const nodeContentWrapper = wrapper.findAll('.hc-tree-node__content')[1]
+    const nodeLabelWrapper = nodeContentWrapper.find('.hc-tree-node__label')
 
     expect(tree.store.nodesMap['11']).toEqual(undefined)
     expect(tree.store.nodesMap['1'].childNodes[0].data.id).toEqual(111)
@@ -1131,8 +1131,8 @@ describe('Tree.vue', () => {
     const { wrapper, vm } = getTreeVm(``, {
       template: `
         <div>
-          <el-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
-          <el-tree ref="tree2" :data="data" node-key="id" :props="defaultProps"></el-tree>
+          <hc-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
+          <hc-tree ref="tree2" :data="data" node-key="id" :props="defaultProps"></hc-tree>
         </div>
       `,
     })
@@ -1152,11 +1152,11 @@ describe('Tree.vue', () => {
     const { wrapper } = getTreeVm(``, {
       template: `
         <div>
-          <el-tree default-expand-all ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
+          <hc-tree default-expand-all ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
         </div>
       `,
     })
-    const tree = wrapper.findComponent({ name: 'ElTree' })
+    const tree = wrapper.findComponent({ name: 'HcTree' })
     expect(
       Object.values(
         (tree.vm as InstanceType<typeof Tree>).store.nodesMap
@@ -1168,7 +1168,7 @@ describe('Tree.vue', () => {
     const { wrapper } = getTreeVm(``, {
       template: `
         <div>
-          <el-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
+          <hc-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
         </div>
       `,
     })
@@ -1177,7 +1177,7 @@ describe('Tree.vue', () => {
       return () => (flag = true)
     }
     await nextTick()
-    const tree = wrapper.findComponent({ name: 'ElTree' })
+    const tree = wrapper.findComponent({ name: 'HcTree' })
     const targetElement = wrapper.find('div[data-key="3"]').element
     const fromElement = wrapper.find('div[data-key="1"]').element
     defineGetter(targetElement, 'focus', handleFocus)
@@ -1197,7 +1197,7 @@ describe('Tree.vue', () => {
     const { wrapper } = getTreeVm(``, {
       template: `
         <div>
-          <el-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
+          <hc-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
         </div>
       `,
     })
@@ -1206,7 +1206,7 @@ describe('Tree.vue', () => {
       return () => (flag = true)
     }
     await nextTick()
-    const tree = wrapper.findComponent({ name: 'ElTree' })
+    const tree = wrapper.findComponent({ name: 'HcTree' })
     const targetElement = wrapper.find('div[data-key="2"]').element
     const fromElement = wrapper.find('div[data-key="1"]').element
     defineGetter(targetElement, 'focus', handleFocus)
@@ -1226,7 +1226,7 @@ describe('Tree.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
+          <hc-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
         </div>
       `,
       components: {
@@ -1295,7 +1295,7 @@ describe('Tree.vue', () => {
       return () => (flag = true)
     }
     await nextTick()
-    const tree = wrapper.findComponent({ name: 'ElTree' })
+    const tree = wrapper.findComponent({ name: 'HcTree' })
     const targetElement = wrapper.find('div[data-key="3"]').element
     const fromElement = wrapper.find('div[data-key="1"]').element
     defineGetter(targetElement, 'focus', handleFocus)
@@ -1315,8 +1315,8 @@ describe('Tree.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-          <el-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></el-tree>
-          <el-button @click="addNewNode">add</el-button>
+          <hc-tree ref="tree1" :data="data" node-key="id" :props="defaultProps"></hc-tree>
+          <hc-button @click="addNewNode">add</hc-button>
         </div>
       `,
       components: {
@@ -1386,9 +1386,9 @@ describe('Tree.vue', () => {
         },
       },
     })
-    const tree = wrapper.findComponent({ name: 'ElTree' })
-    const button = wrapper.findComponent({ name: 'ElButton' })
-    const firstNode = wrapper.find('.el-tree-node')
+    const tree = wrapper.findComponent({ name: 'HcTree' })
+    const button = wrapper.findComponent({ name: 'HcButton' })
+    const firstNode = wrapper.find('.hc-tree-node')
 
     expect(tree.vm.getNode(1).data.l).toEqual('一级 1')
     expect(tree.vm.getNode(1).data.c[0].l).toEqual('二级 1-1')
@@ -1397,7 +1397,7 @@ describe('Tree.vue', () => {
     await nextTick()
 
     const firstChildrenNode = firstNode.element.querySelector(
-      '.el-tree-node__children'
+      '.hc-tree-node__children'
     )
     expect(firstChildrenNode.children.length).toEqual(1)
 
@@ -1413,12 +1413,12 @@ describe('Tree.vue', () => {
     const wrapper = mount({
       template: `
         <div>
-        <el-tree
+        <hc-tree
           :props="defaultProps"
           :load="loadNode"
           lazy
           show-checkbox>
-        </el-tree>
+        </hc-tree>
         </div>
       `,
       components: {
@@ -1472,7 +1472,7 @@ describe('Tree.vue', () => {
       return () => (flag = !flag)
     }
     await nextTick()
-    const tree = wrapper.findComponent({ name: 'ElTree' })
+    const tree = wrapper.findComponent({ name: 'HcTree' })
     const originElements = wrapper.findAll('div[data-key]')
     const region1 = originElements[0].element
     const region2 = originElements[1].element
@@ -1525,13 +1525,13 @@ describe('Tree.vue', () => {
   test('customize some node contents', async () => {
     const wrapper = mount({
       template: `
-        <el-tree :data="data">
+        <hc-tree :data="data">
           <template #default="{ data }">
             <div v-if="data.id === '1'">
               customize: {{ data.label }}
             </div>
           </template>
-        </el-tree>
+        </hc-tree>
       `,
       components: {
         'el-tree': Tree,
@@ -1573,8 +1573,8 @@ describe('Tree.vue', () => {
         }
       },
     })
-    const nodeContentWrapper1 = wrapper.findAll('.el-tree-node__content')[0]
-    const nodeContentWrapper2 = wrapper.findAll('.el-tree-node__content')[1]
+    const nodeContentWrapper1 = wrapper.findAll('.hc-tree-node__content')[0]
+    const nodeContentWrapper2 = wrapper.findAll('.hc-tree-node__content')[1]
 
     const nodeLabelWrapper1 = nodeContentWrapper1.find('div')
     const nodeLabelWrapper2 = nodeContentWrapper2.find(

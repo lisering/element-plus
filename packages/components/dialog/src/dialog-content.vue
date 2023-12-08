@@ -13,9 +13,9 @@
         type="button"
         @click="$emit('close')"
       >
-        <el-icon :class="ns.e('close')">
+        <hc-icon :class="ns.e('close')">
           <component :is="closeIcon || Close" />
-        </el-icon>
+        </hc-icon>
       </button>
     </header>
     <div :id="bodyId" :class="ns.e('body')">
@@ -29,7 +29,7 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { FOCUS_TRAP_INJECTION_KEY } from '@hicor-ui/components/focus-trap'
 import { useDraggable, useLocale } from '@hicor-ui/hooks'
 import { CloseComponents, composeRefs } from '@hicor-ui/utils'
@@ -39,7 +39,7 @@ import { dialogContentEmits, dialogContentProps } from './dialog-content'
 const { t } = useLocale()
 const { Close } = CloseComponents
 
-defineOptions({ name: 'ElDialogContent' })
+defineOptions({ name: 'HcDialogContent' })
 const props = defineProps(dialogContentProps)
 defineEmits(dialogContentEmits)
 

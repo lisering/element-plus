@@ -3,7 +3,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { ROOT_TREE_INJECTION_KEY, treeNodeContentProps } from './virtual-tree'
 
 export default defineComponent({
-  name: 'ElTreeNodeContent',
+  name: 'HcTreeNodeContent',
   props: treeNodeContentProps,
   setup(props) {
     const tree = inject(ROOT_TREE_INJECTION_KEY)

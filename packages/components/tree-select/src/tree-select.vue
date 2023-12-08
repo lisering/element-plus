@@ -2,19 +2,19 @@
 // @ts-nocheck
 import { computed, defineComponent, h, onMounted, reactive, ref } from 'vue'
 import { pick } from 'lodash-unified'
-import ElSelect from '@hicor-ui/components/select'
-import ElTree from '@hicor-ui/components/tree'
+import HcSelect from '@hicor-ui/components/select'
+import HcTree from '@hicor-ui/components/tree'
 import { useSelect } from './select'
 import { useTree } from './tree'
 import CacheOptions from './cache-options'
 
 export default defineComponent({
-  name: 'ElTreeSelect',
-  // disable `ElSelect` inherit current attrs
+  name: 'HcTreeSelect',
+  // disable `HcSelect` inherit current attrs
   inheritAttrs: false,
   props: {
-    ...ElSelect.props,
-    ...ElTree.props,
+    ...HcSelect.props,
+    ...HcTree.props,
     /**
      * @description The cached data of the lazy node, the structure is the same as the data, used to get the label of the unloaded data
      */
@@ -26,8 +26,8 @@ export default defineComponent({
   setup(props, context) {
     const { slots, expose } = context
 
-    const select = ref<InstanceType<typeof ElSelect>>()
-    const tree = ref<InstanceType<typeof ElTree>>()
+    const select = ref<InstanceType<typeof HcSelect>>()
+    const tree = ref<InstanceType<typeof HcTree>>()
 
     const key = computed(() => props.nodeKey || props.valueKey || 'value')
 
@@ -38,7 +38,7 @@ export default defineComponent({
       key,
     })
 
-    // expose ElTree/ElSelect methods
+    // expose HcTree/HcSelect methods
     const methods = reactive({})
     expose(methods)
     onMounted(() => {
@@ -69,7 +69,7 @@ export default defineComponent({
 
     return () =>
       h(
-        ElSelect,
+        HcSelect,
         /**
          * 1. The `props` is processed into `Refs`, but `v-bind` and
          * render function props cannot read `Refs`, so use `reactive`
@@ -86,7 +86,7 @@ export default defineComponent({
           default: () => [
             h(CacheOptions, { data: cacheOptions.value }),
             h(
-              ElTree,
+              HcTree,
               reactive({
                 ...treeProps,
                 ref: (ref) => (tree.value = ref),

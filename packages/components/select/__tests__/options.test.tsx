@@ -10,8 +10,8 @@ describe('options', () => {
   let wrapper: ReturnType<typeof mount>
   const onOptionsChange = vi.fn()
 
-  const ElOptionStub = defineComponent({
-    name: 'ElOption',
+  const HcOptionStub = defineComponent({
+    name: 'HcOption',
     props: {
       label: String,
     },
@@ -20,8 +20,8 @@ describe('options', () => {
 
   const getLabel = (i: number | string) => `label-${i}`
 
-  const ElOptionGroupStub = defineComponent({
-    name: 'ElOptionGroup',
+  const HcOptionGroupStub = defineComponent({
+    name: 'HcOptionGroup',
     template: '<div><slot /></div>',
   })
 
@@ -37,8 +37,8 @@ describe('options', () => {
       {
         global: {
           components: {
-            ElOption: ElOptionStub,
-            ElOptionGroup: ElOptionGroupStub,
+            HcOption: HcOptionStub,
+            HcOptionGroup: HcOptionGroupStub,
           },
         },
         slots,
@@ -54,7 +54,7 @@ describe('options', () => {
   it('renders emit correct options', async () => {
     createWrapper({
       default: () =>
-        samples.map((_, i) => <ElOptionStub label={getLabel(i)} />),
+        samples.map((_, i) => <HcOptionStub label={getLabel(i)} />),
     })
 
     await nextTick()
@@ -68,17 +68,17 @@ describe('options', () => {
     createWrapper({
       default: () =>
         samples.map((_, i) => (
-          <ElOptionGroupStub label={getLabel(i)}>
+          <HcOptionGroupStub label={getLabel(i)}>
             {{
               default: () =>
                 samples.map((_, j) => (
-                  <ElOptionStub
+                  <HcOptionStub
                     label={getLabel(`${i}-${j}`)}
                     value={j}
-                  ></ElOptionStub>
+                  ></HcOptionStub>
                 )),
             }}
-          </ElOptionGroupStub>
+          </HcOptionGroupStub>
         )),
     })
 

@@ -109,7 +109,7 @@ export const spaceProps = buildProps({
 export type SpaceProps = ExtractPropTypes<typeof spaceProps>
 
 const Space = defineComponent({
-  name: 'ElSpace',
+  name: 'HcSpace',
 
   props: spaceProps,
 

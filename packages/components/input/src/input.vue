@@ -20,9 +20,9 @@
         <span v-if="$slots.prefix || prefixIcon" :class="nsInput.e('prefix')">
           <span :class="nsInput.e('prefix-inner')">
             <slot name="prefix" />
-            <el-icon v-if="prefixIcon" :class="nsInput.e('icon')">
+            <hc-icon v-if="prefixIcon" :class="nsInput.e('icon')">
               <component :is="prefixIcon" />
-            </el-icon>
+            </hc-icon>
           </span>
         </span>
 
@@ -60,31 +60,31 @@
               v-if="!showClear || !showPwdVisible || !isWordLimitVisible"
             >
               <slot name="suffix" />
-              <el-icon v-if="suffixIcon" :class="nsInput.e('icon')">
+              <hc-icon v-if="suffixIcon" :class="nsInput.e('icon')">
                 <component :is="suffixIcon" />
-              </el-icon>
+              </hc-icon>
             </template>
-            <el-icon
+            <hc-icon
               v-if="showClear"
               :class="[nsInput.e('icon'), nsInput.e('clear')]"
               @mousedown.prevent="NOOP"
               @click="clear"
             >
               <circle-close />
-            </el-icon>
-            <el-icon
+            </hc-icon>
+            <hc-icon
               v-if="showPwdVisible"
               :class="[nsInput.e('icon'), nsInput.e('password')]"
               @click="handlePasswordVisible"
             >
               <component :is="passwordIcon" />
-            </el-icon>
+            </hc-icon>
             <span v-if="isWordLimitVisible" :class="nsInput.e('count')">
               <span :class="nsInput.e('count-inner')">
                 {{ textLength }} / {{ attrs.maxlength }}
               </span>
             </span>
-            <el-icon
+            <hc-icon
               v-if="validateState && validateIcon && needStatusIcon"
               :class="[
                 nsInput.e('icon'),
@@ -93,7 +93,7 @@
               ]"
             >
               <component :is="validateIcon" />
-            </el-icon>
+            </hc-icon>
           </span>
         </span>
       </div>
@@ -159,7 +159,7 @@ import {
   Hide as IconHide,
   View as IconView,
 } from '@element-plus/icons-vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import {
   useFormDisabled,
   useFormItem,
@@ -188,7 +188,7 @@ import type { StyleValue } from 'vue'
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 
 defineOptions({
-  name: 'ElInput',
+  name: 'HcInput',
   inheritAttrs: false,
 })
 const props = defineProps(inputProps)
@@ -376,8 +376,8 @@ const createOnceInitResize = (resizeTextarea: () => void) => {
   let isInit = false
   return () => {
     if (isInit || !props.autosize) return
-    const isElHidden = textarea.value?.offsetParent === null
-    if (!isElHidden) {
+    const isHcHidden = textarea.value?.offsetParent === null
+    if (!isHcHidden) {
       resizeTextarea()
       isInit = true
     }
@@ -517,7 +517,7 @@ watch(
 onMounted(() => {
   if (!props.formatter && props.parser) {
     debugWarn(
-      'ElInput',
+      'HcInput',
       'If you set the parser, you also need to set the formatter.'
     )
   }

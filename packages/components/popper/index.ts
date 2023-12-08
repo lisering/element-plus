@@ -1,14 +1,14 @@
 import { withInstall } from '@hicor-ui/utils'
 import Popper from './src/popper.vue'
 
-import ElPopperArrow from './src/arrow.vue'
-import ElPopperTrigger from './src/trigger.vue'
-import ElPopperContent from './src/content.vue'
+import HcPopperArrow from './src/arrow.vue'
+import HcPopperTrigger from './src/trigger.vue'
+import HcPopperContent from './src/content.vue'
 
-export { ElPopperArrow, ElPopperTrigger, ElPopperContent }
+export { HcPopperArrow, HcPopperTrigger, HcPopperContent }
 
-export const ElPopper = withInstall(Popper)
-export default ElPopper
+export const HcPopper = withInstall(Popper)
+export default HcPopper
 
 export * from './src/popper'
 export * from './src/trigger'

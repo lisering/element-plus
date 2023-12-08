@@ -3,11 +3,11 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Breadcrumb from './src/breadcrumb.vue'
 import BreadcrumbItem from './src/breadcrumb-item.vue'
 
-export const ElBreadcrumb = withInstall(Breadcrumb, {
+export const HcBreadcrumb = withInstall(Breadcrumb, {
   BreadcrumbItem,
 })
-export const ElBreadcrumbItem = withNoopInstall(BreadcrumbItem)
-export default ElBreadcrumb
+export const HcBreadcrumbItem = withNoopInstall(BreadcrumbItem)
+export default HcBreadcrumb
 
 export * from './src/breadcrumb'
 export * from './src/breadcrumb-item'

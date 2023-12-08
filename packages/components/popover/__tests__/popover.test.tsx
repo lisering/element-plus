@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { usePopperContainerId, useZIndex } from '@hicor-ui/hooks'
 import { rAF } from '@hicor-ui/test-utils/tick'
-import { ElPopperTrigger } from '@hicor-ui/components/popper'
+import { HcPopperTrigger } from '@hicor-ui/components/popper'
 import Popover from '../src/popover.vue'
 import type { VueWrapper } from '@vue/test-utils'
 import type { PopoverProps } from '../src/popover'
@@ -30,7 +30,7 @@ describe('Popover.vue', () => {
   let wrapper: VueWrapper<any>
   const findContentComp = () =>
     wrapper.findComponent({
-      name: 'ElPopperContent',
+      name: 'HcPopperContent',
     })
 
   afterEach(() => {
@@ -104,8 +104,8 @@ describe('Popover.vue', () => {
     const wrapper = _mount({ trigger: 'click' })
 
     await nextTick()
-    const trigger$ = wrapper.findComponent(ElPopperTrigger)
-    const triggerEl = trigger$.find('.el-tooltip__trigger')
+    const trigger$ = wrapper.findComponent(HcPopperTrigger)
+    const triggerEl = trigger$.find('.hc-tooltip__trigger')
     vi.useFakeTimers()
     await triggerEl.trigger('click')
     vi.runAllTimers()
@@ -128,9 +128,9 @@ describe('Popover.vue', () => {
   it('test visible controlled mode trigger invalid', async () => {
     const wrapper = _mount({ visible: false, trigger: 'click' })
     await nextTick()
-    const trigger$ = wrapper.findComponent(ElPopperTrigger)
-    const triggerEl = trigger$.find('.el-tooltip__trigger')
-    const popoverDom: HTMLElement = document.querySelector('.el-popper')!
+    const trigger$ = wrapper.findComponent(HcPopperTrigger)
+    const triggerEl = trigger$.find('.hc-tooltip__trigger')
+    const popoverDom: HTMLElement = document.querySelector('.hc-popper')!
 
     vi.useFakeTimers()
     await triggerEl.trigger('click')
@@ -174,9 +174,9 @@ describe('Popover.vue', () => {
       }
     )
     await nextTick()
-    const trigger$ = wrapper.findComponent(ElPopperTrigger)
-    const triggerEl = trigger$.find('.el-tooltip__trigger')
-    const popoverDom: HTMLElement = document.querySelector('.el-popper')!
+    const trigger$ = wrapper.findComponent(HcPopperTrigger)
+    const triggerEl = trigger$.find('.hc-tooltip__trigger')
+    const popoverDom: HTMLElement = document.querySelector('.hc-popper')!
 
     vi.useFakeTimers()
     await triggerEl.trigger('click')

@@ -30,7 +30,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { IconComponentMap, IconMap, resultProps } from './result'
 
 defineOptions({
-  name: 'ElResult',
+  name: 'HcResult',
 })
 
 const props = defineProps(resultProps)

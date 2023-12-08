@@ -30,7 +30,7 @@
               class="d-arrow-left"
               @click="leftPrevYear"
             >
-              <el-icon><d-arrow-left /></el-icon>
+              <hc-icon><d-arrow-left /></hc-icon>
             </button>
             <button
               v-if="unlinkPanels"
@@ -43,7 +43,7 @@
               class="d-arrow-right"
               @click="leftNextYear"
             >
-              <el-icon><d-arrow-right /></el-icon>
+              <hc-icon><d-arrow-right /></hc-icon>
             </button>
             <div>{{ leftLabel }}</div>
           </div>
@@ -69,7 +69,7 @@
               class="d-arrow-left"
               @click="rightPrevYear"
             >
-              <el-icon><d-arrow-left /></el-icon>
+              <hc-icon><d-arrow-left /></hc-icon>
             </button>
             <button
               type="button"
@@ -77,7 +77,7 @@
               class="d-arrow-right"
               @click="rightNextYear"
             >
-              <el-icon><d-arrow-right /></el-icon>
+              <hc-icon><d-arrow-right /></hc-icon>
             </button>
             <div>{{ rightLabel }}</div>
           </div>
@@ -102,7 +102,7 @@
 import { computed, inject, ref, toRef } from 'vue'
 import dayjs from 'dayjs'
 import { DArrowLeft, DArrowRight } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { useLocale } from '@hicor-ui/hooks'
 import {
   panelMonthRangeEmits,

@@ -11,44 +11,44 @@
 
         <!-- CLOSE -->
         <span :class="[ns.e('btn'), ns.e('close')]" @click="hide">
-          <el-icon>
+          <hc-icon>
             <Close />
-          </el-icon>
+          </hc-icon>
         </span>
 
         <!-- ARROW -->
         <template v-if="!isSingle">
           <span :class="arrowPrevKls" @click="prev">
-            <el-icon>
+            <hc-icon>
               <ArrowLeft />
-            </el-icon>
+            </hc-icon>
           </span>
           <span :class="arrowNextKls" @click="next">
-            <el-icon>
+            <hc-icon>
               <ArrowRight />
-            </el-icon>
+            </hc-icon>
           </span>
         </template>
         <!-- ACTIONS -->
         <div :class="[ns.e('btn'), ns.e('actions')]">
           <div :class="ns.e('actions__inner')">
-            <el-icon @click="handleActions('zoomOut')">
+            <hc-icon @click="handleActions('zoomOut')">
               <ZoomOut />
-            </el-icon>
-            <el-icon @click="handleActions('zoomIn')">
+            </hc-icon>
+            <hc-icon @click="handleActions('zoomIn')">
               <ZoomIn />
-            </el-icon>
+            </hc-icon>
             <i :class="ns.e('actions__divider')" />
-            <el-icon @click="toggleMode">
+            <hc-icon @click="toggleMode">
               <component :is="mode.icon" />
-            </el-icon>
+            </hc-icon>
             <i :class="ns.e('actions__divider')" />
-            <el-icon @click="handleActions('anticlockwise')">
+            <hc-icon @click="handleActions('anticlockwise')">
               <RefreshLeft />
-            </el-icon>
-            <el-icon @click="handleActions('clockwise')">
+            </hc-icon>
+            <hc-icon @click="handleActions('clockwise')">
               <RefreshRight />
-            </el-icon>
+            </hc-icon>
           </div>
         </div>
         <!-- CANVAS -->
@@ -99,7 +99,7 @@ import {
 import { useLocale, useNamespace, useZIndex } from '@hicor-ui/hooks'
 import { EVENT_CODE } from '@hicor-ui/constants'
 import { isNumber, keysOf } from '@hicor-ui/utils'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { imageViewerEmits, imageViewerProps } from './image-viewer'
 
 import type { CSSProperties } from 'vue'
@@ -117,7 +117,7 @@ const modes: Record<'CONTAIN' | 'ORIGINAL', ImageViewerMode> = {
 }
 
 defineOptions({
-  name: 'ElImageViewer',
+  name: 'HcImageViewer',
 })
 
 const props = defineProps(imageViewerProps)

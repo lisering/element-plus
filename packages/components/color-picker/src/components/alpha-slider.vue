@@ -12,7 +12,7 @@ import {
   useAlphaSliderDOM,
 } from '../composables/use-alpha-slider'
 
-const COMPONENT_NAME = 'ElColorAlphaSlider'
+const COMPONENT_NAME = 'HcColorAlphaSlider'
 
 defineOptions({
   name: COMPONENT_NAME,

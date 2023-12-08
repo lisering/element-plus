@@ -11,4 +11,4 @@ const _CollapseTransition = CollapseTransition as SFCWithInstall<
 >
 
 export default _CollapseTransition
-export const ElCollapseTransition = _CollapseTransition
+export const HcCollapseTransition = _CollapseTransition

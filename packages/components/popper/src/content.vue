@@ -8,7 +8,7 @@
     @mouseenter="(e) => $emit('mouseenter', e)"
     @mouseleave="(e) => $emit('mouseleave', e)"
   >
-    <el-focus-trap
+    <hc-focus-trap
       :trapped="trapped"
       :trap-on-focus-in="true"
       :focus-trap-el="contentRef"
@@ -20,7 +20,7 @@
       @release-requested="onReleaseRequested"
     >
       <slot />
-    </el-focus-trap>
+    </hc-focus-trap>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ import {
 } from 'vue'
 import { NOOP } from '@vue/shared'
 import { isNil } from 'lodash-unified'
-import ElFocusTrap from '@hicor-ui/components/focus-trap'
+import HcFocusTrap from '@hicor-ui/components/focus-trap'
 import { formItemContextKey } from '@hicor-ui/components/form'
 import { isElement } from '@hicor-ui/utils'
 import { POPPER_CONTENT_INJECTION_KEY } from './constants'
@@ -50,7 +50,7 @@ import {
 import type { WatchStopHandle } from 'vue'
 
 defineOptions({
-  name: 'ElPopperContent',
+  name: 'HcPopperContent',
 })
 
 const emit = defineEmits(popperContentEmits)

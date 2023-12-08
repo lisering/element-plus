@@ -88,14 +88,14 @@ export const buildProp = <
         }
       : undefined
 
-  const epProp: any = {
+  const hcProp: any = {
     type,
     required: !!required,
     validator: _validator,
     [hcPropKey]: true,
   }
-  if (hasOwn(prop, 'default')) epProp.default = defaultValue
-  return epProp
+  if (hasOwn(prop, 'default')) hcProp.default = defaultValue
+  return hcProp
 }
 
 export const buildProps = <

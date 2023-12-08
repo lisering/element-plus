@@ -2,8 +2,8 @@ import { withInstall } from '@hicor-ui/utils'
 
 import Pagination from './src/pagination'
 
-export const ElPagination = withInstall(Pagination)
-export default ElPagination
+export const HcPagination = withInstall(Pagination)
+export default HcPagination
 
 export * from './src/pagination'
 export * from './src/constants'

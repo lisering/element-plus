@@ -1,26 +1,9 @@
 {
   "name": "@hicor-ui/theme-chalk",
   "version": "0.1.0",
-  "description": "Hicor Ui component chalk theme.",
-  "keywords": [
-    "vue-components",
-    "hicor-ui",
-    "theme-chalk",
-    "theme-light"
-  ],
-  "homepage": "https://github.com/hicor-ui/hicor-ui/blob/dev/packages/theme-chalk/README.md",
-  "bugs": {
-    "url": "https://github.com/hicor-ui/hicor-ui#issues"
-  },
-  "license": "MIT",
-  "author": "yi.shyang@ele.me",
   "main": "index.css",
   "unpkg": "index.css",
   "jsdelivr": "index.css",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hicor-ui/hicor-ui.git"
-  },
   "style": "index.css",
   "scripts": {
     "clean": "rimraf dist",

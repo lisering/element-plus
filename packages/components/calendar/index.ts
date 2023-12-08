@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Calendar from './src/calendar.vue'
 
-export const ElCalendar = withInstall(Calendar)
-export default ElCalendar
+export const HcCalendar = withInstall(Calendar)
+export default HcCalendar
 
 export * from './src/calendar'
 export type {

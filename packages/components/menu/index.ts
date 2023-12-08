@@ -5,15 +5,15 @@ import MenuItem from './src/menu-item.vue'
 import MenuItemGroup from './src/menu-item-group.vue'
 import SubMenu from './src/sub-menu'
 
-export const ElMenu = withInstall(Menu, {
+export const HcMenu = withInstall(Menu, {
   MenuItem,
   MenuItemGroup,
   SubMenu,
 })
-export default ElMenu
-export const ElMenuItem = withNoopInstall(MenuItem)
-export const ElMenuItemGroup = withNoopInstall(MenuItemGroup)
-export const ElSubMenu = withNoopInstall(SubMenu)
+export default HcMenu
+export const HcMenuItem = withNoopInstall(MenuItem)
+export const HcMenuItemGroup = withNoopInstall(MenuItemGroup)
+export const HcSubMenu = withNoopInstall(SubMenu)
 
 export * from './src/menu'
 export * from './src/menu-item'

@@ -18,7 +18,7 @@ import { useInput } from './useInput'
 import { useProps } from './useProps'
 
 import type { CSSProperties } from 'vue'
-import type ElTooltip from '@hicor-ui/components/tooltip'
+import type HcTooltip from '@hicor-ui/components/tooltip'
 import type { Option, OptionType } from './select.types'
 import type { ISelectProps } from './token'
 
@@ -72,7 +72,7 @@ const useSelect = (props: ISelectProps, emit) => {
   const controlRef = ref(null)
   const inputRef = ref(null) // el-input ref
   const menuRef = ref(null)
-  const popper = ref<InstanceType<typeof ElTooltip> | null>(null)
+  const popper = ref<InstanceType<typeof HcTooltip> | null>(null)
   const selectRef = ref(null)
   const selectionRef = ref(null) // tags ref
   const calculatorRef = ref<HTMLElement>(null)

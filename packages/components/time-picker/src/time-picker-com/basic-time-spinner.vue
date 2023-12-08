@@ -1,7 +1,7 @@
 <template>
   <div :class="[ns.b('spinner'), { 'has-seconds': showSeconds }]">
     <template v-if="!arrowControl">
-      <el-scrollbar
+      <hc-scrollbar
         v-for="item in spinnerItems"
         :key="item"
         :ref="(scrollbar: unknown) => setRef(scrollbar as any, item)"
@@ -31,7 +31,7 @@
             {{ ('0' + key).slice(-2) }}
           </template>
         </li>
-      </el-scrollbar>
+      </hc-scrollbar>
     </template>
     <template v-if="arrowControl">
       <div
@@ -40,18 +40,18 @@
         :class="[ns.be('spinner', 'wrapper'), ns.is('arrow')]"
         @mouseenter="emitSelectRange(item)"
       >
-        <el-icon
+        <hc-icon
           v-repeat-click="onDecrement"
           :class="['arrow-up', ns.be('spinner', 'arrow')]"
         >
           <arrow-up />
-        </el-icon>
-        <el-icon
+        </hc-icon>
+        <hc-icon
           v-repeat-click="onIncrement"
           :class="['arrow-down', ns.be('spinner', 'arrow')]"
         >
           <arrow-down />
-        </el-icon>
+        </hc-icon>
         <ul :class="ns.be('spinner', 'list')">
           <li
             v-for="(time, key) in arrowControlTimeList[item]"
@@ -82,8 +82,8 @@ import { computed, nextTick, onMounted, ref, unref, watch } from 'vue'
 import { debounce } from 'lodash-unified'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
 import { vRepeatClick } from '@hicor-ui/directives'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
-import ElIcon from '@hicor-ui/components/icon'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
+import HcIcon from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { getStyle } from '@hicor-ui/utils'
 import { timeUnits } from '../constants'

@@ -8,20 +8,20 @@
     @click="$emit('click', $event)"
   >
     <span v-if="prevText">{{ prevText }}</span>
-    <el-icon v-else>
+    <hc-icon v-else>
       <component :is="prevIcon" />
-    </el-icon>
+    </hc-icon>
   </button>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useLocale } from '@hicor-ui/hooks'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { paginationPrevEmits, paginationPrevProps } from './prev'
 
 defineOptions({
-  name: 'ElPaginationPrev',
+  name: 'HcPaginationPrev',
 })
 
 const props = defineProps(paginationPrevProps)

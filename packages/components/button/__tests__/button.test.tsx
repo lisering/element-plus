@@ -205,14 +205,14 @@ describe('Button Group', () => {
     })
     expect(wrapper.classes()).toContain('el-button-group')
     expect(
-      wrapper.findAll('.el-button-group button.el-button--small').length
+      wrapper.findAll('.hc-button-group button.el-button--small').length
     ).toBe(2)
 
     size.value = 'large'
     await nextTick()
 
     expect(
-      wrapper.findAll('.el-button-group button.el-button--large').length
+      wrapper.findAll('.hc-button-group button.el-button--large').length
     ).toBe(2)
   })
 
@@ -228,10 +228,10 @@ describe('Button Group', () => {
     })
     expect(wrapper.classes()).toContain('el-button-group')
     expect(
-      wrapper.findAll('.el-button-group button.el-button--primary').length
+      wrapper.findAll('.hc-button-group button.el-button--primary').length
     ).toBe(1)
     expect(
-      wrapper.findAll('.el-button-group button.el-button--warning').length
+      wrapper.findAll('.hc-button-group button.el-button--warning').length
     ).toBe(1)
   })
 
@@ -245,8 +245,8 @@ describe('Button Group', () => {
       />
     ))
 
-    expect(wrapper.find('.el-button span').text()).toBe('中文')
-    expect(wrapper.find('.el-button span').classes()).toContain(
+    expect(wrapper.find('.hc-button span').text()).toBe('中文')
+    expect(wrapper.find('.hc-button span').classes()).toContain(
       'el-button__text--expand'
     )
   })
@@ -256,8 +256,8 @@ describe('Button Group', () => {
       <Button autoInsertSpace>&nbsp;中文&nbsp;</Button>
     ))
 
-    expect(wrapper.find('.el-button span').text()).toBe('中文')
-    expect(wrapper.find('.el-button span').classes()).toContain(
+    expect(wrapper.find('.hc-button span').text()).toBe('中文')
+    expect(wrapper.find('.hc-button span').classes()).toContain(
       'el-button__text--expand'
     )
   })

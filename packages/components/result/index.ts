@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Result from './src/result.vue'
 
-export const ElResult = withInstall(Result)
+export const HcResult = withInstall(Result)
 
-export default ElResult
+export default HcResult
 
 export * from './src/result'

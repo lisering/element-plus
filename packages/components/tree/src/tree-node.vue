@@ -29,7 +29,7 @@
       :class="ns.be('node', 'content')"
       :style="{ paddingLeft: (node.level - 1) * tree.props.indent + 'px' }"
     >
-      <el-icon
+      <hc-icon
         v-if="tree.props.icon || CaretRight"
         :class="[
           ns.be('node', 'expand-icon'),
@@ -41,8 +41,8 @@
         @click.stop="handleExpandIconClick"
       >
         <component :is="tree.props.icon || CaretRight" />
-      </el-icon>
-      <el-checkbox
+      </hc-icon>
+      <hc-checkbox
         v-if="showCheckbox"
         :model-value="node.checked"
         :indeterminate="node.indeterminate"
@@ -50,15 +50,15 @@
         @click.stop
         @change="handleCheckChange"
       />
-      <el-icon
+      <hc-icon
         v-if="node.loading"
         :class="[ns.be('node', 'loading-icon'), ns.is('loading')]"
       >
         <loading />
-      </el-icon>
+      </hc-icon>
       <node-content :node="node" :render-content="renderContent" />
     </div>
-    <el-collapse-transition>
+    <hc-collapse-transition>
       <div
         v-if="!renderAfterExpand || childNodeRendered"
         v-show="expanded"
@@ -66,7 +66,7 @@
         role="group"
         :aria-expanded="expanded"
       >
-        <el-tree-node
+        <hc-tree-node
           v-for="child in node.childNodes"
           :key="getNodeKey(child)"
           :render-content="renderContent"
@@ -78,7 +78,7 @@
           @node-expand="handleChildNodeExpand"
         />
       </div>
-    </el-collapse-transition>
+    </hc-collapse-transition>
   </div>
 </template>
 <script lang="ts">
@@ -94,9 +94,9 @@ import {
 } from 'vue'
 import { isFunction, isString } from '@vue/shared'
 import { CaretRight, Loading } from '@element-plus/icons-vue'
-import ElCollapseTransition from '@hicor-ui/components/collapse-transition'
-import ElCheckbox from '@hicor-ui/components/checkbox'
-import { ElIcon } from '@hicor-ui/components/icon'
+import HcCollapseTransition from '@hicor-ui/components/collapse-transition'
+import HcCheckbox from '@hicor-ui/components/checkbox'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { debugWarn } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import NodeContent from './tree-node-content.vue'
@@ -110,12 +110,12 @@ import type { Nullable } from '@hicor-ui/utils'
 import type { RootTreeType, TreeNodeData, TreeOptionProps } from './tree.type'
 
 export default defineComponent({
-  name: 'ElTreeNode',
+  name: 'HcTreeNode',
   components: {
-    ElCollapseTransition,
-    ElCheckbox,
+    HcCollapseTransition,
+    HcCheckbox,
     NodeContent,
-    ElIcon,
+    HcIcon,
     Loading,
   },
   props: {

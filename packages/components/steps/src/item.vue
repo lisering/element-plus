@@ -10,21 +10,21 @@
         :class="[ns.e('icon'), ns.is(icon || $slots.icon ? 'icon' : 'text')]"
       >
         <slot name="icon">
-          <el-icon v-if="icon" :class="ns.e('icon-inner')">
+          <hc-icon v-if="icon" :class="ns.e('icon-inner')">
             <component :is="icon" />
-          </el-icon>
-          <el-icon
+          </hc-icon>
+          <hc-icon
             v-else-if="currentStatus === 'success'"
             :class="[ns.e('icon-inner'), ns.is('status')]"
           >
             <Check />
-          </el-icon>
-          <el-icon
+          </hc-icon>
+          <hc-icon
             v-else-if="currentStatus === 'error'"
             :class="[ns.e('icon-inner'), ns.is('status')]"
           >
             <Close />
-          </el-icon>
+          </hc-icon>
           <div v-else-if="!isSimple" :class="ns.e('icon-inner')">
             {{ index + 1 }}
           </div>
@@ -57,7 +57,7 @@ import {
 } from 'vue'
 import { Check, Close } from '@element-plus/icons-vue'
 import { useNamespace } from '@hicor-ui/hooks'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { isNumber } from '@hicor-ui/utils'
 import { stepProps } from './item'
 
@@ -88,7 +88,7 @@ export interface IStepsInject {
 }
 
 defineOptions({
-  name: 'ElStep',
+  name: 'HcStep',
 })
 
 const props = defineProps(stepProps)
@@ -96,7 +96,7 @@ const ns = useNamespace('step')
 const index = ref(-1)
 const lineStyle = ref({})
 const internalStatus = ref('')
-const parent = inject('ElSteps') as IStepsInject
+const parent = inject('HcSteps') as IStepsInject
 const currentInstance = getCurrentInstance()
 
 onMounted(() => {

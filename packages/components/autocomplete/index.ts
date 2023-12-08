@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Autocomplete from './src/autocomplete.vue'
 
-export const ElAutocomplete = withInstall(Autocomplete)
+export const HcAutocomplete = withInstall(Autocomplete)
 
-export default ElAutocomplete
+export default HcAutocomplete
 
 export * from './src/autocomplete'

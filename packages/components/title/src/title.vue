@@ -15,7 +15,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { titleProps } from './title'
 
 defineOptions({
-  name: 'ElTitle',
+  name: 'HcTitle',
 })
 
 const ns = useNamespace('title')

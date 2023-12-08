@@ -30,12 +30,12 @@ import { useCarouselItem } from './use-carousel-item'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElCarouselItem',
+  name: 'HcCarouselItem',
 })
 
 const props = defineProps(carouselItemProps)
 const ns = useNamespace('carousel')
-const COMPONENT_NAME = 'ElCarouselItem'
+const COMPONENT_NAME = 'HcCarouselItem'
 // inject
 const {
   carouselItemRef,

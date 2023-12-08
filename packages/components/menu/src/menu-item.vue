@@ -9,9 +9,9 @@
     tabindex="-1"
     @click="handleClick"
   >
-    <el-tooltip
+    <hc-tooltip
       v-if="
-        parentMenu.type.name === 'ElMenu' &&
+        parentMenu.type.name === 'HcMenu' &&
         rootMenu.props.collapse &&
         $slots.title
       "
@@ -26,7 +26,7 @@
       <div :class="nsMenu.be('tooltip', 'trigger')">
         <slot />
       </div>
-    </el-tooltip>
+    </hc-tooltip>
     <template v-else>
       <slot />
       <slot name="title" />
@@ -46,7 +46,7 @@ import {
   reactive,
   toRef,
 } from 'vue'
-import ElTooltip from '@hicor-ui/components/tooltip'
+import HcTooltip from '@hicor-ui/components/tooltip'
 import { throwError } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import useMenu from './use-menu'
@@ -54,11 +54,11 @@ import { menuItemEmits, menuItemProps } from './menu-item'
 
 import type { MenuItemRegistered, MenuProvider, SubMenuProvider } from './types'
 
-const COMPONENT_NAME = 'ElMenuItem'
+const COMPONENT_NAME = 'HcMenuItem'
 export default defineComponent({
   name: COMPONENT_NAME,
   components: {
-    ElTooltip,
+    HcTooltip,
   },
 
   props: menuItemProps,

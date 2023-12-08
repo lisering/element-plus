@@ -1,5 +1,5 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-time-select.css'
+import '@hicor-ui/theme-chalk/hc-time-select.css'
 import '@hicor-ui/components/scrollbar/style/css'
 import '@hicor-ui/components/popper/style/css'
 import '@hicor-ui/components/input/style/css'

@@ -7,7 +7,7 @@
     @mouseenter="states.comboBoxHovering = true"
     @mouseleave="states.comboBoxHovering = false"
   >
-    <el-tooltip
+    <hc-tooltip
       ref="popper"
       :visible="dropdownMenuVisible"
       :teleported="teleported"
@@ -46,7 +46,7 @@
                 :key="getValueKey(getValue(item))"
                 :class="nsSelectV2.e('selected-item')"
               >
-                <el-tag
+                <hc-tag
                   :closable="!selectDisabled && !getDisabled(item)"
                   :size="collapseTagSize"
                   type="info"
@@ -61,17 +61,17 @@
                   >
                     {{ getLabel(item) }}
                   </span>
-                </el-tag>
+                </hc-tag>
               </div>
               <div :class="nsSelectV2.e('selected-item')">
-                <el-tag
+                <hc-tag
                   v-if="modelValue.length > maxCollapseTags"
                   :closable="false"
                   :size="collapseTagSize"
                   type="info"
                   disable-transitions
                 >
-                  <el-tooltip
+                  <hc-tooltip
                     v-if="collapseTagsTooltip"
                     :disabled="dropdownMenuVisible"
                     :fallback-placements="['bottom', 'top', 'right', 'left']"
@@ -96,7 +96,7 @@
                           :key="getValueKey(getValue(selected))"
                           :class="nsSelectV2.e('selected-item')"
                         >
-                          <el-tag
+                          <hc-tag
                             :closable="
                               !selectDisabled && !getDisabled(selected)
                             "
@@ -114,11 +114,11 @@
                             >
                               {{ getLabel(selected) }}
                             </span>
-                          </el-tag>
+                          </hc-tag>
                         </div>
                       </div>
                     </template>
-                  </el-tooltip>
+                  </hc-tooltip>
                   <span
                     v-else
                     :class="nsSelectV2.e('tags-text')"
@@ -128,7 +128,7 @@
                   >
                     + {{ modelValue.length - maxCollapseTags }}
                   </span>
-                </el-tag>
+                </hc-tag>
               </div>
             </template>
 
@@ -138,7 +138,7 @@
                 :key="getValueKey(getValue(selected))"
                 :class="nsSelectV2.e('selected-item')"
               >
-                <el-tag
+                <hc-tag
                   :closable="!selectDisabled && !getDisabled(selected)"
                   :size="collapseTagSize"
                   type="info"
@@ -153,7 +153,7 @@
                   >
                     {{ getLabel(selected) }}
                   </span>
-                </el-tag>
+                </hc-tag>
               </div>
             </template>
             <div
@@ -268,31 +268,31 @@
             {{ currentPlaceholder }}
           </span>
           <span :class="nsSelectV2.e('suffix')">
-            <el-icon
+            <hc-icon
               v-if="iconComponent"
               v-show="!showClearBtn"
               :class="[nsSelectV2.e('caret'), nsInput.e('icon'), iconReverse]"
             >
               <component :is="iconComponent" />
-            </el-icon>
-            <el-icon
+            </hc-icon>
+            <hc-icon
               v-if="showClearBtn && clearIcon"
               :class="[nsSelectV2.e('caret'), nsInput.e('icon')]"
               @click.prevent.stop="handleClear"
             >
               <component :is="clearIcon" />
-            </el-icon>
-            <el-icon
+            </hc-icon>
+            <hc-icon
               v-if="validateState && validateIcon"
               :class="[nsInput.e('icon'), nsInput.e('validateIcon')]"
             >
               <component :is="validateIcon" />
-            </el-icon>
+            </hc-icon>
           </span>
         </div>
       </template>
       <template #content>
-        <el-select-menu
+        <hc-select-menu
           ref="menuRef"
           :data="filteredOptions"
           :width="popperSize"
@@ -309,9 +309,9 @@
               </p>
             </slot>
           </template>
-        </el-select-menu>
+        </hc-select-menu>
       </template>
-    </el-tooltip>
+    </hc-tooltip>
   </div>
 </template>
 
@@ -326,21 +326,21 @@ import {
 } from 'vue'
 import { isArray } from '@hicor-ui/utils'
 import { ClickOutside } from '@hicor-ui/directives'
-import ElTooltip from '@hicor-ui/components/tooltip'
-import ElTag from '@hicor-ui/components/tag'
-import ElIcon from '@hicor-ui/components/icon'
+import HcTooltip from '@hicor-ui/components/tooltip'
+import HcTag from '@hicor-ui/components/tag'
+import HcIcon from '@hicor-ui/components/icon'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
-import ElSelectMenu from './select-dropdown'
+import HcSelectMenu from './select-dropdown'
 import useSelect from './useSelect'
 import { selectV2InjectionKey } from './token'
 import { SelectProps } from './defaults'
 export default defineComponent({
-  name: 'ElSelectV2',
+  name: 'HcSelectV2',
   components: {
-    ElSelectMenu,
-    ElTag,
-    ElTooltip,
-    ElIcon,
+    HcSelectMenu,
+    HcTag,
+    HcTooltip,
+    HcIcon,
   },
   directives: { ClickOutside, ModelText: vModelText },
   props: SelectProps,

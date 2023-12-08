@@ -17,7 +17,7 @@ import type { VirtualizedGridProps } from '../props'
 import type { Alignment, GridCache, ItemSize, ListItem } from '../types'
 
 const { max, min, floor } = Math
-const SCOPE = 'ElDynamicSizeGrid'
+const SCOPE = 'HcDynamicSizeGrid'
 
 type Props = VirtualizedGridProps
 type CacheItemType = 'column' | 'row'
@@ -241,7 +241,7 @@ const getOffset = (
 }
 
 const DynamicSizeGrid = createGrid({
-  name: 'ElDynamicSizeGrid',
+  name: 'HcDynamicSizeGrid',
   getColumnPosition: (props, idx, cache) => {
     const item = getItemFromCache(props, idx, cache, 'column')
     return [item.size, item.offset]

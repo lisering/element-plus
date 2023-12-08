@@ -69,7 +69,7 @@ import { imageEmits, imageProps } from './image'
 import type { CSSProperties, StyleValue } from 'vue'
 
 defineOptions({
-  name: 'ElImage',
+  name: 'HcImage',
   inheritAttrs: false,
 })
 

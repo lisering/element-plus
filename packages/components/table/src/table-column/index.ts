@@ -10,7 +10,7 @@ import {
   onMounted,
   ref,
 } from 'vue'
-import ElCheckbox from '@hicor-ui/components/checkbox'
+import HcCheckbox from '@hicor-ui/components/checkbox'
 import { isString, isUndefined } from '@hicor-ui/utils'
 import { cellStarts } from '../config'
 import { compose, mergeOptions } from '../util'
@@ -24,9 +24,9 @@ import type { DefaultRow } from '../table/defaults'
 let columnIdSeed = 1
 
 export default defineComponent({
-  name: 'ElTableColumn',
+  name: 'HcTableColumn',
   components: {
-    ElCheckbox,
+    HcCheckbox,
   },
   props: defaultProps,
   setup(props, { slots }) {
@@ -53,7 +53,7 @@ export default defineComponent({
       setColumnForcedProps,
       setColumnRenders,
       getPropsData,
-      getColumnElIndex,
+      getColumnHcIndex,
       realAlign,
       updateColumnOrder,
     } = useRender(props as unknown as TableColumnCtx<unknown>, slots, owner)
@@ -89,7 +89,7 @@ export default defineComponent({
         sortable,
         // index 列
         index: props.index,
-        // <el-table-column key="xxx" />
+        // <hc-table-column key="xxx" />
         rawColumnKey: instance.vnode.key,
       }
 
@@ -137,7 +137,7 @@ export default defineComponent({
         ? parent.vnode.el.children
         : parent.refs.hiddenColumns?.children
       const getColumnIndex = () =>
-        getColumnElIndex(children || [], instance.vnode.el)
+        getColumnHcIndex(children || [], instance.vnode.el)
       columnConfig.value.getColumnIndex = getColumnIndex
       const columnIndex = getColumnIndex()
       columnIndex > -1 &&
@@ -172,7 +172,7 @@ export default defineComponent({
       if (Array.isArray(renderDefault)) {
         for (const childNode of renderDefault) {
           if (
-            childNode.type?.name === 'ElTableColumn' ||
+            childNode.type?.name === 'HcTableColumn' ||
             childNode.shapeFlag & 2
           ) {
             children.push(childNode)

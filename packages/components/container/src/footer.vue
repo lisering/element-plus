@@ -10,7 +10,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElFooter',
+  name: 'HcFooter',
 })
 const props = defineProps({
   /**

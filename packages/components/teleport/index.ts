@@ -1,8 +1,8 @@
 import { withInstall } from '@hicor-ui/utils'
 import Teleport from './src/teleport.vue'
 
-export const ElTeleport = withInstall(Teleport)
+export const HcTeleport = withInstall(Teleport)
 
-export default ElTeleport
+export default HcTeleport
 
 export * from './src/teleport'

@@ -7,7 +7,7 @@
     @mouseleave="handleMouseLeave"
     @click.stop="toggleMenu"
   >
-    <el-tooltip
+    <hc-tooltip
       ref="tooltipRef"
       :visible="dropMenuVisible"
       :placement="placement"
@@ -43,7 +43,7 @@
               @after-leave="resetInputHeight"
             >
               <span :class="tagWrapperKls">
-                <el-tag
+                <hc-tag
                   v-for="item in showTagList"
                   :key="getValueKey(item)"
                   :closable="!selectDisabled && !item.isDisabled"
@@ -56,15 +56,15 @@
                   <span :class="nsSelect.e('tags-text')" :style="tagTextStyle">
                     {{ item.currentLabel }}
                   </span>
-                </el-tag>
-                <el-tag
+                </hc-tag>
+                <hc-tag
                   v-if="selected.length > maxCollapseTags"
                   :closable="false"
                   :size="collapseTagSize"
                   :type="tagType"
                   disable-transitions
                 >
-                  <el-tooltip
+                  <hc-tooltip
                     v-if="collapseTagsTooltip"
                     ref="tagTooltipRef"
                     :disabled="dropMenuVisible"
@@ -85,7 +85,7 @@
                           :key="getValueKey(item)"
                           :class="nsSelect.e('collapse-tag')"
                         >
-                          <el-tag
+                          <hc-tag
                             class="in-tooltip"
                             :closable="!selectDisabled && !item.isDisabled"
                             :size="collapseTagSize"
@@ -102,15 +102,15 @@
                               }"
                               >{{ item.currentLabel }}</span
                             >
-                          </el-tag>
+                          </hc-tag>
                         </div>
                       </div>
                     </template>
-                  </el-tooltip>
+                  </hc-tooltip>
                   <span v-else :class="nsSelect.e('tags-text')"
                     >+ {{ selected.length - maxCollapseTags }}</span
                   >
-                </el-tag>
+                </hc-tag>
               </span>
             </transition>
             <transition v-if="!collapseTags" @after-leave="resetInputHeight">
@@ -122,7 +122,7 @@
                     : ''
                 "
               >
-                <el-tag
+                <hc-tag
                   v-for="item in selected"
                   :key="getValueKey(item)"
                   :closable="!selectDisabled && !item.isDisabled"
@@ -137,7 +137,7 @@
                     :style="{ maxWidth: inputWidth - 75 + 'px' }"
                     >{{ item.currentLabel }}</span
                   >
-                </el-tag>
+                </hc-tag>
               </span>
             </transition>
             <input
@@ -179,7 +179,7 @@
             :disabled="selectDisabled"
             type="text"
           />
-          <el-input
+          <hc-input
             :id="id"
             ref="reference"
             v-model="selectedLabel"
@@ -230,29 +230,29 @@
               </div>
             </template>
             <template #suffix>
-              <el-icon
+              <hc-icon
                 v-if="iconComponent && !showClose"
                 :class="[nsSelect.e('caret'), nsSelect.e('icon'), iconReverse]"
               >
                 <component :is="iconComponent" />
-              </el-icon>
-              <el-icon
+              </hc-icon>
+              <hc-icon
                 v-if="showClose && clearIcon"
                 :class="[nsSelect.e('caret'), nsSelect.e('icon')]"
                 @click="handleClearClick"
               >
                 <component :is="clearIcon" />
-              </el-icon>
+              </hc-icon>
             </template>
-          </el-input>
+          </hc-input>
         </div>
       </template>
       <template #content>
-        <el-select-menu>
+        <hc-select-menu>
           <template v-if="$slots.header" #header>
             <slot name="header" />
           </template>
-          <el-scrollbar
+          <hc-scrollbar
             v-show="options.size > 0 && !loading"
             :id="contentId"
             ref="scrollbar"
@@ -264,11 +264,11 @@
             :aria-label="ariaLabel"
             aria-orientation="vertical"
           >
-            <el-option v-if="showNewOption" :value="query" :created="true" />
-            <el-options @update-options="onOptionsRendered">
+            <hc-option v-if="showNewOption" :value="query" :created="true" />
+            <hc-options @update-options="onOptionsRendered">
               <slot />
-            </el-options>
-          </el-scrollbar>
+            </hc-options>
+          </hc-scrollbar>
           <template
             v-if="
               emptyText &&
@@ -283,9 +283,9 @@
           <template v-if="$slots.footer" #footer>
             <slot name="footer" />
           </template>
-        </el-select-menu>
+        </hc-select-menu>
       </template>
-    </el-tooltip>
+    </hc-tooltip>
   </div>
 </template>
 
@@ -306,36 +306,36 @@ import { placements } from '@popperjs/core'
 import { ArrowDown, CircleClose } from '@element-plus/icons-vue'
 import { ClickOutside } from '@hicor-ui/directives'
 import { useId, useLocale, useNamespace } from '@hicor-ui/hooks'
-import ElInput from '@hicor-ui/components/input'
-import ElTooltip, { useTooltipContentProps } from '@hicor-ui/components/tooltip'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
-import ElTag, { tagProps } from '@hicor-ui/components/tag'
-import ElIcon from '@hicor-ui/components/icon'
+import HcInput from '@hicor-ui/components/input'
+import HcTooltip, { useTooltipContentProps } from '@hicor-ui/components/tooltip'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
+import HcTag, { tagProps } from '@hicor-ui/components/tag'
+import HcIcon from '@hicor-ui/components/icon'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@hicor-ui/constants'
 import { iconPropType, isIOS, isValidComponentSize } from '@hicor-ui/utils'
-import ElOption from './option.vue'
-import ElSelectMenu from './select-dropdown.vue'
+import HcOption from './option.vue'
+import HcSelectMenu from './select-dropdown.vue'
 import { useSelect, useSelectStates } from './useSelect'
 import { selectKey } from './token'
-import ElOptions from './options'
+import HcOptions from './options'
 
 import type { PropType } from 'vue'
 import type { ComponentSize } from '@hicor-ui/constants'
 import type { SelectContext } from './token'
 
-const COMPONENT_NAME = 'ElSelect'
+const COMPONENT_NAME = 'HcSelect'
 export default defineComponent({
   name: COMPONENT_NAME,
   componentName: COMPONENT_NAME,
   components: {
-    ElInput,
-    ElSelectMenu,
-    ElOption,
-    ElOptions,
-    ElTag,
-    ElScrollbar,
-    ElTooltip,
-    ElIcon,
+    HcInput,
+    HcSelectMenu,
+    HcOption,
+    HcOptions,
+    HcTag,
+    HcScrollbar,
+    HcTooltip,
+    HcIcon,
   },
   directives: { ClickOutside },
   props: {

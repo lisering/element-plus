@@ -21,14 +21,14 @@
   >
     <template v-if="loading">
       <slot v-if="$slots.loading" name="loading" />
-      <el-icon v-else :class="ns.is('loading')">
+      <hc-icon v-else :class="ns.is('loading')">
         <component :is="loadingIcon" />
-      </el-icon>
+      </hc-icon>
     </template>
-    <el-icon v-else-if="icon || $slots.icon">
+    <hc-icon v-else-if="icon || $slots.icon">
       <component :is="icon" v-if="icon" />
       <slot v-else name="icon" />
-    </el-icon>
+    </hc-icon>
     <span
       v-if="$slots.default"
       :class="{ [ns.em('text', 'expand')]: shouldAddSpace }"
@@ -39,14 +39,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { useButton } from './use-button'
 import { buttonEmits, buttonProps } from './button'
 import { useButtonCustomStyle } from './button-custom'
 
 defineOptions({
-  name: 'ElButton',
+  name: 'HcButton',
 })
 
 const props = defineProps(buttonProps)

@@ -24,7 +24,7 @@
         height: itemSize + 'px',
       }"
     >
-      <el-icon
+      <hc-icon
         v-if="icon"
         :class="[
           ns.is('leaf', !!node?.isLeaf),
@@ -37,8 +37,8 @@
         @click.stop="handleExpandIconClick"
       >
         <component :is="icon" />
-      </el-icon>
-      <el-checkbox
+      </hc-icon>
+      <hc-checkbox
         v-if="showCheckbox"
         :model-value="checked"
         :indeterminate="indeterminate"
@@ -46,7 +46,7 @@
         @change="handleCheckChange"
         @click.stop
       />
-      <el-node-content :node="node" />
+      <hc-node-content :node="node" />
     </div>
   </div>
 </template>
@@ -54,10 +54,10 @@
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
 import { CaretRight } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
-import ElCheckbox from '@hicor-ui/components/checkbox'
+import HcIcon from '@hicor-ui/components/icon'
+import HcCheckbox from '@hicor-ui/components/checkbox'
 import { useNamespace } from '@hicor-ui/hooks'
-import ElNodeContent from './tree-node-content'
+import HcNodeContent from './tree-node-content'
 import {
   NODE_CONTEXTMENU,
   ROOT_TREE_INJECTION_KEY,
@@ -67,7 +67,7 @@ import {
 import type { CheckboxValueType } from '@hicor-ui/components/checkbox'
 
 defineOptions({
-  name: 'ElTreeNode',
+  name: 'HcTreeNode',
 })
 
 const props = defineProps(treeNodeProps)

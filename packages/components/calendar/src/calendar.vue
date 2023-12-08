@@ -4,17 +4,17 @@
       <slot name="header" :date="i18nDate">
         <div :class="ns.e('title')">{{ i18nDate }}</div>
         <div v-if="validatedRange.length === 0" :class="ns.e('button-group')">
-          <el-button-group>
-            <el-button size="small" @click="selectDate('prev-month')">
+          <hc-button-group>
+            <hc-button size="small" @click="selectDate('prev-month')">
               {{ t('el.datepicker.prevMonth') }}
-            </el-button>
-            <el-button size="small" @click="selectDate('today')">
+            </hc-button>
+            <hc-button size="small" @click="selectDate('today')">
               {{ t('el.datepicker.today') }}
-            </el-button>
-            <el-button size="small" @click="selectDate('next-month')">
+            </hc-button>
+            <hc-button size="small" @click="selectDate('next-month')">
               {{ t('el.datepicker.nextMonth') }}
-            </el-button>
-          </el-button-group>
+            </hc-button>
+          </hc-button-group>
         </div>
       </slot>
     </div>
@@ -53,7 +53,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ElButton, ElButtonGroup } from '@hicor-ui/components/button'
+import { HcButton, HcButtonGroup } from '@hicor-ui/components/button'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 
 import DateTable from './date-table.vue'
@@ -62,7 +62,7 @@ import { calendarEmits, calendarProps } from './calendar'
 
 const ns = useNamespace('calendar')
 
-const COMPONENT_NAME = 'ElCalendar'
+const COMPONENT_NAME = 'HcCalendar'
 defineOptions({
   name: COMPONENT_NAME,
 })

@@ -16,11 +16,11 @@ import {
 } from 'vue'
 import { useTimeoutFn } from '@vueuse/core'
 import { ArrowDown, ArrowRight } from '@element-plus/icons-vue'
-import ElCollapseTransition from '@hicor-ui/components/collapse-transition'
-import ElTooltip from '@hicor-ui/components/tooltip'
+import HcCollapseTransition from '@hicor-ui/components/collapse-transition'
+import HcTooltip from '@hicor-ui/components/tooltip'
 import { buildProps, iconPropType, isString, throwError } from '@hicor-ui/utils'
 import { useDeprecated, useNamespace } from '@hicor-ui/hooks'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import useMenu from './use-menu'
 import { useMenuCssVar } from './use-menu-css-var'
 
@@ -70,7 +70,7 @@ export const subMenuProps = buildProps({
 } as const)
 export type SubMenuProps = ExtractPropTypes<typeof subMenuProps>
 
-const COMPONENT_NAME = 'ElSubMenu'
+const COMPONENT_NAME = 'HcSubMenu'
 export default defineComponent({
   name: COMPONENT_NAME,
   props: subMenuProps,
@@ -108,7 +108,7 @@ export default defineComponent({
     let timeout: (() => void) | undefined
     const mouseInChild = ref(false)
     const verticalTitleRef = ref<HTMLDivElement>()
-    const vPopper = ref<InstanceType<typeof ElTooltip> | null>(null)
+    const vPopper = ref<InstanceType<typeof HcTooltip> | null>(null)
 
     // computed
     const currentPlacement = computed<Placement>(() =>
@@ -262,7 +262,7 @@ export default defineComponent({
       ))
 
       if (appendToBody.value && deepDispatch) {
-        if (instance.parent?.type.name === 'ElSubMenu') {
+        if (instance.parent?.type.name === 'HcSubMenu') {
           subMenu.handleMouseleave?.(true)
         }
       }
@@ -310,7 +310,7 @@ export default defineComponent({
       const titleTag: VNodeArrayChildren = [
         slots.title?.(),
         h(
-          ElIcon,
+          HcIcon,
           {
             class: nsSubMenu.e('icon-arrow'),
             style: {
@@ -334,11 +334,11 @@ export default defineComponent({
       ]
 
       // this render function is only used for bypass `Vue`'s compiler caused patching issue.
-      // temporarily mark ElPopper as any due to type inconsistency.
+      // temporarily mark HcPopper as any due to type inconsistency.
       const child = rootMenu.isMenuPopup
         ? h(
             // TODO: correct popper's type.
-            ElTooltip as any,
+            HcTooltip as any,
             {
               ref: vPopper,
               visible: opened.value,
@@ -406,7 +406,7 @@ export default defineComponent({
               titleTag
             ),
             h(
-              ElCollapseTransition,
+              HcCollapseTransition,
               {},
               {
                 default: () =>

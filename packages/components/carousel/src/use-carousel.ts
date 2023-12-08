@@ -34,7 +34,7 @@ export const useCarousel = (
     removeChild: removeItem,
   } = useOrderedChildren<CarouselItemContext>(
     getCurrentInstance()!,
-    'ElCarouselItem'
+    'HcCarouselItem'
   )
 
   const slots = useSlots()
@@ -227,7 +227,7 @@ export const useCarousel = (
 
     const flatSlots = flattedChildren(defaultSlots)
 
-    const carouselItemsName = 'ElCarouselItem'
+    const carouselItemsName = 'HcCarouselItem'
 
     const normalizeSlots = flatSlots.filter((slot) => {
       return isVNode(slot) && (slot.type as any).name === carouselItemsName

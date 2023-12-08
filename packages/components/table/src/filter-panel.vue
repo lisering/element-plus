@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="tooltip"
     :visible="tooltipVisible"
     :offset="0"
@@ -15,20 +15,20 @@
     <template #content>
       <div v-if="multiple">
         <div :class="ns.e('content')">
-          <el-scrollbar :wrap-class="ns.e('wrap')">
-            <el-checkbox-group
+          <hc-scrollbar :wrap-class="ns.e('wrap')">
+            <hc-checkbox-group
               v-model="filteredValue"
               :class="ns.e('checkbox-group')"
             >
-              <el-checkbox
+              <hc-checkbox
                 v-for="filter in filters"
                 :key="filter.value"
                 :label="filter.value"
               >
                 {{ filter.text }}
-              </el-checkbox>
-            </el-checkbox-group>
-          </el-scrollbar>
+              </hc-checkbox>
+            </hc-checkbox-group>
+          </hc-scrollbar>
         </div>
         <div :class="ns.e('bottom')">
           <button
@@ -77,25 +77,25 @@
         ]"
         @click="showFilterPanel"
       >
-        <el-icon>
+        <hc-icon>
           <arrow-up v-if="column.filterOpened" />
           <arrow-down v-else />
-        </el-icon>
+        </hc-icon>
       </span>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 
 <script lang="ts">
 // @ts-nocheck
 import { computed, defineComponent, getCurrentInstance, ref, watch } from 'vue'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
-import ElCheckbox from '@hicor-ui/components/checkbox'
-import { ElIcon } from '@hicor-ui/components/icon'
+import HcCheckbox from '@hicor-ui/components/checkbox'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { ClickOutside } from '@hicor-ui/directives'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
-import ElTooltip from '@hicor-ui/components/tooltip'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
+import HcTooltip from '@hicor-ui/components/tooltip'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
 import type { Placement } from '@hicor-ui/components/popper'
 
 import type { PropType, WritableComputedRef } from 'vue'
@@ -103,16 +103,16 @@ import type { TableColumnCtx } from './table-column/defaults'
 import type { TableHeader } from './table-header'
 import type { Store } from './store'
 
-const { CheckboxGroup: ElCheckboxGroup } = ElCheckbox
+const { CheckboxGroup: HcCheckboxGroup } = HcCheckbox
 
 export default defineComponent({
-  name: 'ElTableFilterPanel',
+  name: 'HcTableFilterPanel',
   components: {
-    ElCheckbox,
-    ElCheckboxGroup,
-    ElScrollbar,
-    ElTooltip,
-    ElIcon,
+    HcCheckbox,
+    HcCheckboxGroup,
+    HcScrollbar,
+    HcTooltip,
+    HcIcon,
     ArrowDown,
     ArrowUp,
   },
@@ -141,7 +141,7 @@ export default defineComponent({
       parent.filterPanels.value[props.column.id] = instance
     }
     const tooltipVisible = ref(false)
-    const tooltip = ref<InstanceType<typeof ElTooltip> | null>(null)
+    const tooltip = ref<InstanceType<typeof HcTooltip> | null>(null)
     const filters = computed(() => {
       return props.column && props.column.filters
     })

@@ -15,7 +15,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.hc-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(
       scrollDom,
@@ -49,7 +49,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.hc-scrollbar__wrap').element
 
     const offsetWidthRestore = defineGetter(
       scrollDom,
@@ -85,7 +85,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.hc-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(
       scrollDom,
@@ -140,7 +140,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    expect(wrapper.find('.el-scrollbar__wrap').attributes('style')).toContain(
+    expect(wrapper.find('.hc-scrollbar__wrap').attributes('style')).toContain(
       'height: 204px;'
     )
   })
@@ -154,7 +154,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    expect(wrapper.find('.el-scrollbar__wrap').attributes('style')).toContain(
+    expect(wrapper.find('.hc-scrollbar__wrap').attributes('style')).toContain(
       'max-height: 204px;'
     )
   })
@@ -168,7 +168,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    expect(wrapper.find('.el-scrollbar__bar').attributes('style')).toBeFalsy()
+    expect(wrapper.find('.hc-scrollbar__bar').attributes('style')).toBeFalsy()
   })
 
   test('set scrollTop & scrollLeft', async () => {
@@ -193,7 +193,7 @@ describe('ScrollBar', () => {
     })
 
     const scrollbar = wrapper.findComponent({ ref: 'scrollbar' }).vm
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.hc-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(
       scrollDom,
@@ -242,7 +242,7 @@ describe('ScrollBar', () => {
       </Scrollbar>
     ))
 
-    const scrollDom = wrapper.find('.el-scrollbar__wrap').element
+    const scrollDom = wrapper.find('.hc-scrollbar__wrap').element
 
     const offsetHeightRestore = defineGetter(
       scrollDom,
@@ -273,7 +273,7 @@ describe('ScrollBar', () => {
     ))
 
     expect(
-      wrapper.find('.el-scrollbar__view').element instanceof HTMLUListElement
+      wrapper.find('.hc-scrollbar__view').element instanceof HTMLUListElement
     ).toBeTruthy()
   })
 
@@ -281,7 +281,7 @@ describe('ScrollBar', () => {
     const wrapStyle = 'background: red;'
     const wrapper = mount(() => <Scrollbar wrap-style={wrapStyle} />)
 
-    expect(wrapper.find('.el-scrollbar__wrap').attributes('style')).toContain(
+    expect(wrapper.find('.hc-scrollbar__wrap').attributes('style')).toContain(
       wrapStyle
     )
   })
@@ -290,14 +290,14 @@ describe('ScrollBar', () => {
     const wrapClass = 'test-wrap-class'
     const wrapper = mount(() => <Scrollbar wrap-class={wrapClass} />)
 
-    expect(wrapper.find('.el-scrollbar__wrap').classes()).toContain(wrapClass)
+    expect(wrapper.find('.hc-scrollbar__wrap').classes()).toContain(wrapClass)
   })
 
   test('should render view-style props', async () => {
     const viewStyle = 'display: inline-block;'
     const wrapper = mount(() => <Scrollbar view-style={viewStyle} />)
 
-    expect(wrapper.find('.el-scrollbar__view').attributes('style')).toContain(
+    expect(wrapper.find('.hc-scrollbar__view').attributes('style')).toContain(
       viewStyle
     )
   })
@@ -306,6 +306,6 @@ describe('ScrollBar', () => {
     const viewClass = 'test-view-class'
     const wrapper = mount(() => <Scrollbar view-class={viewClass} />)
 
-    expect(wrapper.find('.el-scrollbar__view').classes()).toContain(viewClass)
+    expect(wrapper.find('.hc-scrollbar__view').classes()).toContain(viewClass)
   })
 })

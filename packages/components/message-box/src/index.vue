@@ -1,6 +1,6 @@
 <template>
   <transition name="fade-in-linear" @after-leave="$emit('vanish')">
-    <el-overlay
+    <hc-overlay
       v-show="visible"
       :z-index="zIndex"
       :overlay-class="[ns.is('message-box'), modalClass]"
@@ -16,7 +16,7 @@
         @mousedown="overlayEvent.onMousedown"
         @mouseup="overlayEvent.onMouseup"
       >
-        <el-focus-trap
+        <hc-focus-trap
           loop
           :trapped="visible"
           :focus-trap-el="rootRef"
@@ -41,12 +41,12 @@
               :class="ns.e('header')"
             >
               <div :class="ns.e('title')">
-                <el-icon
+                <hc-icon
                   v-if="iconComponent && center"
                   :class="[ns.e('status'), typeClass]"
                 >
                   <component :is="iconComponent" />
-                </el-icon>
+                </hc-icon>
                 <span>{{ title }}</span>
               </div>
               <button
@@ -61,19 +61,19 @@
                   handleAction(distinguishCancelAndClose ? 'close' : 'cancel')
                 "
               >
-                <el-icon :class="ns.e('close')">
+                <hc-icon :class="ns.e('close')">
                   <close />
-                </el-icon>
+                </hc-icon>
               </button>
             </div>
             <div :id="contentId" :class="ns.e('content')">
               <div :class="ns.e('container')">
-                <el-icon
+                <hc-icon
                   v-if="iconComponent && !center && hasMessage"
                   :class="[ns.e('status'), typeClass]"
                 >
                   <component :is="iconComponent" />
-                </el-icon>
+                </hc-icon>
                 <div v-if="hasMessage" :class="ns.e('message')">
                   <slot>
                     <component
@@ -93,7 +93,7 @@
                 </div>
               </div>
               <div v-show="showInput" :class="ns.e('input')">
-                <el-input
+                <hc-input
                   :id="inputId"
                   ref="inputRef"
                   v-model="inputValue"
@@ -114,7 +114,7 @@
               </div>
             </div>
             <div :class="ns.e('btns')">
-              <el-button
+              <hc-button
                 v-if="showCancelButton"
                 :loading="cancelButtonLoading"
                 :class="[cancelButtonClass]"
@@ -124,8 +124,8 @@
                 @keydown.prevent.enter="handleAction('cancel')"
               >
                 {{ cancelButtonText || t('el.messagebox.cancel') }}
-              </el-button>
-              <el-button
+              </hc-button>
+              <hc-button
                 v-show="showConfirmButton"
                 ref="confirmRef"
                 type="primary"
@@ -138,12 +138,12 @@
                 @keydown.prevent.enter="handleAction('confirm')"
               >
                 {{ confirmButtonText || t('el.messagebox.confirm') }}
-              </el-button>
+              </hc-button>
             </div>
           </div>
-        </el-focus-trap>
+        </hc-focus-trap>
       </div>
-    </el-overlay>
+    </hc-overlay>
   </transition>
 </template>
 <script lang="ts">
@@ -159,7 +159,7 @@ import {
   toRefs,
   watch,
 } from 'vue'
-import ElButton from '@hicor-ui/components/button'
+import HcButton from '@hicor-ui/components/button'
 import { TrapFocus } from '@hicor-ui/directives'
 import {
   useDraggable,
@@ -167,15 +167,15 @@ import {
   useLockscreen,
   useSameTarget,
 } from '@hicor-ui/hooks'
-import ElInput from '@hicor-ui/components/input'
-import { ElOverlay } from '@hicor-ui/components/overlay'
+import HcInput from '@hicor-ui/components/input'
+import { HcOverlay } from '@hicor-ui/components/overlay'
 import {
   TypeComponents,
   TypeComponentsMap,
   isValidComponentSize,
 } from '@hicor-ui/utils'
-import { ElIcon } from '@hicor-ui/components/icon'
-import ElFocusTrap from '@hicor-ui/components/focus-trap'
+import { HcIcon } from '@hicor-ui/components/icon'
+import HcFocusTrap from '@hicor-ui/components/focus-trap'
 import { useGlobalComponentSettings } from '@hicor-ui/components/config-provider'
 
 import type { ComponentPublicInstance, DefineComponent, PropType } from 'vue'
@@ -187,16 +187,16 @@ import type {
 } from './message-box.type'
 
 export default defineComponent({
-  name: 'ElMessageBox',
+  name: 'HcMessageBox',
   directives: {
     TrapFocus,
   },
   components: {
-    ElButton,
-    ElFocusTrap,
-    ElInput,
-    ElOverlay,
-    ElIcon,
+    HcButton,
+    HcFocusTrap,
+    HcInput,
+    HcOverlay,
+    HcIcon,
     ...TypeComponents,
   },
   inheritAttrs: false,

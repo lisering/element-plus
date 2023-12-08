@@ -9,8 +9,8 @@ describe('Progress.vue', () => {
   test('percent', () => {
     const wrapper = mount(() => <Progress percentage={66} />)
 
-    expect(wrapper.find('.el-progress__text').text()).toBe('66%')
-    expect(wrapper.find('.el-progress-bar__inner').attributes('style')).toBe(
+    expect(wrapper.find('.hc-progress__text').text()).toBe('66%')
+    expect(wrapper.find('.hc-progress-bar__inner').attributes('style')).toBe(
       'width: 66%; animation-duration: 3s;'
     )
   })
@@ -31,7 +31,7 @@ describe('Progress.vue', () => {
   test('stroke width', () => {
     const wrapper = mount(() => <Progress strokeWidth={7} />)
 
-    expect(wrapper.find('.el-progress-bar__outer').attributes('style')).toBe(
+    expect(wrapper.find('.hc-progress-bar__outer').attributes('style')).toBe(
       'height: 7px;'
     )
   })
@@ -39,7 +39,7 @@ describe('Progress.vue', () => {
   test('show text', () => {
     const wrapper = mount(() => <Progress showText={false} />)
 
-    expect(wrapper.find('.el-progress__text').exists()).toBe(false)
+    expect(wrapper.find('.hc-progress__text').exists()).toBe(false)
   })
 
   test('circle', () => {
@@ -57,7 +57,7 @@ describe('Progress.vue', () => {
   test('width', () => {
     const wrapper = mount(() => <Progress type="circle" width={120} />)
 
-    expect(wrapper.find('.el-progress-circle').attributes('style')).toBe(
+    expect(wrapper.find('.hc-progress-circle').attributes('style')).toBe(
       'height: 120px; width: 120px;'
     )
   })
@@ -66,21 +66,21 @@ describe('Progress.vue', () => {
     const wrapper = mount(() => <Progress color="rgb(255, 255, 255)" />)
 
     expect(
-      wrapper.find('.el-progress-bar__inner').attributes('style')
+      wrapper.find('.hc-progress-bar__inner').attributes('style')
     ).toContain('background-color: rgb(255, 255, 255);')
   })
 
   test('striped', () => {
     const wrapper = mount(() => <Progress striped />)
 
-    expect(wrapper.find('.el-progress-bar__inner--striped').exists()).toBe(true)
+    expect(wrapper.find('.hc-progress-bar__inner--striped').exists()).toBe(true)
   })
 
   test('striped flow', () => {
     const wrapper = mount(() => <Progress striped striped-flow />)
 
-    expect(wrapper.find('.el-progress-bar__inner--striped').exists()).toBe(true)
-    expect(wrapper.find('.el-progress-bar__inner--striped-flow').exists()).toBe(
+    expect(wrapper.find('.hc-progress-bar__inner--striped').exists()).toBe(true)
+    expect(wrapper.find('.hc-progress-bar__inner--striped-flow').exists()).toBe(
       true
     )
   })
@@ -102,7 +102,7 @@ describe('Progress.vue', () => {
     ))
 
     expect(
-      wrapper.find('.el-progress-bar__inner').attributes('style')
+      wrapper.find('.hc-progress-bar__inner').attributes('style')
     ).toContain('background-color: rgb(1, 2, 3);')
 
     percentage.value = 60
@@ -110,7 +110,7 @@ describe('Progress.vue', () => {
     await nextTick()
 
     expect(
-      wrapper.find('.el-progress-bar__inner').attributes('style')
+      wrapper.find('.hc-progress-bar__inner').attributes('style')
     ).toContain('background-color: rgb(4, 5, 6);')
   })
 
@@ -130,14 +130,14 @@ describe('Progress.vue', () => {
     await nextTick()
 
     expect(
-      wrapper.find('.el-progress-bar__inner').attributes('style')
+      wrapper.find('.hc-progress-bar__inner').attributes('style')
     ).toContain('background-color: rgb(1, 1, 1);')
 
     percentage.value = 89
     await nextTick()
 
     expect(
-      wrapper.find('.el-progress-bar__inner').attributes('style')
+      wrapper.find('.hc-progress-bar__inner').attributes('style')
     ).toContain('background-color: rgb(9, 9, 9);')
   })
 
@@ -148,7 +148,7 @@ describe('Progress.vue', () => {
         format={(percent: number) => `占比${percent}%`}
       />
     ))
-    expect(wrapper.find('.el-progress__text').text()).toBe('占比100%')
+    expect(wrapper.find('.hc-progress__text').text()).toBe('占比100%')
   })
 
   test('slot', () => {
@@ -160,6 +160,6 @@ describe('Progress.vue', () => {
       />
     ))
 
-    expect(wrapper.find('.el-progress__text').text()).toBe('自定义内容')
+    expect(wrapper.find('.hc-progress__text').text()).toBe('自定义内容')
   })
 })

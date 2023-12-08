@@ -53,7 +53,7 @@ import TooltipV2Content from './content.vue'
 import TooltipV2Trigger from './trigger.vue'
 
 defineOptions({
-  name: 'ElTooltipV2',
+  name: 'HcTooltipV2',
 })
 
 const props = defineProps(tooltipV2Props)

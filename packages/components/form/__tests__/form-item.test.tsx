@@ -22,7 +22,7 @@ import type { InputInstance } from '@hicor-ui/components/input'
 
 type FormItemInstance = InstanceType<typeof FormItem>
 
-describe('ElFormItem', () => {
+describe('HcFormItem', () => {
   let wrapper: VueWrapper<InstanceType<typeof DynamicFormItem>>
   const formItemRef = ref<FormItemInstance>()
   const inputRef = ref<InputInstance>()

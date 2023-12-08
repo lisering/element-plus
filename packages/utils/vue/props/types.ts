@@ -56,7 +56,7 @@ export type HcPropMergeType<Type, Value, Validator> =
  *
  * 处理输入参数的默认值（约束）
  */
-export type EpPropInputDefault<
+export type HcPropInputDefault<
   Required extends boolean,
   Default
 > = Required extends true
@@ -83,7 +83,7 @@ export type IfNativePropType<T, Y, N> = [T] extends [NativePropType] ? Y : N
  * prop 输入参数（约束）
  *
  * @example
- * EpPropInput<StringConstructor, 'a', never, never, true>
+ * HcPropInput<StringConstructor, 'a', never, never, true>
  * ⬇️
  * {
     type?: StringConstructor | undefined;
@@ -104,7 +104,7 @@ export type HcPropInput<
   required?: Required
   values?: readonly Value[]
   validator?: ((val: any) => val is Validator) | ((val: any) => boolean)
-  default?: EpPropInputDefault<Required, Default>
+  default?: HcPropInputDefault<Required, Default>
 }
 
 /**

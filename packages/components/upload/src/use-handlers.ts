@@ -16,7 +16,7 @@ import type {
   UploadStatus,
 } from './upload'
 
-const SCOPE = 'ElUpload'
+const SCOPE = 'HcUpload'
 
 const revokeFileObjectURL = (file: UploadFile) => {
   if (file.url?.startsWith('blob:')) {

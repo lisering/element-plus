@@ -1,5 +1,5 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-autocomplete.css'
+import '@hicor-ui/theme-chalk/hc-autocomplete.css'
 import '@hicor-ui/components/input/style/css'
 import '@hicor-ui/components/scrollbar/style/css'
 import '@hicor-ui/components/popper/style/css'

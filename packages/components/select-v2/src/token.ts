@@ -14,7 +14,7 @@ export interface SelectV2Context {
 }
 
 export const selectV2InjectionKey: InjectionKey<SelectV2Context> = Symbol(
-  'ElSelectV2Injection'
+  'HcSelectV2Injection'
 )
 export type IOptionProps = ExtractPropTypes<typeof OptionProps>
 export type ISelectProps = ExtractPropTypes<typeof SelectProps>

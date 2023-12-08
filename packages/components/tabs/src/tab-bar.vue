@@ -16,7 +16,7 @@ import { tabBarProps } from './tab-bar'
 
 import type { CSSProperties } from 'vue'
 
-const COMPONENT_NAME = 'ElTabBar'
+const COMPONENT_NAME = 'HcTabBar'
 defineOptions({
   name: COMPONENT_NAME,
 })
@@ -24,7 +24,7 @@ const props = defineProps(tabBarProps)
 
 const instance = getCurrentInstance()!
 const rootTabs = inject(tabsRootContextKey)
-if (!rootTabs) throwError(COMPONENT_NAME, '<el-tabs><el-tab-bar /></el-tabs>')
+if (!rootTabs) throwError(COMPONENT_NAME, '<hc-tabs><hc-tab-bar /></hc-tabs>')
 
 const ns = useNamespace('tabs')
 

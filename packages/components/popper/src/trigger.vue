@@ -1,5 +1,5 @@
 <template>
-  <el-only-child
+  <hc-only-child
     v-if="!virtualTriggering"
     v-bind="$attrs"
     :aria-controls="ariaControls"
@@ -8,14 +8,14 @@
     :aria-haspopup="ariaHaspopup"
   >
     <slot />
-  </el-only-child>
+  </hc-only-child>
 </template>
 
 <script lang="ts" setup>
 import { computed, inject, onBeforeUnmount, onMounted, watch } from 'vue'
 import { isNil } from 'lodash-unified'
 import { unrefElement } from '@vueuse/core'
-import { ElOnlyChild } from '@hicor-ui/components/slot'
+import { HcOnlyChild } from '@hicor-ui/components/slot'
 import { useForwardRef } from '@hicor-ui/hooks'
 import { isElement } from '@hicor-ui/utils'
 import { POPPER_INJECTION_KEY } from './constants'
@@ -24,7 +24,7 @@ import { popperTriggerProps } from './trigger'
 import type { WatchStopHandle } from 'vue'
 
 defineOptions({
-  name: 'ElPopperTrigger',
+  name: 'HcPopperTrigger',
   inheritAttrs: false,
 })
 

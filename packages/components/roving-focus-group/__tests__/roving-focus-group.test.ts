@@ -4,7 +4,7 @@ import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { COLLECTION_ITEM_SIGN } from '@hicor-ui/components/collection'
 import { composeRefs } from '@hicor-ui/utils'
-import ElRovingFocusGroup from '../src/roving-focus-group.vue'
+import HcRovingFocusGroup from '../src/roving-focus-group.vue'
 import { ROVING_FOCUS_GROUP_INJECTION_KEY } from '../src/tokens'
 import { ROVING_FOCUS_COLLECTION_INJECTION_KEY } from '../src/roving-focus-group'
 
@@ -61,7 +61,7 @@ const onFocus = vi.fn()
 const onBlur = vi.fn()
 const onMousedown = vi.fn()
 
-describe('<ElRovingFocusGroup />', () => {
+describe('<HcRovingFocusGroup />', () => {
   const createComponent = (
     props = {
       onFocus,
@@ -69,7 +69,7 @@ describe('<ElRovingFocusGroup />', () => {
       onMousedown,
     }
   ) =>
-    mount(ElRovingFocusGroup, {
+    mount(HcRovingFocusGroup, {
       props,
       slots: {
         default: () => h(RovingFocusGroupChild),

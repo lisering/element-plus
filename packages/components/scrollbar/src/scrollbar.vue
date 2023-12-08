@@ -52,7 +52,7 @@ import { scrollbarEmits, scrollbarProps } from './scrollbar'
 import type { BarInstance } from './bar'
 import type { CSSProperties, StyleValue } from 'vue'
 
-const COMPONENT_NAME = 'ElScrollbar'
+const COMPONENT_NAME = 'HcScrollbar'
 
 defineOptions({
   name: COMPONENT_NAME,

@@ -4,7 +4,7 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, test, vi } from 'vitest'
 import { rAF } from '@hicor-ui/test-utils/tick'
 import { EVENT_CODE } from '@hicor-ui/constants'
-import { ElTooltip } from '@hicor-ui/components/tooltip'
+import { HcTooltip } from '@hicor-ui/components/tooltip'
 import Button from '@hicor-ui/components/button'
 import { usePopperContainerId } from '@hicor-ui/hooks'
 import Dropdown from '../src/dropdown.vue'
@@ -36,30 +36,30 @@ describe('Dropdown', () => {
   test('create', async () => {
     const wrapper = _mount(
       `
-        <el-dropdown ref="b" placement="right">
+        <hc-dropdown ref="b" placement="right">
           <span class="el-dropdown-link" ref="a">
             dropdown<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item>Apple</el-dropdown-item>
-              <el-dropdown-item>Orange</el-dropdown-item>
-              <el-dropdown-item>Cherry</el-dropdown-item>
-              <el-dropdown-item disabled>Peach</el-dropdown-item>
-              <el-dropdown-item divided>Pear</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu>
+              <hc-dropdown-item>Apple</hc-dropdown-item>
+              <hc-dropdown-item>Orange</hc-dropdown-item>
+              <hc-dropdown-item>Cherry</hc-dropdown-item>
+              <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+              <hc-dropdown-item divided>Pear</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
       `,
       () => ({})
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
 
     vi.useFakeTimers()
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
     expect(content.open).toBe(false)
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     vi.runAllTimers()
@@ -74,20 +74,20 @@ describe('Dropdown', () => {
     const commandHandler = vi.fn()
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" @command="commandHandler" placement="right">
+      <hc-dropdown ref="b" @command="commandHandler" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item command="a">Apple</hc-dropdown-item>
+            <hc-dropdown-item command="b">Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c" :command="myCommandObject">Cherry</hc-dropdown-item>
+            <hc-dropdown-item command="d">Peach</hc-dropdown-item>
+            <hc-dropdown-item command="e">Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -101,7 +101,7 @@ describe('Dropdown', () => {
     )
     await nextTick()
     // const content = wrapper.findComponent({ ref: 'b' }).vm as any
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await nextTick()
     await wrapper
@@ -109,7 +109,7 @@ describe('Dropdown', () => {
       .findComponent({
         name: 'DropdownItemImpl',
       })
-      .find('.el-dropdown-menu__item')
+      .find('.hc-dropdown-menu__item')
       .trigger('click')
     await nextTick()
     expect(commandHandler).toHaveBeenCalled()
@@ -118,20 +118,20 @@ describe('Dropdown', () => {
   test('trigger', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="click" ref="b" placement="right">
+      <hc-dropdown trigger="click" ref="b" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item command="a">Apple</hc-dropdown-item>
+            <hc-dropdown-item command="b">Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c" :command="myCommandObject">Cherry</hc-dropdown-item>
+            <hc-dropdown-item command="d">Peach</hc-dropdown-item>
+            <hc-dropdown-item command="e">Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -139,10 +139,10 @@ describe('Dropdown', () => {
       })
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.hc-dropdown-link')
     expect(content.open).toBe(false)
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     expect(content.open).toBe(false)
@@ -156,20 +156,20 @@ describe('Dropdown', () => {
   test('trigger contextmenu', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="contextmenu" ref="b" placement="right">
+      <hc-dropdown trigger="contextmenu" ref="b" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item command="a">Apple</hc-dropdown-item>
+            <hc-dropdown-item command="b">Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c" :command="myCommandObject">Cherry</hc-dropdown-item>
+            <hc-dropdown-item command="d">Peach</hc-dropdown-item>
+            <hc-dropdown-item command="e">Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -177,10 +177,10 @@ describe('Dropdown', () => {
       })
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
-    const triggerElm = wrapper.find('.el-dropdown-link')
+    const triggerElm = wrapper.find('.hc-dropdown-link')
     expect(content.open).toBe(false)
     await triggerElm.trigger(CONTEXTMENU)
     await rAF()
@@ -190,20 +190,20 @@ describe('Dropdown', () => {
   test('handleOpen and handleClose', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="click" ref="refDropdown" placement="right">
+      <hc-dropdown trigger="click" ref="refDropdown" placement="right">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item command="c">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item command="a">Apple</hc-dropdown-item>
+            <hc-dropdown-item command="b">Orange</hc-dropdown-item>
+            <hc-dropdown-item command="c">Cherry</hc-dropdown-item>
+            <hc-dropdown-item command="d">Peach</hc-dropdown-item>
+            <hc-dropdown-item command="e">Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({
         name: '',
@@ -211,8 +211,8 @@ describe('Dropdown', () => {
     )
     await nextTick()
     const dropdown = wrapper.vm
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
     expect(content.open).toBe(false)
     await dropdown.$refs.refDropdown.handleOpen()
@@ -227,18 +227,18 @@ describe('Dropdown', () => {
     const handleClick = vi.fn()
     const wrapper = _mount(
       `
-      <el-dropdown  @click="handleClick" split-button type="primary" ref="b" placement="right">
+      <hc-dropdown  @click="handleClick" split-button type="primary" ref="b" placement="right">
         dropdown
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item command="a">Apple</el-dropdown-item>
-            <el-dropdown-item command="b">Orange</el-dropdown-item>
-            <el-dropdown-item ref="c" :command="myCommandObject">Cherry</el-dropdown-item>
-            <el-dropdown-item command="d">Peach</el-dropdown-item>
-            <el-dropdown-item command="e">Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item command="a">Apple</hc-dropdown-item>
+            <hc-dropdown-item command="b">Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c" :command="myCommandObject">Cherry</hc-dropdown-item>
+            <hc-dropdown-item command="d">Peach</hc-dropdown-item>
+            <hc-dropdown-item command="e">Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({
         myCommandObject: { name: 'CommandC' },
@@ -251,11 +251,11 @@ describe('Dropdown', () => {
       }
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
-    const triggerElm = wrapper.find('.el-dropdown__caret-button')
-    const button = wrapper.find('.el-button')
+    const triggerElm = wrapper.find('.hc-dropdown__caret-button')
+    const button = wrapper.find('.hc-button')
     expect(content.open).toBe(false)
     await button.trigger('click')
     expect(handleClick).toHaveBeenCalled()
@@ -269,29 +269,29 @@ describe('Dropdown', () => {
   test('hide on click', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <hc-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c">Cherry</hc-dropdown-item>
+            <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+            <hc-dropdown-item divided>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
     expect(content.open).toBe(false)
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
     vi.useFakeTimers()
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     vi.runAllTimers()
@@ -310,28 +310,28 @@ describe('Dropdown', () => {
   test('triggerElm keydown', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <hc-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c">Cherry</hc-dropdown-item>
+            <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+            <hc-dropdown-item divided>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
     await nextTick()
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
 
     vi.useFakeTimers()
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
@@ -355,26 +355,26 @@ describe('Dropdown', () => {
   test('dropdown menu keydown', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" placement="right" :hide-on-click="false">
+      <hc-dropdown ref="b" placement="right" :hide-on-click="false">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu ref="dropdown-menu">
-            <el-dropdown-item ref="d">Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item ref="c">Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu ref="dropdown-menu">
+            <hc-dropdown-item ref="d">Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item ref="c">Cherry</hc-dropdown-item>
+            <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+            <hc-dropdown-item divided>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
     await nextTick()
     const content = wrapper.findComponent({ ref: 'dropdown-menu' })
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
     await triggerElm.trigger(MOUSE_ENTER_EVENT)
     await rAF()
     await content.trigger('keydown', {
@@ -387,7 +387,7 @@ describe('Dropdown', () => {
         .findComponent({
           name: 'DropdownItemImpl',
         })
-        .find('.el-dropdown-menu__item')
+        .find('.hc-dropdown-menu__item')
         .element.getAttribute('tabindex')
     ).toBe('0')
   })
@@ -395,20 +395,20 @@ describe('Dropdown', () => {
   test('max height', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b" max-height="60px">
+      <hc-dropdown ref="b" max-height="60px">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item>Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item>Cherry</hc-dropdown-item>
+            <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+            <hc-dropdown-item divided>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
@@ -418,7 +418,7 @@ describe('Dropdown', () => {
         ref: 'b',
       })
       .findComponent({ ref: 'scrollbar' })
-    expect(scrollbar.find('.el-scrollbar__wrap').attributes('style')).toContain(
+    expect(scrollbar.find('.hc-scrollbar__wrap').attributes('style')).toContain(
       'max-height: 60px;'
     )
   })
@@ -426,27 +426,27 @@ describe('Dropdown', () => {
   test('tooltip debounce', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown ref="b">
+      <hc-dropdown ref="b">
         <span class="el-dropdown-link">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item>Cherry</el-dropdown-item>
-            <el-dropdown-item>Peach</el-dropdown-item>
-            <el-dropdown-item>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item>Cherry</hc-dropdown-item>
+            <hc-dropdown-item>Peach</hc-dropdown-item>
+            <hc-dropdown-item>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
-    const content = wrapper.findComponent(ElTooltip).vm as InstanceType<
-      typeof ElTooltip
+    const content = wrapper.findComponent(HcTooltip).vm as InstanceType<
+      typeof HcTooltip
     >
-    const triggerElm = wrapper.find('.el-tooltip__trigger')
+    const triggerElm = wrapper.find('.hc-tooltip__trigger')
     expect(content.open).toBe(false)
 
     vi.useFakeTimers()
@@ -461,26 +461,26 @@ describe('Dropdown', () => {
   test('popperClass', async () => {
     const wrapper = await _mount(
       `
-      <el-dropdown ref="b" max-height="60px" popper-class="custom-popper-class">
+      <hc-dropdown ref="b" max-height="60px" popper-class="custom-popper-class">
         <span class="el-dropdown-link" ref="a">
           dropdown<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Apple</el-dropdown-item>
-            <el-dropdown-item>Orange</el-dropdown-item>
-            <el-dropdown-item>Cherry</el-dropdown-item>
-            <el-dropdown-item disabled>Peach</el-dropdown-item>
-            <el-dropdown-item divided>Pear</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Apple</hc-dropdown-item>
+            <hc-dropdown-item>Orange</hc-dropdown-item>
+            <hc-dropdown-item>Cherry</hc-dropdown-item>
+            <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+            <hc-dropdown-item divided>Pear</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
 
     const popperElement = wrapper.findComponent({
-      name: 'ElPopperContent',
+      name: 'HcPopperContent',
     }).element
 
     expect(popperElement.classList.contains('custom-popper-class')).toBe(true)
@@ -489,16 +489,16 @@ describe('Dropdown', () => {
   test('custom attributes for dropdown items', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown>
+      <hc-dropdown>
         <span class="el-dropdown-link">
           Custom Attributes
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item data-custom-attribute="hello">Item</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item data-custom-attribute="hello">Item</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
@@ -508,23 +508,23 @@ describe('Dropdown', () => {
         .findComponent({
           name: 'DropdownItemImpl',
         })
-        .find('.el-dropdown-menu__item').element.dataset.customAttribute
+        .find('.hc-dropdown-menu__item').element.dataset.customAttribute
     ).toBe('hello')
   })
 
   test('disable normal dropdown', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown disabled>
+      <hc-dropdown disabled>
         <span class="el-dropdown-link">
           Dropdown List
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item data-custom-attribute="hello">Item</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item data-custom-attribute="hello">Item</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
@@ -532,7 +532,7 @@ describe('Dropdown', () => {
     expect(
       wrapper
         .findComponent({
-          name: 'ElDropdown',
+          name: 'HcDropdown',
         })
         .classes()
     ).toContain('is-disabled')
@@ -540,16 +540,16 @@ describe('Dropdown', () => {
   test('disable dropdown with split button', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown disabled split-button>
+      <hc-dropdown disabled split-button>
         <span class="el-dropdown-link">
           Dropdown List
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item data-custom-attribute="hello">Item</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item data-custom-attribute="hello">Item</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
@@ -557,14 +557,14 @@ describe('Dropdown', () => {
     expect(
       wrapper
         .findAllComponents({
-          name: 'ElButton',
+          name: 'HcButton',
         })[0]
         .classes()
     ).toContain('is-disabled')
     expect(
       wrapper
         .findAllComponents({
-          name: 'ElButton',
+          name: 'HcButton',
         })[1]
         .classes()
     ).toContain('is-disabled')
@@ -573,21 +573,21 @@ describe('Dropdown', () => {
   test('set show-timeout/hide-timeout when trigger is hover', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="hover" :show-timeout="200" :hide-timeout="300">
+      <hc-dropdown trigger="hover" :show-timeout="200" :hide-timeout="300">
         <span class="el-dropdown-link">
           Dropdown List
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Item</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Item</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
     const tooltipElement = wrapper.getComponent({
-      name: 'ElTooltip',
+      name: 'HcTooltip',
     })
     expect(tooltipElement.vm.showAfter).toBe(200)
     expect(tooltipElement.vm.hideAfter).toBe(300)
@@ -596,21 +596,21 @@ describe('Dropdown', () => {
   test('ignore show-timeout/hide-timeout when trigger is not hover', async () => {
     const wrapper = _mount(
       `
-      <el-dropdown trigger="click" :show-timeout="200" :hide-timeout="300">
+      <hc-dropdown trigger="click" :show-timeout="200" :hide-timeout="300">
         <span class="el-dropdown-link">
           Dropdown List
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>Item</el-dropdown-item>
-          </el-dropdown-menu>
+          <hc-dropdown-menu>
+            <hc-dropdown-item>Item</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
+      </hc-dropdown>
       `,
       () => ({})
     )
     const tooltipElement = wrapper.getComponent({
-      name: 'ElTooltip',
+      name: 'HcTooltip',
     })
     expect(tooltipElement.vm.showAfter).toBe(0)
     expect(tooltipElement.vm.hideAfter).toBe(0)
@@ -620,16 +620,16 @@ describe('Dropdown', () => {
     test('Custom span trigger has proper attributes', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown>
+        <hc-dropdown>
           <span class="el-dropdown-link" data-test-ref="trigger">
             Dropdown List
           </span>
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item>Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item>Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
@@ -647,19 +647,19 @@ describe('Dropdown', () => {
       )
     })
 
-    test('ElButton trigger has proper attributes', async () => {
+    test('HcButton trigger has proper attributes', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown>
-          <el-button ref="trigger">
+        <hc-dropdown>
+          <hc-button ref="trigger">
             Dropdown List
-          </el-button>
+          </hc-button>
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item>Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item>Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
@@ -680,18 +680,18 @@ describe('Dropdown', () => {
     test('Split button trigger has proper attributes', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown split-button>
+        <hc-dropdown split-button>
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item>Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item>Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
       await nextTick()
-      const trigger = wrapper.find('.el-dropdown__caret-button')
+      const trigger = wrapper.find('.hc-dropdown__caret-button')
       const menu = wrapper.findComponent({ ref: 'menu' })
       expect(trigger.attributes()['role']).toBe('button')
       expect(trigger.attributes()['tabindex']).toBe('0')
@@ -707,18 +707,18 @@ describe('Dropdown', () => {
     test('Menu items with "menu" role', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown split-button>
+        <hc-dropdown split-button>
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item ref="menu-item">Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item ref="menu-item">Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
       const menu = wrapper.findComponent({ ref: 'menu' })
-      const menuItem = menu.find('.el-dropdown-menu__item')
+      const menuItem = menu.find('.hc-dropdown-menu__item')
       expect(menu.attributes()['role']).toBe('menu')
       expect(menuItem.attributes()['role']).toBe('menuitem')
     })
@@ -726,18 +726,18 @@ describe('Dropdown', () => {
     test('Menu items with "navigation" role', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown split-button role="navigation">
+        <hc-dropdown split-button role="navigation">
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item ref="menu-item">Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item ref="menu-item">Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
       const menu = wrapper.findComponent({ ref: 'menu' })
-      const menuItem = menu.find('.el-dropdown-menu__item')
+      const menuItem = menu.find('.hc-dropdown-menu__item')
       expect(menu.attributes()['role']).toBe('navigation')
       expect(menuItem.attributes()['role']).toBe('link')
     })
@@ -745,18 +745,18 @@ describe('Dropdown', () => {
     test('Menu items with "group" role', async () => {
       const wrapper = _mount(
         `
-        <el-dropdown split-button role="group">
+        <hc-dropdown split-button role="group">
           <template #dropdown>
-            <el-dropdown-menu ref="menu">
-              <el-dropdown-item ref="menu-item">Item</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu ref="menu">
+              <hc-dropdown-item ref="menu-item">Item</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>
+        </hc-dropdown>
         `,
         () => ({})
       )
       const menu = wrapper.findComponent({ ref: 'menu' })
-      const menuItem = menu.find('.el-dropdown-menu__item')
+      const menuItem = menu.find('.hc-dropdown-menu__item')
       expect(menu.attributes()['role']).toBe('group')
       expect(menuItem.attributes()['role']).toBe('button')
     })
@@ -767,20 +767,20 @@ describe('Dropdown', () => {
       expect(document.body.innerHTML).toBe('')
       _mount(
         `
-        <el-dropdown ref="b" placement="right">
+        <hc-dropdown ref="b" placement="right">
           <span class="el-dropdown-link" ref="a">
             dropdown<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item>Apple</el-dropdown-item>
-              <el-dropdown-item>Orange</el-dropdown-item>
-              <el-dropdown-item>Cherry</el-dropdown-item>
-              <el-dropdown-item disabled>Peach</el-dropdown-item>
-              <el-dropdown-item divided>Pear</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu>
+              <hc-dropdown-item>Apple</hc-dropdown-item>
+              <hc-dropdown-item>Orange</hc-dropdown-item>
+              <hc-dropdown-item>Cherry</hc-dropdown-item>
+              <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+              <hc-dropdown-item divided>Pear</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>`,
+        </hc-dropdown>`,
         () => ({})
       )
 
@@ -793,20 +793,20 @@ describe('Dropdown', () => {
       expect(document.body.innerHTML).toBe('')
       _mount(
         `
-        <el-dropdown ref="b" placement="right" :teleported="false">
+        <hc-dropdown ref="b" placement="right" :teleported="false">
           <span class="el-dropdown-link" ref="a">
             dropdown<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item>Apple</el-dropdown-item>
-              <el-dropdown-item>Orange</el-dropdown-item>
-              <el-dropdown-item>Cherry</el-dropdown-item>
-              <el-dropdown-item disabled>Peach</el-dropdown-item>
-              <el-dropdown-item divided>Pear</el-dropdown-item>
-            </el-dropdown-menu>
+            <hc-dropdown-menu>
+              <hc-dropdown-item>Apple</hc-dropdown-item>
+              <hc-dropdown-item>Orange</hc-dropdown-item>
+              <hc-dropdown-item>Cherry</hc-dropdown-item>
+              <hc-dropdown-item disabled>Peach</hc-dropdown-item>
+              <hc-dropdown-item divided>Pear</hc-dropdown-item>
+            </hc-dropdown-menu>
           </template>
-        </el-dropdown>`,
+        </hc-dropdown>`,
         () => ({})
       )
 

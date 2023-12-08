@@ -26,7 +26,7 @@ import { emptyProps } from './empty'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElEmpty',
+  name: 'HcEmpty',
 })
 
 const props = defineProps(emptyProps)

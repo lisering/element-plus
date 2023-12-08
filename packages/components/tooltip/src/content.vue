@@ -7,7 +7,7 @@
       @after-enter="onAfterShow"
       @before-leave="onBeforeLeave"
     >
-      <el-popper-content
+      <hc-popper-content
         v-if="shouldRender"
         v-show="shouldShow"
         :id="id"
@@ -39,7 +39,7 @@
         <template v-if="!destroyed">
           <slot />
         </template>
-      </el-popper-content>
+      </hc-popper-content>
     </transition>
   </teleport>
 </template>
@@ -49,12 +49,12 @@ import { computed, inject, onBeforeUnmount, ref, unref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import { useNamespace, usePopperContainerId } from '@hicor-ui/hooks'
 import { composeEventHandlers } from '@hicor-ui/utils'
-import { ElPopperContent } from '@hicor-ui/components/popper'
+import { HcPopperContent } from '@hicor-ui/components/popper'
 import { TOOLTIP_INJECTION_KEY } from './constants'
 import { useTooltipContentProps } from './content'
 
 defineOptions({
-  name: 'ElTooltipContent',
+  name: 'HcTooltipContent',
   inheritAttrs: false,
 })
 
@@ -62,7 +62,7 @@ const props = defineProps(useTooltipContentProps)
 
 const { selector } = usePopperContainerId()
 const ns = useNamespace('tooltip')
-// TODO any is temporary, replace with `InstanceType<typeof ElPopperContent> | null` later
+// TODO any is temporary, replace with `InstanceType<typeof HcPopperContent> | null` later
 const contentRef = ref<any>(null)
 const destroyed = ref(false)
 const {

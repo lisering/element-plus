@@ -14,7 +14,7 @@ import type { VirtualizedListProps } from '../props'
 type Props = VirtualizedListProps
 
 const FixedSizeList = buildList({
-  name: 'ElFixedSizeList',
+  name: 'HcFixedSizeList',
   getItemOffset: ({ itemSize }, index) => index * (itemSize as number),
 
   getItemSize: ({ itemSize }) => itemSize as number,
@@ -30,7 +30,7 @@ const FixedSizeList = buildList({
     const size = (isHorizontal(layout) ? width : height) as number
     if (process.env.NODE_ENV !== 'production' && isString(size)) {
       throwError(
-        '[ElVirtualList]',
+        '[HcVirtualList]',
         `
         You should set
           width/height

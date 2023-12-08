@@ -24,7 +24,7 @@ import { checkboxGroupContextKey } from './constants'
 import type { CheckboxGroupValueType } from './checkbox-group'
 
 defineOptions({
-  name: 'ElCheckboxGroup',
+  name: 'HcCheckboxGroup',
 })
 
 const props = defineProps(checkboxGroupProps)

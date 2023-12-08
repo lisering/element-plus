@@ -8,7 +8,7 @@ import {
   onMounted,
   ref,
 } from 'vue'
-import ElCheckbox from '@hicor-ui/components/checkbox'
+import HcCheckbox from '@hicor-ui/components/checkbox'
 import { useNamespace } from '@hicor-ui/hooks'
 import FilterPanel from '../filter-panel.vue'
 import useLayoutObserver from '../layout-observer'
@@ -34,9 +34,9 @@ export interface TableHeaderProps<T> {
 }
 
 export default defineComponent({
-  name: 'ElTableHeader',
+  name: 'HcTableHeader',
   components: {
-    ElCheckbox,
+    HcCheckbox,
   },
   props: {
     fixed: {

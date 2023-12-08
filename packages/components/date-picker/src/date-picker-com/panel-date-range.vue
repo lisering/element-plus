@@ -26,7 +26,7 @@
         <div v-if="showTime" :class="drpNs.e('time-header')">
           <span :class="drpNs.e('editors-wrap')">
             <span :class="drpNs.e('time-picker-wrap')">
-              <el-input
+              <hc-input
                 size="small"
                 :disabled="rangeState.selecting"
                 :placeholder="t('el.datepicker.startDate')"
@@ -41,7 +41,7 @@
               v-clickoutside="handleMinTimeClose"
               :class="drpNs.e('time-picker-wrap')"
             >
-              <el-input
+              <hc-input
                 size="small"
                 :class="drpNs.e('editor')"
                 :disabled="rangeState.selecting"
@@ -62,11 +62,11 @@
             </span>
           </span>
           <span>
-            <el-icon><arrow-right /></el-icon>
+            <hc-icon><arrow-right /></hc-icon>
           </span>
           <span :class="drpNs.e('editors-wrap')" class="is-right">
             <span :class="drpNs.e('time-picker-wrap')">
-              <el-input
+              <hc-input
                 size="small"
                 :class="drpNs.e('editor')"
                 :disabled="rangeState.selecting"
@@ -82,7 +82,7 @@
               v-clickoutside="handleMaxTimeClose"
               :class="drpNs.e('time-picker-wrap')"
             >
-              <el-input
+              <hc-input
                 size="small"
                 :class="drpNs.e('editor')"
                 :disabled="rangeState.selecting"
@@ -113,7 +113,7 @@
               class="d-arrow-left"
               @click="leftPrevYear"
             >
-              <el-icon><d-arrow-left /></el-icon>
+              <hc-icon><d-arrow-left /></hc-icon>
             </button>
             <button
               type="button"
@@ -122,7 +122,7 @@
               class="arrow-left"
               @click="leftPrevMonth"
             >
-              <el-icon><arrow-left /></el-icon>
+              <hc-icon><arrow-left /></hc-icon>
             </button>
             <button
               v-if="unlinkPanels"
@@ -133,7 +133,7 @@
               class="d-arrow-right"
               @click="leftNextYear"
             >
-              <el-icon><d-arrow-right /></el-icon>
+              <hc-icon><d-arrow-right /></hc-icon>
             </button>
             <button
               v-if="unlinkPanels"
@@ -147,7 +147,7 @@
               class="arrow-right"
               @click="leftNextMonth"
             >
-              <el-icon><arrow-right /></el-icon>
+              <hc-icon><arrow-right /></hc-icon>
             </button>
             <div>{{ leftLabel }}</div>
           </div>
@@ -175,7 +175,7 @@
               class="d-arrow-left"
               @click="rightPrevYear"
             >
-              <el-icon><d-arrow-left /></el-icon>
+              <hc-icon><d-arrow-left /></hc-icon>
             </button>
             <button
               v-if="unlinkPanels"
@@ -189,7 +189,7 @@
               class="arrow-left"
               @click="rightPrevMonth"
             >
-              <el-icon><arrow-left /></el-icon>
+              <hc-icon><arrow-left /></hc-icon>
             </button>
             <button
               type="button"
@@ -198,7 +198,7 @@
               class="d-arrow-right"
               @click="rightNextYear"
             >
-              <el-icon><d-arrow-right /></el-icon>
+              <hc-icon><d-arrow-right /></hc-icon>
             </button>
             <button
               type="button"
@@ -207,7 +207,7 @@
               class="arrow-right"
               @click="rightNextMonth"
             >
-              <el-icon><arrow-right /></el-icon>
+              <hc-icon><arrow-right /></hc-icon>
             </button>
             <div>{{ rightLabel }}</div>
           </div>
@@ -227,7 +227,7 @@
       </div>
     </div>
     <div v-if="showTime" :class="ppNs.e('footer')">
-      <el-button
+      <hc-button
         v-if="clearable"
         text
         size="small"
@@ -235,8 +235,8 @@
         @click="handleClear"
       >
         {{ t('el.datepicker.clear') }}
-      </el-button>
-      <el-button
+      </hc-button>
+      <hc-button
         plain
         size="small"
         :class="ppNs.e('link-btn')"
@@ -244,7 +244,7 @@
         @click="handleRangeConfirm(false)"
       >
         {{ t('el.datepicker.confirm') }}
-      </el-button>
+      </hc-button>
     </div>
   </div>
 </template>
@@ -261,14 +261,14 @@ import {
 import { ClickOutside as vClickoutside } from '@hicor-ui/directives'
 import { isArray } from '@hicor-ui/utils'
 import { useLocale } from '@hicor-ui/hooks'
-import ElButton from '@hicor-ui/components/button'
-import ElInput from '@hicor-ui/components/input'
+import HcButton from '@hicor-ui/components/button'
+import HcInput from '@hicor-ui/components/input'
 import {
   TimePickPanel,
   extractDateFormat,
   extractTimeFormat,
 } from '@hicor-ui/components/time-picker'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { panelDateRangeProps } from '../props/panel-date-range'
 import { useRangePicker } from '../composables/use-range-picker'
 import { getDefaultValue, isValidRange } from '../utils'

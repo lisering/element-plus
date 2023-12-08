@@ -4,9 +4,9 @@
     :href="disabled || !href ? undefined : href"
     @click="handleClick"
   >
-    <el-icon v-if="icon">
+    <hc-icon v-if="icon">
       <component :is="icon" />
-    </el-icon>
+    </hc-icon>
     <span v-if="$slots.default" :class="ns.e('inner')">
       <slot />
     </span>
@@ -17,12 +17,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { linkEmits, linkProps } from './link'
 
 defineOptions({
-  name: 'ElLink',
+  name: 'HcLink',
 })
 const props = defineProps(linkProps)
 const emit = defineEmits(linkEmits)

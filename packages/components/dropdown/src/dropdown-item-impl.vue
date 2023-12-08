@@ -19,9 +19,9 @@
     @pointermove="(e) => $emit('pointermove', e)"
     @pointerleave="(e) => $emit('pointerleave', e)"
   >
-    <el-icon v-if="icon">
+    <hc-icon v-if="icon">
       <component :is="icon" />
-    </el-icon>
+    </hc-icon>
     <slot />
   </li>
 </template>
@@ -34,7 +34,7 @@ import {
   ROVING_FOCUS_ITEM_COLLECTION_INJECTION_KEY,
 } from '@hicor-ui/components/roving-focus-group'
 import { COLLECTION_ITEM_SIGN } from '@hicor-ui/components/collection'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { composeEventHandlers, composeRefs } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
@@ -47,7 +47,7 @@ import { DROPDOWN_INJECTION_KEY } from './tokens'
 export default defineComponent({
   name: 'DropdownItemImpl',
   components: {
-    ElIcon,
+    HcIcon,
   },
   props: dropdownItemProps,
   emits: ['pointermove', 'pointerleave', 'click', 'clickimpl'],

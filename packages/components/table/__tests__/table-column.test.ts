@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { describe, expect, it, vi } from 'vitest'
 import triggerEvent from '@hicor-ui/test-utils/trigger-event'
-import ElTable from '../src/table.vue'
-import ElTableColumn from '../src/table-column'
+import HcTable from '../src/table.vue'
+import HcTableColumn from '../src/table-column'
 import { doubleWait, getTestData, mount } from './table-test-common'
 
 vi.mock('lodash-unified', async () => {
@@ -30,16 +30,16 @@ describe('table column', () => {
         Object.assign(
           {
             components: {
-              ElTable,
-              ElTableColumn,
+              HcTable,
+              HcTableColumn,
             },
             template: `
-          <el-table :data="testData" ${tableProps || ''}>
-            <el-table-column prop="name" ${props1 || ''} />
-            <el-table-column prop="release" ${props2 || ''} />
-            <el-table-column prop="director" ${props3 || ''} />
-            <el-table-column prop="runtime" ${props4 || ''} />
-          </el-table>
+          <hc-table :data="testData" ${tableProps || ''}>
+            <hc-table-column prop="name" ${props1 || ''} />
+            <hc-table-column prop="release" ${props2 || ''} />
+            <hc-table-column prop="director" ${props3 || ''} />
+            <hc-table-column prop="runtime" ${props4 || ''} />
+          </hc-table>
         `,
 
             created() {
@@ -67,7 +67,7 @@ describe('table column', () => {
       const wrapper = createTable('width="123px"', ':width="102"', 'width="39"')
       await doubleWait()
       const ths = wrapper
-        .findAll('.el-table__header-wrapper col')
+        .findAll('.hc-table__header-wrapper col')
         .map((node) => node.attributes('width'))
         .filter((o) => o)
       expect(ths).toContain('123')
@@ -84,16 +84,16 @@ describe('table column', () => {
       )
       await doubleWait()
       const leftFixedHeaderColumns = wrapper.findAll(
-        '.el-table__header .el-table-fixed-column--left'
+        '.hc-table__header .el-table-fixed-column--left'
       )
       const leftFixedBodyColumns = wrapper.findAll(
-        '.el-table__body .el-table-fixed-column--left'
+        '.hc-table__body .el-table-fixed-column--left'
       )
       const rightFixedHeaderColumns = wrapper.findAll(
-        '.el-table__header .el-table-fixed-column--right'
+        '.hc-table__header .el-table-fixed-column--right'
       )
       const rightFixedBodyColumns = wrapper.findAll(
-        '.el-table__body .el-table-fixed-column--right'
+        '.hc-table__body .el-table-fixed-column--right'
       )
       expect(leftFixedHeaderColumns).toHaveLength(2)
       expect(leftFixedBodyColumns).toHaveLength(10)
@@ -145,7 +145,7 @@ describe('table column', () => {
 
       await doubleWait()
       const cells = wrapper.findAll(
-        '.el-table__body-wrapper tbody tr td:first-child'
+        '.hc-table__body-wrapper tbody tr td:first-child'
       )
       expect(cells.map((n) => n.text())).toEqual(
         getTestData().map((o) => `[${o.name}]`)
@@ -156,7 +156,7 @@ describe('table column', () => {
     it('show-overflow-tooltip', async () => {
       const wrapper = createTable('show-overflow-tooltip')
       await doubleWait()
-      expect(wrapper.findAll('.el-tooltip').length).toEqual(5)
+      expect(wrapper.findAll('.hc-tooltip').length).toEqual(5)
       wrapper.unmount()
     })
 
@@ -191,17 +191,17 @@ describe('table column', () => {
     it('selectable === false & check selectAll status', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData" @selection-change="change">
-            <el-table-column type="selection" :selectable="filterSelect" />
-            <el-table-column prop="name" label="name" />
-            <el-table-column prop="release" label="release" />
-            <el-table-column prop="director" label="director" />
-            <el-table-column prop="runtime" label="runtime" />
-          </el-table>
+          <hc-table :data="testData" @selection-change="change">
+            <hc-table-column type="selection" :selectable="filterSelect" />
+            <hc-table-column prop="name" label="name" />
+            <hc-table-column prop="release" label="release" />
+            <hc-table-column prop="director" label="director" />
+            <hc-table-column prop="runtime" label="runtime" />
+          </hc-table>
         `,
 
         data() {
@@ -220,7 +220,7 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.find('.el-checkbox').attributes('checked')).toBeFalsy()
+      expect(wrapper.find('.hc-checkbox').attributes('checked')).toBeFalsy()
       await doubleWait()
       expect(wrapper.vm.selected.length).toEqual(0)
       wrapper.unmount()
@@ -230,17 +230,17 @@ describe('table column', () => {
       const createTable = function (type) {
         return mount({
           components: {
-            ElTable,
-            ElTableColumn,
+            HcTable,
+            HcTableColumn,
           },
           template: `
-            <el-table :data="testData" @selection-change="change">
-              <el-table-column type="${type}" />
-              <el-table-column prop="name" label="name" />
-              <el-table-column prop="release" label="release" />
-              <el-table-column prop="director" label="director" />
-              <el-table-column prop="runtime" label="runtime" />
-            </el-table>
+            <hc-table :data="testData" @selection-change="change">
+              <hc-table-column type="${type}" />
+              <hc-table-column prop="name" label="name" />
+              <hc-table-column prop="release" label="release" />
+              <hc-table-column prop="director" label="director" />
+              <hc-table-column prop="runtime" label="runtime" />
+            </hc-table>
           `,
 
           created() {
@@ -264,13 +264,13 @@ describe('table column', () => {
 
         it('render', async () => {
           await doubleWait()
-          expect(wrapper.findAll('.el-checkbox').length).toEqual(
+          expect(wrapper.findAll('.hc-checkbox').length).toEqual(
             getTestData().length + 1
           )
         })
 
         it('select all', async () => {
-          wrapper.find('.el-checkbox').trigger('click')
+          wrapper.find('.hc-checkbox').trigger('click')
           await doubleWait()
           expect(wrapper.vm.selected.length).toEqual(5)
           wrapper.unmount()
@@ -280,7 +280,7 @@ describe('table column', () => {
           const wrapper2 = createTable('selection')
 
           await doubleWait()
-          wrapper2.findAll('.el-checkbox')[1].trigger('click')
+          wrapper2.findAll('.hc-checkbox')[1].trigger('click')
 
           await doubleWait()
           expect(wrapper2.vm.selected.length).toEqual(1)
@@ -296,7 +296,7 @@ describe('table column', () => {
           await doubleWait()
           expect(
             wrapper
-              .findAll('.el-table__body-wrapper tbody tr td:first-child')
+              .findAll('.hc-table__body-wrapper tbody tr td:first-child')
               .map((node) => node.text())
           ).toEqual(['1', '2', '3', '4', '5'])
           wrapper.unmount()
@@ -308,20 +308,20 @@ describe('table column', () => {
           extra = extra || ''
           return mount({
             components: {
-              ElTableColumn,
-              ElTable,
+              HcTableColumn,
+              HcTable,
             },
             template: `
-            <el-table row-key="id" :data="testData" @expand-change="handleExpand" ${extra}>
-              <el-table-column type="expand">
+            <hc-table row-key="id" :data="testData" @expand-change="handleExpand" ${extra}>
+              <hc-table-column type="expand">
                 <template #default="props">
                   <div>{{props.row.name}}</div>
                 </template>
-              </el-table-column>
-              <el-table-column prop="release" label="release" />
-              <el-table-column prop="director" label="director" />
-              <el-table-column prop="runtime" label="runtime" />
-            </el-table>
+              </hc-table-column>
+              <hc-table-column prop="release" label="release" />
+              <hc-table-column prop="director" label="director" />
+              <hc-table-column prop="runtime" label="runtime" />
+            </hc-table>
           `,
 
             data() {
@@ -377,7 +377,7 @@ describe('table column', () => {
 
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '100',
@@ -417,7 +417,7 @@ describe('table column', () => {
 
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '100',
@@ -444,7 +444,7 @@ describe('table column', () => {
 
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '100',
@@ -471,7 +471,7 @@ describe('table column', () => {
 
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '80',
@@ -493,7 +493,7 @@ describe('table column', () => {
         elm.trigger('click')
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '80',
@@ -510,7 +510,7 @@ describe('table column', () => {
         elm.trigger('click')
         await doubleWait()
         const lastCells = wrapper.findAll(
-          '.el-table__body-wrapper tbody tr td:last-child'
+          '.hc-table__body-wrapper tbody tr td:last-child'
         )
         expect(lastCells.map((node) => node.text())).toEqual([
           '100',
@@ -526,8 +526,8 @@ describe('table column', () => {
     it('change column configuration', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
           <template>
@@ -547,14 +547,14 @@ describe('table column', () => {
                 }
               "
               >-</button>
-            <el-table :data="data">
-              <el-table-column
+            <hc-table :data="data">
+              <hc-table-column
                 v-for="item of cols"
                 :prop="item"
                 :label="item"
                 :key="item"
-              ></el-table-column>
-            </el-table>
+              ></hc-table-column>
+            </hc-table>
           </template>
         `,
 
@@ -564,21 +564,21 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(3)
+      expect(wrapper.findAll('.hc-table__header-wrapper th').length).toEqual(3)
       const addBut = wrapper.find('#addBut')
       const delBut = wrapper.find('#delBut')
       addBut.trigger('click')
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(4)
+      expect(wrapper.findAll('.hc-table__header-wrapper th').length).toEqual(4)
       addBut.trigger('click')
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(5)
+      expect(wrapper.findAll('.hc-table__header-wrapper th').length).toEqual(5)
       delBut.trigger('click')
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(4)
+      expect(wrapper.findAll('.hc-table__header-wrapper th').length).toEqual(4)
       delBut.trigger('click')
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header-wrapper th').length).toEqual(3)
+      expect(wrapper.findAll('.hc-table__header-wrapper th').length).toEqual(3)
     })
   })
 
@@ -586,18 +586,18 @@ describe('table column', () => {
     it('should works', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" />
-            <el-table-column label="group">
-              <el-table-column prop="release"/>
-              <el-table-column prop="director"/>
-            </el-table-column>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" />
+            <hc-table-column label="group">
+              <hc-table-column prop="release"/>
+              <hc-table-column prop="director"/>
+            </hc-table-column>
+            <hc-table-column prop="runtime"/>
+          </hc-table>
         `,
 
         created() {
@@ -606,7 +606,7 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.hc-table__header tr')
       expect(trs.length).toEqual(2)
       const firstRowHeader = trs[0].findAll('th .cell').length
       const secondRowHeader = trs[1].findAll('th .cell').length
@@ -621,21 +621,21 @@ describe('table column', () => {
     it('should works', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" />
-            <el-table-column label="group">
-              <el-table-column label="group's group">
-                <el-table-column prop="release" />
-                <el-table-column prop="runtime"/>
-              </el-table-column>
-              <el-table-column prop="director" />
-            </el-table-column>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" />
+            <hc-table-column label="group">
+              <hc-table-column label="group's group">
+                <hc-table-column prop="release" />
+                <hc-table-column prop="runtime"/>
+              </hc-table-column>
+              <hc-table-column prop="director" />
+            </hc-table-column>
+            <hc-table-column prop="runtime"/>
+          </hc-table>
         `,
 
         created() {
@@ -644,7 +644,7 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.hc-table__header tr')
       expect(trs.length).toEqual(3)
       const firstRowHeader = trs[0].findAll('th .cell').length
       const secondRowHeader = trs[1].findAll('th .cell').length
@@ -664,15 +664,15 @@ describe('table column', () => {
     it('should work in one column', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column label="group">
-              <el-table-column prop="release"/>
-            </el-table-column>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column label="group">
+              <hc-table-column prop="release"/>
+            </hc-table-column>
+          </hc-table>
         `,
 
         created() {
@@ -681,7 +681,7 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      const trs = wrapper.findAll('.el-table__header tr')
+      const trs = wrapper.findAll('.hc-table__header tr')
       expect(trs.length).toEqual(2)
       const firstRowLength = trs[0].findAll('th .cell').length
       const secondRowLength = trs[1].findAll('th .cell').length
@@ -696,27 +696,27 @@ describe('table column', () => {
     it('should work with fixed', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" />
-            <el-table-column label="group" fixed="left">
-              <el-table-column label="group's group">
-                <el-table-column prop="runtime" width="100" fixed="right"/>
-                <el-table-column prop="director" width="100" fixed="right"/>
-              </el-table-column>
-              <el-table-column prop="director"/>
-            </el-table-column>
-            <el-table-column prop="director"/>
-            <el-table-column prop="runtime"/>
-            <el-table-column label="group2" fixed="right">
-              <el-table-column prop="runtime" width="100" fixed="left"/>
-              <el-table-column prop="director" width="50"/>
-            </el-table-column>
-            <el-table-column prop="runtime"/>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" />
+            <hc-table-column label="group" fixed="left">
+              <hc-table-column label="group's group">
+                <hc-table-column prop="runtime" width="100" fixed="right"/>
+                <hc-table-column prop="director" width="100" fixed="right"/>
+              </hc-table-column>
+              <hc-table-column prop="director"/>
+            </hc-table-column>
+            <hc-table-column prop="director"/>
+            <hc-table-column prop="runtime"/>
+            <hc-table-column label="group2" fixed="right">
+              <hc-table-column prop="runtime" width="100" fixed="left"/>
+              <hc-table-column prop="director" width="50"/>
+            </hc-table-column>
+            <hc-table-column prop="runtime"/>
+          </hc-table>
         `,
 
         created() {
@@ -726,16 +726,16 @@ describe('table column', () => {
 
       await doubleWait()
       const lfhcolumns = wrapper
-        .findAll('.el-table__header tr')
-        .map((item) => item.findAll('.el-table-fixed-column--left'))
+        .findAll('.hc-table__header tr')
+        .map((item) => item.findAll('.hc-table-fixed-column--left'))
       const lfbcolumns = wrapper.findAll(
-        '.el-table__body .el-table-fixed-column--left'
+        '.hc-table__body .el-table-fixed-column--left'
       )
       const rfhcolumns = wrapper
-        .findAll('.el-table__header tr')
-        .map((item) => item.findAll('.el-table-fixed-column--right'))
+        .findAll('.hc-table__header tr')
+        .map((item) => item.findAll('.hc-table-fixed-column--right'))
       const rfbcolumns = wrapper.findAll(
-        '.el-table__body .el-table-fixed-column--right'
+        '.hc-table__body .el-table-fixed-column--right'
       )
       expect(lfbcolumns).toHaveLength(15)
       expect(rfbcolumns).toHaveLength(10)
@@ -759,28 +759,28 @@ describe('table column', () => {
       const TableColumn = {
         name: 'TableColumn',
         components: {
-          ElTableColumn,
+          HcTableColumn,
         },
         props: {
           item: Object,
         },
         template: `
-          <el-table-column :prop="item.prop" :label="item.label">
+          <hc-table-column :prop="item.prop" :label="item.label">
             <template v-if="item.children" #default>
               <table-column v-for="c in item.children" :key="c.prop" :item="c"/>
             </template>
-          </el-table-column>
+          </hc-table-column>
         `,
       }
       const App = {
         template: `
-          <el-table :data="data">
+          <hc-table :data="data">
             <table-column v-for="item in column" :key="item.prop" :item="item"/>
-          </el-table>
+          </hc-table>
         `,
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
           TableColumn,
         },
         setup() {
@@ -825,8 +825,8 @@ describe('table column', () => {
       }
       const wrapper = mount(App)
       await doubleWait()
-      expect(wrapper.find('.el-table__header-wrapper').text()).toMatch('姓名')
-      expect(wrapper.find('.el-table__header-wrapper').text()).toMatch('地址')
+      expect(wrapper.find('.hc-table__header-wrapper').text()).toMatch('姓名')
+      expect(wrapper.find('.hc-table__header-wrapper').text()).toMatch('地址')
     })
 
     it('should not rendered other components in hidden-columns', async () => {
@@ -837,16 +837,16 @@ describe('table column', () => {
       }
       const wrapper = mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          HcTableColumn,
+          HcTable,
           Comp,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name">
+          <hc-table :data="testData">
+            <hc-table-column prop="name">
               <comp></comp>
-            </el-table-column>
-          </el-table>
+            </hc-table-column>
+          </hc-table>
         `,
         data() {
           return {
@@ -864,28 +864,28 @@ describe('table column', () => {
       const TableColumn = {
         name: 'TableColumn',
         components: {
-          ElTableColumn,
+          HcTableColumn,
         },
         template: `
-          <el-table-column>
+          <hc-table-column>
             <template v-if="$slots.default" #default="scope">
               <slot v-bind="scope" />
             </template>
-          </el-table-column>
+          </hc-table-column>
         `,
       }
       const wrapper = mount({
         components: {
-          ElTableColumn,
-          ElTable,
+          HcTableColumn,
+          HcTable,
           TableColumn,
         },
         template: `
-          <el-table :data="testData">
+          <hc-table :data="testData">
             <table-column>
               <template #default="{ row }">Hello World</template>
             </table-column>
-          </el-table>
+          </hc-table>
         `,
         data() {
           return {
@@ -904,16 +904,16 @@ describe('table column', () => {
     it('label', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :label="label"/>
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" :label="label"/>
+            <hc-table-column prop="release" />
+            <hc-table-column prop="director" />
+            <hc-table-column prop="runtime" />
+          </hc-table>
         `,
         data() {
           return {
@@ -927,10 +927,10 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.find('.el-table__header th .cell').text()).toEqual('name')
+      expect(wrapper.find('.hc-table__header th .cell').text()).toEqual('name')
       wrapper.vm.label = 'NAME'
       wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.el-table__header th .cell').text()).toEqual(
+        expect(wrapper.find('.hc-table__header th .cell').text()).toEqual(
           'NAME'
         )
         wrapper.unmount()
@@ -940,13 +940,13 @@ describe('table column', () => {
     it('align', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :align="align"/>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" :align="align"/>
+          </hc-table>
         `,
 
         data() {
@@ -961,11 +961,11 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.findAll('.el-table__body td.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__body td.is-right').length).toEqual(0)
       wrapper.vm.align = 'right'
       wrapper.vm.$nextTick(() => {
         expect(
-          wrapper.findAll('.el-table__body td.is-right').length > 0
+          wrapper.findAll('.hc-table__body td.is-right').length > 0
         ).toBeTruthy()
         wrapper.unmount()
       })
@@ -973,13 +973,13 @@ describe('table column', () => {
     it('header-align', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column prop="name" :align="align" :header-align="headerAlign"/>
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column prop="name" :align="align" :header-align="headerAlign"/>
+          </hc-table>
         `,
 
         data() {
@@ -995,36 +995,36 @@ describe('table column', () => {
       })
       await doubleWait()
       expect(
-        wrapper.findAll('.el-table__header th.is-left').length
+        wrapper.findAll('.hc-table__header th.is-left').length
       ).toBeGreaterThanOrEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.hc-table__header th.is-center').length).toEqual(
         0
       )
-      expect(wrapper.findAll('.el-table__header th.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__header th.is-right').length).toEqual(0)
       wrapper.vm.align = 'right'
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.hc-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__header th.is-center').length).toEqual(
         0
       )
       expect(
-        wrapper.findAll('.el-table__header th.is-right').length
+        wrapper.findAll('.hc-table__header th.is-right').length
       ).toBeGreaterThanOrEqual(0)
       wrapper.vm.headerAlign = 'center'
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__header th.is-left').length).toEqual(0)
       expect(
-        wrapper.findAll('.el-table__header th.is-center').length
+        wrapper.findAll('.hc-table__header th.is-center').length
       ).toBeGreaterThanOrEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-right').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__header th.is-right').length).toEqual(0)
       wrapper.vm.headerAlign = null
       await doubleWait()
-      expect(wrapper.findAll('.el-table__header th.is-left').length).toEqual(0)
-      expect(wrapper.findAll('.el-table__header th.is-center').length).toEqual(
+      expect(wrapper.findAll('.hc-table__header th.is-left').length).toEqual(0)
+      expect(wrapper.findAll('.hc-table__header th.is-center').length).toEqual(
         0
       )
       expect(
-        wrapper.findAll('.el-table__header th.is-right').length
+        wrapper.findAll('.hc-table__header th.is-right').length
       ).toBeGreaterThanOrEqual(0)
       wrapper.unmount()
     })
@@ -1032,13 +1032,13 @@ describe('table column', () => {
     it('width', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData" :fit="false">
-            <el-table-column prop="name" :width="width"/>
-          </el-table>
+          <hc-table :data="testData" :fit="false">
+            <hc-table-column prop="name" :width="width"/>
+          </hc-table>
         `,
 
         data() {
@@ -1053,19 +1053,19 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '100'
       )
 
       wrapper.vm.width = 200
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '200'
       )
 
       wrapper.vm.width = '300px'
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '300'
       )
       wrapper.unmount()
@@ -1074,13 +1074,13 @@ describe('table column', () => {
     it('min-width', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData" :fit="false">
-            <el-table-column prop="name" :min-width="width"/>
-          </el-table>
+          <hc-table :data="testData" :fit="false">
+            <hc-table-column prop="name" :min-width="width"/>
+          </hc-table>
         `,
 
         data() {
@@ -1095,19 +1095,19 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '100'
       )
 
       wrapper.vm.width = 200
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '200'
       )
 
       wrapper.vm.width = '300px'
       await doubleWait()
-      expect(wrapper.find('.el-table__body col').attributes('width')).toEqual(
+      expect(wrapper.find('.hc-table__body col').attributes('width')).toEqual(
         '300'
       )
       wrapper.unmount()
@@ -1116,16 +1116,16 @@ describe('table column', () => {
     it('fixed', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column :fixed="fixed" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column :fixed="fixed" />
+            <hc-table-column prop="release" />
+            <hc-table-column prop="director" />
+            <hc-table-column prop="runtime" />
+          </hc-table>
         `,
 
         data() {
@@ -1140,26 +1140,26 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      expect(wrapper.find('.el-table-fixed-column--left').exists()).toBeFalsy()
+      expect(wrapper.find('.hc-table-fixed-column--left').exists()).toBeFalsy()
       wrapper.vm.fixed = true
       await doubleWait()
-      expect(wrapper.find('.el-table-fixed-column--left').exists()).toBeTruthy()
+      expect(wrapper.find('.hc-table-fixed-column--left').exists()).toBeTruthy()
       wrapper.unmount()
     })
 
     it('prop', async () => {
       const wrapper = mount({
         components: {
-          ElTable,
-          ElTableColumn,
+          HcTable,
+          HcTableColumn,
         },
         template: `
-          <el-table :data="testData">
-            <el-table-column :prop="prop" />
-            <el-table-column prop="release" />
-            <el-table-column prop="director" />
-            <el-table-column prop="runtime" />
-          </el-table>
+          <hc-table :data="testData">
+            <hc-table-column :prop="prop" />
+            <hc-table-column prop="release" />
+            <hc-table-column prop="director" />
+            <hc-table-column prop="runtime" />
+          </hc-table>
         `,
 
         data() {
@@ -1174,16 +1174,16 @@ describe('table column', () => {
       })
 
       await doubleWait()
-      let firstColumnContent = wrapper.find('.el-table__body td .cell').text()
+      let firstColumnContent = wrapper.find('.hc-table__body td .cell').text()
       let secondColumnContent = wrapper
-        .find('.el-table__body td:nth-child(2) .cell')
+        .find('.hc-table__body td:nth-child(2) .cell')
         .text()
       expect(firstColumnContent).not.toEqual(secondColumnContent)
       wrapper.vm.prop = 'release'
       await doubleWait()
-      firstColumnContent = wrapper.find('.el-table__body td .cell').text()
+      firstColumnContent = wrapper.find('.hc-table__body td .cell').text()
       secondColumnContent = wrapper
-        .find('.el-table__body td:nth-child(2) .cell')
+        .find('.hc-table__body td:nth-child(2) .cell')
         .text()
       expect(firstColumnContent).toEqual(secondColumnContent)
       wrapper.unmount()
@@ -1268,11 +1268,11 @@ describe('table column', () => {
       return mount(
         Object.assign({
           components: {
-            ElTable,
-            ElTableColumn,
+            HcTable,
+            HcTableColumn,
           },
           template: `
-              <el-table
+              <hc-table
                 ref="table"
                 :data="testData"
                 row-key="id"
@@ -1280,26 +1280,26 @@ describe('table column', () => {
                 default-expand-all
                 :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
               >
-                <el-table-column type="index"></el-table-column>
-                <el-table-column type="selection" :selectable="selectable"></el-table-column>
-                <el-table-column prop="id" label="id"></el-table-column>
-                <el-table-column
+                <hc-table-column type="index"></hc-table-column>
+                <hc-table-column type="selection" :selectable="selectable"></hc-table-column>
+                <hc-table-column prop="id" label="id"></hc-table-column>
+                <hc-table-column
                   prop="date"
                   label="Date"
                   sortable
                   width="180">
-                </el-table-column>
-                <el-table-column
+                </hc-table-column>
+                <hc-table-column
                   prop="name"
                   label="Name"
                   sortable
                   width="180">
-                </el-table-column>
-                <el-table-column
+                </hc-table-column>
+                <hc-table-column
                   prop="address"
                   label="Address">
-                </el-table-column>
-              </el-table>
+                </hc-table-column>
+              </hc-table>
           `,
           methods: {
             selectable(row) {

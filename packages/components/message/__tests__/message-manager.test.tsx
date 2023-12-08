@@ -2,10 +2,10 @@ import { h, nextTick, ref } from 'vue'
 import { describe, expect, it, test, vi } from 'vitest'
 import { getStyle } from '@hicor-ui/utils'
 import { rAF } from '@hicor-ui/test-utils/tick'
-import { ElMessage } from '..'
+import { HcMessage } from '..'
 import Message from '../src/method'
 
-const selector = '.el-message'
+const selector = '.hc-message'
 // TODO: testing the original transition with `nextTick`'
 
 describe('Message on command', () => {
@@ -182,18 +182,18 @@ describe('Message on command', () => {
 
   describe('context inheritance', () => {
     it('should globally inherit context correctly', () => {
-      expect(ElMessage._context).toBe(null)
+      expect(HcMessage._context).toBe(null)
       const testContext = {
         config: {
           globalProperties: {},
         },
         _context: {},
       }
-      ElMessage.install?.(testContext as any)
-      expect(ElMessage._context).not.toBe(null)
-      expect(ElMessage._context).toBe(testContext._context)
+      HcMessage.install?.(testContext as any)
+      expect(HcMessage._context).not.toBe(null)
+      expect(HcMessage._context).toBe(testContext._context)
       // clean up
-      ElMessage._context = null
+      HcMessage._context = null
     })
   })
 })

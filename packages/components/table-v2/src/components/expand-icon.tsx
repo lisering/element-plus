@@ -1,5 +1,5 @@
 import { ArrowRight } from '@element-plus/icons-vue'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 
 import type { StyleValue } from 'vue'
 import type { TableV2RowCellRenderParam } from './row'
@@ -21,9 +21,9 @@ const ExpandIcon = (
   } as any
 
   return (
-    <ElIcon {...expandIconProps} size={size} style={style}>
+    <HcIcon {...expandIconProps} size={size} style={style}>
       <ArrowRight />
-    </ElIcon>
+    </HcIcon>
   )
 }
 

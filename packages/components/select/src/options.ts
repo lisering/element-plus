@@ -3,7 +3,7 @@ import { isFunction, isString } from '@hicor-ui/utils'
 import type { Component, VNode, VNodeNormalizedChildren } from 'vue'
 
 export default defineComponent({
-  name: 'ElOptions',
+  name: 'HcOptions',
   emits: ['update-options'],
   setup(_, { slots, emit }) {
     let cachedOptions: any[] = []
@@ -27,7 +27,7 @@ export default defineComponent({
         ;(children as VNode[]).forEach((item) => {
           const name = ((item?.type || {}) as Component)?.name
 
-          if (name === 'ElOptionGroup') {
+          if (name === 'HcOptionGroup') {
             filterOptions(
               !isString(item.children) &&
                 !Array.isArray(item.children) &&
@@ -35,7 +35,7 @@ export default defineComponent({
                 ? item.children?.default()
                 : item.children
             )
-          } else if (name === 'ElOption') {
+          } else if (name === 'HcOption') {
             filteredOptions.push(item.props?.label)
           } else if (Array.isArray(item.children)) {
             filterOptions(item.children)

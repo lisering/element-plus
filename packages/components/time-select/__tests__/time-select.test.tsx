@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat.js'
 import Select from '@hicor-ui/components/select'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import TimeSelect from '../src/time-select.vue'
 dayjs.extend(customParseFormat)
 
@@ -20,7 +20,7 @@ describe('TimeSelect', () => {
       <TimeSelect style={{ color: 'red' }} class="customClass" />
     ))
 
-    const outerInput = wrapper.find('.el-select')
+    const outerInput = wrapper.find('.hc-select')
     expect(outerInput.classes()).toContain('customClass')
     expect(outerInput.attributes().style).toBeDefined()
   })
@@ -73,7 +73,7 @@ describe('TimeSelect', () => {
     value.value = '10:30'
     await nextTick()
 
-    expect(wrapper.findComponent({ name: 'ElTimeSelect' }).vm.value).toBe(
+    expect(wrapper.findComponent({ name: 'HcTimeSelect' }).vm.value).toBe(
       '10:30'
     )
     expect(input.element.value).toBe('10:30')
@@ -84,7 +84,7 @@ describe('TimeSelect', () => {
     const wrapper = mount(() => <TimeSelect v-model={value.value} />)
 
     await nextTick()
-    const vm = wrapper.findComponent({ name: 'ElTimeSelect' }).vm
+    const vm = wrapper.findComponent({ name: 'HcTimeSelect' }).vm
     const input = wrapper.find('input')
     expect(vm.value).toBe('10:00')
     expect(input.element.value).toBe('10:00')
@@ -107,7 +107,7 @@ describe('TimeSelect', () => {
       <TimeSelect v-model={value.value} disabled={disabled.value} />
     ))
 
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     expect(select.props().disabled).toBe(false)
 
     disabled.value = true
@@ -122,7 +122,7 @@ describe('TimeSelect', () => {
       <TimeSelect v-model={value.value} editable={editable.value} />
     ))
 
-    const select = wrapper.findComponent({ name: 'ElSelect' })
+    const select = wrapper.findComponent({ name: 'HcSelect' })
     expect(select.props().filterable).toBe(false)
 
     editable.value = true
@@ -140,7 +140,7 @@ describe('TimeSelect', () => {
     await nextTick()
     await nextTick()
 
-    const popperEl = document.querySelector('.el-select__popper')
+    const popperEl = document.querySelector('.hc-select__popper')
     const attr = popperEl?.getAttribute('aria-hidden')
     expect(attr).toEqual('false')
   })
@@ -157,7 +157,7 @@ describe('TimeSelect', () => {
     await nextTick()
     await nextTick()
 
-    const popperEl = document.querySelector('.el-select__popper')
+    const popperEl = document.querySelector('.hc-select__popper')
     const attr = popperEl?.getAttribute('aria-hidden')
     expect(attr).toEqual('true')
   })
@@ -174,25 +174,25 @@ describe('TimeSelect', () => {
       />
     ))
 
-    const input = wrapper.find('.el-input__inner')
+    const input = wrapper.find('.hc-input__inner')
     await input.trigger('click')
     await nextTick()
-    const option = document.querySelector('.el-select-dropdown__item')
+    const option = document.querySelector('.hc-select-dropdown__item')
     expect(option?.textContent).toBe('01:00 PM')
   })
 
   describe('form item accessibility integration', () => {
     it('automatic id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimeSelect />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const timeSelectInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const timeSelectInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(
         timeSelectInput.attributes().id
@@ -201,15 +201,15 @@ describe('TimeSelect', () => {
 
     it('specified id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimeSelect id="foobar" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const timeSelectInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const timeSelectInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(timeSelectInput.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(
@@ -219,10 +219,10 @@ describe('TimeSelect', () => {
 
     it('form item role is group when multiple inputs', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <TimeSelect />
           <TimeSelect />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()

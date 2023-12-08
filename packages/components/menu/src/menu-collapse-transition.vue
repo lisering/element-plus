@@ -11,7 +11,7 @@ import { addClass, hasClass, removeClass } from '@hicor-ui/utils'
 import type { BaseTransitionProps, TransitionProps } from 'vue'
 
 export default defineComponent({
-  name: 'ElMenuCollapseTransition',
+  name: 'HcMenuCollapseTransition',
   setup() {
     const ns = useNamespace('menu')
     const listeners = {

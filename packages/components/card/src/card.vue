@@ -16,7 +16,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { cardProps } from './card'
 
 defineOptions({
-  name: 'ElCard',
+  name: 'HcCard',
 })
 
 defineProps(cardProps)

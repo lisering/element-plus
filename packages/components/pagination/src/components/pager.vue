@@ -74,7 +74,7 @@ import { DArrowLeft, DArrowRight, MoreFilled } from '@element-plus/icons-vue'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { paginationPagerProps } from './pager'
 defineOptions({
-  name: 'ElPaginationPager',
+  name: 'HcPaginationPager',
 })
 const props = defineProps(paginationPagerProps)
 const emit = defineEmits(['change'])

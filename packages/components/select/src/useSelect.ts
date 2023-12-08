@@ -38,7 +38,7 @@ import { useDeprecated, useLocale, useNamespace } from '@hicor-ui/hooks'
 import { useFormItem, useFormSize } from '@hicor-ui/components/form'
 
 import type { ComponentPublicInstance } from 'vue'
-import type ElTooltip from '@hicor-ui/components/tooltip'
+import type HcTooltip from '@hicor-ui/components/tooltip'
 import type { QueryChangeCtx, SelectOptionProxy } from './token'
 
 export function useSelectStates(props) {
@@ -95,8 +95,8 @@ export const useSelect = (props, states: States, ctx) => {
   }> | null>(null)
   const input = ref<HTMLInputElement | null>(null)
   const iOSInput = ref<HTMLInputElement | null>(null)
-  const tooltipRef = ref<InstanceType<typeof ElTooltip> | null>(null)
-  const tagTooltipRef = ref<InstanceType<typeof ElTooltip> | null>(null)
+  const tooltipRef = ref<InstanceType<typeof HcTooltip> | null>(null)
+  const tagTooltipRef = ref<InstanceType<typeof HcTooltip> | null>(null)
   const tags = ref<HTMLElement | null>(null)
   const selectWrapper = ref<HTMLElement | null>(null)
   const scrollbar = ref<{
@@ -421,10 +421,10 @@ export const useSelect = (props, states: States, ctx) => {
           ? gotSize
           : originClientHeight
 
-      const isElHidden = input.offsetParent === null
+      const isHcHidden = input.offsetParent === null
 
       // it's an inner input so reduce it by 2px.
-      !isElHidden &&
+      !isHcHidden &&
         (input.style.height = `${
           (states.selected.length === 0
             ? sizeInMap

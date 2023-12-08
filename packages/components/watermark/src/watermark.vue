@@ -21,7 +21,7 @@ import type { WatermarkProps } from './watermark'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElWatermark',
+  name: 'HcWatermark',
 })
 
 const style: CSSProperties = {

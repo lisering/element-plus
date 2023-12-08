@@ -30,14 +30,14 @@ dayjs.extend(isSameOrAfter)
 dayjs.extend(isSameOrBefore)
 
 export default defineComponent({
-  name: 'ElDatePicker',
+  name: 'HcDatePicker',
   install: null,
   props: datePickerProps,
   emits: ['update:modelValue'],
   setup(props, { expose, emit, slots }) {
     const ns = useNamespace('picker-panel')
 
-    provide('ElPopperOptions', reactive(toRef(props, 'popperOptions')))
+    provide('HcPopperOptions', reactive(toRef(props, 'popperOptions')))
     provide(ROOT_PICKER_INJECTION_KEY, {
       slots,
       pickerNs: ns,

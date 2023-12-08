@@ -4,7 +4,7 @@ import type { Arrayable } from '@hicor-ui/utils'
 import type { FormItemContext } from './types'
 import type { FormItemProp } from './form-item'
 
-const SCOPE = 'ElForm'
+const SCOPE = 'HcForm'
 
 export function useFormLabelWidth() {
   const potentialLabelWidthArr = ref<number[]>([])

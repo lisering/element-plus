@@ -6,18 +6,18 @@ import Footer from './src/footer.vue'
 import Header from './src/header.vue'
 import Main from './src/main.vue'
 
-export const ElContainer = withInstall(Container, {
+export const HcContainer = withInstall(Container, {
   Aside,
   Footer,
   Header,
   Main,
 })
 
-export default ElContainer
-export const ElAside = withNoopInstall(Aside)
-export const ElFooter = withNoopInstall(Footer)
-export const ElHeader = withNoopInstall(Header)
-export const ElMain = withNoopInstall(Main)
+export default HcContainer
+export const HcAside = withNoopInstall(Aside)
+export const HcFooter = withNoopInstall(Footer)
+export const HcHeader = withNoopInstall(Header)
+export const HcMain = withNoopInstall(Main)
 
 export type ContainerInstance = InstanceType<typeof Container>
 export type AsideInstance = InstanceType<typeof Aside>

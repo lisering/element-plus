@@ -5,8 +5,8 @@ import TreeSelect from '../src/tree-select.vue'
 
 import type { RenderFunction } from 'vue'
 import type { VueWrapper } from '@vue/test-utils'
-import type ElSelect from '@hicor-ui/components/select'
-import type ElTree from '@hicor-ui/components/tree'
+import type HcSelect from '@hicor-ui/components/select'
+import type HcTree from '@hicor-ui/components/tree'
 
 const createComponent = ({
   slots = {},
@@ -68,11 +68,11 @@ const createComponent = ({
       new Promise<InstanceType<typeof TreeSelect>>((resolve) =>
         nextTick(() => resolve(wrapperRef.value!))
       ),
-    select: wrapper.findComponent({ name: 'ElSelect' }) as VueWrapper<
-      InstanceType<typeof ElSelect>
+    select: wrapper.findComponent({ name: 'HcSelect' }) as VueWrapper<
+      InstanceType<typeof HcSelect>
     >,
-    tree: wrapper.findComponent({ name: 'ElTree' }) as VueWrapper<
-      InstanceType<typeof ElTree>
+    tree: wrapper.findComponent({ name: 'HcTree' }) as VueWrapper<
+      InstanceType<typeof HcTree>
     >,
   }
 }
@@ -85,18 +85,18 @@ describe('TreeSelect.vue', () => {
       },
     })
 
-    expect(wrapper.find('.el-tree')).toBeTruthy()
-    expect(wrapper.find('.el-select')).toBeTruthy()
+    expect(wrapper.find('.hc-tree')).toBeTruthy()
+    expect(wrapper.find('.hc-select')).toBeTruthy()
 
-    expect(tree.findAll('.el-tree > .el-tree-node').length).toBe(1)
-    expect(tree.findAll('.el-tree .el-tree-node').length).toBe(3)
-    expect(tree.findAll('.el-tree .el-select-dropdown__item').length).toBe(3)
+    expect(tree.findAll('.hc-tree > .el-tree-node').length).toBe(1)
+    expect(tree.findAll('.hc-tree .el-tree-node').length).toBe(3)
+    expect(tree.findAll('.hc-tree .el-select-dropdown__item').length).toBe(3)
 
     wrapper.findComponent(TreeSelect).vm.data[0].children = []
 
     await nextTick()
 
-    expect(tree.findAll('.el-tree .el-tree-node').length).toBe(1)
+    expect(tree.findAll('.hc-tree .el-tree-node').length).toBe(1)
   })
 
   test('modelValue', async () => {
@@ -122,19 +122,19 @@ describe('TreeSelect.vue', () => {
     expect(wrapperRef.getCheckedKeys()).toEqual([11])
 
     await tree
-      .findAll('.el-select-dropdown__item')
+      .findAll('.hc-select-dropdown__item')
       .slice(-1)[0]
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toBe(111)
     expect(wrapperRef.getCheckedKeys()).toEqual([111])
 
-    await tree.find('.el-tree-node__content').trigger('click')
+    await tree.find('.hc-tree-node__content').trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toBe(1)
     expect(wrapperRef.getCheckedKeys()).toEqual([1])
 
-    await tree.findAll('.el-checkbox__original')[1].trigger('click')
+    await tree.findAll('.hc-checkbox__original')[1].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toBe(11)
     expect(wrapperRef.getCheckedKeys()).toEqual([11])
@@ -164,10 +164,10 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    await tree.find('.el-tree-node').trigger('click')
-    await tree.find('.el-tree-node .el-checkbox.is-disabled').trigger('click')
+    await tree.find('.hc-tree-node').trigger('click')
+    await tree.find('.hc-tree-node .el-checkbox.is-disabled').trigger('click')
     await tree
-      .find('.el-tree-node .el-select-dropdown__item.is-disabled')
+      .find('.hc-tree-node .el-select-dropdown__item.is-disabled')
       .trigger('click')
     await nextTick()
     expect(wrapper.findComponent(TreeSelect).vm.modelValue).toBe('1')
@@ -197,19 +197,19 @@ describe('TreeSelect.vue', () => {
     expect(wrapperRef.getCheckedKeys()).toEqual([11])
 
     await tree
-      .findAll('.el-select-dropdown__item')
+      .findAll('.hc-select-dropdown__item')
       .slice(-1)[0]
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([11, 111])
     expect(wrapperRef.getCheckedKeys()).toEqual([11, 111])
 
-    await tree.find('.el-tree-node__content').trigger('click')
+    await tree.find('.hc-tree-node__content').trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([1, 11, 111])
     expect(wrapperRef.getCheckedKeys()).toEqual([1, 11, 111])
 
-    await tree.findAll('.el-checkbox')[1].trigger('click')
+    await tree.findAll('.hc-checkbox')[1].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([1, 111])
     expect(wrapperRef.getCheckedKeys()).toEqual([1, 111])
@@ -224,7 +224,7 @@ describe('TreeSelect.vue', () => {
 
     tree.vm.filter('一级 1')
     await nextTick()
-    expect(tree.findAll('.el-tree-node:not(.is-hidden)').length).toBe(1)
+    expect(tree.findAll('.hc-tree-node:not(.is-hidden)').length).toBe(1)
   })
 
   test('props', async () => {
@@ -251,7 +251,7 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    expect(tree.find('.el-select-dropdown__item').text()).toBe('1')
+    expect(tree.find('.hc-select-dropdown__item').text()).toBe('1')
     await wrapper.setProps({ modelValue: '2' })
     expect(select.vm.selectedLabel).toBe('2')
   })
@@ -265,8 +265,8 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    expect(tree.find('.el-select-dropdown__item').text()).toBe('123一级 1')
-    expect(select.find('.el-input__prefix-inner').text()).toBe('prefix')
+    expect(tree.find('.hc-select-dropdown__item').text()).toBe('123一级 1')
+    expect(select.find('.hc-input__prefix-inner').text()).toBe('prefix')
   })
 
   test('renderContent', async () => {
@@ -282,7 +282,7 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    expect(tree.find('.el-select-dropdown__item').text()).toBe('123一级 1')
+    expect(tree.find('.hc-select-dropdown__item').text()).toBe('123一级 1')
   })
 
   test('lazy', async () => {
@@ -302,9 +302,9 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    await tree.find('.el-tree-node').trigger('click')
+    await tree.find('.hc-tree-node').trigger('click')
     await nextTick()
-    expect(tree.find('.el-tree-node .el-tree-node').text()).toBe('2')
+    expect(tree.find('.hc-tree-node .el-tree-node').text()).toBe('2')
   })
 
   test('events', async () => {
@@ -315,7 +315,7 @@ describe('TreeSelect.vue', () => {
       },
     })
     await nextTick()
-    await tree.find('.el-tree-node').trigger('click')
+    await tree.find('.hc-tree-node').trigger('click')
     await nextTick()
     expect(onNodeClick).toBeCalled()
   })
@@ -330,13 +330,13 @@ describe('TreeSelect.vue', () => {
     })
 
     const wrapperRef = await getWrapperRef()
-    await tree.findAll('.el-tree-node__content')[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content')[0].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([])
     expect(wrapperRef.getCheckedKeys()).toEqual([])
 
     await tree
-      .findAll('.el-tree-node__content .el-checkbox')[0]
+      .findAll('.hc-tree-node__content .el-checkbox')[0]
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([1])
@@ -354,13 +354,13 @@ describe('TreeSelect.vue', () => {
     })
 
     const wrapperRef = await getWrapperRef()
-    await tree.findAll('.el-tree-node__content')[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content')[0].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([1])
     expect(wrapperRef.getCheckedKeys()).toEqual([1])
 
     await tree
-      .findAll('.el-tree-node__content .el-checkbox')[0]
+      .findAll('.hc-tree-node__content .el-checkbox')[0]
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toEqual([])
@@ -377,14 +377,14 @@ describe('TreeSelect.vue', () => {
     // check child node when folder node checked,
     // value.value will be 111
     await tree
-      .find('.el-tree-node__content .el-checkbox__original')
+      .find('.hc-tree-node__content .el-checkbox__original')
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).equal(111)
 
     // unselect when has child checked
     await tree
-      .find('.el-tree-node__content .el-checkbox__original')
+      .find('.hc-tree-node__content .el-checkbox__original')
       .trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toBe(undefined)
@@ -400,12 +400,12 @@ describe('TreeSelect.vue', () => {
 
     // check child node when folder node checked,
     // value.value will be 111
-    await tree.findAll('.el-tree-node__content').slice(-1)[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content').slice(-1)[0].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).equal(111)
 
     // unselect when has child checked
-    await tree.findAll('.el-tree-node__content').slice(-1)[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content').slice(-1)[0].trigger('click')
     await nextTick()
     expect(select.vm.modelValue).toBe(undefined)
   })
@@ -430,15 +430,15 @@ describe('TreeSelect.vue', () => {
       },
     })
 
-    await tree.findAll('.el-tree-node__content')[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content')[0].trigger('click')
     expect(
-      tree.findAll('.el-tree-node__children')[0].attributes('style')
+      tree.findAll('.hc-tree-node__children')[0].attributes('style')
     ).toContain('display: none;')
 
     await wrapper.setProps({ expandOnClickNode: true })
-    await tree.findAll('.el-tree-node__content')[0].trigger('click')
+    await tree.findAll('.hc-tree-node__content')[0].trigger('click')
     expect(
-      tree.findAll('.el-tree-node__children')[0].attributes('style')
+      tree.findAll('.hc-tree-node__children')[0].attributes('style')
     ).not.toContain('display: none;')
   })
 
@@ -557,7 +557,7 @@ describe('TreeSelect.vue', () => {
     })
 
     await nextTick()
-    await tree.find('.el-checkbox__original').trigger('click')
+    await tree.find('.hc-checkbox__original').trigger('click')
     await nextTick()
 
     expect(select.vm.modelValue).equal(1)
@@ -565,7 +565,7 @@ describe('TreeSelect.vue', () => {
     expect(onCheckChange).toHaveBeenLastCalledWith(1)
 
     await nextTick()
-    await tree.findAll('.el-checkbox__original')[1].trigger('click')
+    await tree.findAll('.hc-checkbox__original')[1].trigger('click')
     await nextTick()
 
     expect(select.vm.modelValue).equal(11)
@@ -598,8 +598,8 @@ describe('TreeSelect.vue', () => {
 
     await nextTick()
 
-    const node1 = tree.find('.el-tree-node__content')
-    const node1Checkbox = node1.find('.el-checkbox__original')
+    const node1 = tree.find('.hc-tree-node__content')
+    const node1Checkbox = node1.find('.hc-checkbox__original')
 
     expect(node1.text()).toBe('1-label')
     await node1Checkbox.trigger('click')
@@ -628,14 +628,14 @@ describe('TreeSelect.vue', () => {
 
     await nextTick()
 
-    const node1 = tree.find('.el-tree-node__content')
+    const node1 = tree.find('.hc-tree-node__content')
     await node1.trigger('click')
     await nextTick()
 
-    const node2 = tree.findAll('.el-tree-node__content')[1]
+    const node2 = tree.findAll('.hc-tree-node__content')[1]
     expect(node2.text()).toBe('2-label')
 
-    const node2Checkbox = node2.find('.el-checkbox')
+    const node2Checkbox = node2.find('.hc-checkbox')
     expect(node2Checkbox.element.classList.contains('is-checked')).toBe(true)
 
     await node2Checkbox.trigger('click')
@@ -655,7 +655,7 @@ describe('TreeSelect.vue', () => {
       },
     })
 
-    const nodes = tree.findAll('.el-tree-node__content')
+    const nodes = tree.findAll('.hc-tree-node__content')
 
     await nodes[0].trigger('click')
     await nextTick()
@@ -690,7 +690,7 @@ describe('TreeSelect.vue', () => {
       template: `<TreeSelect v-for="item in data" v-model="item.value" :data="options" @update:modelValue="item.handleChange" />`,
     })
     const select = wrapper.findComponent({
-      name: 'ElSelect',
+      name: 'HcSelect',
     })
 
     select.vm.handleOptionSelect(select.vm.options.get(1))

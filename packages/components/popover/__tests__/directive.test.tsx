@@ -44,7 +44,7 @@ describe('v-popover', () => {
     const wrapper = _mount()
 
     await nextTick()
-    expect(document.body.querySelector('.el-popover')?.innerHTML).toContain(
+    expect(document.body.querySelector('.hc-popover')?.innerHTML).toContain(
       AXIOM
     )
     wrapper.unmount()
@@ -57,7 +57,7 @@ describe('v-popover', () => {
     const refNode = '#reference-node'
     expect(wrapper.find(refNode).exists()).toBe(true)
     expect(
-      document.body.querySelector('.el-popover')?.getAttribute('style')
+      document.body.querySelector('.hc-popover')?.getAttribute('style')
     ).toContain('display: none')
 
     await wrapper.find(refNode).trigger('click', {
@@ -66,7 +66,7 @@ describe('v-popover', () => {
     await nextTick()
     await rAF()
     expect(
-      document.body.querySelector('.el-popover')?.getAttribute('style')
+      document.body.querySelector('.hc-popover')?.getAttribute('style')
     ).not.toContain('display: none')
     wrapper.unmount()
   })

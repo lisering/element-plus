@@ -13,7 +13,7 @@ import { stepsEmits, stepsProps } from './steps'
 import type { StepItemState } from './item.vue'
 
 defineOptions({
-  name: 'ElSteps',
+  name: 'HcSteps',
 })
 
 const props = defineProps(stepsProps)
@@ -24,7 +24,7 @@ const {
   children: steps,
   addChild: addStep,
   removeChild: removeStep,
-} = useOrderedChildren<StepItemState>(getCurrentInstance()!, 'ElStep')
+} = useOrderedChildren<StepItemState>(getCurrentInstance()!, 'HcStep')
 
 watch(steps, () => {
   steps.value.forEach((instance: StepItemState, index: number) => {
@@ -32,7 +32,7 @@ watch(steps, () => {
   })
 })
 
-provide('ElSteps', { props, steps, addStep, removeStep })
+provide('HcSteps', { props, steps, addStep, removeStep })
 
 watch(
   () => props.active,

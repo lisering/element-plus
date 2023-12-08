@@ -10,7 +10,7 @@ import { tooltipV2ArrowProps, tooltipV2ArrowSpecialProps } from './arrow'
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElTooltipV2Arrow',
+  name: 'HcTooltipV2Arrow',
 })
 
 const props = defineProps({

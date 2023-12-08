@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { h } from 'vue'
 import { ArrowRight, Loading } from '@element-plus/icons-vue'
-import ElCheckbox from '@hicor-ui/components/checkbox'
-import { ElIcon } from '@hicor-ui/components/icon'
+import HcCheckbox from '@hicor-ui/components/checkbox'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { getProp } from '@hicor-ui/utils'
 
 import type { VNode } from 'vue'
@@ -50,7 +50,7 @@ export const cellForced = {
       function isDisabled() {
         return store.states.data.value && store.states.data.value.length === 0
       }
-      return h(ElCheckbox, {
+      return h(HcCheckbox, {
         disabled: isDisabled(),
         size: store.states.tableSize.value,
         indeterminate:
@@ -72,7 +72,7 @@ export const cellForced = {
       store: Store<T>
       $index: string
     }) {
-      return h(ElCheckbox, {
+      return h(HcCheckbox, {
         disabled: column.selectable
           ? !column.selectable.call(null, row, $index)
           : false,
@@ -142,7 +142,7 @@ export const cellForced = {
         {
           default: () => {
             return [
-              h(ElIcon, null, {
+              h(HcIcon, null, {
                 default: () => {
                   return [h(ArrowRight)]
                 },
@@ -234,7 +234,7 @@ export function treeCellPrefix<T>(
           default: () => {
             return [
               h(
-                ElIcon,
+                HcIcon,
                 { class: { [ns.is('loading')]: treeNode.loading } },
                 {
                   default: () => [h(icon)],

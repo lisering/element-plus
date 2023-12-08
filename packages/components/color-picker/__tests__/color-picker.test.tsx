@@ -1,7 +1,7 @@
 import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import ColorPicker from '../src/color-picker.vue'
 import type { ComponentPublicInstance } from 'vue'
 
@@ -39,8 +39,8 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} show-alpha={true} />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    const alphaSlider = document.querySelector('.el-color-alpha-slider')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
+    const alphaSlider = document.querySelector('.hc-color-alpha-slider')
     expect(alphaSlider).toBeTruthy()
     wrapper.unmount()
   })
@@ -48,10 +48,10 @@ describe('Color-picker', () => {
     const color = ref('#20A0FF')
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     await nextTick()
     const input = document.querySelector<HTMLInputElement>(
-      '.el-color-dropdown__value input'
+      '.hc-color-dropdown__value input'
     )
     expect(input!.value.trim().toUpperCase()).toEqual('#20A0FF')
     wrapper.unmount()
@@ -62,10 +62,10 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} color-format="hex" show-alpha />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     await nextTick()
     const input = document.querySelector<HTMLInputElement>(
-      '.el-color-dropdown__value input'
+      '.hc-color-dropdown__value input'
     )
     expect(input!.value.trim().toUpperCase()).toEqual('#20A0FFEE')
     wrapper.unmount()
@@ -74,8 +74,8 @@ describe('Color-picker', () => {
     const color = ref(null)
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    document.querySelector<HTMLElement>('.el-color-dropdown__btn')?.click()
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
+    document.querySelector<HTMLElement>('.hc-color-dropdown__btn')?.click()
     await nextTick()
     expect(color.value).toEqual('#FF0000')
     wrapper.unmount()
@@ -86,8 +86,8 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} color-format="hex" show-alpha />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    document.querySelector<HTMLElement>('.el-color-dropdown__btn')?.click()
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
+    document.querySelector<HTMLElement>('.hc-color-dropdown__btn')?.click()
     await nextTick()
     expect(color.value).toEqual('#FF0000FF')
     wrapper.unmount()
@@ -100,7 +100,7 @@ describe('Color-picker', () => {
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element as HTMLElement
     const thumbDom = hueSlideWrapper.find<HTMLElement>(
-      '.el-color-hue-slider__thumb'
+      '.hc-color-hue-slider__thumb'
     ).element
     const mockHueSlideHeight = vi
       .spyOn(hueSlideDom, 'offsetHeight', 'get')
@@ -108,7 +108,7 @@ describe('Color-picker', () => {
     const mockThumbDom = vi
       .spyOn(thumbDom, 'offsetHeight', 'get')
       .mockImplementation(() => 4)
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     await nextTick()
     expect(
       (hueSlideWrapper.vm as ComponentPublicInstance<{ thumbTop: number }>)
@@ -122,8 +122,8 @@ describe('Color-picker', () => {
     const color = ref('#0F0')
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
-    const dropdown = document.querySelector('.el-color-dropdown')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
+    const dropdown = document.querySelector('.hc-color-dropdown')
     expect(dropdown).toBeTruthy()
     wrapper.unmount()
   })
@@ -131,9 +131,9 @@ describe('Color-picker', () => {
     const color = ref('#0F0')
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const clearBtn = document.querySelector<HTMLElement>(
-      '.el-color-dropdown__link-btn'
+      '.hc-color-dropdown__link-btn'
     )
     clearBtn!.click()
     expect(color.value).toEqual(null)
@@ -143,12 +143,12 @@ describe('Color-picker', () => {
     const color = ref('#F00')
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element
     const thumbDom = hueSlideWrapper.find<HTMLElement>(
-      '.el-color-hue-slider__thumb'
+      '.hc-color-hue-slider__thumb'
     ).element
     const mockHueBarHeight = vi
       .spyOn(hueSlideDom, 'getBoundingClientRect')
@@ -178,12 +178,12 @@ describe('Color-picker', () => {
     const color = ref('20A0FF')
     const wrapper = mount(() => <ColorPicker v-model={color.value} />)
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element as HTMLElement
     const thumbDom = hueSlideWrapper.find<HTMLElement>(
-      '.el-color-hue-slider__thumb'
+      '.hc-color-hue-slider__thumb'
     ).element
     const mockHueSlideRect = vi
       .spyOn(hueSlideDom, 'getBoundingClientRect')
@@ -220,7 +220,7 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} show-alpha />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const alphaWrapper = colorPickerWrapper.findComponent({ ref: 'alpha' })
     const alphaDom = alphaWrapper.element as HTMLElement
@@ -234,7 +234,7 @@ describe('Color-picker', () => {
         left: 0,
       } as DOMRect)
     const thumbDom = alphaWrapper.find<HTMLElement>(
-      '.el-color-alpha-slider__thumb'
+      '.hc-color-alpha-slider__thumb'
     ).element
     const mockThumbDom = vi
       .spyOn(thumbDom, 'offsetWidth', 'get')
@@ -258,7 +258,7 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} show-alpha color-format="hsv" />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const svPanelWrapper = colorPickerWrapper.findComponent({ ref: 'sv' })
     ;(svPanelWrapper.vm as ColorPickerVM).handleDrag({
@@ -289,19 +289,19 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} show-alpha predefine={colors.value} />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const predefineWrapper = colorPickerWrapper.findComponent({
       ref: 'predefine',
     })
     const predefineDom = predefineWrapper.element as HTMLElement
     expect(
-      predefineDom.querySelectorAll('.el-color-predefine__color-selector')
+      predefineDom.querySelectorAll('.hc-color-predefine__color-selector')
         .length === 9
     ).toBeTruthy()
     predefineDom
       .querySelector<HTMLElement>(
-        '.el-color-predefine__color-selector:nth-child(4)'
+        '.hc-color-predefine__color-selector:nth-child(4)'
       )
       ?.click()
     await nextTick()
@@ -312,7 +312,7 @@ describe('Color-picker', () => {
 
     predefineDom
       .querySelector<HTMLElement>(
-        '.el-color-predefine__color-selector:nth-child(3)'
+        '.hc-color-predefine__color-selector:nth-child(3)'
       )
       ?.click()
     await nextTick()
@@ -339,7 +339,7 @@ describe('Color-picker', () => {
       <ColorPicker v-model={color.value} show-alpha predefine={colors.value} />
     ))
 
-    await wrapper.find('.el-color-picker__trigger').trigger('click')
+    await wrapper.find('.hc-color-picker__trigger').trigger('click')
     const colorPickerWrapper = wrapper.findComponent(ColorPicker)
     const predefineWrapper = colorPickerWrapper.findComponent({
       ref: 'predefine',
@@ -347,19 +347,19 @@ describe('Color-picker', () => {
     const predefineDom = predefineWrapper.element as HTMLElement
     predefineDom
       .querySelector<HTMLElement>(
-        '.el-color-predefine__color-selector:nth-child(4)'
+        '.hc-color-predefine__color-selector:nth-child(4)'
       )
       ?.click()
     await nextTick()
     expect(
       predefineWrapper
-        .find('.el-color-predefine__color-selector:nth-child(4)')
+        .find('.hc-color-predefine__color-selector:nth-child(4)')
         .classes()
     ).toContain('selected')
     const hueSlideWrapper = colorPickerWrapper.findComponent({ ref: 'hue' })
     const hueSlideDom = hueSlideWrapper.element
     const thumbDom = hueSlideWrapper.find<HTMLElement>(
-      '.el-color-hue-slider__thumb'
+      '.hc-color-hue-slider__thumb'
     ).element
     const mockHueSlideRect = vi
       .spyOn(hueSlideDom, 'getBoundingClientRect')
@@ -385,7 +385,7 @@ describe('Color-picker', () => {
     await nextTick()
     expect(
       predefineWrapper
-        .find('.el-color-predefine__color-selector:nth-child(4)')
+        .find('.hc-color-predefine__color-selector:nth-child(4)')
         .classes()
     ).not.toContain('selected')
     mockHueSlideRect.mockRestore()
@@ -407,15 +407,15 @@ describe('Color-picker', () => {
   describe('form item accessibility integration', () => {
     it('automatic id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <ColorPicker />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const colorPickerButton = wrapper.find('.el-color-picker')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const colorPickerButton = wrapper.find('.hc-color-picker')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(
         colorPickerButton.attributes().id
@@ -424,15 +424,15 @@ describe('Color-picker', () => {
 
     it('specified id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <ColorPicker id="foobar" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const colorPickerButton = wrapper.find('.el-color-picker')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const colorPickerButton = wrapper.find('.hc-color-picker')
       expect(formItem.attributes().role).toBeFalsy()
       expect(colorPickerButton.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(
@@ -442,10 +442,10 @@ describe('Color-picker', () => {
 
     it('form item role is group when multiple inputs', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <ColorPicker />
           <ColorPicker />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
@@ -462,10 +462,10 @@ describe('Color-picker', () => {
     ))
 
     await nextTick()
-    await wrapper.find('.el-color-picker').trigger('focus')
+    await wrapper.find('.hc-color-picker').trigger('focus')
     expect(focusHandler).toHaveBeenCalledTimes(1)
 
-    await wrapper.find('.el-color-picker').trigger('blur')
+    await wrapper.find('.hc-color-picker').trigger('blur')
     expect(blurHandler).toHaveBeenCalledTimes(1)
     wrapper.unmount()
   })

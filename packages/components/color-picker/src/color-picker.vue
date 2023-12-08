@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="popper"
     :visible="showPicker"
     :show-arrow="false"
@@ -29,7 +29,7 @@
         />
         <div :class="ns.be('dropdown', 'btns')">
           <span :class="ns.be('dropdown', 'value')">
-            <el-input
+            <hc-input
               ref="inputRef"
               v-model="customInput"
               :validate-event="false"
@@ -38,22 +38,22 @@
               @blur="handleConfirm"
             />
           </span>
-          <el-button
+          <hc-button
             :class="ns.be('dropdown', 'link-btn')"
             text
             size="small"
             @click="clear"
           >
             {{ t('el.colorpicker.clear') }}
-          </el-button>
-          <el-button
+          </hc-button>
+          <hc-button
             plain
             size="small"
             :class="ns.be('dropdown', 'btn')"
             @click="confirmValue"
           >
             {{ t('el.colorpicker.confirm') }}
-          </el-button>
+          </hc-button>
         </div>
       </div>
     </template>
@@ -83,24 +83,24 @@
                 backgroundColor: displayedColor,
               }"
             >
-              <el-icon
+              <hc-icon
                 v-show="modelValue || showPanelColor"
                 :class="[ns.be('picker', 'icon'), ns.is('icon-arrow-down')]"
               >
                 <arrow-down />
-              </el-icon>
-              <el-icon
+              </hc-icon>
+              <hc-icon
                 v-show="!modelValue && !showPanelColor"
                 :class="[ns.be('picker', 'empty'), ns.is('icon-close')]"
               >
                 <close />
-              </el-icon>
+              </hc-icon>
             </span>
           </span>
         </div>
       </div>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 
 <script lang="ts" setup>
@@ -115,11 +115,11 @@ import {
 } from 'vue'
 import { debounce } from 'lodash-unified'
 import { ArrowDown, Close } from '@element-plus/icons-vue'
-import { ElButton } from '@hicor-ui/components/button'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcButton } from '@hicor-ui/components/button'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { ClickOutside as vClickOutside } from '@hicor-ui/directives'
-import { ElTooltip } from '@hicor-ui/components/tooltip'
-import { ElInput } from '@hicor-ui/components/input'
+import { HcTooltip } from '@hicor-ui/components/tooltip'
+import { HcInput } from '@hicor-ui/components/input'
 import {
   useFormDisabled,
   useFormItem,
@@ -142,7 +142,7 @@ import {
 import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 
 defineOptions({
-  name: 'ElColorPicker',
+  name: 'HcColorPicker',
 })
 const props = defineProps(colorPickerProps)
 const emit = defineEmits(colorPickerEmits)

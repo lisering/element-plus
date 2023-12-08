@@ -2,7 +2,7 @@ import { nextTick, ref } from 'vue'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, test, vi } from 'vitest'
 import { ArrowDown, ArrowUp } from '@element-plus/icons-vue'
-import { ElFormItem } from '@hicor-ui/components/form'
+import { HcFormItem } from '@hicor-ui/components/form'
 import InputNumber from '../src/input-number.vue'
 
 const mouseup = new Event('mouseup')
@@ -84,7 +84,7 @@ describe('InputNumber.vue', () => {
     const num = ref(1)
     const wrapper = mount(() => <InputNumber min={3} v-model={num.value} />)
     expect(wrapper.find('input').element.value).toEqual('3')
-    wrapper.find('.el-input-number__decrease').trigger('mousedown')
+    wrapper.find('.hc-input-number__decrease').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('3')
@@ -94,7 +94,7 @@ describe('InputNumber.vue', () => {
     const num = ref(5)
     const wrapper = mount(() => <InputNumber max={3} v-model={num.value} />)
     expect(wrapper.find('input').element.value).toEqual('3')
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('3')
@@ -103,15 +103,15 @@ describe('InputNumber.vue', () => {
   test('step, increase and decrease', async () => {
     const num = ref(0)
     const wrapper = mount(() => <InputNumber v-model={num.value} step={2} />)
-    wrapper.find('.el-input-number__decrease').trigger('mousedown')
+    wrapper.find('.hc-input-number__decrease').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('-2')
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0')
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('2')
@@ -131,7 +131,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber step-strictly={true} step={0.1} v-model={num.value} />
     ))
-    const elInputNumber = wrapper.findComponent({ name: 'ElInputNumber' }).vm
+    const elInputNumber = wrapper.findComponent({ name: 'HcInputNumber' }).vm
     elInputNumber.increase()
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0.3')
@@ -208,16 +208,16 @@ describe('InputNumber.vue', () => {
       <InputNumber readonly v-model={num.value} onFocus={handleFocus} />
     ))
 
-    wrapper.find('.el-input__inner').trigger('focus')
+    wrapper.find('.hc-input__inner').trigger('focus')
     await nextTick()
     expect(handleFocus).toHaveBeenCalledTimes(1)
 
-    wrapper.find('.el-input-number__decrease').trigger('mousedown')
+    wrapper.find('.hc-input-number__decrease').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0')
 
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0')
@@ -228,11 +228,11 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber disabled={true} v-model={num.value} />
     ))
-    wrapper.find('.el-input-number__decrease').trigger('mousedown')
+    wrapper.find('.hc-input-number__decrease').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0')
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.find('input').element.value).toEqual('0')
@@ -243,8 +243,8 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber controls={false} v-model={num.value} />
     ))
-    expect(wrapper.find('.el-input-number__increase').exists()).toBe(false)
-    expect(wrapper.find('.el-input-number__decrease').exists()).toBe(false)
+    expect(wrapper.find('.hc-input-number__increase').exists()).toBe(false)
+    expect(wrapper.find('.hc-input-number__decrease').exists()).toBe(false)
   })
 
   test('controls-position', async () => {
@@ -284,7 +284,7 @@ describe('InputNumber.vue', () => {
   test('change-event', async () => {
     const num = ref(0)
     const wrapper = mount(() => <InputNumber v-model={num.value} />)
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.getComponent(InputNumber).emitted('change')).toHaveLength(1)
@@ -294,7 +294,7 @@ describe('InputNumber.vue', () => {
     expect(
       wrapper.getComponent(InputNumber).emitted('update:modelValue')
     ).toHaveLength(1)
-    wrapper.find('.el-input-number__increase').trigger('mousedown')
+    wrapper.find('.hc-input-number__increase').trigger('mousedown')
     document.dispatchEvent(mouseup)
     await nextTick()
     expect(wrapper.getComponent(InputNumber).emitted('change')).toHaveLength(2)
@@ -333,7 +333,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber v-model={num.value} min={1} max={10} />
     ))
-    const elInput = wrapper.findComponent({ name: 'ElInputNumber' }).vm
+    const elInput = wrapper.findComponent({ name: 'HcInputNumber' }).vm
     elInput.handleInputChange('')
     await nextTick()
     expect(num.value).toBe(null)
@@ -359,7 +359,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber value-on-clear="min" v-model={num.value} min={1} max={10} />
     ))
-    const elInput = wrapper.findComponent({ name: 'ElInputNumber' }).vm
+    const elInput = wrapper.findComponent({ name: 'HcInputNumber' }).vm
     elInput.handleInputChange('')
     await nextTick()
     expect(num.value).toBe(1)
@@ -379,7 +379,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber value-on-clear="max" v-model={num.value} min={1} max={10} />
     ))
-    const elInput = wrapper.findComponent({ name: 'ElInputNumber' }).vm
+    const elInput = wrapper.findComponent({ name: 'HcInputNumber' }).vm
     elInput.handleInputChange('')
     await nextTick()
     expect(num.value).toBe(10)
@@ -399,7 +399,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => (
       <InputNumber value-on-clear={5} v-model={num.value} min={1} max={10} />
     ))
-    const elInput = wrapper.findComponent({ name: 'ElInputNumber' }).vm
+    const elInput = wrapper.findComponent({ name: 'HcInputNumber' }).vm
     elInput.handleInputChange('')
     await nextTick()
     expect(num.value).toBe(5)
@@ -468,30 +468,30 @@ describe('InputNumber.vue', () => {
   describe('form item accessibility integration', () => {
     test('automatic id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <InputNumber />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const innerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const innerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(formItemLabel.attributes().for).toBe(innerInput.attributes().id)
     })
 
     test('specified id attachment', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <InputNumber id="foobar" />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()
       const formItem = wrapper.find('[data-test-ref="item"]')
-      const formItemLabel = formItem.find('.el-form-item__label')
-      const innerInput = wrapper.find('.el-input__inner')
+      const formItemLabel = formItem.find('.hc-form-item__label')
+      const innerInput = wrapper.find('.hc-input__inner')
       expect(formItem.attributes().role).toBeFalsy()
       expect(innerInput.attributes().id).toBe('foobar')
       expect(formItemLabel.attributes().for).toBe(innerInput.attributes().id)
@@ -499,10 +499,10 @@ describe('InputNumber.vue', () => {
 
     test('form item role is group when multiple inputs', async () => {
       const wrapper = mount(() => (
-        <ElFormItem label="Foobar" data-test-ref="item">
+        <HcFormItem label="Foobar" data-test-ref="item">
           <InputNumber />
           <InputNumber />
-        </ElFormItem>
+        </HcFormItem>
       ))
 
       await nextTick()

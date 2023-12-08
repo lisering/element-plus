@@ -23,7 +23,7 @@
       @mouseleave="resetCurrentValue"
       @click="selectValue(item)"
     >
-      <el-icon
+      <hc-icon
         :class="[
           ns.e('icon'),
           { hover: hoverIndex === item },
@@ -36,14 +36,14 @@
         </template>
         <template v-if="showDecimalIcon(item)">
           <component :is="voidComponent" :class="[ns.em('decimal', 'box')]" />
-          <el-icon
+          <hc-icon
             :style="decimalStyle"
             :class="[ns.e('icon'), ns.e('decimal')]"
           >
             <component :is="decimalIconComponent" />
-          </el-icon>
+          </hc-icon>
         </template>
-      </el-icon>
+      </hc-icon>
     </span>
     <span
       v-if="showText || showScore"
@@ -64,7 +64,7 @@ import {
   useFormItemInputId,
   useFormSize,
 } from '@hicor-ui/components/form'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { rateEmits, rateProps } from './rate'
 import type { CSSProperties, Component } from 'vue'
@@ -90,7 +90,7 @@ function getValueFromMap<T>(
 }
 
 defineOptions({
-  name: 'ElRate',
+  name: 'HcRate',
 })
 
 const props = defineProps(rateProps)

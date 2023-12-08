@@ -12,7 +12,7 @@
     @blur="handleMouseLeave"
     @keydown="onKeyDown"
   >
-    <el-tooltip
+    <hc-tooltip
       ref="tooltip"
       :visible="tooltipVisible"
       :placement="placement"
@@ -26,20 +26,20 @@
         <span>{{ formatValue }}</span>
       </template>
       <div :class="[ns.e('button'), { hover: hovering, dragging }]" />
-    </el-tooltip>
+    </hc-tooltip>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive, toRefs } from 'vue'
-import { ElTooltip } from '@hicor-ui/components/tooltip'
+import { HcTooltip } from '@hicor-ui/components/tooltip'
 import { useNamespace } from '@hicor-ui/hooks'
 import { useSliderButton } from './composables'
 import { sliderButtonEmits, sliderButtonProps } from './button'
 import type { SliderButtonInitData } from './button'
 
 defineOptions({
-  name: 'ElSliderButton',
+  name: 'HcSliderButton',
 })
 
 const props = defineProps(sliderButtonProps)

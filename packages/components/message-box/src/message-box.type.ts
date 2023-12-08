@@ -62,7 +62,7 @@ export type Callback =
   | ((action: Action) => any)
 
 /** Options used in MessageBox */
-export interface ElMessageBoxOptions {
+export interface HcMessageBoxOptions {
   /**
    * auto focus when open message-box
    */
@@ -106,7 +106,7 @@ export interface ElMessageBoxOptions {
   message?: string | VNode | (() => VNode)
 
   /** Title of the MessageBox */
-  title?: string | ElMessageBoxOptions
+  title?: string | HcMessageBoxOptions
 
   /** Message type, used for icon display */
   type?: MessageType
@@ -175,19 +175,19 @@ export interface ElMessageBoxOptions {
   appendTo?: HTMLElement | string
 }
 
-export type ElMessageBoxShortcutMethod = ((
-  message: ElMessageBoxOptions['message'],
-  title: ElMessageBoxOptions['title'],
-  options?: ElMessageBoxOptions,
+export type HcMessageBoxShortcutMethod = ((
+  message: HcMessageBoxOptions['message'],
+  title: HcMessageBoxOptions['title'],
+  options?: HcMessageBoxOptions,
   appContext?: AppContext | null
 ) => Promise<MessageBoxData>) &
   ((
-    message: ElMessageBoxOptions['message'],
-    options?: ElMessageBoxOptions,
+    message: HcMessageBoxOptions['message'],
+    options?: HcMessageBoxOptions,
     appContext?: AppContext | null
   ) => Promise<MessageBoxData>)
 
-export interface IElMessageBox {
+export interface IHcMessageBox {
   _context: AppContext | null
 
   /** Show a message box */
@@ -195,18 +195,18 @@ export interface IElMessageBox {
 
   /** Show a message box */
   (
-    options: ElMessageBoxOptions,
+    options: HcMessageBoxOptions,
     appContext?: AppContext | null
   ): Promise<MessageBoxData>
 
   /** Show an alert message box */
-  alert: ElMessageBoxShortcutMethod
+  alert: HcMessageBoxShortcutMethod
 
   /** Show a confirm message box */
-  confirm: ElMessageBoxShortcutMethod
+  confirm: HcMessageBoxShortcutMethod
 
   /** Show a prompt message box */
-  prompt: ElMessageBoxShortcutMethod
+  prompt: HcMessageBoxShortcutMethod
 
   /** Close current message box */
   close(): void

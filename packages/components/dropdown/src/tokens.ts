@@ -1,6 +1,6 @@
 import type { ComputedRef, InjectionKey, Ref } from 'vue'
 
-export type ElDropdownInjectionContext = {
+export type HcDropdownInjectionContext = {
   contentRef: Ref<HTMLElement | null>
   role: ComputedRef<string>
   triggerId: ComputedRef<string>
@@ -9,5 +9,5 @@ export type ElDropdownInjectionContext = {
   onItemEnter: (e: PointerEvent) => void
 }
 
-export const DROPDOWN_INJECTION_KEY: InjectionKey<ElDropdownInjectionContext> =
+export const DROPDOWN_INJECTION_KEY: InjectionKey<HcDropdownInjectionContext> =
   Symbol('elDropdown')

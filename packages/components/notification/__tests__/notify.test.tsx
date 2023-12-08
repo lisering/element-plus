@@ -2,11 +2,11 @@ import { nextTick } from 'vue'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { rAF } from '@hicor-ui/test-utils/tick'
 import Notification, { closeAll } from '../src/notify'
-import { ElNotification } from '..'
+import { HcNotification } from '..'
 
 import type { NotificationHandle } from '../src/notification'
 
-const selector = '.el-notification'
+const selector = '.hc-notification'
 
 describe('Notification on command', () => {
   afterEach(() => {
@@ -113,18 +113,18 @@ describe('Notification on command', () => {
   })
   describe('context inheritance', () => {
     it('should globally inherit context correctly', () => {
-      expect(ElNotification._context).toBe(null)
+      expect(HcNotification._context).toBe(null)
       const testContext = {
         config: {
           globalProperties: {},
         },
         _context: {},
       }
-      ElNotification.install?.(testContext as any)
-      expect(ElNotification._context).not.toBe(null)
-      expect(ElNotification._context).toBe(testContext._context)
+      HcNotification.install?.(testContext as any)
+      expect(HcNotification._context).not.toBe(null)
+      expect(HcNotification._context).toBe(testContext._context)
       // clean up
-      ElNotification._context = null
+      HcNotification._context = null
     })
   })
 })

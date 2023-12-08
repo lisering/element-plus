@@ -11,7 +11,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { checkTagEmits, checkTagProps } from './check-tag'
 
 defineOptions({
-  name: 'ElCheckTag',
+  name: 'HcCheckTag',
 })
 const props = defineProps(checkTagProps)
 const emit = defineEmits(checkTagEmits)

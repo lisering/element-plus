@@ -5,9 +5,9 @@
       :class="[ns.b(), ns.m(type), ns.is('center', center), ns.is(effect)]"
       role="alert"
     >
-      <el-icon v-if="showIcon && iconComponent" :class="iconClass">
+      <hc-icon v-if="showIcon && iconComponent" :class="iconClass">
         <component :is="iconComponent" />
-      </el-icon>
+      </hc-icon>
 
       <div :class="ns.e('content')">
         <span
@@ -29,9 +29,9 @@
           >
             {{ closeText }}
           </div>
-          <el-icon v-else :class="ns.e('close-btn')" @click="close">
+          <hc-icon v-else :class="ns.e('close-btn')" @click="close">
             <Close />
-          </el-icon>
+          </hc-icon>
         </template>
       </div>
     </div>
@@ -39,7 +39,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref, useSlots } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { TypeComponents, TypeComponentsMap } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import { alertEmits, alertProps } from './alert'
@@ -47,7 +47,7 @@ import { alertEmits, alertProps } from './alert'
 const { Close } = TypeComponents
 
 defineOptions({
-  name: 'ElAlert',
+  name: 'HcAlert',
 })
 
 const props = defineProps(alertProps)

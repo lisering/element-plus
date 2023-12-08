@@ -14,7 +14,7 @@ import { POPPER_CONTENT_INJECTION_KEY } from './constants'
 import { popperArrowProps } from './arrow'
 
 defineOptions({
-  name: 'ElPopperArrow',
+  name: 'HcPopperArrow',
   inheritAttrs: false,
 })
 

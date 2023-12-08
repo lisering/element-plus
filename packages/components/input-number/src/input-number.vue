@@ -17,10 +17,10 @@
       :class="[ns.e('decrease'), ns.is('disabled', minDisabled)]"
       @keydown.enter="decrease"
     >
-      <el-icon>
+      <hc-icon>
         <arrow-down v-if="controlsAtRight" />
         <minus v-else />
-      </el-icon>
+      </hc-icon>
     </span>
     <span
       v-if="controls"
@@ -30,12 +30,12 @@
       :class="[ns.e('increase'), ns.is('disabled', maxDisabled)]"
       @keydown.enter="increase"
     >
-      <el-icon>
+      <hc-icon>
         <arrow-up v-if="controlsAtRight" />
         <plus v-else />
-      </el-icon>
+      </hc-icon>
     </span>
-    <el-input
+    <hc-input
       :id="id"
       ref="input"
       type="number"
@@ -64,8 +64,8 @@
 import { computed, onMounted, onUpdated, reactive, ref, watch } from 'vue'
 import { isNil } from 'lodash-unified'
 import { ArrowDown, ArrowUp, Minus, Plus } from '@element-plus/icons-vue'
-import { ElInput } from '@hicor-ui/components/input'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcInput } from '@hicor-ui/components/input'
+import { HcIcon } from '@hicor-ui/components/icon'
 import {
   useFormDisabled,
   useFormItem,
@@ -90,7 +90,7 @@ import { inputNumberEmits, inputNumberProps } from './input-number'
 import type { InputInstance } from '@hicor-ui/components/input'
 
 defineOptions({
-  name: 'ElInputNumber',
+  name: 'HcInputNumber',
 })
 
 const props = defineProps(inputNumberProps)

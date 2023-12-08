@@ -73,9 +73,9 @@
     >
       <slot :percentage="percentage">
         <span v-if="!status">{{ content }}</span>
-        <el-icon v-else>
+        <hc-icon v-else>
           <component :is="statusIcon" />
-        </el-icon>
+        </hc-icon>
       </slot>
     </div>
   </div>
@@ -90,7 +90,7 @@ import {
   Close,
   WarningFilled,
 } from '@element-plus/icons-vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { isFunction, isString } from '@hicor-ui/utils'
 import { progressProps } from './progress'
@@ -98,7 +98,7 @@ import type { CSSProperties } from 'vue'
 import type { ProgressColor } from './progress'
 
 defineOptions({
-  name: 'ElProgress',
+  name: 'HcProgress',
 })
 
 const STATUS_COLOR_MAP: Record<string, string> = {

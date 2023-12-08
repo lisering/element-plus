@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar
+  <hc-scrollbar
     :key="menuId"
     tag="ul"
     role="menu"
@@ -9,7 +9,7 @@
     @mousemove="handleMouseMove"
     @mouseleave="clearHoverZone"
   >
-    <el-cascader-node
+    <hc-cascader-node
       v-for="node in nodes"
       :key="node.uid"
       :node="node"
@@ -17,9 +17,9 @@
       @expand="handleExpand"
     />
     <div v-if="isLoading" :class="ns.e('empty-text')">
-      <el-icon size="14" :class="ns.is('loading')">
+      <hc-icon size="14" :class="ns.is('loading')">
         <loading />
-      </el-icon>
+      </hc-icon>
       {{ t('el.cascader.loading') }}
     </div>
     <div v-else-if="isEmpty" :class="ns.e('empty-text')">
@@ -30,17 +30,17 @@
       ref="hoverZone"
       :class="ns.e('hover-zone')"
     />
-  </el-scrollbar>
+  </hc-scrollbar>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, getCurrentInstance, inject, ref } from 'vue'
 import { Loading } from '@element-plus/icons-vue'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
 import { generateId } from '@hicor-ui/utils'
-import ElIcon from '@hicor-ui/components/icon'
-import ElCascaderNode from './node.vue'
+import HcIcon from '@hicor-ui/components/icon'
+import HcCascaderNode from './node.vue'
 import { CASCADER_PANEL_INJECTION_KEY } from './types'
 
 import type { default as CascaderNode } from './node'
@@ -48,13 +48,13 @@ import type { PropType } from 'vue'
 import type { Nullable } from '@hicor-ui/utils'
 
 export default defineComponent({
-  name: 'ElCascaderMenu',
+  name: 'HcCascaderMenu',
 
   components: {
     Loading,
-    ElIcon,
-    ElScrollbar,
-    ElCascaderNode,
+    HcIcon,
+    HcScrollbar,
+    HcCascaderNode,
   },
 
   props: {

@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="tooltipRef"
     v-bind="$attrs"
     :trigger="trigger"
@@ -41,18 +41,18 @@
         {{ content }}
       </slot>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 <script lang="ts" setup>
 import { computed, ref, unref } from 'vue'
-import { ElTooltip } from '@hicor-ui/components/tooltip'
+import { HcTooltip } from '@hicor-ui/components/tooltip'
 import { addUnit } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import { popoverEmits, popoverProps } from './popover'
 import type { TooltipInstance } from '@hicor-ui/components/tooltip'
 
 defineOptions({
-  name: 'ElPopover',
+  name: 'HcPopover',
 })
 
 const props = defineProps(popoverProps)

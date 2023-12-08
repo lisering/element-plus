@@ -2,11 +2,11 @@ import { withInstall, withNoopInstall } from '@hicor-ui/utils'
 import Form from './src/form.vue'
 import FormItem from './src/form-item.vue'
 
-export const ElForm = withInstall(Form, {
+export const HcForm = withInstall(Form, {
   FormItem,
 })
-export default ElForm
-export const ElFormItem = withNoopInstall(FormItem)
+export default HcForm
+export const HcFormItem = withNoopInstall(FormItem)
 
 export * from './src/form'
 export * from './src/form-item'

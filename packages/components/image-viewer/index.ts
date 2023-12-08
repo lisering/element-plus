@@ -2,7 +2,7 @@ import { withInstall } from '@hicor-ui/utils'
 
 import ImageViewer from './src/image-viewer.vue'
 
-export const ElImageViewer = withInstall(ImageViewer)
-export default ElImageViewer
+export const HcImageViewer = withInstall(ImageViewer)
+export default HcImageViewer
 
 export * from './src/image-viewer'

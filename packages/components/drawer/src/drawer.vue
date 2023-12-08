@@ -6,14 +6,14 @@
       @after-leave="afterLeave"
       @before-leave="beforeLeave"
     >
-      <el-overlay
+      <hc-overlay
         v-show="visible"
         :mask="modal"
         :overlay-class="modalClass"
         :z-index="zIndex"
         @click="onModalClick"
       >
-        <el-focus-trap
+        <hc-focus-trap
           loop
           :trapped="visible"
           :focus-trap-el="drawerRef"
@@ -63,9 +63,9 @@
                 type="button"
                 @click="handleClose"
               >
-                <el-icon :class="ns.e('close')">
+                <hc-icon :class="ns.e('close')">
                   <close />
-                </el-icon>
+                </hc-icon>
               </button>
             </header>
             <template v-if="rendered">
@@ -77,8 +77,8 @@
               <slot name="footer" />
             </div>
           </div>
-        </el-focus-trap>
-      </el-overlay>
+        </hc-focus-trap>
+      </hc-overlay>
     </transition>
   </teleport>
 </template>
@@ -87,20 +87,20 @@
 import { computed, defineComponent, ref } from 'vue'
 import { Close } from '@element-plus/icons-vue'
 
-import { ElOverlay } from '@hicor-ui/components/overlay'
-import ElFocusTrap from '@hicor-ui/components/focus-trap'
+import { HcOverlay } from '@hicor-ui/components/overlay'
+import HcFocusTrap from '@hicor-ui/components/focus-trap'
 import { useDialog } from '@hicor-ui/components/dialog'
 import { addUnit } from '@hicor-ui/utils'
-import ElIcon from '@hicor-ui/components/icon'
+import HcIcon from '@hicor-ui/components/icon'
 import { useDeprecated, useLocale, useNamespace } from '@hicor-ui/hooks'
 import { drawerEmits, drawerProps } from './drawer'
 
 export default defineComponent({
-  name: 'ElDrawer',
+  name: 'HcDrawer',
   components: {
-    ElOverlay,
-    ElFocusTrap,
-    ElIcon,
+    HcOverlay,
+    HcFocusTrap,
+    HcIcon,
     Close,
   },
   inheritAttrs: false,

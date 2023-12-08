@@ -1,5 +1,5 @@
 <template>
-  <el-popper-trigger
+  <hc-popper-trigger
     :id="id"
     :virtual-ref="virtualRef"
     :open="open"
@@ -14,11 +14,11 @@
     @keydown="onKeydown"
   >
     <slot />
-  </el-popper-trigger>
+  </hc-popper-trigger>
 </template>
 <script lang="ts" setup>
 import { inject, ref, toRef, unref } from 'vue'
-import { ElPopperTrigger } from '@hicor-ui/components/popper'
+import { HcPopperTrigger } from '@hicor-ui/components/popper'
 import { composeEventHandlers } from '@hicor-ui/utils'
 import { useNamespace } from '@hicor-ui/hooks'
 import { TOOLTIP_INJECTION_KEY } from './constants'
@@ -27,7 +27,7 @@ import { whenTrigger } from './utils'
 import type { OnlyChildExpose } from '@hicor-ui/components/slot'
 
 defineOptions({
-  name: 'ElTooltipTrigger',
+  name: 'HcTooltipTrigger',
 })
 
 const props = defineProps(useTooltipTriggerProps)

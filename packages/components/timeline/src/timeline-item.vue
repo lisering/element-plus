@@ -8,9 +8,9 @@
         backgroundColor: color,
       }"
     >
-      <el-icon v-if="icon" :class="ns.e('icon')">
+      <hc-icon v-if="icon" :class="ns.e('icon')">
         <component :is="icon" />
-      </el-icon>
+      </hc-icon>
     </div>
     <div v-if="$slots.dot" :class="ns.e('dot')">
       <slot name="dot" />
@@ -40,12 +40,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import { timelineItemProps } from './timeline-item'
 
 defineOptions({
-  name: 'ElTimelineItem',
+  name: 'HcTimelineItem',
 })
 
 const props = defineProps(timelineItemProps)

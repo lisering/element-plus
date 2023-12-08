@@ -20,9 +20,9 @@ import { useNamespace } from '@hicor-ui/hooks'
 import { selectKey } from './token'
 
 export default defineComponent({
-  name: 'ElSelectDropdown',
+  name: 'HcSelectDropdown',
 
-  componentName: 'ElSelectDropdown',
+  componentName: 'HcSelectDropdown',
 
   setup() {
     const select = inject(selectKey)!

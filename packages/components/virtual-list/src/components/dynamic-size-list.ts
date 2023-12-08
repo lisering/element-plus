@@ -17,7 +17,7 @@ import type { ItemSize, ListCache, ListItem } from '../types'
 
 type Props = VirtualizedListProps
 
-const SCOPE = 'ElDynamicSizeList'
+const SCOPE = 'HcDynamicSizeList'
 const getItemFromCache = (
   props: Props,
   index: number,
@@ -142,7 +142,7 @@ const getEstimatedTotalSize = (
 }
 
 const DynamicSizeList = createList({
-  name: 'ElDynamicSizeList',
+  name: 'HcDynamicSizeList',
   getItemOffset: (props, index, listCache) =>
     getItemFromCache(props, index, listCache).offset,
 

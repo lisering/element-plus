@@ -23,7 +23,7 @@ import {
   throwError,
 } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useNamespace } from '@hicor-ui/hooks'
 import TabBar from './tab-bar.vue'
 import { tabsRootContextKey } from './constants'
@@ -64,7 +64,7 @@ export const tabNavEmits = {
 export type TabNavProps = ExtractPropTypes<typeof tabNavProps>
 export type TabNavEmits = typeof tabNavEmits
 
-const COMPONENT_NAME = 'ElTabNav'
+const COMPONENT_NAME = 'HcTabNav'
 const TabNav = defineComponent({
   name: COMPONENT_NAME,
   props: tabNavProps,
@@ -73,7 +73,7 @@ const TabNav = defineComponent({
     const vm = getCurrentInstance()!
 
     const rootTabs = inject(tabsRootContextKey)
-    if (!rootTabs) throwError(COMPONENT_NAME, `<el-tabs><tab-nav /></el-tabs>`)
+    if (!rootTabs) throwError(COMPONENT_NAME, `<hc-tabs><tab-nav /></hc-tabs>`)
 
     const ns = useNamespace('tabs')
     const visibility = useDocumentVisibility()
@@ -288,9 +288,9 @@ const TabNav = defineComponent({
               ]}
               onClick={scrollPrev}
             >
-              <ElIcon>
+              <HcIcon>
                 <ArrowLeft />
-              </ElIcon>
+              </HcIcon>
             </span>,
             <span
               class={[
@@ -299,9 +299,9 @@ const TabNav = defineComponent({
               ]}
               onClick={scrollNext}
             >
-              <ElIcon>
+              <HcIcon>
                 <ArrowRight />
-              </ElIcon>
+              </HcIcon>
             </span>,
           ]
         : null
@@ -314,7 +314,7 @@ const TabNav = defineComponent({
         pane.index = `${index}`
 
         const btnClose = closable ? (
-          <ElIcon
+          <HcIcon
             class="is-icon-close"
             // `onClick` not exist when generate dts
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -322,7 +322,7 @@ const TabNav = defineComponent({
             onClick={(ev: MouseEvent) => emit('tabRemove', pane, ev)}
           >
             <Close />
-          </ElIcon>
+          </HcIcon>
         ) : null
 
         const tabLabelContent = pane.slots.label?.() || pane.props.label

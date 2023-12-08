@@ -14,9 +14,9 @@
       @mouseleave="startTimer"
       @click="onClick"
     >
-      <el-icon v-if="iconComponent" :class="[ns.e('icon'), typeClass]">
+      <hc-icon v-if="iconComponent" :class="[ns.e('icon'), typeClass]">
         <component :is="iconComponent" />
-      </el-icon>
+      </hc-icon>
       <div :class="ns.e('group')">
         <h2 :class="ns.e('title')" v-text="title" />
         <div
@@ -30,9 +30,9 @@
             <p v-else v-html="message" />
           </slot>
         </div>
-        <el-icon v-if="showClose" :class="ns.e('closeBtn')" @click.stop="close">
+        <hc-icon v-if="showClose" :class="ns.e('closeBtn')" @click.stop="close">
           <Close />
-        </el-icon>
+        </hc-icon>
       </div>
     </div>
   </transition>
@@ -42,14 +42,14 @@ import { computed, onMounted, ref } from 'vue'
 import { useEventListener, useTimeoutFn } from '@vueuse/core'
 import { CloseComponents, TypeComponentsMap } from '@hicor-ui/utils'
 import { EVENT_CODE } from '@hicor-ui/constants'
-import { ElIcon } from '@hicor-ui/components/icon'
+import { HcIcon } from '@hicor-ui/components/icon'
 import { useGlobalComponentSettings } from '@hicor-ui/components/config-provider'
 import { notificationEmits, notificationProps } from './notification'
 
 import type { CSSProperties } from 'vue'
 
 defineOptions({
-  name: 'ElNotification',
+  name: 'HcNotification',
 })
 
 const props = defineProps(notificationProps)

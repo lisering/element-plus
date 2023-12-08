@@ -64,7 +64,7 @@ export const useTooltipContentProps = buildProps({
   disabled: Boolean,
 } as const)
 
-export type ElTooltipContentProps = ExtractPropTypes<
+export type HcTooltipContentProps = ExtractPropTypes<
   typeof useTooltipContentProps
 >
 

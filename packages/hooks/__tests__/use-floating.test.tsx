@@ -71,8 +71,8 @@ describe('useFloating', () => {
     await rAF()
     await nextTick()
 
-    expect(wrapper.vm.referenceRef).toBeInstanceOf(Element)
-    expect(wrapper.vm.contentRef).toBeInstanceOf(Element)
+    expect(wrapper.vm.referenceRef).toBeInstanceOf(Hcement)
+    expect(wrapper.vm.contentRef).toBeInstanceOf(Hcement)
     expect(wrapper.vm.middlewareData.arrow).toBeUndefined()
   })
 
@@ -81,8 +81,8 @@ describe('useFloating', () => {
     await rAF()
     await nextTick()
 
-    expect(wrapper.vm.referenceRef).toBeInstanceOf(Element)
-    expect(wrapper.vm.contentRef).toBeInstanceOf(Element)
+    expect(wrapper.vm.referenceRef).toBeInstanceOf(Hcement)
+    expect(wrapper.vm.contentRef).toBeInstanceOf(Hcement)
     expect(wrapper.vm.middlewareData.arrow).toBeDefined()
   })
 })

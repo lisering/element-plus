@@ -6,11 +6,11 @@ import { EVENT_CODE } from '@hicor-ui/constants'
 import triggerEvent from '@hicor-ui/test-utils/trigger-event'
 import { usePopperContainerId } from '@hicor-ui/hooks'
 import { hasClass } from '@hicor-ui/utils'
-import ElForm, { ElFormItem } from '@hicor-ui/components/form'
+import HcForm, { HcFormItem } from '@hicor-ui/components/form'
 import Cascader from '../src/cascader.vue'
 
 import type { VNode } from 'vue'
-import type ElCascader from '@hicor-ui/components/cascader'
+import type HcCascader from '@hicor-ui/components/cascader'
 
 vi.mock('lodash-unified', async () => {
   return {
@@ -46,12 +46,12 @@ const OPTIONS = [
 
 const AXIOM = 'Rem is the best girl'
 
-const TRIGGER = '.el-cascader'
-const NODE = '.el-cascader-node'
-const TAG = '.el-tag'
-const SUGGESTION_ITEM = '.el-cascader__suggestion-item'
-const SUGGESTION_PANEL = '.el-cascader__suggestion-panel'
-const DROPDOWN = '.el-cascader__dropdown'
+const TRIGGER = '.hc-cascader'
+const NODE = '.hc-cascader-node'
+const TAG = '.hc-tag'
+const SUGGESTION_ITEM = '.hc-cascader__suggestion-item'
+const SUGGESTION_PANEL = '.hc-cascader__suggestion-panel'
+const DROPDOWN = '.hc-cascader__dropdown'
 
 const _mount = (render: () => VNode) =>
   mount(render, {
@@ -203,7 +203,7 @@ describe('Cascader.vue', () => {
     expect(tags.length).toBe(2)
     expect(firstTag.text()).toBe('Zhejiang / Hangzhou')
     expect(secondTag.text()).toBe('Zhejiang / Ningbo')
-    await firstTag.find('.el-tag__close').trigger('click')
+    await firstTag.find('.hc-tag__close').trigger('click')
     expect(wrapper.findAll(TAG).length).toBe(1)
     expect(value.value).toEqual([['zhejiang', 'ningbo']])
   })
@@ -298,7 +298,7 @@ describe('Cascader.vue', () => {
     ))
 
     await nextTick()
-    expect(wrapper.find('.el-tag').classes()).toContain('el-tag--success')
+    expect(wrapper.find('.hc-tag').classes()).toContain('el-tag--success')
   })
 
   test('filterable', async () => {
@@ -342,7 +342,7 @@ describe('Cascader.vue', () => {
       />
     ))
 
-    const input = wrapper.find('.el-cascader__search-input')
+    const input = wrapper.find('.hc-cascader__search-input')
     ;(input.element as HTMLInputElement).value = 'Ha'
     await input.trigger('input')
     await nextTick()
@@ -437,29 +437,29 @@ describe('Cascader.vue', () => {
     })
 
     const wrapper = _mount(() => (
-      <ElForm model={model}>
-        <ElFormItem label="Activity name" prop="name">
+      <HcForm model={model}>
+        <HcFormItem label="Activity name" prop="name">
           <Cascader
             v-model={model.name}
             options={OPTIONS}
             filterable
             placeholder={AXIOM}
           />
-        </ElFormItem>
-      </ElForm>
+        </HcFormItem>
+      </HcForm>
     ))
 
     model.name = ['zhejiang', 'hangzhou']
     await nextTick()
     expect(wrapper.find('input').element.placeholder).toBe('')
 
-    wrapper.findComponent(ElForm).vm.$.exposed!.resetFields()
+    wrapper.findComponent(HcForm).vm.$.exposed!.resetFields()
     await nextTick()
     expect(wrapper.find('input').element.placeholder).toBe(AXIOM)
   })
 
   test('should be able to trigger togglePopperVisible outside the component', async () => {
-    let cascader: InstanceType<typeof ElCascader>
+    let cascader: InstanceType<typeof HcCascader>
     const clickFn = () => {
       cascader.togglePopperVisible()
     }

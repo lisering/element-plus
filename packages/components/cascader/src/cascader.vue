@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     ref="tooltipRef"
     :visible="popperVisible"
     :teleported="teleported"
@@ -32,7 +32,7 @@
         @mouseenter="inputHover = true"
         @mouseleave="inputHover = false"
       >
-        <el-input
+        <hc-input
           ref="input"
           v-model="inputValue"
           :placeholder="currentPlaceholder"
@@ -50,27 +50,27 @@
           @input="handleInput"
         >
           <template #suffix>
-            <el-icon
+            <hc-icon
               v-if="clearBtnVisible"
               key="clear"
               :class="[nsInput.e('icon'), 'icon-circle-close']"
               @click.stop="handleClear"
             >
               <circle-close />
-            </el-icon>
-            <el-icon
+            </hc-icon>
+            <hc-icon
               v-else
               key="arrow-down"
               :class="cascaderIconKls"
               @click.stop="togglePopperVisible()"
             >
               <arrow-down />
-            </el-icon>
+            </hc-icon>
           </template>
-        </el-input>
+        </hc-input>
 
         <div v-if="multiple" ref="tagWrapper" :class="nsCascader.e('tags')">
-          <el-tag
+          <hc-tag
             v-for="tag in presentTags"
             :key="tag.key"
             :type="tagType"
@@ -84,7 +84,7 @@
               <span>{{ tag.text }}</span>
             </template>
             <template v-else>
-              <el-tooltip
+              <hc-tooltip
                 :disabled="popperVisible || !collapseTagsTooltip"
                 :fallback-placements="['bottom', 'top', 'right', 'left']"
                 placement="bottom"
@@ -102,7 +102,7 @@
                       :key="idx"
                       :class="nsCascader.e('collapse-tag')"
                     >
-                      <el-tag
+                      <hc-tag
                         :key="tag2.key"
                         class="in-tooltip"
                         :type="tagType"
@@ -113,13 +113,13 @@
                         @close="deleteTag(tag2)"
                       >
                         <span>{{ tag2.text }}</span>
-                      </el-tag>
+                      </hc-tag>
                     </div>
                   </div>
                 </template>
-              </el-tooltip>
+              </hc-tooltip>
             </template>
-          </el-tag>
+          </hc-tag>
           <input
             v-if="filterable && !isDisabled"
             v-model="searchInputValue"
@@ -140,7 +140,7 @@
     </template>
 
     <template #content>
-      <el-cascader-panel
+      <hc-cascader-panel
         v-show="!filtering"
         ref="cascaderPanelRef"
         v-model="checkedValue"
@@ -151,7 +151,7 @@
         @expand-change="handleExpandChange"
         @close="$nextTick(() => togglePopperVisible(false))"
       />
-      <el-scrollbar
+      <hc-scrollbar
         v-if="filterable"
         v-show="filtering"
         ref="suggestionPanel"
@@ -172,9 +172,9 @@
             @click="handleSuggestionClick(item)"
           >
             <span>{{ item.text }}</span>
-            <el-icon v-if="item.checked">
+            <hc-icon v-if="item.checked">
               <check />
-            </el-icon>
+            </hc-icon>
           </li>
         </template>
         <slot v-else name="empty">
@@ -182,9 +182,9 @@
             {{ t('el.cascader.noMatch') }}
           </li>
         </slot>
-      </el-scrollbar>
+      </hc-scrollbar>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 
 <script lang="ts" setup>
@@ -193,12 +193,12 @@ import { isPromise } from '@vue/shared'
 import { cloneDeep, debounce } from 'lodash-unified'
 import { useCssVar, useResizeObserver } from '@vueuse/core'
 import { ArrowDown, Check, CircleClose } from '@element-plus/icons-vue'
-import ElCascaderPanel from '@hicor-ui/components/cascader-panel'
-import ElInput from '@hicor-ui/components/input'
-import ElTooltip from '@hicor-ui/components/tooltip'
-import ElScrollbar from '@hicor-ui/components/scrollbar'
-import ElTag from '@hicor-ui/components/tag'
-import ElIcon from '@hicor-ui/components/icon'
+import HcCascaderPanel from '@hicor-ui/components/cascader-panel'
+import HcInput from '@hicor-ui/components/input'
+import HcTooltip from '@hicor-ui/components/tooltip'
+import HcScrollbar from '@hicor-ui/components/scrollbar'
+import HcTag from '@hicor-ui/components/tag'
+import HcIcon from '@hicor-ui/components/icon'
 import { useFormItem, useFormSize } from '@hicor-ui/components/form'
 import { ClickOutside as vClickoutside } from '@hicor-ui/directives'
 import { useLocale, useNamespace } from '@hicor-ui/hooks'
@@ -243,7 +243,7 @@ const popperOptions: Partial<Options> = {
     },
   ],
 }
-const COMPONENT_NAME = 'ElCascader'
+const COMPONENT_NAME = 'HcCascader'
 
 defineOptions({
   name: COMPONENT_NAME,

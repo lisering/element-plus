@@ -1,2 +1,2 @@
 import '@hicor-ui/components/base/style/css'
-import '@hicor-ui/theme-chalk/el-collapse-item.css'
+import '@hicor-ui/theme-chalk/hc-collapse-item.css'

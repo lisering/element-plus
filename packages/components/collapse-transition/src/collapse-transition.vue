@@ -8,7 +8,7 @@ import { useNamespace } from '@hicor-ui/hooks'
 import type { RendererElement } from '@vue/runtime-core'
 
 defineOptions({
-  name: 'ElCollapseTransition',
+  name: 'HcCollapseTransition',
 })
 
 const ns = useNamespace('collapse-transition')

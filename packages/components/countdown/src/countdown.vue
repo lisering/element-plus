@@ -1,5 +1,5 @@
 <template>
-  <el-statistic
+  <hc-statistic
     :value="rawValue"
     :title="title"
     :prefix="prefix"
@@ -10,17 +10,17 @@
     <template v-for="(_, name) in $slots" #[name]>
       <slot :name="name" />
     </template>
-  </el-statistic>
+  </hc-statistic>
 </template>
 <script lang="ts" setup>
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
-import { ElStatistic } from '@hicor-ui/components/statistic'
+import { HcStatistic } from '@hicor-ui/components/statistic'
 import { cAF, rAF } from '@hicor-ui/utils'
 import { countdownEmits, countdownProps } from './countdown'
 import { formatTime, getTime } from './utils'
 
 defineOptions({
-  name: 'ElCountdown',
+  name: 'HcCountdown',
 })
 
 const props = defineProps(countdownProps)

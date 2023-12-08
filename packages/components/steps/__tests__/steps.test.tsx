@@ -14,7 +14,7 @@ const _mount = (render: () => VNode) =>
     attachTo: document.body,
     global: {
       provide: {
-        ElSteps: {},
+        HcSteps: {},
       },
     },
   })
@@ -28,9 +28,9 @@ describe('Steps.vue', () => {
         <Step />
       </Steps>
     ))
-    expect(wrapper.findAll('.el-step').length).toBe(3)
+    expect(wrapper.findAll('.hc-step').length).toBe(3)
     expect(wrapper.classes()).toContain('el-steps--horizontal')
-    expect(wrapper.find('.el-step').classes()).toContain('is-horizontal')
+    expect(wrapper.find('.hc-step').classes()).toContain('is-horizontal')
   })
 
   test('space', () => {
@@ -39,7 +39,7 @@ describe('Steps.vue', () => {
         <Step />
       </Steps>
     ))
-    expect(wrapper.find('.el-step').attributes('style')).toMatch(
+    expect(wrapper.find('.hc-step').attributes('style')).toMatch(
       'flex-basis: 100px;'
     )
   })
@@ -50,7 +50,7 @@ describe('Steps.vue', () => {
         <Step />
       </Steps>
     ))
-    expect(wrapper.find('.el-step').classes()).toContain('is-center')
+    expect(wrapper.find('.hc-step').classes()).toContain('is-center')
   })
 
   test('direction', () => {
@@ -60,7 +60,7 @@ describe('Steps.vue', () => {
       </Steps>
     ))
     expect(wrapper.classes()).toContain('el-steps--vertical')
-    expect(wrapper.find('.el-step').classes()).toContain('is-vertical')
+    expect(wrapper.find('.hc-step').classes()).toContain('is-vertical')
   })
 
   test('simple', () => {
@@ -84,37 +84,37 @@ describe('Steps.vue', () => {
     ))
     await nextTick()
     expect(
-      wrapper.findAll('.el-step')[0].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[0].find('.hc-step__head').classes()
     ).toContain('is-process')
     expect(
-      wrapper.findAll('.el-step')[1].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[1].find('.hc-step__head').classes()
     ).toContain('is-wait')
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-wait')
     await wrapper.setProps({ active: 1 })
     expect(
-      wrapper.findAll('.el-step')[0].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[0].find('.hc-step__head').classes()
     ).toContain('is-finish')
     expect(
-      wrapper.findAll('.el-step')[1].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[1].find('.hc-step__head').classes()
     ).toContain('is-process')
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-wait')
     await wrapper.setProps({ active: 2 })
     expect(
-      wrapper.findAll('.el-step')[0].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[0].find('.hc-step__head').classes()
     ).toContain('is-finish')
     expect(
-      wrapper.findAll('.el-step')[1].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[1].find('.hc-step__head').classes()
     ).toContain('is-finish')
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-process')
     await wrapper.setProps({ active: 3 })
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-finish')
   })
 
@@ -128,11 +128,11 @@ describe('Steps.vue', () => {
     ))
     await nextTick()
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-success')
     await wrapper.setProps({ processStatus: 'error' })
     expect(
-      wrapper.findAll('.el-step')[2].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[2].find('.hc-step__head').classes()
     ).toContain('is-error')
   })
 
@@ -146,11 +146,11 @@ describe('Steps.vue', () => {
     ))
     await nextTick()
     expect(
-      wrapper.findAll('.el-step')[0].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[0].find('.hc-step__head').classes()
     ).toContain('is-error')
     await wrapper.setProps({ finishStatus: 'success' })
     expect(
-      wrapper.findAll('.el-step')[0].find('.el-step__head').classes()
+      wrapper.findAll('.hc-step')[0].find('.hc-step__head').classes()
     ).toContain('is-success')
   })
 
@@ -170,9 +170,9 @@ describe('Steps.vue', () => {
         )
       },
     })
-    expect(wrapper.find('.el-step__head').classes()).toContain('is-wait')
-    expect(wrapper.find('.el-step__title').text()).toBe('title')
-    expect(wrapper.find('.el-step__description').text()).toBe('description')
+    expect(wrapper.find('.hc-step__head').classes()).toContain('is-wait')
+    expect(wrapper.find('.hc-step__title').text()).toBe('title')
+    expect(wrapper.find('.hc-step__description').text()).toBe('description')
     expect(wrapper.findComponent(Edit).exists()).toBe(true)
   })
 
@@ -187,8 +187,8 @@ describe('Steps.vue', () => {
         />
       </Steps>
     ))
-    expect(wrapper.find('.el-step__title').text()).toBe('A')
-    expect(wrapper.find('.el-step__description').text()).toBe('B')
+    expect(wrapper.find('.hc-step__title').text()).toBe('A')
+    expect(wrapper.find('.hc-step__description').text()).toBe('B')
   })
 
   test('order of step', async () => {
@@ -208,7 +208,7 @@ describe('Steps.vue', () => {
     await nextTick()
     data.value = ['a', 'b', 'c']
     await nextTick()
-    wrapper.findAll('.el-step__icon-inner').forEach((domWrapper, index) => {
+    wrapper.findAll('.hc-step__icon-inner').forEach((domWrapper, index) => {
       expect(domWrapper.element.textContent).toEqual((index + 1).toString())
     })
   })

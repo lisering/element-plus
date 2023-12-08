@@ -30,7 +30,7 @@ const CURRENT_TAB_ID_CHANGE_EVT = 'currentTabIdChange'
 const ENTRY_FOCUS_EVT = 'rovingFocusGroup.entryFocus'
 const EVT_OPTS: EventInit = { bubbles: false, cancelable: true }
 export default defineComponent({
-  name: 'ElRovingFocusGroupImpl',
+  name: 'HcRovingFocusGroupImpl',
   inheritAttrs: false,
   props: rovingFocusGroupProps,
   emits: [CURRENT_TAB_ID_CHANGE_EVT, 'entryFocus'],

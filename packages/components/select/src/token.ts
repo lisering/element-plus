@@ -36,9 +36,9 @@ export interface SelectContext {
 
 // For individual build sharing injection key, we had to make `Symbol` to string
 export const selectGroupKey: InjectionKey<SelectGroupContext> =
-  Symbol('ElSelectGroup')
+  Symbol('HcSelectGroup')
 
-export const selectKey: InjectionKey<SelectContext> = Symbol('ElSelect')
+export const selectKey: InjectionKey<SelectContext> = Symbol('HcSelect')
 
 export interface SelectOptionProxy {
   value: string | number | Record<string, string>

@@ -17,7 +17,7 @@ import type { MaybeRef } from '@vueuse/core'
 import type { App, Ref } from 'vue'
 import type { ConfigProviderContext } from '../constants'
 
-// this is meant to fix global methods like `ElMessage(opts)`, this way we can inject current locale
+// this is meant to fix global methods like `HcMessage(opts)`, this way we can inject current locale
 // into the component as default injection value.
 // refer to: https://github.com/hicor-ui/hicor-ui/issues/2610#issuecomment-887965266
 const globalConfig = ref<ConfigProviderContext>()
@@ -44,7 +44,7 @@ export function useGlobalConfig(
   }
 }
 
-// for components like `ElMessage` `ElNotification` `ElMessageBox`.
+// for components like `HcMessage` `HcNotification` `HcMessageBox`.
 export function useGlobalComponentSettings(
   block: string,
   sizeFallback?: MaybeRef<ConfigProviderContext['size']>
