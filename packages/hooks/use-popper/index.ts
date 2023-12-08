@@ -17,7 +17,7 @@ export type PartialOptions = Partial<Options>
 
 export const usePopper = (
   referenceElementRef: Ref<ReferenceElement>,
-  popperElementRef: Ref<HcementType>,
+  popperElementRef: Ref<ElementType>,
   opts: Ref<PartialOptions> | PartialOptions = {} as PartialOptions
 ) => {
   const stateUpdater = {

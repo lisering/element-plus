@@ -70,7 +70,7 @@ const updateOptions = (
   }
 }
 
-export const vLoading: Directive<HcementLoading, LoadingBinding> = {
+export const vLoading: Directive<ElementLoading, LoadingBinding> = {
   mounted(el, binding) {
     if (binding.value) {
       createInstance(el, binding)
