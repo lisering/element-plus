@@ -1,12 +1,12 @@
 <template>
-  <el-button text @click="open">Click to open Message Box</el-button>
+  <hc-button text @click="open">Click to open Message Box</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage, ElMessageBox } from 'hicor-ui'
+import { HcMessage, HcMessageBox } from 'hicor-ui'
 
 const open = () => {
-  ElMessageBox.prompt('Please input your e-mail', 'Tip', {
+  HcMessageBox.prompt('Please input your e-mail', 'Tip', {
     confirmButtonText: 'OK',
     cancelButtonText: 'Cancel',
     inputPattern:
@@ -14,13 +14,13 @@ const open = () => {
     inputErrorMessage: 'Invalid Email',
   })
     .then(({ value }) => {
-      ElMessage({
+      HcMessage({
         type: 'success',
         message: `Your email is:${value}`,
       })
     })
     .catch(() => {
-      ElMessage({
+      HcMessage({
         type: 'info',
         message: 'Input canceled',
       })

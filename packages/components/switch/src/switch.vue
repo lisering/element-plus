@@ -125,9 +125,9 @@ const useBatchDeprecated = (list: string[][]) => {
 }
 useBatchDeprecated([
   ['"value"', '"model-value" or "v-model"', 'value'],
-  ['"active-color"', 'CSS var `--el-switch-on-color`', 'activeColor'],
-  ['"inactive-color"', 'CSS var `--el-switch-off-color`', 'inactiveColor'],
-  ['"border-color"', 'CSS var `--el-switch-border-color`', 'borderColor'],
+  ['"active-color"', 'CSS var `--hc-switch-on-color`', 'activeColor'],
+  ['"inactive-color"', 'CSS var `--hc-switch-off-color`', 'inactiveColor'],
+  ['"border-color"', 'CSS var `--hc-switch-border-color`', 'borderColor'],
 ])
 
 const { inputId } = useFormItemInputId(props, {

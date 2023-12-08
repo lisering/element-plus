@@ -1,14 +1,14 @@
 <template>
-  <el-button text @click="open">Click to open Message Box</el-button>
+  <hc-button text @click="open">Click to open Message Box</hc-button>
 </template>
 
 <script lang="ts" setup>
 import { markRaw } from 'vue'
-import { ElMessageBox } from 'hicor-ui'
+import { HcMessageBox } from 'hicor-ui'
 import { Delete } from '@element-plus/icons-vue'
 
 const open = () => {
-  ElMessageBox.confirm(
+  HcMessageBox.confirm(
     'It will permanently delete the file. Continue?',
     'Warning',
     {

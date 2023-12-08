@@ -4,12 +4,12 @@ import { isDark } from '~/composables/dark'
 
 <template>
   <div class="flex">
-    <el-button color="#626aef" :dark="isDark">Default</el-button>
-    <el-button color="#626aef" :dark="isDark" plain>Plain</el-button>
+    <hc-button color="#626aef" :dark="isDark">Default</hc-button>
+    <hc-button color="#626aef" :dark="isDark" plain>Plain</hc-button>
 
-    <el-button color="#626aef" :dark="isDark" disabled>Disabled</el-button>
-    <el-button color="#626aef" :dark="isDark" disabled plain
-      >Disabled Plain</el-button
+    <hc-button color="#626aef" :dark="isDark" disabled>Disabled</hc-button>
+    <hc-button color="#626aef" :dark="isDark" disabled plain
+      >Disabled Plain</hc-button
     >
   </div>
 </template>

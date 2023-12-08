@@ -14,7 +14,7 @@ const getTreeVm = (props = '', options = {}) => {
     Object.assign(
       {
         components: {
-          'el-tree': Tree,
+          'hc-tree': Tree,
         },
         template: `
       <hc-tree ref="tree" :data="data" ${props}></hc-tree>
@@ -91,7 +91,7 @@ const getDisableTreeVm = (props = '', options = {}) => {
     Object.assign(
       {
         components: {
-          'el-tree': Tree,
+          'hc-tree': Tree,
         },
         template: `
       <hc-tree ref="tree" :data="data" ${props}></hc-tree>
@@ -170,13 +170,13 @@ describe('Tree.vue', () => {
     )
 
     expect(wrapper.find('.hc-tree').exists()).toBeTruthy()
-    expect(wrapper.findAll('.hc-tree > .el-tree-node').length).toEqual(3)
-    expect(wrapper.findAll('.hc-tree .el-tree-node').length).toEqual(
+    expect(wrapper.findAll('.hc-tree > .hc-tree-node').length).toEqual(3)
+    expect(wrapper.findAll('.hc-tree .hc-tree-node').length).toEqual(
       ALL_NODE_COUNT
     )
     vm.data[1].children = [{ label: '二级 2-1' }] as any
     await nextTick()
-    expect(wrapper.findAll('.hc-tree .el-tree-node').length).toEqual(
+    expect(wrapper.findAll('.hc-tree .hc-tree-node').length).toEqual(
       ALL_NODE_COUNT - 1
     )
   })
@@ -251,7 +251,7 @@ describe('Tree.vue', () => {
     )
 
     const currentNodeLabelWrapper = wrapper.find(
-      '.is-current .el-tree-node__label'
+      '.is-current .hc-tree-node__label'
     )
 
     expect(currentNodeLabelWrapper.text()).toEqual('二级 1-1')
@@ -406,7 +406,7 @@ describe('Tree.vue', () => {
 
     const secondTreeNodeWrapper = treeWrapper.findAll('.hc-tree-node')[1]
     const secondNodefirstLeafCheckboxWrapper = secondTreeNodeWrapper.find(
-      '.hc-tree-node__children .el-tree-node__content .el-checkbox'
+      '.hc-tree-node__children .hc-tree-node__content .hc-checkbox'
     )
 
     await secondNodefirstLeafCheckboxWrapper.trigger('click')
@@ -795,7 +795,7 @@ describe('Tree.vue', () => {
 
     const secondTreeNodeWrapper = treeWrapper.findAll('.hc-tree-node')[3]
     const secondNodefirstLeafCheckboxWrapper = secondTreeNodeWrapper.find(
-      '.hc-tree-node__children .el-tree-node__content .el-checkbox'
+      '.hc-tree-node__children .hc-tree-node__content .hc-checkbox'
     )
     await secondNodefirstLeafCheckboxWrapper.trigger('click')
     expect(
@@ -810,7 +810,7 @@ describe('Tree.vue', () => {
         methods: {
           renderContent(h, node) {
             return h('div', { class: 'custom-content' }, [
-              h('button', { class: 'el-button' }, [node.node.label]),
+              h('button', { class: 'hc-button' }, [node.node.label]),
             ])
           },
         },
@@ -830,7 +830,7 @@ describe('Tree.vue', () => {
     )
 
     const currentNodeLabelWrapper = wrapper.find(
-      '.is-test .el-tree-node__label'
+      '.is-test .hc-tree-node__label'
     )
 
     expect(currentNodeLabelWrapper.text()).toEqual('二级 1-1')
@@ -851,7 +851,7 @@ describe('Tree.vue', () => {
       methods: {
         renderContent(h, node) {
           return h('div', { class: 'custom-content' }, [
-            h('button', { class: 'el-button' }, [node.node.label]),
+            h('button', { class: 'hc-button' }, [node.node.label]),
           ])
         },
       },
@@ -1036,7 +1036,7 @@ describe('Tree.vue', () => {
 
     const firstNodeContentWrapper = wrapper.find('.hc-tree-node__content')
     const secondNodeContentWrapper = wrapper.find(
-      '.hc-tree-node:nth-child(2) .el-tree-node__content'
+      '.hc-tree-node:nth-child(2) .hc-tree-node__content'
     )
     await firstNodeContentWrapper.trigger('click')
 
@@ -1230,7 +1230,7 @@ describe('Tree.vue', () => {
         </div>
       `,
       components: {
-        'el-tree': Tree,
+        'hc-tree': Tree,
       },
       data() {
         return {
@@ -1320,8 +1320,8 @@ describe('Tree.vue', () => {
         </div>
       `,
       components: {
-        'el-tree': Tree,
-        'el-button': Button,
+        'hc-tree': Tree,
+        'hc-button': Button,
       },
       data() {
         return {
@@ -1422,7 +1422,7 @@ describe('Tree.vue', () => {
         </div>
       `,
       components: {
-        'el-tree': Tree,
+        'hc-tree': Tree,
       },
       data() {
         return {
@@ -1534,7 +1534,7 @@ describe('Tree.vue', () => {
         </hc-tree>
       `,
       components: {
-        'el-tree': Tree,
+        'hc-tree': Tree,
       },
       data() {
         return {
@@ -1578,7 +1578,7 @@ describe('Tree.vue', () => {
 
     const nodeLabelWrapper1 = nodeContentWrapper1.find('div')
     const nodeLabelWrapper2 = nodeContentWrapper2.find(
-      'span.el-tree-node__label'
+      'span.hc-tree-node__label'
     )
     expect(nodeLabelWrapper1.text()).toEqual('customize: Level one 1')
     expect(nodeLabelWrapper2.text()).toEqual('Level one 2')

@@ -1,9 +1,9 @@
 <template>
-  <el-button text @click="dialogVisible = true">
+  <hc-button text @click="dialogVisible = true">
     click to open the Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog
+  <hc-dialog
     v-model="dialogVisible"
     title="Tips"
     width="30%"
@@ -12,23 +12,23 @@
     <span>This is a message</span>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false">
+        <hc-button @click="dialogVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="dialogVisible = false">
           Confirm
-        </el-button>
+        </hc-button>
       </span>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessageBox } from 'hicor-ui'
+import { HcMessageBox } from 'hicor-ui'
 
 const dialogVisible = ref(false)
 
 const handleClose = (done: () => void) => {
-  ElMessageBox.confirm('Are you sure to close this dialog?')
+  HcMessageBox.confirm('Are you sure to close this dialog?')
     .then(() => {
       done()
     })

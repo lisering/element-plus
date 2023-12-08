@@ -1,5 +1,5 @@
 <template>
-  <el-form
+  <hc-form
     ref="ruleFormRef"
     :model="ruleForm"
     :rules="rules"
@@ -8,75 +8,75 @@
     :size="formSize"
     status-icon
   >
-    <el-form-item label="Activity name" prop="name">
-      <el-input v-model="ruleForm.name" />
-    </el-form-item>
-    <el-form-item label="Activity zone" prop="region">
-      <el-select v-model="ruleForm.region" placeholder="Activity zone">
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
-      </el-select>
-    </el-form-item>
-    <el-form-item label="Activity count" prop="count">
-      <el-select-v2
+    <hc-form-item label="Activity name" prop="name">
+      <hc-input v-model="ruleForm.name" />
+    </hc-form-item>
+    <hc-form-item label="Activity zone" prop="region">
+      <hc-select v-model="ruleForm.region" placeholder="Activity zone">
+        <hc-option label="Zone one" value="shanghai" />
+        <hc-option label="Zone two" value="beijing" />
+      </hc-select>
+    </hc-form-item>
+    <hc-form-item label="Activity count" prop="count">
+      <hc-select-v2
         v-model="ruleForm.count"
         placeholder="Activity count"
         :options="options"
       />
-    </el-form-item>
-    <el-form-item label="Activity time" required>
-      <el-col :span="11">
-        <el-form-item prop="date1">
-          <el-date-picker
+    </hc-form-item>
+    <hc-form-item label="Activity time" required>
+      <hc-col :span="11">
+        <hc-form-item prop="date1">
+          <hc-date-picker
             v-model="ruleForm.date1"
             type="date"
             label="Pick a date"
             placeholder="Pick a date"
             style="width: 100%"
           />
-        </el-form-item>
-      </el-col>
-      <el-col class="text-center" :span="2">
+        </hc-form-item>
+      </hc-col>
+      <hc-col class="text-center" :span="2">
         <span class="text-gray-500">-</span>
-      </el-col>
-      <el-col :span="11">
-        <el-form-item prop="date2">
-          <el-time-picker
+      </hc-col>
+      <hc-col :span="11">
+        <hc-form-item prop="date2">
+          <hc-time-picker
             v-model="ruleForm.date2"
             label="Pick a time"
             placeholder="Pick a time"
             style="width: 100%"
           />
-        </el-form-item>
-      </el-col>
-    </el-form-item>
-    <el-form-item label="Instant delivery" prop="delivery">
-      <el-switch v-model="ruleForm.delivery" />
-    </el-form-item>
-    <el-form-item label="Activity type" prop="type">
-      <el-checkbox-group v-model="ruleForm.type">
-        <el-checkbox label="Online activities" name="type" />
-        <el-checkbox label="Promotion activities" name="type" />
-        <el-checkbox label="Offline activities" name="type" />
-        <el-checkbox label="Simple brand exposure" name="type" />
-      </el-checkbox-group>
-    </el-form-item>
-    <el-form-item label="Resources" prop="resource">
-      <el-radio-group v-model="ruleForm.resource">
-        <el-radio label="Sponsorship" />
-        <el-radio label="Venue" />
-      </el-radio-group>
-    </el-form-item>
-    <el-form-item label="Activity form" prop="desc">
-      <el-input v-model="ruleForm.desc" type="textarea" />
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm(ruleFormRef)">
+        </hc-form-item>
+      </hc-col>
+    </hc-form-item>
+    <hc-form-item label="Instant delivery" prop="delivery">
+      <hc-switch v-model="ruleForm.delivery" />
+    </hc-form-item>
+    <hc-form-item label="Activity type" prop="type">
+      <hc-checkbox-group v-model="ruleForm.type">
+        <hc-checkbox label="Online activities" name="type" />
+        <hc-checkbox label="Promotion activities" name="type" />
+        <hc-checkbox label="Offline activities" name="type" />
+        <hc-checkbox label="Simple brand exposure" name="type" />
+      </hc-checkbox-group>
+    </hc-form-item>
+    <hc-form-item label="Resources" prop="resource">
+      <hc-radio-group v-model="ruleForm.resource">
+        <hc-radio label="Sponsorship" />
+        <hc-radio label="Venue" />
+      </hc-radio-group>
+    </hc-form-item>
+    <hc-form-item label="Activity form" prop="desc">
+      <hc-input v-model="ruleForm.desc" type="textarea" />
+    </hc-form-item>
+    <hc-form-item>
+      <hc-button type="primary" @click="submitForm(ruleFormRef)">
         Create
-      </el-button>
-      <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
-    </el-form-item>
-  </el-form>
+      </hc-button>
+      <hc-button @click="resetForm(ruleFormRef)">Reset</hc-button>
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>

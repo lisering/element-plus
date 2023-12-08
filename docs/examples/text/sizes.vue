@@ -1,5 +1,5 @@
 <template>
-  <el-text class="mx-1" size="large">Large</el-text>
-  <el-text class="mx-1">Default</el-text>
-  <el-text class="mx-1" size="small">Small</el-text>
+  <hc-text class="mx-1" size="large">Large</hc-text>
+  <hc-text class="mx-1">Default</hc-text>
+  <hc-text class="mx-1" size="small">Small</hc-text>
 </template>

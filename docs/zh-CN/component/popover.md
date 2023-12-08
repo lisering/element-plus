@@ -13,7 +13,7 @@ lang: zh-CN
 
 ## 基础用法
 
-与Tooltip相似，Popover也是基于`ElPopper`的构建。 因此对于重复属性，请参考 Tooltip 的文档，在此文档中不做详尽解释。
+与Tooltip相似，Popover也是基于`HcPopper`的构建。 因此对于重复属性，请参考 Tooltip 的文档，在此文档中不做详尽解释。
 
 :::demo `trigger` 属性被用来决定 popover 的触发方式，支持的触发方式： `hover`、`click`、`focus` 或 `contextmenu`。 如果你想手动控制它，可以设置 `:visible` 属性。
 
@@ -80,8 +80,8 @@ popover/directive-usage
 | disabled                  | Popover 是否可用                                                                                                              | boolean         | —                                                                                                         | false                                                                      |
 | visible / v-model:visible | Popover 是否显示                                                                                                              | Boolean         | —                                                                                                         | false                                                                      |
 | offset                    | 出现位置的偏移量                                                                                                                  | number          | —                                                                                                         | 0                                                                          |
-| transition                | 定义渐变动画                                                                                                                    | string          | —                                                                                                         | el-fade-in-linear                                                          |
-| show-arrow                | 是否显示 Tooltip 箭头， 欲了解更多信息，请参考 [ElPopper](https://github.com/hicor-ui/hicor-ui/tree/dev/packages/components/popper) | boolean         | —                                                                                                         | true                                                                       |
+| transition                | 定义渐变动画                                                                                                                    | string          | —                                                                                                         | hc-fade-in-linear                                                          |
+| show-arrow                | 是否显示 Tooltip 箭头， 欲了解更多信息，请参考 [HcPopper](https://github.com/hicor-ui/hicor-ui/tree/dev/packages/components/popper) | boolean         | —                                                                                                         | true                                                                       |
 | popper-options            | [popper.js](https://popper.js.org/docs/v2/) 的参数                                                                           | object          | 详情参考 [popper.js](https://popper.js.org/docs/v2/)                                                          | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
 | popper-class              | 为 popper 添加类名                                                                                                             | string          | —                                                                                                         | —                                                                          |
 | popper-style              | 为 popper 自定义样式                                                                                                            | string / object | —                                                                                                         | —                                                                          |

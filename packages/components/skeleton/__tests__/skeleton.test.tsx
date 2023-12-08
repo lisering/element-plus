@@ -20,7 +20,7 @@ describe('Skeleton.vue', () => {
     expect(wrapper.findAll('.hc-skeleton__p')).toHaveLength(4)
     expect(wrapper.classes()).toMatchInlineSnapshot(`
       [
-        "el-skeleton",
+        "hc-skeleton",
       ]
     `)
   })
@@ -30,7 +30,7 @@ describe('Skeleton.vue', () => {
 
     expect(wrapper.classes()).toMatchInlineSnapshot(`
       [
-        "el-skeleton",
+        "hc-skeleton",
         "is-animated",
       ]
     `)

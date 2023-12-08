@@ -1,11 +1,11 @@
 <template>
   <div class="m-4">
     <p>Child options expand when clicked (default)</p>
-    <el-cascader v-model="value" :options="options" @change="handleChange" />
+    <hc-cascader v-model="value" :options="options" @change="handleChange" />
   </div>
   <div class="m-4">
     <p>Child options expand when hovered</p>
-    <el-cascader
+    <hc-cascader
       v-model="value"
       :options="options"
       :props="props"

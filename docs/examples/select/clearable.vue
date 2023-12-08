@@ -1,12 +1,12 @@
 <template>
-  <el-select v-model="value" clearable placeholder="Select">
-    <el-option
+  <hc-select v-model="value" clearable placeholder="Select">
+    <hc-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
     />
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

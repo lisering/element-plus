@@ -1,5 +1,5 @@
 ;(() => {
-  const saved = localStorage.getItem('el-theme-appearance')
+  const saved = localStorage.getItem('hc-theme-appearance')
   if (
     saved === 'auto'
       ? window.matchMedia(`(prefers-color-scheme: dark)`).matches

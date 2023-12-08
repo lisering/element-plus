@@ -1,23 +1,23 @@
 <template>
   <div class="slider-demo-block">
     <span class="demonstration">Default value</span>
-    <el-slider v-model="value1" />
+    <hc-slider v-model="value1" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Customized initial value</span>
-    <el-slider v-model="value2" />
+    <hc-slider v-model="value2" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Hide Tooltip</span>
-    <el-slider v-model="value3" :show-tooltip="false" />
+    <hc-slider v-model="value3" :show-tooltip="false" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Format Tooltip</span>
-    <el-slider v-model="value4" :format-tooltip="formatTooltip" />
+    <hc-slider v-model="value4" :format-tooltip="formatTooltip" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Disabled</span>
-    <el-slider v-model="value5" disabled />
+    <hc-slider v-model="value5" disabled />
   </div>
 </template>
 
@@ -39,13 +39,15 @@ const formatTooltip = (val: number) => {
   display: flex;
   align-items: center;
 }
-.slider-demo-block .el-slider {
+
+.slider-demo-block .hc-slider {
   margin-top: 0;
   margin-left: 12px;
 }
+
 .slider-demo-block .demonstration {
   font-size: 14px;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   line-height: 44px;
   flex: 1;
   overflow: hidden;
@@ -53,7 +55,7 @@ const formatTooltip = (val: number) => {
   white-space: nowrap;
   margin-bottom: 0;
 }
-.slider-demo-block .demonstration + .el-slider {
+
+.slider-demo-block .demonstration+.hc-slider {
   flex: 0 0 70%;
-}
-</style>
+}</style>

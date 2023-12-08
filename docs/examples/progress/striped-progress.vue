@@ -1,14 +1,14 @@
 <template>
   <div class="demo-progress">
-    <el-progress :percentage="50" :stroke-width="15" striped />
-    <el-progress
+    <hc-progress :percentage="50" :stroke-width="15" striped />
+    <hc-progress
       :percentage="30"
       :stroke-width="15"
       status="warning"
       striped
       striped-flow
     />
-    <el-progress
+    <hc-progress
       :percentage="100"
       :stroke-width="15"
       status="success"
@@ -16,7 +16,7 @@
       striped-flow
       :duration="10"
     />
-    <el-progress
+    <hc-progress
       :percentage="percentage"
       :stroke-width="15"
       status="exception"
@@ -24,10 +24,10 @@
       striped-flow
       :duration="duration"
     />
-    <el-button-group>
-      <el-button :icon="Minus" @click="decrease" />
-      <el-button :icon="Plus" @click="increase" />
-    </el-button-group>
+    <hc-button-group>
+      <hc-button :icon="Minus" @click="decrease" />
+      <hc-button :icon="Plus" @click="increase" />
+    </hc-button-group>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ const decrease = () => {
 </script>
 
 <style scoped>
-.demo-progress .el-progress--line {
+.demo-progress .hc-progress--line {
   margin-bottom: 15px;
   width: 350px;
 }

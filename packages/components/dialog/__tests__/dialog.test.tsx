@@ -74,7 +74,7 @@ describe('Dialog.vue', () => {
     const headerButton = wrapper.find('button')
     expect(headerButton.attributes()['data-title-id']).toBeTruthy()
     expect(headerButton.attributes()['data-title-class']).toBe(
-      'el-dialog__title'
+      'hc-dialog__title'
     )
     expect(wrapper.emitted().close).toBeFalsy()
     headerButton.trigger('click')
@@ -103,7 +103,7 @@ describe('Dialog.vue', () => {
 
     await nextTick()
     expect(
-      document.body.firstElementChild!.classList.contains('el-overlay')
+      document.body.firstElementChild!.classList.contains('hc-overlay')
     ).toBe(true)
     wrapper.unmount()
   })

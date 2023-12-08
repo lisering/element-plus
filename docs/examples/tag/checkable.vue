@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-check-tag checked style="margin-right: 8px">Checked</el-check-tag>
-    <el-check-tag :checked="checked" @change="onChange">Toggle me</el-check-tag>
+    <hc-check-tag checked style="margin-right: 8px">Checked</hc-check-tag>
+    <hc-check-tag :checked="checked" @change="onChange">Toggle me</hc-check-tag>
   </div>
 </template>
 

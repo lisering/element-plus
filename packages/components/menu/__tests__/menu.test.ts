@@ -11,10 +11,10 @@ import SubMenu from '../src/sub-menu'
 const _mount = (template: string, options = {}) =>
   mount({
     components: {
-      'el-menu': Menu,
-      'el-menu-item-group': MenuGroup,
-      'el-menu-item': MenuItem,
-      'el-sub-menu': SubMenu,
+      'hc-menu': Menu,
+      'hc-menu-item-group': MenuGroup,
+      'hc-menu-item': MenuItem,
+      'hc-sub-menu': SubMenu,
     },
     template,
     ...options,
@@ -61,7 +61,7 @@ describe('menu', () => {
     // const item2 = await wrapper.findComponent({ ref: 'item2' })
 
     expect(
-      window.getComputedStyle(instance)._values['--el-menu-bg-color']
+      window.getComputedStyle(instance)._values['--hc-menu-bg-color']
     ).toEqual(backgroundColor)
 
     // We can not test final style, so comment it out for now.
@@ -121,7 +121,7 @@ describe('menu', () => {
           <hc-menu
             ref="menu"
             default-active="2"
-            class="el-menu-vertical-demo"
+            class="hc-menu-vertical-demo"
           >
             <hc-sub-menu index="1" ref="subMenu">
               <template #title>
@@ -412,7 +412,7 @@ describe('other', () => {
     )
     await nextTick()
 
-    expect(wrapper.classes()).toContain('el-menu--horizontal')
+    expect(wrapper.classes()).toContain('hc-menu--horizontal')
     const submenu = wrapper.findComponent({ ref: 'submenu' })
 
     vi.useFakeTimers()

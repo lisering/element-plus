@@ -1,9 +1,9 @@
 <template>
-  <el-button text @click="centerDialogVisible = true">
+  <hc-button text @click="centerDialogVisible = true">
     Click to open the Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog
+  <hc-dialog
     v-model="centerDialogVisible"
     title="Warning"
     width="30%"
@@ -12,13 +12,13 @@
     <span>Open the dialog from the center from the screen</span>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="centerDialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="centerDialogVisible = false">
+        <hc-button @click="centerDialogVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="centerDialogVisible = false">
           Confirm
-        </el-button>
+        </hc-button>
       </span>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="data"
     :row-class="rowClass"
@@ -11,7 +11,7 @@
 <script lang="tsx" setup>
 import { ref } from 'vue'
 import dayjs from 'dayjs'
-import { ElButton, ElIcon, ElTag, ElTooltip, TableV2FixedDir } from 'hicor-ui'
+import { HcButton, HcIcon, HcTag, HcTooltip, TableV2FixedDir } from 'hicor-ui'
 import { Timer } from '@element-plus/icons-vue'
 
 import type { Column, RowClassNameGetter } from 'hicor-ui'
@@ -32,16 +32,16 @@ const columns: Column<any>[] = [
     width: 150,
     fixed: TableV2FixedDir.LEFT,
     cellRenderer: ({ cellData: date }) => (
-      <ElTooltip content={dayjs(date).format('YYYY/MM/DD')}>
+      <HcTooltip content={dayjs(date).format('YYYY/MM/DD')}>
         {
           <span class="flex items-center">
-            <ElIcon class="mr-3">
+            <HcIcon class="mr-3">
               <Timer />
-            </ElIcon>
+            </HcIcon>
             {dayjs(date).format('YYYY/MM/DD')}
           </span>
         }
-      </ElTooltip>
+      </HcTooltip>
     ),
   },
   {
@@ -50,17 +50,17 @@ const columns: Column<any>[] = [
     dataKey: 'name',
     width: 150,
     align: 'center',
-    cellRenderer: ({ cellData: name }) => <ElTag>{name}</ElTag>,
+    cellRenderer: ({ cellData: name }) => <HcTag>{name}</HcTag>,
   },
   {
     key: 'operations',
     title: 'Operations',
     cellRenderer: () => (
       <>
-        <ElButton size="small">Edit</ElButton>
-        <ElButton size="small" type="danger">
+        <HcButton size="small">Edit</HcButton>
+        <HcButton size="small" type="danger">
           Delete
-        </ElButton>
+        </HcButton>
       </>
     ),
     width: 150,

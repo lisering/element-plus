@@ -1,13 +1,13 @@
 <template>
   <div class="demo-range">
-    <el-time-picker
+    <hc-time-picker
       v-model="value1"
       is-range
       range-separator="To"
       start-placeholder="Start time"
       end-placeholder="End time"
     />
-    <el-time-picker
+    <hc-time-picker
       v-model="value2"
       is-range
       arrow-control
@@ -32,11 +32,11 @@ const value2 = ref<[Date, Date]>([
 </script>
 
 <style>
-.demo-range .el-date-editor {
+.demo-range .hc-date-editor {
   margin: 8px;
 }
 
-.demo-range .el-range-separator {
+.demo-range .hc-range-separator {
   box-sizing: content-box;
 }
 </style>

@@ -100,7 +100,7 @@ describe('TimeLine.vue', () => {
 
     const nodeWrapper = wrapper.find('.hc-timeline-item__node')
 
-    expect(nodeWrapper.classes('el-timeline-item__node--primary')).toBe(true)
+    expect(nodeWrapper.classes('hc-timeline-item__node--primary')).toBe(true)
   })
 
   test('size', () => {
@@ -112,7 +112,7 @@ describe('TimeLine.vue', () => {
 
     const nodeWrapper = wrapper.find('.hc-timeline-item__node')
 
-    expect(nodeWrapper.classes('el-timeline-item__node--large')).toBe(true)
+    expect(nodeWrapper.classes('hc-timeline-item__node--large')).toBe(true)
   })
 
   test('icon', () => {
@@ -166,6 +166,6 @@ describe('TimeLine.vue', () => {
 
     const timestampWrappers = wrapper.findAll('.hc-timeline-item')
 
-    expect(timestampWrappers[1].classes()).toContain('el-timeline-item__center')
+    expect(timestampWrappers[1].classes()).toContain('hc-timeline-item__center')
   })
 })

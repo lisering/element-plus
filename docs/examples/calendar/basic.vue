@@ -1,5 +1,5 @@
 <template>
-  <el-calendar v-model="value" />
+  <hc-calendar v-model="value" />
 </template>
 
 <script lang="ts" setup>

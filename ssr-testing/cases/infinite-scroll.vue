@@ -1,30 +1,21 @@
 <template>
-  <ul
-    v-infinite-scroll="load"
-    class="infinite-list"
-    style="
+  <ul v-infinite-scroll="load" class="infinite-list" style="
       overflow: auto;
       height: 300px;
       padding: 0;
       margin: 0;
       list-style: none;
-    "
-  >
-    <li
-      v-for="i in count"
-      :key="i"
-      class="infinite-list-item"
-      style="
+    ">
+    <li v-for="i in count" :key="i" class="infinite-list-item" style="
         display: flex;
         align-items: center;
         justify-content: center;
         height: 50px;
-        background: var(--el-color-primary-light-9);
+        background: var(--hc-color-primary-light-9);
         margin: 10px;
-        color: var(--el-color-primary);
+        color: var(--hc-color-primary);
         margin-top: 10px;
-      "
-    >
+      ">
       {{ i }}
     </li>
   </ul>

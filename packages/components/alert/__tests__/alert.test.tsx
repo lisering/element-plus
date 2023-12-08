@@ -9,15 +9,15 @@ describe('Alert.vue', () => {
   test('render test & class', () => {
     const wrapper = mount(() => <Alert title={AXIOM} showIcon={true} />)
     expect(wrapper.find('.hc-alert__title').text()).toEqual(AXIOM)
-    expect(wrapper.find('.hc-alert').classes()).toContain('el-alert--info')
+    expect(wrapper.find('.hc-alert').classes()).toContain('hc-alert--info')
   })
 
   test('type', () => {
     const wrapper = mount(() => (
       <Alert title={'test'} showIcon={true} type={'success'} />
     ))
-    expect(wrapper.find('.hc-alert').classes()).toContain('el-alert--success')
-    expect(wrapper.find('.hc-alert__icon').classes()).toContain('el-icon')
+    expect(wrapper.find('.hc-alert').classes()).toContain('hc-alert--success')
+    expect(wrapper.find('.hc-alert__icon').classes()).toContain('hc-icon')
     expect(wrapper.findComponent(TypeComponentsMap.success).exists()).toBe(true)
   })
 

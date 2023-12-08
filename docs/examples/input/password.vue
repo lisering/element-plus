@@ -1,5 +1,5 @@
 <template>
-  <el-input
+  <hc-input
     v-model="input"
     type="password"
     placeholder="Please input password"

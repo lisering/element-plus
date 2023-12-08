@@ -1,16 +1,16 @@
 <template>
-  <el-tree-select v-model="value" :data="data" filterable />
-  <el-divider />
+  <hc-tree-select v-model="value" :data="data" filterable />
+  <hc-divider />
   filter method:
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     :filter-method="filterMethod"
     filterable
   />
-  <el-divider />
+  <hc-divider />
   filter node method:
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     :filter-node-method="filterNodeMethod"

@@ -1,29 +1,29 @@
 <template>
   <div style="display: flex; align-items: center">
-    <el-popover placement="right" :width="400" trigger="click">
+    <hc-popover placement="right" :width="400" trigger="click">
       <template #reference>
-        <el-button style="margin-right: 16px">Click to activate</el-button>
+        <hc-button style="margin-right: 16px">Click to activate</hc-button>
       </template>
-      <el-table :data="gridData">
-        <el-table-column width="150" property="date" label="date" />
-        <el-table-column width="100" property="name" label="name" />
-        <el-table-column width="300" property="address" label="address" />
-      </el-table>
-    </el-popover>
+      <hc-table :data="gridData">
+        <hc-table-column width="150" property="date" label="date" />
+        <hc-table-column width="100" property="name" label="name" />
+        <hc-table-column width="300" property="address" label="address" />
+      </hc-table>
+    </hc-popover>
 
-    <el-popover
+    <hc-popover
       :width="300"
       popper-style="box-shadow: rgb(14 18 22 / 35%) 0px 10px 38px -10px, rgb(14 18 22 / 20%) 0px 10px 20px -15px; padding: 20px;"
     >
       <template #reference>
-        <el-avatar src="https://avatars.githubusercontent.com/u/72015883?v=4" />
+        <hc-avatar src="https://avatars.githubusercontent.com/u/72015883?v=4" />
       </template>
       <template #default>
         <div
           class="demo-rich-conent"
           style="display: flex; gap: 16px; flex-direction: column"
         >
-          <el-avatar
+          <hc-avatar
             :size="60"
             src="https://avatars.githubusercontent.com/u/72015883?v=4"
             style="margin-bottom: 8px"
@@ -37,7 +37,7 @@
             </p>
             <p
               class="demo-rich-content__mention"
-              style="margin: 0; font-size: 14px; color: var(--el-color-info)"
+              style="margin: 0; font-size: 14px; color: var(--hc-color-info)"
             >
               @hicor-ui
             </p>
@@ -49,7 +49,7 @@
           </p>
         </div>
       </template>
-    </el-popover>
+    </hc-popover>
   </div>
 </template>
 

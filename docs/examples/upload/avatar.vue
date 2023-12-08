@@ -1,5 +1,5 @@
 <template>
-  <el-upload
+  <hc-upload
     class="avatar-uploader"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
     :show-file-list="false"
@@ -7,15 +7,15 @@
     :before-upload="beforeAvatarUpload"
   >
     <img v-if="imageUrl" :src="imageUrl" class="avatar" />
-    <el-icon v-else class="avatar-uploader-icon">
+    <hc-icon v-else class="avatar-uploader-icon">
       <Plus />
-    </el-icon>
-  </el-upload>
+    </hc-icon>
+  </hc-upload>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 import { Plus } from '@element-plus/icons-vue'
 
 import type { UploadProps } from 'hicor-ui'
@@ -31,10 +31,10 @@ const handleAvatarSuccess: UploadProps['onSuccess'] = (
 
 const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
   if (rawFile.type !== 'image/jpeg') {
-    ElMessage.error('Avatar picture must be JPG format!')
+    HcMessage.error('Avatar picture must be JPG format!')
     return false
   } else if (rawFile.size / 1024 / 1024 > 2) {
-    ElMessage.error('Avatar picture size can not exceed 2MB!')
+    HcMessage.error('Avatar picture size can not exceed 2MB!')
     return false
   }
   return true
@@ -50,20 +50,20 @@ const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
 </style>
 
 <style>
-.avatar-uploader .el-upload {
-  border: 1px dashed var(--el-border-color);
+.avatar-uploader .hc-upload {
+  border: 1px dashed var(--hc-border-color);
   border-radius: 6px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: var(--el-transition-duration-fast);
+  transition: var(--hc-transition-duration-fast);
 }
 
-.avatar-uploader .el-upload:hover {
-  border-color: var(--el-color-primary);
+.avatar-uploader .hc-upload:hover {
+  border-color: var(--hc-color-primary);
 }
 
-.el-icon.avatar-uploader-icon {
+.hc-icon.avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
   width: 178px;

@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     fixed
     :columns="fixedColumns"
     :data="data"
@@ -11,7 +11,7 @@
     <template #header="props">
       <customized-header v-bind="props" />
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 <script lang="tsx" setup>
 import { TableV2FixedDir, TableV2Placeholder } from 'hicor-ui'
@@ -103,28 +103,28 @@ const CustomizedHeader: FunctionalComponent<
 const headerClass = ({
   headerIndex,
 }: Parameters<HeaderClassNameGetter<any>>[0]) => {
-  if (headerIndex === 1) return 'el-primary-color'
+  if (headerIndex === 1) return 'hc-primary-color'
   return ''
 }
 </script>
 
 <style>
-.el-el-table-v2__header-row .custom-header-cell {
-  border-right: 1px solid var(--el-border-color);
+.hc-hc-table-v2__header-row .custom-header-cell {
+  border-right: 1px solid var(--hc-border-color);
 }
 
-.el-el-table-v2__header-row .custom-header-cell:last-child {
+.hc-hc-table-v2__header-row .custom-header-cell:last-child {
   border-right: none;
 }
 
-.el-primary-color {
-  background-color: var(--el-color-primary);
-  color: var(--el-color-white);
+.hc-primary-color {
+  background-color: var(--hc-color-primary);
+  color: var(--hc-color-white);
   font-size: 14px;
   font-weight: bold;
 }
 
-.el-primary-color .custom-header-cell {
+.hc-primary-color .custom-header-cell {
   padding: 0 4px;
 }
 </style>

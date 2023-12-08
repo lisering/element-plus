@@ -1,8 +1,8 @@
 <template>
   <div class="demo-color-sizes">
-    <el-color-picker v-model="color" size="large" />
-    <el-color-picker v-model="color" />
-    <el-color-picker v-model="color" size="small" />
+    <hc-color-picker v-model="color" size="large" />
+    <hc-color-picker v-model="color" />
+    <hc-color-picker v-model="color" size="small" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ const color = ref('409EFF')
 </script>
 
 <style>
-.demo-color-sizes .el-color-picker:not(:last-child) {
+.demo-color-sizes .hc-color-picker:not(:last-child) {
   margin-right: 16px;
 }
 </style>

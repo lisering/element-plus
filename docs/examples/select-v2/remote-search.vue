@@ -1,5 +1,5 @@
 <template>
-  <el-select-v2
+  <hc-select-v2
     v-model="value"
     style="width: 240px"
     multiple

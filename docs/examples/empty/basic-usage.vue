@@ -1,3 +1,3 @@
 <template>
-  <el-empty description="description" />
+  <hc-empty description="description" />
 </template>

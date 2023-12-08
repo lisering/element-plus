@@ -1,6 +1,6 @@
 <template>
   <div class="demo-date-picker">
-    <el-date-picker
+    <hc-date-picker
       v-model="value"
       type="date"
       placeholder="Pick a day"
@@ -13,7 +13,7 @@
           <span v-if="isHoliday(cell)" class="holiday" />
         </div>
       </template>
-    </el-date-picker>
+    </hc-date-picker>
   </div>
 </template>
 
@@ -42,6 +42,7 @@ const isHoliday = ({ dayjs }) => {
   padding: 3px 0;
   box-sizing: border-box;
 }
+
 .cell .text {
   width: 24px;
   height: 24px;
@@ -53,15 +54,17 @@ const isHoliday = ({ dayjs }) => {
   transform: translateX(-50%);
   border-radius: 50%;
 }
+
 .cell.current .text {
   background: #626aef;
   color: #fff;
 }
+
 .cell .holiday {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: var(--el-color-danger);
+  background: var(--hc-color-danger);
   border-radius: 50%;
   bottom: 0px;
   left: 50%;

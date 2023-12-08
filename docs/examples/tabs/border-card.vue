@@ -1,8 +1,8 @@
 <template>
-  <el-tabs type="border-card">
-    <el-tab-pane label="User">User</el-tab-pane>
-    <el-tab-pane label="Config">Config</el-tab-pane>
-    <el-tab-pane label="Role">Role</el-tab-pane>
-    <el-tab-pane label="Task">Task</el-tab-pane>
-  </el-tabs>
+  <hc-tabs type="border-card">
+    <hc-tab-pane label="User">User</hc-tab-pane>
+    <hc-tab-pane label="Config">Config</hc-tab-pane>
+    <hc-tab-pane label="Role">Role</hc-tab-pane>
+    <hc-tab-pane label="Task">Task</hc-tab-pane>
+  </hc-tabs>
 </template>

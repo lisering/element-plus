@@ -1,11 +1,11 @@
 <template>
-  <el-form
+  <hc-form
     ref="formRef"
     :model="numberValidateForm"
     label-width="100px"
     class="demo-ruleForm"
   >
-    <el-form-item
+    <hc-form-item
       label="age"
       prop="age"
       :rules="[
@@ -13,17 +13,17 @@
         { type: 'number', message: 'age must be a number' },
       ]"
     >
-      <el-input
+      <hc-input
         v-model.number="numberValidateForm.age"
         type="text"
         autocomplete="off"
       />
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm(formRef)">Submit</el-button>
-      <el-button @click="resetForm(formRef)">Reset</el-button>
-    </el-form-item>
-  </el-form>
+    </hc-form-item>
+    <hc-form-item>
+      <hc-button type="primary" @click="submitForm(formRef)">Submit</hc-button>
+      <hc-button @click="resetForm(formRef)">Reset</hc-button>
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>

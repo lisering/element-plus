@@ -1,19 +1,19 @@
 <template>
-  <el-upload
+  <hc-upload
     v-model:file-list="fileList"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
     list-type="picture-card"
     :on-preview="handlePictureCardPreview"
     :on-remove="handleRemove"
   >
-    <el-icon>
+    <hc-icon>
       <Plus />
-    </el-icon>
-  </el-upload>
+    </hc-icon>
+  </hc-upload>
 
-  <el-dialog v-model="dialogVisible">
+  <hc-dialog v-model="dialogVisible">
     <img w-full :src="dialogImageUrl" alt="Preview Image" />
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>

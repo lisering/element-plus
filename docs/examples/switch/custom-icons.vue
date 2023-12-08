@@ -1,7 +1,7 @@
 <template>
-  <el-switch v-model="value1" :active-icon="Check" :inactive-icon="Close" />
+  <hc-switch v-model="value1" :active-icon="Check" :inactive-icon="Close" />
   <br />
-  <el-switch
+  <hc-switch
     v-model="value2"
     class="mt-2"
     style="margin-left: 24px"

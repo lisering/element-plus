@@ -110,7 +110,7 @@ export default defineComponent({
   setup(props, { slots }) {
     useDeprecated(
       {
-        scope: 'el-drawer',
+        scope: 'hc-drawer',
         from: 'the title slot',
         replacement: 'the header slot',
         version: '3.0.0',
@@ -120,7 +120,7 @@ export default defineComponent({
     )
     useDeprecated(
       {
-        scope: 'el-drawer',
+        scope: 'hc-drawer',
         from: 'custom-class',
         replacement: 'class',
         version: '2.3.0',

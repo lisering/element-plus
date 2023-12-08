@@ -81,7 +81,7 @@ page-header/main-content
 
 ```vue
 <template>
-  <el-page-header>
+  <hc-page-header>
     <!-- Line 1 -->
     <template #breadcrumb />
     <!-- Line 2 -->
@@ -91,7 +91,7 @@ page-header/main-content
     <template #extra />
     <!-- Lines after 2 -->
     <template #default />
-  </el-page-header>
+  </hc-page-header>
 </template>
 ```
 

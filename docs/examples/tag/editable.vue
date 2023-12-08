@@ -1,5 +1,5 @@
 <template>
-  <el-tag
+  <hc-tag
     v-for="tag in dynamicTags"
     :key="tag"
     class="mx-1"
@@ -8,8 +8,8 @@
     @close="handleClose(tag)"
   >
     {{ tag }}
-  </el-tag>
-  <el-input
+  </hc-tag>
+  <hc-input
     v-if="inputVisible"
     ref="InputRef"
     v-model="inputValue"
@@ -18,19 +18,19 @@
     @keyup.enter="handleInputConfirm"
     @blur="handleInputConfirm"
   />
-  <el-button v-else class="button-new-tag ml-1" size="small" @click="showInput">
+  <hc-button v-else class="button-new-tag ml-1" size="small" @click="showInput">
     + New Tag
-  </el-button>
+  </hc-button>
 </template>
 
 <script lang="ts" setup>
 import { nextTick, ref } from 'vue'
-import { ElInput } from 'hicor-ui'
+import { HcInput } from 'hicor-ui'
 
 const inputValue = ref('')
 const dynamicTags = ref(['Tag 1', 'Tag 2', 'Tag 3'])
 const inputVisible = ref(false)
-const InputRef = ref<InstanceType<typeof ElInput>>()
+const InputRef = ref<InstanceType<typeof HcInput>>()
 
 const handleClose = (tag: string) => {
   dynamicTags.value.splice(dynamicTags.value.indexOf(tag), 1)

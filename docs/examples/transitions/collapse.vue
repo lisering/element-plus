@@ -1,14 +1,14 @@
 <template>
   <div>
-    <el-button @click="show = !show">Click Me</el-button>
+    <hc-button @click="show = !show">Click Me</hc-button>
 
     <div style="margin-top: 20px; height: 200px">
-      <el-collapse-transition>
+      <hc-collapse-transition>
         <div v-show="show">
-          <div class="transition-box">el-collapse-transition</div>
-          <div class="transition-box">el-collapse-transition</div>
+          <div class="transition-box">hc-collapse-transition</div>
+          <div class="transition-box">hc-collapse-transition</div>
         </div>
-      </el-collapse-transition>
+      </hc-collapse-transition>
     </div>
   </div>
 </template>

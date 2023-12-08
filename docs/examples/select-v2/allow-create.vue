@@ -1,7 +1,7 @@
 <template>
   <div style="flex: auto">
     <div>
-      <el-select-v2
+      <hc-select-v2
         v-model="value1"
         :options="options"
         placeholder="Please select"
@@ -11,7 +11,7 @@
         multiple
         clearable
       />
-      <el-select-v2
+      <hc-select-v2
         v-model="value2"
         :options="options"
         placeholder="Please select"
@@ -25,7 +25,7 @@
       <p style="margin-top: 20px; margin-bottom: 8px">
         set reserve-keyword false
       </p>
-      <el-select-v2
+      <hc-select-v2
         v-model="value3"
         :options="options"
         placeholder="Please select"

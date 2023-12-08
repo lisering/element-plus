@@ -1,12 +1,12 @@
 <template>
-  <el-input
+  <hc-input
     v-model="textarea1"
     autosize
     type="textarea"
     placeholder="Please input"
   />
   <div style="margin: 20px 0" />
-  <el-input
+  <hc-input
     v-model="textarea2"
     :autosize="{ minRows: 2, maxRows: 4 }"
     type="textarea"

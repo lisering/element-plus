@@ -1,20 +1,20 @@
 <template>
   <div class="mb-4 flex items-center">
-    <el-form-item label="Scroll pixels" class="mr-4">
-      <el-input v-model="scrollDelta" />
-    </el-form-item>
-    <el-form-item label="Scroll rows">
-      <el-input v-model="scrollRows" />
-    </el-form-item>
+    <hc-form-item label="Scroll pixels" class="mr-4">
+      <hc-input v-model="scrollDelta" />
+    </hc-form-item>
+    <hc-form-item label="Scroll rows">
+      <hc-input v-model="scrollRows" />
+    </hc-form-item>
   </div>
   <div class="mb-4 flex items-center">
-    <el-button @click="scrollByPixels"> Scroll by pixels </el-button>
-    <el-button @click="scrollByRows"> Scroll by rows </el-button>
+    <hc-button @click="scrollByPixels"> Scroll by pixels </hc-button>
+    <hc-button @click="scrollByRows"> Scroll by rows </hc-button>
   </div>
   <div style="height: 400px">
-    <el-auto-resizer>
+    <hc-auto-resizer>
       <template #default="{ height, width }">
-        <el-table-v2
+        <hc-table-v2
           ref="tableRef"
           :columns="columns"
           :data="data"
@@ -23,7 +23,7 @@
           fixed
         />
       </template>
-    </el-auto-resizer>
+    </hc-auto-resizer>
   </div>
 </template>
 

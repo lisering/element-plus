@@ -1,5 +1,5 @@
 - scope: 'component'
-  name: 'el-button'
+  name: 'hc-button'
   type: 'props'
   version: '2.2.1'
   commit_hash: 'ad3d998'

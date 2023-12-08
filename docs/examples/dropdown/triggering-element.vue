@@ -1,31 +1,31 @@
 <template>
   <div class="flex flex-wrap items-center">
-    <el-dropdown>
-      <el-button type="primary">
-        Dropdown List<el-icon class="el-icon--right"><arrow-down /></el-icon>
-      </el-button>
+    <hc-dropdown>
+      <hc-button type="primary">
+        Dropdown List<hc-icon class="hc-icon--right"><arrow-down /></hc-icon>
+      </hc-button>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item>Action 1</el-dropdown-item>
-          <el-dropdown-item>Action 2</el-dropdown-item>
-          <el-dropdown-item>Action 3</el-dropdown-item>
-          <el-dropdown-item>Action 4</el-dropdown-item>
-          <el-dropdown-item>Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <hc-dropdown-menu>
+          <hc-dropdown-item>Action 1</hc-dropdown-item>
+          <hc-dropdown-item>Action 2</hc-dropdown-item>
+          <hc-dropdown-item>Action 3</hc-dropdown-item>
+          <hc-dropdown-item>Action 4</hc-dropdown-item>
+          <hc-dropdown-item>Action 5</hc-dropdown-item>
+        </hc-dropdown-menu>
       </template>
-    </el-dropdown>
-    <el-dropdown split-button type="primary" @click="handleClick">
+    </hc-dropdown>
+    <hc-dropdown split-button type="primary" @click="handleClick">
       Dropdown List
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item>Action 1</el-dropdown-item>
-          <el-dropdown-item>Action 2</el-dropdown-item>
-          <el-dropdown-item>Action 3</el-dropdown-item>
-          <el-dropdown-item>Action 4</el-dropdown-item>
-          <el-dropdown-item>Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <hc-dropdown-menu>
+          <hc-dropdown-item>Action 1</hc-dropdown-item>
+          <hc-dropdown-item>Action 2</hc-dropdown-item>
+          <hc-dropdown-item>Action 3</hc-dropdown-item>
+          <hc-dropdown-item>Action 4</hc-dropdown-item>
+          <hc-dropdown-item>Action 5</hc-dropdown-item>
+        </hc-dropdown-menu>
       </template>
-    </el-dropdown>
+    </hc-dropdown>
   </div>
 </template>
 
@@ -38,13 +38,13 @@ const handleClick = () => {
 }
 </script>
 <style scoped>
-.example-showcase .el-dropdown + .el-dropdown {
+.example-showcase .hc-dropdown + .hc-dropdown {
   margin-left: 15px;
 }
 
-.example-showcase .el-dropdown-link {
+.example-showcase .hc-dropdown-link {
   cursor: pointer;
-  color: var(--el-color-primary);
+  color: var(--hc-color-primary);
   display: flex;
   align-items: center;
 }

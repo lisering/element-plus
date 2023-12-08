@@ -1,12 +1,12 @@
 <template>
-  <el-button plain @click="openCenter">Centered text</el-button>
+  <hc-button plain @click="openCenter">Centered text</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 
 const openCenter = () => {
-  ElMessage({
+  HcMessage({
     showClose: true,
     message: 'Centered text',
     center: true,

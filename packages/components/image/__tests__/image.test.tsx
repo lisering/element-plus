@@ -98,7 +98,7 @@ describe('Image.vue', () => {
     }
     const wrapper = mount(() => <Image {...props} />)
     await doubleWait()
-    expect(wrapper.find('img').classes()).toContain('el-image__preview')
+    expect(wrapper.find('img').classes()).toContain('hc-image__preview')
   })
 
   test('preview initial index test', async () => {

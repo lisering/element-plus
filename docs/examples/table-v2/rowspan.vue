@@ -1,9 +1,9 @@
 <template>
-  <el-table-v2 fixed :columns="columns" :data="data" :width="700" :height="400">
+  <hc-table-v2 fixed :columns="columns" :data="data" :width="700" :height="400">
     <template #row="props">
       <Row v-bind="props" />
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 
 <script lang="ts" setup>
@@ -49,7 +49,7 @@ const Row = ({ rowData, rowIndex, cells, columns }) => {
     const cell = cells[rowSpanIndex]
     const style = {
       ...cell.props.style,
-      backgroundColor: 'var(--el-color-primary-light-3)',
+      backgroundColor: 'var(--hc-color-primary-light-3)',
       height: `${rowSpan * 50 - 1}px`,
       alignSelf: 'flex-start',
       zIndex: 1,

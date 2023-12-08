@@ -1,5 +1,5 @@
 <template>
-  <el-transfer
+  <hc-transfer
     v-model="value"
     filterable
     :filter-method="filterMethod"

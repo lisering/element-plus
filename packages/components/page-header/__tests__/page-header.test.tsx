@@ -50,7 +50,7 @@ describe('PageHeader.vue', () => {
         />
       ))
       expect(wrapper.find('.hc-page-header__breadcrumb').exists()).toBe(true)
-      expect(wrapper.classes()).toContain('el-page-header--has-breadcrumb')
+      expect(wrapper.classes()).toContain('hc-page-header--has-breadcrumb')
     })
 
     test('extra', () => {
@@ -62,7 +62,7 @@ describe('PageHeader.vue', () => {
         />
       ))
       expect(wrapper.find('.hc-page-header__extra').exists()).toBe(true)
-      expect(wrapper.classes()).toContain('el-page-header--has-extra')
+      expect(wrapper.classes()).toContain('hc-page-header--has-extra')
     })
 
     test('default', () => {

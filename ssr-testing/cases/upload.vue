@@ -1,13 +1,13 @@
 <template>
-  <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
+  <hc-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview"
     :on-remove="handleRemove" multiple :limit="3" :file-list="fileList">
-    <el-button type="primary">Click to upload</el-button>
+    <hc-button type="primary">Click to upload</hc-button>
     <template #tip>
-      <div class="el-upload__tip">
+      <div class="hc-upload__tip">
         jpg/png files with a size less than 500kb
       </div>
     </template>
-  </el-upload>
+  </hc-upload>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

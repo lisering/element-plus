@@ -62,8 +62,8 @@ describe('no injection value', () => {
       render: () => undefined,
     })
 
-    expect(wrapper.vm.id).toMatch(/^el-popper-container-\d{0,4}$/)
-    expect(wrapper.vm.selector).toMatch(/^#el-popper-container-\d{0,4}$/)
+    expect(wrapper.vm.id).toMatch(/^hc-popper-container-\d{0,4}$/)
+    expect(wrapper.vm.selector).toMatch(/^#hc-popper-container-\d{0,4}$/)
     expect(wrapper.vm.selector).toBe(`#${wrapper.vm.id}`)
   })
 })
@@ -92,7 +92,7 @@ describe('with injection value', () => {
       render: () => undefined,
     })
 
-    expect(wrapper.vm.id).toBe('el-popper-container-1024')
-    expect(wrapper.vm.selector).toBe('#el-popper-container-1024')
+    expect(wrapper.vm.id).toBe('hc-popper-container-1024')
+    expect(wrapper.vm.selector).toBe('#hc-popper-container-1024')
   })
 })

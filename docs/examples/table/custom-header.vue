@@ -1,24 +1,24 @@
 <template>
-  <el-table :data="filterTableData" style="width: 100%">
-    <el-table-column label="Date" prop="date" />
-    <el-table-column label="Name" prop="name" />
-    <el-table-column align="right">
+  <hc-table :data="filterTableData" style="width: 100%">
+    <hc-table-column label="Date" prop="date" />
+    <hc-table-column label="Name" prop="name" />
+    <hc-table-column align="right">
       <template #header>
-        <el-input v-model="search" size="small" placeholder="Type to search" />
+        <hc-input v-model="search" size="small" placeholder="Type to search" />
       </template>
       <template #default="scope">
-        <el-button size="small" @click="handleEdit(scope.$index, scope.row)"
-          >Edit</el-button
+        <hc-button size="small" @click="handleEdit(scope.$index, scope.row)"
+          >Edit</hc-button
         >
-        <el-button
+        <hc-button
           size="small"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Delete</el-button
+          >Delete</hc-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </hc-table-column>
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

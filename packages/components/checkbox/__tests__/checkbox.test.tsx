@@ -13,7 +13,7 @@ describe('Checkbox', () => {
     const checked = ref(false)
     const wrapper = mount(() => <Checkbox v-model={checked.value} label="a" />)
 
-    expect(wrapper.classes()).toContain('el-checkbox')
+    expect(wrapper.classes()).toContain('hc-checkbox')
     expect(wrapper.classes()).not.toContain('is-disabled')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
@@ -362,7 +362,7 @@ describe('check-button', () => {
       <CheckboxButton v-model={checked.value} label="a" />
     ))
 
-    expect(wrapper.classes()).toContain('el-checkbox-button')
+    expect(wrapper.classes()).toContain('hc-checkbox-button')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
     await wrapper.trigger('click')
@@ -454,7 +454,7 @@ describe('check-button', () => {
       </CheckboxGroup>
     ))
 
-    expect(wrapper.find('tr').classes('el-checkbox-group')).toBeTruthy()
+    expect(wrapper.find('tr').classes('hc-checkbox-group')).toBeTruthy()
   })
 
   test('button group min and max', async () => {

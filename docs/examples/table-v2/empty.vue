@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="[]"
     :row-height="40"
@@ -9,10 +9,10 @@
   >
     <template #empty>
       <div class="flex items-center justify-center h-100%">
-        <el-empty />
+        <hc-empty />
       </div>
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 
 <script lang="tsx" setup>

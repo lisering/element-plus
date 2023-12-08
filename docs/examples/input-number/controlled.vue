@@ -1,5 +1,5 @@
 <template>
-  <el-input-number
+  <hc-input-number
     v-model="num"
     :min="1"
     :max="10"
@@ -7,7 +7,7 @@
     size="large"
     @change="handleChange"
   />
-  <el-input-number
+  <hc-input-number
     v-model="num"
     class="mx-4"
     :min="1"
@@ -15,7 +15,7 @@
     controls-position="right"
     @change="handleChange"
   />
-  <el-input-number
+  <hc-input-number
     v-model="num"
     :min="1"
     :max="10"

@@ -1,25 +1,25 @@
 <template>
-  <el-row style="margin-block-end: 8px">
-    <el-button size="large">Large</el-button>
-    <el-button>Default</el-button>
-    <el-button size="small">Small</el-button>
-    <el-button size="large" :icon="Search">Search</el-button>
-    <el-button :icon="Search">Search</el-button>
-    <el-button size="small" :icon="Search">Search</el-button>
-  </el-row>
-  <el-row style="margin-block-end: 8px">
-    <el-button size="large" round>Large</el-button>
-    <el-button round>Default</el-button>
-    <el-button size="small" round>Small</el-button>
-    <el-button size="large" :icon="Search" round>Search</el-button>
-    <el-button :icon="Search" round>Search</el-button>
-    <el-button size="small" :icon="Search" round>Search</el-button>
-  </el-row>
-  <el-row style="margin-block-end: 8px">
-    <el-button :icon="Search" size="large" circle />
-    <el-button :icon="Search" circle />
-    <el-button :icon="Search" size="small" circle />
-  </el-row>
+  <hc-row style="margin-block-end: 8px">
+    <hc-button size="large">Large</hc-button>
+    <hc-button>Default</hc-button>
+    <hc-button size="small">Small</hc-button>
+    <hc-button size="large" :icon="Search">Search</hc-button>
+    <hc-button :icon="Search">Search</hc-button>
+    <hc-button size="small" :icon="Search">Search</hc-button>
+  </hc-row>
+  <hc-row style="margin-block-end: 8px">
+    <hc-button size="large" round>Large</hc-button>
+    <hc-button round>Default</hc-button>
+    <hc-button size="small" round>Small</hc-button>
+    <hc-button size="large" :icon="Search" round>Search</hc-button>
+    <hc-button :icon="Search" round>Search</hc-button>
+    <hc-button size="small" :icon="Search" round>Search</hc-button>
+  </hc-row>
+  <hc-row style="margin-block-end: 8px">
+    <hc-button :icon="Search" size="large" circle />
+    <hc-button :icon="Search" circle />
+    <hc-button :icon="Search" size="small" circle />
+  </hc-row>
 </template>
 
 <script setup lang="ts">

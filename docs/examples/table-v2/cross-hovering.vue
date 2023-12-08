@@ -1,8 +1,8 @@
 <template>
   <div style="height: 400px">
-    <el-auto-resizer>
+    <hc-auto-resizer>
       <template #default="{ height, width }">
-        <el-table-v2
+        <hc-table-v2
           :columns="columns"
           :cell-props="cellProps"
           :class="kls"
@@ -11,7 +11,7 @@
           :height="height"
         />
       </template>
-    </el-auto-resizer>
+    </hc-auto-resizer>
   </div>
 </template>
 
@@ -83,7 +83,7 @@ const kls = ref<string>('')
 .hovering-col-8 [data-key='hovering-col-8'],
 .hovering-col-9 [data-key='hovering-col-9'],
 .hovering-col-10 [data-key='hovering-col-10'] {
-  background: var(--el-table-row-hover-bg-color);
+  background: var(--hc-table-row-hover-bg-color);
 }
 
 [data-key='hovering-col-0'] {

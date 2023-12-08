@@ -1,18 +1,18 @@
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option-group
+  <hc-select v-model="value" placeholder="Select">
+    <hc-option-group
       v-for="group in options"
       :key="group.label"
       :label="group.label"
     >
-      <el-option
+      <hc-option
         v-for="item in group.options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
       />
-    </el-option-group>
-  </el-select>
+    </hc-option-group>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

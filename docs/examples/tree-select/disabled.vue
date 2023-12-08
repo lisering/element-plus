@@ -1,5 +1,5 @@
 <template>
-  <el-tree-select v-model="value" :data="data" />
+  <hc-tree-select v-model="value" :data="data" />
 </template>
 
 <script lang="ts" setup>

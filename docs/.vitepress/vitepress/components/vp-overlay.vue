@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <Transition name="el-fade-in">
+  <Transition name="hc-fade-in">
     <div v-if="show" />
   </Transition>
 </template>

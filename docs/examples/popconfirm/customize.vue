@@ -1,5 +1,5 @@
 <template>
-  <el-popconfirm
+  <hc-popconfirm
     width="220"
     confirm-button-text="OK"
     cancel-button-text="No, Thanks"
@@ -8,9 +8,9 @@
     title="Are you sure to delete this?"
   >
     <template #reference>
-      <el-button>Delete</el-button>
+      <hc-button>Delete</hc-button>
     </template>
-  </el-popconfirm>
+  </hc-popconfirm>
 </template>
 
 <script setup lang="ts">

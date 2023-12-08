@@ -1,6 +1,6 @@
 <template>
-  <el-timeline>
-    <el-timeline-item
+  <hc-timeline>
+    <hc-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :icon="activity.icon"
@@ -11,8 +11,8 @@
       :timestamp="activity.timestamp"
     >
       {{ activity.content }}
-    </el-timeline-item>
-  </el-timeline>
+    </hc-timeline-item>
+  </hc-timeline>
 </template>
 
 <script lang="ts" setup>

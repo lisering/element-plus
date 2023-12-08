@@ -1,5 +1,5 @@
 <template>
-  <el-autocomplete
+  <hc-autocomplete
     v-model="state"
     :fetch-suggestions="querySearchAsync"
     placeholder="Please input"

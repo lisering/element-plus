@@ -15,7 +15,7 @@ lang: zh-CN
 
 ## 基础用法
 
-:::demo 适用广泛的基础单选 `v-model` 的值为当前被选中的 `el-option` 的 value 属性值
+:::demo 适用广泛的基础单选 `v-model` 的值为当前被选中的 `hc-option` 的 value 属性值
 
 select/basic-usage
 
@@ -23,7 +23,7 @@ select/basic-usage
 
 ## 有禁用选项
 
-:::demo 在 `el-option` 中，设定 `disabled` 值为 true，即可禁用该选项
+:::demo 在 `hc-option` 中，设定 `disabled` 值为 true，即可禁用该选项
 
 select/disabled-option
 
@@ -33,7 +33,7 @@ select/disabled-option
 
 禁用整个选择器组件
 
-:::demo 为 `el-select` 设置 `disabled`属性，则整个选择器不可用。
+:::demo 为 `hc-select` 设置 `disabled`属性，则整个选择器不可用。
 
 select/disabled
 
@@ -43,7 +43,7 @@ select/disabled
 
 您可以使用清除图标来清除选择。
 
-:::demo 为 `el-select` 设置 `clearable` 属性，则可将选择器清空。 需要注意的是，`clearable` 属性仅适用于单选。
+:::demo 为 `hc-select` 设置 `clearable` 属性，则可将选择器清空。 需要注意的是，`clearable` 属性仅适用于单选。
 
 select/clearable
 
@@ -53,7 +53,7 @@ select/clearable
 
 多选选择器使用 tag 组件来展示已选中的选项。
 
-:::demo 为 `el-select` 设置 `multiple` 属性即可启用多选， 此时 `v-model` 的值为当前选中值所组成的数组。 默认情况下选中值会以 Tag 组件的形式展现， 你也可以设置 `collapse-tags` 属性将它们合并为一段文字。 您可以使用 `collapse-tags-tooltip` 属性来启用鼠标悬停折叠文字以显示具体所选值的行为。
+:::demo 为 `hc-select` 设置 `multiple` 属性即可启用多选， 此时 `v-model` 的值为当前选中值所组成的数组。 默认情况下选中值会以 Tag 组件的形式展现， 你也可以设置 `collapse-tags` 属性将它们合并为一段文字。 您可以使用 `collapse-tags-tooltip` 属性来启用鼠标悬停折叠文字以显示具体所选值的行为。
 
 select/multiple
 
@@ -63,7 +63,7 @@ select/multiple
 
 你可以自定义如何来渲染每一个选项。
 
-:::demo 将自定义的 HTML 模板插入 `el-option` 的 slot 中即可。
+:::demo 将自定义的 HTML 模板插入 `hc-option` 的 slot 中即可。
 
 select/custom-template
 
@@ -93,7 +93,7 @@ select/custom-footer
 
 你可以为选项进行分组来区分不同的选项
 
-:::demo 使用 `el-option-group` 对备选项进行分组，它的 `label` 属性为分组名
+:::demo 使用 `hc-option-group` 对备选项进行分组，它的 `label` 属性为分组名
 
 select/grouping
 
@@ -103,7 +103,7 @@ select/grouping
 
 可以利用筛选功能快速查找选项。
 
-:::demo 为`el-select`添加`filterable`属性即可启用搜索功能。 默认情况下，Select 会找出所有 `label` 属性包含输入值的选项。 如果希望使用其他的搜索逻辑，可以通过传入一个 `filter-method` 来实现。 `filter-method` 为一个 `Function`，它会在输入值发生变化时调用，参数为当前输入值。
+:::demo 为`hc-select`添加`filterable`属性即可启用搜索功能。 默认情况下，Select 会找出所有 `label` 属性包含输入值的选项。 如果希望使用其他的搜索逻辑，可以通过传入一个 `filter-method` 来实现。 `filter-method` 为一个 `Function`，它会在输入值发生变化时调用，参数为当前输入值。
 
 select/filterable
 
@@ -113,7 +113,7 @@ select/filterable
 
 输入关键字以从远程服务器中查找数据。
 
-:::demo 从服务器搜索数据，输入关键字进行查找。为了启用远程搜索，需要将`filterable`和`remote`设置为`true`，同时传入一个`remote-method`。 `remote-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。 需要注意的是，如果 `el-option` 是通过 `v-for` 指令渲染出来的，此时需要为 `el-option` 添加 `key` 属性， 且其值需具有唯一性，比如这个例子中的 `item.value`。
+:::demo 从服务器搜索数据，输入关键字进行查找。为了启用远程搜索，需要将`filterable`和`remote`设置为`true`，同时传入一个`remote-method`。 `remote-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。 需要注意的是，如果 `hc-option` 是通过 `v-for` 指令渲染出来的，此时需要为 `hc-option` 添加 `key` 属性， 且其值需具有唯一性，比如这个例子中的 `item.value`。
 
 select/remote-search
 

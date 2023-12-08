@@ -1,18 +1,18 @@
 <template>
-  <el-page-header>
+  <hc-page-header>
     <template #breadcrumb>
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: './page-header.html' }">
+      <hc-breadcrumb separator="/">
+        <hc-breadcrumb-item :to="{ path: './page-header.html' }">
           homepage
-        </el-breadcrumb-item>
-        <el-breadcrumb-item
-          ><a href="./page-header.html">route 1</a></el-breadcrumb-item
+        </hc-breadcrumb-item>
+        <hc-breadcrumb-item
+          ><a href="./page-header.html">route 1</a></hc-breadcrumb-item
         >
-        <el-breadcrumb-item>route 2</el-breadcrumb-item>
-      </el-breadcrumb>
+        <hc-breadcrumb-item>route 2</hc-breadcrumb-item>
+      </hc-breadcrumb>
     </template>
     <template #content>
       <span class="text-large font-600 mr-3"> Title </span>
     </template>
-  </el-page-header>
+  </hc-page-header>
 </template>

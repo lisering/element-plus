@@ -1,11 +1,11 @@
 <template>
   <div class="m-4">
     <p>Select any level of options (Single selection)</p>
-    <el-cascader :options="options" :props="props1" clearable />
+    <hc-cascader :options="options" :props="props1" clearable />
   </div>
   <div class="m-4">
     <p>Select any level of options (Multiple selection)</p>
-    <el-cascader :options="options" :props="props2" clearable />
+    <hc-cascader :options="options" :props="props2" clearable />
   </div>
 </template>
 

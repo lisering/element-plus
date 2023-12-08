@@ -1,12 +1,12 @@
 <template>
   <div class="demo-progress">
-    <el-progress type="dashboard" :percentage="percentage" :color="colors" />
-    <el-progress type="dashboard" :percentage="percentage2" :color="colors" />
+    <hc-progress type="dashboard" :percentage="percentage" :color="colors" />
+    <hc-progress type="dashboard" :percentage="percentage2" :color="colors" />
     <div>
-      <el-button-group>
-        <el-button :icon="Minus" @click="decrease" />
-        <el-button :icon="Plus" @click="increase" />
-      </el-button-group>
+      <hc-button-group>
+        <hc-button :icon="Minus" @click="decrease" />
+        <hc-button :icon="Plus" @click="increase" />
+      </hc-button-group>
     </div>
   </div>
 </template>
@@ -45,12 +45,12 @@ onMounted(() => {
 })
 </script>
 <style scoped>
-.demo-progress .el-progress--line {
+.demo-progress .hc-progress--line {
   margin-bottom: 15px;
   width: 350px;
 }
 
-.demo-progress .el-progress--circle {
+.demo-progress .hc-progress--circle {
   margin-right: 15px;
 }
 </style>

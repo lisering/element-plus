@@ -1,22 +1,22 @@
 <template>
-  <el-button plain @click="open1"> Top Right </el-button>
-  <el-button plain @click="open2"> Bottom Right </el-button>
-  <el-button plain @click="open3"> Bottom Left </el-button>
-  <el-button plain @click="open4"> Top Left </el-button>
+  <hc-button plain @click="open1"> Top Right </hc-button>
+  <hc-button plain @click="open2"> Bottom Right </hc-button>
+  <hc-button plain @click="open3"> Bottom Left </hc-button>
+  <hc-button plain @click="open4"> Top Left </hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElNotification } from 'hicor-ui'
+import { HcNotification } from 'hicor-ui'
 
 const open1 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Custom Position',
     message: "I'm at the top right corner",
   })
 }
 
 const open2 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Custom Position',
     message: "I'm at the bottom right corner",
     position: 'bottom-right',
@@ -24,7 +24,7 @@ const open2 = () => {
 }
 
 const open3 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Custom Position',
     message: "I'm at the bottom left corner",
     position: 'bottom-left',
@@ -32,7 +32,7 @@ const open3 = () => {
 }
 
 const open4 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Custom Position',
     message: "I'm at the top left corner",
     position: 'top-left',

@@ -1,5 +1,5 @@
 <template>
-  <el-select-v2
+  <hc-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -7,7 +7,7 @@
     style="width: 240px; margin-right: 16px; vertical-align: middle"
     multiple
   />
-  <el-select-v2
+  <hc-select-v2
     v-model="value"
     disabled
     filterable

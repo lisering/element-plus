@@ -1,5 +1,5 @@
 <template>
-  <el-cascader :options="options" clearable />
+  <hc-cascader :options="options" clearable />
 </template>
 <script lang="ts" setup>
 const options = [

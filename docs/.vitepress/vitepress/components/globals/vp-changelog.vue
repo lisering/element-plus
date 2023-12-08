@@ -43,25 +43,25 @@ onMounted(async () => {
 <template>
   <div class="changelogs">
     <ClientOnly>
-      <ElSkeleton :loading="loading">
+      <HcSkeleton :loading="loading">
         <div class="changelog-versions">
           <p>{{ changelog['select-version'] }}:</p>
-          <ElSelect
+          <HcSelect
             :model-value="currentRelease.name"
             :placeholder="changelog['select-version']"
             style="min-width: 200px"
             @change="onVersionChange"
           >
-            <ElOption
+            <HcOption
               v-for="release in releases"
               :key="release.id"
               :value="release.name"
             >
               {{ release.name }}
-            </ElOption>
-          </ElSelect>
+            </HcOption>
+          </HcSelect>
         </div>
-        <ElCard v-if="currentRelease">
+        <HcCard v-if="currentRelease">
           <template #header>
             <div class="changelog-header">
               <div class="changelog-meta">
@@ -85,8 +85,8 @@ onMounted(async () => {
           <div>
             <VPMarkdown :content="currentRelease.body" />
           </div>
-        </ElCard>
-      </ElSkeleton>
+        </HcCard>
+      </HcSkeleton>
     </ClientOnly>
   </div>
 </template>

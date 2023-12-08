@@ -1,13 +1,13 @@
 <template>
-  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1">Processing Center</el-menu-item>
-    <el-sub-menu index="2">
+  <hc-menu :default-active="activeIndex" class="hc-menu-demo" mode="horizontal">
+    <hc-menu-item index="1">Processing Center</hc-menu-item>
+    <hc-sub-menu index="2">
       <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-    </el-sub-menu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
-  </el-menu>
+      <hc-menu-item index="2-1">item one</hc-menu-item>
+    </hc-sub-menu>
+    <hc-menu-item index="3" disabled>Info</hc-menu-item>
+    <hc-menu-item index="4">Orders</hc-menu-item>
+  </hc-menu>
 </template>
 
 <script lang="ts" setup>

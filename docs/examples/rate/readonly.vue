@@ -1,5 +1,5 @@
 <template>
-  <el-rate
+  <hc-rate
     v-model="value"
     disabled
     show-score

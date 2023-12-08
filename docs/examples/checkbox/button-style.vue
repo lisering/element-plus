@@ -1,35 +1,35 @@
 <template>
   <div>
-    <el-checkbox-group v-model="checkboxGroup1" size="large">
-      <el-checkbox-button v-for="city in cities" :key="city" :label="city">
+    <hc-checkbox-group v-model="checkboxGroup1" size="large">
+      <hc-checkbox-button v-for="city in cities" :key="city" :label="city">
         {{ city }}
-      </el-checkbox-button>
-    </el-checkbox-group>
+      </hc-checkbox-button>
+    </hc-checkbox-group>
   </div>
   <div class="demo-button-style">
-    <el-checkbox-group v-model="checkboxGroup2">
-      <el-checkbox-button v-for="city in cities" :key="city" :label="city">{{
+    <hc-checkbox-group v-model="checkboxGroup2">
+      <hc-checkbox-button v-for="city in cities" :key="city" :label="city">{{
         city
-      }}</el-checkbox-button>
-    </el-checkbox-group>
+      }}</hc-checkbox-button>
+    </hc-checkbox-group>
   </div>
   <div class="demo-button-style">
-    <el-checkbox-group v-model="checkboxGroup3" size="small">
-      <el-checkbox-button
+    <hc-checkbox-group v-model="checkboxGroup3" size="small">
+      <hc-checkbox-button
         v-for="city in cities"
         :key="city"
         :label="city"
         :disabled="city === 'Beijing'"
-        >{{ city }}</el-checkbox-button
+        >{{ city }}</hc-checkbox-button
       >
-    </el-checkbox-group>
+    </hc-checkbox-group>
   </div>
   <div class="demo-button-style">
-    <el-checkbox-group v-model="checkboxGroup4" size="small" disabled>
-      <el-checkbox-button v-for="city in cities" :key="city" :label="city">{{
+    <hc-checkbox-group v-model="checkboxGroup4" size="small" disabled>
+      <hc-checkbox-button v-for="city in cities" :key="city" :label="city">{{
         city
-      }}</el-checkbox-button>
-    </el-checkbox-group>
+      }}</hc-checkbox-button>
+    </hc-checkbox-group>
   </div>
 </template>
 

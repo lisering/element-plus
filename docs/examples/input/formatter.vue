@@ -1,5 +1,5 @@
 <template>
-  <el-input
+  <hc-input
     v-model="input"
     placeholder="Please input"
     :formatter="(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"

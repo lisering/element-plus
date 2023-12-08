@@ -10,7 +10,7 @@ describe('Result.vue', () => {
   test('render test', () => {
     const wrapper = mount(() => <Result />)
     expect(wrapper.find('.hc-result__icon').exists()).toBe(true)
-    expect(wrapper.classes()).toContain('el-result')
+    expect(wrapper.classes()).toContain('hc-result')
   })
 
   test('should render title props', () => {

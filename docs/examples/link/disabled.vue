@@ -1,18 +1,19 @@
 <template>
   <div>
-    <el-link disabled>default</el-link>
-    <el-link type="primary" disabled>primary</el-link>
-    <el-link type="success" disabled>success</el-link>
-    <el-link type="warning" disabled>warning</el-link>
-    <el-link type="danger" disabled>danger</el-link>
-    <el-link type="info" disabled>info</el-link>
+    <hc-link disabled>default</hc-link>
+    <hc-link type="primary" disabled>primary</hc-link>
+    <hc-link type="success" disabled>success</hc-link>
+    <hc-link type="warning" disabled>warning</hc-link>
+    <hc-link type="danger" disabled>danger</hc-link>
+    <hc-link type="info" disabled>info</hc-link>
   </div>
 </template>
 <style scoped>
-.el-link {
+.hc-link {
   margin-right: 8px;
 }
-.el-link .el-icon--right.el-icon {
+
+.hc-link .hc-icon--right.hc-icon {
   vertical-align: text-bottom;
 }
 </style>

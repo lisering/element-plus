@@ -28,7 +28,7 @@ form/basic-form
 [W3C](https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2) 标准定义：
 
 > <i>当一个表单中只有一个单行文本输入字段时， 浏览器应当将在此字段中按下 <kbd>Enter</kbd> （回车键）的行为视为提交表单的请求。</i>
-如果希望阻止这一默认行为，可以在 `<el-form>` 标签上添加 `@submit.prevent`。
+如果希望阻止这一默认行为，可以在 `<hc-form>` 标签上添加 `@submit.prevent`。
 
 :::
 
@@ -96,7 +96,7 @@ form/number-validate
 
 :::tip
 
-当一个 `el-form-item` 嵌套在另一个 `el-form-item`时，其标签宽度将是 `0`。 如果需要可以为 `el-form-item` 单独设置 `label-width` 属性。
+当一个 `hc-form-item` 嵌套在另一个 `hc-form-item`时，其标签宽度将是 `0`。 如果需要可以为 `hc-form-item` 单独设置 `label-width` 属性。
 
 :::
 
@@ -112,7 +112,7 @@ form/size-control
 
 ## 无障碍
 
-当在 `el-form-item` 内只有一个输入框（或相关的控制部件，如选择或复选框），表单项的标签将自动附加在那个输入框上。 然而，如果同时有多个输入框在 `el-form-item`内， 表单项将被分配为 [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) [组](https://www.w3.org/TR/wai-aria/#group) 的角色。 在这种情况下，需要手动给每个 input 指定访问标签。
+当在 `hc-form-item` 内只有一个输入框（或相关的控制部件，如选择或复选框），表单项的标签将自动附加在那个输入框上。 然而，如果同时有多个输入框在 `hc-form-item`内， 表单项将被分配为 [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) [组](https://www.w3.org/TR/wai-aria/#group) 的角色。 在这种情况下，需要手动给每个 input 指定访问标签。
 
 :::demo
 
@@ -191,7 +191,7 @@ form/accessibility
 
 :::tip
 
-如果您不想根据输入事件触发验证器， 在相应的输入类型组件上设置 `validate-event` 属性为 `false` (`<el-input>`, `<el-radio>`, `<el-select>`, . ……).
+如果您不想根据输入事件触发验证器， 在相应的输入类型组件上设置 `validate-event` 属性为 `false` (`<hc-input>`, `<hc-radio>`, `<hc-select>`, . ……).
 
 :::
 

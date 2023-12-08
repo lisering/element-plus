@@ -1,5 +1,5 @@
 - scope: 'component'
-  name: 'el-input-number'
+  name: 'hc-input-number'
   type: 'props'
   version: '2.2.1'
   commit_hash: '2577b06'

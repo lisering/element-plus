@@ -16,9 +16,9 @@ defineProps<{
     rel="noreferrer noopener"
     class="social-link"
   >
-    <ElIcon v-if="icon" :size="24">
+    <HcIcon v-if="icon" :size="24">
       <component :is="icon" />
-    </ElIcon>
+    </HcIcon>
   </a>
 </template>
 

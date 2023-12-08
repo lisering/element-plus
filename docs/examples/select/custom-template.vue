@@ -1,6 +1,6 @@
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <hc-select v-model="value" placeholder="Select">
+    <hc-option
       v-for="item in cities"
       :key="item.value"
       :label="item.label"
@@ -10,13 +10,13 @@
       <span
         style="
           float: right;
-          color: var(--el-text-color-secondary);
+          color: var(--hc-text-color-secondary);
           font-size: 13px;
         "
         >{{ item.value }}</span
       >
-    </el-option>
-  </el-select>
+    </hc-option>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

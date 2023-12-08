@@ -253,7 +253,7 @@ const handleFocus = (evt: FocusEvent) => {
 
 const handleBlur = (evt: FocusEvent) => {
   setTimeout(() => {
-    // validate current focus event is inside el-tooltip-content
+    // validate current focus event is inside hc-tooltip-content
     // if so, ignore the blur event and the next focus event
     if (popperRef.value?.isFocusInsideContent()) {
       ignoreFocusEvent = true
@@ -371,9 +371,9 @@ defineExpose({
   activated,
   /** @description remote search loading status */
   loading,
-  /** @description el-input component instance */
+  /** @description hc-input component instance */
   inputRef,
-  /** @description el-tooltip component instance */
+  /** @description hc-tooltip component instance */
   popperRef,
   /** @description fetch suggestions result */
   suggestions,

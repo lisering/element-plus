@@ -27,10 +27,10 @@ describe('Switch.vue', () => {
     }
     const wrapper = mount(() => <Switch {...props} />)
     const vm = wrapper.vm
-    expect(vm.$el.style.getPropertyValue('--el-switch-on-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-on-color')).toEqual(
       '#0f0'
     )
-    expect(vm.$el.style.getPropertyValue('--el-switch-off-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-off-color')).toEqual(
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).false
@@ -61,10 +61,10 @@ describe('Switch.vue', () => {
     }
     const wrapper = mount(() => <Switch {...props} />)
     const vm = wrapper.vm
-    expect(vm.$el.style.getPropertyValue('--el-switch-on-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-on-color')).toEqual(
       '#0f0'
     )
-    expect(vm.$el.style.getPropertyValue('--el-switch-off-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-off-color')).toEqual(
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).false
@@ -91,10 +91,10 @@ describe('Switch.vue', () => {
       <Switch v-model={value.value} activeColor="#0f0" inactiveColor="#f00" />
     ))
     const vm = wrapper.vm
-    expect(vm.$el.style.getPropertyValue('--el-switch-on-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-on-color')).toEqual(
       '#0f0'
     )
-    expect(vm.$el.style.getPropertyValue('--el-switch-off-color')).toEqual(
+    expect(vm.$el.style.getPropertyValue('--hc-switch-off-color')).toEqual(
       '#f00'
     )
     expect(vm.$el.classList.contains('is-checked')).true

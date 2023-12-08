@@ -1,22 +1,22 @@
 <template>
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     check-strictly
     :render-after-expand="false"
   />
-  <el-divider />
+  <hc-divider />
   show checkbox(only click checkbox to select):
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     check-strictly
     :render-after-expand="false"
     show-checkbox
   />
-  <el-divider />
+  <hc-divider />
   show checkbox with `check-on-click-node`:
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     check-strictly

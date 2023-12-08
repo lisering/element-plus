@@ -35,7 +35,7 @@ menu/left-and-right
 
 垂直菜单，可内嵌子菜单。
 
-:::demo 通过 el-menu-item-group 组件可以实现菜单进行分组，分组名可以通过 title 属性直接设定，也可以通过具名 slot 来设定。
+:::demo 通过 hc-menu-item-group 组件可以实现菜单进行分组，分组名可以通过 title 属性直接设定，也可以通过具名 slot 来设定。
 
 menu/vertical
 
@@ -126,7 +126,7 @@ menu/collapse
 
 | 事件名   | 说明         | 回调参数            |
 | ----- | ---------- | --------------- |
-| click | 菜单点击时的回调函数 | el-menu-item 实例 |
+| click | 菜单点击时的回调函数 | hc-menu-item 实例 |
 
 ## Menu-Item Slots
 

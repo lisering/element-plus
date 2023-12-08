@@ -1,7 +1,7 @@
 <template>
   <div class="block">
     <span class="demonstration">Start and end date time 12:00:00</span>
-    <el-date-picker
+    <hc-date-picker
       v-model="value1"
       type="datetimerange"
       start-placeholder="Start Date"
@@ -13,7 +13,7 @@
     <span class="demonstration"
       >Start date time 12:00:00, end date time 08:00:00</span
     >
-    <el-date-picker
+    <hc-date-picker
       v-model="value2"
       type="datetimerange"
       start-placeholder="Start Date"
@@ -39,15 +39,17 @@ const defaultTime2: [Date, Date] = [
 .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .block:last-child {
   border-right: none;
 }
+
 .block .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

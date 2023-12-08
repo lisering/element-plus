@@ -27,15 +27,18 @@
 .demo-border .text {
   width: 15%;
 }
+
 .demo-border .line {
   width: 70%;
 }
+
 .demo-border .line div {
   width: 100%;
   height: 0;
-  border-top: 1px solid var(--el-border-color);
+  border-top: 1px solid var(--hc-border-color);
 }
+
 .demo-border .line .dashed {
-  border-top: 2px dashed var(--el-border-color);
+  border-top: 2px dashed var(--hc-border-color);
 }
 </style>

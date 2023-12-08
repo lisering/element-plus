@@ -1,7 +1,7 @@
 <template>
-  <el-input v-model="filterText" placeholder="Filter keyword" />
+  <hc-input v-model="filterText" placeholder="Filter keyword" />
 
-  <el-tree
+  <hc-tree
     ref="treeRef"
     class="filter-tree"
     :data="data"
@@ -13,14 +13,14 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { ElTree } from 'hicor-ui'
+import { HcTree } from 'hicor-ui'
 
 interface Tree {
   [key: string]: any
 }
 
 const filterText = ref('')
-const treeRef = ref<InstanceType<typeof ElTree>>()
+const treeRef = ref<InstanceType<typeof HcTree>>()
 
 const defaultProps = {
   children: 'children',

@@ -1,13 +1,13 @@
 <template>
-  <el-table
+  <hc-table
     :data="tableData"
     :default-sort="{ prop: 'date', order: 'descending' }"
     style="width: 100%"
   >
-    <el-table-column prop="date" label="Date" sortable width="180" />
-    <el-table-column prop="name" label="Name" width="180" />
-    <el-table-column prop="address" label="Address" :formatter="formatter" />
-  </el-table>
+    <hc-table-column prop="date" label="Date" sortable width="180" />
+    <hc-table-column prop="name" label="Name" width="180" />
+    <hc-table-column prop="address" label="Address" :formatter="formatter" />
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

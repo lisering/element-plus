@@ -1,13 +1,13 @@
 <template>
-  <el-radio-group v-model="size" label="size control" size="small">
-    <el-radio-button label="large">large</el-radio-button>
-    <el-radio-button label="default">default</el-radio-button>
-    <el-radio-button label="small">small</el-radio-button>
-  </el-radio-group>
+  <hc-radio-group v-model="size" label="size control" size="small">
+    <hc-radio-button label="large">large</hc-radio-button>
+    <hc-radio-button label="default">default</hc-radio-button>
+    <hc-radio-button label="small">small</hc-radio-button>
+  </hc-radio-group>
   <div class="demo-date-picker">
     <div class="block">
       <span class="demonstration">Default</span>
-      <el-date-picker
+      <hc-date-picker
         v-model="value1"
         type="daterange"
         range-separator="To"
@@ -18,7 +18,7 @@
     </div>
     <div class="block">
       <span class="demonstration">With quick options</span>
-      <el-date-picker
+      <hc-date-picker
         v-model="value2"
         type="daterange"
         unlink-panels
@@ -82,7 +82,7 @@ const shortcuts = [
 .demo-date-picker .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
 
@@ -92,7 +92,7 @@ const shortcuts = [
 
 .demo-date-picker .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

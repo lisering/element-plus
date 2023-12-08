@@ -2,7 +2,7 @@
   <div class="demo-date-picker">
     <div class="block">
       <span class="demonstration">date</span>
-      <el-date-picker
+      <hc-date-picker
         v-model="value1"
         type="date"
         placeholder="Pick a date"
@@ -11,7 +11,7 @@
     </div>
     <div class="block">
       <span class="demonstration">daterange</span>
-      <el-date-picker
+      <hc-date-picker
         v-model="value2"
         type="daterange"
         start-placeholder="Start Date"
@@ -35,18 +35,21 @@ const value2 = ref('')
   padding: 0;
   flex-wrap: wrap;
 }
+
 .demo-date-picker .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .demo-date-picker .block:last-child {
   border-right: none;
 }
+
 .demo-date-picker .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

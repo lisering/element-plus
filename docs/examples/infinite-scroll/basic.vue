@@ -19,15 +19,17 @@ const load = () => {
   margin: 0;
   list-style: none;
 }
+
 .infinite-list .infinite-list-item {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
-  background: var(--el-color-primary-light-9);
+  background: var(--hc-color-primary-light-9);
   margin: 10px;
-  color: var(--el-color-primary);
+  color: var(--hc-color-primary);
 }
+
 .infinite-list .infinite-list-item + .list-item {
   margin-top: 10px;
 }

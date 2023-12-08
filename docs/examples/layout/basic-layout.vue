@@ -1,40 +1,74 @@
 <template>
-  <el-row>
-    <el-col :span="24"><div class="grid-content ep-bg-purple-dark" /></el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="12"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="12"><div class="grid-content ep-bg-purple-light" /></el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="8"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="8"><div class="grid-content ep-bg-purple-light" /></el-col>
-    <el-col :span="8"><div class="grid-content ep-bg-purple" /></el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="6"><div class="grid-content ep-bg-purple-light" /></el-col>
-    <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="6"><div class="grid-content ep-bg-purple-light" /></el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="4"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="4"><div class="grid-content ep-bg-purple-light" /></el-col>
-    <el-col :span="4"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="4"><div class="grid-content ep-bg-purple-light" /></el-col>
-    <el-col :span="4"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="4"><div class="grid-content ep-bg-purple-light" /></el-col>
-  </el-row>
+  <hc-row>
+    <hc-col :span="24">
+      <div class="grid-content ep-bg-purple-dark" />
+    </hc-col>
+  </hc-row>
+  <hc-row>
+    <hc-col :span="12">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="12">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+  </hc-row>
+  <hc-row>
+    <hc-col :span="8">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="8">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+    <hc-col :span="8">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+  </hc-row>
+  <hc-row>
+    <hc-col :span="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="6">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+    <hc-col :span="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="6">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+  </hc-row>
+  <hc-row>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="4">
+      <div class="grid-content ep-bg-purple-light" />
+    </hc-col>
+  </hc-row>
 </template>
 
 <style lang="scss">
-.el-row {
+.hc-row {
   margin-bottom: 20px;
 }
-.el-row:last-child {
+
+.hc-row:last-child {
   margin-bottom: 0;
 }
-.el-col {
+
+.hc-col {
   border-radius: 4px;
 }
 

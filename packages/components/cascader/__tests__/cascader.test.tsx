@@ -249,7 +249,7 @@ describe('Cascader.vue', () => {
 
     await nextTick()
     const tooltipTags = document.querySelectorAll(
-      `.el-cascader__collapse-tags ${TAG}`
+      `.hc-cascader__collapse-tags ${TAG}`
     )
     expect(tooltipTags.length).toBe(2)
     expect(tooltipTags[0].textContent).toBe('Zhejiang / Ningbo')
@@ -281,7 +281,7 @@ describe('Cascader.vue', () => {
     expect(secondTag.text()).toBe('Zhejiang / Ningbo')
     expect(thirdTag.text()).toBe('+ 1')
     const tooltipTags = document.querySelectorAll(
-      `.el-cascader__collapse-tags ${TAG}`
+      `.hc-cascader__collapse-tags ${TAG}`
     )
     expect(tooltipTags.length).toBe(1)
   })
@@ -298,7 +298,7 @@ describe('Cascader.vue', () => {
     ))
 
     await nextTick()
-    expect(wrapper.find('.hc-tag').classes()).toContain('el-tag--success')
+    expect(wrapper.find('.hc-tag').classes()).toContain('hc-tag--success')
   })
 
   test('filterable', async () => {
@@ -494,7 +494,7 @@ describe('Cascader.vue', () => {
 
     for (const size in sizeMap) {
       cascaderSize.value = size as 'small' | 'default' | 'large'
-      inputEl.style.setProperty('--el-input-height', `${sizeMap[size]}px`)
+      inputEl.style.setProperty('--hc-input-height', `${sizeMap[size]}px`)
       // first is wait for the watch callback function of realSize which is to be called after nextTick
       await nextTick()
       // second is wait for input to set the height attribute

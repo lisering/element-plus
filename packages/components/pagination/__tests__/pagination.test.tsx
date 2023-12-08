@@ -22,7 +22,7 @@ const assertCurrent = (wrapper: VueWrapper<any>, page: number) => {
   )
 }
 const assertPages = (wrapper: VueWrapper<any>, total: number) => {
-  expect(wrapper.find('.hc-pagination .el-pager li:last-child').text()).toBe(
+  expect(wrapper.find('.hc-pagination .hc-pager li:last-child').text()).toBe(
     String(total)
   )
 }
@@ -88,7 +88,7 @@ describe('Pagination', () => {
     const layoutSelectorPairs = [
       ['sizes', '.hc-pagination__sizes'],
       ['prev', 'button.btn-prev'],
-      ['pager', 'ul.el-pager'],
+      ['pager', 'ul.hc-pager'],
       ['next', 'button.btn-next'],
       ['jumper', '.hc-pagination__jump'],
       ['total', '.hc-pagination__total'],
@@ -121,7 +121,7 @@ describe('Pagination', () => {
         [
           '.hc-pagination__rightwrapper',
           'button.btn-prev',
-          'ul.el-pager',
+          'ul.hc-pager',
           'button.btn-next',
           '.hc-pagination__jump',
         ],
@@ -144,7 +144,7 @@ describe('Pagination', () => {
         <Pagination total={100} small={true}></Pagination>
       ))
 
-      expect(wrapper.vm.$el.classList.contains('el-pagination--small')).toBe(
+      expect(wrapper.vm.$el.classList.contains('hc-pagination--small')).toBe(
         true
       )
     })
@@ -289,7 +289,7 @@ describe('Pagination', () => {
       const wrapper = mount(() => <Pagination total={100} />)
       const prev = wrapper.find('.hc-pagination .btn-prev')
       const next = wrapper.find('.hc-pagination .btn-next')
-      const pagers = wrapper.findAll('.hc-pagination .el-pager .number')
+      const pagers = wrapper.findAll('.hc-pagination .hc-pager .number')
       const first = pagers[0]
       const last = pagers[pagers.length - 1]
 

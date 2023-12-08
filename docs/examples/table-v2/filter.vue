@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     fixed
     :columns="fixedColumns"
     :data="data"
@@ -10,10 +10,10 @@
 <script lang="tsx" setup>
 import { ref } from 'vue'
 import {
-  ElButton,
-  ElCheckbox,
-  ElIcon,
-  ElPopover,
+  HcButton,
+  HcCheckbox,
+  HcIcon,
+  HcPopover,
   TableV2FixedDir,
 } from 'hicor-ui'
 import { Filter } from '@element-plus/icons-vue'
@@ -70,32 +70,32 @@ columns[0].headerCellRenderer = (props: HeaderCellSlotProps) => {
   return (
     <div class="flex items-center justify-center">
       <span class="mr-2 text-xs">{props.column.title}</span>
-      <ElPopover ref={popoverRef} trigger="click" {...{ width: 200 }}>
+      <HcPopover ref={popoverRef} trigger="click" {...{ width: 200 }}>
         {{
           default: () => (
             <div class="filter-wrapper">
               <div class="filter-group">
-                <ElCheckbox v-model={shouldFilter.value}>
+                <HcCheckbox v-model={shouldFilter.value}>
                   Filter Text
-                </ElCheckbox>
+                </HcCheckbox>
               </div>
-              <div class="el-table-v2__demo-filter">
-                <ElButton text onClick={onFilter}>
+              <div class="hc-table-v2__demo-filter">
+                <HcButton text onClick={onFilter}>
                   Confirm
-                </ElButton>
-                <ElButton text onClick={onReset}>
+                </HcButton>
+                <HcButton text onClick={onReset}>
                   Reset
-                </ElButton>
+                </HcButton>
               </div>
             </div>
           ),
           reference: () => (
-            <ElIcon class="cursor-pointer">
+            <HcIcon class="cursor-pointer">
               <Filter />
-            </ElIcon>
+            </HcIcon>
           ),
         }}
-      </ElPopover>
+      </HcPopover>
     </div>
   )
 }
@@ -109,8 +109,8 @@ const fixedColumns = columns.map((column, columnIndex) => {
 </script>
 
 <style>
-.el-table-v2__demo-filter {
-  border-top: var(--el-border);
+.hc-table-v2__demo-filter {
+  border-top: var(--hc-border);
   margin: 12px -12px -12px;
   padding: 0 12px;
   display: flex;

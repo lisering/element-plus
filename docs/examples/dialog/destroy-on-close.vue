@@ -1,9 +1,9 @@
 <template>
-  <el-button text @click="centerDialogVisible = true">
+  <hc-button text @click="centerDialogVisible = true">
     Click to open Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog
+  <hc-dialog
     v-model="centerDialogVisible"
     title="Notice"
     width="30%"
@@ -19,13 +19,13 @@
     </div>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="centerDialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="centerDialogVisible = false">
+        <hc-button @click="centerDialogVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="centerDialogVisible = false">
           Confirm
-        </el-button>
+        </hc-button>
       </span>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>

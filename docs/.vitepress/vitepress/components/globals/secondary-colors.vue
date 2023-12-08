@@ -10,8 +10,8 @@ const { copyColor } = useCopyColor()
 </script>
 
 <template>
-  <el-row :gutter="12">
-    <el-col
+  <hc-row :gutter="12">
+    <hc-col
       v-for="(type, i) in colorsType"
       :key="i"
       :span="6"
@@ -29,12 +29,12 @@ const { copyColor } = useCopyColor()
             class="bg-secondary-sub-item transition cursor-pointer hover:shadow"
             :style="{
               width: `${100 / 6}%`,
-              background: `var(--el-color-${type}-` + level + ')',
+              background: `var(--hc-color-${type}-` + level + ')',
             }"
             @click="copyColor(type + '-' + level)"
           />
         </div>
       </div>
-    </el-col>
-  </el-row>
+    </hc-col>
+  </hc-row>
 </template>

@@ -1,10 +1,10 @@
 <template>
-  <el-tree-v2 :data="data" :props="props" :height="208">
+  <hc-tree-v2 :data="data" :props="props" :height="208">
     <template #default="{ node }">
       <span class="prefix" :class="{ 'is-leaf': node.isLeaf }">[HicorUi]</span>
       <span>{{ node.label }}</span>
     </template>
-  </el-tree-v2>
+  </hc-tree-v2>
 </template>
 <script lang="ts" setup>
 interface Tree {
@@ -51,11 +51,11 @@ const data = createData(4, 30, 40)
 
 <style scoped>
 .prefix {
-  color: var(--el-color-primary);
+  color: var(--hc-color-primary);
   margin-right: 10px;
 }
 
 .prefix.is-leaf {
-  color: var(--el-color-success);
+  color: var(--hc-color-success);
 }
 </style>

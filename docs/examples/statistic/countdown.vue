@@ -1,32 +1,32 @@
 <template>
-  <el-row>
-    <el-col :span="8">
-      <el-countdown title="Start to grab" :value="value" />
-    </el-col>
-    <el-col :span="8">
-      <el-countdown
+  <hc-row>
+    <hc-col :span="8">
+      <hc-countdown title="Start to grab" :value="value" />
+    </hc-col>
+    <hc-col :span="8">
+      <hc-countdown
         title="Remaining VIP time"
         format="HH:mm:ss"
         :value="value1"
       />
-      <el-button class="countdown-footer" type="primary" @click="reset"
+      <hc-button class="countdown-footer" type="primary" @click="reset"
         >Reset
-      </el-button>
-    </el-col>
-    <el-col :span="8">
-      <el-countdown format="DD [days] HH:mm:ss" :value="value2">
+      </hc-button>
+    </hc-col>
+    <hc-col :span="8">
+      <hc-countdown format="DD [days] HH:mm:ss" :value="value2">
         <template #title>
           <div style="display: inline-flex; align-items: center">
-            <el-icon style="margin-right: 4px" :size="12">
+            <hc-icon style="margin-right: 4px" :size="12">
               <Calendar />
-            </el-icon>
+            </hc-icon>
             Still to go until next month
           </div>
         </template>
-      </el-countdown>
+      </hc-countdown>
       <div class="countdown-footer">{{ value2.format('YYYY-MM-DD') }}</div>
-    </el-col>
-  </el-row>
+    </hc-col>
+  </hc-row>
 </template>
 
 <script lang="ts" setup>
@@ -44,7 +44,7 @@ function reset() {
 </script>
 
 <style scoped>
-.el-col {
+.hc-col {
   text-align: center;
 }
 

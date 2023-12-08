@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="data"
     :estimated-row-height="50"
@@ -10,7 +10,7 @@
     <template #row="props">
       <Row v-bind="props" />
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 
 <script lang="tsx" setup>
@@ -74,11 +74,11 @@ Row.inheritAttrs = false
 </script>
 
 <style>
-.el-table-v2__row-depth-0 {
+.hc-table-v2__row-depth-0 {
   height: 50px;
 }
 
-.el-table-v2__cell-text {
+.hc-table-v2__cell-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -31,7 +31,7 @@ card/simple
 
 可配置定义更丰富的内容展示。
 
-:::demo 配置 `body-style` 属性来自定义 `body` 部分的样式。 在这个例子中我们还使用了 `el-col` 组件来布局。
+:::demo 配置 `body-style` 属性来自定义 `body` 部分的样式。 在这个例子中我们还使用了 `hc-col` 组件来布局。
 
 card/with-images
 

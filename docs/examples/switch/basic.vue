@@ -1,9 +1,9 @@
 <template>
-  <el-switch v-model="value1" />
-  <el-switch
+  <hc-switch v-model="value1" />
+  <hc-switch
     v-model="value2"
     class="ml-2"
-    style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+    style="--hc-switch-on-color: #13ce66; --hc-switch-off-color: #ff4949"
   />
 </template>
 

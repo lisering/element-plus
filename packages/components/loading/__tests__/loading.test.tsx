@@ -101,7 +101,7 @@ describe('Loading', () => {
 
     await nextTick()
     expect(
-      document.body.classList.contains('el-loading-parent--hidden')
+      document.body.classList.contains('hc-loading-parent--hidden')
     ).toBeTruthy()
     loading.value = false
     document.body.removeChild(document.querySelector('.hc-loading-mask')!)
@@ -163,7 +163,7 @@ describe('Loading', () => {
     expect(mask.parentNode).toEqual(container)
 
     expect(
-      container.classList.contains('el-loading-parent--relative')
+      container.classList.contains('hc-loading-parent--relative')
     ).toBeTruthy()
 
     vi.useFakeTimers()
@@ -173,7 +173,7 @@ describe('Loading', () => {
     await nextTick()
 
     expect(
-      container.classList.contains('el-loading-parent--relative')
+      container.classList.contains('hc-loading-parent--relative')
     ).toBeFalsy()
   })
 
@@ -220,7 +220,7 @@ describe('Loading', () => {
   test('lock service', async () => {
     loadingInstance = Loading({ lock: true })
     expect(
-      document.body.classList.contains('el-loading-parent--hidden')
+      document.body.classList.contains('hc-loading-parent--hidden')
     ).toBeTruthy()
   })
 
@@ -232,7 +232,7 @@ describe('Loading', () => {
   })
 
   test('customClass service', async () => {
-    loadingInstance = Loading({ customClass: 'el-loading-custom-class' })
+    loadingInstance = Loading({ customClass: 'hc-loading-custom-class' })
     const customClass = document.querySelector('.hc-loading-custom-class')
     expect(customClass).toBeTruthy()
   })

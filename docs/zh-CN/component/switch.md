@@ -9,7 +9,7 @@ lang: zh-CN
 
 ## 基础用法
 
-:::demo 绑定 `v-model` 到一个 `Boolean` 类型的变量。 可以使用 `--el-switch-on-color` 属性与 `--el-switch-off-color` 属性来设置开关的背景色。
+:::demo 绑定 `v-model` 到一个 `Boolean` 类型的变量。 可以使用 `--hc-switch-on-color` 属性与 `--hc-switch-off-color` 属性来设置开关的背景色。
 
 switch/basic
 
@@ -107,9 +107,9 @@ switch/custom-action-icon
 | inactive-text                 | switch 的状态为 `off` 时的文字描述                                    | ^[string]                                                 | ''      |
 | active-value                  | switch 状态为 `on` 时的值                                         | ^[boolean] / ^[string] / ^[number]                        | true    |
 | inactive-value                | switch的状态为 `off` 时的值                                        | ^[boolean] / ^[string] / ^[number]                        | false   |
-| active-color ^(deprecated)    | 当在 `on` 状态时的背景颜色(已废弃，请使用 CSS var `--el-switch-on-color` )   | ^[string]                                                 | ''      |
-| inactive-color ^(deprecated)  | `off` 状态时的背景颜色(已废弃，使用 CSS var `--el-switch-off-color` )     | ^[string]                                                 | ''      |
-| border-color ^(deprecated)    | 开关的边框颜色 ( 已废弃，使用 CSS var `--el-switch-border-color` )       | ^[string]                                                 | ''      |
+| active-color ^(deprecated)    | 当在 `on` 状态时的背景颜色(已废弃，请使用 CSS var `--hc-switch-on-color` )   | ^[string]                                                 | ''      |
+| inactive-color ^(deprecated)  | `off` 状态时的背景颜色(已废弃，使用 CSS var `--hc-switch-off-color` )     | ^[string]                                                 | ''      |
+| border-color ^(deprecated)    | 开关的边框颜色 ( 已废弃，使用 CSS var `--hc-switch-border-color` )       | ^[string]                                                 | ''      |
 | name                          | switch 对应的 name 属性                                          | ^[string]                                                 | ''      |
 | validate-event                | 是否触发表单验证                                                    | ^[boolean]                                                | true    |
 | before-change                 | switch 状态改变前的钩子， 返回 `false` 或者返回 `Promise` 且被 reject 则停止切换  | ^[boolean] / ^[Function]`() => Promise<boolean>` | —       |

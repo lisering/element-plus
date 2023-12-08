@@ -1,3 +1,3 @@
 <template>
-  <el-page-header content="detail" />
+  <hc-page-header content="detail" />
 </template>

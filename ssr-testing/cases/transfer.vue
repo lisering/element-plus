@@ -3,58 +3,39 @@
     Customize data items using render-content
   </p>
   <div style="text-align: center">
-    <el-transfer
-      v-model="leftValue"
-      style="text-align: left; display: inline-block"
-      filterable
-      :left-default-checked="[2, 3]"
-      :right-default-checked="[1]"
-      :render-content="renderFunc"
-      :titles="['Source', 'Target']"
-      :button-texts="['To left', 'To right']"
-      :format="{
+    <hc-transfer v-model="leftValue" style="text-align: left; display: inline-block" filterable
+      :left-default-checked="[2, 3]" :right-default-checked="[1]" :render-content="renderFunc"
+      :titles="['Source', 'Target']" :button-texts="['To left', 'To right']" :format="{
         noChecked: '${total}',
         hasChecked: '${checked}/${total}',
-      }"
-      :data="data"
-      @change="handleChange"
-    >
+      }" :data="data" @change="handleChange">
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <hc-button class="transfer-footer" size="small">Operation</hc-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <hc-button class="transfer-footer" size="small">Operation</hc-button>
       </template>
-    </el-transfer>
+    </hc-transfer>
     <p style="text-align: center; margin: 50px 0 20px">
       Customize data items using scoped slot
     </p>
     <div style="text-align: center">
-      <el-transfer
-        v-model="rightValue"
-        style="text-align: left; display: inline-block"
-        filterable
-        :left-default-checked="[2, 3]"
-        :right-default-checked="[1]"
-        :titles="['Source', 'Target']"
-        :button-texts="['To left', 'To right']"
-        :format="{
+      <hc-transfer v-model="rightValue" style="text-align: left; display: inline-block" filterable
+        :left-default-checked="[2, 3]" :right-default-checked="[1]" :titles="['Source', 'Target']"
+        :button-texts="['To left', 'To right']" :format="{
           noChecked: '${total}',
           hasChecked: '${checked}/${total}',
-        }"
-        :data="data"
-        @change="handleChange"
-      >
+        }" :data="data" @change="handleChange">
         <template #default="{ option }">
           <span>{{ option.key }} - {{ option.label }}</span>
         </template>
         <template #left-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <hc-button class="transfer-footer" size="small">Operation</hc-button>
         </template>
         <template #right-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <hc-button class="transfer-footer" size="small">Operation</hc-button>
         </template>
-      </el-transfer>
+      </hc-transfer>
     </div>
   </div>
 </template>

@@ -186,12 +186,12 @@ input/length-limiting
 
 ## 常见问题
 
-#### ElInput 组件的宽度为什么在设置了 `clearable` 时会发生变化
+#### HcInput 组件的宽度为什么在设置了 `clearable` 时会发生变化
 
 典型问题： [#7287](https://github.com/hicor-ui/hicor-ui/issues/7287)
 
 PS: 由于ElInput 组件没有默认宽度，当显示 clearable 图标时, 组件的宽度将被撑开，可以通过设置固定宽度属性来解决。
 
 ```vue
-<el-input v-model="input" clearable style="width: 200px" />
+<hc-input v-model="input" clearable style="width: 200px" />
 ```

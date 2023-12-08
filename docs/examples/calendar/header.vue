@@ -1,25 +1,25 @@
 <template>
-  <el-calendar ref="calendar">
+  <hc-calendar ref="calendar">
     <template #header="{ date }">
       <span>Custom header content</span>
       <span>{{ date }}</span>
-      <el-button-group>
-        <el-button size="small" @click="selectDate('prev-year')">
+      <hc-button-group>
+        <hc-button size="small" @click="selectDate('prev-year')">
           Previous Year
-        </el-button>
-        <el-button size="small" @click="selectDate('prev-month')">
+        </hc-button>
+        <hc-button size="small" @click="selectDate('prev-month')">
           Previous Month
-        </el-button>
-        <el-button size="small" @click="selectDate('today')">Today</el-button>
-        <el-button size="small" @click="selectDate('next-month')">
+        </hc-button>
+        <hc-button size="small" @click="selectDate('today')">Today</hc-button>
+        <hc-button size="small" @click="selectDate('next-month')">
           Next Month
-        </el-button>
-        <el-button size="small" @click="selectDate('next-year')">
+        </hc-button>
+        <hc-button size="small" @click="selectDate('next-year')">
           Next Year
-        </el-button>
-      </el-button-group>
+        </hc-button>
+      </hc-button-group>
     </template>
-  </el-calendar>
+  </hc-calendar>
 </template>
 
 <script lang="ts" setup>

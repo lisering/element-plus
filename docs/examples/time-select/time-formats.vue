@@ -1,5 +1,5 @@
 <template>
-  <el-time-select
+  <hc-time-select
     v-model="value"
     start="00:00"
     step="00:30"

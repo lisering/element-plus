@@ -31,7 +31,7 @@ radio/disabled
 
 适用于在多个互斥的选项中选择的场景
 
-:::demo 结合`el-radio-group`元素和子元素`el-radio`可以实现单选组， 为 `el-radio-group` 绑定 `v-model`，再为 每一个 `el-radio` 设置好 `label` 属性即可， 另外，还可以通过 `change` 事件来响应变化，它会传入一个参数 `value` 来表示改变之后的值。
+:::demo 结合`hc-radio-group`元素和子元素`hc-radio`可以实现单选组， 为 `hc-radio-group` 绑定 `v-model`，再为 每一个 `hc-radio` 设置好 `label` 属性即可， 另外，还可以通过 `change` 事件来响应变化，它会传入一个参数 `value` 来表示改变之后的值。
 
 radio/radio-button-group
 
@@ -41,7 +41,7 @@ radio/radio-button-group
 
 你可以让单选框看起来像一个按钮一样。
 
-:::demo 只需要把 `el-radio` 元素换成 `el-radio-button` 元素即可， 此外，Hicor Ui 还提供了 `size` 属性用来控制单选框的大小。
+:::demo 只需要把 `hc-radio` 元素换成 `hc-radio-button` 元素即可， 此外，Hicor Ui 还提供了 `size` 属性用来控制单选框的大小。
 
 radio/button-style
 

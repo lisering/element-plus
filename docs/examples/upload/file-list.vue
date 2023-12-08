@@ -1,17 +1,17 @@
 <template>
-  <el-upload
+  <hc-upload
     v-model:file-list="fileList"
     class="upload-demo"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
     :on-change="handleChange"
   >
-    <el-button type="primary">Click to upload</el-button>
+    <hc-button type="primary">Click to upload</hc-button>
     <template #tip>
-      <div class="el-upload__tip">
+      <div class="hc-upload__tip">
         jpg/png files with a size less than 500kb
       </div>
     </template>
-  </el-upload>
+  </hc-upload>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

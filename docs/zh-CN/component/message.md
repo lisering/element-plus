@@ -80,12 +80,12 @@ Hicor Ui 为 `app.config.globalProperties` 添加了全局方法 `$message`。 �
 ## 单独引用
 
 ```ts
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 ```
 
-此时调用方法为 `ElMessage(options)`。 我们也为每个 type 定义了各自的方法，如 `ElMessage.success(options)`。 并且可以调用 `ElMessage.closeAll()` 手动关闭所有实例。
+此时调用方法为 `HcMessage(options)`。 我们也为每个 type 定义了各自的方法，如 `HcMessage.success(options)`。 并且可以调用 `HcMessage.closeAll()` 手动关闭所有实例。
 
-## 应用程序上下文继承 <el-tag> >= 2.0.3</el-tag>
+## 应用程序上下文继承 <hc-tag> >= 2.0.3</hc-tag>
 
 现在 Message 接受一条 `context` 作为消息构造器的第二个参数，允许你将当前应用的上下文注入到 Message 中，这将允许你继承应用程序的所有属性。
 
@@ -93,17 +93,17 @@ import { ElMessage } from 'hicor-ui'
 
 :::tip
 
-如果您全局注册了 ElMessage 组件，它将自动继承应用的上下文环境。
+如果您全局注册了 HcMessage 组件，它将自动继承应用的上下文环境。
 
 :::
 
 ```ts
 import { getCurrentInstance } from 'vue'
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 
 // 在你的 setup 方法中
 const { appContext } = getCurrentInstance()!
-ElMessage({}, appContext)
+HcMessage({}, appContext)
 ```
 
 ## API

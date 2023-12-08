@@ -1,17 +1,18 @@
 <template>
-  <el-scrollbar>
+  <hc-scrollbar>
     <div class="scrollbar-flex-content">
       <p v-for="item in 50" :key="item" class="scrollbar-demo-item">
         {{ item }}
       </p>
     </div>
-  </el-scrollbar>
+  </hc-scrollbar>
 </template>
 
 <style scoped>
 .scrollbar-flex-content {
   display: flex;
 }
+
 .scrollbar-demo-item {
   flex-shrink: 0;
   display: flex;
@@ -22,7 +23,7 @@
   margin: 10px;
   text-align: center;
   border-radius: 4px;
-  background: var(--el-color-danger-light-9);
-  color: var(--el-color-danger);
+  background: var(--hc-color-danger-light-9);
+  color: var(--hc-color-danger);
 }
 </style>

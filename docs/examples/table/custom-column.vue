@@ -1,42 +1,42 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column label="Date" width="180">
+  <hc-table :data="tableData" style="width: 100%">
+    <hc-table-column label="Date" width="180">
       <template #default="scope">
         <div style="display: flex; align-items: center">
-          <el-icon>
+          <hc-icon>
             <timer />
-          </el-icon>
+          </hc-icon>
           <span style="margin-left: 10px">{{ scope.row.date }}</span>
         </div>
       </template>
-    </el-table-column>
-    <el-table-column label="Name" width="180">
+    </hc-table-column>
+    <hc-table-column label="Name" width="180">
       <template #default="scope">
-        <el-popover effect="light" trigger="hover" placement="top" width="auto">
+        <hc-popover effect="light" trigger="hover" placement="top" width="auto">
           <template #default>
             <div>name: {{ scope.row.name }}</div>
             <div>address: {{ scope.row.address }}</div>
           </template>
           <template #reference>
-            <el-tag>{{ scope.row.name }}</el-tag>
+            <hc-tag>{{ scope.row.name }}</hc-tag>
           </template>
-        </el-popover>
+        </hc-popover>
       </template>
-    </el-table-column>
-    <el-table-column label="Operations">
+    </hc-table-column>
+    <hc-table-column label="Operations">
       <template #default="scope">
-        <el-button size="small" @click="handleEdit(scope.$index, scope.row)"
-          >Edit</el-button
+        <hc-button size="small" @click="handleEdit(scope.$index, scope.row)"
+          >Edit</hc-button
         >
-        <el-button
+        <hc-button
           size="small"
           type="danger"
           @click="handleDelete(scope.$index, scope.row)"
-          >Delete</el-button
+          >Delete</hc-button
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </hc-table-column>
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

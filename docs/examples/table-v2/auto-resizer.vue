@@ -1,8 +1,8 @@
 <template>
   <div style="height: 400px">
-    <el-auto-resizer>
+    <hc-auto-resizer>
       <template #default="{ height, width }">
-        <el-table-v2
+        <hc-table-v2
           :columns="columns"
           :data="data"
           :width="width"
@@ -10,7 +10,7 @@
           fixed
         />
       </template>
-    </el-auto-resizer>
+    </hc-auto-resizer>
   </div>
 </template>
 

@@ -1,14 +1,14 @@
 <template>
-  <el-button text @click="dialogVisible = true">
+  <hc-button text @click="dialogVisible = true">
     click to open the Dialog
-  </el-button>
+  </hc-button>
 
   <div>
     <p>Close dialog and the input will be focused</p>
-    <el-input ref="inputRef" placeholder="Please input" />
+    <hc-input ref="inputRef" placeholder="Please input" />
   </div>
 
-  <el-dialog
+  <hc-dialog
     v-model="dialogVisible"
     destroy-on-close
     title="Tips"
@@ -16,25 +16,25 @@
     @close-auto-focus="handleCloseAutoFocus"
   >
     <span>This is a message</span>
-    <el-divider />
-    <el-input placeholder="Initially focused" />
+    <hc-divider />
+    <hc-input placeholder="Initially focused" />
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false">
+        <hc-button @click="dialogVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="dialogVisible = false">
           Confirm
-        </el-button>
+        </hc-button>
       </span>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElInput } from 'hicor-ui'
+import { HcInput } from 'hicor-ui'
 
 const dialogVisible = ref(false)
-const inputRef = ref<InstanceType<typeof ElInput>>()
+const inputRef = ref<InstanceType<typeof HcInput>>()
 
 const handleCloseAutoFocus = () => {
   inputRef.value?.focus()

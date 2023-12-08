@@ -1,10 +1,10 @@
 <template>
   <div class="demo-progress">
-    <el-progress :percentage="50" />
-    <el-progress :percentage="100" :format="format" />
-    <el-progress :percentage="100" status="success" />
-    <el-progress :percentage="100" status="warning" />
-    <el-progress :percentage="50" status="exception" />
+    <hc-progress :percentage="50" />
+    <hc-progress :percentage="100" :format="format" />
+    <hc-progress :percentage="100" status="success" />
+    <hc-progress :percentage="100" status="warning" />
+    <hc-progress :percentage="50" status="exception" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`)
 </script>
 
 <style scoped>
-.demo-progress .el-progress--line {
+.demo-progress .hc-progress--line {
   margin-bottom: 15px;
   width: 350px;
 }

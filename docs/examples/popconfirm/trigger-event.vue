@@ -1,5 +1,5 @@
 <template>
-  <el-popconfirm
+  <hc-popconfirm
     confirm-button-text="Yes"
     cancel-button-text="No"
     :icon="InfoFilled"
@@ -9,9 +9,9 @@
     @cancel="cancelEvent"
   >
     <template #reference>
-      <el-button>Delete</el-button>
+      <hc-button>Delete</hc-button>
     </template>
-  </el-popconfirm>
+  </hc-popconfirm>
 </template>
 
 <script setup lang="ts">

@@ -1,11 +1,11 @@
 <template>
   <div class="common-layout">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-container>
+    <hc-container>
+      <hc-header>Header</hc-header>
+      <hc-container>
+        <hc-aside width="200px">Aside</hc-aside>
+        <hc-main>Main</hc-main>
+      </hc-container>
+    </hc-container>
   </div>
 </template>

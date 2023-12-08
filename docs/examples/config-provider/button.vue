@@ -1,14 +1,14 @@
 <template>
   <div>
     <div m="b-2">
-      <el-checkbox v-model="config.autoInsertSpace"
-        >autoInsertSpace</el-checkbox
+      <hc-checkbox v-model="config.autoInsertSpace"
+        >autoInsertSpace</hc-checkbox
       >
     </div>
 
-    <el-config-provider :button="config">
-      <el-button>中文</el-button>
-    </el-config-provider>
+    <hc-config-provider :button="config">
+      <hc-button>中文</hc-button>
+    </hc-config-provider>
   </div>
 </template>
 

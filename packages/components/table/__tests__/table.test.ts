@@ -108,11 +108,11 @@ describe('Table.vue', () => {
     const vm = wrapper.vm
     await doubleWait()
     const checkGroup = vm.$el.querySelectorAll(
-      '.hc-table__body-wrapper .el-checkbox-group'
+      '.hc-table__body-wrapper .hc-checkbox-group'
     )
     expect(checkGroup.length).toBe(3)
     const checkbox = vm.$el.querySelectorAll(
-      '.hc-table__body-wrapper .el-checkbox'
+      '.hc-table__body-wrapper .hc-checkbox'
     )
     expect(checkbox.length).toBe(6)
     const checkSelect = vm.$el.querySelectorAll(
@@ -179,21 +179,21 @@ describe('Table.vue', () => {
     it('stripe', async () => {
       const wrapper = createTable('stripe')
       await doubleWait()
-      expect(wrapper.classes()).toContain('el-table--striped')
+      expect(wrapper.classes()).toContain('hc-table--striped')
       wrapper.unmount()
     })
 
     it('border', async () => {
       const wrapper = createTable('border')
       await doubleWait()
-      expect(wrapper.classes()).toContain('el-table--border')
+      expect(wrapper.classes()).toContain('hc-table--border')
       wrapper.unmount()
     })
 
     it('fit', async () => {
       const wrapper = createTable(':fit="false"')
       await doubleWait()
-      expect(wrapper.classes()).not.toContain('el-table--fit')
+      expect(wrapper.classes()).not.toContain('hc-table--fit')
       wrapper.unmount()
     })
 
@@ -1279,7 +1279,7 @@ describe('Table.vue', () => {
       expandIcon.trigger('click')
 
       await doubleWait()
-      expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
+      expect(expandIcon.classes()).toContain('hc-table__expand-icon--expanded')
       expect(wrapper.findAll('.hc-table__row').length).toEqual(8)
     })
 
@@ -1344,7 +1344,7 @@ describe('Table.vue', () => {
       expandIcon.trigger('click')
       await doubleWait()
       expect(
-        expandIcon.classes().includes('el-table__expand-icon--expanded')
+        expandIcon.classes().includes('hc-table__expand-icon--expanded')
       ).toBeTruthy()
       expect(wrapper.findAll('.hc-table__row').length).toEqual(8)
       expect(spy.mock.calls[0][0]).toBeInstanceOf(Object)
@@ -1406,15 +1406,15 @@ describe('Table.vue', () => {
       const expandIcon = childRows[0].find('.hc-table__expand-icon')
       expandIcon.trigger('click')
       await doubleWait()
-      expect(expandIcon.classes()).toContain('el-table__expand-icon--expanded')
+      expect(expandIcon.classes()).toContain('hc-table__expand-icon--expanded')
       ;(wrapper.vm as any).closeExpandRow()
       await doubleWait()
       expect(expandIcon.classes()).not.toContain(
-        'el-table__expand-icon--expanded'
+        'hc-table__expand-icon--expanded'
       )
     })
 
-    it('v-if on el-table-column should patch correctly', async () => {
+    it('v-if on hc-table-column should patch correctly', async () => {
       wrapper = mount({
         components: {
           HcTable,

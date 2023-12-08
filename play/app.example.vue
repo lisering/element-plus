@@ -1,14 +1,14 @@
 <template>
   <div class="play-container">
-    <!-- <el-icon color="#409EFC">
-      <el-icon-check />
-    </el-icon>
-    <el-icon>
-      <el-icon-menu />
-    </el-icon>
-    <el-button>test</el-button>
+    <!-- <hc-icon color="#409EFC">
+      <hc-icon-check />
+    </hc-icon>
+    <hc-icon>
+      <hc-icon-menu />
+    </hc-icon>
+    <hc-button>test</hc-button>
     <div v-loading="true" /> -->
-    <el-top-menu></el-top-menu>
+    <hc-top-menu></hc-top-menu>
   </div>
 </template>
 

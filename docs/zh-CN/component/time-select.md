@@ -19,7 +19,7 @@ lang: zh-CN
 
 提供几个固定的时间点供用户选择
 
-:::demo 使用 `el-time-select` 标签，然后通过`start`、`end`和`step`指定起始时间，结束时间和步长。
+:::demo 使用 `hc-time-select` 标签，然后通过`start`、`end`和`step`指定起始时间，结束时间和步长。
 
 time-select/basic
 

@@ -1,24 +1,24 @@
 <template>
-  <el-space direction="vertical">
-    <el-text>
-      <el-icon>
+  <hc-space direction="vertical">
+    <hc-text>
+      <hc-icon>
         <HicorUi />
-      </el-icon>
+      </hc-icon>
       Element-Plus
-    </el-text>
-    <el-row>
-      <el-text>Rate</el-text>
-      <el-rate class="ml-1" />
-    </el-row>
-    <el-text>
+    </hc-text>
+    <hc-row>
+      <hc-text>Rate</hc-text>
+      <hc-rate class="ml-1" />
+    </hc-row>
+    <hc-text>
       This is text mixed icon
-      <el-icon>
+      <hc-icon>
         <Bell />
-      </el-icon>
+      </hc-icon>
       and component
-      <el-button>Button</el-button>
-    </el-text>
-  </el-space>
+      <hc-button>Button</hc-button>
+    </hc-text>
+  </hc-space>
 </template>
 
 <script lang="ts" setup>

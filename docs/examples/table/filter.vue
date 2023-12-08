@@ -1,8 +1,8 @@
 <template>
-  <el-button @click="resetDateFilter">reset date filter</el-button>
-  <el-button @click="clearFilter">reset all filters</el-button>
-  <el-table ref="tableRef" row-key="date" :data="tableData" style="width: 100%">
-    <el-table-column
+  <hc-button @click="resetDateFilter">reset date filter</hc-button>
+  <hc-button @click="clearFilter">reset all filters</hc-button>
+  <hc-table ref="tableRef" row-key="date" :data="tableData" style="width: 100%">
+    <hc-table-column
       prop="date"
       label="Date"
       sortable
@@ -16,10 +16,10 @@
       ]"
       :filter-method="filterHandler"
     />
-    <el-table-column prop="name" label="Name" width="180" />
-    <el-table-column prop="address" label="Address" :formatter="formatter" />
+    <hc-table-column prop="name" label="Name" width="180" />
+    <hc-table-column prop="address" label="Address" :formatter="formatter" />
 
-    <el-table-column
+    <hc-table-column
       prop="tag"
       label="Tag"
       width="100"
@@ -31,14 +31,14 @@
       filter-placement="bottom-end"
     >
       <template #default="scope">
-        <el-tag
+        <hc-tag
           :type="scope.row.tag === 'Home' ? '' : 'success'"
           disable-transitions
-          >{{ scope.row.tag }}</el-tag
+          >{{ scope.row.tag }}</hc-tag
         >
       </template>
-    </el-table-column>
-  </el-table>
+    </hc-table-column>
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

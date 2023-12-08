@@ -1,15 +1,15 @@
 <template>
-  <el-space :size="size" :spacer="spacer">
+  <hc-space :size="size" :spacer="spacer">
     <div v-for="i in 2" :key="i">
-      <el-button> button {{ i }} </el-button>
+      <hc-button> button {{ i }} </hc-button>
     </div>
-  </el-space>
+  </hc-space>
 </template>
 
 <script lang="ts" setup>
 import { h, ref } from 'vue'
-import { ElDivider } from 'hicor-ui'
+import { HcDivider } from 'hicor-ui'
 
 const size = ref(10)
-const spacer = h(ElDivider, { direction: 'vertical' })
+const spacer = h(HcDivider, { direction: 'vertical' })
 </script>

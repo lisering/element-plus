@@ -84,16 +84,16 @@ describe('table column', () => {
       )
       await doubleWait()
       const leftFixedHeaderColumns = wrapper.findAll(
-        '.hc-table__header .el-table-fixed-column--left'
+        '.hc-table__header .hc-table-fixed-column--left'
       )
       const leftFixedBodyColumns = wrapper.findAll(
-        '.hc-table__body .el-table-fixed-column--left'
+        '.hc-table__body .hc-table-fixed-column--left'
       )
       const rightFixedHeaderColumns = wrapper.findAll(
-        '.hc-table__header .el-table-fixed-column--right'
+        '.hc-table__header .hc-table-fixed-column--right'
       )
       const rightFixedBodyColumns = wrapper.findAll(
-        '.hc-table__body .el-table-fixed-column--right'
+        '.hc-table__body .hc-table-fixed-column--right'
       )
       expect(leftFixedHeaderColumns).toHaveLength(2)
       expect(leftFixedBodyColumns).toHaveLength(10)
@@ -346,7 +346,7 @@ describe('table column', () => {
         it('works', async () => {
           const wrapper = createInstance()
           await doubleWait()
-          expect(wrapper.findAll('td.el-table__expand-column').length).toEqual(
+          expect(wrapper.findAll('td.hc-table__expand-column').length).toEqual(
             5
           )
           wrapper.unmount()
@@ -729,13 +729,13 @@ describe('table column', () => {
         .findAll('.hc-table__header tr')
         .map((item) => item.findAll('.hc-table-fixed-column--left'))
       const lfbcolumns = wrapper.findAll(
-        '.hc-table__body .el-table-fixed-column--left'
+        '.hc-table__body .hc-table-fixed-column--left'
       )
       const rfhcolumns = wrapper
         .findAll('.hc-table__header tr')
         .map((item) => item.findAll('.hc-table-fixed-column--right'))
       const rfbcolumns = wrapper.findAll(
-        '.hc-table__body .el-table-fixed-column--right'
+        '.hc-table__body .hc-table-fixed-column--right'
       )
       expect(lfbcolumns).toHaveLength(15)
       expect(rfbcolumns).toHaveLength(10)
@@ -755,7 +755,7 @@ describe('table column', () => {
       wrapper.unmount()
     })
 
-    it('el-table-column should callback itself', async () => {
+    it('hc-table-column should callback itself', async () => {
       const TableColumn = {
         name: 'TableColumn',
         components: {

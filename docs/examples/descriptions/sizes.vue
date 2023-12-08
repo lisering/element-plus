@@ -1,11 +1,11 @@
 <template>
-  <el-radio-group v-model="size">
-    <el-radio label="large">Large</el-radio>
-    <el-radio>Default</el-radio>
-    <el-radio label="small">Small</el-radio>
-  </el-radio-group>
+  <hc-radio-group v-model="size">
+    <hc-radio label="large">Large</hc-radio>
+    <hc-radio>Default</hc-radio>
+    <hc-radio label="small">Small</hc-radio>
+  </hc-radio-group>
 
-  <el-descriptions
+  <hc-descriptions
     class="margin-top"
     title="With border"
     :column="3"
@@ -13,66 +13,66 @@
     border
   >
     <template #extra>
-      <el-button type="primary">Operation</el-button>
+      <hc-button type="primary">Operation</hc-button>
     </template>
-    <el-descriptions-item>
+    <hc-descriptions-item>
       <template #label>
         <div class="cell-item">
-          <el-icon :style="iconStyle">
+          <hc-icon :style="iconStyle">
             <user />
-          </el-icon>
+          </hc-icon>
           Username
         </div>
       </template>
       kooriookami
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </hc-descriptions-item>
+    <hc-descriptions-item>
       <template #label>
         <div class="cell-item">
-          <el-icon :style="iconStyle">
+          <hc-icon :style="iconStyle">
             <iphone />
-          </el-icon>
+          </hc-icon>
           Telephone
         </div>
       </template>
       18100000000
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </hc-descriptions-item>
+    <hc-descriptions-item>
       <template #label>
         <div class="cell-item">
-          <el-icon :style="iconStyle">
+          <hc-icon :style="iconStyle">
             <location />
-          </el-icon>
+          </hc-icon>
           Place
         </div>
       </template>
       Suzhou
-    </el-descriptions-item>
-    <el-descriptions-item>
+    </hc-descriptions-item>
+    <hc-descriptions-item>
       <template #label>
         <div class="cell-item">
-          <el-icon :style="iconStyle">
+          <hc-icon :style="iconStyle">
             <tickets />
-          </el-icon>
+          </hc-icon>
           Remarks
         </div>
       </template>
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item>
+      <hc-tag size="small">School</hc-tag>
+    </hc-descriptions-item>
+    <hc-descriptions-item>
       <template #label>
         <div class="cell-item">
-          <el-icon :style="iconStyle">
+          <hc-icon :style="iconStyle">
             <office-building />
-          </el-icon>
+          </hc-icon>
           Address
         </div>
       </template>
       No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
-    </el-descriptions-item>
-  </el-descriptions>
+    </hc-descriptions-item>
+  </hc-descriptions>
 
-  <el-descriptions
+  <hc-descriptions
     class="margin-top"
     title="Without border"
     :column="3"
@@ -80,18 +80,18 @@
     :style="blockMargin"
   >
     <template #extra>
-      <el-button type="primary">Operation</el-button>
+      <hc-button type="primary">Operation</hc-button>
     </template>
-    <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="Telephone">18100000000</el-descriptions-item>
-    <el-descriptions-item label="Place">Suzhou</el-descriptions-item>
-    <el-descriptions-item label="Remarks">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address"
+    <hc-descriptions-item label="Username">kooriookami</hc-descriptions-item>
+    <hc-descriptions-item label="Telephone">18100000000</hc-descriptions-item>
+    <hc-descriptions-item label="Place">Suzhou</hc-descriptions-item>
+    <hc-descriptions-item label="Remarks">
+      <hc-tag size="small">School</hc-tag>
+    </hc-descriptions-item>
+    <hc-descriptions-item label="Address"
       >No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
-    </el-descriptions-item>
-  </el-descriptions>
+    </hc-descriptions-item>
+  </hc-descriptions>
 </template>
 
 <script setup lang="ts">
@@ -128,7 +128,7 @@ const blockMargin = computed(() => {
 </script>
 
 <style scoped>
-.el-descriptions {
+.hc-descriptions {
   margin-top: 20px;
 }
 

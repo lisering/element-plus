@@ -114,11 +114,11 @@ describe('config-provider', () => {
 
       await nextTick()
       expect(
-        wrapper.find('.hc-button .el-button__text--expand').exists()
+        wrapper.find('.hc-button .hc-button__text--expand').exists()
       ).toBeTruthy()
       await wrapper.find('.toggle').trigger('click')
       expect(
-        wrapper.find('.hc-button .el-button__text--expand').exists()
+        wrapper.find('.hc-button .hc-button__text--expand').exists()
       ).toBeFalsy()
     })
   })
@@ -134,7 +134,7 @@ describe('config-provider', () => {
       ))
 
       await nextTick()
-      expect(wrapper.find('button').classes().join('')).toBe('el-button')
+      expect(wrapper.find('button').classes().join('')).toBe('hc-button')
       namespace.value = 'ep'
       await nextTick()
       expect(wrapper.find('button').classes().join('')).toBe('ep-button')

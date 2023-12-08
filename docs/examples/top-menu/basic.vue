@@ -993,7 +993,7 @@ const handleSelect = (index: string) => {
 
 <template>
   <div>
-    <ElTopMenu
+    <HcTopMenu
       :normal-menu-list="normalMenuList"
       @handleSelect="handleSelect"
     />

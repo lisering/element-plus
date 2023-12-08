@@ -1,3 +1,3 @@
 <template>
-  <el-skeleton :rows="5" />
+  <hc-skeleton :rows="5" />
 </template>

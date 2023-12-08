@@ -183,7 +183,7 @@ describe('Form', () => {
         )
       },
     })
-    expect(wrapper.classes()).toContain('el-form--inline')
+    expect(wrapper.classes()).toContain('hc-form--inline')
   })
 
   it('label position', () => {
@@ -224,13 +224,13 @@ describe('Form', () => {
       },
     })
     expect(wrapper.findComponent({ ref: 'labelTop' }).classes()).toContain(
-      'el-form--label-top'
+      'hc-form--label-top'
     )
     expect(wrapper.findComponent({ ref: 'labelLeft' }).classes()).toContain(
-      'el-form--label-left'
+      'hc-form--label-left'
     )
     expect(wrapper.findComponent({ ref: 'labelRight' }).classes()).toContain(
-      'el-form--label-right'
+      'hc-form--label-right'
     )
   })
 
@@ -254,7 +254,7 @@ describe('Form', () => {
       },
     })
     expect(wrapper.findComponent(FormItem).classes()).toContain(
-      'el-form-item--small'
+      'hc-form-item--small'
     )
   })
 

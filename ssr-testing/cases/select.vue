@@ -1,28 +1,13 @@
 <template>
-  <el-select v-model="value" class="m-2" placeholder="Select" size="large">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value"
-    />
-  </el-select>
-  <el-select v-model="value" class="m-2" placeholder="Select">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value"
-    />
-  </el-select>
-  <el-select v-model="value" class="m-2" placeholder="Select" size="small">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value"
-    />
-  </el-select>
+  <hc-select v-model="value" class="m-2" placeholder="Select" size="large">
+    <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+  </hc-select>
+  <hc-select v-model="value" class="m-2" placeholder="Select">
+    <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+  </hc-select>
+  <hc-select v-model="value" class="m-2" placeholder="Select" size="small">
+    <hc-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

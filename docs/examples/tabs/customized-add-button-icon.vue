@@ -1,6 +1,6 @@
 addIcon
 <template>
-  <el-tabs
+  <hc-tabs
     v-model="editableTabsValue"
     type="card"
     class="demo-tabs"
@@ -8,17 +8,17 @@ addIcon
     @edit="handleTabsEdit"
   >
     <template #addIcon>
-      <el-icon><Select /></el-icon>
+      <hc-icon><Select /></hc-icon>
     </template>
-    <el-tab-pane
+    <hc-tab-pane
       v-for="item in editableTabs"
       :key="item.name"
       :label="item.title"
       :name="item.name"
     >
       {{ item.content }}
-    </el-tab-pane>
-  </el-tabs>
+    </hc-tab-pane>
+  </hc-tabs>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -72,7 +72,7 @@ const handleTabsEdit = (
 }
 </script>
 <style>
-.demo-tabs > .el-tabs__content {
+.demo-tabs > .hc-tabs__content {
   padding: 32px;
   color: #6b778c;
   font-size: 32px;

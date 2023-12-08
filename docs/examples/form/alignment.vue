@@ -1,26 +1,26 @@
 <template>
-  <el-radio-group v-model="labelPosition" label="label position">
-    <el-radio-button label="left">Left</el-radio-button>
-    <el-radio-button label="right">Right</el-radio-button>
-    <el-radio-button label="top">Top</el-radio-button>
-  </el-radio-group>
+  <hc-radio-group v-model="labelPosition" label="label position">
+    <hc-radio-button label="left">Left</hc-radio-button>
+    <hc-radio-button label="right">Right</hc-radio-button>
+    <hc-radio-button label="top">Top</hc-radio-button>
+  </hc-radio-group>
   <div style="margin: 20px" />
-  <el-form
+  <hc-form
     :label-position="labelPosition"
     label-width="100px"
     :model="formLabelAlign"
     style="max-width: 460px"
   >
-    <el-form-item label="Name">
-      <el-input v-model="formLabelAlign.name" />
-    </el-form-item>
-    <el-form-item label="Activity zone">
-      <el-input v-model="formLabelAlign.region" />
-    </el-form-item>
-    <el-form-item label="Activity form">
-      <el-input v-model="formLabelAlign.type" />
-    </el-form-item>
-  </el-form>
+    <hc-form-item label="Name">
+      <hc-input v-model="formLabelAlign.name" />
+    </hc-form-item>
+    <hc-form-item label="Activity zone">
+      <hc-input v-model="formLabelAlign.region" />
+    </hc-form-item>
+    <hc-form-item label="Activity form">
+      <hc-input v-model="formLabelAlign.type" />
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>

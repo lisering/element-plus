@@ -1,5 +1,5 @@
 <template>
-  <el-upload
+  <hc-upload
     v-model:file-list="fileList"
     class="upload-demo"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
@@ -10,17 +10,17 @@
     :limit="3"
     :on-exceed="handleExceed"
   >
-    <el-button type="primary">Click to upload</el-button>
+    <hc-button type="primary">Click to upload</hc-button>
     <template #tip>
-      <div class="el-upload__tip">
+      <div class="hc-upload__tip">
         jpg/png files with a size less than 500KB.
       </div>
     </template>
-  </el-upload>
+  </hc-upload>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage, ElMessageBox } from 'hicor-ui'
+import { HcMessage, HcMessageBox } from 'hicor-ui'
 
 import type { UploadProps, UploadUserFile } from 'hicor-ui'
 
@@ -44,7 +44,7 @@ const handlePreview: UploadProps['onPreview'] = (uploadFile) => {
 }
 
 const handleExceed: UploadProps['onExceed'] = (files, uploadFiles) => {
-  ElMessage.warning(
+  HcMessage.warning(
     `The limit is 3, you selected ${files.length} files this time, add up to ${
       files.length + uploadFiles.length
     } totally`
@@ -52,7 +52,7 @@ const handleExceed: UploadProps['onExceed'] = (files, uploadFiles) => {
 }
 
 const beforeRemove: UploadProps['beforeRemove'] = (uploadFile, uploadFiles) => {
-  return ElMessageBox.confirm(
+  return HcMessageBox.confirm(
     `Cancel the transfer of ${uploadFile.name} ?`
   ).then(
     () => true,

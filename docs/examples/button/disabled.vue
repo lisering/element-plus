@@ -1,19 +1,19 @@
 <template>
-  <el-row class="mb-4">
-    <el-button disabled>Default</el-button>
-    <el-button type="primary" disabled>Primary</el-button>
-    <el-button type="success" disabled>Success</el-button>
-    <el-button type="info" disabled>Info</el-button>
-    <el-button type="warning" disabled>Warning</el-button>
-    <el-button type="danger" disabled>Danger</el-button>
-  </el-row>
+  <hc-row class="mb-4">
+    <hc-button disabled>Default</hc-button>
+    <hc-button type="primary" disabled>Primary</hc-button>
+    <hc-button type="success" disabled>Success</hc-button>
+    <hc-button type="info" disabled>Info</hc-button>
+    <hc-button type="warning" disabled>Warning</hc-button>
+    <hc-button type="danger" disabled>Danger</hc-button>
+  </hc-row>
 
-  <el-row>
-    <el-button plain disabled>Plain</el-button>
-    <el-button type="primary" plain disabled>Primary</el-button>
-    <el-button type="success" plain disabled>Success</el-button>
-    <el-button type="info" plain disabled>Info</el-button>
-    <el-button type="warning" plain disabled>Warning</el-button>
-    <el-button type="danger" plain disabled>Danger</el-button>
-  </el-row>
+  <hc-row>
+    <hc-button plain disabled>Plain</hc-button>
+    <hc-button type="primary" plain disabled>Primary</hc-button>
+    <hc-button type="success" plain disabled>Success</hc-button>
+    <hc-button type="info" plain disabled>Info</hc-button>
+    <hc-button type="warning" plain disabled>Warning</hc-button>
+    <hc-button type="danger" plain disabled>Danger</hc-button>
+  </hc-row>
 </template>

@@ -1,24 +1,24 @@
 <template>
-  <el-upload
+  <hc-upload
     ref="uploadRef"
     class="upload-demo"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
     :auto-upload="false"
   >
     <template #trigger>
-      <el-button type="primary">select file</el-button>
+      <hc-button type="primary">select file</hc-button>
     </template>
 
-    <el-button class="ml-3" type="success" @click="submitUpload">
+    <hc-button class="ml-3" type="success" @click="submitUpload">
       upload to server
-    </el-button>
+    </hc-button>
 
     <template #tip>
-      <div class="el-upload__tip">
+      <div class="hc-upload__tip">
         jpg/png files with a size less than 500kb
       </div>
     </template>
-  </el-upload>
+  </hc-upload>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

@@ -3,7 +3,7 @@
     <div class="block">
       <span class="demonstration">Emits Date object</span>
       <div class="demonstration">Value: {{ value1 }}</div>
-      <el-date-picker
+      <hc-date-picker
         v-model="value1"
         type="datetime"
         placeholder="Pick a Date"
@@ -13,7 +13,7 @@
     <div class="block">
       <span class="demonstration">Use value-format</span>
       <div class="demonstration">Value：{{ value2 }}</div>
-      <el-date-picker
+      <hc-date-picker
         v-model="value2"
         type="datetime"
         placeholder="Pick a Date"
@@ -24,7 +24,7 @@
     <div class="block">
       <span class="demonstration">Timestamp</span>
       <div class="demonstration">Value：{{ value3 }}</div>
-      <el-date-picker
+      <hc-date-picker
         v-model="value3"
         type="datetime"
         placeholder="Pick a Date"
@@ -49,18 +49,21 @@ const value3 = ref('')
   padding: 0;
   flex-wrap: wrap;
 }
+
 .demo-datetime-picker .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .demo-datetime-picker .block:last-child {
   border-right: none;
 }
+
 .demo-datetime-picker .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

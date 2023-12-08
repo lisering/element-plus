@@ -1,5 +1,5 @@
 <template>
-  <el-upload
+  <hc-upload
     ref="upload"
     class="upload-demo"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
@@ -8,17 +8,17 @@
     :auto-upload="false"
   >
     <template #trigger>
-      <el-button type="primary">select file</el-button>
+      <hc-button type="primary">select file</hc-button>
     </template>
-    <el-button class="ml-3" type="success" @click="submitUpload">
+    <hc-button class="ml-3" type="success" @click="submitUpload">
       upload to server
-    </el-button>
+    </hc-button>
     <template #tip>
-      <div class="el-upload__tip text-red">
+      <div class="hc-upload__tip text-red">
         limit 1 file, new file will cover the old file
       </div>
     </template>
-  </el-upload>
+  </hc-upload>
 </template>
 
 <script setup lang="ts">

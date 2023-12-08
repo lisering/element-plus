@@ -1,10 +1,10 @@
 <template>
-  <el-switch
+  <hc-switch
     v-model="value1"
     :loading="loading1"
     :before-change="beforeChange1"
   />
-  <el-switch
+  <hc-switch
     v-model="value2"
     class="ml-2"
     :loading="loading2"
@@ -13,7 +13,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 
 const value1 = ref(false)
 const value2 = ref(false)
@@ -25,7 +25,7 @@ const beforeChange1 = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       loading1.value = false
-      ElMessage.success('Switch success')
+      HcMessage.success('Switch success')
       return resolve(true)
     }, 1000)
   })
@@ -36,7 +36,7 @@ const beforeChange2 = () => {
   return new Promise((_, reject) => {
     setTimeout(() => {
       loading2.value = false
-      ElMessage.error('Switch failed')
+      HcMessage.error('Switch failed')
       return reject(new Error('Error'))
     }, 1000)
   })

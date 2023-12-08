@@ -78,12 +78,12 @@ Hicor Ui 为 `app.config.globalProperties` 添加了全局方法 `$notify`。 �
 ## 单独引用
 
 ```javascript
-import { ElNotification } from 'hicor-ui'
+import { HcNotification } from 'hicor-ui'
 ```
 
-你可以在对应的处理函数内调用 `ElNotification(options)` 来呼出通知栏。 我们也提前定义了多个 type 的单独调用方法，如 `ElNotification.success(options)`。 当你需要关闭页面上所有的通知栏的时候，可以调用 `ElNotification.closeAll()` 来关闭所有的实例。
+你可以在对应的处理函数内调用 `HcNotification(options)` 来呼出通知栏。 我们也提前定义了多个 type 的单独调用方法，如 `HcNotification.success(options)`。 当你需要关闭页面上所有的通知栏的时候，可以调用 `HcNotification.closeAll()` 来关闭所有的实例。
 
-## 应用程序上下文继承 <el-tag>> 2.0.4</el-tag>
+## 应用程序上下文继承 <hc-tag>> 2.0.4</hc-tag>
 
 现在 Notification 接受一条 `context` 作为消息构造器的第二个参数，允许你将当前应用的上下文注入到 Notification 中，这将允许你继承应用程序的所有属性。
 
@@ -91,17 +91,17 @@ import { ElNotification } from 'hicor-ui'
 
 :::tip
 
-如果您全局注册了 ElNotification 组件，它将自动继承应用的上下文环境。
+如果您全局注册了 HcNotification 组件，它将自动继承应用的上下文环境。
 
 :::
 
 ```ts
 import { getCurrentInstance } from 'vue'
-import { ElNotification } from 'hicor-ui'
+import { HcNotification } from 'hicor-ui'
 
 // 在你的 setup 方法中
 const { appContext } = getCurrentInstance()!
-ElNotification({}, appContext)
+HcNotification({}, appContext)
 ```
 
 ## API

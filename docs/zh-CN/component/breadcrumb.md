@@ -9,7 +9,7 @@ lang: zh-CN
 
 ## 基础用法
 
-:::demo 在 `el-breadcrumb` 中使用 `el-breadcrumb-item` 标签表示从首页开始的每一级。 该组件接受一个 `String` 类型的参数 `separator`来作为分隔符。 默认值为 '/'。
+:::demo 在 `hc-breadcrumb` 中使用 `hc-breadcrumb-item` 标签表示从首页开始的每一级。 该组件接受一个 `String` 类型的参数 `separator`来作为分隔符。 默认值为 '/'。
 
 breadcrumb/basic
 

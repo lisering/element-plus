@@ -1,12 +1,12 @@
 <template>
-  <el-tooltip-v2 aria-label="content" placement="left">
+  <hc-tooltip-v2 aria-label="content" placement="left">
     <template #trigger>
-      <el-button circle
-        ><el-icon> <Plus /> </el-icon
-      ></el-button>
+      <hc-button circle
+        ><hc-icon> <Plus /> </hc-icon
+      ></hc-button>
     </template>
     Basic tooltip
-  </el-tooltip-v2>
+  </hc-tooltip-v2>
 </template>
 
 <script setup lang="ts">

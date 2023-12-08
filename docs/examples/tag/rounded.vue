@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap gap-2 my-2">
-    <el-tag
+    <hc-tag
       v-for="item in items"
       :key="item.label"
       :type="item.type"
@@ -9,10 +9,10 @@
       round
     >
       {{ item.label }}
-    </el-tag>
+    </hc-tag>
   </div>
   <div class="flex flex-wrap gap-2">
-    <el-tag
+    <hc-tag
       v-for="item in items"
       :key="item.label"
       :type="item.type"
@@ -21,10 +21,10 @@
       round
     >
       {{ item.label }}
-    </el-tag>
+    </hc-tag>
   </div>
   <div class="flex flex-wrap gap-2 my-2">
-    <el-tag
+    <hc-tag
       v-for="item in items"
       :key="item.label"
       :type="item.type"
@@ -33,7 +33,7 @@
       round
     >
       {{ item.label }}
-    </el-tag>
+    </hc-tag>
   </div>
 </template>
 

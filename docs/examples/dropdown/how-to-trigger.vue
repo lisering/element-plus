@@ -1,63 +1,63 @@
 <template>
-  <el-row class="block-col-2">
-    <el-col :span="8">
+  <hc-row class="block-col-2">
+    <hc-col :span="8">
       <span class="demonstration">hover to trigger</span>
-      <el-dropdown>
-        <span class="el-dropdown-link">
-          Dropdown List<el-icon class="el-icon--right"><arrow-down /></el-icon>
+      <hc-dropdown>
+        <span class="hc-dropdown-link">
+          Dropdown List<hc-icon class="hc-icon--right"><arrow-down /></hc-icon>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item :icon="Plus">Action 1</el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlusFilled">
+          <hc-dropdown-menu>
+            <hc-dropdown-item :icon="Plus">Action 1</hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlusFilled">
               Action 2
-            </el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlus">Action 3</el-dropdown-item>
-            <el-dropdown-item :icon="Check">Action 4</el-dropdown-item>
-            <el-dropdown-item :icon="CircleCheck">Action 5</el-dropdown-item>
-          </el-dropdown-menu>
+            </hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlus">Action 3</hc-dropdown-item>
+            <hc-dropdown-item :icon="Check">Action 4</hc-dropdown-item>
+            <hc-dropdown-item :icon="CircleCheck">Action 5</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
-    </el-col>
-    <el-col :span="8">
+      </hc-dropdown>
+    </hc-col>
+    <hc-col :span="8">
       <span class="demonstration">click to trigger</span>
-      <el-dropdown trigger="click">
-        <span class="el-dropdown-link">
-          Dropdown List<el-icon class="el-icon--right"><arrow-down /></el-icon>
+      <hc-dropdown trigger="click">
+        <span class="hc-dropdown-link">
+          Dropdown List<hc-icon class="hc-icon--right"><arrow-down /></hc-icon>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item :icon="Plus">Action 1</el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlusFilled">
+          <hc-dropdown-menu>
+            <hc-dropdown-item :icon="Plus">Action 1</hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlusFilled">
               Action 2
-            </el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlus">Action 3</el-dropdown-item>
-            <el-dropdown-item :icon="Check">Action 4</el-dropdown-item>
-            <el-dropdown-item :icon="CircleCheck">Action 5</el-dropdown-item>
-          </el-dropdown-menu>
+            </hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlus">Action 3</hc-dropdown-item>
+            <hc-dropdown-item :icon="Check">Action 4</hc-dropdown-item>
+            <hc-dropdown-item :icon="CircleCheck">Action 5</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
-    </el-col>
-    <el-col :span="8">
+      </hc-dropdown>
+    </hc-col>
+    <hc-col :span="8">
       <span class="demonstration">right click to trigger</span>
-      <el-dropdown trigger="contextmenu">
-        <span class="el-dropdown-link">
-          Dropdown List<el-icon class="el-icon--right"><arrow-down /></el-icon>
+      <hc-dropdown trigger="contextmenu">
+        <span class="hc-dropdown-link">
+          Dropdown List<hc-icon class="hc-icon--right"><arrow-down /></hc-icon>
         </span>
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item :icon="Plus">Action 1</el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlusFilled">
+          <hc-dropdown-menu>
+            <hc-dropdown-item :icon="Plus">Action 1</hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlusFilled">
               Action 2
-            </el-dropdown-item>
-            <el-dropdown-item :icon="CirclePlus">Action 3</el-dropdown-item>
-            <el-dropdown-item :icon="Check">Action 4</el-dropdown-item>
-            <el-dropdown-item :icon="CircleCheck">Action 5</el-dropdown-item>
-          </el-dropdown-menu>
+            </hc-dropdown-item>
+            <hc-dropdown-item :icon="CirclePlus">Action 3</hc-dropdown-item>
+            <hc-dropdown-item :icon="Check">Action 4</hc-dropdown-item>
+            <hc-dropdown-item :icon="CircleCheck">Action 5</hc-dropdown-item>
+          </hc-dropdown-menu>
         </template>
-      </el-dropdown>
-    </el-col>
-  </el-row>
+      </hc-dropdown>
+    </hc-col>
+  </hc-row>
 </template>
 
 <script lang="ts" setup>
@@ -74,7 +74,7 @@ import {
 <style scoped>
 .block-col-2 .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

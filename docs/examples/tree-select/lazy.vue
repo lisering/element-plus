@@ -1,8 +1,8 @@
 <template>
-  <el-tree-select v-model="value" lazy :load="load" :props="props" />
-  <el-divider />
+  <hc-tree-select v-model="value" lazy :load="load" :props="props" />
+  <hc-divider />
   <VersionTag version="2.2.26" /> show lazy load label:
-  <el-tree-select
+  <hc-tree-select
     v-model="value2"
     lazy
     :load="load"

@@ -1,6 +1,6 @@
 <template>
   <div class="custom-tree-node-container">
-    <el-tree
+    <hc-tree
       :data="data"
       show-checkbox
       node-key="id"
@@ -84,16 +84,16 @@ const data: Tree[] = [
 </script>
 
 <style>
-.is-penultimate > .el-tree-node__content {
+.is-penultimate > .hc-tree-node__content {
   color: #626aef;
 }
 
-.el-tree-node.is-expanded.is-penultimate > .el-tree-node__children {
+.hc-tree-node.is-expanded.is-penultimate > .hc-tree-node__children {
   display: flex;
   flex-direction: row;
 }
 
-.is-penultimate > .el-tree-node__children > div {
+.is-penultimate > .hc-tree-node__children > div {
   width: 25%;
 }
 </style>

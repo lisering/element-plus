@@ -1,12 +1,12 @@
 <template>
-  <el-tree-select v-model="value" :data="data">
+  <hc-tree-select v-model="value" :data="data">
     <template #default="{ data: { label } }">
       {{ label }}<span style="color: gray">(suffix)</span></template
     >
-  </el-tree-select>
-  <el-divider />
+  </hc-tree-select>
+  <hc-divider />
   use render content:
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     :render-content="renderContent"

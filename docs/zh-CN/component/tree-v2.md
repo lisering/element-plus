@@ -3,7 +3,7 @@ title: Tree V2 虚拟化树形控件
 lang: zh-CN
 ---
 
-# <ElBadge value="beta">Tree V2 虚拟化树形控件</ElBadge>
+# <HcBadge value="beta">Tree V2 虚拟化树形控件</HcBadge>
 
 不论你的数据量多大，虚拟树都能毫无压力地处理。
 

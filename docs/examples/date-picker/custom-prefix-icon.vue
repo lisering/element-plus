@@ -2,7 +2,7 @@
   <div class="demo-date-picker">
     <div class="block">
       <span class="demonstration">set prefix-icon</span>
-      <el-date-picker
+      <hc-date-picker
         v-model="value1"
         type="date"
         placeholder="Pick a day"
@@ -30,18 +30,21 @@ const customPrefix = shallowRef({
   padding: 0;
   flex-wrap: wrap;
 }
+
 .demo-date-picker .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .demo-date-picker .block:last-child {
   border-right: none;
 }
+
 .demo-date-picker .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

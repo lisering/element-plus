@@ -18,8 +18,8 @@ const _mount = (template: string, data = () => ({}), otherObj?) =>
   mount(
     {
       components: {
-        'el-date-picker': DatePicker,
-        'el-form-item': HcFormItem,
+        'hc-date-picker': DatePicker,
+        'hc-form-item': HcFormItem,
       },
       template,
       data,
@@ -511,7 +511,7 @@ describe('DatePicker', () => {
       }
     )
     await nextTick()
-    const el = document.querySelector('td.available .el-date-table-cell')
+    const el = document.querySelector('td.available .hc-date-table-cell')
     const text = el.textContent
     expect(text.includes('csw')).toBeFalsy()
   })
@@ -901,7 +901,7 @@ describe('WeekPicker', () => {
       document.querySelectorAll('.hc-date-table__row.current').length
     ;(
       document.querySelector(
-        '.hc-date-table__row ~ .el-date-table__row td.available'
+        '.hc-date-table__row ~ .hc-date-table__row td.available'
       ) as HTMLElement
     ).click()
     await nextTick()
@@ -930,8 +930,8 @@ describe('WeekPicker', () => {
       const wrapper = mount(
         {
           components: {
-            'el-date-picker': DatePicker,
-            'el-config-provider': ConfigProvider,
+            'hc-date-picker': DatePicker,
+            'hc-config-provider': ConfigProvider,
           },
           template: `
           <hc-config-provider :locale="locale">
@@ -959,7 +959,7 @@ describe('WeekPicker', () => {
       // click Wednesday
       ;(
         document.querySelectorAll(
-          '.hc-date-table__row ~ .el-date-table__row td'
+          '.hc-date-table__row ~ .hc-date-table__row td'
         )[3] as HTMLElement
       ).click()
       await nextTick()
@@ -1090,7 +1090,7 @@ describe('DateRangePicker', () => {
     inputs[0].trigger('focus')
     await nextTick()
 
-    const outterInput = wrapper.find('.hc-range-editor.el-input__wrapper')
+    const outterInput = wrapper.find('.hc-range-editor.hc-input__wrapper')
     expect(outterInput.classes()).toContain(customClassName)
     expect(outterInput.attributes().style).toBeDefined()
     const panels = document.querySelectorAll('.hc-date-range-picker__content')
@@ -1243,7 +1243,7 @@ describe('DateRangePicker', () => {
     const panels = document.querySelectorAll('.hc-date-range-picker__content')
     const left = panels[0].querySelector('.hc-date-range-picker__header')
     const right = panels[1].querySelector(
-      '.is-right .el-date-range-picker__header'
+      '.is-right .hc-date-range-picker__header'
     )
     expect(left.textContent).toBe('2000  October')
     expect(right.textContent).toBe('2000  December')
@@ -1439,7 +1439,7 @@ describe('MonthRange', () => {
     const panels = document.querySelectorAll('.hc-date-range-picker__content')
     const left = panels[0].querySelector('.hc-date-range-picker__header')
     const right = panels[1].querySelector(
-      '.is-right .el-date-range-picker__header'
+      '.is-right .hc-date-range-picker__header'
     )
     expect(left.textContent).toContain(2000)
     expect(right.textContent).toContain(2002)
@@ -1606,7 +1606,7 @@ describe('MonthRange', () => {
     input.trigger('focus')
     await nextTick()
     document
-      .querySelector('.hc-picker-panel__sidebar .el-picker-panel__shortcut')
+      .querySelector('.hc-picker-panel__sidebar .hc-picker-panel__shortcut')
       .click()
     await nextTick()
     const vm = wrapper.vm as any

@@ -1,10 +1,10 @@
 <template>
-  <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
-    <el-tab-pane label="User" name="first">User</el-tab-pane>
-    <el-tab-pane label="Config" name="second">Config</el-tab-pane>
-    <el-tab-pane label="Role" name="third">Role</el-tab-pane>
-    <el-tab-pane label="Task" name="fourth">Task</el-tab-pane>
-  </el-tabs>
+  <hc-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
+    <hc-tab-pane label="User" name="first">User</hc-tab-pane>
+    <hc-tab-pane label="Config" name="second">Config</hc-tab-pane>
+    <hc-tab-pane label="Role" name="third">Role</hc-tab-pane>
+    <hc-tab-pane label="Task" name="fourth">Task</hc-tab-pane>
+  </hc-tabs>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -16,7 +16,7 @@ const handleClick = (tab: string, event: Event) => {
 }
 </script>
 <style>
-.demo-tabs > .el-tabs__content {
+.demo-tabs>.hc-tabs__content {
   padding: 32px;
   color: #6b778c;
   font-size: 32px;

@@ -1,5 +1,5 @@
 <template>
-  <el-select
+  <hc-select
     v-model="value"
     multiple
     filterable
@@ -8,13 +8,13 @@
     :reserve-keyword="false"
     placeholder="Choose tags for your article"
   >
-    <el-option
+    <hc-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
     />
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

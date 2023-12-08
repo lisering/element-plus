@@ -1,19 +1,19 @@
 <template>
   <div>
-    <el-link href="https://hicor-ui.org" target="_blank">default</el-link>
-    <el-link type="primary">primary</el-link>
-    <el-link type="success">success</el-link>
-    <el-link type="warning">warning</el-link>
-    <el-link type="danger">danger</el-link>
-    <el-link type="info">info</el-link>
+    <hc-link href="https://hicor-ui.org" target="_blank">default</hc-link>
+    <hc-link type="primary">primary</hc-link>
+    <hc-link type="success">success</hc-link>
+    <hc-link type="warning">warning</hc-link>
+    <hc-link type="danger">danger</hc-link>
+    <hc-link type="info">info</hc-link>
   </div>
 </template>
 <style scoped>
-.el-link {
+.hc-link {
   margin-right: 8px;
 }
 
-.el-link .el-icon--right.el-icon {
+.hc-link .hc-icon--right.hc-icon {
   vertical-align: text-bottom;
 }
 </style>

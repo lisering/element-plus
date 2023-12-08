@@ -1,8 +1,8 @@
 <template>
-  <el-tooltip-v2 aria-label="content" teleported to="body">
+  <hc-tooltip-v2 aria-label="content" teleported to="body">
     <template #trigger>
-      <el-button>hover me</el-button>
+      <hc-button>hover me</hc-button>
     </template>
     <div>I am attached to document.body</div>
-  </el-tooltip-v2>
+  </hc-tooltip-v2>
 </template>

@@ -1,52 +1,28 @@
 <template>
-  <div
-    class="block"
-    style="
+  <div class="block" style="
       padding: 30px 0;
       text-align: center;
-      border-right: solid 1px var(--el-border-color);
+      border-right: solid 1px var(--hc-border-color);
       flex: 1;
-    "
-  >
-    <span
-      class="demonstration"
-      style="
+    ">
+    <span class="demonstration" style="
         display: block;
-        color: var(--el-text-color-secondary);
+        color: var(--hc-text-color-secondary);
         font-size: 14px;
         margin-bottom: 20px;
-      "
-      >Start date time 12:00:00</span
-    >
-    <el-date-picker
-      v-model="value1"
-      type="datetimerange"
-      start-placeholder="Start Date"
-      end-placeholder="End Date"
-      :default-time="defaultTime1"
-    />
+      ">Start date time 12:00:00</span>
+    <hc-date-picker v-model="value1" type="datetimerange" start-placeholder="Start Date" end-placeholder="End Date"
+      :default-time="defaultTime1" />
   </div>
-  <div
-    class="block"
-    style="padding: 30px 0; text-align: center; border-right: none; flex: 1"
-  >
-    <span
-      class="demonstration"
-      style="
+  <div class="block" style="padding: 30px 0; text-align: center; border-right: none; flex: 1">
+    <span class="demonstration" style="
         display: block;
-        color: var(--el-text-color-secondary);
+        color: var(--hc-text-color-secondary);
         font-size: 14px;
         margin-bottom: 20px;
-      "
-      >Start date time 12:00:00, end date time 08:00:00</span
-    >
-    <el-date-picker
-      v-model="value2"
-      type="datetimerange"
-      start-placeholder="Start Date"
-      end-placeholder="End Date"
-      :default-time="defaultTime2"
-    />
+      ">Start date time 12:00:00, end date time 08:00:00</span>
+    <hc-date-picker v-model="value2" type="datetimerange" start-placeholder="Start Date" end-placeholder="End Date"
+      :default-time="defaultTime2" />
   </div>
 </template>
 

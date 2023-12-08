@@ -9,7 +9,7 @@ import type {
   HcCollectionItemInjectionContext,
 } from './tokens'
 
-export const COLLECTION_ITEM_SIGN = `data-el-collection-item`
+export const COLLECTION_ITEM_SIGN = `data-hc-collection-item`
 
 // Make sure the first letter of name is capitalized
 export const createCollectionWithScope = (name: string) => {

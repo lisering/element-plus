@@ -80,7 +80,7 @@ describe('MessageBox', () => {
     await rAF()
     const icon = document.querySelector('.hc-message-box__status')
 
-    expect(icon.classList.contains('el-icon')).toBe(true)
+    expect(icon.classList.contains('hc-icon')).toBe(true)
 
     const svg = mount(QuestionFilled).find('svg').element
     expect(icon.querySelector('svg').innerHTML).toBe(svg.innerHTML)
@@ -156,7 +156,7 @@ describe('MessageBox', () => {
     })
     await rAF()
     const btnElm = document.querySelector(
-      '.hc-message-box__btns .el-button--primary'
+      '.hc-message-box__btns .hc-button--primary'
     )
     const haveFocus = btnElm.isSameNode(document.activeElement)
     expect(haveFocus).toBe(false)
@@ -225,7 +225,7 @@ describe('MessageBox', () => {
     await rAF()
     ;(
       document.querySelector(
-        '.hc-message-box__btns .el-button--primary'
+        '.hc-message-box__btns .hc-button--primary'
       ) as HTMLButtonElement
     ).click()
     await rAF()
@@ -242,7 +242,7 @@ describe('MessageBox', () => {
       )
       await rAF()
       const btn = document.querySelector(
-        '.hc-message-box__btns .el-button--primary'
+        '.hc-message-box__btns .hc-button--primary'
       ) as HTMLButtonElement
       btn.click()
       await rAF()
@@ -257,7 +257,7 @@ describe('MessageBox', () => {
         }
       )
       await rAF()
-      const btn = document.querySelector('.hc-message-box__btns .el-button')
+      const btn = document.querySelector('.hc-message-box__btns .hc-button')
       ;(btn as HTMLButtonElement).click()
       await rAF()
       expect(msgAction).toEqual('cancel')

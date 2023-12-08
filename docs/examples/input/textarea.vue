@@ -1,5 +1,5 @@
 <template>
-  <el-input
+  <hc-input
     v-model="textarea"
     :rows="2"
     type="textarea"

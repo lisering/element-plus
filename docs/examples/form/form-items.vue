@@ -1,11 +1,11 @@
 <template>
-  <el-form
+  <hc-form
     ref="formRef"
     :model="dynamicValidateForm"
     label-width="120px"
     class="demo-dynamic"
   >
-    <el-form-item
+    <hc-form-item
       prop="email"
       label="Email"
       :rules="[
@@ -21,9 +21,9 @@
         },
       ]"
     >
-      <el-input v-model="dynamicValidateForm.email" />
-    </el-form-item>
-    <el-form-item
+      <hc-input v-model="dynamicValidateForm.email" />
+    </hc-form-item>
+    <hc-form-item
       v-for="(domain, index) in dynamicValidateForm.domains"
       :key="domain.key"
       :label="'Domain' + index"
@@ -34,17 +34,17 @@
         trigger: 'blur',
       }"
     >
-      <el-input v-model="domain.value" />
-      <el-button class="mt-2" @click.prevent="removeDomain(domain)"
-        >Delete</el-button
+      <hc-input v-model="domain.value" />
+      <hc-button class="mt-2" @click.prevent="removeDomain(domain)"
+        >Delete</hc-button
       >
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm(formRef)">Submit</el-button>
-      <el-button @click="addDomain">New domain</el-button>
-      <el-button @click="resetForm(formRef)">Reset</el-button>
-    </el-form-item>
-  </el-form>
+    </hc-form-item>
+    <hc-form-item>
+      <hc-button type="primary" @click="submitForm(formRef)">Submit</hc-button>
+      <hc-button @click="addDomain">New domain</hc-button>
+      <hc-button @click="resetForm(formRef)">Reset</hc-button>
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="data"
     :row-height="40"
@@ -8,19 +8,19 @@
     :footer-height="50"
     fixed
   >
-    <template #footer
-      ><div
+    <template #footer>
+      <div
         class="flex items-center"
         style="
           justify-content: center;
           height: 100%;
-          background-color: var(--el-color-primary-light-7);
+          background-color: var(--hc-color-primary-light-7);
         "
       >
         Display a message in the footer
       </div>
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 
 <script lang="ts" setup>

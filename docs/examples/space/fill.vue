@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div style="margin-bottom: 15px">fill: <el-switch v-model="fill" /></div>
-    <el-space :fill="fill" wrap>
-      <el-card v-for="i in 3" :key="i" class="box-card">
+    <div style="margin-bottom: 15px">fill: <hc-switch v-model="fill" /></div>
+    <hc-space :fill="fill" wrap>
+      <hc-card v-for="i in 3" :key="i" class="box-card">
         <template #header>
           <div class="card-header">
             <span>Card name</span>
-            <el-button class="button" text>Operation button</el-button>
+            <hc-button class="button" text>Operation button</hc-button>
           </div>
         </template>
         <div v-for="o in 4" :key="o" class="text item">
           {{ 'List item ' + o }}
         </div>
-      </el-card>
-    </el-space>
+      </hc-card>
+    </hc-space>
   </div>
 </template>
 

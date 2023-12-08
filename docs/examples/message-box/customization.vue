@@ -1,12 +1,12 @@
 <template>
-  <el-button text @click="open">Click to open Message Box</el-button>
+  <hc-button text @click="open">Click to open Message Box</hc-button>
 </template>
 
 <script lang="ts" setup>
 import { h } from 'vue'
-import { ElMessage, ElMessageBox } from 'hicor-ui'
+import { HcMessage, HcMessageBox } from 'hicor-ui'
 const open = () => {
-  ElMessageBox({
+  HcMessageBox({
     title: 'Message',
     message: h('p', null, [
       h('span', null, 'Message can be '),
@@ -30,7 +30,7 @@ const open = () => {
       }
     },
   }).then((action) => {
-    ElMessage({
+    HcMessage({
       type: 'info',
       message: `action: ${action}`,
     })

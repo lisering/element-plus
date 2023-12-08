@@ -1,19 +1,19 @@
 <template>
-  <el-space direction="vertical">
-    <el-text>span</el-text>
-    <el-text tag="p">This is a paragraph.</el-text>
-    <el-text tag="b">Bold</el-text>
-    <el-text tag="i">Italic</el-text>
-    <el-text>
+  <hc-space direction="vertical">
+    <hc-text>span</hc-text>
+    <hc-text tag="p">This is a paragraph.</hc-text>
+    <hc-text tag="b">Bold</hc-text>
+    <hc-text tag="i">Italic</hc-text>
+    <hc-text>
       This is
-      <el-text tag="sub" size="small">subscript</el-text>
-    </el-text>
-    <el-text>
+      <hc-text tag="sub" size="small">subscript</hc-text>
+    </hc-text>
+    <hc-text>
       This is
-      <el-text tag="sup" size="small">superscript</el-text>
-    </el-text>
-    <el-text tag="ins">Inserted</el-text>
-    <el-text tag="del">Deleted</el-text>
-    <el-text tag="mark">Marked</el-text>
-  </el-space>
+      <hc-text tag="sup" size="small">superscript</hc-text>
+    </hc-text>
+    <hc-text tag="ins">Inserted</hc-text>
+    <hc-text tag="del">Deleted</hc-text>
+    <hc-text tag="mark">Marked</hc-text>
+  </hc-space>
 </template>

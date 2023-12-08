@@ -3,7 +3,7 @@
     Customize data items using render-content
   </p>
   <div style="text-align: center">
-    <el-transfer
+    <hc-transfer
       v-model="leftValue"
       style="text-align: left; display: inline-block"
       filterable
@@ -20,17 +20,17 @@
       @change="handleChange"
     >
       <template #left-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <hc-button class="transfer-footer" size="small">Operation</hc-button>
       </template>
       <template #right-footer>
-        <el-button class="transfer-footer" size="small">Operation</el-button>
+        <hc-button class="transfer-footer" size="small">Operation</hc-button>
       </template>
-    </el-transfer>
+    </hc-transfer>
     <p style="text-align: center; margin: 50px 0 20px">
       Customize data items using scoped slot
     </p>
     <div style="text-align: center">
-      <el-transfer
+      <hc-transfer
         v-model="rightValue"
         style="text-align: left; display: inline-block"
         filterable
@@ -49,12 +49,12 @@
           <span>{{ option.key }} - {{ option.label }}</span>
         </template>
         <template #left-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <hc-button class="transfer-footer" size="small">Operation</hc-button>
         </template>
         <template #right-footer>
-          <el-button class="transfer-footer" size="small">Operation</el-button>
+          <hc-button class="transfer-footer" size="small">Operation</hc-button>
         </template>
-      </el-transfer>
+      </hc-transfer>
     </div>
   </div>
 </template>

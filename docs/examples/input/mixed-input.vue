@@ -1,49 +1,49 @@
 <template>
   <div>
-    <el-input v-model="input1" placeholder="Please input">
+    <hc-input v-model="input1" placeholder="Please input">
       <template #prepend>Http://</template>
-    </el-input>
+    </hc-input>
   </div>
   <div class="mt-4">
-    <el-input v-model="input2" placeholder="Please input">
+    <hc-input v-model="input2" placeholder="Please input">
       <template #append>.com</template>
-    </el-input>
+    </hc-input>
   </div>
   <div class="mt-4">
-    <el-input
+    <hc-input
       v-model="input3"
       placeholder="Please input"
       class="input-with-select"
     >
       <template #prepend>
-        <el-select v-model="select" placeholder="Select" style="width: 115px">
-          <el-option label="Restaurant" value="1" />
-          <el-option label="Order No." value="2" />
-          <el-option label="Tel" value="3" />
-        </el-select>
+        <hc-select v-model="select" placeholder="Select" style="width: 115px">
+          <hc-option label="Restaurant" value="1" />
+          <hc-option label="Order No." value="2" />
+          <hc-option label="Tel" value="3" />
+        </hc-select>
       </template>
       <template #append>
-        <el-button :icon="Search" />
+        <hc-button :icon="Search" />
       </template>
-    </el-input>
+    </hc-input>
   </div>
   <div class="mt-4">
-    <el-input
+    <hc-input
       v-model="input3"
       placeholder="Please input"
       class="input-with-select"
     >
       <template #prepend>
-        <el-button :icon="Search" />
+        <hc-button :icon="Search" />
       </template>
       <template #append>
-        <el-select v-model="select" placeholder="Select" style="width: 115px">
-          <el-option label="Restaurant" value="1" />
-          <el-option label="Order No." value="2" />
-          <el-option label="Tel" value="3" />
-        </el-select>
+        <hc-select v-model="select" placeholder="Select" style="width: 115px">
+          <hc-option label="Restaurant" value="1" />
+          <hc-option label="Order No." value="2" />
+          <hc-option label="Tel" value="3" />
+        </hc-select>
       </template>
-    </el-input>
+    </hc-input>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ const select = ref('')
 </script>
 
 <style>
-.input-with-select .el-input-group__prepend {
-  background-color: var(--el-fill-color-blank);
+.input-with-select .hc-input-group__prepend {
+  background-color: var(--hc-fill-color-blank);
 }
 </style>

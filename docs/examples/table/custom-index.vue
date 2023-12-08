@@ -1,10 +1,10 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column type="index" :index="indexMethod" />
-    <el-table-column prop="date" label="Date" width="180" />
-    <el-table-column prop="name" label="Name" width="180" />
-    <el-table-column prop="address" label="Address" />
-  </el-table>
+  <hc-table :data="tableData" style="width: 100%">
+    <hc-table-column type="index" :index="indexMethod" />
+    <hc-table-column prop="date" label="Date" width="180" />
+    <hc-table-column prop="name" label="Name" width="180" />
+    <hc-table-column prop="address" label="Address" />
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

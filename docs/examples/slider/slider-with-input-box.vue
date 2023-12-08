@@ -1,6 +1,6 @@
 <template>
   <div class="slider-demo-block">
-    <el-slider v-model="value" show-input />
+    <hc-slider v-model="value" show-input />
   </div>
 </template>
 
@@ -14,7 +14,8 @@ const value = ref(0)
   display: flex;
   align-items: center;
 }
-.slider-demo-block .el-slider {
+
+.slider-demo-block .hc-slider {
   margin-top: 0;
   margin-left: 12px;
 }

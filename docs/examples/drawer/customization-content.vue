@@ -1,24 +1,24 @@
 <template>
-  <el-button text @click="table = true"
-    >Open Drawer with nested table</el-button
+  <hc-button text @click="table = true"
+    >Open Drawer with nested table</hc-button
   >
-  <el-button text @click="dialog = true"
-    >Open Drawer with nested form</el-button
+  <hc-button text @click="dialog = true"
+    >Open Drawer with nested form</hc-button
   >
-  <el-drawer
+  <hc-drawer
     v-model="table"
     title="I have a nested table inside!"
     direction="rtl"
     size="50%"
   >
-    <el-table :data="gridData">
-      <el-table-column property="date" label="Date" width="150" />
-      <el-table-column property="name" label="Name" width="200" />
-      <el-table-column property="address" label="Address" />
-    </el-table>
-  </el-drawer>
+    <hc-table :data="gridData">
+      <hc-table-column property="date" label="Date" width="150" />
+      <hc-table-column property="name" label="Name" width="200" />
+      <hc-table-column property="address" label="Address" />
+    </hc-table>
+  </hc-drawer>
 
-  <el-drawer
+  <hc-drawer
     ref="drawerRef"
     v-model="dialog"
     title="I have a nested form inside!"
@@ -27,33 +27,33 @@
     class="demo-drawer"
   >
     <div class="demo-drawer__content">
-      <el-form :model="form">
-        <el-form-item label="Name" :label-width="formLabelWidth">
-          <el-input v-model="form.name" autocomplete="off" />
-        </el-form-item>
-        <el-form-item label="Area" :label-width="formLabelWidth">
-          <el-select
+      <hc-form :model="form">
+        <hc-form-item label="Name" :label-width="formLabelWidth">
+          <hc-input v-model="form.name" autocomplete="off" />
+        </hc-form-item>
+        <hc-form-item label="Area" :label-width="formLabelWidth">
+          <hc-select
             v-model="form.region"
             placeholder="Please select activity area"
           >
-            <el-option label="Area1" value="shanghai" />
-            <el-option label="Area2" value="beijing" />
-          </el-select>
-        </el-form-item>
-      </el-form>
+            <hc-option label="Area1" value="shanghai" />
+            <hc-option label="Area2" value="beijing" />
+          </hc-select>
+        </hc-form-item>
+      </hc-form>
       <div class="demo-drawer__footer">
-        <el-button @click="cancelForm">Cancel</el-button>
-        <el-button type="primary" :loading="loading" @click="onClick">{{
+        <hc-button @click="cancelForm">Cancel</hc-button>
+        <hc-button type="primary" :loading="loading" @click="onClick">{{
           loading ? 'Submitting ...' : 'Submit'
-        }}</el-button>
+        }}</hc-button>
       </div>
     </div>
-  </el-drawer>
+  </hc-drawer>
 </template>
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { ElDrawer, ElMessageBox } from 'hicor-ui'
+import { HcDrawer, HcMessageBox } from 'hicor-ui'
 
 const formLabelWidth = '80px'
 let timer
@@ -96,7 +96,7 @@ const gridData = [
   },
 ]
 
-const drawerRef = ref<InstanceType<typeof ElDrawer>>()
+const drawerRef = ref<InstanceType<typeof HcDrawer>>()
 const onClick = () => {
   drawerRef.value!.close()
 }
@@ -105,7 +105,7 @@ const handleClose = (done) => {
   if (loading.value) {
     return
   }
-  ElMessageBox.confirm('Do you want to submit?')
+  HcMessageBox.confirm('Do you want to submit?')
     .then(() => {
       loading.value = true
       timer = setTimeout(() => {

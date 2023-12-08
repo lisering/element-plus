@@ -15,7 +15,7 @@ Hicor Ui 为了避免视觉传达差异，使用一套特定的调色板来规�
   margin: 8px 0;
   height: 112px;
   box-sizing: border-box;
-  color: var(--el-color-white);
+  color: var(--hc-color-white);
   font-size: 14px;
 
   .bg-color-sub {
@@ -30,7 +30,7 @@ Hicor Ui 为了避免视觉传达差异，使用一套特定的调色板来规�
       display: inline-block;
 
       &:first-child {
-        border-radius: 0 0 0 var(--el-border-radius-base);
+        border-radius: 0 0 0 var(--hc-border-radius-base);
       }
     }
 
@@ -38,7 +38,7 @@ Hicor Ui 为了避免视觉传达差异，使用一套特定的调色板来规�
       height: 100%;
       display: inline-block;
       &:first-child {
-        border-radius: 0 0 0 var(--el-border-radius-base);
+        border-radius: 0 0 0 var(--hc-border-radius-base);
       }
     }
   }
@@ -49,7 +49,7 @@ Hicor Ui 为了避免视觉传达差异，使用一套特定的调色板来规�
 }
 
 .demo-color-box-lite {
-  color: var(--el-text-color-primary);
+  color: var(--hc-text-color-primary);
 }
 </style>
 

@@ -17,18 +17,18 @@ watch(needRefresh, (value) => {
 
 <template>
   <transition name="pwa-popup">
-    <el-card v-if="!alwaysRefresh && needRefresh" class="pwa-card" role="alert">
+    <hc-card v-if="!alwaysRefresh && needRefresh" class="pwa-card" role="alert">
       <p class="pwa-card-text">{{ locale.message }}</p>
-      <el-button type="primary" plain @click="updateServiceWorker()">
+      <hc-button type="primary" plain @click="updateServiceWorker()">
         {{ locale.refresh }}
-      </el-button>
-      <el-button plain @click="alwaysRefresh = true">
+      </hc-button>
+      <hc-button plain @click="alwaysRefresh = true">
         {{ locale['always-refresh'] }}
-      </el-button>
-      <el-button plain @click="needRefresh = false">
+      </hc-button>
+      <hc-button plain @click="needRefresh = false">
         {{ locale.close }}
-      </el-button>
-    </el-card>
+      </hc-button>
+    </hc-card>
   </transition>
 </template>
 
@@ -47,7 +47,7 @@ watch(needRefresh, (value) => {
 
 .pwa-popup-enter-active,
 .pwa-popup-leave-active {
-  transition: var(--el-transition-md-fade);
+  transition: var(--hc-transition-md-fade);
 }
 
 .pwa-popup-enter,

@@ -1,5 +1,5 @@
 <template>
-  <el-tree
+  <hc-tree
     :data="data"
     :props="defaultProps"
     accordion

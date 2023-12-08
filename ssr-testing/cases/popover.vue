@@ -1,14 +1,8 @@
 <template>
-  <el-popover
-    ref="popover"
-    placement="right"
-    title="Title"
-    :width="200"
-    trigger="focus"
-    content="this is content, this is content, this is content"
-  >
+  <hc-popover ref="popover" placement="right" title="Title" :width="200" trigger="focus"
+    content="this is content, this is content, this is content">
     <template #reference>
-      <el-button>Focus to activate</el-button>
+      <hc-button>Focus to activate</hc-button>
     </template>
-  </el-popover>
+  </hc-popover>
 </template>

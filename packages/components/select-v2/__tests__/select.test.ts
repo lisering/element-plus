@@ -23,7 +23,7 @@ vi.mock('lodash-unified', async () => {
 
 const _mount = makeMountFunc({
   components: {
-    'el-select': Select,
+    'hc-select': Select,
   },
 })
 
@@ -178,10 +178,10 @@ function getOptions(): HTMLElement[] {
   )
 }
 
-const CLASS_NAME = 'el-select-v2'
-const WRAPPER_CLASS_NAME = 'el-select-v2__wrapper'
-const OPTION_ITEM_CLASS_NAME = 'el-select-dropdown__option-item'
-const PLACEHOLDER_CLASS_NAME = 'el-select-v2__placeholder'
+const CLASS_NAME = 'hc-select-v2'
+const WRAPPER_CLASS_NAME = 'hc-select-v2__wrapper'
+const OPTION_ITEM_CLASS_NAME = 'hc-select-dropdown__option-item'
+const PLACEHOLDER_CLASS_NAME = 'hc-select-v2__placeholder'
 const DEFAULT_PLACEHOLDER = 'Select'
 
 describe('Select', () => {
@@ -405,7 +405,7 @@ describe('Select', () => {
     const vm = wrapper.vm as any
     const placeholder = wrapper.find(`.${PLACEHOLDER_CLASS_NAME}`)
     const option = document.querySelector<HTMLElement>(
-      `.el-select-dropdown__option-item.is-disabled`
+      `.hc-select-dropdown__option-item.is-disabled`
     )
     expect(option.textContent).toBe(vm.options[1].label)
     option.click()
@@ -415,7 +415,7 @@ describe('Select', () => {
     vm.options[2].disabled = true
     await nextTick()
     const options = document.querySelectorAll<HTMLElement>(
-      `.el-select-dropdown__option-item.is-disabled`
+      `.hc-select-dropdown__option-item.is-disabled`
     )
     expect(options.length).toBe(2)
     expect(options.item(1).textContent).toBe(vm.options[2].label)
@@ -1179,7 +1179,7 @@ describe('Select', () => {
         default: `
           <div class="custom-renderer">
             <span style="margin-right: 8px;">{{ item.label }}</span>
-            <span style="color: var(--el-text-color-secondary); font-size: 13px">
+            <span style="color: var(--hc-text-color-secondary); font-size: 13px">
               {{ item.value }}
             </span>
           </div>

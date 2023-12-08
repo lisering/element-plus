@@ -1,11 +1,11 @@
 <template>
   <div class="slider-demo-block">
     <span class="demonstration">Breakpoints not displayed</span>
-    <el-slider v-model="value1" :step="10" />
+    <hc-slider v-model="value1" :step="10" />
   </div>
   <div class="slider-demo-block">
     <span class="demonstration">Breakpoints displayed</span>
-    <el-slider v-model="value2" :step="10" show-stops />
+    <hc-slider v-model="value2" :step="10" show-stops />
   </div>
 </template>
 
@@ -20,13 +20,15 @@ const value2 = ref(0)
   display: flex;
   align-items: center;
 }
-.slider-demo-block .el-slider {
+
+.slider-demo-block .hc-slider {
   margin-top: 0;
   margin-left: 12px;
 }
+
 .slider-demo-block .demonstration {
   font-size: 14px;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   line-height: 44px;
   flex: 1;
   overflow: hidden;
@@ -34,7 +36,8 @@ const value2 = ref(0)
   white-space: nowrap;
   margin-bottom: 0;
 }
-.slider-demo-block .demonstration + .el-slider {
+
+.slider-demo-block .demonstration + .hc-slider {
   flex: 0 0 70%;
 }
 </style>

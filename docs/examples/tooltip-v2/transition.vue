@@ -1,13 +1,13 @@
 <template>
   <!-- eslint-disable vue/require-toggle-inside-transition  -->
-  <el-tooltip-v2 aria-label="content" placement="top" content-class="scale-in">
+  <hc-tooltip-v2 aria-label="content" placement="top" content-class="scale-in">
     <template #trigger>
-      <el-button circle
-        ><el-icon> <Plus /> </el-icon
-      ></el-button>
+      <hc-button circle
+        ><hc-icon> <Plus /> </hc-icon
+      ></hc-button>
     </template>
     <div>content</div>
-  </el-tooltip-v2>
+  </hc-tooltip-v2>
 </template>
 
 <script setup lang="ts">
@@ -27,7 +27,7 @@ import { Plus } from '@element-plus/icons-vue'
   }
 }
 
-.el-tooltip-v2__content.scale-in {
-  animation: scale-in var(--el-transition-duration) ease-out forwards;
+.hc-tooltip-v2__content.scale-in {
+  animation: scale-in var(--hc-transition-duration) ease-out forwards;
 }
 </style>

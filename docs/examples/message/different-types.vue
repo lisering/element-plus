@@ -1,29 +1,29 @@
 <template>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
+  <hc-button :plain="true" @click="open2">success</hc-button>
+  <hc-button :plain="true" @click="open3">warning</hc-button>
+  <hc-button :plain="true" @click="open1">message</hc-button>
+  <hc-button :plain="true" @click="open4">error</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 
 const open1 = () => {
-  ElMessage('this is a message.')
+  HcMessage('this is a message.')
 }
 const open2 = () => {
-  ElMessage({
+  HcMessage({
     message: 'Congrats, this is a success message.',
     type: 'success',
   })
 }
 const open3 = () => {
-  ElMessage({
+  HcMessage({
     message: 'Warning, this is a warning message.',
     type: 'warning',
   })
 }
 const open4 = () => {
-  ElMessage.error('Oops, this is a error message.')
+  HcMessage.error('Oops, this is a error message.')
 }
 </script>

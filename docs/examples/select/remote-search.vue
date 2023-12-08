@@ -2,7 +2,7 @@
   <div class="flex flex-wrap">
     <div class="m-4">
       <p>default</p>
-      <el-select
+      <hc-select
         v-model="value"
         multiple
         filterable
@@ -12,17 +12,17 @@
         :remote-method="remoteMethod"
         :loading="loading"
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value"
         />
-      </el-select>
+      </hc-select>
     </div>
     <div class="m-4">
       <p>use remote-show-suffix</p>
-      <el-select
+      <hc-select
         v-model="value"
         multiple
         filterable
@@ -33,13 +33,13 @@
         :remote-method="remoteMethod"
         :loading="loading"
       >
-        <el-option
+        <hc-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value"
         />
-      </el-select>
+      </hc-select>
     </div>
   </div>
 </template>

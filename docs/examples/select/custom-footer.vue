@@ -1,29 +1,29 @@
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <hc-select v-model="value" placeholder="Select">
+    <hc-option
       v-for="item in cities"
       :key="item.value"
       :label="item.label"
       :value="item.value"
     />
     <template #footer>
-      <el-button v-if="!isAdding" text bg size="small" @click="onAddOption">
+      <hc-button v-if="!isAdding" text bg size="small" @click="onAddOption">
         Add an option
-      </el-button>
+      </hc-button>
       <template v-else>
-        <el-input
+        <hc-input
           v-model="optionName"
           class="option-input"
           placeholder="input option name"
           size="small"
         />
-        <el-button type="primary" size="small" @click="onConfirm">
+        <hc-button type="primary" size="small" @click="onConfirm">
           confirm
-        </el-button>
-        <el-button size="small" @click="clear">cancel</el-button>
+        </hc-button>
+        <hc-button size="small" @click="clear">cancel</hc-button>
       </template>
     </template>
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

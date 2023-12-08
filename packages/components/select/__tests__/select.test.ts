@@ -43,10 +43,10 @@ const _mount = (template: string, data: any = () => ({}), otherObj?) =>
   mount(
     {
       components: {
-        'el-select': Select,
-        'el-option': Option,
-        'el-group-option': Group,
-        'el-form-item': HcFormItem,
+        'hc-select': Select,
+        'hc-option': Option,
+        'hc-group-option': Group,
+        'hc-form-item': HcFormItem,
       },
       template,
       data,
@@ -68,7 +68,7 @@ const _mount = (template: string, data: any = () => ({}), otherObj?) =>
 function getOptions(): HTMLElement[] {
   return Array.from(
     document.querySelectorAll<HTMLElement>(
-      'body > div:last-child .el-select-dropdown__item'
+      'body > div:last-child .hc-select-dropdown__item'
     )
   )
 }
@@ -315,7 +315,7 @@ describe('Select', () => {
     wrapper = _mount(`<hc-select v-model="value"></hc-select>`, () => ({
       value: '',
     }))
-    expect(wrapper.classes()).toContain('el-select')
+    expect(wrapper.classes()).toContain('hc-select')
     expect(findInnerInput().placeholder).toBe('Select')
     const select = wrapper.findComponent({ name: 'HcSelect' })
     await select.trigger('mouseenter')
@@ -1886,7 +1886,7 @@ describe('Select', () => {
     const options = getOptions()
     options[1].click()
     await nextTick()
-    expect(wrapper.find('.hc-tag').classes()).toContain('el-tag--success')
+    expect(wrapper.find('.hc-tag').classes()).toContain('hc-tag--success')
   })
 
   test('modelValue should be deep reactive in multiple mode', async () => {
@@ -2434,7 +2434,7 @@ describe('Select', () => {
         key: EVENT_CODE.backspace,
       })
       await nextTick()
-      // after the second deletion, an el-tag still exist
+      // after the second deletion, an hc-tag still exist
       expect(wrapper.findAll('.hc-tag').length).toBe(1)
     })
   })

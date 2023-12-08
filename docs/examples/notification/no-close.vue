@@ -1,12 +1,12 @@
 <template>
-  <el-button plain @click="open"> Hide close button </el-button>
+  <hc-button plain @click="open"> Hide close button </hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElNotification } from 'hicor-ui'
+import { HcNotification } from 'hicor-ui'
 
 const open = () => {
-  ElNotification.success({
+  HcNotification.success({
     title: 'Info',
     message: 'This is a message without close button',
     showClose: false,

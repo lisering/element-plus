@@ -1,39 +1,39 @@
 <template>
-  <el-row class="mb-4">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-  </el-row>
+  <hc-row class="mb-4">
+    <hc-button>Default</hc-button>
+    <hc-button type="primary">Primary</hc-button>
+    <hc-button type="success">Success</hc-button>
+    <hc-button type="info">Info</hc-button>
+    <hc-button type="warning">Warning</hc-button>
+    <hc-button type="danger">Danger</hc-button>
+  </hc-row>
 
-  <el-row class="mb-4">
-    <el-button plain>Plain</el-button>
-    <el-button type="primary" plain>Primary</el-button>
-    <el-button type="success" plain>Success</el-button>
-    <el-button type="info" plain>Info</el-button>
-    <el-button type="warning" plain>Warning</el-button>
-    <el-button type="danger" plain>Danger</el-button>
-  </el-row>
+  <hc-row class="mb-4">
+    <hc-button plain>Plain</hc-button>
+    <hc-button type="primary" plain>Primary</hc-button>
+    <hc-button type="success" plain>Success</hc-button>
+    <hc-button type="info" plain>Info</hc-button>
+    <hc-button type="warning" plain>Warning</hc-button>
+    <hc-button type="danger" plain>Danger</hc-button>
+  </hc-row>
 
-  <el-row class="mb-4">
-    <el-button round>Round</el-button>
-    <el-button type="primary" round>Primary</el-button>
-    <el-button type="success" round>Success</el-button>
-    <el-button type="info" round>Info</el-button>
-    <el-button type="warning" round>Warning</el-button>
-    <el-button type="danger" round>Danger</el-button>
-  </el-row>
+  <hc-row class="mb-4">
+    <hc-button round>Round</hc-button>
+    <hc-button type="primary" round>Primary</hc-button>
+    <hc-button type="success" round>Success</hc-button>
+    <hc-button type="info" round>Info</hc-button>
+    <hc-button type="warning" round>Warning</hc-button>
+    <hc-button type="danger" round>Danger</hc-button>
+  </hc-row>
 
-  <el-row>
-    <el-button :icon="Search" circle />
-    <el-button type="primary" :icon="Edit" circle />
-    <el-button type="success" :icon="Check" circle />
-    <el-button type="info" :icon="Message" circle />
-    <el-button type="warning" :icon="Star" circle />
-    <el-button type="danger" :icon="Delete" circle />
-  </el-row>
+  <hc-row>
+    <hc-button :icon="Search" circle />
+    <hc-button type="primary" :icon="Edit" circle />
+    <hc-button type="success" :icon="Check" circle />
+    <hc-button type="info" :icon="Message" circle />
+    <hc-button type="warning" :icon="Star" circle />
+    <hc-button type="danger" :icon="Delete" circle />
+  </hc-row>
 </template>
 
 <script lang="ts" setup>

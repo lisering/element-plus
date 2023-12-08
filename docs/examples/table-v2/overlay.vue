@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="data"
     :row-height="40"
@@ -8,15 +8,15 @@
   >
     <template #overlay>
       <div
-        class="el-loading-mask"
+        class="hc-loading-mask"
         style="display: flex; align-items: center; justify-content: center"
       >
-        <el-icon class="is-loading" color="var(--el-color-primary)" :size="26">
+        <hc-icon class="is-loading" color="var(--hc-color-primary)" :size="26">
           <loading-icon />
-        </el-icon>
+        </hc-icon>
       </div>
     </template>
-  </el-table-v2>
+  </hc-table-v2>
 </template>
 
 <script lang="ts" setup>
@@ -53,7 +53,7 @@ const columns = generateColumns(10)
 const data = generateData(columns, 200)
 </script>
 <style>
-.example-showcase .el-table-v2__overlay {
+.example-showcase .hc-table-v2__overlay {
   z-index: 9;
 }
 </style>

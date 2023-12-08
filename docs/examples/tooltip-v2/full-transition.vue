@@ -1,18 +1,18 @@
 <template>
-  <el-tooltip-v2 full-transition :transition-props="transitionProps">
+  <hc-tooltip-v2 full-transition :transition-props="transitionProps">
     <template #trigger>
-      <el-button circle
-        ><el-icon> <Plus /> </el-icon
-      ></el-button>
+      <hc-button circle
+        ><hc-icon> <Plus /> </hc-icon
+      ></hc-button>
     </template>
     <div>content</div>
-  </el-tooltip-v2>
+  </hc-tooltip-v2>
 </template>
 
 <script setup lang="ts">
 import { Plus } from '@element-plus/icons-vue'
 
 const transitionProps = {
-  name: 'el-fade-in-linear',
+  name: 'hc-fade-in-linear',
 }
 </script>

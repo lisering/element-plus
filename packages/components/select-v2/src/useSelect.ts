@@ -70,7 +70,7 @@ const useSelect = (props: ISelectProps, emit) => {
 
   // DOM & Component refs
   const controlRef = ref(null)
-  const inputRef = ref(null) // el-input ref
+  const inputRef = ref(null) // hc-input ref
   const menuRef = ref(null)
   const popper = ref<InstanceType<typeof HcTooltip> | null>(null)
   const selectRef = ref(null)

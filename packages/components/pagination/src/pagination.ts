@@ -221,7 +221,7 @@ export default defineComponent({
             }
           } else {
             // (else block just for explaination)
-            // else page size is controlled by el-pagination internally
+            // else page size is controlled by hc-pagination internally
           }
         }
       }

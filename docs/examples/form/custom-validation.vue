@@ -1,5 +1,5 @@
 <template>
-  <el-form
+  <hc-form
     ref="ruleFormRef"
     :model="ruleForm"
     status-icon
@@ -7,26 +7,26 @@
     label-width="120px"
     class="demo-ruleForm"
   >
-    <el-form-item label="Password" prop="pass">
-      <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
-    </el-form-item>
-    <el-form-item label="Confirm" prop="checkPass">
-      <el-input
+    <hc-form-item label="Password" prop="pass">
+      <hc-input v-model="ruleForm.pass" type="password" autocomplete="off" />
+    </hc-form-item>
+    <hc-form-item label="Confirm" prop="checkPass">
+      <hc-input
         v-model="ruleForm.checkPass"
         type="password"
         autocomplete="off"
       />
-    </el-form-item>
-    <el-form-item label="Age" prop="age">
-      <el-input v-model.number="ruleForm.age" />
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm(ruleFormRef)"
-        >Submit</el-button
+    </hc-form-item>
+    <hc-form-item label="Age" prop="age">
+      <hc-input v-model.number="ruleForm.age" />
+    </hc-form-item>
+    <hc-form-item>
+      <hc-button type="primary" @click="submitForm(ruleFormRef)"
+        >Submit</hc-button
       >
-      <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
-    </el-form-item>
-  </el-form>
+      <hc-button @click="resetForm(ruleFormRef)">Reset</hc-button>
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>

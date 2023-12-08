@@ -1,12 +1,12 @@
 <template>
-  <el-button text @click="open">Click to open Message Box</el-button>
+  <hc-button text @click="open">Click to open Message Box</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage, ElMessageBox } from 'hicor-ui'
+import { HcMessage, HcMessageBox } from 'hicor-ui'
 import type { Action } from 'hicor-ui'
 const open = () => {
-  ElMessageBox.confirm(
+  HcMessageBox.confirm(
     'You have unsaved changes, save and proceed?',
     'Confirm',
     {
@@ -16,13 +16,13 @@ const open = () => {
     }
   )
     .then(() => {
-      ElMessage({
+      HcMessage({
         type: 'info',
         message: 'Changes saved. Proceeding to a new route.',
       })
     })
     .catch((action: Action) => {
-      ElMessage({
+      HcMessage({
         type: 'info',
         message:
           action === 'cancel'

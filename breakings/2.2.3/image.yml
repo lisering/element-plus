@@ -1,5 +1,5 @@
 - scope: 'component'
-  name: 'el-image'
+  name: 'hc-image'
   type: 'props'
   version: '2.2.3'
   commit_hash: '7a48556'

@@ -1,42 +1,42 @@
 <template>
-  <el-button text @click="dialogTableVisible = true">
+  <hc-button text @click="dialogTableVisible = true">
     open a Table nested Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog v-model="dialogTableVisible" title="Shipping address">
-    <el-table :data="gridData">
-      <el-table-column property="date" label="Date" width="150" />
-      <el-table-column property="name" label="Name" width="200" />
-      <el-table-column property="address" label="Address" />
-    </el-table>
-  </el-dialog>
+  <hc-dialog v-model="dialogTableVisible" title="Shipping address">
+    <hc-table :data="gridData">
+      <hc-table-column property="date" label="Date" width="150" />
+      <hc-table-column property="name" label="Name" width="200" />
+      <hc-table-column property="address" label="Address" />
+    </hc-table>
+  </hc-dialog>
 
   <!-- Form -->
-  <el-button text @click="dialogFormVisible = true">
+  <hc-button text @click="dialogFormVisible = true">
     open a Form nested Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog v-model="dialogFormVisible" title="Shipping address">
-    <el-form :model="form">
-      <el-form-item label="Promotion name" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="Zones" :label-width="formLabelWidth">
-        <el-select v-model="form.region" placeholder="Please select a zone">
-          <el-option label="Zone No.1" value="shanghai" />
-          <el-option label="Zone No.2" value="beijing" />
-        </el-select>
-      </el-form-item>
-    </el-form>
+  <hc-dialog v-model="dialogFormVisible" title="Shipping address">
+    <hc-form :model="form">
+      <hc-form-item label="Promotion name" :label-width="formLabelWidth">
+        <hc-input v-model="form.name" autocomplete="off" />
+      </hc-form-item>
+      <hc-form-item label="Zones" :label-width="formLabelWidth">
+        <hc-select v-model="form.region" placeholder="Please select a zone">
+          <hc-option label="Zone No.1" value="shanghai" />
+          <hc-option label="Zone No.2" value="beijing" />
+        </hc-select>
+      </hc-form-item>
+    </hc-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">
+        <hc-button @click="dialogFormVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="dialogFormVisible = false">
           Confirm
-        </el-button>
+        </hc-button>
       </span>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>
@@ -81,15 +81,18 @@ const gridData = [
 ]
 </script>
 <style scoped>
-.el-button--text {
+.hc-button--text {
   margin-right: 15px;
 }
-.el-select {
+
+.hc-select {
   width: 300px;
 }
-.el-input {
+
+.hc-input {
   width: 300px;
 }
+
 .dialog-footer button:first-child {
   margin-right: 10px;
 }

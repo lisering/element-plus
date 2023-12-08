@@ -34,7 +34,7 @@ _2023-11-03_
 - Components [message-box] uncaught on draggable (#14618 by @betavs)
 - Components [select-v2] label error when value not in the options (#14656 by @tolking)
 - Components [rate] Fix the background rate when decimal (#14622 by @cc-hearts)
-- Components [dialog] fix el-dialog z-index bug (#14373 by @nothing-sy)
+- Components [dialog] fix hc-dialog z-index bug (#14373 by @nothing-sy)
 - Components [dialog] consistent imports of lodash
 - Components [tree-select] v-model invalid when source changes (#14603 by @yujinpan)
 - Components [table] tooltipOptions.showAfter is not effective (#13175 by @xingyixiang)
@@ -123,7 +123,7 @@ _2023-09-14_
 
 #### Features
 
-- Components [el-pagination] add teleported prop (#14072 by @boomboy4)
+- Components [hc-pagination] add teleported prop (#14072 by @boomboy4)
 - Components [image-viewer] Add rotate event when rotating images (#14138 by @HADB)
 - Components [upload] support async data (#14015 by @jianjunyuu)
 
@@ -221,7 +221,7 @@ _2023-08-04_
 - Components [collapse-transition] remove redundant code (#13715 by @mhpsy)
 - Hooks [use-focus-controller] remove unnecessary role attributes (#13749 by @tolking)
 - Components [date-picker] disable button if now is disabled (#13655 by @btea)
-- Components [el-table] rangeWidth dealing with loss of precision (#12938 by @lxy030988)
+- Components [hc-table] rangeWidth dealing with loss of precision (#12938 by @lxy030988)
 - Components [cascader] checkbox sync error (#11462 by @acyza)
 - Components [avatar] set img tag's width attribute (#13844 by @yj-liuzepeng)
 - Components [select] abnormal focus when click tags (#13699 by @tolking)
@@ -432,7 +432,7 @@ _2023-03-12_
 - Components [select-v2] Add max-collapse-tags prop (#11405 by @kooriookami)
 - Components [select] Add max-collapse-tags prop (#11378 by @kooriookami)
 - Components [cascader] Adjust expose and typo (#11781 by @chenxch)
-- Components add el-text component (#11653 by @gimjin)
+- Components add hc-text component (#11653 by @gimjin)
 
 #### Bug fixes
 
@@ -633,7 +633,7 @@ _2022-12-16_
 
 #### Features
 
-- Components el-image support set zoom-rate (#10930 by @JiatLn)
+- Components hc-image support set zoom-rate (#10930 by @JiatLn)
 
 #### Bug fixes
 
@@ -853,7 +853,7 @@ _2022-10-13_
 - Components [carousel] improper active item (#8904 by @makedopamine)
 - Components [input] memory leak (#9965 by @chenxch)
 - Components [tabs] arrow icon centered horizontally (#9989 by @btea)
-- Components [el-form] adjust the warn about label (#9889 by @btea)
+- Components [hc-form] adjust the warn about label (#9889 by @btea)
 - Components [select-v2] dynamic update popper (#9888 by @btea)
 - Components [tabs] prevent scroll tab into view after focusing it (#9990 by @makedopamine)
 - Components [table] wrong hover style in nested tables (#9932 by @init-qy)
@@ -893,7 +893,7 @@ _2022-09-16_
 
 - Components [select] add placement (#9621 by @chenxch)
 - Components [select-v2] add placement (#9622 by @chenxch)
-- Components [el-steps] support custom icon when status is error (#9603 by @z-ao)
+- Components [hc-steps] support custom icon when status is error (#9603 by @z-ao)
 - Components [message-box] allow pass function to `message` option (#9405 by @holazz)
 - Components [select] enhanced suffix (#9619 by @chenxch)
 - Components [select-v2][tree-v2] add virtual-list style dependency (#7129 by @muuyao)
@@ -916,21 +916,21 @@ _2022-09-16_
 - Components [table] fix namespace (#9654 by @holazz)
 - Components [tree] repeat trigger change event on the same node (#9645 by @holazz)
 - Components [select] keep hover after clearing (#9644 by @chenxch)
-- Components [loading] remove `el-loading-parent--relative` correctly (#9630 by @wiidede)
+- Components [loading] remove `hc-loading-parent--relative` correctly (#9630 by @wiidede)
 - Hooks [use-popper-container] fix namespace (#9655 by @holazz)
 - Components [rate] fast move mouseLeave not triggered (#9608 by @chenxch)
 - Components [select-v2] Tags content overflow wrap (#9677 by @Tsong-LC)
 - Components [table] throw error when no matching column (#9682 by @qq282126990)
 - Components [table-v2] cell and header-cell slots parmas (#9665 by @chenxch)
 - Components [select-v2] fix placeholder style (#9707 by @holazz)
-- Components [select-v2] respect `--el-component-size` (#9706 by @holazz)
+- Components [select-v2] respect `--hc-component-size` (#9706 by @holazz)
 - Components [time-picker] fix end-time can't be callback (#9669 by @MrCat33)
 - Components [tree] setCurrentKey() type error (#9709 by @zhiyuanzmj)
 - Components [cascader] fix large interval when multiple checkboxes (#9428 by @Tsong-LC)
 - Components [select] fix select hover flicker (#9521 by @ChenAdien)
 - Components [select] fix option-group get wrong visible (#9726 by @init-qy)
 - Components [loading] fix invalid position sticky (#9720 by @Tsong-LC)
-- Components [el-input] center in vertical direction (#9732 by @btea)
+- Components [hc-input] center in vertical direction (#9732 by @btea)
 - Components [checkbox] fix only child element style border-radius (#9746 by @Tsong-LC)
 - Components [popper] add missing id (#9632 by @plehnen)
 - Components [cascader-panel] fix type error (#9753 by @Tsong-LC)
@@ -960,7 +960,7 @@ _2022-09-02_
 - Components [input-number] add new prop `readonly` (#9545 by @holazz)
 - Components [time-picker] add open and close handlers (#9572 by @jagoncalves14)
 - Components [date-picker] add open and close handlers (#9571 by @jagoncalves14)
-- Components el-tree.currentNodekey responsive. close #9576 (#9577 by @zhiyuanzmj)
+- Components hc-tree.currentNodekey responsive. close #9576 (#9577 by @zhiyuanzmj)
 - Components  CascaderProps expandTrigger enum to type (#9265 by @hcwhan)
 
 #### Bug fixes
@@ -981,7 +981,7 @@ _2022-09-02_
 - Components [table] fix sort-change event behavior (#4640 by @cokemine)
 - Components [slider] trigger change event correctly (#9553 by @holazz)
 - Components [select-v2] emit('blur') does not carry parameter (#9547 by @sechi747)
-- Components [table] el-table__placeholder class disappear(#9527 by @wiidede) (#9529)
+- Components [table] hc-table__placeholder class disappear(#9527 by @wiidede) (#9529)
 - Components [table-v2] cell slots invalid (#9531 by @chenxch)
 - Components [select] update finished calculating optionsInDropdown (#9475 by @Tsong-LC)
 - Components [input] formatted values are out of sync (#9501 by @chenxch)
@@ -989,10 +989,10 @@ _2022-09-02_
 - Components [tabs] nav offset error when use both number and string (#9222 by @tolking)
 - Components [select] support dynamic value for option (#9220 by @buqiyuan)
 - Issue #8278 (#8331 by @StephenKe)
-- [el-date-picker] fix DatePicker render error (#7017 by @soandsoprogrammer)
+- [hc-date-picker] fix DatePicker render error (#7017 by @soandsoprogrammer)
 - Components [form] reset field validate invalid (#7166 by @btea)
-- Components [el-form] clear validate after reset fields
-- Components [el-menu] compatible `menu.value` is null (#9566 by @xiaoxian521)
+- Components [hc-form] clear validate after reset fields
+- Components [hc-menu] compatible `menu.value` is null (#9566 by @xiaoxian521)
 - Components [page-header] fix styles introduced on demand (#9564 by @LiZhequ)
 - Components [pagination] add validate-event (#9563 by @tolking)
 - Components [loading] prevent click through (#5822 by @weidehai)
@@ -1036,7 +1036,7 @@ _2022-08-26_
 
 - Components [message-box] fix Wrong type checking (#8399 by @MMmaXingXing)
 - Components [tree-v2] `setExpandedKeys` instead of `setExpendKeys` (#9413 by @holazz)
-- Components [el-menu] childNodes is null (#9408 by @xiaoxian521)
+- Components [hc-menu] childNodes is null (#9408 by @xiaoxian521)
 - Components [cascader] when multiple is true keyboard delete error (#9415 by @btea)
 - Components [table] repetition labelCellName (#8967 by @gjfei)
 - Components [message] the value of exposeProxy may be null (#9378 by @btea)
@@ -1226,7 +1226,7 @@ _2022-07-22_
 #### Refactors
 
 - Components [dialog] use JSX in Unit test (#8270 by @Tsong-LC)
-- Components [el-table] using flex to refactor table (#8690 by @msidolphin)
+- Components [hc-table] using flex to refactor table (#8690 by @msidolphin)
 - Components [popconfirm] remove redundant function (#8786 by @btea)
 - Components [container] use JSX in Unit test (#8778 by @gjfei)
 - Directives [repeat-click] use JSX in Unit test (#8785 by @holazz)
@@ -1469,7 +1469,7 @@ _2022-06-04_
 - Components [select]  input height is 2px more (#7958 by @chenxch)
 - Components [focus-trap] popper input focus (#8025 by @opengraphica)
 - Components [scrollbar] expose wrap ref (#8035 by @holazz)
-- Components [el-table] hide tooltip when table is scrolling (#8012 by @msidolphin)
+- Components [hc-table] hide tooltip when table is scrolling (#8012 by @msidolphin)
 - Components [popper] contextual menu (#8054 by @jw-foss)
 - Components [form] resetFields object error (#8067 by @chenxch)
 - Theme-chalk [message] border width & style css var (#8072 by @YunYouJun)
@@ -1552,7 +1552,7 @@ _2022-05-23_
 
 - Components [menu] the styles link error (#7820 by @tolking)
 - Components [form] align label width if it exists (#7826 by @ryuhangyeong)
-- Correct the deprecated note for el-button (#7854 by @0song)
+- Correct the deprecated note for hc-button (#7854 by @0song)
 - Components [radio-group] unique id (#7859 by @JeremyWuuuuu)
 
 ### 2.2.1
@@ -1636,8 +1636,8 @@ _2022-05-09_
 - `type="text"` has been removed from `button`, now you can do this, for more detail see [Documentation](https://hicor-ui.org/en-US/component/button.html#text-button)
 
 ```diff
---- <el-button type="text"/>
-+++ <el-button text />
+--- <hc-button type="text"/>
++++ <hc-button text />
 ```
 
 #### Features
@@ -1656,7 +1656,7 @@ _2022-05-09_
 
 #### Bug fixes
 
-- Components [el-select-v2] clear created options (#7305 by @josonho)
+- Components [hc-select-v2] clear created options (#7305 by @josonho)
 - Components [autocomplete] fetch-suggestions support AsyncFunction (#7315 by @chenxch)
 - Components [pagination] fix typo (#7420 by @fzq1998)
 - Docs icon import (#7440 by @KevinLjb)
@@ -1681,7 +1681,7 @@ _2022-05-09_
 - Docs icon collection link (#7547 by @btea)
 - Docs fix Cross hovering (#7558 by @kooriookami)
 - Components input internal autofill border color (#7561 by @YunYouJun)
-- Components [el-tree-v2]prop `icon` support Component. fix [#7517] (#7518 by @JobinJia)
+- Components [hc-tree-v2]prop `icon` support Component. fix [#7517] (#7518 by @JobinJia)
 - Tree-select nodeKey default selected (#7172 by @chenxch) (#7181)
 - Component cascader searching placeholder does not disappear (#7540 by @anflower)
 - Components select v2 remote method trigger reset value when blur (#7569 by @YunYouJun)
@@ -1715,7 +1715,7 @@ _2022-04-25_
 
 #### Bug fixes
 
-- Components [el-upload] icon is covered (#6951 by @josonho)
+- Components [hc-upload] icon is covered (#6951 by @josonho)
 - Deps update all non-major dependencies (#7209 by @renovate[bot])
 - Theme-chalk components details when dark (#7229 by @YunYouJun)
 - Components [input] fix status icon gap (#7228 by @plainheart)
@@ -1831,29 +1831,29 @@ _2022-04-03_
 #### Features
 
 - Components [tooltip-v2] documentation (#6870 by @JeremyWuuuuu)
-- Components [el-table] add placeholder for tree table (#6905 by @msidolphin)
-- Components [el-scrollbar] expose scrollTo method (#6663 by @msidolphin)
+- Components [hc-table] add placeholder for tree table (#6905 by @msidolphin)
+- Components [hc-scrollbar] expose scrollTo method (#6663 by @msidolphin)
 - Components [tag] add new API for rounded
-- Components [el-virtual-list] support native behaviours (#6945 by @msidolphin)
+- Components [hc-virtual-list] support native behaviours (#6945 by @msidolphin)
 - Components add tree select component (#6843 by @yujinpan)
 - Components [tabs] add tab-change event (#6978 by @buqiyuan)
 - Locale: Added Azerbaijani language (#6878 by @chz)
 
 #### Bug fixes
 
-- Components [el-input] change icon when showing password (#6846 by @plainheart)
+- Components [hc-input] change icon when showing password (#6846 by @plainheart)
 - Components [autocomplete] can not fetch suggestions after clear (#6847 by @buqiyuan)
 - Deps update all non-major dependencies (#6893 by @renovate[bot])
 - Remove default size warn by set componetSizes (#6908 by @YunYouJun)
 - [ElMessage] grouping mode default type (#6836 by @chenxch)
 - Components [update] fix onChange hook called twice (#6885 by @LYlanfeng)
-- Components [el-table] use table width as empty block width (#6694 by @plainheart)
-- [el-select-v2] 修復select-v2 v-model 不能正常的支持 Object (#6888 by @czh740132583)
+- Components [hc-table] use table width as empty block width (#6694 by @plainheart)
+- [hc-select-v2] 修復select-v2 v-model 不能正常的支持 Object (#6888 by @czh740132583)
 - Components [input] 添加prepend或append插槽后, clearable无法显示 (#6756 by @cn-troy)
-- Docs [el-divider] Document case error, String to string (#6934 by @zcj996)
+- Docs [hc-divider] Document case error, String to string (#6934 by @zcj996)
 - Components [select] value support object (#6933 by @btea)
 - Docs documentation style (#6952 by @JeremyWuuuuu)
-- Theme-chalk [el-table] fix custom header background of fixed column (#6931 by @plainheart)
+- Theme-chalk [hc-table] fix custom header background of fixed column (#6931 by @plainheart)
 
 #### Refactors
 
@@ -1866,7 +1866,7 @@ _2022-04-03_
 
 _2022-03-28_
 
-Revert "fix(components): [el-tabs] label slot not update (#6738 by @btea)" (#6871)
+Revert "fix(components): [hc-tabs] label slot not update (#6738 by @btea)" (#6871)
 
 #### Refactors
 
@@ -1891,8 +1891,8 @@ _2022-03-25_
 - Components [autocomplete] fetchSuggestions supports Promise (#6695 by @CarterLi)
 - Export constants (#6763 by @sxzz)
 - Components [dropdown] add buttonProps (#6183 by @gjfei) (#6185)
-- Components [el-config-provider] experimental feature toggle (#6794 by @JeremyWuuuuu)
-- Components [el-config-provider] add config items (#6797 by @JeremyWuuuuu)
+- Components [hc-config-provider] experimental feature toggle (#6794 by @JeremyWuuuuu)
+- Components [hc-config-provider] add config items (#6797 by @JeremyWuuuuu)
 - Project adapt floating ui (#6812 by @JeremyWuuuuu)
 - Hooks [floating] add use-floating (#6822 by @JeremyWuuuuu)
 
@@ -1901,22 +1901,22 @@ _2022-03-25_
 - Components [menu-item] add fallback-placement (#6684 by @freedomlang)
 - Docs update tabs click prop type (#6709 by @MrpandaLiu)
 - Fix "Invalid date" display error in docs site (#6714 by @jasonren0403)
-- Components [el-input] keydown event validator warming (#6691 by @HeftyKoo)
-- Style [el-checkbox-group] vertical align in form-item (#6688 by @HeftyKoo)
+- Components [hc-input] keydown event validator warming (#6691 by @HeftyKoo)
+- Style [hc-checkbox-group] vertical align in form-item (#6688 by @HeftyKoo)
 - Components [dropdown] ignore show/hide timeouts for click trigger (#6720 by @purepear)
-- Components [el-tabs] label slot not update (#6738 by @HeftyKoo)
+- Components [hc-tabs] label slot not update (#6738 by @HeftyKoo)
 - Components [time-picker] cancel button not work correctly (#6735 by @HeftyKoo)
 - Components [input] textarea border does not display on ios (#6768 by @HeftyKoo)
 - Components [message-box] textarea can not use multiline text (#6774 by @HeftyKoo)
 - Global config when undefined (#6777 by @sxzz)
 - Components [form] add debounce for validate state (#6779 by @sxzz)
 - Doc domain check (#6793 by @0song)
-- Components [el-select] reset selectedLabel when toggle multiple (#6769 by @muuyao)
-- Components [el-table] cannot scroll when tableLayout is auto (#6790 by @msidolphin)
-- Components [el-table] filter failed when tableLayout is auto (#6798 by @msidolphin)
+- Components [hc-select] reset selectedLabel when toggle multiple (#6769 by @muuyao)
+- Components [hc-table] cannot scroll when tableLayout is auto (#6790 by @msidolphin)
+- Components [hc-table] filter failed when tableLayout is auto (#6798 by @msidolphin)
 - Components [form] clear validate after resetFields (#6758 by @sxzz)
 - Components [cascader] loading icon position (#6802 by @btea)
-- Components [el-form] clear validate after reset fields
+- Components [hc-form] clear validate after reset fields
 - Import dayjs
 - Components [autocomplete] fix can not fetch suggestions when after clear (#6820 by @buqiyuan)
 - Cascader Unexpected display 'No Data' (#6815 by @chenxch)
@@ -1935,7 +1935,7 @@ _2022-03-25_
 - Components [upload] improve code and typings (#6762 by @sxzz)
 - Components [time-picker] use useNamespace (#6523 by @gjfei)
 - Theme-chalk remove default size class & simplify button css (#6782 by @YunYouJun)
-- Components [el-popper] refactor popper to script setups (#6725 by @JeremyWuuuuu)
+- Components [hc-popper] refactor popper to script setups (#6725 by @JeremyWuuuuu)
 
 ### 2.1.4
 
@@ -1946,9 +1946,9 @@ _2022-03-16_
 - Components [menu] do not handle resize of child vnode (#6131 by @nieyuyao)
 - Docs build without window and Element error (#6656 by @YunYouJun)
 - Components [table] not scroll empty block when scrolling table (#6615 by @plainheart)
-- Components [el-form] validation with callbacks throws (#6669 by @JeremyWuuuuu)
+- Components [hc-form] validation with callbacks throws (#6669 by @JeremyWuuuuu)
 - Components [form-item] emit validate when passed not triggered (#6671 by @LYlanfeng)
-- Components [el-dialog] DoneFn parameter should be optional (#6675 by @yeyuqiudeng)
+- Components [hc-dialog] DoneFn parameter should be optional (#6675 by @yeyuqiudeng)
 - Input-number in step-strictly onChange bug (#6662 by @chenxch)
 
 ### 2.1.3
@@ -1958,7 +1958,7 @@ _2022-03-15_
 #### Features
 
 - Components [loading] export directive alias (#6629 by @sxzz)
-- Components [el-result] warn users using subTitle as slots (#6651 by @JeremyWuuuuu)
+- Components [hc-result] warn users using subTitle as slots (#6651 by @JeremyWuuuuu)
 
 #### Bug fixes
 
@@ -1984,8 +1984,8 @@ _2022-03-14_
 
 - Deps update all non-major dependencies (#6604 by @renovate[bot])
 - Docs border-color css var (#6620 by @YunYouJun)
-- Components [el-form] Form not emitting validation result (#6610 by @JeremyWuuuuu)
-- Theme-chalk [message-box] el-message-box__status position may o… (#6614 by @yeyuqiudeng)
+- Components [hc-form] Form not emitting validation result (#6610 by @JeremyWuuuuu)
+- Theme-chalk [message-box] hc-message-box__status position may o… (#6614 by @yeyuqiudeng)
 - Theme-chalk [cascader/checkbox] fix unexpected fill color (#6619 by @plainheart)
 
 #### Refactors
@@ -2000,11 +2000,11 @@ _2022-03-13_
 
 - Ci setup cypress circle ci (#6581 by @JeremyWuuuuu)
 - Ci replace cypress  with puppeteer (#6592 by @JeremyWuuuuu)
-- Components [el-table] exposes scroll methods (#6539 by @msidolphin)
+- Components [hc-table] exposes scroll methods (#6539 by @msidolphin)
 
 #### Bug fixes
 
-- Component [el-tabs] the initial pane should only render for once (#6563 by @KawaiiZapic)
+- Component [hc-tabs] the initial pane should only render for once (#6563 by @KawaiiZapic)
 - Components [carousel] center arrow (#6573 by @buqiyuan)
 - Ci skip if no changes at all (#6574 by @JeremyWuuuuu)
 - Components [popper-trigger] SSR issue (#6575 by @JeremyWuuuuu)
@@ -2052,7 +2052,7 @@ _2022-03-11_
 
 #### Features
 
-- [el-table] support always show scrollbar & get selection rows (#6469 by @msidolphin)
+- [hc-table] support always show scrollbar & get selection rows (#6469 by @msidolphin)
 - Extract eslint config to separate package (#6495 by @sxzz)
 - Export dayjs instance, closes #6498 (#6517 by @sxzz)
 - Components [select]add collapse-tags-tooltip (#6245 by @Alanscut)
@@ -2062,26 +2062,26 @@ _2022-03-11_
 #### Bug fixes
 
 - Deps update all non-major dependencies (#6448 by @renovate[bot])
-- Components [el-select] optimize prefix size & selected style (#6267 by @msidolphin)
-- Components [el-table] defaultSort not working (#6322 by @msidolphin)
-- [el-table] fixed columns display when horizontal cannot scroll (#6320 by @msidolphin)
-- Components [el-checkbox] modelValue (#6168 by @gjfei) (#6169)
+- Components [hc-select] optimize prefix size & selected style (#6267 by @msidolphin)
+- Components [hc-table] defaultSort not working (#6322 by @msidolphin)
+- [hc-table] fixed columns display when horizontal cannot scroll (#6320 by @msidolphin)
+- Components [hc-checkbox] modelValue (#6168 by @gjfei) (#6169)
 - Components[select] (#6446 by @gjfei) (#6474)
-- Components [el-collapse] collapse item key pressing jumping (#6462 by @JeremyWuuuuu)
+- Components [hc-collapse] collapse item key pressing jumping (#6462 by @JeremyWuuuuu)
 - Components [message] offset error (#6497 by @Alanscut)
 - Components[select] namespace (#6486 by @gjfei)
-- Components el-select-allow-dynamically-update-options (#6473 by @gjfei)
-- Components [el-tooltip] close the dropdown after set disabled (#6467 by @Alanscut)
+- Components hc-select-allow-dynamically-update-options (#6473 by @gjfei)
+- Components [hc-tooltip] close the dropdown after set disabled (#6467 by @Alanscut)
 - Docs improve component typings (#6524 by @sxzz)
 - Workflow coverage (#6518 by @sxzz)
 - Components [upload] fileList prop should sync uploadFiles (#6492 by @exherb)
 - Components [rate] fix disbaledVoidIcon typo (#6456 by @Shana-AE)
 - Components [select] display error when setting persistent to false (#6522 by @Alanscut)
-- Components [el-input] pass input-style props to input-wrapper (#6506 by @zt123123)
-- Components [el-table] escape special html characters (#6520 by @msidolphin)
+- Components [hc-input] pass input-style props to input-wrapper (#6506 by @zt123123)
+- Components [hc-table] escape special html characters (#6520 by @msidolphin)
 - Components [autocomplete] fix shaking at first open (#6342 by @freedomlang)
-- Components [el-upload] jitter when remove file in the list (#6505 by @msidolphin)
-- Components [el-menu] icon is not to the right of the text (#6268 by @Alanscut)
+- Components [hc-upload] jitter when remove file in the list (#6505 by @msidolphin)
+- Components [hc-menu] icon is not to the right of the text (#6268 by @Alanscut)
 - Test(components): [select] click icon twice (#6471 by @Alanscut)
 - Chore(project): add escape-html as dependency for main entry (#6534 by @JeremyWuuuuu)
 
@@ -2096,7 +2096,7 @@ _2022-03-11_
 - Theme-chalk message css var & add getCssVarName (#6488 by @YunYouJun)
 - Utils remove isFF (#6507 by @btea)
 - Theme-chalk [upload] use bem rewrite upload scss & fix bugs (#6508 by @YunYouJun)
-- Perf(components): [el-table] optimize the performance of expand rows (#6480 by @msidolphin)
+- Perf(components): [hc-table] optimize the performance of expand rows (#6480 by @msidolphin)
 - Style(components): rename disabled to is-disabled (#6475 by @freedomlang)
 
 
@@ -2106,35 +2106,35 @@ _2022-03-06_
 
 #### Features
 
-- Components [el-notification] add context for notification (#6367 by @JeremyWuuuuu)
-- Components [el-notification] add context for notification (#6368 by @JeremyWuuuuu)
-- Components export prop `persistent` in `el-select` (#6428 by @CarterLi)
-- Components [el-messagebox] add context for message box (#6379 by @JeremyWuuuuu)
-- Components [el-dialog] add border-radius css variable (#6412 by @msidolphin)
+- Components [hc-notification] add context for notification (#6367 by @JeremyWuuuuu)
+- Components [hc-notification] add context for notification (#6368 by @JeremyWuuuuu)
+- Components export prop `persistent` in `hc-select` (#6428 by @CarterLi)
+- Components [hc-messagebox] add context for message box (#6379 by @JeremyWuuuuu)
+- Components [hc-dialog] add border-radius css variable (#6412 by @msidolphin)
 
 #### Bug fixes
 
 - Components set flex-shrink for first child of submenu title (#6315 by @nieyuyao)
 - Components [message-box]add type declaration of button-size (#6344 by @Wiensss)
 - Components [message-box] fix center style (#6356 by @llllllllllx)
-- Components [el-dropdown-menu] override default style (#6328 by @msidolphin)
+- Components [hc-dropdown-menu] override default style (#6328 by @msidolphin)
 - Components [button] space is not added (#6361 by @Alanscut)
 - Components [tabs] optimize new icon style (#6327 by @msidolphin)
 - Components work around #6378 (#6380 by @CarterLi)
-- Components make margin of search equal to padding of el-input (#6409 by @nieyuyao)
+- Components make margin of search equal to padding of hc-input (#6409 by @nieyuyao)
 - Components [select] fix align issue for remove button (#6397 by @freedomlang)
 - Components [select-v2] style error when form is set to disabled (#6391 by @Alanscut)
-- Components [el-input] override edge browser default password style (#6423 by @msidolphin)
+- Components [hc-input] override edge browser default password style (#6423 by @msidolphin)
 - Theme-chalk [input] custom theme error (#6430 by @Alanscut)
 - Theme-chalk namespace (#6416 by @gjfei)
-- Components[el-collapse-transition] styles (#6414 by @gjfei)
+- Components[hc-collapse-transition] styles (#6414 by @gjfei)
 - Build output task name repeat (#6363 by @HitStarrySky)
-- [el-table] selection cell when double clicking expand icon (#6400 by @msidolphin)
+- [hc-table] selection cell when double clicking expand icon (#6400 by @msidolphin)
 - Components [form] trigger can be a string list (#5975 by @ntnyq)
-- Components [el-popover] transition error (#6329 by @Alanscut)
+- Components [hc-popover] transition error (#6329 by @Alanscut)
 - Components [select] click icon not respond (#6441 by @Alanscut)
-- Components [el-table] render failed when custom table column (#6398 by @msidolphin)
-- Components [el-table] scrollbar cannot display when resize table (#6369 by @msidolphin)
+- Components [hc-table] render failed when custom table column (#6398 by @msidolphin)
+- Components [hc-table] scrollbar cannot display when resize table (#6369 by @msidolphin)
 - Components [dropdown] add disabled support (#6375 by @freedomlang)
 
 #### Refactors
@@ -2163,8 +2163,8 @@ _2022-02-28_
 - Docs jitter when expand source code (#6279 by @msidolphin)
 - Docs fix banner covering sponsor problem (#6269 by @msidolphin)
 - Deps update dependency @element-plus/icons-vue to v1 (#6319 by @renovate[bot])
-- Components [el-dialog] don't ignore z-index (#6332 by @purepear)
-- Components [el-dialog] revert focus trapping feature (#6346 by @JeremyWuuuuu)
+- Components [hc-dialog] don't ignore z-index (#6332 by @purepear)
+- Components [hc-dialog] revert focus trapping feature (#6346 by @JeremyWuuuuu)
 
 #### Refactors
 
@@ -2177,57 +2177,57 @@ _2022-02-25_
 
 #### Features
 
-- Components [el-menu] support customize popper offset (#6049 by @msidolphin)
-- [el-popover] add before-enter、before-leave (#6203 by @xiaoxian521)
+- Components [hc-menu] support customize popper offset (#6049 by @msidolphin)
+- [hc-popover] add before-enter、before-leave (#6203 by @xiaoxian521)
 - Docs add docs dark basic style (#6196 by @YunYouJun)
-- Components [el-popconfirm] support persistent (#6207 by @msidolphin)
-- Components [el-dialog] enhancement for dialog a11y (#6087 by @JeremyWuuuuu)
-- Components [el-row] enhancement for supporting space-evenly (#6223 by @gp5251)
+- Components [hc-popconfirm] support persistent (#6207 by @msidolphin)
+- Components [hc-dialog] enhancement for dialog a11y (#6087 by @JeremyWuuuuu)
+- Components [hc-row] enhancement for supporting space-evenly (#6223 by @gp5251)
 - Components [badge] expose content (#6247 by @sxzz)
 - Components [message] add vue context for message component (#6259 by @JeremyWuuuuu)
 
 #### Bug fixes
 
-- Components [el-table] auto-load missing scrollbar style (#6045 by @msidolphin)
-- Components [el-input] missing margin between two icons (#5942 by @kouchao) (#6017)
-- Components [el-rate] allow-half show two icon (#6076 by @btea)
+- Components [hc-table] auto-load missing scrollbar style (#6045 by @msidolphin)
+- Components [hc-input] missing margin between two icons (#5942 by @kouchao) (#6017)
+- Components [hc-rate] allow-half show two icon (#6076 by @btea)
 - Components pass through appendTo (#6146 by @hhparty)
-- Components [el-table] footer layout error (#6090 by @msidolphin)
-- Components [el-table] optimize popover  performance (#6170 by @msidolphin)
-- Components [el-table] column width calc error during resize (#6171 by @msidolphin)
-- Components [el-dropdown-item] (#6147 by @iwusong)
-- Components [el-switch] increase the word count of (in)active-text (#6140 by @Alanscut)
+- Components [hc-table] footer layout error (#6090 by @msidolphin)
+- Components [hc-table] optimize popover  performance (#6170 by @msidolphin)
+- Components [hc-table] column width calc error during resize (#6171 by @msidolphin)
+- Components [hc-dropdown-item] (#6147 by @iwusong)
+- Components [hc-switch] increase the word count of (in)active-text (#6140 by @Alanscut)
 - Docs [popover] add description of teleported (#6137 by @Alanscut)
 - Formatter func parameter type miss (#6186 by @zongzi531)
-- Components [el-table] some columns are missing in older chrome (#6111 by @msidolphin)
-- [el-popover] compatible svg (#6089 by @xiaoxian521)
+- Components [hc-table] some columns are missing in older chrome (#6111 by @msidolphin)
+- [hc-popover] compatible svg (#6089 by @xiaoxian521)
 - Components [select-v2] fix #6083 bug (#6084 by @weidehai)
 - Locale language type (#6198 by @sxzz)
 - Deps (#6213 by @sxzz)
 - Docs remove fixed variables & add color palette (#6216 by @YunYouJun)
-- Components [el-dialog] refactor left overs (#6211 by @JeremyWuuuuu)
+- Components [hc-dialog] refactor left overs (#6211 by @JeremyWuuuuu)
 - Style classes for hiding elements (#6217 by @Alanscut)
-- Components [el-table] fix clearFilter failure problem (#6212 by @msidolphin)
-- Components [el-popper] fix #6152 bug (#6173 by @weidehai)
-- Components[el-date-picker] styles (#6187 by @gjfei)
+- Components [hc-table] fix clearFilter failure problem (#6212 by @msidolphin)
+- Components [hc-popper] fix #6152 bug (#6173 by @weidehai)
+- Components[hc-date-picker] styles (#6187 by @gjfei)
 - Theme-chalk remove useless tag close icon css attribute (#6242 by @YunYouJun)
 - Deps update all non-major dependencies (#6251 by @renovate[bot])
-- Components [el-dropdown-menu] adjust html tag (#6231 by @msidolphin)
-- Components [el-time-picker] lags when open range picker (#6249 by @msidolphin)
+- Components [hc-dropdown-menu] adjust html tag (#6231 by @msidolphin)
+- Components [hc-time-picker] lags when open range picker (#6249 by @msidolphin)
 - Docs do not useDark when production (#6262 by @YunYouJun)
 - Typo (#6263 by @HandsomeOne)
-- [el-select] remove last tag margin-right (#5992 by @btea)
-- Style(components): [el-select] add margin-left when collapse-tags exists (#6037 by @wzrove)
+- [hc-select] remove last tag margin-right (#5992 by @btea)
+- Style(components): [hc-select] add margin-left when collapse-tags exists (#6037 by @wzrove)
 
 #### Refactors
 
 - Improve tsconfig (#5993 by @sxzz)
 - Components [badge] switch to script-setup syntax (#6068 by @buqiyuan)
-- Components [el-badge] use utils isNumber (#6095 by @btea)
+- Components [hc-badge] use utils isNumber (#6095 by @btea)
 - Components [affix] switch to script-setup syntax (#6065 by @buqiyuan)
 - Components [alert] switch to script-setup syntax (#6066 by @buqiyuan)
 - Components [backtop] switch to script-setup syntax (#6069 by @buqiyuan)
-- Components [el-input] use box-shadow to implement border (#6031 by @msidolphin)
+- Components [hc-input] use box-shadow to implement border (#6031 by @msidolphin)
 - Theme-chalk use scss list & map generate type css var (#6221 by @YunYouJun)
 - Components [avatar] switch to script-setup syntax (#6070 by @buqiyuan)
 - Components [affix] use JSX in Unit test (#6159 by @buqiyuan)
@@ -2242,55 +2242,55 @@ _2022-02-14_
 #### Features
 
 - Switch to lodash-unified (#5734 by @sxzz)
-- Components [el-table] support tableLayout (#5860 by @msidolphin)
+- Components [hc-table] support tableLayout (#5860 by @msidolphin)
 - Tabpane name support number type (#5915 by @xiaoxian521)
 - Dev support multi-entry (#5945 by @sxzz)
 - Export all locale (#5943 by @sxzz)
-- Components [el-time-picker] add visibleChange event (#5704 by @weidehai)
+- Components [hc-time-picker] add visibleChange event (#5704 by @weidehai)
 - Add `defineOptions` for `script-setup` (#5932 by @sxzz)
 - Support jsx, closes #5708 (#5947 by @sxzz)
-- Components [el-table] `maxHeight` support more units (#5904 by @msidolphin)
-- Components [el-image] support append preview to body (#5883 by @msidolphin)
-- Components [el-select] add effect and close #5956 (#5976 by @BeADre)
+- Components [hc-table] `maxHeight` support more units (#5904 by @msidolphin)
+- Components [hc-image] support append preview to body (#5883 by @msidolphin)
+- Components [hc-select] add effect and close #5956 (#5976 by @BeADre)
 - Play file doesn't exist jump to App (#5985 by @btea)
-- Components [el-pagination] support custom button background color (#6012 by @DarkHighness)
+- Components [hc-pagination] support custom button background color (#6012 by @DarkHighness)
 - Add support for malagay language (#6019 by @mrzdevcore)
 
 #### Bug fixes
 
 - Hooks [use-namespace] cannot be used in nested hooks (#5795 by @buqiyuan)
-- Compnents [el-input-number] cannot read properties of null (reading 'setAttribute') #5691
-- Components [el-dropdown] use custom attributes for dropdown items (#5779 by @mawi1512)
-- Components [el-table] group header not supported fixed column (#5873 by @msidolphin)
-- Components [el-popover] update popperInstance when props change (#5835 by @QuXiaoMing)
+- Compnents [hc-input-number] cannot read properties of null (reading 'setAttribute') #5691
+- Components [hc-dropdown] use custom attributes for dropdown items (#5779 by @mawi1512)
+- Components [hc-table] group header not supported fixed column (#5873 by @msidolphin)
+- Components [hc-popover] update popperInstance when props change (#5835 by @QuXiaoMing)
 - Only enable preserveSymlinks on build (#5877 by @sxzz)
 - Utils undefined when omiting prop default (#5868 by @sxzz)
 - Docs [pagination] example bugfix according to new usage (#5833 by @ioslh)
 - Utils-v2 add Function type to iconPropType (#5890 by @xiaoxian521)
-- Components [el-slider] sync manually updated value (#5876 by @msidolphin)
+- Components [hc-slider] sync manually updated value (#5876 by @msidolphin)
 - Docs algolia searching (#5926 by @JeremyWuuuuu)
 - Value does not exist, warning appears (#5906 by @xiaoxian521)
 - Components [dialog] fix dialog not fill full screen after drag (#5875 by @buqiyuan)
 - Hooks `namespace.is` default state (#5941 by @sxzz)
-- Components [el-popconfirm] fix onConfirm and onCancel type bug (#5948 by @virgosoy)
+- Components [hc-popconfirm] fix onConfirm and onCancel type bug (#5948 by @virgosoy)
 - Components [select] define nsInput & rename ns to nsSelect (#5953 by @buqiyuan)
-- Components [el-time-picker] border overlap in hover state (#5950 by @msidolphin)
-- Components [el-select] (#5952 by @JacBian)
+- Components [hc-time-picker] border overlap in hover state (#5950 by @msidolphin)
+- Components [hc-select] (#5952 by @JacBian)
 - Components [select] change the tagType and style default value (#5884 by @btea)
-- Components [el-menu] collapse menu active color (#5735 by @adaex)
-- [el-select-v2] avoid remove new option when reserve-keyword is true (#5912 by @msidolphin)
+- Components [hc-menu] collapse menu active color (#5735 by @adaex)
+- [hc-select-v2] avoid remove new option when reserve-keyword is true (#5912 by @msidolphin)
 - Delete alteredCollapse in menu (#5889 by @xiaoxian521)
-- Components [el-table] avoid scrollbar not display (#5920 by @msidolphin)
+- Components [hc-table] avoid scrollbar not display (#5920 by @msidolphin)
 - Play fix tsconfig types path (#5965 by @btea)
 - Replenish popover missing types (#5958 by @xiaoxian521)
 - Namespace typo (#5972 by @msidolphin)
 - Utils restore scrollIntoView method (#5973 by @JeremyWuuuuu)
 - El-tree isLeaf type is string (#5954 by @xiaoxian521)
-- Components fix [el-select] infinite bounce (#5977 by @eriksyuan)
+- Components fix [hc-select] infinite bounce (#5977 by @eriksyuan)
 - Delete offset in usePopoverProps (#5980 by @xiaoxian521)
 - Add offset in usePopoverProps (#5982 by @xiaoxian521)
-- Components [el-select] tag default theme (#5983 by @JeremyWuuuuu)
-- Components [el-popper] effect prop validation error (#5978 by @JeremyWuuuuu)
+- Components [hc-select] tag default theme (#5983 by @JeremyWuuuuu)
+- Components [hc-popper] effect prop validation error (#5978 by @JeremyWuuuuu)
 - Components style error when component import order is unknown (#5938 by @emojiiii)
 
 #### Refactors
@@ -2338,8 +2338,8 @@ _2022-02-07_
 
 #### Bug fixes
 
-- Components [el-popconfirm] revert component name (#5815 by @msidolphin)
-- [el-pagination] fix justify alignment (#5814 by @msidolphin)
+- Components [hc-popconfirm] revert component name (#5815 by @msidolphin)
+- [hc-pagination] fix justify alignment (#5814 by @msidolphin)
 
 ### 2.0.0
 
@@ -2348,7 +2348,7 @@ _2022-02-07_
 #### Bug fixes
 
 - Components [Dialog & MessageBox] support draggable (#5369 by @kooriookami)
-- Components [el-popper] append to body compatability (#5755 by @JeremyWuuuuu)
+- Components [hc-popper] append to body compatability (#5755 by @JeremyWuuuuu)
 
 ### 1.3.0-beta.10
 
@@ -2360,13 +2360,13 @@ _2022-01-31_
 
 #### Bug fixes
 
-- Components [el-table] fix invalid maxHeight issue (#5584 by @msidolphin)
-- Components [el-table] hover not working in fixed mode (#5638 by @msidolphin)
-- Theme-chalk el-breadcrumb__item style (#5597 by @GGupzHH)
-- Theme-chalk [el-pagination] quick button disabled state (#5672 by @msidolphin)
+- Components [hc-table] fix invalid maxHeight issue (#5584 by @msidolphin)
+- Components [hc-table] hover not working in fixed mode (#5638 by @msidolphin)
+- Theme-chalk hc-breadcrumb__item style (#5597 by @GGupzHH)
+- Theme-chalk [hc-pagination] quick button disabled state (#5672 by @msidolphin)
 - Components [image-viewer] fix some bugs and improve style (#5673 by @kooriookami)
 - Components fix #5582 (#5583 by @CarterLi)
-- Docs fix el-tree props disabled type (#5540 by @ChenAdien)
+- Docs fix hc-tree props disabled type (#5540 by @ChenAdien)
 - Upgrade vueuse (#5698 by @sxzz)
 - Components [cascader] Unable to use spaces when filtering (#5676 by @emojiiii)
 - Components [popover] after-enter/leave events not trigger (#5681 by @emojiiii)
@@ -2375,12 +2375,12 @@ _2022-01-31_
 #### Refactors
 
 - Components [drawer] use useNamespace (#5596 by @btea)
-- Components [el-tag] use namespace (#5643 by @msidolphin)
-- Components [el-pagination] adjust component size (#5640 by @msidolphin)
-- Components [el-pagination] optimize component style (#5666 by @msidolphin)
+- Components [hc-tag] use namespace (#5643 by @msidolphin)
+- Components [hc-pagination] adjust component size (#5640 by @msidolphin)
+- Components [hc-pagination] optimize component style (#5666 by @msidolphin)
 - Components [scrollbar] use useNamespace (#5732 by @buqiyuan)
 - Components [skeleton,skeleton-item] use useNamespace (#5739 by @buqiyuan)
-- Perf(components): [el-scrollbar] prevent re-render when scrolling (#5670 by @msidolphin)
+- Perf(components): [hc-scrollbar] prevent re-render when scrolling (#5670 by @msidolphin)
 
 
 ### 1.3.0-beta.9
@@ -2389,10 +2389,10 @@ _2022-01-25_
 
 #### Bug fixes
 
-- Components [el-checkbox] is-disabled class is added unexpectedly
-- Components [el-popover] hide-after bug (#5386 by @BigPengZai)
-- Components [el-transfer] can't find clearQuery (#5438 by @btea)
-- Components [el-message-box] add default value to button-size (#5620 by @btea)
+- Components [hc-checkbox] is-disabled class is added unexpectedly
+- Components [hc-popover] hide-after bug (#5386 by @BigPengZai)
+- Components [hc-transfer] can't find clearQuery (#5438 by @btea)
+- Components [hc-message-box] add default value to button-size (#5620 by @btea)
 
 #### Refactors
 
@@ -2404,7 +2404,7 @@ _2022-01-24_
 
 #### Features
 
-- Components [el-dialog] remove width validator (#5329 by @purepear) (#5568)
+- Components [hc-dialog] remove width validator (#5329 by @purepear) (#5568)
 
 #### Bug fixes
 
@@ -2424,7 +2424,7 @@ _2022-01-22_
 
 #### Bug fixes
 
-- Components [el-pagination] jumper prohibit decimal (#5512 by @btea)
+- Components [hc-pagination] jumper prohibit decimal (#5512 by @btea)
 - Build disable tree shaking (#5558 by @sxzz)
 
 #### Refactors
@@ -2437,52 +2437,52 @@ _2022-01-22_
 
 #### Features
 
-- Components [el-time-select] support custom format (e.g. 12-hour) (#5309 by @Alanscut)
+- Components [hc-time-select] support custom format (e.g. 12-hour) (#5309 by @Alanscut)
 - Support custom namespace (#5377 by @iamkun)
 - Dropdown add popper-options prop (#5396 by @kooriookami)
 - Build add full bundle locale (#5399 by @sxzz)
-- Components [el-drawer] add footer slot (#5404 by @Alanscut)
-- Components [el-date-picker] add panel change event (#5304 by @msidolphin)
-- [el-select-v2]add reserve-keyword and change docs (#5308 by @Alanscut)
+- Components [hc-drawer] add footer slot (#5404 by @Alanscut)
+- Components [hc-date-picker] add panel change event (#5304 by @msidolphin)
+- [hc-select-v2]add reserve-keyword and change docs (#5308 by @Alanscut)
 - Hooks [use-namespace] add is (#5466 by @sxzz)
 - Hooks [use-namespace] add bm (#5475 by @sxzz)
-- Components [el-dropdown]add handleOpen and handleClose methods (#5444 by @Alanscut)
+- Components [hc-dropdown]add handleOpen and handleClose methods (#5444 by @Alanscut)
 - Components [tree] node-click passes event object (#4312 by @msidolphin)
-- Components [el-button] support for customize loading component (#5505 by @msidolphin)
+- Components [hc-button] support for customize loading component (#5505 by @msidolphin)
 
 #### Bug fixes
 
-- Components [el-cascader] inline style (#5339 by @Alanscut)
-- Components [el-dropdown-menu] size (#5343 by @Alanscut)
+- Components [hc-cascader] inline style (#5339 by @Alanscut)
+- Components [hc-dropdown-menu] size (#5343 by @Alanscut)
 - Components fix TreeOptionProps types (#4813 by @ElsaOOo)
 - Fix space style (#5387 by @kooriookami)
 - Components time picker when midnight (#5403 by @sxzz)
-- Components [el-select] suffix-icon disabled (#5354 by @Alanscut)
+- Components [hc-select] suffix-icon disabled (#5354 by @Alanscut)
 - Hooks component size (#5402 by @sxzz)
-- Components [el-table] fixed column position error issue (#5430 by @msidolphin)
+- Components [hc-table] fixed column position error issue (#5430 by @msidolphin)
 - [input-number] modelValue change to non-required (#4338 by @msidolphin)
-- Components [el-scrollbar] fix cannot selection issue (#5330 by @msidolphin)
-- Components [el-popover] revert hide method (#5344 by @msidolphin)
-- [el-table] fix checkbox cleared when data reference is not changed (#5443 by @msidolphin)
-- Components [el-time-picker] fix adjust scroll position fail issue (#5312 by @msidolphin)
-- Components [el-image] image load error (#4820 by @holynewbie)
-- Components [el-avatar] fix avatar default size (#5129 by @zhuige)
-- Components [el-input-number]do not change undefined to NaN (#5049 by @Alanscut)
-- Components [el-date-picker]make defaultValue be reactive (#4808 by @Alanscut)
-- Components [el-select] hover index (#4423 by @Alanscut)
-- Components [el-cascader] suddenly jump to the left (#4516 by @Alanscut)
-- Components [el-collapse] watch modelValue invalid (#4593 by @Alanscut)
-- Components [el-color-picker] active-change triggered incorrectly (#4729 by @Alanscut)
+- Components [hc-scrollbar] fix cannot selection issue (#5330 by @msidolphin)
+- Components [hc-popover] revert hide method (#5344 by @msidolphin)
+- [hc-table] fix checkbox cleared when data reference is not changed (#5443 by @msidolphin)
+- Components [hc-time-picker] fix adjust scroll position fail issue (#5312 by @msidolphin)
+- Components [hc-image] image load error (#4820 by @holynewbie)
+- Components [hc-avatar] fix avatar default size (#5129 by @zhuige)
+- Components [hc-input-number]do not change undefined to NaN (#5049 by @Alanscut)
+- Components [hc-date-picker]make defaultValue be reactive (#4808 by @Alanscut)
+- Components [hc-select] hover index (#4423 by @Alanscut)
+- Components [hc-cascader] suddenly jump to the left (#4516 by @Alanscut)
+- Components [hc-collapse] watch modelValue invalid (#4593 by @Alanscut)
+- Components [hc-color-picker] active-change triggered incorrectly (#4729 by @Alanscut)
 - Slider tooltip (#5508 by @kooriookami)
 - Components fix sub-menu style (#5516 by @sxzz)
-- Components [el-message] style conflict (#5530 by @msidolphin)
+- Components [hc-message] style conflict (#5530 by @msidolphin)
 - Upgrade vueuse, closes #5313, #5362 (#5543 by @sxzz)
 - Add export file extension, closes #5522 (#5544 by @sxzz)
-- Components [el-select-v2] optimize component size (#5531 by @msidolphin)
-- Components [el-tree] accordion attribute error at third level (#3862 by @Alanscut)
+- Components [hc-select-v2] optimize component size (#5531 by @msidolphin)
+- Components [hc-tree] accordion attribute error at third level (#3862 by @Alanscut)
 - Components [infinite-scroll] Infinite scroll (#5393 by @Alanscut)
-- Components [el-select-v2]set v-model has error (#5128 by @Alanscut)
-- Components [el-cascader] checkStrict and lazyLoad need click twice (#4182 by @Alanscut)
+- Components [hc-select-v2]set v-model has error (#5128 by @Alanscut)
+- Components [hc-cascader] checkStrict and lazyLoad need click twice (#4182 by @Alanscut)
 - Style: msgbox (#5371 by @kooriookami)
 - Style: tooltip padding (#5433 by @kooriookami)
 - Chore: improve table style (#5511 by @msidolphin)
@@ -2506,12 +2506,12 @@ _2022-01-22_
 - Components [affix] add namespace & instance type (#5474 by @sxzz)
 - Components [input, input-number] add namespace (#5488 by @Valar103769)
 - Components use useNamespace is (#5468 by @sxzz)
-- [el-table] refactoring table with el-scrollbar (#5384 by @msidolphin)
+- [hc-table] refactoring table with hc-scrollbar (#5384 by @msidolphin)
 - Components [descriptions] use useNamespace (#5499 by @btea)
 - Components [container] use useNamespace (#5498 by @btea)
 - Components [calendar] add namespace (#5496 by @Valar103769)
 - Build switch to @vitejs/plugin-vue (#5504 by @sxzz)
-- Components [el-table] use namespace (#5528 by @msidolphin)
+- Components [hc-table] use namespace (#5528 by @msidolphin)
 - Refactor(components): refactor check-tag (#5451 by @sxzz)
 
 ### 1.3.0-beta.5
@@ -2528,18 +2528,18 @@ _2022-01-11_
 
 #### Features
 
-- Components [el-tabs] add active-bar width transition (#5206 by @purepear) (#5223)
+- Components [hc-tabs] add active-bar width transition (#5206 by @purepear) (#5223)
 
 #### Bug fixes
 
 - Dropdowm item can not click (#5257 by @kooriookami)
-- Components [el-tree] fix safari drop animation issue (#5294 by @msidolphin)
-- Components [el-dropdown] cannot be closed by clicking outside (#5287 by @JeremyWuuuuu)
-- Style [el-dropdown] fix doc style (#5266 by @kooriookami)
-- Components [el-date-picker] panel position error after view switch (#5277 by @msidolphin)
-- Components [el-tooltip] restoring append-to API (#5296 by @JeremyWuuuuu)
+- Components [hc-tree] fix safari drop animation issue (#5294 by @msidolphin)
+- Components [hc-dropdown] cannot be closed by clicking outside (#5287 by @JeremyWuuuuu)
+- Style [hc-dropdown] fix doc style (#5266 by @kooriookami)
+- Components [hc-date-picker] panel position error after view switch (#5277 by @msidolphin)
+- Components [hc-tooltip] restoring append-to API (#5296 by @JeremyWuuuuu)
 - Fix DateRangePicker custom style & class bug (#5300 by @0song)
-- [el-calendar] selected wrong date when change the month/year (#5297 by @msidolphin)
+- [hc-calendar] selected wrong date when change the month/year (#5297 by @msidolphin)
 - Project adding cypress into element plus (#5281 by @JeremyWuuuuu)
 
 ### 1.3.0-beta.3
@@ -2558,16 +2558,16 @@ _2022-01-08_
 #### Features
 
 - Add global properties typings (#5075 by @sxzz)
-- Components [el-message-box] add role="dialog" attribute (#5190 by @purepear)
-- Components [el-rate] rate add size prop (#5102 by @kooriookami)
-- Components [el-switch] switch add size prop (#5101 by @kooriookami)
-- Components [el-slider] slider add size prop (#5091 by @kooriookami)
+- Components [hc-message-box] add role="dialog" attribute (#5190 by @purepear)
+- Components [hc-rate] rate add size prop (#5102 by @kooriookami)
+- Components [hc-switch] switch add size prop (#5101 by @kooriookami)
+- Components [hc-slider] slider add size prop (#5091 by @kooriookami)
 - Components checkbox & radio support small size (#5189 by @msidolphin)
 - Docs Add migration chapter (#5205 by @JeremyWuuuuu)
 - Export popup manager (#5220 by @sxzz)
-- Components [el-tag] adjust icon size (#5207 by @btea)
-- Components [el-cascader] cascader panel loading placeholder (#5064 by @KawaiiZapic)
-- Components [el-message] config-provider message max attr (#5063 by @btea)
+- Components [hc-tag] adjust icon size (#5207 by @btea)
+- Components [hc-cascader] cascader panel loading placeholder (#5064 by @KawaiiZapic)
+- Components [hc-message] config-provider message max attr (#5063 by @btea)
 
 #### Bug fixes
 
@@ -2575,17 +2575,17 @@ _2022-01-08_
 - Theme-chalk input-number controls increase/decrease height (#5088 by @YunYouJun)
 - Components popper content fallback placements (#5119 by @JeremyWuuuuu)
 - Docs correct minor typos (#5140 by @MrFu1998)
-- Components [el-select-v2] tag overflow (#5160 by @Alanscut)
+- Components [hc-select-v2] tag overflow (#5160 by @Alanscut)
 - Components width reset to empty string should be parsed to auto (#5186 by @cokemine)
-- Components [el-date-picker] fix footer style (#5144 by @msidolphin)
-- Components [el-table] improve scrollable condition (#5149 by @msidolphin)
-- Fix el-input-number inputting will trigger form validate (#4838 by @kooriookami)
-- Components [el-form] fix form style (#5145 by @kooriookami)
+- Components [hc-date-picker] fix footer style (#5144 by @msidolphin)
+- Components [hc-table] improve scrollable condition (#5149 by @msidolphin)
+- Fix hc-input-number inputting will trigger form validate (#4838 by @kooriookami)
+- Components [hc-form] fix form style (#5145 by @kooriookami)
 - Hooks provide root locale (#5218 by @sxzz)
-- Components [el-date-picker] ignore special flag (#5200 by @msidolphin)
-- Docs [el-icon] fix svg icon cannot copied issue (#5208 by @msidolphin)
-- Components [el-pagination] layout error (#5181 by @Alanscut)
-- Components [el-transfer] improve styles (#5139 by @msidolphin)
+- Components [hc-date-picker] ignore special flag (#5200 by @msidolphin)
+- Docs [hc-icon] fix svg icon cannot copied issue (#5208 by @msidolphin)
+- Components [hc-pagination] layout error (#5181 by @Alanscut)
+- Components [hc-transfer] improve styles (#5139 by @msidolphin)
 
 #### Refactors
 
@@ -2594,7 +2594,7 @@ _2022-01-08_
 - Utils!: remove global config (#5093 by @sxzz)
 - Components popper composables (#5035 by @JeremyWuuuuu)
 - Components [layout] optimize performance (#4600 by @msidolphin)
-- [el-table] using sticky position refactor fixed column (#4414 by @msidolphin)
+- [hc-table] using sticky position refactor fixed column (#4414 by @msidolphin)
 - Utils remove isServer (#5173 by @btea)
 
 ### 1.3.0-beta.1
@@ -2607,8 +2607,8 @@ _2021-12-31_
 
 #### Features
 
-- Components [el-dropdown] add new "popper-class" prop (#4909 by @jagoncalves14)
-- [el-popconfirm]add debounce of confirm() and cancel() (#4943 by @Alanscut)
+- Components [hc-dropdown] add new "popper-class" prop (#4909 by @jagoncalves14)
+- [hc-popconfirm]add debounce of confirm() and cancel() (#4943 by @Alanscut)
 - Components [date/time-picker] add id attribute to the inputs (#4972 by @purepear)
 - Components [ElCheckboxGroup] add Fragment (#4743 by @emojiiii)
 
@@ -2616,15 +2616,15 @@ _2021-12-31_
 
 - Components [ElDatePicker] click clear is invalid (#4768 by @emojiiii)
 - Style update cascader radio button padding size (#5057 by @JeremyWuuuuu)
-- [el-date-picker] focus input box when focus method is called (#4343 by @msidolphin)
+- [hc-date-picker] focus input box when focus method is called (#4343 by @msidolphin)
 - Components [date-picker] filter custom content comment (#4651 by @btea)
 - Build circular dependency (#4791 by @sxzz)
 - Style custom icon size (#4798 by @YunYouJun)
 - Theme-chalk Put back !optional to @extend (#4835 by @cregis0073)
-- Components [el-form] vertical aligin (#4717 by @Alanscut)
+- Components [hc-form] vertical aligin (#4717 by @Alanscut)
 - Style adjust component size & demo (#4801 by @YunYouJun)
-- Components [el-popper] onVisibilityChange (#4907 by @imswk)
-- [el-checkbox-group]: default value adjusted to empty array (#4316 by @msidolphin)
+- Components [hc-popper] onVisibilityChange (#4907 by @imswk)
+- [hc-checkbox-group]: default value adjusted to empty array (#4316 by @msidolphin)
 - Tag in select style (#4914 by @YunYouJun)
 - Components [select-v2] missing validate action when clear (#4892 by @Ryan2128)
 - Core fix unit testing warning (#4948 by @HerringtonDarkholme)
@@ -2632,20 +2632,20 @@ _2021-12-31_
 - Components always emit scroll with scrollTop number (#4974 by @HerringtonDarkholme)
 - Components fix more size prop checks (#4975 by @HerringtonDarkholme)
 - Components fix message warning (#4979 by @HerringtonDarkholme)
-- Components [el-step] 移除在simple模式下多余的点 (#4944 by @cn-troy)
-- Components [el-loading] fix the overlap problem
+- Components [hc-step] 移除在simple模式下多余的点 (#4944 by @cn-troy)
+- Components [hc-loading] fix the overlap problem
 - Message-box confirm button style (#4988 by @YunYouJun)
-- Components [el-drawer] fix content cannot scroll issue (#5001 by @msidolphin)
-- Components [el-upload] improve image style (#4902 by @fanhefeng)
+- Components [hc-drawer] fix content cannot scroll issue (#5001 by @msidolphin)
+- Components [hc-upload] improve image style (#4902 by @fanhefeng)
 - Locale update translation/spelling of Khmer (#4930 by @ITKHMER)
 - Components input-number/input/dropdown/select/badge details (#4866 by @YunYouJun)
-- Components [el-input-number]set undefined to modelValue (#4869 by @Alanscut)
+- Components [hc-input-number]set undefined to modelValue (#4869 by @Alanscut)
 - Theme-chalk upload progress & menu padding style & pagination align (#5011 by @YunYouJun)
 - Adjust tag icon size & add checkbox with-border demo (#5033 by @YunYouJun)
 - Theme-chalk auto menu item height & add css var, close #4864 (#5034 by @YunYouJun)
 - Components adjust style of the radio and form (#5047 by @msidolphin)
 - Components [time-picker] improve typings (#4810 by @CarterLi)
-- Perf: [el-switch] activeIcon and inactiveIcon type (#4899 by @xiaoxian521)
+- Perf: [hc-switch] activeIcon and inactiveIcon type (#4899 by @xiaoxian521)
 - Style: update descriptions style (#5025 by @kooriookami)
 
 #### Refactors
@@ -2666,50 +2666,50 @@ _2021-12-10_
 #### Features
 
 - Components [ElCalender] add internationalization (#4582 by @emojiiii)
-- Components [el-dialog] support custom close icon (#4514 by @spx443812507)
-- Components [el-divider] support setting the dividing line style  (#4435 by @Alanscut)
-- Components [el-select] tag type (#4504 by @Alanscut)
-- Components [el-config-provider] add size (#4730 by @sxzz)
+- Components [hc-dialog] support custom close icon (#4514 by @spx443812507)
+- Components [hc-divider] support setting the dividing line style  (#4435 by @Alanscut)
+- Components [hc-select] tag type (#4504 by @Alanscut)
+- Components [hc-config-provider] add size (#4730 by @sxzz)
 
 #### Bug fixes
 
 - Theme-chalk add !optional to @extend
-- Components [el-date-picker] can't use numpadEnter (#4563 by @Alanscut)
+- Components [hc-date-picker] can't use numpadEnter (#4563 by @Alanscut)
 - Hooks rename `ConfigProvdierContext` to `ConfigProviderContext` (#4620 by @emojiiii)
 - Components dropdown menu divided style, close #4631 (#4638 by @YunYouJun)
-- Components [el-config-provider] autoInsertSpace false (#4629 by @Alanscut)
+- Components [hc-config-provider] autoInsertSpace false (#4629 by @Alanscut)
 - Locale update ca (#4644 by @oscaralbareda)
-- Components [el-button] computed type (#4641 by @btea)
+- Components [hc-button] computed type (#4641 by @btea)
 - Style icon font-size inherit (#4565 by @YunYouJun)
 - Hooks fix translate option (#4619 by @sxzz)
-- Components [el-message] fit badge error type (#4662 by @btea)
+- Components [hc-message] fit badge error type (#4662 by @btea)
 - Hooks return key name if not defined (#4664 by @sxzz)
 - Upgrade @element-plus/icons-vue to currentColor (#4671 by @YunYouJun)
 - Vue type errors (#4696 by @sxzz)
-- Components [el-table] tooltip wrong style
-- Components [el-input-number]raise native form validation error (#4706 by @Alanscut)
+- Components [hc-table] tooltip wrong style
+- Components [hc-input-number]raise native form validation error (#4706 by @Alanscut)
 - Hooks [lockscreen] body lock remove unexpected (#4693 by @KawaiiZapic) (#4694)
 - Docs fix code not working in Codepen (#4678 by @imguolao) (#4679)
-- Components [el-input-number]set value equal to min will update (#4650 by @Alanscut)
+- Components [hc-input-number]set value equal to min will update (#4650 by @Alanscut)
 - Docs replace @hicor-ui/icons with @element-plus/icons-vue (#4704 by @pdsuwwz)
 - Docs fix webpack config import syntax (#4718 by @owenvip)
-- Style override el-icon display in el-input__icon (#4684 by @YunYouJun)
-- Components [el-menu] third-party icons are hidden (#4754 by @Alanscut)
+- Style override hc-icon display in hc-input__icon (#4684 by @YunYouJun)
+- Components [hc-menu] third-party icons are hidden (#4754 by @Alanscut)
 - Components [table-column, time-picker] improve typings (#4761 by @CarterLi)
 - Build compatible to build on windows (#4747 by @sxzz)
-- Components [el-tooltip] fallback placement (#4771 by @Alanscut)
+- Components [hc-tooltip] fallback placement (#4771 by @Alanscut)
 
 #### Refactors
 
 - Change icon package name (#4625 by @sxzz)
 - Components refactor drawer (#4282 by @Alanscut)
-- Style rename -color-base to --el-bg-color (#4615 by @YunYouJun)
+- Style rename -color-base to --hc-bg-color (#4615 by @YunYouJun)
 - Components refactor calendar (#4325 by @Alanscut)
 - Components refactor progress
 - Components refactor progress
 - Improve types (#4746 by @sxzz)
 - Components refactor loading (#4750 by @sxzz)
-- Components [el-checkbox] simplify the value (#4674 by @iceshou)
+- Components [hc-checkbox] simplify the value (#4674 by @iceshou)
 - Components refactor switch (#4271 by @emojiiii)
 
 ### 1.2.0-beta.5
@@ -2726,14 +2726,14 @@ _2021-12-01_
 - Style input inner padding right when has suffix (#4574 by @YunYouJun)
 - Components [ElMenu] the collapsible menu switch will disappear (#4575 by @emojiiii)
 - Components [ElScrollbar] fix useResizeObserver watch undefined (#4576 by @emojiiii)
-- Components [el-tag] icon-center (#4438 by @Alanscut)
-- Components [el-dropdown] icon vertical center (#4431 by @Alanscut)
+- Components [hc-tag] icon-center (#4438 by @Alanscut)
+- Components [hc-dropdown] icon vertical center (#4431 by @Alanscut)
 - Utils setTimeout & config-provider type (#4598 by @sxzz)
 
 #### Refactors
 
 - Hooks refactor hooks (#4253 by @sxzz)
-- Improvement(components): [el-cascader-panel] unref store (#4544 by @btea)
+- Improvement(components): [hc-cascader-panel] unref store (#4544 by @btea)
 - Update item.vue (#4555 by @yonghui-wang)
 
 ### 1.2.0-beta.4
@@ -2742,33 +2742,33 @@ _2021-11-27_
 
 #### Features
 
-- Components [el-select] support suffix-icon (#4364 by @emojiiii)
+- Components [hc-select] support suffix-icon (#4364 by @emojiiii)
 - Add translation for pashto language (#4456 by @NangialaiStoman)
 - Components add custom color for button & rename css var bg-color (#3664 by @YunYouJun)
 - Add figma resource (#4469 by @0song)
 
 #### Bug fixes
 
-- Components [el-autocomplete] fix popper position (#4321 by @btea)
-- Components [el-tabs] fix tab render (#4383 by @sxzz)
-- Docs el-image picture icon (#4433 by @adaex)
-- Components [el-rate] icon hidden (#4452 by @imswk)
+- Components [hc-autocomplete] fix popper position (#4321 by @btea)
+- Components [hc-tabs] fix tab render (#4383 by @sxzz)
+- Docs hc-image picture icon (#4433 by @adaex)
+- Components [hc-rate] icon hidden (#4452 by @imswk)
 - I18n improve Polish translations (#4475 by @lukaszwojtow)
 - Components [ElSelect] fix group disabled don't work (#4481 by @emojiiii)
-- Components [el-image] preview-src-list warn (#4472 by @emojiiii)
-- Components [el-select-v2] set option default value 0 (#4417 by @btea)
+- Components [hc-image] preview-src-list warn (#4472 by @emojiiii)
+- Components [hc-select-v2] set option default value 0 (#4417 by @btea)
 - Style radio checkbox button default color (#4492 by @YunYouJun)
 - Coler picker support touch (#4477 by @kooriookami)
 - Components [ElFormItem] label will be show undefined (#4487 by @emojiiii)
 - Locale improve Indonesian (Bahasa) translations and fix typo (#4476 by @muhammadcahya)
-- Components [el-menu] menu-collapse onLeave lose done (#4517 by @xiaoxian521)
-- Components [el-upload] fix get accept from uploader.props (#4506 by @sumy7)
+- Components [hc-menu] menu-collapse onLeave lose done (#4517 by @xiaoxian521)
+- Components [hc-upload] fix get accept from uploader.props (#4506 by @sumy7)
 - Components [date-picker] `range-separator slot` don't work (#4522 by @emojiiii)
 - Avoid unnecessary tab switch rerender (#4513 by @oliverzy)
 
 #### Refactors
 
-- [el-config-provider] change default autoInsertSpace to false (#4330 by @msidolphin)
+- [hc-config-provider] change default autoInsertSpace to false (#4330 by @msidolphin)
 - Components refactor tabs
 - Components refactor tabs
 - Components refactor scrollbar
@@ -2785,9 +2785,9 @@ _2021-11-09_
 
 #### Bug fixes
 
-- Components [el-cascader] empty children set leaf (#3758 by @btea)
+- Components [hc-cascader] empty children set leaf (#3758 by @btea)
 - Build fix types  (#4254 by @sxzz)
-- Components [el-checkbox] tabindex property doesn't work (#4286 by @undefined-degisn)
+- Components [hc-checkbox] tabindex property doesn't work (#4286 by @undefined-degisn)
 - Style radio group set inline-block (#4255 by @btea)
 - Theme-chalk fix icon style in Menu component is wrong (#4302 by @undefined-degisn)
 - Side-effects (#4310 by @sxzz)
@@ -2796,9 +2796,9 @@ _2021-11-09_
 
 - Components refactor rate
 - Components refactor result
-- Components [el-result] improve props
+- Components [hc-result] improve props
 - Components refactor row
-- Components [el-row] improve props
+- Components [hc-row] improve props
 - Components refactor radio
 
 ### 1.2.0-beta.2
@@ -2807,51 +2807,51 @@ _2021-11-05_
 
 #### Features
 
-- Components [el-tree] allow tree node to have customizable class (#3912 by @greper)
-- Components [el-color-picker] hex color with transparency (#3893 by @Alanscut)
-- Components el-teleport (#4186 by @JeremyWuuuuu)
-- Components [el-select-v2] mouse trigger scrollbar show/hide (#3722 by @btea)
-- Components [el-image] initialIndex (#4235 by @Alanscut)
-- Components [el-message] merge the same content messages(#3836 by @zhazhanitian) (#3988)
+- Components [hc-tree] allow tree node to have customizable class (#3912 by @greper)
+- Components [hc-color-picker] hex color with transparency (#3893 by @Alanscut)
+- Components hc-teleport (#4186 by @JeremyWuuuuu)
+- Components [hc-select-v2] mouse trigger scrollbar show/hide (#3722 by @btea)
+- Components [hc-image] initialIndex (#4235 by @Alanscut)
+- Components [hc-message] merge the same content messages(#3836 by @zhazhanitian) (#3988)
 - Docs add support for copying svg content (#4169 by @adaex)
 - 
 #### Bug fixes
 
-- Components [el-tree-v2] indent can not set zero (#3881 by @btea)
-- [el-date-picker] avoid click event error & fix cell props (#4134 by @msidolphin)
-- Components [el-tree] emptyText  empty string is invalid (#4135 by @imswk) (#4136)
-- Components [el-tree-v2] empty-text supports empty string & virtual list width become no required (#4144 by @msidolphin)
-- [el-transfer]modelvalue is not in original order (#4082 by @Alanscut)
-- Components el-loading spinner directive (#4133 by @adaex)
-- Components el-select-v2 empty icon (#4154 by @adaex)
+- Components [hc-tree-v2] indent can not set zero (#3881 by @btea)
+- [hc-date-picker] avoid click event error & fix cell props (#4134 by @msidolphin)
+- Components [hc-tree] emptyText  empty string is invalid (#4135 by @imswk) (#4136)
+- Components [hc-tree-v2] empty-text supports empty string & virtual list width become no required (#4144 by @msidolphin)
+- [hc-transfer]modelvalue is not in original order (#4082 by @Alanscut)
+- Components hc-loading spinner directive (#4133 by @adaex)
+- Components hc-select-v2 empty icon (#4154 by @adaex)
 - Input suffix icon center by flex (#4159 by @YunYouJun)
-- Components [el-affix] listen resize (#3932 by @midcu)
+- Components [hc-affix] listen resize (#3932 by @midcu)
 - Components [time-picker] am/pm mode avoid render redundant content (#4137 by @msidolphin)
 - Components [image-viewer] fix typo (#4183 by @btea)
 - Components input icon justify by flex (#4187 by @YunYouJun)
 - Docs fix typo (#4190 by @btea)
 - Style remove chinese comments in checkbox (#4189 by @YunYouJun)
-- Components el-teleport potential failure (#4197 by @JeremyWuuuuu)
+- Components hc-teleport potential failure (#4197 by @JeremyWuuuuu)
 - Components view tag does not render (#4198 by @adaex)
-- Theme-chalk el-menu arrow icon style (#4230 by @adaex)
-- Components el-dropdown cannot be used with v-show (#4221 by @undefined-degisn)
-- Components [el-table] fixed mode layout misalignment (#4188 by @msidolphin)
+- Theme-chalk hc-menu arrow icon style (#4230 by @adaex)
+- Components hc-dropdown cannot be used with v-show (#4221 by @undefined-degisn)
+- Components [hc-table] fixed mode layout misalignment (#4188 by @msidolphin)
 - Components empty icon component judgment (#4178 by @adaex)
-- [el-input]hidden input is not hidden (#4128 by @KawaiiZapic)
-- Components [el-cascader] search result switch not highlight (#4087 by @btea)
-- [el-date-picker] cannot change the time when provide default-time (#4228 by @msidolphin)
+- [hc-input]hidden input is not hidden (#4128 by @KawaiiZapic)
+- Components [hc-cascader] search result switch not highlight (#4087 by @btea)
+- [hc-date-picker] cannot change the time when provide default-time (#4228 by @msidolphin)
 - Components `h` function children parameter usage (#4238 by @adaex)
 - Components ensure table size affects inner selection (#3979 by @cokemine)
-- Components [el-table] development environment warning issues (#4167 by @msidolphin)
-- Components [el-select] first item hover status error (#3880 by @Alanscut)
-- Components [el-form] reset form validate error (#3759 by @btea)
-- Components [el-select] display false (#4036 by @Alanscut)
-- Fix el-input-number unexcepted text selecting when clicking buttons (#4191 by @KawaiiZapic)
+- Components [hc-table] development environment warning issues (#4167 by @msidolphin)
+- Components [hc-select] first item hover status error (#3880 by @Alanscut)
+- Components [hc-form] reset form validate error (#3759 by @btea)
+- Components [hc-select] display false (#4036 by @Alanscut)
+- Fix hc-input-number unexcepted text selecting when clicking buttons (#4191 by @KawaiiZapic)
 
 #### Refactors
 
 - Components elForm form rule & custom type (#3951 by @Otto-J)
-- Components [el-config-provider] improve componomponent  extendiability (#4175 by @msidolphin)
+- Components [hc-config-provider] improve componomponent  extendiability (#4175 by @msidolphin)
 - Docs use markdown-it instead of marked (#4239 by @YunYouJun)
 
 
@@ -2868,12 +2868,12 @@ _2021-10-30_
 - Use svg icons in components (#3492 by @adaex)
 - Remove font icon scss & font-path (#4074 by @YunYouJun)
 - Simplify build & support esm import (#4018 by @sxzz)
-- Components [el-popconfirm] adjust tag and style (#3981 by @btea)
+- Components [hc-popconfirm] adjust tag and style (#3981 by @btea)
 - Components add space between two characters in Chinese (#3992 by @cokemine)
-- Components el-switch add inline content support (#4091 by @adaex)
+- Components hc-switch add inline content support (#4091 by @adaex)
 - Add fit-input-width prop (#4088 by @kooriookami)
-- Components [el-date-picker] support customized cell content (#4078 by @msidolphin)
-- Components [el-message] & [el-notification] appendTo option added (#4012 by @codespikex)
+- Components [hc-date-picker] support customized cell content (#4078 by @msidolphin)
+- Components [hc-message] & [hc-notification] appendTo option added (#4012 by @codespikex)
 - Add translation for Bengali language (#3972 by @IbrahimAlKhalil)
 - Dev play add unplugin-vue-components (#3931 by @sxzz)
 - Dev play add @hicor-ui/icons (#4034 by @xiaoxian521)
@@ -2883,44 +2883,44 @@ _2021-10-30_
 - Components select v-2 value-key seems not working #2904 (#3915 by @spx443812507)
 - Utils remove $ from util
 - Tag should support large size too (#3948 by @cbbfcd)
-- Components [el-affix] update method does not exist (#3996 by @Alanscut)
-- Components [el-input] disable button style error (#3989 by @Alanscut)
+- Components [hc-affix] update method does not exist (#3996 by @Alanscut)
+- Components [hc-input] disable button style error (#3989 by @Alanscut)
 - Docs doc language selector kept reversing (#3987 by @JeremyWuuuuu)
-- Components [el-select-v2] set a non-empty array value error (#3998 by @btea)
+- Components [hc-select-v2] set a non-empty array value error (#3998 by @btea)
 - Docs docs-search-not-working (#4004 by @JeremyWuuuuu)
 - Docs translation missing (#4006 by @JeremyWuuuuu)
 - Type error
-- Components [el-icon] support string size (#3835 by @cn-troy)
+- Components [hc-icon] support string size (#3835 by @cn-troy)
 - Docs add extra field for frontmatter
 - Components button displays icon only (#4019 by @sxzz)
 - Docs adding title for components (#4025 by @JeremyWuuuuu)
 - Dev fix play auto import (#4031 by @sxzz)
 - Popover repeat when exist fixed column in table (#3394 by @Alanscut)
-- Components [el-date-picker] increase  width of  range separator (#4028 by @baboon-king)
-- Components [el-form-item] validate success does not return fields (#4001 by @msidolphin)
+- Components [hc-date-picker] increase  width of  range separator (#4028 by @baboon-king)
+- Components [hc-form-item] validate success does not return fields (#4001 by @msidolphin)
 - Hooks add type remove ts error (#4055 by @btea)
-- Components [el-input-number] add a type attribute (#4030 by @921)
+- Components [hc-input-number] add a type attribute (#4030 by @921)
 - Components fix add space in prod mode (#4062 by @cokemine)
 - Dev fix playground and docs alias (#4068 by @sxzz)
-- Components [el-form-item] align inline elements vertically (#4080 by @921)
-- Components [el-input] maxlength is not correct (#3969 by @Alanscut)
-- Components [el-page-header] icon size (#4085 by @adaex)
-- Components [el-menu] trigger hover, open and close events no work (#4077 by @xiaoxian521)
+- Components [hc-form-item] align inline elements vertically (#4080 by @921)
+- Components [hc-input] maxlength is not correct (#3969 by @Alanscut)
+- Components [hc-page-header] icon size (#4085 by @adaex)
+- Components [hc-menu] trigger hover, open and close events no work (#4077 by @xiaoxian521)
 - Deps update dependency axios to ^0.24.0 (#4102 by @renovate[bot])
 - Docs tree document error (#4115 by @JeremyWuuuuu)
 - Checkbox fix checkbox when modelvalue length less than min limit (#1745 by @cokemine)
 - Docs update readme local development file name (#4117 by @btea)
 - Build transform to es2018 syntax (#4090 by @sxzz)
-- Components [el-upload] request headers missing when headers is typeof Headers(#4043 by @wxyong) (#4045)
-- Components [el-input] input border (#4110 by @Alanscut)
+- Components [hc-upload] request headers missing when headers is typeof Headers(#4043 by @wxyong) (#4045)
+- Components [hc-input] input border (#4110 by @Alanscut)
 - Components upload headers add type judge (#4119 by @btea)
-- Components [el-cascader] can not use keyboard select node(#3254 by @imswk) (#3260)
-- Components [el-menu] icon style (#4122 by @imswk)
+- Components [hc-cascader] can not use keyboard select node(#3254 by @imswk) (#3260)
+- Components [hc-menu] icon style (#4122 by @imswk)
 
 #### Refactors
 
 - Components ElInputNumber (#3974 by @JeremyWuuuuu)
-- Components [el-message] change the name of stopTimer
+- Components [hc-message] change the name of stopTimer
 - Docs icon usage (#4057 by @adaex)
 - Componentes deprecate the icon font of some components (#4067 by @adaex)
 - Directives use util method replace judge firefox (#4086 by @btea)
@@ -2946,7 +2946,7 @@ _2021-10-20_
 #### Bug fixes
 
 - Utils svg classname deal (#3926 by @btea)
-- Components [el-rate] decimal icon display problem (#3921 by @Alanscut)
+- Components [hc-rate] decimal icon display problem (#3921 by @Alanscut)
 - Components ElProgress remove unnecessary required props to prevent form error (#3954 by @Otto-J)
 
 #### Refactors
@@ -2959,7 +2959,7 @@ _2021-10-18_
 
 #### Features
 
-- Components [el-menu] add ellipsis prop (#3870 by @xiaoxian521)
+- Components [hc-menu] add ellipsis prop (#3870 by @xiaoxian521)
 - Build!: improve esm exports (#3871 by @sxzz)
 
 #### Bug fixes
@@ -2968,8 +2968,8 @@ _2021-10-18_
 - [ElSelectV2] set value to an empty array after selection error (#3875 by @Alanscut)
 - Table lazy rows can't expand at the first time (#3731 by @Alanscut)
 - Capitalize the first letter of the error message (#3882 by @deepthan)
-- Components [el-form-item] calc the label-width. (#3914 by @cbbfcd)
-- Style(components): [el-message-box] string does not wrap (#3856 by @zhazhanitian) (#3867)
+- Components [hc-form-item] calc the label-width. (#3914 by @cbbfcd)
+- Style(components): [hc-message-box] string does not wrap (#3856 by @zhazhanitian) (#3867)
 
 #### Refactors
 
@@ -2987,7 +2987,7 @@ _2021-10-11_
 
 - Components fix composition event bug (#3659 by @bchen1029)
 - Build fix generate component type (#3766 by @sxzz)
-- Components [el-date-picker] panel not select value enter error (#3768 by @btea)
+- Components [hc-date-picker] panel not select value enter error (#3768 by @btea)
 - Build: add default slot to generate better code hint files (#3763 by @tolking)
 
 #### Refactors
@@ -3006,11 +3006,11 @@ _2021-09-30_
 #### Features
 
 - Utils add buildProps (#3718 by @sxzz)
-- Components [el-menu] expose handleResize (#3723 by @xiaoxian521)
+- Components [hc-menu] expose handleResize (#3723 by @xiaoxian521)
 
 #### Bug fixes
 
-- Components [el-autocomplete] popover auto width (#3674 by @Alanscut)
+- Components [hc-autocomplete] popover auto width (#3674 by @Alanscut)
 - Table Attributes expand-row-keys has changed, but fold not work (#3675 by @Alanscut)
 - Style(components): optimize the addable style (#3726 by @xiaoxian521)
 - Build: fix build helper (#3727 by @sxzz)
@@ -3031,13 +3031,13 @@ _2021-09-28_
 - Build support esm and minified full bundle (#3677 by @sxzz)
 - Docs enable mirror site redirection (#3683 by @JeremyWuuuuu)
 - Theme-chalk use @use instead of @import & remove /\*\*/ comment (#3696 by @YunYouJun)
-- Components [el-button-group] add type prop (#3702 by @sxzz)
+- Components [hc-button-group] add type prop (#3702 by @sxzz)
 
 #### Bug fixes
 
-- Components [el-affix] get scrollContainer of vertical (#3424 by @SorrowX)
+- Components [hc-affix] get scrollContainer of vertical (#3424 by @SorrowX)
 - Docs quote to tip
-- Components [el-form] fix async-validator version (#3697 by @sxzz)
+- Components [hc-form] fix async-validator version (#3697 by @sxzz)
 
 #### Refactors
 
@@ -3053,20 +3053,20 @@ _2021-09-27_
 
 - Dev add global component types for volar (#3624 by @sxzz)
 - Utils extract color to utils & fix submenu color (#3638 by @YunYouJun)
-- Components [el-virtualized-grid] fulfillment (#3612 by @JeremyWuuuuu)
+- Components [hc-virtualized-grid] fulfillment (#3612 by @JeremyWuuuuu)
 - Project upgrade async-validator to 4.0.3 (#3667 by @sxzz)
 - Components add virtual tree (#3398 by @msidolphin)
 
 #### Bug fixes
 
-- Components [el-date-picker] validate callback (#3649 by @msidolphin)
-- Components [el-date-picker] dayjs props not extended (#3662 by @adaex)
+- Components [hc-date-picker] validate callback (#3649 by @msidolphin)
+- Components [hc-date-picker] dayjs props not extended (#3662 by @adaex)
 - Build fix dependencies packaging (#3665 by @sxzz)
 - Components trigger update:modelValue by itself (#3660 by @spx443812507)
 
 #### Refactors
 
-- Components [el-message][el-notification] improve type (#3636 by @sxzz)
+- Components [hc-message][hc-notification] improve type (#3636 by @sxzz)
 
 ### 1.1.0-beta.16
 
@@ -3081,11 +3081,11 @@ _2021-09-24_
 
 - Build release script error (#3576 by @JeremyWuuuuu)
 - Components fix message closeAll (#3583 by @sxzz)
-- Components [el-form] fix the methods validate callback invalid (#3589 by @btea)
-- Components [el-popover] fix the title renderIf type error (#3552 by @btea)
+- Components [hc-form] fix the methods validate callback invalid (#3589 by @btea)
+- Components [hc-popover] fix the title renderIf type error (#3552 by @btea)
 - Components sub components no install issue (#3615 by @JeremyWuuuuu)
-- [el-menu] using v-for causing render loop (#3617 by @xiaoxian521)
-- Components [el-popconfirm] fix vue warning (#3618 by @sxzz)
+- [hc-menu] using v-for causing render loop (#3617 by @xiaoxian521)
+- Components [hc-popconfirm] fix vue warning (#3618 by @sxzz)
 
 #### Refactors
 
@@ -3101,7 +3101,7 @@ _2021-09-23_
 
 #### Bug fixes
 
-- Components [el-selectv2] add type remove ts error (#3480 by @btea)
+- Components [hc-selectv2] add type remove ts error (#3480 by @btea)
 
 #### Refactors
 
@@ -3117,7 +3117,7 @@ _2021-09-22_
 
 #### Features
 
-- Components [el-virtualized-list] enable virtual list perf mode (#3547 by @JeremyWuuuuu)
+- Components [hc-virtualized-list] enable virtual list perf mode (#3547 by @JeremyWuuuuu)
 - Components exposing sub components (#3563 by @JeremyWuuuuu)
 
 #### Bug fixes
@@ -3125,7 +3125,7 @@ _2021-09-22_
 - Build memoize-one not found issue (#3556 by @JeremyWuuuuu)
 - Components fix typo (#3561 by @sxzz)
 - Docs doc-content table min-width modify (#3557 by @imswk)
-- Components [el-select] fix composition bug #3532 (#3533 by @bchen1029)
+- Components [hc-select] fix composition bug #3532 (#3533 by @bchen1029)
 
 #### Refactors
 
@@ -3146,36 +3146,36 @@ _2021-09-22_
 - Dev improve typings (#3457 by @sxzz)
 - Project local dev environment (#3463 by @JeremyWuuuuu)
 - Hooks add same target support (#3473 by @adaex)
-- Components [el-timeline] add center prop (#3436 by @BeADre)
-- Components [el-message-box] add inline style prop (#3537 by @yuzhang9804)
+- Components [hc-timeline] add center prop (#3436 by @BeADre)
+- Components [hc-message-box] add inline style prop (#3537 by @yuzhang9804)
 
 #### Bug fixes
 
 - Release scirpt (#3410 by @JeremyWuuuuu)
 - Release scirpt (#3412 by @JeremyWuuuuu)
-- [el-cascader] multiple search with v-model can't work (#3350 by @Alanscut)
+- [hc-cascader] multiple search with v-model can't work (#3350 by @Alanscut)
 - Utils add type remove the ts error (#3406 by @btea)
 - Use fromPairs replace Object.fromEntries (#3422 by @xiaoxian521)
-- Theme-chalk [el-input] textarea focus & hover border color (#3403 by @adaex)
-- Components el-icon root element receives attributes twice (#3442 by @JeremyWuuuuu)
+- Theme-chalk [hc-input] textarea focus & hover border color (#3403 by @adaex)
+- Components hc-icon root element receives attributes twice (#3442 by @JeremyWuuuuu)
 - Docs document wrong line error (#3453 by @JeremyWuuuuu)
-- [el-form] button type is reset and reset form (#3445 by @xiaoxian521)
-- [el-table] an extra 0 after the total line at safari (#3471 by @xiaoxian521)
-- Components [el-dialog] content scrolling behavior (#3484 by @adaex)
-- Theme-chalk [el-radio] input border hover color (#3493 by @adaex)
+- [hc-form] button type is reset and reset form (#3445 by @xiaoxian521)
+- [hc-table] an extra 0 after the total line at safari (#3471 by @xiaoxian521)
+- Components [hc-dialog] content scrolling behavior (#3484 by @adaex)
+- Theme-chalk [hc-radio] input border hover color (#3493 by @adaex)
 - Build full bundle transform error (#3504 by @JeremyWuuuuu)
-- Components [el-virtual-list] potential mem issue (#3510 by @JeremyWuuuuu)
+- Components [hc-virtual-list] potential mem issue (#3510 by @JeremyWuuuuu)
 - Docs theme documentation issue (#3511 by @JeremyWuuuuu)
 - Docs dialog documentation syntax error (#3515 by @JeremyWuuuuu)
 - Docs notification documentation with types demo icon missing (#3521 by @imswk)
 - Style use flex replace float & fix vertical center (#3523 by @YunYouJun)
-- Components [el-select-v2] fix style problem when select-v2 option too long (#3534 by @Dreamcreative)
-- [el-scrollbar] cascade selector of cascader is stuck after clicking (#3546 by @xiaoxian521)
+- Components [hc-select-v2] fix style problem when select-v2 option too long (#3534 by @Dreamcreative)
+- [hc-scrollbar] cascade selector of cascader is stuck after clicking (#3546 by @xiaoxian521)
 - Build external packages (#3415 by @sxzz)
 - Remove mitt (#3356 by @purepear)
 - Style add css var width & margin-top for dialog (#3431 by @YunYouJun)
 - Remove mitt (#3474 by @sxzz)
-- [el-button] delete isEmpty (#3479 by @xiaoxian521)
+- [hc-button] delete isEmpty (#3479 by @xiaoxian521)
 - Remove import-from (#3503 by @YunYouJun)
 - Support latest volar (#3508 by @sxzz)
 
@@ -3212,33 +3212,33 @@ _2021-09-13_
 
 #### Features
 
-- Components [el-badge] support color of type when is-dot (#3279 by @adaex)
-- Components [el-virtual-scroll-bar] handle click event (#3308 by @SorrowX)
+- Components [hc-badge] support color of type when is-dot (#3279 by @adaex)
+- Components [hc-virtual-scroll-bar] handle click event (#3308 by @SorrowX)
 - Components image-viewer component support slot (#3345 by @xiaoxian521)
 - Components calendar component header support slot (#3316 by @xiaoxian521)
-- Components [el-calendar] add prev-year and next-year (#3360 by @xiaoxian521)
-- Components [el-input-number] add focus & blur methods (#3337 by @adaex)
-- Components [el-upload] support put method (#3358 by @xiaoxian521)
-- Components [el-upload] `clearFiles` support filter status (#1501 by @gaoyia)
+- Components [hc-calendar] add prev-year and next-year (#3360 by @xiaoxian521)
+- Components [hc-input-number] add focus & blur methods (#3337 by @adaex)
+- Components [hc-upload] support put method (#3358 by @xiaoxian521)
+- Components [hc-upload] `clearFiles` support filter status (#1501 by @gaoyia)
 - Utils getPropByPath function adjust (#1276 by @jectychen)
 - Hooks extracting size injection for form items (#3383 by @JeremyWuuuuu)
 
 #### Bug fixes
 
-- Components [el-menu] fix the infinite loop (#3263 by @BeADre)
-- Components [el-alert] change the border-radius variable (#3271 by @btea)
-- Components [el-dialog] avoid custom class style conflict (#3267 by @adaex)
-- Components [el-form]: ensure form validation always triggers callback (#3294 by @digitalkaoz)
+- Components [hc-menu] fix the infinite loop (#3263 by @BeADre)
+- Components [hc-alert] change the border-radius variable (#3271 by @btea)
+- Components [hc-dialog] avoid custom class style conflict (#3267 by @adaex)
+- Components [hc-form]: ensure form validation always triggers callback (#3294 by @digitalkaoz)
 - Hooks warn renamed to debugWarn (#3329 by @sxzz)
 - Project typo (#3340 by @sxzz)
-- Components [el-cascader] event renamed to e (#3344 by @btea)
-- Components [el-textarea] show different font family (#3349 by @Alanscut)
-- [el-table] default-expand-all doesn't work (#3321 by @Alanscut)
+- Components [hc-cascader] event renamed to e (#3344 by @btea)
+- Components [hc-textarea] show different font family (#3349 by @Alanscut)
+- [hc-table] default-expand-all doesn't work (#3321 by @Alanscut)
 - Components rename loading directive instance name (#3336 by @sxzz)
 - Add @vueuse/core as dependency (#3374 by @sxzz)
-- Components [el-dialog] fix emits (#3375 by @sxzz)
-- Components [el-badge] add export type (#3376 by @sxzz)
-- Components [el-virtual-scrollbar] fix move bug (#3379 by @SorrowX)
+- Components [hc-dialog] fix emits (#3375 by @sxzz)
+- Components [hc-badge] add export type (#3376 by @sxzz)
+- Components [hc-virtual-scrollbar] fix move bug (#3379 by @SorrowX)
 
 #### Refactors
 
@@ -3250,7 +3250,7 @@ _2021-09-13_
 - Utils refactor menu-bar (#3343 by @btea)
 - Utils refactor with-install (#3355 by @sxzz)
 - Components refactor button (#3341 by @sxzz)
-- Components [el-alert] improve judgment (#1985 by @cbbfcd)
+- Components [hc-alert] improve judgment (#1985 by @cbbfcd)
 - Components refactor avatar (#3364 by @sxzz)
 - Components refactor alert (#3365 by @sxzz)
 - Components refactor badge (#3366 by @sxzz)
@@ -3258,7 +3258,7 @@ _2021-09-13_
 - Components refactor dialog (#3369 by @sxzz)
 - Components refactor affix (#3368 by @sxzz)
 - Add type declaration (#3310 by @xiaoxian521)
-- Revert "fix(components): [el-form]: ensure form validation always triggers callback (#3294 by @HerringtonDarkholme)" (#3324)
+- Revert "fix(components): [hc-form]: ensure form validation always triggers callback (#3294 by @HerringtonDarkholme)" (#3324)
 
 ### 1.1.0-beta.9
 
@@ -3266,7 +3266,7 @@ _2021-09-05_
 
 #### Features
 
-- Components [el-timeline] add hollow prop (#3229 by @kooriookami)
+- Components [hc-timeline] add hollow prop (#3229 by @kooriookami)
 
 #### Bug fixes
 
@@ -3274,29 +3274,29 @@ _2021-09-05_
 - Components virtualized selector optimize (#3160 by @msidolphin)
 - Theme-chalk fixed the wrong background color of timeline-item (#3165 by @msidolphin)
 - Utils improve element.addEventListener (#3173 by @adaex)
-- Components [el-form-item] dom element null checking (#3172 by @taosher)
+- Components [hc-form-item] dom element null checking (#3172 by @taosher)
 - Utils make width valid with `calc` (#3181 by @cokemine)
 - Components collapse incorrect export statement (#3185 by @msidolphin)
 - Components descriptions cell class (#3195 by @adaex)
 - Components tabs dynamic text (#3174 by @imswk) (#3180)
-- Components [el-input-number] model:value not required (#3190 by @msidolphin)
+- Components [hc-input-number] model:value not required (#3190 by @msidolphin)
 - Missing timepicker css var (#3204 by @YunYouJun)
-- [el-form-item] add min-width (#3208 by @sxzz)
+- [hc-form-item] add min-width (#3208 by @sxzz)
 - Chore typo package.json (#3214 by @linrongbin16)
-- Theme-chalk [el-form] no display red asterisk when width is auto (#3222 by @msidolphin)
+- Theme-chalk [hc-form] no display red asterisk when width is auto (#3222 by @msidolphin)
 - Docs fix typo in README.md (close #3216) (#3230 by @KimYangOfCat)
 - Build agolia indices script (#3234 by @JeremyWuuuuu)
-- Components message verified by el-form is "" validate (#3227 by @imswk) (#3231)
-- Components [el-menu] fix warn & listen item (#3225 by @sxzz)
+- Components message verified by hc-form is "" validate (#3227 by @imswk) (#3231)
+- Components [hc-menu] fix warn & listen item (#3225 by @sxzz)
 - Components lazy image is not work when it changes src (#3189 by @zycoJamie)
 - Allow custom tr background-color (#3166 by @YunYouJun)
 - Perf menu add back arrow-icon and overflow (#3167 by @kooriookami)
 - Style `$--border-color-hover` var reference (#3179 by @adaex)
 - Style fixed style (#3202 by @sunnuan)
-- Perf [el-menu] only vertical mode has transition (#3200 by @kooriookami)
+- Perf [hc-menu] only vertical mode has transition (#3200 by @kooriookami)
 - Style fix missing import (#3212 by @sunnuan)
 - Style use prettier (#3228 by @sxzz)
-- Style [el-image] format code (#3238 by @sxzz)
+- Style [hc-image] format code (#3238 by @sxzz)
 
 #### Refactors
 
@@ -3312,7 +3312,7 @@ _2021-08-31_
 - Components form add scrollToField method (#3110 by @sxzz)
 - Components select-v2 support filter-method & remote-search (#3092 by @msidolphin)
 - Components button-group add size (#3098 by @sxzz)
-- Components [el-image-viewer] emit close event (#3129 by @btea)
+- Components [hc-image-viewer] emit close event (#3129 by @btea)
 - Components select-v2 support keyboard operations (#3138 by @msidolphin)
 - Menu add ellipsis in horizontal mode (#3083 by @kooriookami)
 
@@ -3321,13 +3321,13 @@ _2021-08-31_
 - Theme-chalk add the missing margin-left to transfer
 - Remove useless and duplicate declaration (#3082 by @BeADre)
 - Components image no emit switch event (close #3132) (#3134 by @imswk)
-- Components [el-upload] revoke object url on item remove (#3135 by @adaex)
-- [el-cascader-panel] fix childrenData (close #3126) (#3131 by @qinpeip)
+- Components [hc-upload] revoke object url on item remove (#3135 by @adaex)
+- [hc-cascader-panel] fix childrenData (close #3126) (#3131 by @qinpeip)
 - Locale update korean translation (#3137 by @rikapo)
 - Components layout css lost (#3140 by @JeremyWuuuuu)
 - Icon clipboard (#3142 by @kooriookami)
-- Components [el-table] width init error (close #3087) (#3117 by @imswk)
-- [el-scrollbar] add missing off mouseup (#3143 by @kooriookami)
+- Components [hc-table] width init error (close #3087) (#3117 by @imswk)
+- [hc-scrollbar] add missing off mouseup (#3143 by @kooriookami)
 - Style update calc style (#3090 by @kooriookami)
 - Style checkbox support size prop both border or not (#3099 by @kooriookami)
 - Style radio support size prop both border or not (#3103 by @kooriookami)
@@ -3356,7 +3356,7 @@ _2021-08-26_
 
 - Components [table] avoid table border style conflict (#3064 by @adaex)
 - Eslint ignore bundle file (#3061 by @sxzz)
-- Form el-from/src/token.d.ts file miss (#2979 by @imswk) (#2988)
+- Form hc-from/src/token.d.ts file miss (#2979 by @imswk) (#2988)
 - Components exposing style folder for select dropdpwn (#3077 by @JeremyWuuuuu)
 - Style(docs): Optimized style of documentation (#3010 by @kooriookami)
 
@@ -3386,12 +3386,12 @@ _2021-08-25_
 
 - Message-box fix type (#3038 by @sxzz)
 - [label-wrap] Fix misspellings (#3030 by @wangbincyzj)
-- Components [descriptions] avoid conflict with el-table (#3005 by @adaex)
+- Components [descriptions] avoid conflict with hc-table (#3005 by @adaex)
 - Build exposing installer function and version for umd build (#3041 by @JeremyWuuuuu)
 
 #### Refactors
 
-- Rename el-submenu to el-sub-menu (#3037 by @sxzz)
+- Rename hc-submenu to hc-sub-menu (#3037 by @sxzz)
 
 ### 1.1.0-beta.3
 
@@ -3523,7 +3523,7 @@ _2021-08-03_
 #### Features
 
 - Input Removed validator for autocomplete attribute (#2757 by @ShookTea)
-- Icon introduce-el-icons-into-ep (#2766 by @JeremyWuuuuu)
+- Icon introduce-hc-icons-into-ep (#2766 by @JeremyWuuuuu)
 - Space add fill support (#2716 by @adaex)
 - Var var sass map for components (#2778 by @YunYouJun)
 
@@ -3532,7 +3532,7 @@ _2021-08-03_
 - Var map merge default var (#2727 by @YunYouJun)
 - Scrollbar the problem of ScrollbarDirKey being deleted (#2722 by @msidolphin)
 - Input no trigger input event when clear value (#2723 by @msidolphin)
-- Message using iconClass causes "el-message\_\_icon" to be lost (#2709 by @GaliMu)
+- Message using iconClass causes "hc-message\_\_icon" to be lost (#2709 by @GaliMu)
 - Locale inject locale for modal like components (#2737 by @JeremyWuuuuu)
 - Tooltip styles error (#2763 by @tolking)
 - Input Improve inputStyle reference (#2780 by @adaex)
@@ -3575,7 +3575,7 @@ _2021-07-28_
 - fix(var): map merge default var (#2727)
 - fix(scrollbar): the problem of ScrollbarDirKey being deleted (#2722)
 - fix(input): no trigger input event when clear value (#2723) …
-- fix(message): using iconClass causes "el-message\_\_icon" to be lost (#… …
+- fix(message): using iconClass causes "hc-message\_\_icon" to be lost (#… …
 - fix(typing): fixed Nullable type for RefElement (#2730)
 - fix(locale): inject locale for modal like components (#2737)
 
@@ -3628,7 +3628,7 @@ _2021-07-26_
 
 #### Bug fixes
 
-- Fix `dayjs` integration issue with `el-config-provider` and `build.sh` shell error (#2678)
+- Fix `dayjs` integration issue with `hc-config-provider` and `build.sh` shell error (#2678)
 
 ### 1.0.2-beta.59
 
@@ -3735,11 +3735,11 @@ _2021-07-23_
 - Fix descriptions fix the last td colspan (#2567)
 - Fix time-select fix editable prop and add disabled prop (#1899)
 - Update hooks refactor transition (#2556)
-- Fix el-tree accordion attribute only takes effect on root nodes (#2523)
+- Fix hc-tree accordion attribute only takes effect on root nodes (#2523)
 - Fix select filtered empty groups (#2507)
 - Refactor popper use-popper-hook for popper
 - Fix select-v2 inputWidth is not defined (#2510)
-- Fix el-menu activeIndex bug (#2468)
+- Fix hc-menu activeIndex bug (#2468)
 - Fix select hoverIndex has incorrect when popover is turned on again (#2469)
 - Fix option selectemitter was not turned off when it was destroyed (#2450)
 - Fix time-picker model-value should sync when disable-attrs was updated (#2462)
@@ -3921,7 +3921,7 @@ _2021-05-28_
 - Fix Website: 'textContent' of undefined and text wrapping (#1973)
 - Fix DatePicker: attribute 'type' add ts declare (#1979)
 - Fix Table: fix sorting error #1919 (#1983)
-- Fix Table: fix v-if patch bug on el-table-column (#1988)
+- Fix Table: fix v-if patch bug on hc-table-column (#1988)
 - Fix Badge: should test is-dot class existed. (#1992)
 - Fix Dropdown: add additional css in dropdown (#1998)
 - Fix Notification: fix notification component zIndex prop can not work (#2021)
@@ -4524,7 +4524,7 @@ _2020-12-07_
 - Fix Select.focus is undefined bug (#862)
 - Optimize useAttrs signature (#864)
 - Fix table ts error (#863)
-- Fix table avoiding the error of el-table-column rendering (#828)
+- Fix table avoiding the error of hc-table-column rendering (#828)
 - Fix popper gets covered by dialog/drawer (#861)
 - Fix drawer implementation with hook (#817)
 - Fix exporting fix for volar (#849)
@@ -4559,7 +4559,7 @@ _2020-12-03_
 - Fix alert style errors when no description (#782)
 - Fix dialog show-close is invalid (#773)
 - Destructing import from lodash (#788)
-- Fix popper transition with 'el-zoom-in-top' (#785)
+- Fix popper transition with 'hc-zoom-in-top' (#785)
 
 ### 1.0.1-beta.2
 

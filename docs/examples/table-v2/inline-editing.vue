@@ -1,8 +1,8 @@
 <template>
   <div style="height: 400px">
-    <el-auto-resizer>
+    <hc-auto-resizer>
       <template #default="{ height, width }">
-        <el-table-v2
+        <hc-table-v2
           :columns="columns"
           :data="data"
           :width="width"
@@ -10,13 +10,13 @@
           fixed
         />
       </template>
-    </el-auto-resizer>
+    </hc-auto-resizer>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref } from 'vue'
-import { ElInput } from 'hicor-ui'
+import { HcInput } from 'hicor-ui'
 
 import type { FunctionalComponent } from 'vue'
 import type { Column, InputInstance } from 'hicor-ui'
@@ -34,7 +34,7 @@ const InputCell: FunctionalComponent<SelectionCellProps> = ({
   forwardRef,
 }) => {
   return (
-    <ElInput ref={forwardRef as any} onInput={onChange} modelValue={value} />
+    <HcInput ref={forwardRef as any} onInput={onChange} modelValue={value} />
   )
 }
 
@@ -113,6 +113,6 @@ const data = ref(generateData(columns, 200))
 }
 
 .table-v2-inline-editing-trigger:hover {
-  border-color: var(--el-color-primary);
+  border-color: var(--hc-color-primary);
 }
 </style>

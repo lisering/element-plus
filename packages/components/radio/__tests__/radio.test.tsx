@@ -12,7 +12,7 @@ describe('Radio', () => {
   test('create', async () => {
     const radio = ref('')
     const wrapper = mount(() => <Radio v-model={radio.value} label="a" />)
-    expect(wrapper.classes()).toContain('el-radio')
+    expect(wrapper.classes()).toContain('hc-radio')
     await wrapper.trigger('click')
     expect(wrapper.classes()).toContain('is-checked')
   })

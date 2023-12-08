@@ -1,7 +1,7 @@
 <template>
   <div class="m-4">
     <p>use collapse-tags</p>
-    <el-select-v2
+    <hc-select-v2
       v-model="value"
       :options="options"
       placeholder="Please select"
@@ -12,7 +12,7 @@
   </div>
   <div class="m-4">
     <p>use collapse-tags-tooltip</p>
-    <el-select-v2
+    <hc-select-v2
       v-model="value2"
       :options="options"
       placeholder="Please select"
@@ -24,7 +24,7 @@
   </div>
   <div class="m-4">
     <p>use max-collapse-tags</p>
-    <el-select-v2
+    <hc-select-v2
       v-model="value3"
       :options="options"
       placeholder="Please select"

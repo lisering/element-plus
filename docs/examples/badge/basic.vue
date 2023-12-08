@@ -1,35 +1,35 @@
 <template>
-  <el-badge :value="12" class="item">
-    <el-button>comments</el-button>
-  </el-badge>
-  <el-badge :value="3" class="item">
-    <el-button>replies</el-button>
-  </el-badge>
-  <el-badge :value="1" class="item" type="primary">
-    <el-button>comments</el-button>
-  </el-badge>
-  <el-badge :value="2" class="item" type="warning">
-    <el-button>replies</el-button>
-  </el-badge>
+  <hc-badge :value="12" class="item">
+    <hc-button>comments</hc-button>
+  </hc-badge>
+  <hc-badge :value="3" class="item">
+    <hc-button>replies</hc-button>
+  </hc-badge>
+  <hc-badge :value="1" class="item" type="primary">
+    <hc-button>comments</hc-button>
+  </hc-badge>
+  <hc-badge :value="2" class="item" type="warning">
+    <hc-button>replies</hc-button>
+  </hc-badge>
 
-  <el-dropdown trigger="click">
-    <span class="el-dropdown-link">
+  <hc-dropdown trigger="click">
+    <span class="hc-dropdown-link">
       Click Me
-      <el-icon class="el-icon--right"><caret-bottom /></el-icon>
+      <hc-icon class="hc-icon--right"><caret-bottom /></hc-icon>
     </span>
     <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item class="clearfix">
+      <hc-dropdown-menu>
+        <hc-dropdown-item class="clearfix">
           comments
-          <el-badge class="mark" :value="12" />
-        </el-dropdown-item>
-        <el-dropdown-item class="clearfix">
+          <hc-badge class="mark" :value="12" />
+        </hc-dropdown-item>
+        <hc-dropdown-item class="clearfix">
           replies
-          <el-badge class="mark" :value="3" />
-        </el-dropdown-item>
-      </el-dropdown-menu>
+          <hc-badge class="mark" :value="3" />
+        </hc-dropdown-item>
+      </hc-dropdown-menu>
     </template>
-  </el-dropdown>
+  </hc-dropdown>
 </template>
 
 <script lang="ts" setup>
@@ -42,7 +42,7 @@ import { CaretBottom } from '@element-plus/icons-vue'
   margin-right: 40px;
 }
 
-.el-dropdown {
+.hc-dropdown {
   margin-top: 1.1rem;
 }
 </style>

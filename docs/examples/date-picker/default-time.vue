@@ -2,7 +2,7 @@
   <div class="demo-date-picker">
     <div class="block">
       <p>Component value：{{ value }}</p>
-      <el-date-picker
+      <hc-date-picker
         v-model="value"
         type="daterange"
         start-placeholder="Start date"
@@ -29,12 +29,14 @@ const defaultTime = ref<[Date, Date]>([
   padding: 0;
   flex-wrap: wrap;
 }
+
 .demo-date-picker .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .demo-date-picker .block:last-child {
   border-right: none;
 }

@@ -851,7 +851,7 @@ export const useSelect = (props, states: States, ctx) => {
   }
 
   const handleBlur = (event: FocusEvent) => {
-    // validate current focus event is inside el-tooltip-content or el-select
+    // validate current focus event is inside hc-tooltip-content or hc-select
     // if so, ignore the blur event.
     if (
       tooltipRef.value?.isFocusInsideContent(event) ||

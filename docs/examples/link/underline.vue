@@ -1,14 +1,15 @@
 <template>
   <div>
-    <el-link :underline="false">Without Underline</el-link>
-    <el-link>With Underline</el-link>
+    <hc-link :underline="false">Without Underline</hc-link>
+    <hc-link>With Underline</hc-link>
   </div>
 </template>
 <style scoped>
-.el-link {
+.hc-link {
   margin-right: 8px;
 }
-.el-link .el-icon--right.el-icon {
+
+.hc-link .hc-icon--right.hc-icon {
   vertical-align: text-bottom;
 }
 </style>

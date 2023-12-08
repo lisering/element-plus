@@ -33,6 +33,7 @@ const load = () => {
   height: 300px;
   text-align: center;
 }
+
 .infinite-list-wrapper .list {
   padding: 0;
   margin: 0;
@@ -44,9 +45,10 @@ const load = () => {
   align-items: center;
   justify-content: center;
   height: 50px;
-  background: var(--el-color-danger-light-9);
-  color: var(--el-color-danger);
+  background: var(--hc-color-danger-light-9);
+  color: var(--hc-color-danger);
 }
+
 .infinite-list-wrapper .list-item + .list-item {
   margin-top: 10px;
 }

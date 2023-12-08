@@ -1,5 +1,5 @@
 <template>
-  <el-tree
+  <hc-tree
     ref="treeRef"
     :data="data"
     show-checkbox
@@ -10,17 +10,17 @@
   />
 
   <div class="buttons">
-    <el-button @click="getCheckedNodes">get by node</el-button>
-    <el-button @click="getCheckedKeys">get by key</el-button>
-    <el-button @click="setCheckedNodes">set by node</el-button>
-    <el-button @click="setCheckedKeys">set by key</el-button>
-    <el-button @click="resetChecked">reset</el-button>
+    <hc-button @click="getCheckedNodes">get by node</hc-button>
+    <hc-button @click="getCheckedKeys">get by key</hc-button>
+    <hc-button @click="setCheckedNodes">set by node</hc-button>
+    <hc-button @click="setCheckedKeys">set by key</hc-button>
+    <hc-button @click="resetChecked">reset</hc-button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTree } from 'hicor-ui'
+import { HcTree } from 'hicor-ui'
 import type Node from 'hicor-ui/es/components/tree/src/model/node'
 
 interface Tree {
@@ -29,7 +29,7 @@ interface Tree {
   children?: Tree[]
 }
 
-const treeRef = ref<InstanceType<typeof ElTree>>()
+const treeRef = ref<InstanceType<typeof HcTree>>()
 
 const getCheckedNodes = () => {
   console.log(treeRef.value!.getCheckedNodes(false, false))

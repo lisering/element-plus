@@ -1,5 +1,5 @@
 <template>
-  <el-tag
+  <hc-tag
     v-for="tag in tags"
     :key="tag.name"
     class="mx-1"
@@ -7,7 +7,7 @@
     :type="tag.type"
   >
     {{ tag.name }}
-  </el-tag>
+  </hc-tag>
 </template>
 
 <script lang="ts" setup>

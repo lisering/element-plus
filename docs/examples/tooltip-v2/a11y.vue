@@ -1,12 +1,12 @@
 <template>
-  <el-tooltip-v2 :aria-label="title">
+  <hc-tooltip-v2 :aria-label="title">
     <template #trigger>
-      <el-button
-        ><el-icon> <Delete /> </el-icon
-      ></el-button>
+      <hc-button
+        ><hc-icon> <Delete /> </hc-icon
+      ></hc-button>
     </template>
     {{ content }}
-  </el-tooltip-v2>
+  </hc-tooltip-v2>
 </template>
 
 <script setup lang="ts">

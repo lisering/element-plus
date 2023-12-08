@@ -50,7 +50,7 @@ const mountWrappedContent = (props = {}) =>
 
 describe('<HcPopperContent />', () => {
   describe('with triggerRef provided', () => {
-    const triggerKls = 'el-popper__trigger'
+    const triggerKls = 'hc-popper__trigger'
     let wrapper: VueWrapper<PopperContentInstance>
 
     beforeEach(() => {
@@ -72,7 +72,7 @@ describe('<HcPopperContent />', () => {
       expect(popperInjection.triggerRef).toBeDefined()
       expect(wrapper.html()).toContain(AXIOM)
       expect(popperInjection.popperInstanceRef.value).toBeDefined()
-      expect(wrapper.classes()).toEqual(['el-popper', 'is-dark'])
+      expect(wrapper.classes()).toEqual(['hc-popper', 'is-dark'])
       expect(wrapper.vm.contentStyle).toHaveLength(3)
       expect(wrapper.vm.contentStyle[0]).toHaveProperty('zIndex')
       expect(wrapper.vm.contentStyle[1]).toEqual(
@@ -94,7 +94,7 @@ describe('<HcPopperContent />', () => {
         effect: 'custom',
       })
 
-      expect(wrapper.classes()).toEqual(['el-popper', 'is-pure', 'is-custom'])
+      expect(wrapper.classes()).toEqual(['hc-popper', 'is-pure', 'is-custom'])
     })
 
     it('should be able to set customized styles', async () => {

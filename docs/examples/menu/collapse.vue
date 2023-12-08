@@ -1,52 +1,52 @@
 <template>
-  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-    <el-radio-button :label="false">expand</el-radio-button>
-    <el-radio-button :label="true">collapse</el-radio-button>
-  </el-radio-group>
-  <el-menu
+  <hc-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+    <hc-radio-button :label="false">expand</hc-radio-button>
+    <hc-radio-button :label="true">collapse</hc-radio-button>
+  </hc-radio-group>
+  <hc-menu
     default-active="2"
-    class="el-menu-vertical-demo"
+    class="hc-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
   >
-    <el-sub-menu index="1">
+    <hc-sub-menu index="1">
       <template #title>
-        <el-icon>
+        <hc-icon>
           <location />
-        </el-icon>
+        </hc-icon>
         <span>Navigator One</span>
       </template>
-      <el-menu-item-group>
+      <hc-menu-item-group>
         <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
+        <hc-menu-item index="1-1">item one</hc-menu-item>
+        <hc-menu-item index="1-2">item two</hc-menu-item>
+      </hc-menu-item-group>
+      <hc-menu-item-group title="Group Two">
+        <hc-menu-item index="1-3">item three</hc-menu-item>
+      </hc-menu-item-group>
+      <hc-sub-menu index="1-4">
         <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
+        <hc-menu-item index="1-4-1">item one</hc-menu-item>
+      </hc-sub-menu>
+    </hc-sub-menu>
+    <hc-menu-item index="2">
+      <hc-icon><icon-menu /></hc-icon>
       <template #title>Navigator Two</template>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon>
+    </hc-menu-item>
+    <hc-menu-item index="3" disabled>
+      <hc-icon>
         <document />
-      </el-icon>
+      </hc-icon>
       <template #title>Navigator Three</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon>
+    </hc-menu-item>
+    <hc-menu-item index="4">
+      <hc-icon>
         <setting />
-      </el-icon>
+      </hc-icon>
       <template #title>Navigator Four</template>
-    </el-menu-item>
-  </el-menu>
+    </hc-menu-item>
+  </hc-menu>
 </template>
 
 <script lang="ts" setup>
@@ -68,7 +68,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.hc-menu-vertical-demo:not(.hc-menu--collapse) {
   width: 200px;
   min-height: 400px;
 }

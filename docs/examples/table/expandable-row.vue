@@ -1,8 +1,8 @@
 <template>
-  switch parent border: <el-switch v-model="parentBorder" /> switch child
-  border: <el-switch v-model="childBorder" />
-  <el-table :data="tableData" :border="parentBorder" style="width: 100%">
-    <el-table-column type="expand">
+  switch parent border: <hc-switch v-model="parentBorder" /> switch child
+  border: <hc-switch v-model="childBorder" />
+  <hc-table :data="tableData" :border="parentBorder" style="width: 100%">
+    <hc-table-column type="expand">
       <template #default="props">
         <div m="4">
           <p m="t-0 b-2">State: {{ props.row.state }}</p>
@@ -10,19 +10,19 @@
           <p m="t-0 b-2">Address: {{ props.row.address }}</p>
           <p m="t-0 b-2">Zip: {{ props.row.zip }}</p>
           <h3>Family</h3>
-          <el-table :data="props.row.family" :border="childBorder">
-            <el-table-column label="Name" prop="name" />
-            <el-table-column label="State" prop="state" />
-            <el-table-column label="City" prop="city" />
-            <el-table-column label="Address" prop="address" />
-            <el-table-column label="Zip" prop="zip" />
-          </el-table>
+          <hc-table :data="props.row.family" :border="childBorder">
+            <hc-table-column label="Name" prop="name" />
+            <hc-table-column label="State" prop="state" />
+            <hc-table-column label="City" prop="city" />
+            <hc-table-column label="Address" prop="address" />
+            <hc-table-column label="Zip" prop="zip" />
+          </hc-table>
         </div>
       </template>
-    </el-table-column>
-    <el-table-column label="Date" prop="date" />
-    <el-table-column label="Name" prop="name" />
-  </el-table>
+    </hc-table-column>
+    <hc-table-column label="Date" prop="date" />
+    <hc-table-column label="Name" prop="name" />
+  </hc-table>
 </template>
 
 <script lang="ts" setup>

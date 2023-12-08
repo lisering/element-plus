@@ -61,7 +61,7 @@ cascader/last-level
 
 ```html
 <template>
-  <el-cascader :props="props" />
+  <hc-cascader :props="props" />
 </template>
 <script lang="ts">
   export default {
@@ -82,7 +82,7 @@ cascader/last-level
 ```html
 <template>
   <!--  Object literal binging here is invalid syntax for cascader  -->
-  <el-cascader :props="{ multiple: true }" />
+  <hc-cascader :props="{ multiple: true }" />
 </template>
 ```
 

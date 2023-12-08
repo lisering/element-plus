@@ -1,26 +1,26 @@
 <template>
-  <el-table :data="tableData" style="width: 100%" max-height="250">
-    <el-table-column fixed prop="date" label="Date" width="150" />
-    <el-table-column prop="name" label="Name" width="120" />
-    <el-table-column prop="state" label="State" width="120" />
-    <el-table-column prop="city" label="City" width="120" />
-    <el-table-column prop="address" label="Address" width="600" />
-    <el-table-column prop="zip" label="Zip" width="120" />
-    <el-table-column fixed="right" label="Operations" width="120">
+  <hc-table :data="tableData" style="width: 100%" max-height="250">
+    <hc-table-column fixed prop="date" label="Date" width="150" />
+    <hc-table-column prop="name" label="Name" width="120" />
+    <hc-table-column prop="state" label="State" width="120" />
+    <hc-table-column prop="city" label="City" width="120" />
+    <hc-table-column prop="address" label="Address" width="600" />
+    <hc-table-column prop="zip" label="Zip" width="120" />
+    <hc-table-column fixed="right" label="Operations" width="120">
       <template #default="scope">
-        <el-button
+        <hc-button
           link
           type="primary"
           size="small"
           @click.prevent="deleteRow(scope.$index)"
         >
           Remove
-        </el-button>
+        </hc-button>
       </template>
-    </el-table-column>
-  </el-table>
-  <el-button class="mt-4" style="width: 100%" @click="onAddItem"
-    >Add Item</el-button
+    </hc-table-column>
+  </hc-table>
+  <hc-button class="mt-4" style="width: 100%" @click="onAddItem"
+    >Add Item</hc-button
   >
 </template>
 

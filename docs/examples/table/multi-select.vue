@@ -1,28 +1,28 @@
 <template>
-  <el-table
+  <hc-table
     ref="multipleTableRef"
     :data="tableData"
     style="width: 100%"
     @selection-change="handleSelectionChange"
   >
-    <el-table-column type="selection" width="55" />
-    <el-table-column label="Date" width="120">
+    <hc-table-column type="selection" width="55" />
+    <hc-table-column label="Date" width="120">
       <template #default="scope">{{ scope.row.date }}</template>
-    </el-table-column>
-    <el-table-column property="name" label="Name" width="120" />
-    <el-table-column property="address" label="Address" show-overflow-tooltip />
-  </el-table>
+    </hc-table-column>
+    <hc-table-column property="name" label="Name" width="120" />
+    <hc-table-column property="address" label="Address" show-overflow-tooltip />
+  </hc-table>
   <div style="margin-top: 20px">
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])"
-      >Toggle selection status of second and third rows</el-button
+    <hc-button @click="toggleSelection([tableData[1], tableData[2]])"
+      >Toggle selection status of second and third rows</hc-button
     >
-    <el-button @click="toggleSelection()">Clear selection</el-button>
+    <hc-button @click="toggleSelection()">Clear selection</hc-button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable } from 'hicor-ui'
+import { HcTable } from 'hicor-ui'
 
 interface User {
   date: string
@@ -30,7 +30,7 @@ interface User {
   address: string
 }
 
-const multipleTableRef = ref<InstanceType<typeof ElTable>>()
+const multipleTableRef = ref<InstanceType<typeof HcTable>>()
 const multipleSelection = ref<User[]>([])
 const toggleSelection = (rows?: User[]) => {
   if (rows) {

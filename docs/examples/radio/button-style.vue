@@ -1,27 +1,27 @@
 <template>
   <div>
-    <el-radio-group v-model="radio1" size="large">
-      <el-radio-button label="New York" />
-      <el-radio-button label="Washington" />
-      <el-radio-button label="Los Angeles" />
-      <el-radio-button label="Chicago" />
-    </el-radio-group>
+    <hc-radio-group v-model="radio1" size="large">
+      <hc-radio-button label="New York" />
+      <hc-radio-button label="Washington" />
+      <hc-radio-button label="Los Angeles" />
+      <hc-radio-button label="Chicago" />
+    </hc-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio2">
-      <el-radio-button label="New York" />
-      <el-radio-button label="Washington" />
-      <el-radio-button label="Los Angeles" />
-      <el-radio-button label="Chicago" />
-    </el-radio-group>
+    <hc-radio-group v-model="radio2">
+      <hc-radio-button label="New York" />
+      <hc-radio-button label="Washington" />
+      <hc-radio-button label="Los Angeles" />
+      <hc-radio-button label="Chicago" />
+    </hc-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <el-radio-group v-model="radio3" size="small">
-      <el-radio-button label="New York" />
-      <el-radio-button label="Washington" disabled />
-      <el-radio-button label="Los Angeles" />
-      <el-radio-button label="Chicago" />
-    </el-radio-group>
+    <hc-radio-group v-model="radio3" size="small">
+      <hc-radio-button label="New York" />
+      <hc-radio-button label="Washington" disabled />
+      <hc-radio-button label="Los Angeles" />
+      <hc-radio-button label="Chicago" />
+    </hc-radio-group>
   </div>
 </template>
 

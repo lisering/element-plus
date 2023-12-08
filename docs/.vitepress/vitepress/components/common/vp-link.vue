@@ -19,9 +19,9 @@ const isExternal = computed(() => props.href && /^[a-z]+:/i.test(props.href))
     :rel="isExternal ? 'noopener noreferrer' : undefined"
   >
     <slot />
-    <ElIcon v-if="isExternal && !noIcon">
+    <HcIcon v-if="isExternal && !noIcon">
       <i-ri-external-link-line class="link-icon" />
-    </ElIcon>
+    </HcIcon>
   </component>
 </template>
 
@@ -31,7 +31,7 @@ const isExternal = computed(() => props.href && /^[a-z]+:/i.test(props.href))
   align-items: center;
 }
 
-.el-icon {
+.hc-icon {
   margin-left: 4px;
 }
 </style>

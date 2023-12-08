@@ -1,12 +1,12 @@
 <template>
-  <el-button :plain="true" @click="open">Show message</el-button>
+  <hc-button :plain="true" @click="open">Show message</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 
 const open = () => {
-  ElMessage({
+  HcMessage({
     message: 'this is a message.',
     grouping: true,
     type: 'success',

@@ -1,42 +1,42 @@
 <template>
-  <el-dropdown size="large" split-button type="primary">
+  <hc-dropdown size="large" split-button type="primary">
     Large
     <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item>Action 1</el-dropdown-item>
-        <el-dropdown-item>Action 2</el-dropdown-item>
-        <el-dropdown-item>Action 3</el-dropdown-item>
-        <el-dropdown-item>Action 4</el-dropdown-item>
-      </el-dropdown-menu>
+      <hc-dropdown-menu>
+        <hc-dropdown-item>Action 1</hc-dropdown-item>
+        <hc-dropdown-item>Action 2</hc-dropdown-item>
+        <hc-dropdown-item>Action 3</hc-dropdown-item>
+        <hc-dropdown-item>Action 4</hc-dropdown-item>
+      </hc-dropdown-menu>
     </template>
-  </el-dropdown>
+  </hc-dropdown>
 
-  <el-dropdown split-button type="primary">
+  <hc-dropdown split-button type="primary">
     Default
     <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item>Action 1</el-dropdown-item>
-        <el-dropdown-item>Action 2</el-dropdown-item>
-        <el-dropdown-item>Action 3</el-dropdown-item>
-        <el-dropdown-item>Action 4</el-dropdown-item>
-      </el-dropdown-menu>
+      <hc-dropdown-menu>
+        <hc-dropdown-item>Action 1</hc-dropdown-item>
+        <hc-dropdown-item>Action 2</hc-dropdown-item>
+        <hc-dropdown-item>Action 3</hc-dropdown-item>
+        <hc-dropdown-item>Action 4</hc-dropdown-item>
+      </hc-dropdown-menu>
     </template>
-  </el-dropdown>
+  </hc-dropdown>
 
-  <el-dropdown size="small" split-button type="primary">
+  <hc-dropdown size="small" split-button type="primary">
     Small
     <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item>Action 1</el-dropdown-item>
-        <el-dropdown-item>Action 2</el-dropdown-item>
-        <el-dropdown-item>Action 3</el-dropdown-item>
-        <el-dropdown-item>Action 4</el-dropdown-item>
-      </el-dropdown-menu>
+      <hc-dropdown-menu>
+        <hc-dropdown-item>Action 1</hc-dropdown-item>
+        <hc-dropdown-item>Action 2</hc-dropdown-item>
+        <hc-dropdown-item>Action 3</hc-dropdown-item>
+        <hc-dropdown-item>Action 4</hc-dropdown-item>
+      </hc-dropdown-menu>
     </template>
-  </el-dropdown>
+  </hc-dropdown>
 </template>
 <style scoped>
-.example-showcase .el-dropdown + .el-dropdown {
+.example-showcase .hc-dropdown + .hc-dropdown {
   margin-left: 15px;
 }
 </style>

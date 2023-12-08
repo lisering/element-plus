@@ -1,6 +1,6 @@
 <template>
   <div class="join">
-    <el-tooltip placement="top" :hide-after="1000" :offset="20">
+    <hc-tooltip placement="top" :hide-after="1000" :offset="20">
       <template #content>
         {{ homeLang['21'] }}
         <a href="mailto:hicor-ui@cenboomh.com" target="_blank">
@@ -8,11 +8,11 @@
         </a>
       </template>
       <a href="mailto:hicor-ui@cenboomh.com" target="_blank">
-        <el-button style="overflow: hidden" :round="round">{{
+        <hc-button style="overflow: hidden" :round="round">{{
           homeLang['20']
-        }}</el-button>
+        }}</hc-button>
       </a>
-    </el-tooltip>
+    </hc-tooltip>
   </div>
 </template>
 

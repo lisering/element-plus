@@ -607,8 +607,8 @@ describe('Slider', () => {
       ))
 
       await nextTick()
-      const stops = wrapper.findAll('.hc-slider__marks-stop.el-slider__stop')
-      const marks = wrapper.findAll('.hc-slider__marks .el-slider__marks-text')
+      const stops = wrapper.findAll('.hc-slider__marks-stop.hc-slider__stop')
+      const marks = wrapper.findAll('.hc-slider__marks .hc-slider__marks-text')
       expect(marks.length).toBe(2)
       expect(stops.length).toBe(2)
       expect(getComputedStyle(marks[marks.length - 1].element).color).toBe(

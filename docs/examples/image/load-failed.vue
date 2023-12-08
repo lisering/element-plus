@@ -2,17 +2,17 @@
   <div class="demo-image__error">
     <div class="block">
       <span class="demonstration">Default</span>
-      <el-image />
+      <hc-image />
     </div>
     <div class="block">
       <span class="demonstration">Custom</span>
-      <el-image>
+      <hc-image>
         <template #error>
           <div class="image-slot">
-            <el-icon><icon-picture /></el-icon>
+            <hc-icon><icon-picture /></hc-icon>
           </div>
         </template>
-      </el-image>
+      </hc-image>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import { Picture as IconPicture } from '@element-plus/icons-vue'
 .demo-image__error .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   display: inline-block;
   width: 49%;
   box-sizing: border-box;
@@ -34,12 +34,12 @@ import { Picture as IconPicture } from '@element-plus/icons-vue'
 
 .demo-image__error .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }
 
-.demo-image__error .el-image {
+.demo-image__error .hc-image {
   padding: 0 5px;
   max-width: 300px;
   max-height: 200px;
@@ -53,12 +53,12 @@ import { Picture as IconPicture } from '@element-plus/icons-vue'
   align-items: center;
   width: 100%;
   height: 100%;
-  background: var(--el-fill-color-light);
-  color: var(--el-text-color-secondary);
+  background: var(--hc-fill-color-light);
+  color: var(--hc-text-color-secondary);
   font-size: 30px;
 }
 
-.demo-image__error .image-slot .el-icon {
+.demo-image__error .image-slot .hc-icon {
   font-size: 30px;
 }
 </style>

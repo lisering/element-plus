@@ -61,7 +61,7 @@ steps/with-icon
 
 垂直方向的步骤条。
 
-:::demo 只需要在 `el-steps` 元素中设置 `direction` 属性为 `vertical` 即可。
+:::demo 只需要在 `hc-steps` 元素中设置 `direction` 属性为 `vertical` 即可。
 
 steps/vertical
 

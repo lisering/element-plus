@@ -91,10 +91,10 @@ describe('Transfer', () => {
       />
     ))
 
-    const label = wrapper.find('.hc-transfer-panel__header .el-checkbox__label')
+    const label = wrapper.find('.hc-transfer-panel__header .hc-checkbox__label')
     expect(label.text().includes('表1')).toBeTruthy()
     expect(
-      wrapper.find('.hc-transfer-panel__list .el-checkbox__label span').text()
+      wrapper.find('.hc-transfer-panel__list .hc-checkbox__label span').text()
     ).toBe('1 - 备选项 1')
     expect(label.find('span').text()).toBe('no')
   })
@@ -125,7 +125,7 @@ describe('Transfer', () => {
       HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .hc-transfer-panel .hc-transfer-panel__body .hc-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 1',
@@ -150,7 +150,7 @@ describe('Transfer', () => {
       HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .hc-transfer-panel .hc-transfer-panel__body .hc-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 1',
@@ -175,7 +175,7 @@ describe('Transfer', () => {
       HcTransfer.vm.addToRight()
       await nextTick()
       const targetItems = wrapper.findAll(
-        '.hc-transfer__buttons + .el-transfer-panel .el-transfer-panel__body .el-checkbox__label span'
+        '.hc-transfer__buttons + .hc-transfer-panel .hc-transfer-panel__body .hc-checkbox__label span'
       )
       expect(targetItems.map((item) => item.text())).toStrictEqual([
         '备选项 2',

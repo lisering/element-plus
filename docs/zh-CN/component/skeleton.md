@@ -29,7 +29,7 @@ skeleton/configurable-rows
 
 ## 动画效果
 
-我们提供了一个开关标志，表明是否显示加载动画， 调用 `animated` 如果真是这样，所有的 `el-skeleton` 的子节点将显示动画。
+我们提供了一个开关标志，表明是否显示加载动画， 调用 `animated` 如果真是这样，所有的 `hc-skeleton` 的子节点将显示动画。
 
 :::demo
 

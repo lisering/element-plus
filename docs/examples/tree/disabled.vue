@@ -1,5 +1,5 @@
 <template>
-  <el-tree :data="data" :props="defaultProps" show-checkbox />
+  <hc-tree :data="data" :props="defaultProps" show-checkbox />
 </template>
 
 <script lang="ts" setup>

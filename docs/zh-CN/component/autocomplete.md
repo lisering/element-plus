@@ -97,7 +97,7 @@ autocomplete/remote-search
 | handleKeyEnter   | 手动触发键盘回车事件       | ^[Function]`() => promise<void>`          |
 | highlightedIndex | 当前高亮显示选项的索引      | ^[object]`Ref<number>`                       |
 | highlight        | 在建议中高亮显示一个项目     | ^[Function]`(itemIndex: number) => void`        |
-| inputRef         | el-input 组件实例    | ^[object]`Ref<ElInputInstance>`              |
+| inputRef         | hc-input 组件实例    | ^[object]`Ref<HcInputInstance>`              |
 | loading          | 远程获取提示内容的加载状态指示器 | ^[object]`Ref<boolean>`                      |
-| popperRef        | el-tooltip 组件实例  | ^[object]`Ref<ElTooltipInstance>`            |
+| popperRef        | hc-tooltip 组件实例  | ^[object]`Ref<HcTooltipInstance>`            |
 | suggestions      | 获取自动补全结果         | ^[object]`Ref<record<string, any>>`    |

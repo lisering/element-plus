@@ -1,11 +1,11 @@
 <template>
-  <el-button @click="add">Add Item</el-button>
-  <el-button @click="onDelete">Delete Item</el-button>
-  <el-scrollbar max-height="400px">
+  <hc-button @click="add">Add Item</hc-button>
+  <hc-button @click="onDelete">Delete Item</hc-button>
+  <hc-scrollbar max-height="400px">
     <p v-for="item in count" :key="item" class="scrollbar-demo-item">
       {{ item }}
     </p>
-  </el-scrollbar>
+  </hc-scrollbar>
 </template>
 
 <script lang="ts" setup>
@@ -31,7 +31,7 @@ const onDelete = () => {
   margin: 10px;
   text-align: center;
   border-radius: 4px;
-  background: var(--el-color-primary-light-9);
-  color: var(--el-color-primary);
+  background: var(--hc-color-primary-light-9);
+  color: var(--hc-color-primary);
 }
 </style>

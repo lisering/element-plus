@@ -54,7 +54,7 @@ describe('Input.vue', () => {
   })
 
   describe('test emoji', () => {
-    test('el-input should minimize value between emoji length and maxLength', async () => {
+    test('hc-input should minimize value between emoji length and maxLength', async () => {
       const inputVal = ref('12🌚')
       const wrapper = mount(() => (
         <Input
@@ -84,7 +84,7 @@ describe('Input.vue', () => {
       expect(elCount.text()).toMatchInlineSnapshot(`"8 / 4"`)
       expect(Array.from(vm.$el.classList)).toMatchInlineSnapshot(`
         [
-          "el-input",
+          "hc-input",
           "is-exceed",
           "test-exceed",
         ]
@@ -116,7 +116,7 @@ describe('Input.vue', () => {
       expect(elCount.text()).toMatchInlineSnapshot(`"8 / 4"`)
       expect(Array.from(vm.$el.classList)).toMatchInlineSnapshot(`
         [
-          "el-textarea",
+          "hc-textarea",
           "is-exceed",
         ]
       `)
@@ -137,12 +137,12 @@ describe('Input.vue', () => {
 
   test('size', () => {
     const wrapper = mount(() => <Input size="large" />)
-    expect(wrapper.classes('el-input--large')).toBe(true)
+    expect(wrapper.classes('hc-input--large')).toBe(true)
   })
 
   test('type', () => {
     const wrapper = mount(() => <Input type="textarea" />)
-    expect(wrapper.classes('el-textarea')).toBe(true)
+    expect(wrapper.classes('hc-textarea')).toBe(true)
   })
 
   test('rows', () => {
@@ -232,7 +232,7 @@ describe('Input.vue', () => {
     expect(inputElm3.querySelectorAll('.hc-input__count').length).toEqual(0)
     expect(Array.from(inputElm4.classList)).toMatchInlineSnapshot(`
       [
-        "el-input",
+        "hc-input",
         "is-exceed",
         "test-initial-exceed",
       ]
@@ -246,7 +246,7 @@ describe('Input.vue', () => {
     await nextTick()
     expect(Array.from(inputElm4.classList)).toMatchInlineSnapshot(`
       [
-        "el-input",
+        "hc-input",
         "test-initial-exceed",
       ]
     `)
@@ -490,7 +490,7 @@ describe('Input.vue', () => {
       <Input type="password" modelValue={password.value} show-password />
     ))
 
-    const icon = wrapper.find('.hc-input__icon.el-input__password')
+    const icon = wrapper.find('.hc-input__icon.hc-input__password')
     const d = icon.find('path').element.getAttribute('d')
     await icon.trigger('click')
     const d0 = icon.find('path').element.getAttribute('d')

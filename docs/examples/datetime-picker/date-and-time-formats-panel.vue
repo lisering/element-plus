@@ -1,7 +1,7 @@
 <template>
   <div class="demo-datetime-picker">
     <div class="block">
-      <el-date-picker
+      <hc-date-picker
         v-model="value1"
         type="datetime"
         placeholder="Pick a Date"
@@ -12,7 +12,7 @@
     </div>
     <div class="line" />
     <div class="block">
-      <el-date-picker
+      <hc-date-picker
         v-model="value2"
         type="datetimerange"
         start-placeholder="Start date"
@@ -40,12 +40,14 @@ const value2 = ref('')
   justify-content: space-around;
   align-items: stretch;
 }
+
 .demo-datetime-picker .block {
   padding: 30px 0;
   text-align: center;
 }
+
 .line {
   width: 1px;
-  background-color: var(--el-border-color);
+  background-color: var(--hc-border-color);
 }
 </style>

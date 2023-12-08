@@ -1,93 +1,93 @@
 <template>
-  <el-container class="layout-container-demo" style="height: 500px">
-    <el-aside width="200px">
-      <el-scrollbar>
-        <el-menu :default-openeds="['1', '3']">
-          <el-sub-menu index="1">
+  <hc-container class="layout-container-demo" style="height: 500px">
+    <hc-aside width="200px">
+      <hc-scrollbar>
+        <hc-menu :default-openeds="['1', '3']">
+          <hc-sub-menu index="1">
             <template #title>
-              <el-icon> <message /> </el-icon>Navigator One
+              <hc-icon> <message /> </hc-icon>Navigator One
             </template>
-            <el-menu-item-group>
+            <hc-menu-item-group>
               <template #title>Group 1</template>
-              <el-menu-item index="1-1">Option 1</el-menu-item>
-              <el-menu-item index="1-2">Option 2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group 2">
-              <el-menu-item index="1-3">Option 3</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="1-4">
+              <hc-menu-item index="1-1">Option 1</hc-menu-item>
+              <hc-menu-item index="1-2">Option 2</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-menu-item-group title="Group 2">
+              <hc-menu-item index="1-3">Option 3</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-sub-menu index="1-4">
               <template #title>Option4</template>
-              <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-          <el-sub-menu index="2">
+              <hc-menu-item index="1-4-1">Option 4-1</hc-menu-item>
+            </hc-sub-menu>
+          </hc-sub-menu>
+          <hc-sub-menu index="2">
             <template #title>
-              <el-icon><icon-menu /></el-icon>Navigator Two
+              <hc-icon><icon-menu /></hc-icon>Navigator Two
             </template>
-            <el-menu-item-group>
+            <hc-menu-item-group>
               <template #title>Group 1</template>
-              <el-menu-item index="2-1">Option 1</el-menu-item>
-              <el-menu-item index="2-2">Option 2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group 2">
-              <el-menu-item index="2-3">Option 3</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="2-4">
+              <hc-menu-item index="2-1">Option 1</hc-menu-item>
+              <hc-menu-item index="2-2">Option 2</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-menu-item-group title="Group 2">
+              <hc-menu-item index="2-3">Option 3</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-sub-menu index="2-4">
               <template #title>Option 4</template>
-              <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-          <el-sub-menu index="3">
+              <hc-menu-item index="2-4-1">Option 4-1</hc-menu-item>
+            </hc-sub-menu>
+          </hc-sub-menu>
+          <hc-sub-menu index="3">
             <template #title>
-              <el-icon> <setting /> </el-icon>Navigator Three
+              <hc-icon> <setting /> </hc-icon>Navigator Three
             </template>
-            <el-menu-item-group>
+            <hc-menu-item-group>
               <template #title>Group 1</template>
-              <el-menu-item index="3-1">Option 1</el-menu-item>
-              <el-menu-item index="3-2">Option 2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group 2">
-              <el-menu-item index="3-3">Option 3</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="3-4">
+              <hc-menu-item index="3-1">Option 1</hc-menu-item>
+              <hc-menu-item index="3-2">Option 2</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-menu-item-group title="Group 2">
+              <hc-menu-item index="3-3">Option 3</hc-menu-item>
+            </hc-menu-item-group>
+            <hc-sub-menu index="3-4">
               <template #title>Option 4</template>
-              <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
-            </el-sub-menu>
-          </el-sub-menu>
-        </el-menu>
-      </el-scrollbar>
-    </el-aside>
+              <hc-menu-item index="3-4-1">Option 4-1</hc-menu-item>
+            </hc-sub-menu>
+          </hc-sub-menu>
+        </hc-menu>
+      </hc-scrollbar>
+    </hc-aside>
 
-    <el-container>
-      <el-header style="text-align: right; font-size: 12px">
+    <hc-container>
+      <hc-header style="text-align: right; font-size: 12px">
         <div class="toolbar">
-          <el-dropdown>
-            <el-icon style="margin-right: 8px; margin-top: 1px">
+          <hc-dropdown>
+            <hc-icon style="margin-right: 8px; margin-top: 1px">
               <setting />
-            </el-icon>
+            </hc-icon>
             <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item>View</el-dropdown-item>
-                <el-dropdown-item>Add</el-dropdown-item>
-                <el-dropdown-item>Delete</el-dropdown-item>
-              </el-dropdown-menu>
+              <hc-dropdown-menu>
+                <hc-dropdown-item>View</hc-dropdown-item>
+                <hc-dropdown-item>Add</hc-dropdown-item>
+                <hc-dropdown-item>Delete</hc-dropdown-item>
+              </hc-dropdown-menu>
             </template>
-          </el-dropdown>
+          </hc-dropdown>
           <span>Tom</span>
         </div>
-      </el-header>
+      </hc-header>
 
-      <el-main>
-        <el-scrollbar>
-          <el-table :data="tableData">
-            <el-table-column prop="date" label="Date" width="140" />
-            <el-table-column prop="name" label="Name" width="120" />
-            <el-table-column prop="address" label="Address" />
-          </el-table>
-        </el-scrollbar>
-      </el-main>
-    </el-container>
-  </el-container>
+      <hc-main>
+        <hc-scrollbar>
+          <hc-table :data="tableData">
+            <hc-table-column prop="date" label="Date" width="140" />
+            <hc-table-column prop="name" label="Name" width="120" />
+            <hc-table-column prop="address" label="Address" />
+          </hc-table>
+        </hc-scrollbar>
+      </hc-main>
+    </hc-container>
+  </hc-container>
 </template>
 
 <script lang="ts" setup>
@@ -103,22 +103,22 @@ const tableData = ref(Array.from({ length: 20 }).fill(item))
 </script>
 
 <style scoped>
-.layout-container-demo .el-header {
+.layout-container-demo .hc-header {
   position: relative;
-  background-color: var(--el-color-primary-light-7);
-  color: var(--el-text-color-primary);
+  background-color: var(--hc-color-primary-light-7);
+  color: var(--hc-text-color-primary);
 }
 
-.layout-container-demo .el-aside {
-  color: var(--el-text-color-primary);
-  background: var(--el-color-primary-light-8);
+.layout-container-demo .hc-aside {
+  color: var(--hc-text-color-primary);
+  background: var(--hc-color-primary-light-8);
 }
 
-.layout-container-demo .el-menu {
+.layout-container-demo .hc-menu {
   border-right: none;
 }
 
-.layout-container-demo .el-main {
+.layout-container-demo .hc-main {
   padding: 0;
 }
 

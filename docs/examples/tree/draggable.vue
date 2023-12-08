@@ -1,5 +1,5 @@
 <template>
-  <el-tree
+  <hc-tree
     :allow-drop="allowDrop"
     :allow-drag="allowDrag"
     :data="data"

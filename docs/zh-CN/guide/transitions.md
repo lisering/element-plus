@@ -9,7 +9,7 @@ Hicor Ui 内应用在部分组件的过渡动画，你也可以直接使用。 �
 
 ## Fade 淡入淡出
 
-:::demo 提供 `el-fade-in-linear` 和 `el-fade-in` 两种效果。
+:::demo 提供 `hc-fade-in-linear` 和 `hc-fade-in` 两种效果。
 
 transitions/fade
 
@@ -17,7 +17,7 @@ transitions/fade
 
 ## Zoom 缩放
 
-:::demo 提供 `el-zoom-in-center`，`el-zoom-in-top` 和 `el-zoom-in-bottom` 三种效果。
+:::demo 提供 `hc-zoom-in-center`，`hc-zoom-in-top` 和 `hc-zoom-in-bottom` 三种效果。
 
 transitions/zoom
 
@@ -25,7 +25,7 @@ transitions/zoom
 
 ## Collapse 折叠面板
 
-使用 `el-collapse-transition` 组件实现折叠展开效果。
+使用 `hc-collapse-transition` 组件实现折叠展开效果。
 
 :::demo
 
@@ -37,11 +37,11 @@ transitions/collapse
 
 ```ts
 // collapse
-import { ElCollapseTransition } from 'hicor-ui'
+import { HcCollapseTransition } from 'hicor-ui'
 // fade/zoom
 import 'hicor-ui/lib/theme-chalk/base.css'
 import App from './App.vue'
 
 const app = createApp(App)
-app.component(ElCollapseTransition.name, ElCollapseTransition)
+app.component(HcCollapseTransition.name, HcCollapseTransition)
 ```

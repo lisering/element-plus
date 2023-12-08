@@ -1,13 +1,13 @@
 <template>
-  <el-scrollbar ref="scrollbarRef" height="400px" always @scroll="scroll">
+  <hc-scrollbar ref="scrollbarRef" height="400px" always @scroll="scroll">
     <div ref="innerRef">
       <p v-for="item in 20" :key="item" class="scrollbar-demo-item">
         {{ item }}
       </p>
     </div>
-  </el-scrollbar>
+  </hc-scrollbar>
 
-  <el-slider
+  <hc-slider
     v-model="value"
     :max="max"
     :format-tooltip="formatTooltip"
@@ -17,12 +17,12 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
-import { ElScrollbar } from 'hicor-ui'
+import { HcScrollbar } from 'hicor-ui'
 
 const max = ref(0)
 const value = ref(0)
 const innerRef = ref<HTMLDivElement>()
-const scrollbarRef = ref<InstanceType<typeof ElScrollbar>>()
+const scrollbarRef = ref<InstanceType<typeof HcScrollbar>>()
 
 onMounted(() => {
   max.value = innerRef.value!.clientHeight - 380
@@ -48,11 +48,11 @@ const formatTooltip = (value: number) => {
   margin: 10px;
   text-align: center;
   border-radius: 4px;
-  background: var(--el-color-primary-light-9);
-  color: var(--el-color-primary);
+  background: var(--hc-color-primary-light-9);
+  color: var(--hc-color-primary);
 }
 
-.el-slider {
+.hc-slider {
   margin-top: 20px;
 }
 </style>

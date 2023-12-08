@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="data"
     :sort-by="sort"
@@ -13,7 +13,7 @@
 
 <script lang="tsx" setup>
 import { ref } from 'vue'
-import { ElButton, ElTag, TableV2FixedDir, TableV2SortOrder } from 'hicor-ui'
+import { HcButton, HcTag, TableV2FixedDir, TableV2SortOrder } from 'hicor-ui'
 
 import type { Column, SortBy } from '@hicor-ui/components/table-v2'
 
@@ -50,7 +50,7 @@ const columns: Column<any>[] = [
     dataKey: 'name',
     width: 150,
     align: 'center',
-    cellRenderer: ({ cellData: name }) => <ElTag>{name}</ElTag>,
+    cellRenderer: ({ cellData: name }) => <HcTag>{name}</HcTag>,
   },
   {
     key: 'description',
@@ -66,10 +66,10 @@ const columns: Column<any>[] = [
     title: 'Operations',
     cellRenderer: () => (
       <>
-        <ElButton size="small">Edit</ElButton>
-        <ElButton size="small" type="danger">
+        <HcButton size="small">Edit</HcButton>
+        <HcButton size="small" type="danger">
           Delete
-        </ElButton>
+        </HcButton>
       </>
     ),
     width: 150,

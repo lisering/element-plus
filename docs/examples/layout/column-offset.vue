@@ -1,33 +1,37 @@
 <template>
-  <el-row :gutter="20">
-    <el-col :span="6"><div class="grid-content ep-bg-purple" /></el-col>
-    <el-col :span="6" :offset="6"
-      ><div class="grid-content ep-bg-purple"
-    /></el-col>
-  </el-row>
-  <el-row :gutter="20">
-    <el-col :span="6" :offset="6"
-      ><div class="grid-content ep-bg-purple"
-    /></el-col>
-    <el-col :span="6" :offset="6"
-      ><div class="grid-content ep-bg-purple"
-    /></el-col>
-  </el-row>
-  <el-row :gutter="20">
-    <el-col :span="12" :offset="6"
-      ><div class="grid-content ep-bg-purple"
-    /></el-col>
-  </el-row>
+  <hc-row :gutter="20">
+    <hc-col :span="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="6" :offset="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+  </hc-row>
+  <hc-row :gutter="20">
+    <hc-col :span="6" :offset="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+    <hc-col :span="6" :offset="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+  </hc-row>
+  <hc-row :gutter="20">
+    <hc-col :span="12" :offset="6">
+      <div class="grid-content ep-bg-purple" />
+    </hc-col>
+  </hc-row>
 </template>
 
 <style>
-.el-row {
+.hc-row {
   margin-bottom: 20px;
 }
-.el-row:last-child {
+
+.hc-row:last-child {
   margin-bottom: 0;
 }
-.el-col {
+
+.hc-col {
   border-radius: 4px;
 }
 

@@ -44,7 +44,7 @@ app.mount('#app')
 
 您需要使用额外的插件来导入要使用的组件。
 
-#### 自动导入 <el-tag type="primary" style="vertical-align: middle;" effect="dark" size="small">推荐</el-tag>
+#### 自动导入 <hc-tag type="primary" style="vertical-align: middle;" effect="dark" size="small">推荐</hc-tag>
 
 首先你需要安装`unplugin-vue-components` 和 `unplugin-auto-import`这两款插件
 
@@ -87,12 +87,12 @@ Hicor Ui 提供了基于 ES Module 的开箱即用的 [Tree Shaking](https://web
 
 ```html
 <template>
-  <el-button>我是 ElButton</el-button>
+  <hc-button>我是 HcButton</hc-button>
 </template>
 <script>
-  import { ElButton } from 'hicor-ui'
+  import { HcButton } from 'hicor-ui'
   export default {
-    components: { ElButton },
+    components: { HcButton },
   }
 </script>
 ```
@@ -116,7 +116,7 @@ Example:
 
 ```ts
 import 'hicor-ui/es/components/message/style/css'
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 ```
 
 :::
@@ -140,18 +140,18 @@ app.use(HicorUi, { size: 'small', zIndex: 3000 })
 
 ```vue
 <template>
-  <el-config-provider :size="size" :z-index="zIndex">
+  <hc-config-provider :size="size" :z-index="zIndex">
     <app />
-  </el-config-provider>
+  </hc-config-provider>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { ElConfigProvider } from 'hicor-ui'
+import { HcConfigProvider } from 'hicor-ui'
 
 export default defineComponent({
   components: {
-    ElConfigProvider,
+    HcConfigProvider,
   },
   setup() {
     return {

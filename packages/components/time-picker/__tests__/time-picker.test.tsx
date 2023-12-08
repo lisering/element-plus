@@ -508,7 +508,7 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
     const list = document.querySelectorAll(
-      '.hc-time-spinner__list .el-time-spinner__item.is-active'
+      '.hc-time-spinner__list .hc-time-spinner__item.is-active'
     )
 
     ;['18', '40', '00', '19', '40', '00'].forEach((_, i) => {
@@ -542,7 +542,7 @@ describe('TimePicker(range)', () => {
     // For skipping Transition animation
     await rAF()
     const list = document.querySelectorAll(
-      '.hc-time-spinner__list .el-time-spinner__item.is-active'
+      '.hc-time-spinner__list .hc-time-spinner__item.is-active'
     )
 
     ;['10', '20', '00', '11', '10', '00'].forEach((_, i) => {

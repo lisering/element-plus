@@ -1,7 +1,7 @@
 <template>
-  <el-tooltip content="I am an el-tooltip">
-    <el-button>trigger me</el-button>
-  </el-tooltip>
+  <hc-tooltip content="I am an hc-tooltip">
+    <hc-button>trigger me</hc-button>
+  </hc-tooltip>
 </template>
 
 <script lang="ts" setup></script>

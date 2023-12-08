@@ -1,6 +1,6 @@
 <template>
-  <el-row :gutter="12" class="demo-radius">
-    <el-col
+  <hc-row :gutter="12" class="demo-radius">
+    <hc-col
       v-for="(radius, i) in radiusGroup"
       :key="i"
       :span="6"
@@ -14,12 +14,12 @@
         class="radius"
         :style="{
           borderRadius: radius.type
-            ? `var(--el-border-radius-${radius.type})`
+            ? `var(--hc-border-radius-${radius.type})`
             : '',
         }"
       />
-    </el-col>
-  </el-row>
+    </hc-col>
+  </hc-row>
 </template>
 
 <script lang="ts" setup>
@@ -54,19 +54,21 @@ const getValue = (type: string) => {
 </script>
 <style scoped>
 .demo-radius .title {
-  color: var(--el-text-color-regular);
+  color: var(--hc-text-color-regular);
   font-size: 18px;
   margin: 10px 0;
 }
+
 .demo-radius .value {
-  color: var(--el-text-color-primary);
+  color: var(--hc-text-color-primary);
   font-size: 16px;
   margin: 10px 0;
 }
+
 .demo-radius .radius {
   height: 40px;
   width: 70%;
-  border: 1px solid var(--el-border-color);
+  border: 1px solid var(--hc-border-color);
   border-radius: 0;
   margin-top: 20px;
 }

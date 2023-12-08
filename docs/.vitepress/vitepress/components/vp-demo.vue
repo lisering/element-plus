@@ -83,16 +83,16 @@ const copyCode = async () => {
     <div class="example">
       <Example :file="path" :demo="formatPathDemos[path]" />
 
-      <ElDivider class="m-0" />
+      <HcDivider class="m-0" />
 
       <div class="op-btns">
-        <ElTooltip
+        <HcTooltip
           :content="locale['edit-in-editor']"
           :show-arrow="false"
           :trigger="['hover', 'focus']"
           :trigger-keys="[]"
         >
-          <ElIcon
+          <HcIcon
             :size="16"
             :aria-label="locale['edit-in-editor']"
             tabindex="0"
@@ -103,15 +103,15 @@ const copyCode = async () => {
             @keydown.prevent.space="onPlaygroundClick"
           >
             <i-ri-flask-line />
-          </ElIcon>
-        </ElTooltip>
-        <ElTooltip
+          </HcIcon>
+        </HcTooltip>
+        <HcTooltip
           :content="locale['edit-on-github']"
           :show-arrow="false"
           :trigger="['hover', 'focus']"
           :trigger-keys="[]"
         >
-          <ElIcon
+          <HcIcon
             :size="16"
             class="op-btn github"
             style="color: var(--text-color-light)"
@@ -124,15 +124,15 @@ const copyCode = async () => {
             >
               <i-ri-github-line />
             </a>
-          </ElIcon>
-        </ElTooltip>
-        <ElTooltip
+          </HcIcon>
+        </HcTooltip>
+        <HcTooltip
           :content="locale['copy-code']"
           :show-arrow="false"
           :trigger="['hover', 'focus']"
           :trigger-keys="[]"
         >
-          <ElIcon
+          <HcIcon
             :size="16"
             :aria-label="locale['copy-code']"
             class="op-btn"
@@ -143,9 +143,9 @@ const copyCode = async () => {
             @keydown.prevent.space="copyCode"
           >
             <i-ri-file-copy-line />
-          </ElIcon>
-        </ElTooltip>
-        <ElTooltip
+          </HcIcon>
+        </HcTooltip>
+        <HcTooltip
           :content="locale['view-source']"
           :show-arrow="false"
           :trigger="['hover', 'focus']"
@@ -156,21 +156,21 @@ const copyCode = async () => {
             :aria-label="
               sourceVisible ? locale['hide-source'] : locale['view-source']
             "
-            class="reset-btn el-icon op-btn"
+            class="reset-btn hc-icon op-btn"
             @click="toggleSourceVisible()"
           >
-            <ElIcon :size="16">
+            <HcIcon :size="16">
               <i-ri-code-line />
-            </ElIcon>
+            </HcIcon>
           </button>
-        </ElTooltip>
+        </HcTooltip>
       </div>
 
-      <ElCollapseTransition>
+      <HcCollapseTransition>
         <SourceCode v-show="sourceVisible" :source="source" />
-      </ElCollapseTransition>
+      </HcCollapseTransition>
 
-      <Transition name="el-fade-in-linear">
+      <Transition name="hc-fade-in-linear">
         <div
           v-show="sourceVisible"
           class="example-float-control"
@@ -179,9 +179,9 @@ const copyCode = async () => {
           @click="toggleSourceVisible(false)"
           @keydown="onSourceVisibleKeydown"
         >
-          <ElIcon :size="16">
+          <HcIcon :size="16">
             <CaretTop />
-          </ElIcon>
+          </HcIcon>
           <span>{{ locale['hide-source'] }}</span>
         </div>
       </Transition>
@@ -192,7 +192,7 @@ const copyCode = async () => {
 <style scoped lang="scss">
 .example {
   border: 1px solid var(--border-color);
-  border-radius: var(--el-border-radius-base);
+  border-radius: var(--hc-border-radius-base);
 
   .op-btns {
     padding: 0.5rem;
@@ -201,7 +201,7 @@ const copyCode = async () => {
     justify-content: flex-end;
     height: 2.5rem;
 
-    .el-icon {
+    .hc-icon {
       &:hover {
         color: var(--text-color);
       }
@@ -235,7 +235,7 @@ const copyCode = async () => {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     margin-top: -1px;
-    color: var(--el-text-color-secondary);
+    color: var(--hc-text-color-secondary);
     cursor: pointer;
     position: sticky;
     left: 0;
@@ -249,7 +249,7 @@ const copyCode = async () => {
     }
 
     &:hover {
-      color: var(--el-color-primary);
+      color: var(--hc-color-primary);
     }
   }
 }

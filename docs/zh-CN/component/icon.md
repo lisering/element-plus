@@ -83,12 +83,12 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 :::
 
 ```vue
-<!-- 使用 el-icon 为 SVG 图标提供属性 -->
+<!-- 使用 hc-icon 为 SVG 图标提供属性 -->
 <template>
   <div>
-    <el-icon :size="size" :color="color">
+    <hc-icon :size="size" :color="color">
       <Edit />
-    </el-icon>
+    </hc-icon>
     <!-- 或者独立使用它，不从父级获取属性 -->
     <Edit />
   </div>
@@ -99,18 +99,18 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
 </vp-script>
 
-<ElRow>
+<HcRow>
   <div>
-    <ElIcon :size="30">
+    <HcIcon :size="30">
       <Edit />
-    </ElIcon>
+    </HcIcon>
     <Edit />
   </div>
-</ElRow>
+</HcRow>
 
-## 结合 el-icon 使用
+## 结合 hc-icon 使用
 
-`el-icon` 为 raw SVG 图标提供额外的属性, 提供的详细属性请继续阅读。
+`hc-icon` 为 raw SVG 图标提供额外的属性, 提供的详细属性请继续阅读。
 
 ```vue
 <template>
@@ -118,52 +118,52 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
     with extra class <b>is-loading</b>, your icon is able to rotate 360 deg in 2
     seconds, you can also override this
   </p>
-  <el-icon :size="20">
+  <hc-icon :size="20">
     <Edit />
-  </el-icon>
-  <el-icon color="#409EFC" class="no-inherit">
+  </hc-icon>
+  <hc-icon color="#409EFC" class="no-inherit">
     <Share />
-  </el-icon>
-  <el-icon>
+  </hc-icon>
+  <hc-icon>
     <Delete />
-  </el-icon>
-  <el-icon class="is-loading">
+  </hc-icon>
+  <hc-icon class="is-loading">
     <Loading />
-  </el-icon>
-  <el-button type="primary">
-    <el-icon style="vertical-align: middle">
+  </hc-icon>
+  <hc-button type="primary">
+    <hc-icon style="vertical-align: middle">
       <Search />
-    </el-icon>
+    </hc-icon>
     <span style="vertical-align: middle"> Search </span>
-  </el-button>
+  </hc-button>
 </template>
 ```
 
-<ElRow>
+<HcRow>
   <p>
     通过添加额外的类名 <b>is-loading</b>，你的图标就可以在 2 秒内旋转 360 度，当然你也可以自己改写想要的动画。
   </p>
   <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-    <ElIcon :size="20">
+    <HcIcon :size="20">
       <Edit />
-    </ElIcon>
-    <ElIcon color="#409EFC" class="no-inherit">
+    </HcIcon>
+    <HcIcon color="#409EFC" class="no-inherit">
       <Share />
-    </ElIcon>
-    <ElIcon>
+    </HcIcon>
+    <HcIcon>
       <Delete />
-    </ElIcon>
-    <ElIcon class="is-loading">
+    </HcIcon>
+    <HcIcon class="is-loading">
       <Loading />
-    </ElIcon>
-    <ElButton type="primary">
-      <ElIcon style="vertical-align: middle; color: #fff;">
+    </HcIcon>
+    <HcButton type="primary">
+      <HcIcon style="vertical-align: middle; color: #fff;">
         <Search />
-      </ElIcon>
+      </HcIcon>
       <span style="vertical-align: middle;">  </span>
-    </ElButton>
+    </HcButton>
   </div>
-</ElRow>
+</HcRow>
 
 ## 直接使用 SVG 图标
 
@@ -180,7 +180,7 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
 </template>
 ```
 
-<ElRow>
+<HcRow>
   <div style="font-size: 20px;">
     <!-- Since svg icons do not carry any attributes by default -->
     <!-- You need to provide attributes directly -->
@@ -189,7 +189,7 @@ import { Edit, Share, Delete, Search, Loading } from '@element-plus/icons-vue'
     <Delete style="width: 1em; height: 1em; margin-right: 8px;" />
     <Search style="width: 1em; height: 1em; margin-right: 8px;" />
   </div>
-</ElRow>
+</HcRow>
 
 ## 图标集合{#icon-collection}
 

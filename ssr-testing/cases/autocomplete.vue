@@ -1,31 +1,20 @@
 <template>
-  <el-row class="demo-autocomplete text-center">
-    <el-col :span="12">
+  <hc-row class="demo-autocomplete text-center">
+    <hc-col :span="12">
       <div class="sub-title my-2 text-sm text-gray-600">
         list suggestions when activated
       </div>
-      <el-autocomplete
-        v-model="state1"
-        :fetch-suggestions="querySearch"
-        class="inline-input"
-        placeholder="Please Input"
-        @select="handleSelect"
-      />
-    </el-col>
-    <el-col :span="12">
+      <hc-autocomplete v-model="state1" :fetch-suggestions="querySearch" class="inline-input" placeholder="Please Input"
+        @select="handleSelect" />
+    </hc-col>
+    <hc-col :span="12">
       <div class="sub-title my-2 text-sm text-gray-600">
         list suggestions on input
       </div>
-      <el-autocomplete
-        v-model="state2"
-        :fetch-suggestions="querySearch"
-        :trigger-on-focus="false"
-        class="inline-input"
-        placeholder="Please Input"
-        @select="handleSelect"
-      />
-    </el-col>
-  </el-row>
+      <hc-autocomplete v-model="state2" :fetch-suggestions="querySearch" :trigger-on-focus="false" class="inline-input"
+        placeholder="Please Input" @select="handleSelect" />
+    </hc-col>
+  </hc-row>
 </template>
 
 <script setup lang="ts">

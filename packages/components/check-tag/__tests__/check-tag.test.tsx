@@ -13,7 +13,7 @@ describe('CheckTag.vue', () => {
     })
     expect(wrapper.text()).toEqual(AXIOM)
 
-    expect(wrapper.classes()).toContain('el-check-tag')
+    expect(wrapper.classes()).toContain('hc-check-tag')
   })
 
   test('functionality', async () => {

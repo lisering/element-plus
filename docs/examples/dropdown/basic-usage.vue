@@ -1,30 +1,30 @@
 <template>
-  <el-dropdown>
-    <span class="el-dropdown-link">
+  <hc-dropdown>
+    <span class="hc-dropdown-link">
       Dropdown List
-      <el-icon class="el-icon--right">
+      <hc-icon class="hc-icon--right">
         <arrow-down />
-      </el-icon>
+      </hc-icon>
     </span>
     <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item>Action 1</el-dropdown-item>
-        <el-dropdown-item>Action 2</el-dropdown-item>
-        <el-dropdown-item>Action 3</el-dropdown-item>
-        <el-dropdown-item disabled>Action 4</el-dropdown-item>
-        <el-dropdown-item divided>Action 5</el-dropdown-item>
-      </el-dropdown-menu>
+      <hc-dropdown-menu>
+        <hc-dropdown-item>Action 1</hc-dropdown-item>
+        <hc-dropdown-item>Action 2</hc-dropdown-item>
+        <hc-dropdown-item>Action 3</hc-dropdown-item>
+        <hc-dropdown-item disabled>Action 4</hc-dropdown-item>
+        <hc-dropdown-item divided>Action 5</hc-dropdown-item>
+      </hc-dropdown-menu>
     </template>
-  </el-dropdown>
+  </hc-dropdown>
 </template>
 
 <script lang="ts" setup>
 import { ArrowDown } from '@element-plus/icons-vue'
 </script>
 <style scoped>
-.example-showcase .el-dropdown-link {
+.example-showcase .hc-dropdown-link {
   cursor: pointer;
-  color: var(--el-color-primary);
+  color: var(--hc-color-primary);
   display: flex;
   align-items: center;
 }

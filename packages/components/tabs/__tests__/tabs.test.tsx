@@ -42,7 +42,7 @@ describe('Tabs.vue', () => {
     const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
 
     expect(navItemsWrapper[0].classes('is-active')).toBe(true)
-    expect(panesWrapper[0].classes('el-tab-pane')).toBe(true)
+    expect(panesWrapper[0].classes('hc-tab-pane')).toBe(true)
     expect(panesWrapper[0].attributes('id')).toBe('pane-0')
     expect(panesWrapper[0].attributes('aria-hidden')).toEqual('false')
     expect(tabsWrapper.vm.$.exposed!.currentName.value).toEqual('0')
@@ -84,7 +84,7 @@ describe('Tabs.vue', () => {
 
     const navItemsWrapper = navWrapper.findAll('.hc-tabs__item')
     expect(navItemsWrapper[1].classes('is-active')).toBe(true)
-    expect(panesWrapper[1].classes('el-tab-pane')).toBe(true)
+    expect(panesWrapper[1].classes('hc-tab-pane')).toBe(true)
     expect(panesWrapper[1].attributes('id')).toBe('pane-b')
     expect(panesWrapper[1].attributes('aria-hidden')).toEqual('false')
     expect(tabsWrapper.vm.$.exposed!.currentName.value).toEqual('b')
@@ -110,7 +110,7 @@ describe('Tabs.vue', () => {
     ))
 
     const tabsWrapper = wrapper.findComponent(Tabs)
-    expect(tabsWrapper.classes('el-tabs--card')).toBe(true)
+    expect(tabsWrapper.classes('hc-tabs--card')).toBe(true)
   })
 
   test('border card', async () => {
@@ -126,7 +126,7 @@ describe('Tabs.vue', () => {
     ))
 
     const tabsWrapper = wrapper.findComponent(Tabs)
-    expect(tabsWrapper.classes('el-tabs--border-card')).toBe(true)
+    expect(tabsWrapper.classes('hc-tabs--border-card')).toBe(true)
   })
 
   test('dynamic', async () => {
@@ -449,7 +449,7 @@ describe('Tabs.vue', () => {
     const tabsWrapper = wrapper.findComponent(Tabs)
     await nextTick()
 
-    expect(tabsWrapper.classes('el-tabs--left')).toBe(true)
+    expect(tabsWrapper.classes('hc-tabs--left')).toBe(true)
     expect(tabsWrapper.find('.hc-tabs__header').classes('is-left')).toBe(true)
     expect(tabsWrapper.find('.hc-tabs__nav-wrap').classes('is-left')).toBe(true)
     expect(tabsWrapper.find('.hc-tabs__nav').classes('is-left')).toBe(true)

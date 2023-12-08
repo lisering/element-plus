@@ -45,7 +45,7 @@ import 'hicor-ui/theme-chalk/dark/css-vars.css'
 ```css
 html.dark {
   /* 自定义深色背景颜色 */
-  --el-bg-color: #626aef;
+  --hc-bg-color: #626aef;
 }
 ```
 

@@ -32,7 +32,7 @@ app.provide(ID_INJECTION_KEY, {
 
 ## Teleports
 
-[Teleport](https://vuejs.org/guide/scaling-up/ssr.html#teleports) 被元素加元件中的多个组件内部使用 (例如) ElDialog, ElDrawer, ElTooltip, ElDropdown, ElSelect, ElDatePicker ...)，所以在SSR期间需要特殊处理。
+[Teleport](https://vuejs.org/guide/scaling-up/ssr.html#teleports) 被元素加元件中的多个组件内部使用 (例如) HcDialog, HcDrawer, HcTooltip, HcDropdown, HcSelect, HcDatePicker ...)，所以在SSR期间需要特殊处理。
 
 ### 在挂载时渲染 Teleport
 
@@ -42,9 +42,9 @@ app.provide(ID_INJECTION_KEY, {
 
 ```html
 <client-only>
-  <el-tooltip content="the tooltip content">
-    <el-button>tooltip</el-button>
-  </el-tooltip>
+  <hc-tooltip content="the tooltip content">
+    <hc-button>tooltip</hc-button>
+  </hc-tooltip>
 </client-only>
 ```
 
@@ -62,9 +62,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <el-tooltip v-if="isClient" content="the tooltip content">
-    <el-button>tooltip</el-button>
-  </el-tooltip>
+  <hc-tooltip v-if="isClient" content="the tooltip content">
+    <hc-button>tooltip</hc-button>
+  </hc-tooltip>
 </template>
 ```
 
@@ -76,9 +76,9 @@ onMounted(() => {
 
 Teleport 可能会有一些 [SSR问题](https://github.com/vuejs/core/issues?q=is%3Aissue+is%3Aopen+ssr+teleport+)，所以你应该特别注意以下几种情况。
 
-1. 基于 ElTooltip 的 `teleported` 的属性应该是一致的，建议使用默认值。
-2. ElDialog 和 ElDrawer 的 ` append-to-body` 属性值应该是一致的，建议启用 `append-to-body`。
-3. ElSubMenu组件有多层弹出窗口，建议启用 `popper-append-to-body`
+1. 基于 HcTooltip 的 `teleported` 的属性应该是一致的，建议使用默认值。
+2. HcDialog 和 HcDrawer 的 ` append-to-body` 属性值应该是一致的，建议启用 `append-to-body`。
+3. HcSubMenu组件有多层弹出窗口，建议启用 `popper-append-to-body`
 
 :::
 
@@ -101,7 +101,7 @@ Teleport 可能会有一些 [SSR问题](https://github.com/vuejs/core/issues?q=i
 
 :::tip
 
-如果您修改了 [Namespace](./namespace.md) 或 `append-to` 属性，您需要调整 `#el-popper-container-` 值。
+如果您修改了 [Namespace](./namespace.md) 或 `append-to` 属性，您需要调整 `#hc-popper-container-` 值。
 
 :::
 
@@ -123,7 +123,7 @@ export async function render(url, manifest) {
 function renderTeleports(teleports) {
   if (!teleports) return ''
   return Object.entries(teleports).reduce((all, [key, value]) => {
-    if (key.startsWith('#el-popper-container-')) {
+    if (key.startsWith('#hc-popper-container-')) {
       return `${all}<div id="${key.slice(1)}">${value}</div>`
     }
     return all

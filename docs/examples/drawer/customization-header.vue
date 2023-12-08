@@ -1,24 +1,24 @@
 <template>
-  <el-button @click="visible = true">
+  <hc-button @click="visible = true">
     Open Drawer with customized header
-  </el-button>
-  <el-drawer v-model="visible" :show-close="false">
+  </hc-button>
+  <hc-drawer v-model="visible" :show-close="false">
     <template #header="{ close, titleId, titleClass }">
       <h4 :id="titleId" :class="titleClass">This is a custom header!</h4>
-      <el-button type="danger" @click="close">
-        <el-icon class="el-icon--left">
+      <hc-button type="danger" @click="close">
+        <hc-icon class="hc-icon--left">
           <CircleCloseFilled />
-        </el-icon>
+        </hc-icon>
         Close
-      </el-button>
+      </hc-button>
     </template>
     This is drawer content.
-  </el-drawer>
+  </hc-drawer>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElButton, ElDrawer } from 'hicor-ui'
+import { HcButton, HcDrawer } from 'hicor-ui'
 import { CircleCloseFilled } from '@element-plus/icons-vue'
 
 const visible = ref(false)

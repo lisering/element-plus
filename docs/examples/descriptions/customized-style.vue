@@ -1,34 +1,35 @@
 <template>
-  <el-descriptions title="Customized style list" :column="3" border>
-    <el-descriptions-item
+  <hc-descriptions title="Customized style list" :column="3" border>
+    <hc-descriptions-item
       label="Username"
       label-align="right"
       align="center"
       label-class-name="my-label"
       class-name="my-content"
       width="150px"
-      >kooriookami</el-descriptions-item
+      >kooriookami</hc-descriptions-item
     >
-    <el-descriptions-item label="Telephone" label-align="right" align="center"
-      >18100000000</el-descriptions-item
+    <hc-descriptions-item label="Telephone" label-align="right" align="center"
+      >18100000000</hc-descriptions-item
     >
-    <el-descriptions-item label="Place" label-align="right" align="center"
-      >Suzhou</el-descriptions-item
+    <hc-descriptions-item label="Place" label-align="right" align="center"
+      >Suzhou</hc-descriptions-item
     >
-    <el-descriptions-item label="Remarks" label-align="right" align="center">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address" label-align="right" align="center"
+    <hc-descriptions-item label="Remarks" label-align="right" align="center">
+      <hc-tag size="small">School</hc-tag>
+    </hc-descriptions-item>
+    <hc-descriptions-item label="Address" label-align="right" align="center"
       >No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu
-      Province</el-descriptions-item
+      Province</hc-descriptions-item
     >
-  </el-descriptions>
+  </hc-descriptions>
 </template>
 <style scoped>
 :deep(.my-label) {
-  background: var(--el-color-success-light-9) !important;
+  background: var(--hc-color-success-light-9) !important;
 }
+
 :deep(.my-content) {
-  background: var(--el-color-danger-light-9);
+  background: var(--hc-color-danger-light-9);
 }
 </style>

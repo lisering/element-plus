@@ -1,8 +1,8 @@
 <template>
-  <el-tree-select v-model="value" :data="data" :render-after-expand="false" />
-  <el-divider />
+  <hc-tree-select v-model="value" :data="data" :render-after-expand="false" />
+  <hc-divider />
   show checkbox:
-  <el-tree-select
+  <hc-tree-select
     v-model="value"
     :data="data"
     :render-after-expand="false"

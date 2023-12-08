@@ -1,11 +1,11 @@
 <template>
-  <el-button type="primary" style="margin-left: 16px" @click="drawer = true">
+  <hc-button type="primary" style="margin-left: 16px" @click="drawer = true">
     open
-  </el-button>
+  </hc-button>
 
-  <el-drawer v-model="drawer" title="I am the title" :with-header="false">
+  <hc-drawer v-model="drawer" title="I am the title" :with-header="false">
     <span>Hi there!</span>
-  </el-drawer>
+  </hc-drawer>
 </template>
 
 <script lang="ts" setup>

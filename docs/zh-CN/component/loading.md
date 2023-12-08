@@ -48,19 +48,19 @@ loading/fullscreen
 Loading 还可以以服务的方式调用。 你可以像这样引入 Loading 服务：
 
 ```ts
-import { ElLoading } from 'hicor-ui'
+import { HcLoading } from 'hicor-ui'
 ```
 
 在你需要的时候通过下面的方式调用：
 
 ```ts
-ElLoading.service(options)
+HcLoading.service(options)
 ```
 
 其中`options`参数为 Loading 的配置项，具体见下表。 `LoadingService` 会返回一个 Loading 实例，可通过调用该实例的 `close` 方法来关闭它：
 
 ```ts
-const loadingInstance = ElLoading.service(options)
+const loadingInstance = HcLoading.service(options)
 nextTick(() => {
   // Loading should be closed asynchronously
   loadingInstance.close()
@@ -70,8 +70,8 @@ nextTick(() => {
 需要注意的是，以服务的方式调用的全屏 Loading 是单例的。 若在前一个全屏 Loading 关闭前再次调用全屏 Loading，并不会创建一个新的 Loading 实例，而是返回现有全屏 Loading 的实例：
 
 ```ts
-const loadingInstance1 = ElLoading.service({ fullscreen: true })
-const loadingInstance2 = ElLoading.service({ fullscreen: true })
+const loadingInstance1 = HcLoading.service({ fullscreen: true })
+const loadingInstance2 = HcLoading.service({ fullscreen: true })
 console.log(loadingInstance1 === loadingInstance2) // true
 ```
 

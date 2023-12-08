@@ -6,7 +6,7 @@ import { hasClass } from '@hicor-ui/utils'
 import { useLockscreen } from '../use-lockscreen'
 import { useNamespace } from '../use-namespace'
 
-const kls = 'el-popup-parent--hidden'
+const kls = 'hc-popup-parent--hidden'
 
 const Comp = defineComponent({
   setup() {

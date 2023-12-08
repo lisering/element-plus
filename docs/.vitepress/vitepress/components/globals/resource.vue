@@ -85,7 +85,7 @@ const resourceCards = computed(() => [
         class="inline-flex w-full md:w-1/2 lg:w-1/3 3xl:w-1/4"
         p="2"
       >
-        <el-card class="card" shadow="hover">
+        <hc-card class="card" shadow="hover">
           <div class="w-30 m-auto">
             <component :is="card.icon" alt="icon" />
           </div>
@@ -94,9 +94,9 @@ const resourceCards = computed(() => [
             {{ card.intro }}
           </p>
           <a target="_blank" :href="card.url">
-            <el-button type="primary">{{ resourceLang.download }}</el-button>
+            <hc-button type="primary">{{ resourceLang.download }}</hc-button>
           </a>
-        </el-card>
+        </hc-card>
       </div>
     </div>
   </div>

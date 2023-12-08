@@ -52,7 +52,7 @@ const data = createData(4, 30, NODE_NUMBER)
 
 const _mount = makeMountFunc({
   components: {
-    'el-tree': Tree,
+    'hc-tree': Tree,
   },
 })
 
@@ -315,7 +315,7 @@ describe('Virtual Tree', () => {
       },
     })
     await nextTick()
-    expect(wrapper.classes()).toContain('el-tree--highlight-current')
+    expect(wrapper.classes()).toContain('hc-tree--highlight-current')
   })
 
   test('showCheckbox', async () => {

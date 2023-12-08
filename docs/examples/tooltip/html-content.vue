@@ -1,8 +1,8 @@
 <template>
-  <el-tooltip
+  <hc-tooltip
     content="<span>The content can be <strong>HTML</strong></span>"
     raw-content
   >
-    <el-button>hover me</el-button>
-  </el-tooltip>
+    <hc-button>hover me</hc-button>
+  </hc-tooltip>
 </template>

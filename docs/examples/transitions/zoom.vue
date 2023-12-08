@@ -1,18 +1,18 @@
 <template>
   <div>
-    <el-button @click="show = !show">Click Me</el-button>
+    <hc-button @click="show = !show">Click Me</hc-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px">
-      <transition name="el-zoom-in-center">
-        <div v-show="show" class="transition-box">.el-zoom-in-center</div>
+      <transition name="hc-zoom-in-center">
+        <div v-show="show" class="transition-box">.hc-zoom-in-center</div>
       </transition>
 
-      <transition name="el-zoom-in-top">
-        <div v-show="show" class="transition-box">.el-zoom-in-top</div>
+      <transition name="hc-zoom-in-top">
+        <div v-show="show" class="transition-box">.hc-zoom-in-top</div>
       </transition>
 
-      <transition name="el-zoom-in-bottom">
-        <div v-show="show" class="transition-box">.el-zoom-in-bottom</div>
+      <transition name="hc-zoom-in-bottom">
+        <div v-show="show" class="transition-box">.hc-zoom-in-bottom</div>
       </transition>
     </div>
   </div>

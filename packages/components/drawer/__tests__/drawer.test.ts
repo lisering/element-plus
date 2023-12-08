@@ -264,7 +264,7 @@ describe('Drawer', () => {
     const headerButton = wrapper.find('button')
     expect(headerButton.attributes()['data-title-id']).toBeTruthy()
     expect(headerButton.attributes()['data-title-class']).toBe(
-      'el-drawer__title'
+      'hc-drawer__title'
     )
     expect(drawer.emitted().close).toBeFalsy()
     headerButton.trigger('click')

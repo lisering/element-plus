@@ -183,7 +183,7 @@ watch(
 
 defineExpose({
   /**
-   * @description el-popper-content component instance
+   * @description hc-popper-content component instance
    */
   contentRef,
 })

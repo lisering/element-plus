@@ -1,7 +1,7 @@
 <template>
   <div class="block">
     <span class="demonstration">Default</span>
-    <el-date-picker
+    <hc-date-picker
       v-model="value1"
       type="datetimerange"
       range-separator="To"
@@ -11,7 +11,7 @@
   </div>
   <div class="block">
     <span class="demonstration">With shortcuts</span>
-    <el-date-picker
+    <hc-date-picker
       v-model="value2"
       type="datetimerange"
       :shortcuts="shortcuts"
@@ -65,15 +65,17 @@ const shortcuts = [
 .block {
   padding: 30px 0;
   text-align: center;
-  border-right: solid 1px var(--el-border-color);
+  border-right: solid 1px var(--hc-border-color);
   flex: 1;
 }
+
 .block:last-child {
   border-right: none;
 }
+
 .block .demonstration {
   display: block;
-  color: var(--el-text-color-secondary);
+  color: var(--hc-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }

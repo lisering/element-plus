@@ -97,7 +97,7 @@ describe('Rate.vue', () => {
     ))
 
     const rateEl = wrapper.find('.hc-rate').element as HTMLElement
-    expect(rateEl.style.getPropertyValue('--el-rate-fill-color')).toBe(
+    expect(rateEl.style.getPropertyValue('--hc-rate-fill-color')).toBe(
       '#FF9900'
     )
   })

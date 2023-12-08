@@ -1,5 +1,5 @@
 <template>
-  <el-tree-v2
+  <hc-tree-v2
     :data="data"
     :height="208"
     :props="props"

@@ -1,24 +1,24 @@
 <template>
-  <el-page-header :icon="null">
+  <hc-page-header :icon="null">
     <template #content>
       <div class="flex items-center">
-        <el-avatar
+        <hc-avatar
           :size="32"
           class="mr-3"
           src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
         />
         <span class="text-large font-600 mr-3"> Title </span>
-        <span class="text-sm mr-2" style="color: var(--el-text-color-regular)">
+        <span class="text-sm mr-2" style="color: var(--hc-text-color-regular)">
           Sub title
         </span>
-        <el-tag>Default</el-tag>
+        <hc-tag>Default</hc-tag>
       </div>
     </template>
     <template #extra>
       <div class="flex items-center">
-        <el-button>Print</el-button>
-        <el-button type="primary" class="ml-2">Edit</el-button>
+        <hc-button>Print</hc-button>
+        <hc-button type="primary" class="ml-2">Edit</hc-button>
       </div>
     </template>
-  </el-page-header>
+  </hc-page-header>
 </template>

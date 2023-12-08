@@ -39,7 +39,7 @@ describe('use-form-item', () => {
       }
     )
 
-    expect(wrapper.find(`.el-button--${propSize}`).exists()).toBe(true)
+    expect(wrapper.find(`.hc-button--${propSize}`).exists()).toBe(true)
   })
 
   it('should return fallback.size instead inject.size', () => {
@@ -54,7 +54,7 @@ describe('use-form-item', () => {
       } as FormItemContext)
     })
 
-    expect(wrapper.find(`.el-button--${fallbackSize}`).exists()).toBe(true)
+    expect(wrapper.find(`.hc-button--${fallbackSize}`).exists()).toBe(true)
   })
 
   it('should return formItem.size instead form.size', () => {
@@ -69,6 +69,6 @@ describe('use-form-item', () => {
       } as FormContext)
     })
 
-    expect(wrapper.find(`.el-button--${itemSize}`).exists()).toBe(true)
+    expect(wrapper.find(`.hc-button--${itemSize}`).exists()).toBe(true)
   })
 })

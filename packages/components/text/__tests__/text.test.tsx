@@ -8,19 +8,19 @@ describe('Text.vue', () => {
   test('create', () => {
     const wrapper = mount(() => <Text />)
 
-    expect(wrapper.classes()).toContain('el-text')
+    expect(wrapper.classes()).toContain('hc-text')
   })
 
   test('type', () => {
     const wrapper = mount(() => <Text type="success" />)
 
-    expect(wrapper.classes()).toContain('el-text--success')
+    expect(wrapper.classes()).toContain('hc-text--success')
   })
 
   test('size', () => {
     const wrapper = mount(() => <Text size="large" />)
 
-    expect(wrapper.classes()).toContain('el-text--large')
+    expect(wrapper.classes()).toContain('hc-text--large')
   })
 
   test('truncated', () => {

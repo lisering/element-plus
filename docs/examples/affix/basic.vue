@@ -1,5 +1,5 @@
 <template>
-  <el-affix :offset="120">
-    <el-button type="primary">Offset top 120px</el-button>
-  </el-affix>
+  <hc-affix :offset="120">
+    <hc-button type="primary">Offset top 120px</hc-button>
+  </hc-affix>
 </template>

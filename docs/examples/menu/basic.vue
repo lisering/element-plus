@@ -1,52 +1,52 @@
 <template>
-  <el-menu
+  <hc-menu
     :default-active="activeIndex"
-    class="el-menu-demo"
+    class="hc-menu-demo"
     mode="horizontal"
     @select="handleSelect"
   >
-    <el-menu-item index="1">Processing Center</el-menu-item>
-    <el-sub-menu index="2">
+    <hc-menu-item index="1">Processing Center</hc-menu-item>
+    <hc-sub-menu index="2">
       <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-sub-menu index="2-4">
+      <hc-menu-item index="2-1">item one</hc-menu-item>
+      <hc-menu-item index="2-2">item two</hc-menu-item>
+      <hc-menu-item index="2-3">item three</hc-menu-item>
+      <hc-sub-menu index="2-4">
         <template #title>item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-        <el-menu-item index="2-4-2">item two</el-menu-item>
-        <el-menu-item index="2-4-3">item three</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
-  </el-menu>
+        <hc-menu-item index="2-4-1">item one</hc-menu-item>
+        <hc-menu-item index="2-4-2">item two</hc-menu-item>
+        <hc-menu-item index="2-4-3">item three</hc-menu-item>
+      </hc-sub-menu>
+    </hc-sub-menu>
+    <hc-menu-item index="3" disabled>Info</hc-menu-item>
+    <hc-menu-item index="4">Orders</hc-menu-item>
+  </hc-menu>
   <div class="h-6" />
-  <el-menu
+  <hc-menu
     :default-active="activeIndex2"
-    class="el-menu-demo"
+    class="hc-menu-demo"
     mode="horizontal"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
     @select="handleSelect"
   >
-    <el-menu-item index="1">Processing Center</el-menu-item>
-    <el-sub-menu index="2">
+    <hc-menu-item index="1">Processing Center</hc-menu-item>
+    <hc-sub-menu index="2">
       <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-sub-menu index="2-4">
+      <hc-menu-item index="2-1">item one</hc-menu-item>
+      <hc-menu-item index="2-2">item two</hc-menu-item>
+      <hc-menu-item index="2-3">item three</hc-menu-item>
+      <hc-sub-menu index="2-4">
         <template #title>item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-        <el-menu-item index="2-4-2">item two</el-menu-item>
-        <el-menu-item index="2-4-3">item three</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
-  </el-menu>
+        <hc-menu-item index="2-4-1">item one</hc-menu-item>
+        <hc-menu-item index="2-4-2">item two</hc-menu-item>
+        <hc-menu-item index="2-4-3">item three</hc-menu-item>
+      </hc-sub-menu>
+    </hc-sub-menu>
+    <hc-menu-item index="3" disabled>Info</hc-menu-item>
+    <hc-menu-item index="4">Orders</hc-menu-item>
+  </hc-menu>
 </template>
 
 <script lang="ts" setup>

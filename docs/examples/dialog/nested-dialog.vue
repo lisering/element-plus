@@ -1,11 +1,11 @@
 <template>
-  <el-button text @click="outerVisible = true">
+  <hc-button text @click="outerVisible = true">
     open the outer Dialog
-  </el-button>
+  </hc-button>
 
-  <el-dialog v-model="outerVisible" title="Outer Dialog">
+  <hc-dialog v-model="outerVisible" title="Outer Dialog">
     <template #default>
-      <el-dialog
+      <hc-dialog
         v-model="innerVisible"
         width="30%"
         title="Inner Dialog"
@@ -14,13 +14,13 @@
     </template>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="outerVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="innerVisible = true">
+        <hc-button @click="outerVisible = false">Cancel</hc-button>
+        <hc-button type="primary" @click="innerVisible = true">
           open the inner Dialog
-        </el-button>
+        </hc-button>
       </div>
     </template>
-  </el-dialog>
+  </hc-dialog>
 </template>
 
 <script lang="ts" setup>

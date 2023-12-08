@@ -1,5 +1,5 @@
 <template>
-  <el-tree
+  <hc-tree
     :props="props"
     :load="loadNode"
     lazy

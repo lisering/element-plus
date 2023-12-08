@@ -1,8 +1,8 @@
 <template>
-  <el-badge is-dot class="item">query</el-badge>
-  <el-badge is-dot class="item">
-    <el-button class="share-button" :icon="Share" type="primary" />
-  </el-badge>
+  <hc-badge is-dot class="item">query</hc-badge>
+  <hc-badge is-dot class="item">
+    <hc-button class="share-button" :icon="Share" type="primary" />
+  </hc-badge>
 </template>
 
 <script lang="ts" setup>

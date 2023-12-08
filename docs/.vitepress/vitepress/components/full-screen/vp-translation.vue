@@ -18,7 +18,7 @@ const onSwitchLang = (lang: string) => {
 
 <template>
   <div class="full-screen-translation">
-    <ElButton
+    <HcButton
       :aria-label="locale.language"
       :aria-expanded="show"
       aria-controls="translation-items"
@@ -28,11 +28,11 @@ const onSwitchLang = (lang: string) => {
     >
       <div class="translation-toggler">
         <span> Translations </span>
-        <ElIcon :size="14">
+        <HcIcon :size="14">
           <ExpandIcon class="toggle-icon" :class="{ expanded: show }" />
-        </ElIcon>
+        </HcIcon>
       </div>
-    </ElButton>
+    </HcButton>
     <div v-show="show" class="translation-items">
       <p
         v-for="l in langs"
@@ -60,14 +60,16 @@ const onSwitchLang = (lang: string) => {
 .full-screen-translation {
   border-bottom: 1px solid var(--border-color);
 }
+
 .translation-toggler {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   line-height: 24px;
+
   .toggle-icon {
-    transition: transform var(--el-transition-duration);
+    transition: transform var(--hc-transition-duration);
     transform: rotate(180deg);
 
     &.expanded {
@@ -78,6 +80,7 @@ const onSwitchLang = (lang: string) => {
 
 .translation-items {
   padding-bottom: 12px;
+
   .translation-item {
     cursor: pointer;
     margin: 0;

@@ -19,7 +19,7 @@ watch(
 )
 </script>
 <template>
-  <el-watermark :font="font" :content="['Element+', 'Hicor Ui']">
+  <hc-watermark :font="font" :content="['Element+', 'Hicor Ui']">
     <div style="height: 500px" />
-  </el-watermark>
+  </hc-watermark>
 </template>

@@ -1,9 +1,9 @@
 <template>
-  <el-table v-loading="loading" :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180" />
-    <el-table-column prop="name" label="Name" width="180" />
-    <el-table-column prop="address" label="Address" />
-  </el-table>
+  <hc-table v-loading="loading" :data="tableData" style="width: 100%">
+    <hc-table-column prop="date" label="Date" width="180" />
+    <hc-table-column prop="name" label="Name" width="180" />
+    <hc-table-column prop="address" label="Address" />
+  </hc-table>
 </template>
 
 <script lang="ts" setup>
@@ -34,7 +34,8 @@ const tableData = [
 body {
   margin: 0;
 }
-.example-showcase .el-loading-mask {
+
+.example-showcase .hc-loading-mask {
   z-index: 9;
 }
 </style>

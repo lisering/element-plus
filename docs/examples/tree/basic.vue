@@ -1,5 +1,5 @@
 <template>
-  <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" />
+  <hc-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" />
 </template>
 
 <script lang="ts" setup>

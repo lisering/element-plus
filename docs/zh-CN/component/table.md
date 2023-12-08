@@ -17,7 +17,7 @@ lang: zh-CN
 
 基础的表格展示用法。
 
-:::demo 当 `el-table` 元素中注入 `data` 对象数组后，在 `el-table-column` 中用 `prop` 属性来对应对象中的键名即可填入数据，用 `label` 属性来定义表格的列名。 可以使用 `width` 属性来定义列宽。
+:::demo 当 `hc-table` 元素中注入 `data` 对象数组后，在 `hc-table-column` 中用 `prop` 属性来对应对象中的键名即可填入数据，用 `label` 属性来定义表格的列名。 可以使用 `width` 属性来定义列宽。
 
 table/basic
 
@@ -55,7 +55,7 @@ table/with-status
 
 纵向内容过多时，可选择固定表头。
 
-:::demo 只要在 `el-table` 元素中定义了 `height` 属性，即可实现固定表头的表格，而不需要额外的代码。
+:::demo 只要在 `hc-table` 元素中定义了 `height` 属性，即可实现固定表头的表格，而不需要额外的代码。
 
 table/fixed-header
 
@@ -85,7 +85,7 @@ table/fixed-column-and-header
 
 当数据量动态变化时，可以为 Table 设置一个最大高度。
 
-:::demo 通过设置 `max-height` 属性为 `el-table` 指定最大高度。 此时若表格所需的高度大于最大高度，则会显示一个滚动条。
+:::demo 通过设置 `max-height` 属性为 `hc-table` 指定最大高度。 此时若表格所需的高度大于最大高度，则会显示一个滚动条。
 
 table/fixed-header-with-fluid-header
 
@@ -105,7 +105,7 @@ table/grouping-header
 
 支持固定群组头
 
-:::demo 组头的属性 `fixed` 由最外层 `el-table-column`决定
+:::demo 组头的属性 `fixed` 由最外层 `hc-table-column`决定
 
 table/fixed-column-and-header
 
@@ -115,7 +115,7 @@ table/fixed-column-and-header
 
 选择单行数据时使用色块表示。
 
-:::demo Table 组件提供了单选的支持， 只需要配置 `highlight-current-row` 属性即可实现单选。 之后由 `current-change` 事件来管理选中时触发的事件，它会传入 `currentRow`，`oldCurrentRow`。 如果需要显示索引，可以增加一列 `el-table-column`，设置 `type` 属性为 `index` 即可显示从 1 开始的索引号。
+:::demo Table 组件提供了单选的支持， 只需要配置 `highlight-current-row` 属性即可实现单选。 之后由 `current-change` 事件来管理选中时触发的事件，它会传入 `currentRow`，`oldCurrentRow`。 如果需要显示索引，可以增加一列 `hc-table-column`，设置 `type` 属性为 `index` 即可显示从 1 开始的索引号。
 
 table/single-select
 
@@ -125,7 +125,7 @@ table/single-select
 
 你也可以选择多行。
 
-:::demo 实现多选非常简单: 手动添加一个 `el-table-column`，设 `type` 属性为 `selection` 即可； 除了多选，这里还使用到了 `show-overflow-tooltip`属性。 默认情况下，如果单元格内容过长，会占用多行显示。 若需要单行显示可以使用 `show-overflow-tooltip` 属性，它接受一个 `Boolean`， 为 `true` 时多余的内容会在 hover 时以 tooltip 的形式显示出来。
+:::demo 实现多选非常简单: 手动添加一个 `hc-table-column`，设 `type` 属性为 `selection` 即可； 除了多选，这里还使用到了 `show-overflow-tooltip`属性。 默认情况下，如果单元格内容过长，会占用多行显示。 若需要单行显示可以使用 `show-overflow-tooltip` 属性，它接受一个 `Boolean`， 为 `true` 时多余的内容会在 hover 时以 tooltip 的形式显示出来。
 
 table/multi-select
 
@@ -175,7 +175,7 @@ table/custom-header
 
 当行内容过多并且不想显示横向滚动条时，可以使用 Table 展开行功能。
 
-:::demo 通过设置 type="expand" 和 slot 可以开启展开行功能， el-table-column 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 slot 相同。
+:::demo 通过设置 type="expand" 和 slot 可以开启展开行功能， hc-table-column 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 slot 相同。
 
 table/expandable-row
 
@@ -257,7 +257,7 @@ table/table-layout
 | expand-row-keys           | 可以通过该属性设置 Table 目前的展开行，需要设置 row-key 属性才能使用，该属性为展开行的 keys 数组。                                                                                       | array                                                                                                                                                                              | —                                      | —                                                                                                                       |
 | default-sort              | 默认的排序列的 prop 和顺序。 它的 `prop` 属性指定默认的排序的列，`order` 指定默认排序的顺序                                                                                          | object                                                                                                                                                                             | (order: 'ascending' \'descending')    | 'descending')                | 如果 `prop` 被设置, 且 `order` 没有设置, 那么 `order` 默认为 ascending                                  |
 | tooltip-effect            | 溢出的 tooltip 的 `effect`                                                                                                                             | string                                                                                                                                                                             | dark / light                           | dark                                                                                                                    |
-| tooltip-options ^(2.2.28) | 溢出 tooltip 的选项，[参见下述 tooltip 组件](tooltip.html#attributes)                                                                                          | ^[object]`Pick<ElTooltipProps, 'effect' \| 'enterable' \| 'hideAfter' \| 'offset' \| 'placement' \| 'popperClass' \| 'popperOptions' \| 'showAfter' \| 'showArrow'>` | [请参考 tooltip](tooltip.html#attributes) | ^[object]`{ enterable: true, placement: 'top', showArrow: true, hideAfter: 200, popperOptions: { strategy: 'fixed' } }` |
+| tooltip-options ^(2.2.28) | 溢出 tooltip 的选项，[参见下述 tooltip 组件](tooltip.html#attributes)                                                                                          | ^[object]`Pick<HcTooltipProps, 'effect' \| 'enterable' \| 'hideAfter' \| 'offset' \| 'placement' \| 'popperClass' \| 'popperOptions' \| 'showAfter' \| 'showArrow'>` | [请参考 tooltip](tooltip.html#attributes) | ^[object]`{ enterable: true, placement: 'top', showArrow: true, hideAfter: 200, popperOptions: { strategy: 'fixed' } }` |
 | show-summary              | 是否在表尾显示合计行                                                                                                                                         | boolean                                                                                                                                                                            | —                                      | false                                                                                                                   |
 | sum-text                  | 显示摘要行第一列的文本                                                                                                                                        | string                                                                                                                                                                             | —                                      | Sum                                                                                                                     |
 | summary-method            | 自定义的合计计算方法                                                                                                                                         | function(\{ columns, data \})                                                                                                                                                    | —                                      | —                                                                                                                       |
@@ -338,7 +338,7 @@ table/table-layout
 | sort-method           | 指定数据按照哪个属性进行排序，仅当`sortable`设置为`true`的时候有效。 应该如同 Array.sort 那样返回一个 Number                                            | function(a, b)                               | —                                                                  | —                                                                                                                           |
 | sort-by               | 指定数据按照哪个属性进行排序，仅当 sortable 设置为 true 且没有设置 sort-method 的时候有效。 如果 sort-by 为数组，则先按照第 1 个属性排序，如果第 1 个相等，再按照第 2 个排序，以此类推 | function(row, index) / string / array        | —                                                                  | —                                                                                                                           |
 | sort-orders           | 数据在排序时所使用排序策略的轮转顺序，仅当 sortable 为 true 时有效。 需传入一个数组，随着用户点击表头，该列依次按照数组中元素的顺序进行排序                                      | array                                        | 数组中的元素需为以下三者之一：`ascending` 表示升序，`descending` 表示降序，`null` 表示还原为原始顺序 | ['ascending', 'descending', null]                                                                                           |
-| resizable             | 对应列是否可以通过拖动改变宽度（需要在 el-table 上设置 border 属性为真）                                                                       | boolean                                      | —                                                                  | true                                                                                                                        |
+| resizable             | 对应列是否可以通过拖动改变宽度（需要在 hc-table 上设置 border 属性为真）                                                                       | boolean                                      | —                                                                  | true                                                                                                                        |
 | formatter             | 用来格式化内容                                                                                                             | function(row, column, cellValue, index)      | —                                                                  | —                                                                                                                           |
 | show-overflow-tooltip | 当内容过长被隐藏时显示 tooltip                                                                                                 | boolean \                                   | [`object`](#table-attributes) ^(2.2.28)                            | 参考表格的 [tooltip-options](#table-attributes)                                                                              | — |
 | align                 | 对齐方式                                                                                                                | string                                       | left / center / right                                              | left                                                                                                                        |
@@ -365,13 +365,13 @@ table/table-layout
 #### 如何在表格中使用图像预览？
 
 ```vue
-<el-table-column label="Thumbnail" width="180">
+<hc-table-column label="Thumbnail" width="180">
     <template #default="scope">
         <div style="display: flex; align-items: center">
-            <el-image :preview-src-list="srcList"/>
+            <hc-image :preview-src-list="srcList"/>
         </div>
     </template>
-</el-table-column>
+</hc-table-column>
 ```
 
 注：由于固定列是通过 sticky 来实现的，如果表格中含有固定列，请在图像上添加 `preview-teleported` 属性。

@@ -107,8 +107,8 @@ dropdown/sizes
 
 | 插槽名      | 说明                                                                                          | 子标签           |
 | -------- | ------------------------------------------------------------------------------------------- | ------------- |
-| —        | 下拉菜单的内容。 注意：必须是有效的 html DOM 元素（例如 `<span>、<button>` 等）或 `el-component`，以附加监听触发器 | —             |
-| dropdown | 下拉列表，通常是 `<el-dropdown-menu>` 组件                                                      | Dropdown-Menu |
+| —        | 下拉菜单的内容。 注意：必须是有效的 html DOM 元素（例如 `<span>、<button>` 等）或 `hc-component`，以附加监听触发器 | —             |
+| dropdown | 下拉列表，通常是 `<hc-dropdown-menu>` 组件                                                      | Dropdown-Menu |
 
 ## Dropdown Events
 

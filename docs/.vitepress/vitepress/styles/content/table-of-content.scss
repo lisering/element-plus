@@ -53,7 +53,7 @@
           display: inline-block;
           position: relative;
           color: var(--text-color-lighter);
-          transition: color var(--el-transition-duration);
+          transition: color var(--hc-transition-duration);
           &.active {
             color: var(--brand-color);
           }

@@ -1,10 +1,10 @@
 <template>
-  <el-input
+  <hc-input
     v-model="query"
     placeholder="Please enter keyword"
     @input="onQueryChanged"
   />
-  <el-tree-v2
+  <hc-tree-v2
     ref="treeRef"
     :data="data"
     :props="props"
@@ -14,7 +14,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTreeV2 } from 'hicor-ui'
+import { HcTreeV2 } from 'hicor-ui'
 import type { TreeNode } from 'hicor-ui/es/components/tree-v2/src/types'
 
 interface Tree {
@@ -52,7 +52,7 @@ const createData = (
 }
 
 const query = ref('')
-const treeRef = ref<InstanceType<typeof ElTreeV2>>()
+const treeRef = ref<InstanceType<typeof HcTreeV2>>()
 const data = createData(4, 30, 5)
 const props = {
   value: 'id',

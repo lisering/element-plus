@@ -13,32 +13,33 @@ const toTranslation = () => {
 <template>
   <div class="translation-container">
     <ClientOnly>
-      <ElDropdown popper-class="translation-popup" role="navigation">
-        <ElIcon :size="24" :aria-label="locale.language">
+      <HcDropdown popper-class="translation-popup" role="navigation">
+        <HcIcon :size="24" :aria-label="locale.language">
           <i-ri-translate-2 />
-        </ElIcon>
+        </HcIcon>
         <template #dropdown>
-          <ElDropdownMenu>
-            <ElDropdownItem
+          <HcDropdownMenu>
+            <HcDropdownItem
               v-for="l in langs"
               :key="l"
               :class="{ language: true, selected: l === lang }"
               @click="switchLang(l)"
             >
               {{ languageMap[l] }}
-            </ElDropdownItem>
-            <ElDropdownItem class="language selected" @click="toTranslation">
+            </HcDropdownItem>
+            <HcDropdownItem class="language selected" @click="toTranslation">
               {{ locale.help }}
-            </ElDropdownItem>
-          </ElDropdownMenu>
+            </HcDropdownItem>
+          </HcDropdownMenu>
         </template>
-      </ElDropdown>
+      </HcDropdown>
     </ClientOnly>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../../styles/mixins' as *;
+
 .translation-container {
   display: none;
   height: 24px;
@@ -51,24 +52,25 @@ const toTranslation = () => {
 </style>
 
 <style lang="scss">
-.el-dropdown__popper.translation-popup {
-  --el-bg-color-overlay: var(--bg-color);
-  --el-popper-border-radius: 8px;
-  --el-border-color-light: transparent;
+.hc-dropdown__popper.translation-popup {
+  --hc-bg-color-overlay: var(--bg-color);
+  --hc-popper-border-radius: 8px;
+  --hc-border-color-light: transparent;
 
   padding: 7px 0;
   min-width: 192px;
   transition: background-color 0.5s;
 
-  .el-popper__arrow {
+  .hc-popper__arrow {
     display: none;
   }
 
   .language {
     padding: 0 16px;
     line-height: 28px;
+
     &.selected {
-      --el-text-color-regular: var(--brand-color);
+      --hc-text-color-regular: var(--brand-color);
     }
   }
 }

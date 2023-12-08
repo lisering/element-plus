@@ -1,18 +1,18 @@
 <template>
   <div>
-    <el-table
+    <hc-table
       :data="tableData"
       style="width: 100%; margin-bottom: 20px"
       row-key="id"
       border
       default-expand-all
     >
-      <el-table-column prop="date" label="Date" sortable />
-      <el-table-column prop="name" label="Name" sortable />
-      <el-table-column prop="address" label="Address" sortable />
-    </el-table>
+      <hc-table-column prop="date" label="Date" sortable />
+      <hc-table-column prop="name" label="Name" sortable />
+      <hc-table-column prop="address" label="Address" sortable />
+    </hc-table>
 
-    <el-table
+    <hc-table
       :data="tableData1"
       style="width: 100%"
       row-key="id"
@@ -21,10 +21,10 @@
       :load="load"
       :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
     >
-      <el-table-column prop="date" label="Date" />
-      <el-table-column prop="name" label="Name" />
-      <el-table-column prop="address" label="Address" />
-    </el-table>
+      <hc-table-column prop="date" label="Date" />
+      <hc-table-column prop="name" label="Name" />
+      <hc-table-column prop="address" label="Address" />
+    </hc-table>
   </div>
 </template>
 <script lang="ts" setup>

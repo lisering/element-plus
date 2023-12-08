@@ -34,7 +34,7 @@ describe('Badge', () => {
     ))
     expect(wrapper.find('.hc-badge__content.is-dot').exists()).toBe(true)
     expect(
-      wrapper.find('.hc-badge__content.el-badge__content--danger').exists()
+      wrapper.find('.hc-badge__content.hc-badge__content--danger').exists()
     ).toBe(true)
   })
 
@@ -50,7 +50,7 @@ describe('Badge', () => {
     ))
     expect(wrapper.find('.hc-badge__content.is-dot').exists()).toBe(true)
     expect(
-      wrapper.find('.hc-badge__content.el-badge__content--success').exists()
+      wrapper.find('.hc-badge__content.hc-badge__content--success').exists()
     ).toBe(true)
   })
 

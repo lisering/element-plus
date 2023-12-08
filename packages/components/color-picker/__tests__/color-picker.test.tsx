@@ -30,7 +30,7 @@ type ColorPickerVM = ComponentPublicInstance<{
 describe('Color-picker', () => {
   it('Mount Color-picker', () => {
     const wrapper = mount(ColorPicker)
-    expect(wrapper.html()).toContain('el-color-picker')
+    expect(wrapper.html()).toContain('hc-color-picker')
     wrapper.unmount()
   })
   it('should show alpha slider when show-alpha=true', async () => {

@@ -1,95 +1,95 @@
 <template>
-  <el-row :gutter="16">
-    <el-col :span="8">
+  <hc-row :gutter="16">
+    <hc-col :span="8">
       <div class="statistic-card">
-        <el-statistic :value="98500">
+        <hc-statistic :value="98500">
           <template #title>
             <div style="display: inline-flex; align-items: center">
               Daily active users
-              <el-tooltip
+              <hc-tooltip
                 effect="dark"
                 content="Number of users who logged into the product in one day"
                 placement="top"
               >
-                <el-icon style="margin-left: 4px" :size="12">
+                <hc-icon style="margin-left: 4px" :size="12">
                   <Warning />
-                </el-icon>
-              </el-tooltip>
+                </hc-icon>
+              </hc-tooltip>
             </div>
           </template>
-        </el-statistic>
+        </hc-statistic>
         <div class="statistic-footer">
           <div class="footer-item">
             <span>than yesterday</span>
             <span class="green">
               24%
-              <el-icon>
+              <hc-icon>
                 <CaretTop />
-              </el-icon>
+              </hc-icon>
             </span>
           </div>
         </div>
       </div>
-    </el-col>
-    <el-col :span="8">
+    </hc-col>
+    <hc-col :span="8">
       <div class="statistic-card">
-        <el-statistic :value="693700">
+        <hc-statistic :value="693700">
           <template #title>
             <div style="display: inline-flex; align-items: center">
               Monthly Active Users
-              <el-tooltip
+              <hc-tooltip
                 effect="dark"
                 content="Number of users who logged into the product in one month"
                 placement="top"
               >
-                <el-icon style="margin-left: 4px" :size="12">
+                <hc-icon style="margin-left: 4px" :size="12">
                   <Warning />
-                </el-icon>
-              </el-tooltip>
+                </hc-icon>
+              </hc-tooltip>
             </div>
           </template>
-        </el-statistic>
+        </hc-statistic>
         <div class="statistic-footer">
           <div class="footer-item">
             <span>month on month</span>
             <span class="red">
               12%
-              <el-icon>
+              <hc-icon>
                 <CaretBottom />
-              </el-icon>
+              </hc-icon>
             </span>
           </div>
         </div>
       </div>
-    </el-col>
-    <el-col :span="8">
+    </hc-col>
+    <hc-col :span="8">
       <div class="statistic-card">
-        <el-statistic :value="72000" title="New transactions today">
+        <hc-statistic :value="72000" title="New transactions today">
           <template #title>
             <div style="display: inline-flex; align-items: center">
               New transactions today
             </div>
           </template>
-        </el-statistic>
+        </hc-statistic>
         <div class="statistic-footer">
           <div class="footer-item">
             <span>than yesterday</span>
             <span class="green">
               16%
-              <el-icon>
+              <hc-icon>
                 <CaretTop />
-              </el-icon>
+              </hc-icon>
             </span>
           </div>
           <div class="footer-item">
-            <el-icon :size="14">
+            <hc-icon :size="14">
               <ArrowRight />
-            </el-icon>
+            </hc-icon>
           </div>
         </div>
       </div>
-    </el-col>
-  </el-row>
+    </hc-col>
+  </hc-row>
 </template>
 
 <script lang="ts" setup>
@@ -103,18 +103,18 @@ import {
 
 <style scoped>
 :global(h2#card-usage ~ .example .example-showcase) {
-  background-color: var(--el-fill-color) !important;
+  background-color: var(--hc-fill-color) !important;
 }
 
-.el-statistic {
-  --el-statistic-content-font-size: 28px;
+.hc-statistic {
+  --hc-statistic-content-font-size: 28px;
 }
 
 .statistic-card {
   height: 100%;
   padding: 20px;
   border-radius: 4px;
-  background-color: var(--el-bg-color-overlay);
+  background-color: var(--hc-bg-color-overlay);
 }
 
 .statistic-footer {
@@ -123,7 +123,7 @@ import {
   align-items: center;
   flex-wrap: wrap;
   font-size: 12px;
-  color: var(--el-text-color-regular);
+  color: var(--hc-text-color-regular);
   margin-top: 16px;
 }
 
@@ -140,10 +140,10 @@ import {
 }
 
 .green {
-  color: var(--el-color-success);
+  color: var(--hc-color-success);
 }
 
 .red {
-  color: var(--el-color-error);
+  color: var(--hc-color-error);
 }
 </style>

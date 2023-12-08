@@ -1,7 +1,7 @@
 <template>
   <div class="m-4">
     <p>Filterable (Single selection)</p>
-    <el-cascader
+    <hc-cascader
       placeholder="Try searchingL Guide"
       :options="options"
       filterable
@@ -9,7 +9,7 @@
   </div>
   <div class="m-4">
     <p>Filterable (Multiple selection)</p>
-    <el-cascader
+    <hc-cascader
       placeholder="Try searchingL Guide"
       :options="options"
       :props="props"

@@ -1,8 +1,8 @@
 <template>
   <div style="height: 400px">
-    <el-auto-resizer>
+    <hc-auto-resizer>
       <template #default="{ height, width }">
-        <el-table-v2
+        <hc-table-v2
           :columns="columns"
           :data="data"
           :width="width"
@@ -10,13 +10,13 @@
           fixed
         />
       </template>
-    </el-auto-resizer>
+    </hc-auto-resizer>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, unref } from 'vue'
-import { ElCheckbox } from 'hicor-ui'
+import { HcCheckbox } from 'hicor-ui'
 
 import type { FunctionalComponent } from 'vue'
 import type { CheckboxValueType, Column } from 'hicor-ui'
@@ -33,7 +33,7 @@ const SelectionCell: FunctionalComponent<SelectionCellProps> = ({
   onChange,
 }) => {
   return (
-    <ElCheckbox
+    <HcCheckbox
       onChange={onChange}
       modelValue={value}
       indeterminate={intermediate}

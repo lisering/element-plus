@@ -1,13 +1,13 @@
 <template>
-  <el-select v-model="value" placeholder="Select">
-    <el-option
+  <hc-select v-model="value" placeholder="Select">
+    <hc-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value"
       :disabled="item.disabled"
     />
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>

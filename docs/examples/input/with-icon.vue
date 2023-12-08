@@ -1,43 +1,43 @@
 <template>
   <div class="demo-input-suffix">
-    <el-row :gutter="20">
+    <hc-row :gutter="20">
       <span class="ml-3 w-35 text-gray-600 inline-flex items-center"
         >Using attributes</span
       >
-      <el-input
+      <hc-input
         v-model="input1"
         class="w-50 m-2"
         placeholder="Pick a date"
         :suffix-icon="Calendar"
       />
-      <el-input
+      <hc-input
         v-model="input2"
         class="w-50 m-2"
         placeholder="Type something"
         :prefix-icon="Search"
       />
-    </el-row>
+    </hc-row>
   </div>
   <div class="demo-input-suffix">
-    <el-row :gutter="20">
+    <hc-row :gutter="20">
       <span class="ml-3 w-35 text-gray-600 inline-flex items-center"
         >Using slots</span
       >
-      <el-input v-model="input3" class="w-50 m-2" placeholder="Pick a date">
+      <hc-input v-model="input3" class="w-50 m-2" placeholder="Pick a date">
         <template #suffix>
-          <el-icon class="el-input__icon">
+          <hc-icon class="hc-input__icon">
             <calendar />
-          </el-icon>
+          </hc-icon>
         </template>
-      </el-input>
-      <el-input v-model="input4" class="w-50 m-2" placeholder="Type something">
+      </hc-input>
+      <hc-input v-model="input4" class="w-50 m-2" placeholder="Type something">
         <template #prefix>
-          <el-icon class="el-input__icon">
+          <hc-icon class="hc-input__icon">
             <search />
-          </el-icon>
+          </hc-icon>
         </template>
-      </el-input>
-    </el-row>
+      </hc-input>
+    </hc-row>
   </div>
 </template>
 

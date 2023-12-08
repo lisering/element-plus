@@ -95,7 +95,7 @@ const slots = useSlots()
 
 useDeprecated(
   {
-    scope: 'el-dialog',
+    scope: 'hc-dialog',
     from: 'the title slot',
     replacement: 'the header slot',
     version: '3.0.0',
@@ -106,7 +106,7 @@ useDeprecated(
 
 useDeprecated(
   {
-    scope: 'el-dialog',
+    scope: 'hc-dialog',
     from: 'custom-class',
     replacement: 'class',
     version: '2.3.0',

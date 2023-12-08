@@ -1,16 +1,16 @@
 <template>
   <div class="demo-progress">
-    <el-progress :percentage="percentage" :color="customColor" />
+    <hc-progress :percentage="percentage" :color="customColor" />
 
-    <el-progress :percentage="percentage" :color="customColorMethod" />
+    <hc-progress :percentage="percentage" :color="customColorMethod" />
 
-    <el-progress :percentage="percentage" :color="customColors" />
-    <el-progress :percentage="percentage" :color="customColors" />
+    <hc-progress :percentage="percentage" :color="customColors" />
+    <hc-progress :percentage="percentage" :color="customColors" />
     <div>
-      <el-button-group>
-        <el-button :icon="Minus" @click="decrease" />
-        <el-button :icon="Plus" @click="increase" />
-      </el-button-group>
+      <hc-button-group>
+        <hc-button :icon="Minus" @click="decrease" />
+        <hc-button :icon="Plus" @click="increase" />
+      </hc-button-group>
     </div>
   </div>
 </template>
@@ -53,7 +53,7 @@ const decrease = () => {
 }
 </script>
 <style scoped>
-.demo-progress .el-progress--line {
+.demo-progress .hc-progress--line {
   margin-bottom: 15px;
   width: 350px;
 }

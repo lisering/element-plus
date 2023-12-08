@@ -1,5 +1,5 @@
 <template>
-  <el-select-v2
+  <hc-select-v2
     v-model="value"
     filterable
     :options="options"
@@ -9,11 +9,11 @@
   >
     <template #default="{ item }">
       <span style="margin-right: 8px">{{ item.label }}</span>
-      <span style="color: var(--el-text-color-secondary); font-size: 13px">
+      <span style="color: var(--hc-text-color-secondary); font-size: 13px">
         {{ item.value }}
       </span>
     </template>
-  </el-select-v2>
+  </hc-select-v2>
 </template>
 
 <script lang="ts" setup>

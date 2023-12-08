@@ -11,18 +11,18 @@ const { hasLinks, prev, next } = usePageNav()
     <div class="container">
       <div class="prev">
         <a v-if="prev" class="link" :href="withBase(prev.link)">
-          <ElIcon class="mr-1">
+          <HcIcon class="mr-1">
             <ArrowLeft />
-          </ElIcon>
+          </HcIcon>
           <span class="text">{{ prev.text }}</span>
         </a>
       </div>
       <div class="next">
         <a v-if="next" class="link" :href="withBase(next.link)">
           <span class="text">{{ next.text }}</span>
-          <ElIcon class="ml-1">
+          <HcIcon class="ml-1">
             <ArrowRight />
-          </ElIcon>
+          </HcIcon>
         </a>
       </div>
     </div>
@@ -76,7 +76,7 @@ const { hasLinks, prev, next } = usePageNav()
   text-overflow: ellipsis;
 }
 
-.el-icon {
+.hc-icon {
   display: inline-flex;
   flex-shrink: 0;
   font-size: 12px;

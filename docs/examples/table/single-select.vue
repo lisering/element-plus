@@ -1,25 +1,25 @@
 <template>
-  <el-table
+  <hc-table
     ref="singleTableRef"
     :data="tableData"
     highlight-current-row
     style="width: 100%"
     @current-change="handleCurrentChange"
   >
-    <el-table-column type="index" width="50" />
-    <el-table-column property="date" label="Date" width="120" />
-    <el-table-column property="name" label="Name" width="120" />
-    <el-table-column property="address" label="Address" />
-  </el-table>
+    <hc-table-column type="index" width="50" />
+    <hc-table-column property="date" label="Date" width="120" />
+    <hc-table-column property="name" label="Name" width="120" />
+    <hc-table-column property="address" label="Address" />
+  </hc-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">Select second row</el-button>
-    <el-button @click="setCurrent()">Clear selection</el-button>
+    <hc-button @click="setCurrent(tableData[1])">Select second row</hc-button>
+    <hc-button @click="setCurrent()">Clear selection</hc-button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ElTable } from 'hicor-ui'
+import { HcTable } from 'hicor-ui'
 
 interface User {
   date: string
@@ -28,7 +28,7 @@ interface User {
 }
 
 const currentRow = ref()
-const singleTableRef = ref<InstanceType<typeof ElTable>>()
+const singleTableRef = ref<InstanceType<typeof HcTable>>()
 
 const setCurrent = (row?: User) => {
   singleTableRef.value!.setCurrentRow(row)

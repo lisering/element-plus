@@ -1,7 +1,7 @@
 <template>
   <div class="custom-tree-container">
     <p>Using render-content</p>
-    <el-tree
+    <hc-tree
       :data="dataSource"
       show-checkbox
       node-key="id"
@@ -10,7 +10,7 @@
       :render-content="renderContent"
     />
     <p>Using scoped slot</p>
-    <el-tree
+    <hc-tree
       :data="dataSource"
       show-checkbox
       node-key="id"
@@ -26,7 +26,7 @@
           </span>
         </span>
       </template>
-    </el-tree>
+    </hc-tree>
   </div>
 </template>
 

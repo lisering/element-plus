@@ -80,10 +80,8 @@
     border: none;
     outline: none;
     background: transparent;
-    font-size: var(
-      #{getCssVarName('message-close-size')},
-      map.get($message, 'close-size')
-    );
+    font-size: var(#{getCssVarName('message-close-size')},
+      map.get($message, 'close-size'));
     cursor: pointer;
 
     .#{$namespace}-message-box__close {
@@ -112,7 +110,7 @@
   @include e(input) {
     padding-top: 15px;
 
-    & div.invalid > input {
+    & div.invalid>input {
       border-color: getCssVar('color-error');
 
       &:focus {
@@ -133,11 +131,11 @@
     }
 
     &.#{$namespace}-icon {
-      // 防止 el-icon 的position样式覆盖
+      // 防止 hc-icon 的position样式覆盖
       position: absolute;
     }
 
-    + .#{$namespace}-message-box__message {
+    +.#{$namespace}-message-box__message {
       padding-left: 36px;
       padding-right: 12px;
       word-break: break-word;
@@ -209,9 +207,7 @@
     }
 
     @include e(content) {
-      $padding-horizontal: calc(
-        #{getCssVar('messagebox', 'padding-primary')} + 12px
-      );
+      $padding-horizontal: calc(#{getCssVar('messagebox', 'padding-primary')} + 12px);
 
       padding-left: $padding-horizontal;
       padding-right: $padding-horizontal;

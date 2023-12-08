@@ -1,11 +1,11 @@
 <template>
-  <el-space direction="vertical" alignment="flex-start">
-    <el-button @click="setLoading">Click me to reload</el-button>
-    <el-skeleton style="width: 240px" :loading="loading" animated :count="3">
+  <hc-space direction="vertical" alignment="flex-start">
+    <hc-button @click="setLoading">Click me to reload</hc-button>
+    <hc-skeleton style="width: 240px" :loading="loading" animated :count="3">
       <template #template>
-        <el-skeleton-item variant="image" style="width: 400px; height: 267px" />
+        <hc-skeleton-item variant="image" style="width: 400px; height: 267px" />
         <div style="padding: 14px">
-          <el-skeleton-item variant="h3" style="width: 50%" />
+          <hc-skeleton-item variant="h3" style="width: 50%" />
           <div
             style="
               display: flex;
@@ -15,13 +15,13 @@
               height: 16px;
             "
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px" />
-            <el-skeleton-item variant="text" style="width: 30%" />
+            <hc-skeleton-item variant="text" style="margin-right: 16px" />
+            <hc-skeleton-item variant="text" style="width: 30%" />
           </div>
         </div>
       </template>
       <template #default>
-        <el-card
+        <hc-card
           v-for="item in lists"
           :key="item.name"
           :body-style="{ padding: '0px', marginBottom: '1px' }"
@@ -31,13 +31,13 @@
             <span>{{ item.name }}</span>
             <div class="bottom card-header">
               <div class="time">{{ currentDate }}</div>
-              <el-button text class="button">Operation button</el-button>
+              <hc-button text class="button">Operation button</hc-button>
             </div>
           </div>
-        </el-card>
+        </hc-card>
       </template>
-    </el-skeleton>
-  </el-space>
+    </hc-skeleton>
+  </hc-space>
 </template>
 
 <script lang="ts" setup>

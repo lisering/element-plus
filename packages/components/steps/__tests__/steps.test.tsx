@@ -29,7 +29,7 @@ describe('Steps.vue', () => {
       </Steps>
     ))
     expect(wrapper.findAll('.hc-step').length).toBe(3)
-    expect(wrapper.classes()).toContain('el-steps--horizontal')
+    expect(wrapper.classes()).toContain('hc-steps--horizontal')
     expect(wrapper.find('.hc-step').classes()).toContain('is-horizontal')
   })
 
@@ -59,7 +59,7 @@ describe('Steps.vue', () => {
         <Step />
       </Steps>
     ))
-    expect(wrapper.classes()).toContain('el-steps--vertical')
+    expect(wrapper.classes()).toContain('hc-steps--vertical')
     expect(wrapper.find('.hc-step').classes()).toContain('is-vertical')
   })
 
@@ -69,7 +69,7 @@ describe('Steps.vue', () => {
         <Step />
       </Steps>
     ))
-    expect(wrapper.classes()).toContain('el-steps--simple')
+    expect(wrapper.classes()).toContain('hc-steps--simple')
     expect(wrapper.find('is-center').exists()).toBe(false)
     expect(wrapper.find('is-vertical').exists()).toBe(false)
   })

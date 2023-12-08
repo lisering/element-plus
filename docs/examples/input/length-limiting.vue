@@ -1,5 +1,5 @@
 <template>
-  <el-input
+  <hc-input
     v-model="text"
     maxlength="10"
     placeholder="Please input"
@@ -7,7 +7,7 @@
     type="text"
   />
   <div style="margin: 20px 0" />
-  <el-input
+  <hc-input
     v-model="textarea"
     maxlength="30"
     placeholder="Please input"

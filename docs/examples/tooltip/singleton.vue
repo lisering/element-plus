@@ -1,15 +1,15 @@
 <template>
   <div>
-    <el-button
+    <hc-button
       v-for="i in 3"
       :key="i"
       @mouseover="(e) => (buttonRef = e.currentTarget)"
       @click="visible = !visible"
-      >Click to open tooltip</el-button
+      >Click to open tooltip</hc-button
     >
   </div>
 
-  <el-tooltip
+  <hc-tooltip
     ref="tooltipRef"
     :visible="visible"
     :popper-options="{
@@ -30,7 +30,7 @@
     <template #content>
       <span> Some content </span>
     </template>
-  </el-tooltip>
+  </hc-tooltip>
 </template>
 
 <script setup lang="ts">
@@ -43,6 +43,6 @@ const visible = ref(false)
 
 <style>
 .singleton-tooltip {
-  transition: transform 0.3s var(--el-transition-function-fast-bezier);
+  transition: transform 0.3s var(--hc-transition-function-fast-bezier);
 }
 </style>

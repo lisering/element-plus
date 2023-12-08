@@ -1,13 +1,13 @@
 <template>
   <div class="m-4">
-    <el-select v-model="value" value-key="id" placeholder="Select">
-      <el-option
+    <hc-select v-model="value" value-key="id" placeholder="Select">
+      <hc-option
         v-for="item in options"
         :key="item.id"
         :label="item.label"
         :value="item"
       />
-    </el-select>
+    </hc-select>
     <p>
       selected option's description:
       {{ value ? value.desc : 'no select' }}

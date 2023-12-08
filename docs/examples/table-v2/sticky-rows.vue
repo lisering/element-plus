@@ -1,5 +1,5 @@
 <template>
-  <el-table-v2
+  <hc-table-v2
     :columns="columns"
     :data="tableData"
     :fixed-data="fixedData"
@@ -64,8 +64,8 @@ const onScroll = ({ scrollTop }) => {
 </script>
 
 <style>
-.el-el-table-v2__fixed-header-row {
-  background-color: var(--el-color-primary-light-5);
+.hc-hc-table-v2__fixed-header-row {
+  background-color: var(--hc-color-primary-light-5);
   font-weight: bold;
 }
 </style>

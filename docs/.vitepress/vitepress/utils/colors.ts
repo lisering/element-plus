@@ -29,7 +29,7 @@ export const getCssVarValue = (name: string) => {
 
 export const getColorValue = (type: string) => {
   const color = getComputedStyle(document.documentElement).getPropertyValue(
-    `--el-color-${type}`
+    `--hc-color-${type}`
   )
   return color
 }
@@ -50,7 +50,7 @@ export const useCopyColor = () => {
     }
     try {
       await copy()
-      $message.success(`--el-color-${colorType}: ${source.value}`)
+      $message.success(`--hc-color-${colorType}: ${source.value}`)
     } catch (e: any) {
       $message.error(e.message)
     }

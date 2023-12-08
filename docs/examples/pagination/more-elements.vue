@@ -1,15 +1,15 @@
 <template>
   <div class="flex items-center mb-4">
-    <el-radio-group v-model="small" class="mr-4">
-      <el-radio-button :label="false">default</el-radio-button>
-      <el-radio-button :label="true">small</el-radio-button>
-    </el-radio-group>
+    <hc-radio-group v-model="small" class="mr-4">
+      <hc-radio-button :label="false">default</hc-radio-button>
+      <hc-radio-button :label="true">small</hc-radio-button>
+    </hc-radio-group>
     <div>
       background:
-      <el-switch v-model="background" class="ml-2" />
+      <hc-switch v-model="background" class="ml-2" />
     </div>
     <div class="ml-4">
-      disabled: <el-switch v-model="disabled" class="ml-2" />
+      disabled: <hc-switch v-model="disabled" class="ml-2" />
     </div>
   </div>
 
@@ -17,7 +17,7 @@
 
   <div class="demo-pagination-block">
     <div class="demonstration">Total item count</div>
-    <el-pagination
+    <hc-pagination
       v-model:current-page="currentPage1"
       :page-size="100"
       :small="small"
@@ -31,7 +31,7 @@
   </div>
   <div class="demo-pagination-block">
     <div class="demonstration">Change page size</div>
-    <el-pagination
+    <hc-pagination
       v-model:current-page="currentPage2"
       v-model:page-size="pageSize2"
       :page-sizes="[100, 200, 300, 400]"
@@ -46,7 +46,7 @@
   </div>
   <div class="demo-pagination-block">
     <div class="demonstration">Jump to</div>
-    <el-pagination
+    <hc-pagination
       v-model:current-page="currentPage3"
       v-model:page-size="pageSize3"
       :small="small"
@@ -60,7 +60,7 @@
   </div>
   <div class="demo-pagination-block">
     <div class="demonstration">All combined</div>
-    <el-pagination
+    <hc-pagination
       v-model:current-page="currentPage4"
       v-model:page-size="pageSize4"
       :page-sizes="[100, 200, 300, 400]"
@@ -100,6 +100,7 @@ const handleCurrentChange = (val: number) => {
 .demo-pagination-block + .demo-pagination-block {
   margin-top: 10px;
 }
+
 .demo-pagination-block .demonstration {
   margin-bottom: 16px;
 }

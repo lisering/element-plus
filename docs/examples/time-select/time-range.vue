@@ -1,6 +1,6 @@
 <template>
   <div class="demo-time-range">
-    <el-time-select
+    <hc-time-select
       v-model="startTime"
       :max-time="endTime"
       class="mr-4"
@@ -9,7 +9,7 @@
       step="00:15"
       end="18:30"
     />
-    <el-time-select
+    <hc-time-select
       v-model="endTime"
       :min-time="startTime"
       placeholder="End time"

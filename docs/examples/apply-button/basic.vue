@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ElApplyButton } from 'hicor-ui'
+import { HcApplyButton } from 'hicor-ui'
 
 const buttonClick = (type: string, flag: boolean) => {
   console.log('type', type)
@@ -9,6 +9,6 @@ const buttonClick = (type: string, flag: boolean) => {
 
 <template>
   <div>
-    <ElApplyButton text="实打实大多数方法" @button-click="buttonClick" />
+    <HcApplyButton text="实打实大多数方法" @button-click="buttonClick" />
   </div>
 </template>

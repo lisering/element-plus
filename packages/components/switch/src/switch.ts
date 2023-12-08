@@ -112,21 +112,21 @@ export const switchProps = buildProps({
     default: false,
   },
   /**
-   * @deprecated background color when in `on` state ( deprecated, use CSS var `--el-switch-on-color` instead )
+   * @deprecated background color when in `on` state ( deprecated, use CSS var `--hc-switch-on-color` instead )
    */
   activeColor: {
     type: String,
     default: '',
   },
   /**
-   * @deprecated background color when in `off` state ( deprecated, use CSS var `--el-switch-off-color` instead )
+   * @deprecated background color when in `off` state ( deprecated, use CSS var `--hc-switch-off-color` instead )
    */
   inactiveColor: {
     type: String,
     default: '',
   },
   /**
-   * @deprecated border color of the switch ( deprecated, use CSS var `--el-switch-border-color` instead )
+   * @deprecated border color of the switch ( deprecated, use CSS var `--hc-switch-border-color` instead )
    */
   borderColor: {
     type: String,

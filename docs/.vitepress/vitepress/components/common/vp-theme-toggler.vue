@@ -63,7 +63,7 @@ const beforeChange = (): Promise<boolean> => {
 <template>
   <div @click.stop="switchTheme">
     <ClientOnly>
-      <el-switch
+      <hc-switch
         v-model="darkMode"
         :before-change="beforeChange"
         :active-action-icon="DarkIcon"
@@ -74,12 +74,12 @@ const beforeChange = (): Promise<boolean> => {
 </template>
 
 <style lang="scss" scoped>
-:deep(.el-switch__core) {
-  --el-switch-on-color: var(--bg-color-mute);
-  --el-switch-off-color: var(--bg-color-mute);
-  --el-switch-border-color: var(--border-color);
+:deep(.hc-switch__core) {
+  --hc-switch-on-color: var(--bg-color-mute);
+  --hc-switch-off-color: var(--bg-color-mute);
+  --hc-switch-border-color: var(--border-color);
 
-  .el-switch__action {
+  .hc-switch__action {
     width: 14px;
     height: 14px;
   }

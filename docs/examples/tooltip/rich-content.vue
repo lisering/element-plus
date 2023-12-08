@@ -1,6 +1,6 @@
 <template>
-  <el-tooltip placement="top">
+  <hc-tooltip placement="top">
     <template #content> multiple lines<br />second line </template>
-    <el-button>Top center</el-button>
-  </el-tooltip>
+    <hc-button>Top center</hc-button>
+  </hc-tooltip>
 </template>

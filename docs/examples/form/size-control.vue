@@ -1,73 +1,73 @@
 <template>
   <div>
-    <el-radio-group v-model="size" label="size control">
-      <el-radio-button label="large">large</el-radio-button>
-      <el-radio-button label="default">default</el-radio-button>
-      <el-radio-button label="small">small</el-radio-button>
-    </el-radio-group>
-    <el-radio-group v-model="labelPosition" label="position control">
-      <el-radio-button label="left">Left</el-radio-button>
-      <el-radio-button label="right">Right</el-radio-button>
-      <el-radio-button label="top">Top</el-radio-button>
-    </el-radio-group>
+    <hc-radio-group v-model="size" label="size control">
+      <hc-radio-button label="large">large</hc-radio-button>
+      <hc-radio-button label="default">default</hc-radio-button>
+      <hc-radio-button label="small">small</hc-radio-button>
+    </hc-radio-group>
+    <hc-radio-group v-model="labelPosition" label="position control">
+      <hc-radio-button label="left">Left</hc-radio-button>
+      <hc-radio-button label="right">Right</hc-radio-button>
+      <hc-radio-button label="top">Top</hc-radio-button>
+    </hc-radio-group>
   </div>
   <br />
-  <el-form
+  <hc-form
     ref="form"
     :model="sizeForm"
     label-width="auto"
     :label-position="labelPosition"
     :size="size"
   >
-    <el-form-item label="Activity name">
-      <el-input v-model="sizeForm.name" />
-    </el-form-item>
-    <el-form-item label="Activity zone">
-      <el-select
+    <hc-form-item label="Activity name">
+      <hc-input v-model="sizeForm.name" />
+    </hc-form-item>
+    <hc-form-item label="Activity zone">
+      <hc-select
         v-model="sizeForm.region"
         placeholder="please select your zone"
       >
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
-      </el-select>
-    </el-form-item>
-    <el-form-item label="Activity time">
-      <el-col :span="11">
-        <el-date-picker
+        <hc-option label="Zone one" value="shanghai" />
+        <hc-option label="Zone two" value="beijing" />
+      </hc-select>
+    </hc-form-item>
+    <hc-form-item label="Activity time">
+      <hc-col :span="11">
+        <hc-date-picker
           v-model="sizeForm.date1"
           type="date"
           label="Pick a date"
           placeholder="Pick a date"
           style="width: 100%"
         />
-      </el-col>
-      <el-col class="text-center" :span="1" style="margin: 0 0.5rem">-</el-col>
-      <el-col :span="11">
-        <el-time-picker
+      </hc-col>
+      <hc-col class="text-center" :span="1" style="margin: 0 0.5rem">-</hc-col>
+      <hc-col :span="11">
+        <hc-time-picker
           v-model="sizeForm.date2"
           label="Pick a time"
           placeholder="Pick a time"
           style="width: 100%"
         />
-      </el-col>
-    </el-form-item>
-    <el-form-item label="Activity type">
-      <el-checkbox-group v-model="sizeForm.type">
-        <el-checkbox-button label="Online activities" name="type" />
-        <el-checkbox-button label="Promotion activities" name="type" />
-      </el-checkbox-group>
-    </el-form-item>
-    <el-form-item label="Resources">
-      <el-radio-group v-model="sizeForm.resource">
-        <el-radio border label="Sponsor" />
-        <el-radio border label="Venue" />
-      </el-radio-group>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="onSubmit">Create</el-button>
-      <el-button>Cancel</el-button>
-    </el-form-item>
-  </el-form>
+      </hc-col>
+    </hc-form-item>
+    <hc-form-item label="Activity type">
+      <hc-checkbox-group v-model="sizeForm.type">
+        <hc-checkbox-button label="Online activities" name="type" />
+        <hc-checkbox-button label="Promotion activities" name="type" />
+      </hc-checkbox-group>
+    </hc-form-item>
+    <hc-form-item label="Resources">
+      <hc-radio-group v-model="sizeForm.resource">
+        <hc-radio border label="Sponsor" />
+        <hc-radio border label="Venue" />
+      </hc-radio-group>
+    </hc-form-item>
+    <hc-form-item>
+      <hc-button type="primary" @click="onSubmit">Create</hc-button>
+      <hc-button>Cancel</hc-button>
+    </hc-form-item>
+  </hc-form>
 </template>
 
 <script lang="ts" setup>
@@ -93,7 +93,7 @@ function onSubmit() {
 </script>
 
 <style>
-.el-radio-group {
+.hc-radio-group {
   margin-right: 12px;
 }
 </style>

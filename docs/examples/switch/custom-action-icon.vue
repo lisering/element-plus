@@ -1,5 +1,5 @@
 <template>
-  <el-switch
+  <hc-switch
     v-model="value1"
     :active-action-icon="View"
     :inactive-action-icon="Hide"

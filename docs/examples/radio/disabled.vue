@@ -1,7 +1,7 @@
 <template>
-  <el-radio v-model="radio" disabled label="disabled">Option A</el-radio>
-  <el-radio v-model="radio" disabled label="selected and disabled"
-    >Option B</el-radio
+  <hc-radio v-model="radio" disabled label="disabled">Option A</hc-radio>
+  <hc-radio v-model="radio" disabled label="selected and disabled"
+    >Option B</hc-radio
   >
 </template>
 

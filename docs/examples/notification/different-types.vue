@@ -1,15 +1,15 @@
 <template>
-  <el-button plain @click="open1"> Success </el-button>
-  <el-button plain @click="open2"> Warning </el-button>
-  <el-button plain @click="open3"> Info </el-button>
-  <el-button plain @click="open4"> Error </el-button>
+  <hc-button plain @click="open1"> Success </hc-button>
+  <hc-button plain @click="open2"> Warning </hc-button>
+  <hc-button plain @click="open3"> Info </hc-button>
+  <hc-button plain @click="open4"> Error </hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElNotification } from 'hicor-ui'
+import { HcNotification } from 'hicor-ui'
 
 const open1 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Success',
     message: 'This is a success message',
     type: 'success',
@@ -17,7 +17,7 @@ const open1 = () => {
 }
 
 const open2 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Warning',
     message: 'This is a warning message',
     type: 'warning',
@@ -25,7 +25,7 @@ const open2 = () => {
 }
 
 const open3 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Info',
     message: 'This is an info message',
     type: 'info',
@@ -33,7 +33,7 @@ const open3 = () => {
 }
 
 const open4 = () => {
-  ElNotification({
+  HcNotification({
     title: 'Error',
     message: 'This is an error message',
     type: 'error',

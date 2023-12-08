@@ -243,7 +243,7 @@ describe('Datetime Picker', () => {
     // click confirm button
     ;(
       document.querySelectorAll(
-        '.hc-picker-panel__footer .el-button'
+        '.hc-picker-panel__footer .hc-button'
       )[1] as HTMLElement
     ).click()
 
@@ -368,7 +368,7 @@ describe('Datetime Picker', () => {
     input.trigger('blur')
     input.trigger('focus')
     await nextTick()
-    const cells = document.querySelectorAll('.available .el-date-table-cell')
+    const cells = document.querySelectorAll('.available .hc-date-table-cell')
     ;(cells[0] as HTMLElement).click()
     await nextTick()
     const timeInput: HTMLInputElement = document.querySelector(
@@ -420,7 +420,7 @@ describe('Datetimerange', () => {
     await nextTick()
     ;(
       document.querySelectorAll(
-        '.hc-picker-panel__footer .el-button'
+        '.hc-picker-panel__footer .hc-button'
       )[1] as HTMLElement
     ).click()
     await nextTick()
@@ -430,7 +430,7 @@ describe('Datetimerange', () => {
       '2000-12-01 01:01:01',
     ])
     const pickerss = document.querySelectorAll(
-      '.hc-date-range-picker__time-header .el-date-range-picker__editors-wrap'
+      '.hc-date-range-picker__time-header .hc-date-range-picker__editors-wrap'
     )
     const left = {
       dateInput: pickerss[0].querySelector(
@@ -475,7 +475,7 @@ describe('Datetimerange', () => {
     input.trigger('focus')
     await nextTick()
     const pickerss = document.querySelectorAll(
-      '.hc-date-range-picker__time-header .el-date-range-picker__editors-wrap'
+      '.hc-date-range-picker__time-header .hc-date-range-picker__editors-wrap'
     )
     const leftDateInput = pickerss[0].querySelector(
       '.hc-date-range-picker__time-picker-wrap:nth-child(1) input'
@@ -497,7 +497,7 @@ describe('Datetimerange', () => {
     triggerEvent(rightCell, 'click', true)
     await nextTick()
     const btn = document.querySelectorAll(
-      '.hc-picker-panel__footer .el-button'
+      '.hc-picker-panel__footer .hc-button'
     )[1] as HTMLElement
     btn.click()
     await nextTick()
@@ -535,12 +535,12 @@ describe('Datetimerange', () => {
     timeInput.blur()
     await nextTick()
     const button: HTMLElement = document.querySelector(
-      '.hc-date-range-picker__time-picker-wrap .el-time-panel .confirm'
+      '.hc-date-range-picker__time-picker-wrap .hc-time-panel .confirm'
     )!
     button.click()
     await nextTick()
     const btn = document.querySelectorAll(
-      '.hc-picker-panel__footer .el-button'
+      '.hc-picker-panel__footer .hc-button'
     )[1] as HTMLElement
     btn.click()
     await nextTick()
@@ -566,7 +566,7 @@ describe('Datetimerange', () => {
     await nextTick()
     // simulate user input of invalid date
     const pickerss = document.querySelectorAll(
-      '.hc-date-range-picker__time-header .el-date-range-picker__editors-wrap'
+      '.hc-date-range-picker__time-header .hc-date-range-picker__editors-wrap'
     )
     const leftDateInput = pickerss[0].querySelector(
       '.hc-date-range-picker__time-picker-wrap:nth-child(1) input'
@@ -576,7 +576,7 @@ describe('Datetimerange', () => {
     triggerEvent(leftDateInput, 'change', true)
     await nextTick()
     const btn = document.querySelectorAll(
-      '.hc-picker-panel__footer .el-button'
+      '.hc-picker-panel__footer .hc-button'
     )[1] as HTMLElement
     expect(btn.getAttribute('disabled')).not.toBeUndefined() // invalid input disables button
     btn.click()
@@ -620,7 +620,7 @@ describe('Datetimerange', () => {
     input.trigger('focus')
     await nextTick()
     const pickerss = document.querySelectorAll(
-      '.hc-date-range-picker__time-header .el-date-range-picker__editors-wrap'
+      '.hc-date-range-picker__time-header .hc-date-range-picker__editors-wrap'
     )
     const leftDateInput = pickerss[0].querySelector(
       '.hc-date-range-picker__time-picker-wrap:nth-child(2) input'
@@ -632,7 +632,7 @@ describe('Datetimerange', () => {
     leftDateInput.focus()
     await nextTick()
     const listLeft = document.querySelectorAll(
-      '.hc-date-range-picker__editors-wrap .el-time-spinner__list'
+      '.hc-date-range-picker__editors-wrap .hc-time-spinner__list'
     )
     const hoursEl = listLeft[0]
     const disabledHours = Array.from(
@@ -640,7 +640,7 @@ describe('Datetimerange', () => {
     ).map((node) => Number(node.textContent))
     expect(disabledHours).toStrictEqual(disabledHoursArr)
     const button = document.querySelector(
-      '.hc-date-range-picker__time-picker-wrap .el-time-panel .confirm'
+      '.hc-date-range-picker__time-picker-wrap .hc-time-panel .confirm'
     ) as HTMLElement
     button.click()
     await nextTick()
@@ -648,7 +648,7 @@ describe('Datetimerange', () => {
     rightDateInput.focus()
     await nextTick()
     const listRight = document.querySelectorAll(
-      '.hc-date-range-picker__editors-wrap.is-right .el-time-spinner__list'
+      '.hc-date-range-picker__editors-wrap.is-right .hc-time-spinner__list'
     )
     const hoursEl2 = listRight[0]
     const disabledHours2 = Array.from(
@@ -700,7 +700,7 @@ describe('Datetimerange', () => {
     rightTimeInput.focus()
     await nextTick()
     const rightList = document.querySelectorAll(
-      '.is-right .el-time-spinner__list'
+      '.is-right .hc-time-spinner__list'
     ) as any
     // auto set left time to right time
     expect(
@@ -720,13 +720,13 @@ describe('Datetimerange', () => {
     await nextTick()
     ;(
       document.querySelector(
-        '.is-right .el-time-panel__btn.confirm'
+        '.is-right .hc-time-panel__btn.confirm'
       ) as HTMLElement
     ).click()
     await nextTick()
     ;(
       document.querySelectorAll(
-        '.hc-picker-panel__footer .el-button'
+        '.hc-picker-panel__footer .hc-button'
       )[1] as HTMLElement
     ).click()
     await nextTick()
@@ -820,7 +820,7 @@ describe('Datetimerange', () => {
     await nextTick()
     ;(
       document.querySelector(
-        '.hc-picker-panel__sidebar .el-picker-panel__shortcut'
+        '.hc-picker-panel__sidebar .hc-picker-panel__shortcut'
       ) as HTMLElement
     ).click()
     await nextTick()

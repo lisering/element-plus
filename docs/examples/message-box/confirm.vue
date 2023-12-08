@@ -1,12 +1,12 @@
 <template>
-  <el-button text @click="open">Click to open the Message Box</el-button>
+  <hc-button text @click="open">Click to open the Message Box</hc-button>
 </template>
 
 <script lang="ts" setup>
-import { ElMessage, ElMessageBox } from 'hicor-ui'
+import { HcMessage, HcMessageBox } from 'hicor-ui'
 
 const open = () => {
-  ElMessageBox.confirm(
+  HcMessageBox.confirm(
     'proxy will permanently delete the file. Continue?',
     'Warning',
     {
@@ -16,13 +16,13 @@ const open = () => {
     }
   )
     .then(() => {
-      ElMessage({
+      HcMessage({
         type: 'success',
         message: 'Delete completed',
       })
     })
     .catch(() => {
-      ElMessage({
+      HcMessage({
         type: 'info',
         message: 'Delete canceled',
       })

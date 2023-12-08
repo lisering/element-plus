@@ -25,7 +25,7 @@ describe('Progress.vue', () => {
   test('text inside', () => {
     const wrapper = mount(() => <Progress textInside />)
 
-    expect(wrapper.classes()).toContain('el-progress--text-inside')
+    expect(wrapper.classes()).toContain('hc-progress--text-inside')
   })
 
   test('stroke width', () => {
@@ -45,13 +45,13 @@ describe('Progress.vue', () => {
   test('circle', () => {
     const wrapper = mount(() => <Progress type="circle" />)
 
-    expect(wrapper.classes()).toContain('el-progress--circle')
+    expect(wrapper.classes()).toContain('hc-progress--circle')
   })
 
   test('dashboard', () => {
     const wrapper = mount(() => <Progress type="dashboard" />)
 
-    expect(wrapper.classes()).toContain('el-progress--dashboard')
+    expect(wrapper.classes()).toContain('hc-progress--dashboard')
   })
 
   test('width', () => {

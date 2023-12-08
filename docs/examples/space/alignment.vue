@@ -1,33 +1,33 @@
 <template>
   <div class="alignment-container">
-    <el-space>
+    <hc-space>
       string
-      <el-button> button </el-button>
-      <el-card>
+      <hc-button> button </hc-button>
+      <hc-card>
         <template #header> header </template>
         body
-      </el-card>
-    </el-space>
+      </hc-card>
+    </hc-space>
   </div>
   <div class="alignment-container">
-    <el-space alignment="flex-start">
+    <hc-space alignment="flex-start">
       string
-      <el-button> button </el-button>
-      <el-card>
+      <hc-button> button </hc-button>
+      <hc-card>
         <template #header> header </template>
         body
-      </el-card>
-    </el-space>
+      </hc-card>
+    </hc-space>
   </div>
   <div class="alignment-container">
-    <el-space alignment="flex-end">
+    <hc-space alignment="flex-end">
       string
-      <el-button> button </el-button>
-      <el-card>
+      <hc-button> button </hc-button>
+      <hc-card>
         <template #header> header </template>
         body
-      </el-card>
-    </el-space>
+      </hc-card>
+    </hc-space>
   </div>
 </template>
 
@@ -36,6 +36,6 @@
   width: 240px;
   margin-bottom: 20px;
   padding: 8px;
-  border: 1px solid var(--el-border-color);
+  border: 1px solid var(--hc-border-color);
 }
 </style>

@@ -15,18 +15,18 @@ Hicor Ui 提供的默认命名空间为 `el`。 在特殊情况下，我们需�
 
 由于我们使用 sass 书写样式，如果您需要自定义所有命名空间， 我们假定用户使用了 sass 书写样式。
 
-您必须同时设置 `ElConfigProvider` 和 scss `$namespace`。
+您必须同时设置 `HcConfigProvider` 和 scss `$namespace`。
 
-### 设置 `ElConfigProvider`
+### 设置 `HcConfigProvider`
 
-使用 `ElConfigProvider` 包装您的根组件。
+使用 `HcConfigProvider` 包装您的根组件。
 
 ```vue
 <!-- App.vue -->
 <template>
-  <el-config-provider namespace="ep">
+  <hc-config-provider namespace="ep">
     <!-- ... -->
-  </el-config-provider>
+  </hc-config-provider>
 </template>
 ```
 

@@ -1,5 +1,5 @@
 <template>
-  <el-select
+  <hc-select
     v-model="value"
     multiple
     clearable
@@ -9,21 +9,21 @@
     :max-collapse-tags="1"
   >
     <template #header>
-      <el-checkbox
+      <hc-checkbox
         v-model="checkAll"
         :indeterminate="indeterminate"
         @change="handleCheckAll"
       >
         All
-      </el-checkbox>
+      </hc-checkbox>
     </template>
-    <el-option
+    <hc-option
       v-for="item in cities"
       :key="item.value"
       :label="item.label"
       :value="item.value"
     />
-  </el-select>
+  </hc-select>
 </template>
 
 <script lang="ts" setup>
@@ -85,7 +85,7 @@ const handleCheckAll = (val: CheckboxValueType) => {
 
 <style lang="scss">
 .custom-header {
-  .el-checkbox {
+  .hc-checkbox {
     display: flex;
     height: unset;
   }

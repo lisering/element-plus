@@ -3,7 +3,7 @@ import { selectKey } from '@hicor-ui/components/select'
 import type { SelectContext } from '@hicor-ui/components/select'
 import type { PropType } from 'vue'
 
-// same as el-option instance,
+// same as hc-option instance,
 // these are required for `cachedOptions`
 export type CacheOption = {
   value: string | number | boolean | object

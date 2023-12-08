@@ -1,5 +1,5 @@
 <template>
-  <el-popover
+  <hc-popover
     placement="top-start"
     title="Title"
     :width="200"
@@ -7,11 +7,11 @@
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button class="m-2">Hover to activate</el-button>
+      <hc-button class="m-2">Hover to activate</hc-button>
     </template>
-  </el-popover>
+  </hc-popover>
 
-  <el-popover
+  <hc-popover
     placement="bottom"
     title="Title"
     :width="200"
@@ -19,11 +19,11 @@
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button class="m-2">Click to activate</el-button>
+      <hc-button class="m-2">Click to activate</hc-button>
     </template>
-  </el-popover>
+  </hc-popover>
 
-  <el-popover
+  <hc-popover
     ref="popover"
     placement="right"
     title="Title"
@@ -32,11 +32,11 @@
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button class="m-2">Focus to activate</el-button>
+      <hc-button class="m-2">Focus to activate</hc-button>
     </template>
-  </el-popover>
+  </hc-popover>
 
-  <el-popover
+  <hc-popover
     ref="popover"
     title="Title"
     :width="200"
@@ -44,11 +44,11 @@
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button class="m-2">contextmenu to activate</el-button>
+      <hc-button class="m-2">contextmenu to activate</hc-button>
     </template>
-  </el-popover>
+  </hc-popover>
 
-  <el-popover
+  <hc-popover
     :visible="visible"
     placement="bottom"
     title="Title"
@@ -56,11 +56,11 @@
     content="this is content, this is content, this is content"
   >
     <template #reference>
-      <el-button class="m-2" @click="visible = !visible"
-        >Manual to activate</el-button
+      <hc-button class="m-2" @click="visible = !visible"
+        >Manual to activate</hc-button
       >
     </template>
-  </el-popover>
+  </hc-popover>
 </template>
 
 <script lang="ts" setup>
@@ -70,7 +70,7 @@ const visible = ref(false)
 </script>
 
 <style scoped>
-.el-button + .el-button {
+.hc-button + .hc-button {
   margin-left: 8px;
 }
 </style>

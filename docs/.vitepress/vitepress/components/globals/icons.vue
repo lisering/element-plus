@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, shallowRef } from 'vue'
 import clipboardCopy from 'clipboard-copy'
-import { ElMessage } from 'hicor-ui'
+import { HcMessage } from 'hicor-ui'
 import * as Icons from '@element-plus/icons-vue'
 import { useLang } from '../../composables/lang'
 import localeData from '../../../i18n/component/icons.json'
@@ -21,13 +21,13 @@ const copyContent = async (content) => {
   try {
     await clipboardCopy(content)
 
-    ElMessage({
+    HcMessage({
       showClose: true,
       message: locale.value['copy-success'],
       type: 'success',
     })
   } catch {
-    ElMessage({
+    HcMessage({
       showClose: true,
       message: locale.value['copy-error'],
       type: 'error',
@@ -37,7 +37,7 @@ const copyContent = async (content) => {
 
 const copySvgIcon = async (name, refs) => {
   if (copyIcon.value) {
-    await copyContent(`<el-icon><${name} /></el-icon>`)
+    await copyContent(`<hc-icon><${name} /></hc-icon>`)
   } else {
     const content = refs[name]?.[0].querySelector('svg')?.outerHTML ?? ''
     await copyContent(content)
@@ -67,7 +67,7 @@ categories.value.push({ name: 'Other', icons: Array.from(iconMap.values()) })
 
 <template>
   <div style="text-align: right">
-    <el-switch
+    <hc-switch
       v-model="copyIcon"
       active-text="Copy icon code"
       inactive-text="Copy SVG content"
@@ -84,9 +84,9 @@ categories.value.push({ name: 'Other', icons: Array.from(iconMap.values()) })
         @click="copySvgIcon(component.name, $refs)"
       >
         <span class="demo-svg-icon">
-          <ElIcon :size="20">
+          <HcIcon :size="20">
             <component :is="component" />
-          </ElIcon>
+          </HcIcon>
           <span class="icon-name">{{ component.name }}</span>
         </span>
       </li>
@@ -114,25 +114,25 @@ categories.value.push({ name: 'Other', icons: Array.from(iconMap.values()) })
     overflow: hidden;
     list-style: none;
     padding: 0 !important;
-    border-top: 1px solid var(--el-border-color);
-    border-left: 1px solid var(--el-border-color);
+    border-top: 1px solid var(--hc-border-color);
+    border-left: 1px solid var(--hc-border-color);
     border-radius: 4px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 
     .icon-item {
       text-align: center;
-      color: var(--el-text-color-regular);
+      color: var(--hc-text-color-regular);
       height: 90px;
       font-size: 13px;
-      border-right: 1px solid var(--el-border-color);
-      border-bottom: 1px solid var(--el-border-color);
-      transition: background-color var(--el-transition-duration);
+      border-right: 1px solid var(--hc-border-color);
+      border-bottom: 1px solid var(--hc-border-color);
+      transition: background-color var(--hc-transition-duration);
 
       &:hover {
-        background-color: var(--el-border-color-extra-light);
+        background-color: var(--hc-border-color-extra-light);
 
-        .el-icon {
+        .hc-icon {
           color: var(--brand-color-light);
         }
 

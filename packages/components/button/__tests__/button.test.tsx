@@ -14,7 +14,7 @@ describe('Button.vue', () => {
   it('create', () => {
     const wrapper = mount(() => <Button type="primary" />)
 
-    expect(wrapper.classes()).toContain('el-button--primary')
+    expect(wrapper.classes()).toContain('hc-button--primary')
   })
 
   it('icon', () => {
@@ -39,7 +39,7 @@ describe('Button.vue', () => {
   it('size', () => {
     const wrapper = mount(() => <Button size="large" />)
 
-    expect(wrapper.classes()).toContain('el-button--large')
+    expect(wrapper.classes()).toContain('hc-button--large')
   })
 
   it('plain', () => {
@@ -188,7 +188,7 @@ describe('Button Group', () => {
           </ButtonGroup>
         ),
     })
-    expect(wrapper.classes()).toContain('el-button-group')
+    expect(wrapper.classes()).toContain('hc-button-group')
     expect(wrapper.findAll('button').length).toBe(2)
   })
 
@@ -203,16 +203,16 @@ describe('Button Group', () => {
           </ButtonGroup>
         ),
     })
-    expect(wrapper.classes()).toContain('el-button-group')
+    expect(wrapper.classes()).toContain('hc-button-group')
     expect(
-      wrapper.findAll('.hc-button-group button.el-button--small').length
+      wrapper.findAll('.hc-button-group button.hc-button--small').length
     ).toBe(2)
 
     size.value = 'large'
     await nextTick()
 
     expect(
-      wrapper.findAll('.hc-button-group button.el-button--large').length
+      wrapper.findAll('.hc-button-group button.hc-button--large').length
     ).toBe(2)
   })
 
@@ -226,12 +226,12 @@ describe('Button Group', () => {
           </ButtonGroup>
         ),
     })
-    expect(wrapper.classes()).toContain('el-button-group')
+    expect(wrapper.classes()).toContain('hc-button-group')
     expect(
-      wrapper.findAll('.hc-button-group button.el-button--primary').length
+      wrapper.findAll('.hc-button-group button.hc-button--primary').length
     ).toBe(1)
     expect(
-      wrapper.findAll('.hc-button-group button.el-button--warning').length
+      wrapper.findAll('.hc-button-group button.hc-button--warning').length
     ).toBe(1)
   })
 
@@ -247,7 +247,7 @@ describe('Button Group', () => {
 
     expect(wrapper.find('.hc-button span').text()).toBe('中文')
     expect(wrapper.find('.hc-button span').classes()).toContain(
-      'el-button__text--expand'
+      'hc-button__text--expand'
     )
   })
 
@@ -258,7 +258,7 @@ describe('Button Group', () => {
 
     expect(wrapper.find('.hc-button span').text()).toBe('中文')
     expect(wrapper.find('.hc-button span').classes()).toContain(
-      'el-button__text--expand'
+      'hc-button__text--expand'
     )
   })
 
@@ -276,7 +276,7 @@ describe('Button Group', () => {
         ),
     })
     const btn = wrapper.findComponent(Button)
-    expect(btn.classes()).toContain('el-button--large')
+    expect(btn.classes()).toContain('hc-button--large')
     expect(btn.classes()).toContain('is-disabled')
     await btn.trigger('click')
     expect(btn.emitted('click')).toBeUndefined()
@@ -298,6 +298,6 @@ describe('Button Group', () => {
         ),
     })
     const btn = wrapper.findComponent(Button)
-    expect(btn.classes()).toContain('el-button--small')
+    expect(btn.classes()).toContain('hc-button--small')
   })
 })

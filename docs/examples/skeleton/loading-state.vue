@@ -1,14 +1,14 @@
 <template>
-  <el-space direction="vertical" alignment="flex-start">
+  <hc-space direction="vertical" alignment="flex-start">
     <div>
       <label style="margin-right: 16px">Switch Loading</label>
-      <el-switch v-model="loading" />
+      <hc-switch v-model="loading" />
     </div>
-    <el-skeleton style="width: 240px" :loading="loading" animated>
+    <hc-skeleton style="width: 240px" :loading="loading" animated>
       <template #template>
-        <el-skeleton-item variant="image" style="width: 240px; height: 240px" />
+        <hc-skeleton-item variant="image" style="width: 240px; height: 240px" />
         <div style="padding: 14px">
-          <el-skeleton-item variant="h3" style="width: 50%" />
+          <hc-skeleton-item variant="h3" style="width: 50%" />
           <div
             style="
               display: flex;
@@ -18,13 +18,13 @@
               height: 16px;
             "
           >
-            <el-skeleton-item variant="text" style="margin-right: 16px" />
-            <el-skeleton-item variant="text" style="width: 30%" />
+            <hc-skeleton-item variant="text" style="margin-right: 16px" />
+            <hc-skeleton-item variant="text" style="width: 30%" />
           </div>
         </div>
       </template>
       <template #default>
-        <el-card :body-style="{ padding: '0px', marginBottom: '1px' }">
+        <hc-card :body-style="{ padding: '0px', marginBottom: '1px' }">
           <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
@@ -33,13 +33,13 @@
             <span>Delicious hamburger</span>
             <div class="bottom card-header">
               <div class="time">{{ currentDate }}</div>
-              <el-button text class="button">Operation button</el-button>
+              <hc-button text class="button">Operation button</hc-button>
             </div>
           </div>
-        </el-card>
+        </hc-card>
       </template>
-    </el-skeleton>
-  </el-space>
+    </hc-skeleton>
+  </hc-space>
 </template>
 
 <script lang="ts" setup>
