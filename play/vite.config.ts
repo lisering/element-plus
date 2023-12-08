@@ -3,7 +3,6 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { HicorUiResolver } from './hicorResolver'
 import Inspect from 'vite-plugin-inspect'
 import mkcert from 'vite-plugin-mkcert'
@@ -29,27 +28,6 @@ const esbuildPlugin = (): Plugin => ({
   }),
   enforce: 'post',
 })
-
-// const isUppercase = (char: string) => {
-//   return char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90
-// }
-
-// const convert = (str: string) => {
-//   let newString = ''
-//   for (let i = 0; i < str.length; i++) {
-//     const currentChar = str[i]
-//     if (isUppercase(currentChar)) {
-//       if (i === 0) {
-//         newString += `${currentChar.toLowerCase()}`
-//       } else {
-//         newString += `-${currentChar.toLowerCase()}`
-//       }
-//     } else {
-//       newString += currentChar
-//     }
-//   }
-//   return newString
-// }
 
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')

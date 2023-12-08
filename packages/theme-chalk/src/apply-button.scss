@@ -22,11 +22,11 @@
 
   &.blue-box {
     background: #e1e9f7;
-    color: var(--hc-color-primary);
-    border-color: var(--hc-color-primary);
+    color: getCssVar('', 'color-primary');
+    border-color: getCssVar('', 'color-primary');
 
     .icon-box {
-      border-color: var(--hc-color-primary);
+      border-color: getCssVar('', 'color-primary');
     }
   }
 
@@ -36,11 +36,11 @@
 
   &.green-box {
     background: #d8f2f2;
-    color: var(--hc-color-green);
-    border-color: var(--hc-color-green);
+    color: getCssVar('', 'color-green');
+    border-color: getCssVar('', 'color-green');
 
     .icon-box {
-      border-color: var(--hc-color-green);
+      border-color: getCssVar('', 'color-green');
     }
   }
 
