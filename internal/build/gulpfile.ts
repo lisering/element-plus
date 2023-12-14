@@ -6,6 +6,7 @@ import {
   buildOutput,
   hcOutput,
   hcPackage,
+  hcRoot,
   projRoot,
 } from '@hicor-ui/build-utils'
 import { buildConfig, run, runTask, withTaskName } from './src'
@@ -23,6 +24,7 @@ export const copyFiles = () =>
       path.resolve(projRoot, 'global.d.ts'),
       path.resolve(hcOutput, 'global.d.ts')
     ),
+    copyFile(path.resolve(hcRoot, '.npmrc'), path.resolve(hcOutput, '.npmrc')),
   ])
 
 export const copyTypesDefinitions: TaskFunction = (done) => {
